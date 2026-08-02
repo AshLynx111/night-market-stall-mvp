@@ -1,0 +1,84 @@
+# Dependencies and generated build output
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+
+# Logs, caches, and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.cache/
+.tmp/
+tmp/
+__pycache__/
+*.py[cod]
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local QA browser profiles and captures
+.edge-*/
+qa-*.png
+task*-qa.png
+task*-review-*.png
+docs/qa/
+
+# Planning, source-art, handoff, and local production material
+.superpowers/
+artifacts/
+deliverables/
+docs/superpowers/
+scripts/
+tools/
+*.zip
+参考图*
+
+# Unused art variants kept locally for review
+src/assets/approved/customers/customer-*.png
+src/assets/approved/customers/final-light-anime/
+src/assets/approved/main-ui/game-main-screen-final.png
+src/assets/approved/menu/menu-board.svg
+src/assets/approved/menu/ingredients/ingredient-ham-sausage.png
+src/assets/approved/menu/ingredients/ingredient-pork-floss.png
+src/assets/approved/menu/ingredients/ingredient-spicy-strip.png
+src/assets/approved/stages/*-stage-atlas.png
+
+# Test and legacy implementation files not required by the production build
+tsconfig.test.json
+src/**/*.test.ts
+src/**/*.test.tsx
+src/styles.css
+src/components/ActionTray.tsx
+src/components/CookingStation.tsx
+src/components/CustomerOrder.tsx
+src/components/CustomerPortrait.tsx
+src/components/FeedbackLayer.tsx
+src/components/NightMarketScene.tsx
+src/components/TopBar.tsx
+src/components/UpgradeBar.tsx
+src/game/*
+!src/game/audio.ts
+src/landscape/config.ts
+src/landscape/reducer.ts
+src/landscape/storage.ts
+src/landscape/types.ts

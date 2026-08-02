@@ -1,0 +1,277 @@
+.kitchen-scene {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  width: 1440px;
+  height: 810px;
+  overflow: hidden;
+  pointer-events: none;
+  touch-action: none;
+}
+
+.event-screen--overlay { position: absolute; z-index: 60; inset: 0; width: 100%; height: 100%; min-height: 0; }
+.kitchen-scene button { font: inherit; }
+.kitchen-scene__customers,
+.kitchen-scene__griddle,
+.kitchen-scene__ingredients { position: absolute; inset: 0; pointer-events: none; }
+
+.kitchen-scene__counter-foreground {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  background-image: var(--game-bg);
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 56.5%, 100% 56.5%, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+.kitchen-customer__actor {
+  position: absolute;
+  z-index: 2;
+  left: var(--customer-x);
+  top: var(--customer-foot-y);
+  width: 245px;
+  height: 350px;
+  opacity: var(--customer-opacity);
+  transform: translate(-50%, -100%) scale(var(--customer-scale));
+  transform-origin: 50% 100%;
+  pointer-events: auto;
+  filter: drop-shadow(0 13px 9px rgb(7 12 20 / var(--customer-shadow-opacity)));
+}
+
+.kitchen-customer__actor.presence-entering,
+.kitchen-customer__actor.presence-leaving { pointer-events: none; }
+
+.kitchen-customer__motion-sprite {
+  position: absolute;
+  inset: 0;
+  background-image: var(--motion-atlas);
+  background-repeat: no-repeat;
+  background-size: 800% 300%;
+  background-position:
+    calc(var(--motion-frame-x) * 100% / 7)
+    calc(var(--motion-frame-y) * 100% / 2);
+}
+
+.kitchen-customer__static-art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  user-select: none;
+}
+
+.kitchen-customer__bubble {
+  position: absolute;
+  z-index: 6;
+  left: var(--customer-bubble-x);
+  top: var(--customer-bubble-y);
+  width: 118px;
+  min-height: 82px;
+  padding: 7px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  transform: translateX(-50%);
+  border: 2px solid #5c4434;
+  border-radius: 15px 15px 15px 4px;
+  background: rgb(255 247 225 / .96);
+  color: #74412e;
+  box-shadow: 0 4px 0 rgb(30 23 20 / .28);
+  pointer-events: auto;
+  animation: order-bubble-in 160ms cubic-bezier(.2, .9, .25, 1.2) both;
+}
+.kitchen-customer__bubble::after { content: ""; position: absolute; left: var(--customer-bubble-tail-x); bottom: -10px; border-width: 10px 9px 0; border-style: solid; border-color: #fff7e1 transparent transparent; }
+.kitchen-customer__bubble img { width: 67px; height: 42px; object-fit: contain; }
+.kitchen-customer__bubble span { font-size: 10px; font-weight: 900; }
+.kitchen-customer__modifiers { grid-column: 1 / -1; min-height: 22px; display: flex; align-items: center; gap: 3px; }
+.kitchen-customer__modifier { position: relative; width: 24px; height: 21px; display: inline-grid; place-items: center; border-radius: 7px; background: rgb(231 205 156 / .72); font-style: normal; }
+.kitchen-customer__modifier > b { position: absolute; z-index: 2; left: -2px; top: -4px; width: 12px; height: 12px; display: grid; place-items: center; border-radius: 50%; background: #a8482f; color: white; font-size: 9px; }
+.kitchen-customer__modifier > img { width: 21px; height: 19px; object-fit: contain; }
+.kitchen-customer__modifier--heat { width: auto; min-width: 30px; padding: 0 3px; color: #a83e28; font-size: 9px; font-weight: 900; }
+.kitchen-customer__patience { grid-column: 1 / -1; height: 5px; overflow: hidden; border-radius: 999px; background: #6a4b38; }
+.kitchen-customer__patience > span { display: block; height: 100%; border-radius: inherit; background: #76bd45; }
+
+@keyframes order-bubble-in {
+  from { opacity: 0; transform: translateX(-50%) scale(.88); }
+  to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+.griddle-slot {
+  position: absolute;
+  z-index: 6;
+  top: 59%;
+  width: 18.7%;
+  height: 23%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  pointer-events: auto;
+}
+.griddle-slot--left { left: 34.1%; }
+.griddle-slot--right { left: 52.8%; }
+.griddle-slot__food { position: absolute; inset: 4%; padding: 0; border: 0; background: transparent; cursor: default; }
+.griddle-slot__food:disabled { opacity: 1; }
+.griddle-slot__food:not(:disabled) { cursor: pointer; filter: drop-shadow(0 0 11px #ffd169); }
+.griddle-slot__food img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.griddle-slot__base-art { z-index: 1; }
+.griddle-slot__modifier-art { z-index: 2; filter: drop-shadow(0 2px 2px rgb(46 23 12 / .28)); }
+.griddle-slot__pack-hint { position: absolute; z-index: 7; left: 50%; bottom: 4%; padding: 3px 8px; transform: translateX(-50%); border-radius: 10px; background: rgb(46 32 25 / .8); color: #ffe8a2; font-size: 9px; font-weight: 900; white-space: nowrap; }
+.griddle-slot__status { position: absolute; z-index: 10; left: 50%; top: 3%; max-width: 78%; padding: 4px 9px; transform: translate(-50%, -50%); border: 1px solid rgb(255 222 151 / .65); border-radius: 9px; background: rgb(49 34 27 / .9); color: #fff0b3; box-shadow: 0 3px 4px rgb(20 12 9 / .34); font-size: 9px; font-weight: 900; line-height: 1.2; text-align: center; white-space: nowrap; pointer-events: none; }
+.heat-ready .griddle-slot__status { border-color: #ffc64e; color: #fff6c9; box-shadow: 0 0 8px rgb(255 187 64 / .48); }
+.heat-scorched .griddle-slot__status, .heat-burnt .griddle-slot__status { border-color: #ff7a48; background: rgb(88 31 23 / .94); color: #fff1da; }
+.griddle-slot__cut-marks { position: absolute; z-index: 9; inset: 10% 14%; pointer-events: none; }
+.griddle-slot__cut-marks i { position: absolute; left: 15%; width: 70%; border-top: 2px dashed rgb(255 238 174 / .78); filter: drop-shadow(0 1px 1px rgb(0 0 0 / .62)); }
+.griddle-slot__cut-marks i:nth-child(1) { top: 30%; }
+.griddle-slot__cut-marks i:nth-child(2) { top: 50%; }
+.griddle-slot__cut-marks i:nth-child(3) { top: 70%; }
+.griddle-slot__cut-marks i.is-done { border-top-style: solid; border-color: #ffd05e; }
+
+.griddle-slot__heat-ring {
+  --heat-color: #d8a13b;
+  position: absolute;
+  z-index: 8;
+  right: 9px;
+  bottom: 9px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: conic-gradient(var(--heat-color) calc(var(--heat-progress) * 1turn), rgb(33 28 27 / .5) 0);
+  filter: drop-shadow(0 2px 2px rgb(0 0 0 / .35));
+  pointer-events: none;
+}
+.griddle-slot__heat-ring::after { content: ""; position: absolute; inset: 5px; border-radius: inherit; background: rgb(38 32 29 / .86); box-shadow: inset 0 0 4px rgb(255 255 255 / .16); }
+.heat-ready .griddle-slot__heat-ring { --heat-color: #ffb53e; filter: drop-shadow(0 0 5px rgb(255 184 64 / .72)); }
+.heat-scorched .griddle-slot__heat-ring { --heat-color: #d65a20; }
+.heat-burnt .griddle-slot__heat-ring { --heat-color: #b72818; background: conic-gradient(#210f0d calc(var(--heat-progress) * .42turn), var(--heat-color) calc(var(--heat-progress) * 1turn), rgb(26 20 19 / .62) 0); }
+
+.griddle-slot__oil,
+.griddle-slot__steam { position: absolute; z-index: 7; inset: 8% 10%; overflow: hidden; pointer-events: none; }
+.griddle-slot__oil i { position: absolute; width: 7px; height: 7px; border: 1px solid rgb(255 221 141 / .86); border-radius: 50%; background: rgb(255 190 75 / .18); animation: kitchen-oil-pop 1.05s ease-out infinite; }
+.griddle-slot__oil i:nth-child(1) { left: 18%; top: 62%; }
+.griddle-slot__oil i:nth-child(2) { left: 42%; top: 28%; animation-delay: -.32s; }
+.griddle-slot__oil i:nth-child(3) { left: 66%; top: 55%; animation-delay: -.7s; }
+.griddle-slot__oil i:nth-child(4) { left: 81%; top: 34%; animation-delay: -.51s; }
+.griddle-slot__steam i { position: absolute; bottom: 24%; width: 13px; height: 39px; border-left: 3px solid rgb(255 255 255 / .46); border-radius: 50%; filter: blur(1px); animation: kitchen-steam-rise 1.8s ease-out infinite; }
+.griddle-slot__steam i:nth-child(1) { left: 27%; }
+.griddle-slot__steam i:nth-child(2) { left: 52%; animation-delay: -.65s; }
+.griddle-slot__steam i:nth-child(3) { left: 73%; animation-delay: -1.2s; }
+
+.table-ingredient { position: absolute; z-index: 8; width: 9%; height: 12%; padding: 0; border: 0; background: transparent; cursor: grab; pointer-events: auto; touch-action: none; }
+.table-ingredient img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; filter: drop-shadow(0 4px 3px rgb(29 18 13 / .4)); }
+.table-ingredient[data-painted="true"] img { opacity: 0; }
+.table-ingredient:disabled { border-radius: 18px; background: rgb(38 28 24 / .28); cursor: default; filter: grayscale(.75); opacity: .38; }
+.kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled) { border-radius: 18px; background: rgb(255 216 91 / .16); box-shadow: 0 0 0 3px rgb(255 216 91 / .88), 0 0 18px rgb(255 186 56 / .78); animation: tutorial-target-pulse 1.25s ease-in-out infinite; }
+.table-ingredient--egg { left: 8.5%; top: 62%; width: 11%; }
+.table-ingredient--hot-dog { left: 9%; top: 75%; width: 16%; height: 13%; }
+.table-ingredient--scallion { left: 18%; top: 62%; width: 11%; }
+.table-ingredient--cilantro { left: 1%; top: 73%; width: 12%; }
+.table-ingredient--noodle { left: 77%; top: 62%; }
+.table-ingredient--turkey-noodle { left: 87%; top: 62%; }
+.table-ingredient--cheese { left: 77%; top: 73%; }
+.table-ingredient--corn { left: 87%; top: 73%; }
+.table-ingredient--onion, .table-ingredient--chili-powder { left: 91%; top: 53%; width: 6%; height: 9%; }
+.table-ingredient--onion { left: 85%; }
+.table-ingredient--orleans, .table-ingredient--bacon, .table-ingredient--tenderloin, .table-ingredient--enoki { left: 75%; top: 82%; width: 8%; height: 9%; }
+.table-ingredient--bacon { left: 82%; }
+.table-ingredient--tenderloin { left: 89%; }
+.table-ingredient--enoki { left: 93%; top: 73%; width: 6%; }
+.table-ingredient__ghost, .serving-tray__ghost { position: absolute; z-index: 80; width: 105px; height: 82px; object-fit: contain; transform: translate(-50%, -50%) scale(1.08); pointer-events: none; filter: drop-shadow(0 8px 5px rgb(0 0 0 / .45)); }
+
+.sauce-brush { position: absolute; z-index: 9; left: 28.5%; top: 58%; width: 7.5%; height: 13%; padding: 0; border: 2px solid transparent; border-radius: 16px; background: rgb(255 240 190 / .08); cursor: pointer; pointer-events: auto; touch-action: manipulation; }
+.sauce-brush > span { display: block; font-size: 38px; transform: rotate(-22deg); filter: drop-shadow(0 4px 3px rgb(29 18 13 / .5)); }
+.sauce-brush > small { position: absolute; left: 50%; bottom: -2px; min-width: 58px; padding: 2px 5px; transform: translateX(-50%); border-radius: 8px; background: rgb(48 32 24 / .78); color: #ffe7a2; font-size: 8px; font-weight: 900; white-space: nowrap; }
+.sauce-brush:disabled { opacity: .55; cursor: default; }
+.sauce-brush.is-selected { border-color: #ffd05f; background: rgb(255 208 91 / .24); box-shadow: 0 0 13px rgb(255 202 77 / .78); }
+.sauce-brush.is-tutorial-target:not(:disabled) { border-color: #ffd05f; background: rgb(255 208 91 / .22); box-shadow: 0 0 16px rgb(255 202 77 / .84); animation: tutorial-target-pulse 1.25s ease-in-out infinite; }
+
+.cooking-gesture-layer { position: absolute; z-index: 11; inset: 0; pointer-events: none; }
+.cooking-gesture-target { position: absolute; top: 59%; width: 18.7%; height: 23%; pointer-events: auto; touch-action: none; }
+.cooking-gesture-target--left { left: 34.1%; }
+.cooking-gesture-target--right { left: 52.8%; }
+.cooking-gesture-tool { position: absolute; z-index: 90; transform: translate(-32%, -72%); font-size: 34px; pointer-events: none; filter: drop-shadow(0 4px 3px rgb(0 0 0 / .5)); }
+.cooking-gesture-tool--roll { color: #ffe5a3; font-size: 48px; font-weight: 900; }
+
+.tutorial-gesture-cue { position: absolute; z-index: 23; top: 59%; width: 18.7%; height: 23%; pointer-events: none; }
+.tutorial-gesture-cue--left { left: 34.1%; }
+.tutorial-gesture-cue--right { left: 52.8%; }
+.tutorial-gesture-cue svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.tutorial-gesture-cue path { fill: none; stroke: #ffd45f; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 28 18; filter: drop-shadow(0 3px 2px rgb(0 0 0 / .72)); animation: tutorial-path-dash 1.1s linear infinite; }
+.tutorial-gesture-cue > span { position: absolute; left: 50%; top: -22px; min-width: 150px; padding: 4px 8px; transform: translateX(-50%); border-radius: 9px; background: rgb(49 33 25 / .86); color: #fff0b5; font-size: 9px; font-weight: 900; text-align: center; white-space: nowrap; }
+
+.serving-tray { position: absolute; z-index: 10; left: 73.5%; top: 59%; width: 14%; height: 25%; display: flex; align-items: center; justify-content: center; gap: 2%; pointer-events: none; }
+.serving-tray__dish { width: 48%; height: 70%; padding: 0; border: 0; background: transparent; cursor: grab; pointer-events: auto; touch-action: none; }
+.serving-tray__dish img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; filter: drop-shadow(0 5px 3px rgb(0 0 0 / .42)); }
+
+.kitchen-scene__trash { position: absolute; z-index: 12; right: 1.5%; bottom: 2.5%; display: flex; gap: 5px; pointer-events: none; }
+.kitchen-scene__trash button { min-width: 58px; padding: 5px 7px; border: 2px solid #4d3b32; border-radius: 11px; background: rgb(255 237 197 / .9); color: #81412f; cursor: pointer; font-size: 9px; font-weight: 900; pointer-events: auto; touch-action: manipulation; box-shadow: 0 3px 0 rgb(44 29 23 / .45); }
+.kitchen-scene__trash button span { display: block; font-size: 17px; }
+
+.tutorial-hand {
+  --tutorial-dx: 0px;
+  --tutorial-dy: 0px;
+  position: absolute;
+  z-index: 24;
+  left: 620px;
+  top: 565px;
+  width: 36px;
+  height: 36px;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 3px rgb(0 0 0 / .45));
+}
+.tutorial-hand > span { display: block; font-size: 31px; transform-origin: 50% 85%; animation: kitchen-hand-path 1.45s cubic-bezier(.35,.05,.3,1) infinite; }
+.tutorial-hand--drag { left: 1165px; top: 565px; --tutorial-dx: -545px; --tutorial-dy: -15px; }
+.tutorial-hand--drag.tutorial-hand--slot-right { --tutorial-dx: -275px; }
+.tutorial-hand--egg { left: 195px; top: 565px; --tutorial-dx: 425px; --tutorial-dy: -15px; }
+.tutorial-hand--egg.tutorial-hand--slot-right { --tutorial-dx: 695px; }
+.tutorial-hand--hot-dog { left: 200px; top: 675px; --tutorial-dx: 420px; --tutorial-dy: -105px; }
+.tutorial-hand--scallion { left: 300px; top: 565px; --tutorial-dx: 320px; --tutorial-dy: 5px; }
+.tutorial-hand--pack { left: 620px; top: 575px; --tutorial-dx: 0px; --tutorial-dy: 25px; }
+.tutorial-hand--sauce { left: 575px; top: 575px; --tutorial-dx: 115px; --tutorial-dy: -42px; }
+.tutorial-hand--sauce.tutorial-hand--slot-right,
+.tutorial-hand--cut.tutorial-hand--slot-right,
+.tutorial-hand--roll.tutorial-hand--slot-right { left: 845px; }
+.tutorial-hand--cut { left: 625px; top: 525px; --tutorial-dx: 0px; --tutorial-dy: 115px; }
+.tutorial-hand--roll { left: 585px; top: 575px; --tutorial-dx: 130px; --tutorial-dy: 0px; }
+.tutorial-hand--serve { left: 1145px; top: 590px; --tutorial-dx: -755px; --tutorial-dy: -395px; }
+.tutorial-hand--serve.tutorial-hand--lane-center { --tutorial-dx: -425px; --tutorial-dy: -405px; }
+.tutorial-hand--serve.tutorial-hand--lane-right { --tutorial-dx: -95px; --tutorial-dy: -395px; }
+
+.guided-tutorial { position: absolute; z-index: 32; left: 50%; top: 93px; width: 352px; min-height: 58px; padding: 9px 18px 10px 62px; transform: translateX(-50%); border: 3px solid #6b3b28; border-radius: 16px; background: linear-gradient(180deg, rgb(255 248 215 / .98), rgb(255 222 150 / .98)); color: #713722; box-shadow: 0 5px 0 rgb(46 25 18 / .52), 0 8px 20px rgb(20 11 8 / .3); pointer-events: none; }
+.guided-tutorial::before { content: "🍳"; position: absolute; left: 17px; top: 50%; width: 34px; height: 34px; display: grid; place-items: center; transform: translateY(-50%); border-radius: 50%; background: #b6492d; color: white; font-size: 20px; box-shadow: inset 0 -3px 0 rgb(79 32 23 / .28); }
+.guided-tutorial b, .guided-tutorial span { display: block; }
+.guided-tutorial b { margin-bottom: 2px; color: #a23f29; font-size: 12px; letter-spacing: .04em; }
+.guided-tutorial span { font-size: 11px; font-weight: 800; line-height: 1.35; }
+.tutorial-completion-toast { position: absolute; z-index: 34; left: 50%; top: 112px; width: 420px; padding: 13px 22px; transform: translateX(-50%); border: 3px solid #6b3b28; border-radius: 16px; background: linear-gradient(180deg, rgb(255 248 215 / .98), rgb(255 213 120 / .98)); color: #8d3927; box-shadow: 0 5px 0 rgb(46 25 18 / .52), 0 8px 20px rgb(20 11 8 / .3); font-size: 15px; font-weight: 900; line-height: 1.35; text-align: center; pointer-events: none; animation: tutorial-completion-in .18s ease-out; }
+
+@keyframes kitchen-oil-pop { 0% { opacity: 0; transform: scale(.35); } 42% { opacity: .85; } 100% { opacity: 0; transform: scale(1.55); } }
+@keyframes kitchen-steam-rise { 0% { opacity: 0; transform: translateY(15px) scale(.75); } 38% { opacity: .62; } 100% { opacity: 0; transform: translate(7px, -48px) scale(1.28); } }
+@keyframes kitchen-hand-path { 0%, 12% { opacity: 0; transform: translate(0, 0) scale(.82); } 22% { opacity: 1; } 70% { opacity: 1; transform: translate(var(--tutorial-dx), var(--tutorial-dy)) scale(1); } 78% { transform: translate(var(--tutorial-dx), var(--tutorial-dy)) scale(.82); } 100% { opacity: 0; transform: translate(var(--tutorial-dx), var(--tutorial-dy)) scale(.82); } }
+@keyframes tutorial-path-dash { to { stroke-dashoffset: -46; } }
+@keyframes tutorial-target-pulse { 50% { filter: brightness(1.08); box-shadow: 0 0 0 4px rgb(255 226 120 / .95), 0 0 23px rgb(255 181 44 / .9); } }
+@keyframes tutorial-completion-in { from { opacity: 0; transform: translate(-50%, -8px); } }
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .guided-tutorial {
+    left: calc(50% + 128px);
+    transform: translateX(-50%) scale(var(--scene-inverse-scale));
+    transform-origin: top center;
+  }
+  .tutorial-completion-toast {
+    transform: translateX(-50%) scale(var(--scene-inverse-scale));
+    transform-origin: top center;
+  }
+  .griddle-slot__status {
+    transform: translate(-50%, -50%) scale(var(--scene-inverse-scale));
+    transform-origin: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tutorial-hand > span { opacity: .9; transform: translate(var(--tutorial-dx), var(--tutorial-dy)); }
+  .kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled),
+  .sauce-brush.is-tutorial-target:not(:disabled),
+  .kitchen-customer__bubble { animation: none; }
+}
