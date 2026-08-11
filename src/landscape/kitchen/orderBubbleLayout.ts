@@ -16,21 +16,25 @@ export interface OrderBubblePose {
   clearOfCharacter: boolean
 }
 
-const BUBBLE = { width: 118, height: 82 }
+const BUBBLE = { width: 132, height: 94 }
 const SCREEN = { width: 1440, height: 810 }
-const CHARACTER = { halfWidth: 92, height: 350 }
+// The upper part of each square actor canvas is transparent. Use the visible
+// body height for bubble collision so the bubble can sit naturally above the
+// head instead of being pushed to the side of the screen.
+const CHARACTER = { halfWidth: 92, height: 276 }
 
 export const HUD_RESERVED_RECTS: ScreenRect[] = [
-  { x: 16, y: 16, width: 225, height: 94 },
-  { x: 272, y: 22, width: 178, height: 82 },
-  { x: 606, y: 18, width: 228, height: 78 },
-  { x: 1178, y: 16, width: 246, height: 104 },
+  { x: 24, y: 13, width: 272, height: 158 },
+  { x: 299, y: 25, width: 193, height: 166 },
+  { x: 575, y: 47, width: 330, height: 83 },
+  { x: 1142, y: 42, width: 162, height: 167 },
+  { x: 1328, y: 26, width: 76, height: 118 },
 ]
 
 const CANDIDATE_OFFSETS = {
-  left: [{ x: -210, y: -305 }, { x: -175, y: -415 }, { x: 105, y: -415 }],
-  center: [{ x: 105, y: -405 }, { x: -225, y: -405 }, { x: -59, y: -455 }],
-  right: [{ x: 95, y: -305 }, { x: 55, y: -415 }, { x: -225, y: -415 }],
+  left: [{ x: 104, y: -370 }, { x: -188, y: -305 }, { x: 70, y: -305 }],
+  center: [{ x: -66, y: -392 }, { x: -202, y: -310 }, { x: 70, y: -310 }],
+  right: [{ x: -66, y: -382 }, { x: 54, y: -310 }, { x: -186, y: -310 }],
 } as const satisfies Record<CustomerLane, readonly { x: number; y: number }[]>
 
 export function rectanglesOverlap(a: ScreenRect, b: ScreenRect): boolean {

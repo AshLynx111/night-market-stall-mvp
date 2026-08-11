@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import mainBackground from '../assets/approved/main-ui/night-market-clean-background.png'
+import mainBackground from '../assets/approved/main-ui/game-main-screen-final.png'
 import menuBoard from '../assets/approved/menu/menu-board.png'
 import celebrityArt from '../assets/approved/events/day5-celebrity-event-key-art.png'
 import takeawayBag from '../assets/approved/menu/takeaway-bag.png'
@@ -71,15 +71,15 @@ function TopHud({ day, coins, served, target, satisfaction, sound, onHome, onMen
         <span className="hud__moon">☾</span>
         <span><b>第 {day} 天</b><small>18:45 · 夜市营业中</small></span>
       </button>
-      <div className="hud__pill"><span>😊</span><b>满意度 {satisfaction}%</b></div>
+      <div className="hud__pill hud__satisfaction"><span aria-hidden="true">😊</span><b>满意度<br />{satisfaction}%</b></div>
       <div className="hud__pill hud__coins"><span>💵</span><b>¥ {coins}</b></div>
       <div className="hud__goal">
         <small>今日目标</small>
-        <b>完成订单 {served}/{target}</b>
+        <b><span className="sr-only">完成订单 </span>{served}/{target}</b>
         <i><span style={{ width: `${(served / target) * 100}%` }} /></i>
       </div>
-      <button className="icon-button" onClick={onMenu} aria-label="打开菜单">☰</button>
-      <button className="icon-button" onClick={onSound} aria-label="切换声音">{sound ? '🔊' : '🔇'}</button>
+      <button className="icon-button icon-button--menu" onClick={onMenu} aria-label="暂停并打开菜单">Ⅱ</button>
+      <button className="icon-button icon-button--sound" onClick={onSound} aria-label="切换声音">{sound ? '♪' : '×'}</button>
     </header>
   )
 }

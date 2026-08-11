@@ -492,3 +492,114 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .stage-export .stage-rolled { width: 610px; height: 390px; }
 .stage-export .stage-packed { width: 360px; height: 470px; }
 .stage-export .drop-hint { display: none; }
+
+/* Reference-master gameplay skin: the illustrated plate already contains the
+   sculpted signs and tutorial plaque. Runtime values are laid into those
+   painted surfaces so the screen reads as one authored game illustration. */
+.hud {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  width: 1440px;
+  height: 810px;
+  display: block;
+  pointer-events: none;
+}
+
+.hud .paper-button,
+.hud .hud__pill,
+.hud .hud__goal,
+.hud .icon-button {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: auto;
+}
+
+.hud__day {
+  position: absolute;
+  left: 24px;
+  top: 13px;
+  width: 272px;
+  height: 158px;
+  padding: 55px 26px 24px 96px;
+  display: block;
+  text-align: center;
+  text-shadow: 0 2px 0 rgb(255 247 215 / .45);
+}
+.hud__day .hud__moon { display: none; }
+.hud__day span:last-child { display: block; }
+.hud__day b { color: #f8e6b8; font-size: 29px; line-height: 1; text-shadow: 0 3px 0 #46321f, 0 0 3px #28190f; }
+.hud__day small { margin-top: 9px; display: block; color: #eac88a; font-size: 11px; font-weight: 900; text-shadow: 0 2px 0 #352315; }
+
+.hud__satisfaction {
+  position: absolute;
+  left: 299px;
+  top: 25px;
+  width: 193px;
+  height: 166px;
+  padding: 75px 20px 12px;
+  display: block;
+  color: #ffe8b0;
+  text-align: center;
+}
+.hud__satisfaction span { display: none; }
+.hud__satisfaction b { font-size: 19px; line-height: 1.17; text-shadow: 0 3px 0 #6f2d21, 0 0 3px #4f1f19; }
+
+.hud__coins {
+  position: absolute;
+  left: 575px;
+  top: 47px;
+  width: 330px;
+  height: 83px;
+  padding: 20px 35px 12px 92px;
+  display: block;
+  color: #f8e4b2;
+  text-align: center;
+  text-shadow: 0 3px 0 #56331f, 0 0 4px #2d1b12;
+}
+.hud__coins span { display: none; }
+.hud__coins b { font-size: 28px; letter-spacing: .03em; }
+
+.hud__goal {
+  position: absolute;
+  left: 1142px;
+  top: 42px;
+  width: 162px;
+  height: 167px;
+  padding: 86px 20px 20px;
+  display: block;
+  color: #523620;
+  text-align: center;
+}
+.hud__goal small { display: none; }
+.hud__goal b { font-size: 30px; line-height: 1; text-shadow: 0 2px 0 #fff0bf; }
+.hud__goal i { position: absolute; left: 29px; right: 29px; bottom: 20px; height: 8px; margin: 0; border: 2px solid #68452b; background: #b99c68; }
+.hud__goal i span { background: linear-gradient(90deg, #6fa940, #b3d65b); }
+
+.hud .icon-button--menu {
+  position: absolute;
+  left: 1328px;
+  top: 26px;
+  width: 76px;
+  height: 76px;
+  color: transparent;
+  font-size: 0;
+}
+.hud .icon-button--sound {
+  position: absolute;
+  left: 1350px;
+  top: 108px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #6e432a;
+  border-radius: 50%;
+  background: linear-gradient(#fff1c7, #e2b66d);
+  color: #6e432a;
+  box-shadow: 0 3px 0 rgb(35 22 17 / .5);
+  font-size: 16px;
+  font-weight: 900;
+}
