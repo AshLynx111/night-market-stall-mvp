@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "referenceImage": "C:/Users/qianwu/AppData/Local/Temp/codex-clipboard-19b75918-d10b-475f-91ea-e6bce55262f4.png",
+  "useCase": "stylized-concept",
+  "product": "16:9 Chinese night-market cooking game",
+  "style": "polished commercial casual-game illustration, refined light-anime characters, soft 2.5D environment rendering",
+  "composition": {
+    "aspectRatio": "16:9",
+    "vanishingPoint": "center of the market street",
+    "customerPositions": ["left", "center", "right"],
+    "foreground": "dark brushed-metal counter with two modest side-by-side griddles",
+    "backgroundRules": ["no fixed bystanders", "no chairs", "no western food truck", "no readable gibberish"]
+  },
+  "lighting": {
+    "environment": "deep navy evening sky with warm tungsten stall lights",
+    "subjectKey": "warm upper-left key light",
+    "subjectRim": "subtle warm night-market rim light",
+    "contactShadow": "soft lower-right grounding shadow"
+  },
+  "palette": {
+    "navy": "#081a35",
+    "wood": "#8a542f",
+    "cream": "#f7e6bd",
+    "green": "#3f6b45",
+    "gold": "#d99a3d",
+    "danger": "#b74c32",
+    "metal": "#292b2d"
+  },
+  "characterRules": [
+    "adult natural head-to-body proportions",
+    "distinct Chinese facial identities",
+    "clear eyes with visible sclera and restrained highlights",
+    "no chibi heads or doll-like faces",
+    "no photoreal wax skin or plastic 3D material",
+    "identity, hairstyle and garment remain fixed across states"
+  ],
+  "foodRules": [
+    "consistent three-quarter top-down camera",
+    "realistic appetizing sauce sheen and cooked texture",
+    "clear ingredient silhouette at thumbnail size",
+    "no plastic toy food",
+    "no unrelated garnish or utensils"
+  ],
+  "uiRules": [
+    "sculpted walnut wood plaques",
+    "cream enamel panels",
+    "dark green and caramel-gold accents",
+    "rounded carved icon language",
+    "critical Chinese copy remains code or SVG text"
+  ],
+  "forbidden": [
+    "paper texture",
+    "watercolor grain",
+    "pencil sketch",
+    "flat default web UI",
+    "oversized central griddle",
+    "text inventory bar",
+    "fixed background customers",
+    "watermark",
+    "brand logos"
+  ]
+}
