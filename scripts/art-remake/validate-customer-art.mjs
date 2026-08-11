@@ -6,12 +6,14 @@ import sharp from 'sharp'
 
 const root = process.cwd()
 const customerRoot = path.join(root, 'src', 'assets', 'approved', 'customers')
-const identities = [
+const regularIdentities = [
   'customer-01-xiaolin', 'customer-02-ajie', 'customer-03-xiaoyu', 'customer-04-senior',
   'customer-05-suqing', 'customer-06-dazhuang', 'customer-07-xuyan', 'customer-08-azhe',
   'customer-09-teacher-chen', 'customer-10-grandma-wang',
 ]
 const emotions = ['arriving', 'ordering', 'waiting', 'impatient', 'urgent', 'happy', 'disappointed']
+const celebrityOnly = process.argv.includes('--celebrity-only')
+const identities = celebrityOnly ? ['celebrity'] : regularIdentities
 
 async function assertGeometry(file, width, height, transparentCorners = true) {
   const image = sharp(file).ensureAlpha()
@@ -36,8 +38,10 @@ for (const identity of identities) {
   const hashes = await Promise.all(emotionFiles.map(hash))
   if (new Set(hashes).size !== emotions.length) emotionDiversityVerified = false
   await assertGeometry(path.join(customerRoot, 'motion', `${identity}-motion.png`), 2048, 1152)
-  await assertGeometry(path.join(customerRoot, 'final-light-anime', `${identity}.png`), 330, 449)
-  await assertGeometry(path.join(customerRoot, `${identity}.png`), 1024, 1024)
+  if (identity !== 'celebrity') {
+    await assertGeometry(path.join(customerRoot, 'final-light-anime', `${identity}.png`), 330, 449)
+    await assertGeometry(path.join(customerRoot, `${identity}.png`), 1024, 1024)
+  }
 }
 
 if (!emotionDiversityVerified) throw new Error('At least one customer has duplicate emotion exports')
@@ -46,11 +50,17 @@ const result = {
   identities: identities.length,
   emotions: identities.length * emotions.length,
   motionAtlases: identities.length,
-  neutralExports: identities.length,
-  sourceExports: identities.length,
+  neutralExports: celebrityOnly ? 0 : identities.length,
+  sourceExports: celebrityOnly ? 0 : identities.length,
+  eventKeyArt: celebrityOnly ? 1 : 0,
   transparentCornersVerified: true,
   emotionDiversityVerified,
   motionGeometryVerified: true,
+  eventGeometryVerified: celebrityOnly,
+}
+
+if (celebrityOnly) {
+  await assertGeometry(path.join(root, 'src', 'assets', 'approved', 'events', 'day5-celebrity-event-key-art.png'), 1440, 810, false)
 }
 
 if (process.argv.includes('--json')) process.stdout.write(`${JSON.stringify(result)}\n`)
