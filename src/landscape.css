@@ -4,13 +4,19 @@
   background: #101a2c;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --cream: #fff1d2;
+  --ui-wood: #7f4c2c;
+  --ui-cream: #f7e6bd;
+  --ui-green: #3f6544;
+  --ui-gold: #d99a3d;
+  --ui-danger: #b84c32;
+  --ui-shadow: rgba(25, 14, 12, .46);
+  --cream: var(--ui-cream);
   --paper: #fff7e7;
   --ink: #3a302a;
-  --red: #c64a2c;
+  --red: var(--ui-danger);
   --orange: #e8892d;
-  --gold: #f2b949;
-  --green: #628d45;
+  --gold: var(--ui-gold);
+  --green: var(--ui-green);
   --blue: #19304e;
 }
 
