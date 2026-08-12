@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import mainBackground from '../assets/approved/main-ui/game-main-screen-final.png'
-import startScreen from '../assets/approved/main-ui/start-screen-user-final.png'
+import homeScreen from '../assets/approved/main-ui/home-screen-user-final.png'
+import daySelectScreen from '../assets/approved/main-ui/day-select-user-final.png'
+import kitchenScreen from '../assets/approved/main-ui/kitchen-screen-user-final.png'
+import summaryScreen from '../assets/approved/main-ui/summary-screen-user-final.png'
+import settingsScreen from '../assets/approved/main-ui/settings-screen-user-final.png'
 import menuBoard from '../assets/approved/menu/menu-board.png'
 import celebrityArt from '../assets/approved/events/day5-celebrity-event-key-art.png'
 import takeawayBag from '../assets/approved/menu/takeaway-bag.png'
@@ -183,6 +186,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, soun
   return (
     <main
       className="game-screen"
+      data-screen-art="kitchen"
       data-kitchen-tutorial-mode={state.tutorialMode}
       data-kitchen-customer-count={state.customers.length}
       inert={backgroundInert}
@@ -191,12 +195,12 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, soun
       <div
         className="game-screen__logical"
         style={{
-          '--game-bg': `url(${mainBackground})`,
+          '--game-bg': `url(${kitchenScreen})`,
           '--scene-scale': sceneScale,
           '--scene-inverse-scale': sceneInverseScale,
         } as React.CSSProperties}
       >
-        <img className="game-screen__background" src={mainBackground} alt="" aria-hidden="true" />
+        <img className="game-screen__background" src={kitchenScreen} alt="" aria-hidden="true" />
         <TopHud
           day={day.day}
           coins={save.coins}
@@ -402,9 +406,9 @@ export function LandscapeGame() {
 
   if (screen === 'home') {
     return (
-      <main className="home-screen home-screen--illustrated" style={{ '--home-bg': `url(${startScreen})` } as React.CSSProperties}>
+      <main className="home-screen home-screen--illustrated" data-screen-art="home" style={{ '--home-bg': `url(${homeScreen})` } as React.CSSProperties}>
         <div className="home-screen__plate">
-          <img className="home-screen__art" src={startScreen} alt="夜市烤冷面游戏主菜单" />
+          <img className="home-screen__art" src={homeScreen} alt="夜市烤冷面游戏主菜单" />
           <nav className="home-screen__hotspots" aria-label="主菜单">
             <button className="home-hotspot home-hotspot--start" aria-label="开始游戏" onClick={() => startDay(DAYS[0])}><span className="sr-only">开始游戏</span></button>
             <button className="home-hotspot home-hotspot--continue" aria-label="继续游戏" onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}><span className="sr-only">继续游戏</span></button>
@@ -421,7 +425,7 @@ export function LandscapeGame() {
 
   if (screen === 'select') {
     return (
-      <main className="select-screen" style={{ '--home-bg': `url(${mainBackground})` } as React.CSSProperties}>
+      <main className="select-screen" data-screen-art="select" style={{ '--home-bg': `url(${daySelectScreen})` } as React.CSSProperties}>
         <div className="select-screen__header">
           <button className="back-button" onClick={() => setScreen('home')}>← 返回</button>
           <div><small>夜市经营日记</small><h1>选择营业日</h1><p>完成前一天的营业，即可解锁新的夜市挑战。</p></div>
@@ -460,7 +464,7 @@ export function LandscapeGame() {
   if (screen === 'summary') {
     const stars = starsForDay(qualities, mistakes)
     return (
-      <main className="summary-screen" style={{ '--home-bg': `url(${mainBackground})` } as React.CSSProperties}>
+      <main className="summary-screen" data-screen-art="summary" style={{ '--home-bg': `url(${summaryScreen})` } as React.CSSProperties}>
         <section className="summary-card">
           <span className="summary-card__ribbon">今日打烊</span>
           <h1>{day.title} · 营业完成</h1>
@@ -596,7 +600,7 @@ function MenuModal({ onClose }: { onClose: () => void }) {
 function HelpModal({ onClose }: { onClose: () => void }) {
   return (
     <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="玩法说明">
-      <section className="help-modal">
+      <section className="help-modal" data-screen-art="settings" style={{ backgroundImage: `url(${settingsScreen})` }}>
         <button className="modal-close" onClick={onClose}>×</button>
         <span className="help-modal__icon">🍳</span>
         <h2>三步学会摆摊</h2>

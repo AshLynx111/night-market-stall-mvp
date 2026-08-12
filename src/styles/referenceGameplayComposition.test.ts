@@ -7,7 +7,7 @@ const kitchenCss = readFileSync('src/styles/kitchen.css', 'utf8')
 
 describe('reference-master gameplay composition', () => {
   it('uses the illustrated final UI plate as the live kitchen background', () => {
-    expect(landscapeSource).toContain("game-main-screen-final.png")
+    expect(landscapeSource).toContain("kitchen-screen-user-final.png")
     expect(landscapeSource).not.toContain("mainBackground from '../assets/approved/main-ui/night-market-clean-background.png'")
   })
 
@@ -29,9 +29,25 @@ describe('reference-master gameplay composition', () => {
     expect(kitchenCss).not.toContain('.griddle-slot__modifier-art')
   })
 
-  it('uses the supplied start-menu plate with transparent interaction hotspots', () => {
-    expect(landscapeSource).toContain('start-screen-user-final.png')
+  it('uses the supplied home-menu plate with transparent interaction hotspots', () => {
+    expect(landscapeSource).toContain('home-screen-user-final.png')
     expect(landscapeSource).toContain('home-screen__art')
     expect(landscapeCss).toMatch(/\.home-hotspot\s*\{/)
+  })
+
+  it('imports the five approved user screen plates and gives each screen a semantic art marker', () => {
+    for (const filename of [
+      'home-screen-user-final.png',
+      'day-select-user-final.png',
+      'kitchen-screen-user-final.png',
+      'summary-screen-user-final.png',
+      'settings-screen-user-final.png',
+    ]) {
+      expect(landscapeSource).toContain(filename)
+    }
+
+    for (const screen of ['home', 'select', 'kitchen', 'summary', 'settings']) {
+      expect(landscapeSource).toContain(`data-screen-art="${screen}"`)
+    }
   })
 })
