@@ -283,13 +283,17 @@ function UpgradeShop({ save, onBuy }: { save: CampaignSave; onBuy: (type: 'fire'
   const firePrice = [40, 80][save.fireLevel]
   const signPrice = [60, 110][save.signLevel]
   return (
-    <section className="upgrade-shop">
-      <div><span>💰 当前资金</span><b>¥ {save.coins}</b></div>
-      <button disabled={save.fireLevel >= 2 || save.coins < (firePrice ?? Infinity)} onClick={() => onBuy('fire')}>
-        <span>🔥</span><b>升级火力 Lv.{save.fireLevel + 1}</b><small>{firePrice ? `顾客耐心 +3秒 · ¥${firePrice}` : '已经满级'}</small>
+    <section className="upgrade-shop" aria-label="摊位升级">
+      <div className="upgrade-shop__funds" data-upgrade-funds data-dynamic-mask="wood">
+        <span>当前资金</span><b>¥ {save.coins}</b>
+      </div>
+      <button aria-label="升级火力" disabled={save.fireLevel >= 2 || save.coins < (firePrice ?? Infinity)} onClick={() => onBuy('fire')}>
+        <span className="upgrade-shop__icon" aria-hidden="true">🔥</span>
+        <span className="upgrade-shop__copy" data-dynamic-mask="wood"><b>升级火力 Lv.{Math.min(2, save.fireLevel + 1)}</b><small>{firePrice ? `顾客耐心 +3秒 · ¥${firePrice}` : '已经满级'}</small></span>
       </button>
-      <button disabled={save.signLevel >= 2 || save.coins < (signPrice ?? Infinity)} onClick={() => onBuy('sign')}>
-        <span>🏮</span><b>升级招牌 Lv.{save.signLevel + 1}</b><small>{signPrice ? `每单额外 +2元 · ¥${signPrice}` : '已经满级'}</small>
+      <button aria-label="升级招牌" disabled={save.signLevel >= 2 || save.coins < (signPrice ?? Infinity)} onClick={() => onBuy('sign')}>
+        <span className="upgrade-shop__icon" aria-hidden="true">🏮</span>
+        <span className="upgrade-shop__copy" data-dynamic-mask="wood"><b>升级招牌 Lv.{Math.min(2, save.signLevel + 1)}</b><small>{signPrice ? `每单额外 +2元 · ¥${signPrice}` : '已经满级'}</small></span>
       </button>
     </section>
   )
@@ -509,36 +513,41 @@ export function LandscapeGame() {
   if (screen === 'select') {
     return (
       <main className="select-screen" data-screen-art="select" style={{ '--home-bg': `url(${daySelectScreen})` } as React.CSSProperties}>
-        <div className="select-screen__header">
-          <button className="back-button" onClick={() => setScreen('home')}>← 返回</button>
-          <div><small>夜市经营日记</small><h1>选择营业日</h1><p>完成前一天的营业，即可解锁新的夜市挑战。</p></div>
-          <button className="menu-thumb" onClick={() => setShowMenu(true)}><img src={menuBoard} alt="查看完整菜单" /></button>
+        <div className="select-screen__plate">
+          <img className="select-screen__art" src={daySelectScreen} alt="夜市营业日选择" />
+          <div className="select-screen__controls">
+            <button className="select-hotspot select-hotspot--back" type="button" aria-label="返回主菜单" onClick={() => setScreen('home')}><span className="sr-only">返回主菜单</span></button>
+            <button className="select-hotspot select-hotspot--menu" type="button" aria-label="查看完整菜单" onClick={() => setShowMenu(true)}><span className="sr-only">查看完整菜单</span></button>
+            <section className="day-grid" aria-label="营业日">
+              {DAYS.map((item) => {
+                const locked = item.day > highestPlayableDay(save)
+                return (
+                  <button
+                    className={`day-card day-hotspot day-card--${item.day}${locked ? ' is-locked' : ''}`}
+                    key={item.day}
+                    disabled={locked}
+                    aria-label={locked ? `第 ${item.day} 天尚未解锁，完成前一天后解锁` : `进入第 ${item.day} 天：${item.title}`}
+                    onClick={() => startDay(item)}
+                  >
+                    <span className="day-card__stars day-hotspot__stars" data-dynamic-mask="parchment" aria-hidden="true">{starsText(save.bestStars[item.day] ?? 0)}</span>
+                    {(locked || item.day >= 3) && (
+                      <span
+                        className={`day-hotspot__status${item.day >= 3 ? ' day-hotspot__status--mask' : ''}`}
+                        data-dynamic-mask={item.day >= 3 ? 'parchment' : undefined}
+                        aria-hidden="true"
+                      >
+                        {locked && <><span className="day-card__lock" aria-hidden="true">🔒</span>完成前一天后解锁</>}
+                        {!locked && item.day === 5 && '★ 特别人物登场'}
+                        {!locked && item.day === 6 && '🔥 明星同款热潮'}
+                      </span>
+                    )}
+                  </button>
+                )
+              })}
+            </section>
+            <UpgradeShop save={save} onBuy={buyUpgrade} />
+          </div>
         </div>
-        <section className="day-grid">
-          {DAYS.map((item) => {
-            const locked = item.day > highestPlayableDay(save)
-            return (
-            <button
-              className={`day-card day-card--${item.day}${locked ? ' is-locked' : ''}`}
-              key={item.day}
-              disabled={locked}
-              aria-label={locked ? `第 ${item.day} 天尚未解锁，完成前一天后解锁` : `进入第 ${item.day} 天：${item.title}`}
-              onClick={() => startDay(item)}
-            >
-              <span className="day-card__number">DAY {item.day}</span>
-              <span className="day-card__stars">{starsText(save.bestStars[item.day] ?? 0)}</span>
-              <h2>{item.title}</h2>
-              <p>{item.story}</p>
-              <div><span>{item.targetOrders} 单</span><span>{item.recipes.length} 种菜谱</span></div>
-              {locked
-                ? <i><span className="day-card__lock" aria-hidden="true">🔒</span>完成前一天后解锁</i>
-                : item.day === 5 && <i>★ 特别人物登场</i>}
-              {!locked && item.day === 6 && <i>🔥 明星同款热潮</i>}
-            </button>
-            )
-          })}
-        </section>
-        <UpgradeShop save={save} onBuy={buyUpgrade} />
         {showMenu && <MenuModal onClose={() => setShowMenu(false)} />}
       </main>
     )
@@ -548,24 +557,26 @@ export function LandscapeGame() {
     const stars = starsForDay(qualities, mistakes)
     return (
       <main className="summary-screen" data-screen-art="summary" style={{ '--home-bg': `url(${summaryScreen})` } as React.CSSProperties}>
-        <section className="summary-card">
-          <span className="summary-card__ribbon">今日打烊</span>
-          <h1>{day.title} · 营业完成</h1>
-          <div className="summary-stars">{starsText(stars)}</div>
-          <p>{stars === 3 ? '手速和品质都无可挑剔，夜市里已经有人专程来找你了！' : stars === 2 ? '生意很稳，继续升级摊位就能应付更大的客流。' : '开店不容易，再练一轮一定会更顺手。'}</p>
-          <div className="summary-stats">
-            <div><b>{served}</b><small>完成订单</small></div>
-            <div><b>{average}%</b><small>平均满意度</small></div>
-            <div><b>{mistakes}</b><small>操作失误</small></div>
-            <div><b>¥{save.coins}</b><small>当前资金</small></div>
-          </div>
-          {day.day === 5 && celebrityDone && <div className="buzz-note">📱 明星礼貌地拍下了招牌烤冷面，第 6 天将出现“明星同款”热潮！</div>}
-          <UpgradeShop save={save} onBuy={buyUpgrade} />
-          <div className="summary-actions">
-            <button className="secondary-button" onClick={() => startDay(day)}>再玩一次</button>
-            <button className="primary-button" onClick={() => day.day < 6 ? startDay(DAYS[day.day]) : setScreen('select')}>{day.day < 6 ? '进入下一天' : '返回选关'}</button>
-          </div>
-        </section>
+        <div className="summary-screen__plate">
+          <img className="summary-screen__art" src={summaryScreen} alt="今日打烊营业总结" />
+          <section className="summary-card">
+            <h1 className="summary-title" data-dynamic-mask="parchment">{day.title} · 营业完成</h1>
+            <div className="summary-stars" data-dynamic-mask="parchment" aria-label={`${stars} 星`}>{starsText(stars)}</div>
+            <p className="summary-message" data-dynamic-mask="parchment">{stars === 3 ? '手速和品质都无可挑剔，夜市里已经有人专程来找你了！' : stars === 2 ? '生意很稳，继续升级摊位就能应付更大的客流。' : '开店不容易，再练一轮一定会更顺手。'}</p>
+            <div className="summary-stats" aria-label="营业数据">
+              <div><b className="summary-stat__value" data-dynamic-mask="parchment">{served}</b><span className="sr-only">完成订单</span></div>
+              <div><b className="summary-stat__value" data-dynamic-mask="parchment">{average}%</b><span className="sr-only">平均满意度</span></div>
+              <div><b className="summary-stat__value" data-dynamic-mask="parchment">{mistakes}</b><span className="sr-only">操作失误</span></div>
+              <div><b className="summary-stat__value" data-dynamic-mask="parchment">¥{save.coins}</b><span className="sr-only">当前资金</span></div>
+            </div>
+            {day.day === 5 && celebrityDone && <div className="buzz-note">📱 明星礼貌地拍下了招牌烤冷面，第 6 天将出现“明星同款”热潮！</div>}
+            <UpgradeShop save={save} onBuy={buyUpgrade} />
+            <div className="summary-actions">
+              <button type="button" aria-label="再玩一次" onClick={() => startDay(day)}><span>再玩一次</span></button>
+              <button type="button" aria-label={day.day < 6 ? '进入下一天' : '返回选关'} onClick={() => day.day < 6 ? startDay(DAYS[day.day]) : setScreen('select')}><span>{day.day < 6 ? '进入下一天' : '返回选关'}</span></button>
+            </div>
+          </section>
+        </div>
       </main>
     )
   }

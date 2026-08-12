@@ -233,6 +233,100 @@ describe('App landscape route', () => {
     act(() => root.unmount())
   })
 
+  it('uses the approved selection plate as six accessible campaign hit targets with real progress and upgrades', () => {
+    localStorage.setItem('night-market-campaign-v1', JSON.stringify({
+      coins: 84,
+      fireLevel: 1,
+      signLevel: 0,
+      bestStars: { 1: 3, 2: 2, 3: 1 },
+      maxUnlockedDay: 6,
+    }))
+    window.history.replaceState({}, '', '/?qaScreen=select')
+    const container = document.createElement('div')
+    const root = createRoot(container)
+    act(() => root.render(<App />))
+
+    const plate = container.querySelector('.select-screen__plate')
+    expect(plate?.querySelector<HTMLImageElement>('.select-screen__art')?.src)
+      .toContain('day-select-user-final.png')
+    const days = [...container.querySelectorAll<HTMLButtonElement>('.day-hotspot')]
+    expect(days).toHaveLength(6)
+    expect(days.map((button) => button.getAttribute('aria-label'))).toEqual([
+      '进入第 1 天：开张第一天',
+      '进入第 2 天：饭量挑战',
+      '进入第 3 天：香味出圈',
+      '进入第 4 天：夜市高峰',
+      '第 5 天尚未解锁，完成前一天后解锁',
+      '第 6 天尚未解锁，完成前一天后解锁',
+    ])
+    expect(days.map((button) => button.disabled)).toEqual([false, false, false, false, true, true])
+    expect([...container.querySelectorAll('.day-hotspot__stars')].map((stars) => stars.textContent))
+      .toEqual(['★★★', '★★☆', '★☆☆', '☆☆☆', '☆☆☆', '☆☆☆'])
+    expect(container.querySelectorAll('[data-dynamic-mask="parchment"]')).toHaveLength(10)
+
+    act(() => days[4].click())
+    expect(container.querySelector('.select-screen')).not.toBeNull()
+
+    const fire = container.querySelector<HTMLButtonElement>('[aria-label="升级火力"]')!
+    expect(fire.textContent).toContain('升级火力 Lv.2')
+    expect(fire.textContent).toContain('¥80')
+    act(() => fire.click())
+    expect(container.querySelector('[data-upgrade-funds]')?.textContent).toContain('¥ 4')
+    expect(container.querySelector<HTMLButtonElement>('[aria-label="升级火力"]')?.disabled).toBe(true)
+    expect(container.querySelector<HTMLButtonElement>('[aria-label="升级火力"]')?.textContent).toContain('已经满级')
+
+    act(() => container.querySelector<HTMLButtonElement>('[aria-label="返回主菜单"]')!.click())
+    expect(container.querySelector('.home-screen')).not.toBeNull()
+    act(() => root.unmount())
+  })
+
+  it('renders real Day 1 summary values on the plate and keeps replay and next-day actions live', () => {
+    vi.stubGlobal('requestAnimationFrame', vi.fn(() => 1))
+    vi.stubGlobal('cancelAnimationFrame', vi.fn())
+    window.history.replaceState({}, '', '/?playDay=1&qaScreen=summary')
+    const replayContainer = document.createElement('div')
+    const replayRoot = createRoot(replayContainer)
+    act(() => replayRoot.render(<App />))
+
+    expect(replayContainer.querySelector<HTMLImageElement>('.summary-screen__art')?.src)
+      .toContain('summary-screen-user-final.png')
+    expect(replayContainer.querySelector('.summary-title')?.textContent).toBe('开张第一天 · 营业完成')
+    expect(replayContainer.querySelector('.summary-stars')?.textContent).toBe('★★★')
+    expect([...replayContainer.querySelectorAll('.summary-stat__value')].map((value) => value.textContent))
+      .toEqual(['3', '92%', '0', '¥36'])
+    expect(replayContainer.querySelectorAll('[data-dynamic-mask="parchment"]')).toHaveLength(7)
+    act(() => replayContainer.querySelector<HTMLButtonElement>('[aria-label="再玩一次"]')!.click())
+    expect(replayContainer.querySelector('[data-screen-art="kitchen"]')).not.toBeNull()
+    expect(replayContainer.textContent).toContain('第 1 天')
+    act(() => replayRoot.unmount())
+
+    localStorage.setItem('night-market-campaign-v1', JSON.stringify({ bestStars: { 1: 3 } }))
+    window.history.replaceState({}, '', '/?playDay=1&qaScreen=summary')
+    const nextContainer = document.createElement('div')
+    const nextRoot = createRoot(nextContainer)
+    act(() => nextRoot.render(<App />))
+    act(() => nextContainer.querySelector<HTMLButtonElement>('[aria-label="进入下一天"]')!.click())
+    expect(nextContainer.querySelector('[data-screen-art="kitchen"]')).not.toBeNull()
+    expect(nextContainer.textContent).toContain('第 2 天')
+    act(() => nextRoot.unmount())
+  })
+
+  it('renders the Day 6 summary state and returns to selection from the final action', () => {
+    window.history.replaceState({}, '', '/?playDay=6&qaScreen=summary')
+    const container = document.createElement('div')
+    const root = createRoot(container)
+    act(() => root.render(<App />))
+
+    expect(container.querySelector('.summary-title')?.textContent).toBe('明星同款 · 营业完成')
+    expect([...container.querySelectorAll('.summary-stat__value')].map((value) => value.textContent))
+      .toEqual(['8', '92%', '0', '¥36'])
+    const finalAction = container.querySelector<HTMLButtonElement>('[aria-label="返回选关"]')!
+    expect(finalAction.textContent).toContain('返回选关')
+    act(() => finalAction.click())
+    expect(container.querySelector('.select-screen__plate')).not.toBeNull()
+    act(() => root.unmount())
+  })
+
   it('sanitizes malformed saved stars before rendering cards or calculating locks', () => {
     localStorage.setItem('night-market-campaign-v1', JSON.stringify({
       maxUnlockedDay: 6,
