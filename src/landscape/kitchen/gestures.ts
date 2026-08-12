@@ -91,8 +91,22 @@ export function measureSauce(path: Point[], rect: Rect): SauceGestureResult {
     for (const cell of next) covered.add(cell)
   }
 
-  const { coverage, uniformity } = calculateCoverageMetrics(covered, SAUCE_COLUMNS, SAUCE_ROWS)
-  return { kind: 'sauce', coverage, uniformity, complete: coverage >= 0.6 }
+  const { coverage: gridCoverage } = calculateCoverageMetrics(covered, SAUCE_COLUMNS, SAUCE_ROWS)
+  const points = pointsOnFood(path, rect)
+  if (points.length < 2) return { kind: 'sauce', coverage: gridCoverage, uniformity: 0, complete: false }
+  const horizontalTravel = clamp(
+    (Math.max(...points.map((point) => point.x)) - Math.min(...points.map((point) => point.x))) / rect.width,
+  )
+  const verticalDeviation = clamp(
+    (Math.max(...points.map((point) => point.y)) - Math.min(...points.map((point) => point.y))) / rect.height,
+  )
+  const uniformity = clamp(1 - verticalDeviation)
+  return {
+    kind: 'sauce',
+    coverage: horizontalTravel,
+    uniformity,
+    complete: horizontalTravel >= 0.45 && verticalDeviation <= 0.55,
+  }
 }
 
 export function measureCut(

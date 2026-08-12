@@ -44,18 +44,21 @@ export function applyGesture(state: KitchenState, slotId: SlotId, result: Gestur
   }
 
   if (result.kind === 'sauce') {
+    const sauceStrokeCount = Math.min(2, (slot.sauceStrokeCount ?? 0) + 1)
+    const finished = sauceStrokeCount >= 2
     const nextSlot: GriddleSlotState = {
       ...slot,
       phase: 'gesturing',
-      completedStepIds: appendCompletedStep(slot, 'sauce'),
+      completedStepIds: finished ? appendCompletedStep(slot, 'sauce') : slot.completedStepIds,
       heatState: 'none',
       heatElapsedMs: 0,
       heatReadyAtMs: 0,
       heatBurnAtMs: 0,
-      sauceCoverage: clamp(result.coverage),
+      sauceCoverage: sauceStrokeCount / 2,
+      sauceStrokeCount,
       qualityPenalty: slot.qualityPenalty
         + heatQualityPenalty(slot.heatState)
-        + clamp(result.coverage) * (1 - clamp(result.uniformity)) * 25,
+        + (1 - clamp(result.uniformity)) * 4,
     }
     return { state: replaceSlot(state, slotIndex, nextSlot), accepted: true }
   }

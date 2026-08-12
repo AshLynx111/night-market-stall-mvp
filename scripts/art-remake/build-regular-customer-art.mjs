@@ -104,8 +104,8 @@ async function extractEmotion(sheet, metadata, index) {
 }
 
 async function motionFrame(file, frameIndex) {
-  const widths = [208, 214, 220, 216, 212, 218, 210, 224]
-  const horizontalOffsets = [-2, 1, 0, 2, -1, 1, 2, 0]
+  const widths = [188, 202, 216, 230, 195, 209, 223, 237]
+  const horizontalOffsets = [0, 0, 0, 0, 0, 0, 0, 0]
   const trimmed = await sharp(file)
     .ensureAlpha()
     .trim({ background: { r: 0, g: 0, b: 0, alpha: 0 } })

@@ -16,7 +16,7 @@ try {
   const errors = []
   page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()) })
   await page.goto(process.env.CAPTURE_URL ?? 'http://127.0.0.1:60876/?playDay=1', { waitUntil: 'networkidle' })
-  await page.waitForTimeout(3200)
+  await page.waitForTimeout(Number(process.env.CAPTURE_DELAY_MS ?? 3200))
   await page.screenshot({ path: output })
   process.stdout.write(`${output}\n`)
   if (errors.length) process.stdout.write(`console-errors=${JSON.stringify(errors)}\n`)

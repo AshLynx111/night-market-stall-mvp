@@ -61,7 +61,6 @@ const INGREDIENT_LABELS: Record<IngredientId, string> = {
   tenderloin: '里脊肉', enoki: '金针菇',
 }
 
-const PAINTED_INGREDIENTS = new Set<IngredientId>(['egg', 'hot-dog', 'scallion', 'cilantro'])
 const TUTORIAL_COMPLETION_TOAST_MS = 2_200
 
 function pointInside(element: Element, clientX: number, clientY: number) {
@@ -69,19 +68,23 @@ function pointInside(element: Element, clientX: number, clientY: number) {
   return rect.width > 0 && rect.height > 0 && clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom
 }
 
-function TutorialGestureCue({ kind, slotId, cutTargetIndices, sauceSelected }: {
+function TutorialGestureCue({ kind, slotId, cutTargetIndices, sauceSelected, sauceStrokeCount }: {
   kind: TutorialPathKind
   slotId: SlotId
   cutTargetIndices: readonly number[]
   sauceSelected: boolean
+  sauceStrokeCount: number
 }) {
   const cutTargetIndex = nextCutTargetIndex(cutTargetIndices)
   const points = tutorialGesturePath(kind, cutTargetIndex)
   const label = kind === 'sauce'
-    ? sauceSelected ? '沿虚线来回刷满酱汁' : '先拿起酱刷，再沿虚线来回刷满'
+    ? sauceSelected ? '左右刷两下' : '先拿起酱刷，再左右刷两下'
     : kind === 'cut' ? '沿下一条横向虚线切开' : '沿虚线从一侧长滑卷起'
   return (
-    <div className={`tutorial-gesture-cue tutorial-gesture-cue--${slotId}`}>
+    <div
+      className={`tutorial-gesture-cue tutorial-gesture-cue--${slotId}`}
+      data-sauce-progress={kind === 'sauce' ? `${sauceStrokeCount}/2` : undefined}
+    >
       <svg
         viewBox="0 0 1000 500"
         preserveAspectRatio="none"
@@ -89,7 +92,12 @@ function TutorialGestureCue({ kind, slotId, cutTargetIndices, sauceSelected }: {
         data-cut-target-index={kind === 'cut' ? cutTargetIndex : undefined}
         aria-hidden="true"
       >
-        <path d={tutorialSvgPath(points)} />
+        {kind === 'sauce' ? (
+          <>
+            <path d={tutorialSvgPath(points.slice(0, 2))} />
+            <path d={tutorialSvgPath(points.slice(2))} />
+          </>
+        ) : <path d={tutorialSvgPath(points)} />}
       </svg>
       <span>{label}</span>
     </div>
@@ -160,7 +168,10 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
     if (action.type === 'COMPLETE_GESTURE') {
       const gestureResult = applyGesture(state, action.slotId, action.gesture)
       if (gestureResult.accepted) {
-        if (action.gesture.kind === 'sauce') setSauceBrushSelected(false)
+        if (action.gesture.kind === 'sauce') {
+          const slot = state.slots.find((candidate) => candidate.id === action.slotId)
+          if ((slot?.sauceStrokeCount ?? 0) >= 1) setSauceBrushSelected(false)
+        }
       }
     }
     if (action.type === 'DISCARD_SLOT') stopAllKitchenAudio()
@@ -208,6 +219,10 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
   }
 
   const sauceExpected = state.slots.some((slot) => slotExpectedAction(state, slot.id)?.id === 'sauce')
+  const unlockedIngredients = availableIngredients(state.day)
+  const displayedIngredients = state.day === 1
+    ? [...new Set<IngredientId>([...unlockedIngredients, 'cilantro'])]
+    : unlockedIngredients
   const guidedStep = tutorialStep(state)
   const guided = guidedStep !== 'done'
   const guidedHand = HAND_FOR_STEP[guidedStep]
@@ -240,20 +255,19 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
       </section>
 
       <section className="kitchen-scene__ingredients" aria-label="桌面食材">
-        {availableIngredients(state.day).filter((id) => id !== 'sauce').map((id) => (
+        {displayedIngredients.filter((id) => id !== 'sauce').map((id) => (
           <TableIngredient
             key={id}
             id={id}
             label={INGREDIENT_LABELS[id]}
             art={ingredientArt(id)}
-            painted={PAINTED_INGREDIENTS.has(id)}
-            disabled={guided && !tutorialAllowsIngredient(state, id, 'left')}
+            disabled={!unlockedIngredients.includes(id) || (guided && !tutorialAllowsIngredient(state, id, 'left'))}
             findSlotAtPoint={findSlotAtPoint}
             onDrop={dropIngredient}
             onTapEgg={tapEgg}
           />
         ))}
-        {availableIngredients(state.day).includes('sauce') && (
+        {unlockedIngredients.includes('sauce') && (
           <button
             type="button"
             className={`sauce-brush${sauceBrushSelected ? ' is-selected' : ''}${guidedStep === 'sauce' ? ' is-tutorial-target' : ''}`}
@@ -293,6 +307,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
           slotId="left"
           cutTargetIndices={state.slots[0].cutTargetIndices}
           sauceSelected={sauceBrushSelected}
+          sauceStrokeCount={state.slots[0].sauceStrokeCount ?? 0}
         />
       ) : guidedHand && (
         <div

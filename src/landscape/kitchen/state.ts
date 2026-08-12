@@ -17,6 +17,7 @@ export function createEmptySlot(id: SlotId): GriddleSlotState {
     heatReadyAtMs: 0,
     heatBurnAtMs: 0,
     sauceCoverage: 0,
+    sauceStrokeCount: 0,
     cutTargetIndices: [],
     rollProgress: 0,
     qualityPenalty: 0,

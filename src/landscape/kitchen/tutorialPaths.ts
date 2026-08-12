@@ -4,18 +4,12 @@ export const TUTORIAL_GESTURE_RECT: Rect = { x: 0, y: 0, width: 1_000, height: 5
 export type TutorialPathKind = 'sauce' | 'cut' | 'roll'
 
 function saucePath(): Point[] {
-  const points: Point[] = []
-  for (let row = 0; row < 6; row += 1) {
-    const columns = Array.from({ length: 10 }, (_, column) => column)
-    if (row % 2 === 1) columns.reverse()
-    for (const column of columns) {
-      points.push({
-        x: ((column + 0.5) / 10) * TUTORIAL_GESTURE_RECT.width,
-        y: ((row + 0.5) / 6) * TUTORIAL_GESTURE_RECT.height,
-      })
-    }
-  }
-  return points
+  return [
+    { x: 180, y: 220 },
+    { x: 820, y: 220 },
+    { x: 820, y: 310 },
+    { x: 180, y: 310 },
+  ]
 }
 
 export function tutorialGesturePath(kind: TutorialPathKind, cutTargetIndex = 0): Point[] {

@@ -47,6 +47,7 @@ export interface GriddleSlotState {
   heatReadyAtMs: number
   heatBurnAtMs: number
   sauceCoverage: number
+  sauceStrokeCount?: number
   cutTargetIndices: number[]
   rollProgress: number
   qualityPenalty: number

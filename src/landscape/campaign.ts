@@ -117,7 +117,7 @@ const BASE: CookingStep[] = [
 ]
 
 const FINISH: CookingStep[] = [
-  { id: 'sauce', label: '刷酱', verb: '均匀刷酱', icon: '▥', asset: sauce, repeat: 3 },
+  { id: 'sauce', label: '刷酱', verb: '左右刷两下', icon: '▥', asset: sauce, repeat: 2 },
   { id: 'scallion', label: '葱花', verb: '撒上葱花', icon: '╱', asset: scallion },
   { id: 'cut', label: '切段', verb: '沿虚线切三刀', icon: '╱', repeat: 3 },
   { id: 'roll', label: '卷起', verb: '把烤冷面卷起来', icon: '◫' },

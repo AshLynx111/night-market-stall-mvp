@@ -1,9 +1,9 @@
 import type { CustomerLane, CustomerMood } from './types'
 
 const PATHS = {
-  left: { far: { x: 650, y: 260 }, near: { x: 390, y: 515 } },
-  center: { far: { x: 720, y: 250 }, near: { x: 720, y: 525 } },
-  right: { far: { x: 790, y: 260 }, near: { x: 1050, y: 515 } },
+  left: { offscreenX: -170, settledX: 390, footY: 515 },
+  center: { offscreenX: -170, settledX: 720, footY: 525 },
+  right: { offscreenX: 1_610, settledX: 1_050, footY: 515 },
 } as const
 
 export interface CustomerPose {
@@ -30,7 +30,7 @@ const EMOTION_TRANSFORMS: Record<CustomerMood, EmotionTransform> = {
   disappointed: { upperBodyOffsetY: 2, upperBodyRotation: 0, footOffsetY: 0 },
 }
 
-function easePerspective(progress: number): number {
+function easeHorizontalSlide(progress: number): number {
   const p = Math.max(0, Math.min(1, progress))
   return p * p * (3 - 2 * p)
 }
@@ -41,14 +41,14 @@ function interpolate(far: number, near: number, progress: number): number {
 
 export function getCustomerPose(lane: CustomerLane, progress: number): CustomerPose {
   const path = PATHS[lane]
-  const easedProgress = easePerspective(progress)
+  const easedProgress = easeHorizontalSlide(progress)
 
   return {
-    footX: interpolate(path.far.x, path.near.x, easedProgress),
-    footY: interpolate(path.far.y, path.near.y, easedProgress),
-    scale: interpolate(0.34, 1, easedProgress),
-    opacity: interpolate(0.45, 1, easedProgress),
-    shadowOpacity: interpolate(0.08, 0.32, easedProgress),
+    footX: interpolate(path.offscreenX, path.settledX, easedProgress),
+    footY: path.footY,
+    scale: 1,
+    opacity: 1,
+    shadowOpacity: 0.32,
   }
 }
 
