@@ -143,12 +143,28 @@ describe('KitchenScene', () => {
     expect(container.querySelectorAll('.griddle-slot--left .griddle-slot__food img')).toHaveLength(1)
   })
 
-  it('grounds every tabletop ingredient inside a physical bowl or tray', () => {
-    const { container } = renderScene(activeKitchenState(3, 1))
-    const ingredients = [...container.querySelectorAll('[data-ingredient-id]')]
-    expect(ingredients.length).toBeGreaterThan(4)
-    expect(container.querySelectorAll('.table-ingredient__vessel')).toHaveLength(ingredients.length)
-    expect(container.querySelectorAll('.table-ingredient__contents')).toHaveLength(ingredients.length)
+  it.each([
+    { day: 1, ids: ['noodle', 'egg', 'hot-dog', 'scallion'], rackSlots: 5 },
+    { day: 3, ids: ['noodle', 'egg', 'hot-dog', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn'], rackSlots: 11 },
+    { day: 5, ids: ['noodle', 'egg', 'hot-dog', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn', 'orleans', 'bacon', 'tenderloin', 'enoki'], rackSlots: 15 },
+  ])('renders Day $day unlocked ingredients as complete bins in unique rack cells', ({ day, ids, rackSlots }) => {
+    const { container } = renderScene(activeKitchenState(day, 1))
+    const ingredients = [...container.querySelectorAll<HTMLButtonElement>('[data-ingredient-id]')]
+    const controls = [...ingredients, container.querySelector<HTMLButtonElement>('[data-sauce-brush]')!]
+
+    expect(ingredients.map((ingredient) => ingredient.dataset.ingredientId)).toEqual(ids)
+    expect(container.querySelector('.table-ingredient__vessel')).toBeNull()
+    expect(container.querySelector('.table-ingredient__contents')).toBeNull()
+    ingredients.forEach((ingredient) => {
+      expect(ingredient.querySelectorAll(':scope > img.table-ingredient__bin-art')).toHaveLength(1)
+    })
+
+    expect(controls).toHaveLength(rackSlots)
+    expect(controls.map((control) => Number(control.dataset.rackIndex)).sort((left, right) => left - right)).toEqual(
+      Array.from({ length: rackSlots }, (_, index) => index),
+    )
+    expect(new Set(controls.map((control) => `${control.dataset.rackColumn}:${control.dataset.rackRow}`)).size)
+      .toBe(controls.length)
   })
 
   it('exposes perspective pose variables on foot-anchored customer actors', () => {
@@ -256,9 +272,11 @@ describe('KitchenScene', () => {
     pointer(noodle, 'pointerdown', { x: 110, y: 60, pointerId: 41 })
     pointer(noodle, 'pointermove', { x: 460, y: 185, pointerId: 41 })
 
-    const ghost = container.querySelector<HTMLElement>('.table-ingredient__ghost')!
+    const binArt = noodle.querySelector<HTMLImageElement>('.table-ingredient__bin-art')!
+    const ghost = container.querySelector<HTMLImageElement>('.table-ingredient__ghost')!
     expect(ghost.style.left).toBe('720px')
     expect(ghost.style.top).toBe('270px')
+    expect(ghost.src).toBe(binArt.src)
   })
 
   it('keeps a cooking gesture bound to the slot under pointer-down', () => {
@@ -557,8 +575,8 @@ describe('KitchenScene', () => {
     const toast = container.querySelector('.tutorial-completion-toast')
     expect(toast?.textContent).toBe('第一份完成！现在可以同时服务顾客了')
     expect(container.querySelector('.kitchen-scene')?.hasAttribute('data-guided-tutorial')).toBe(false)
-    expect(container.querySelectorAll<HTMLButtonElement>('[data-ingredient-id]:disabled')).toHaveLength(1)
-    expect(container.querySelector<HTMLButtonElement>('[data-ingredient-id="cilantro"]')?.disabled).toBe(true)
+    expect(container.querySelectorAll<HTMLButtonElement>('[data-ingredient-id]:disabled')).toHaveLength(0)
+    expect(container.querySelector('[data-ingredient-id="cilantro"]')).toBeNull()
     expect(container.querySelectorAll('[data-customer-id]')).toHaveLength(3)
 
     act(() => vi.advanceTimersByTime(2_199))

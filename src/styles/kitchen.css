@@ -12,8 +12,20 @@
 .event-screen--overlay { position: absolute; z-index: 60; inset: 0; width: 100%; height: 100%; min-height: 0; }
 .kitchen-scene button { font: inherit; }
 .kitchen-scene__customers,
-.kitchen-scene__griddle,
-.kitchen-scene__ingredients { position: absolute; inset: 0; pointer-events: none; }
+.kitchen-scene__griddle { position: absolute; inset: 0; pointer-events: none; }
+.kitchen-scene__ingredients {
+  --ingredient-rack-columns: 3;
+  --ingredient-rack-rows: 5;
+  --ingredient-rack-left: 12px;
+  --ingredient-rack-top: 468px;
+  --ingredient-rack-column-gap: 104px;
+  --ingredient-rack-row-gap: 64px;
+  --ingredient-rack-control-width: 100px;
+  --ingredient-rack-control-height: 62px;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
 
 .kitchen-scene__counter-foreground {
   position: absolute;
@@ -147,32 +159,27 @@
 .griddle-slot__steam i:nth-child(2) { left: 52%; animation-delay: -.65s; }
 .griddle-slot__steam i:nth-child(3) { left: 73%; animation-delay: -1.2s; }
 
-.table-ingredient { position: absolute; z-index: 8; width: 9%; height: 12%; padding: 0; border: 0; background: transparent; cursor: grab; pointer-events: auto; touch-action: none; }
-.table-ingredient__vessel { position: absolute; inset: 0; display: block; overflow: hidden; border: 0; border-radius: 9px 9px 15px 15px; background: transparent; box-shadow: none; pointer-events: none; }
-.table-ingredient__vessel::before { display: none; }
-.table-ingredient__contents { position: absolute; z-index: 3; inset: 10% 8% 8%; display: block; overflow: hidden; border-radius: 7px 7px 12px 12px; background: transparent; box-shadow: none; pointer-events: none; }
-.table-ingredient__contents img { width: 100%; height: 100%; object-fit: contain; object-position: center; transform: scale(1.08); pointer-events: none; filter: saturate(1.14) brightness(1.08) drop-shadow(0 2px 2px rgb(29 18 13 / .34)); }
+.table-ingredient {
+  position: absolute;
+  z-index: 8;
+  left: calc(var(--ingredient-rack-left) + var(--ingredient-rack-column) * var(--ingredient-rack-column-gap));
+  top: calc(var(--ingredient-rack-top) + var(--ingredient-rack-row) * var(--ingredient-rack-row-gap));
+  width: var(--ingredient-rack-control-width);
+  height: var(--ingredient-rack-control-height);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  pointer-events: auto;
+  touch-action: none;
+}
+.table-ingredient__bin-art { position: absolute; left: 0; top: 50%; width: 100%; height: auto; transform: translateY(-50%); pointer-events: none; filter: saturate(1.08) brightness(1.04) drop-shadow(0 3px 2px rgb(29 18 13 / .38)); }
 .table-ingredient[data-painted="true"] img { opacity: 1; }
 .table-ingredient:disabled { border-radius: 18px; background: rgb(38 28 24 / .08); cursor: default; filter: grayscale(.18); opacity: .82; }
 .kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled) { border-radius: 18px; background: rgb(255 216 91 / .16); box-shadow: 0 0 0 3px rgb(255 216 91 / .88), 0 0 18px rgb(255 186 56 / .78); animation: tutorial-target-pulse 1.25s ease-in-out infinite; }
-.table-ingredient--egg { left: 18.1%; top: 62.5%; width: 8.7%; height: 11%; }
-.table-ingredient--egg .table-ingredient__contents img { object-fit: contain; transform: scale(1.02); }
-.table-ingredient--hot-dog { left: 18%; top: 74.2%; width: 9%; height: 12%; }
-.table-ingredient--scallion { left: 1.2%; top: 63.7%; width: 8%; height: 10%; }
-.table-ingredient--cilantro { left: 9.4%; top: 74.2%; width: 8.5%; height: 11%; }
-.table-ingredient--noodle { left: 9.4%; top: 62.5%; width: 8.2%; height: 11%; }
-.table-ingredient--turkey-noodle { left: 87%; top: 62%; }
-.table-ingredient--cheese { left: 77%; top: 73%; }
-.table-ingredient--corn { left: 87%; top: 73%; }
-.table-ingredient--onion, .table-ingredient--chili-powder { left: 91%; top: 53%; width: 6%; height: 9%; }
-.table-ingredient--onion { left: 85%; }
-.table-ingredient--orleans, .table-ingredient--bacon, .table-ingredient--tenderloin, .table-ingredient--enoki { left: 75%; top: 82%; width: 8%; height: 9%; }
-.table-ingredient--bacon { left: 82%; }
-.table-ingredient--tenderloin { left: 89%; }
-.table-ingredient--enoki { left: 93%; top: 73%; width: 6%; }
 .table-ingredient__ghost, .serving-tray__ghost { position: absolute; z-index: 80; width: 105px; height: 82px; object-fit: contain; transform: translate(-50%, -50%) scale(1.08); pointer-events: none; filter: drop-shadow(0 8px 5px rgb(0 0 0 / .45)); }
 
-.sauce-brush { position: absolute; z-index: 9; left: 28.5%; top: 58%; width: 7.5%; height: 13%; padding: 0; border: 2px solid transparent; border-radius: 16px; background: rgb(255 240 190 / .08); cursor: pointer; pointer-events: auto; touch-action: manipulation; }
+.sauce-brush { position: absolute; z-index: 9; left: calc(var(--ingredient-rack-left) + var(--ingredient-rack-column) * var(--ingredient-rack-column-gap)); top: calc(var(--ingredient-rack-top) + var(--ingredient-rack-row) * var(--ingredient-rack-row-gap)); width: var(--ingredient-rack-control-width); height: var(--ingredient-rack-control-height); padding: 0; border: 2px solid transparent; border-radius: 16px; background: rgb(255 240 190 / .08); cursor: pointer; pointer-events: auto; touch-action: manipulation; }
 .sauce-brush > span { display: block; font-size: 38px; transform: rotate(-22deg); filter: drop-shadow(0 4px 3px rgb(29 18 13 / .5)); }
 .sauce-brush > small { position: absolute; left: 50%; bottom: -2px; min-width: 58px; padding: 2px 5px; transform: translateX(-50%); border-radius: 8px; background: rgb(48 32 24 / .78); color: #ffe7a2; font-size: 8px; font-weight: 900; white-space: nowrap; }
 .sauce-brush:disabled { opacity: .55; cursor: default; }

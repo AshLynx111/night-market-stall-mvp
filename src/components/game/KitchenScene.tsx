@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import {
   playBurnWarning,
   playCustomerReaction,
@@ -220,9 +220,9 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
 
   const sauceExpected = state.slots.some((slot) => slotExpectedAction(state, slot.id)?.id === 'sauce')
   const unlockedIngredients = availableIngredients(state.day)
-  const displayedIngredients = state.day === 1
-    ? [...new Set<IngredientId>([...unlockedIngredients, 'cilantro'])]
-    : unlockedIngredients
+  const sauceRackIndex = unlockedIngredients.indexOf('sauce')
+  const sauceRackColumn = sauceRackIndex % 3
+  const sauceRackRow = Math.floor(sauceRackIndex / 3)
   const guidedStep = tutorialStep(state)
   const guided = guidedStep !== 'done'
   const guidedHand = HAND_FOR_STEP[guidedStep]
@@ -255,13 +255,14 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
       </section>
 
       <section className="kitchen-scene__ingredients" aria-label="桌面食材">
-        {displayedIngredients.filter((id) => id !== 'sauce').map((id) => (
+        {unlockedIngredients.filter((id) => id !== 'sauce').map((id) => (
           <TableIngredient
             key={id}
             id={id}
             label={INGREDIENT_LABELS[id]}
             art={ingredientArt(id)}
-            disabled={!unlockedIngredients.includes(id) || (guided && !tutorialAllowsIngredient(state, id, 'left'))}
+            rackIndex={unlockedIngredients.indexOf(id)}
+            disabled={guided && !tutorialAllowsIngredient(state, id, 'left')}
             findSlotAtPoint={findSlotAtPoint}
             onDrop={dropIngredient}
             onTapEgg={tapEgg}
@@ -272,6 +273,13 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
             type="button"
             className={`sauce-brush${sauceBrushSelected ? ' is-selected' : ''}${guidedStep === 'sauce' ? ' is-tutorial-target' : ''}`}
             data-sauce-brush
+            data-rack-index={sauceRackIndex}
+            data-rack-column={sauceRackColumn}
+            data-rack-row={sauceRackRow}
+            style={{
+              '--ingredient-rack-column': sauceRackColumn,
+              '--ingredient-rack-row': sauceRackRow,
+            } as CSSProperties}
             aria-label="拿起酱刷，然后在需要刷酱的铁板上来回滑动"
             aria-pressed={sauceBrushSelected}
             disabled={!sauceEnabled}

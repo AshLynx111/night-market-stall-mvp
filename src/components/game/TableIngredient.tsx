@@ -1,4 +1,4 @@
-import { useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
+import { useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react'
 import type { IngredientId } from '../../landscape/campaign'
 import { toLogicalScenePoint } from '../../landscape/geometry'
 import type { SlotId } from '../../landscape/kitchen/types'
@@ -10,10 +10,11 @@ interface DragState {
   moving: boolean
 }
 
-export function TableIngredient({ id, label, art, painted = false, disabled = false, findSlotAtPoint, onDrop, onTapEgg }: {
+export function TableIngredient({ id, label, art, rackIndex, painted = false, disabled = false, findSlotAtPoint, onDrop, onTapEgg }: {
   id: IngredientId
   label: string
   art: string
+  rackIndex: number
   painted?: boolean
   disabled?: boolean
   findSlotAtPoint: (clientX: number, clientY: number) => SlotId | null
@@ -22,6 +23,12 @@ export function TableIngredient({ id, label, art, painted = false, disabled = fa
 }) {
   const drag = useRef<DragState | null>(null)
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null)
+  const rackColumn = rackIndex % 3
+  const rackRow = Math.floor(rackIndex / 3)
+  const rackStyle = {
+    '--ingredient-rack-column': rackColumn,
+    '--ingredient-rack-row': rackRow,
+  } as CSSProperties
 
   const finish = (event: ReactPointerEvent<HTMLButtonElement>, cancelled = false) => {
     const active = drag.current
@@ -44,7 +51,11 @@ export function TableIngredient({ id, label, art, painted = false, disabled = fa
         className={`table-ingredient table-ingredient--${id}`}
         disabled={disabled}
         data-ingredient-id={id}
+        data-rack-index={rackIndex}
+        data-rack-column={rackColumn}
+        data-rack-row={rackRow}
         data-painted={painted ? 'true' : undefined}
+        style={rackStyle}
         aria-label={id === 'egg' ? `${label}，点击或拖到铁板` : `${label}，拖到铁板`}
         onPointerDown={(event) => {
           if (disabled) return
@@ -64,11 +75,7 @@ export function TableIngredient({ id, label, art, painted = false, disabled = fa
         }}
         onPointerCancel={(event) => finish(event, true)}
       >
-        <span className="table-ingredient__vessel" aria-hidden="true">
-          <span className="table-ingredient__contents">
-            <img src={art} alt="" draggable={false} />
-          </span>
-        </span>
+        <img className="table-ingredient__bin-art" src={art} alt="" aria-hidden="true" draggable={false} />
       </button>
       {ghost && (
         <img
