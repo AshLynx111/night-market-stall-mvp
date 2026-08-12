@@ -220,9 +220,11 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
 
   const sauceExpected = state.slots.some((slot) => slotExpectedAction(state, slot.id)?.id === 'sauce')
   const unlockedIngredients = availableIngredients(state.day)
+  const rackColumns = unlockedIngredients.length <= 6 ? 2 : 3
+  const rackLayout = rackColumns === 2 ? 'approved-2x3' : 'expanded-3x5'
   const sauceRackIndex = unlockedIngredients.indexOf('sauce')
-  const sauceRackColumn = sauceRackIndex % 3
-  const sauceRackRow = Math.floor(sauceRackIndex / 3)
+  const sauceRackColumn = sauceRackIndex % rackColumns
+  const sauceRackRow = Math.floor(sauceRackIndex / rackColumns)
   const guidedStep = tutorialStep(state)
   const guided = guidedStep !== 'done'
   const guidedHand = HAND_FOR_STEP[guidedStep]
@@ -262,7 +264,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
         ))}
       </section>
 
-      <section className="kitchen-scene__ingredients" aria-label="桌面食材" data-kitchen-bin-rack="left">
+      <section className="kitchen-scene__ingredients" aria-label="桌面食材" data-kitchen-bin-rack="left" data-rack-layout={rackLayout}>
         {unlockedIngredients.filter((id) => id !== 'sauce').map((id) => (
           <TableIngredient
             key={id}
@@ -270,6 +272,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
             label={INGREDIENT_LABELS[id]}
             art={ingredientArt(id)}
             rackIndex={unlockedIngredients.indexOf(id)}
+            rackColumns={rackColumns}
             disabled={guided && !tutorialAllowsIngredient(state, id, 'left')}
             findSlotAtPoint={findSlotAtPoint}
             onDrop={dropIngredient}

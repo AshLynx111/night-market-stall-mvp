@@ -66,7 +66,7 @@ describe('logical kitchen layout CSS', () => {
     expect(reduced).toMatch(/\.kitchen-customer__bubble[^{]*\{[^}]*animation:\s*none;/s)
   })
 
-  it('declares a compact 3 by 5 left rack outside both griddles and the Day 1 tutorial', () => {
+  it('starts in the approved 2 by 3 physical rack and switches to a non-overlapping 3 by 5 overflow rack', () => {
     const rackRule = kitchenCss.match(/\.kitchen-scene__ingredients\s*\{[^}]+\}/s)?.[0] ?? ''
     const px = (name: string) => Number(rackRule.match(new RegExp(`${name}:\\s*(\\d+)px`))?.[1])
     const count = (name: string) => Number(rackRule.match(new RegExp(`${name}:\\s*(\\d+)`))?.[1])
@@ -81,11 +81,11 @@ describe('logical kitchen layout CSS', () => {
       height: px('--ingredient-rack-control-height'),
     }
 
-    expect(rack.columns).toBe(3)
-    expect(rack.rows).toBe(5)
+    expect(rack.columns).toBe(2)
+    expect(rack.rows).toBe(3)
     expect(rack.left + (rack.columns - 1) * rack.columnGap + rack.width).toBeLessThan(1440 * .341)
-    expect(rack.top + rack.rowGap + rack.height).toBeLessThanOrEqual(600)
-    expect(rack.top + (rack.rows - 1) * rack.rowGap + rack.height).toBeLessThanOrEqual(810)
+    expect(rack.top + 2 * rack.rowGap + rack.height).toBeLessThanOrEqual(710)
+    expect(rack.top + (rack.rows - 1) * rack.rowGap + rack.height).toBeLessThanOrEqual(710)
 
     const rectangles = Array.from({ length: rack.columns * rack.rows }, (_, index) => ({
       left: rack.left + (index % rack.columns) * rack.columnGap,
@@ -100,6 +100,24 @@ describe('logical kitchen layout CSS', () => {
         expect(overlaps).toBe(false)
       })
     })
+
+    const expandedRule = kitchenCss.match(/\.kitchen-scene__ingredients\[data-rack-layout="expanded-3x5"\]\s*\{[^}]+\}/s)?.[0] ?? ''
+    const expandedPx = (name: string) => Number(expandedRule.match(new RegExp(`${name}:\\s*(\\d+)px`))?.[1])
+    const expandedCount = (name: string) => Number(expandedRule.match(new RegExp(`${name}:\\s*(\\d+)`))?.[1])
+    const expanded = {
+      columns: expandedCount('--ingredient-rack-columns'),
+      rows: expandedCount('--ingredient-rack-rows'),
+      left: expandedPx('--ingredient-rack-left'),
+      top: expandedPx('--ingredient-rack-top'),
+      columnGap: expandedPx('--ingredient-rack-column-gap'),
+      rowGap: expandedPx('--ingredient-rack-row-gap'),
+      width: expandedPx('--ingredient-rack-control-width'),
+      height: expandedPx('--ingredient-rack-control-height'),
+    }
+    expect(expanded.columns).toBe(3)
+    expect(expanded.rows).toBe(5)
+    expect(expanded.left + 2 * expanded.columnGap + expanded.width).toBeLessThan(1440 * .341)
+    expect(expanded.top + 4 * expanded.rowGap + expanded.height).toBeLessThanOrEqual(810)
 
     expect(kitchenCss).toMatch(/\.table-ingredient\s*\{[^}]*left:\s*calc\(var\(--ingredient-rack-left\)[^}]*top:\s*calc\(var\(--ingredient-rack-top\)/s)
     expect(kitchenCss).toMatch(/\.sauce-brush\s*\{[^}]*left:\s*calc\(var\(--ingredient-rack-left\)[^}]*top:\s*calc\(var\(--ingredient-rack-top\)/s)

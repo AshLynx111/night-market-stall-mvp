@@ -16,24 +16,35 @@
 .kitchen-scene__customers { z-index: 2; }
 .kitchen-scene__lane-anchor { position: static; }
 .kitchen-scene__ingredients {
-  --ingredient-rack-columns: 3;
-  --ingredient-rack-rows: 5;
-  --ingredient-rack-left: 12px;
-  --ingredient-rack-top: 468px;
-  --ingredient-rack-column-gap: 104px;
-  --ingredient-rack-row-gap: 64px;
-  --ingredient-rack-control-width: 100px;
-  --ingredient-rack-control-height: 62px;
+  --ingredient-rack-columns: 2;
+  --ingredient-rack-rows: 3;
+  --ingredient-rack-left: 80px;
+  --ingredient-rack-top: 466px;
+  --ingredient-rack-column-gap: 155px;
+  --ingredient-rack-row-gap: 75px;
+  --ingredient-rack-control-width: 150px;
+  --ingredient-rack-control-height: 70px;
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.kitchen-scene__ingredients[data-rack-layout="expanded-3x5"] {
+  --ingredient-rack-columns: 3;
+  --ingredient-rack-rows: 5;
+  --ingredient-rack-left: 18px;
+  --ingredient-rack-top: 466px;
+  --ingredient-rack-column-gap: 102px;
+  --ingredient-rack-row-gap: 65px;
+  --ingredient-rack-control-width: 98px;
+  --ingredient-rack-control-height: 61px;
 }
 
 .kitchen-scene__counter-foreground {
   position: absolute;
   z-index: 4;
   inset: 0;
-  background-image: var(--kitchen-clean-bg);
+  background-image: var(--kitchen-live-bg);
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 56.5%, 100% 56.5%, 100% 100%, 0 100%);

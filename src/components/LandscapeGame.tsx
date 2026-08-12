@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import homeScreen from '../assets/approved/main-ui/home-screen-user-final.png'
 import daySelectScreen from '../assets/approved/main-ui/day-select-user-final.png'
-import kitchenScreen from '../assets/approved/main-ui/kitchen-screen-user-final.png'
-import cleanKitchenScreen from '../assets/approved/main-ui/night-market-clean-background.png'
+import liveKitchenScreen from '../assets/approved/main-ui/kitchen-screen-live-clean.png'
 import summaryScreen from '../assets/approved/main-ui/summary-screen-user-final.png'
 import settingsScreen from '../assets/approved/main-ui/settings-screen-user-final.png'
 import menuBoard from '../assets/approved/menu/menu-board.png'
@@ -197,26 +196,19 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, soun
       <div
         className="game-screen__logical"
         style={{
-          '--game-bg': `url(${cleanKitchenScreen})`,
-          '--kitchen-approved-bg': `url(${kitchenScreen})`,
-          '--kitchen-clean-bg': `url(${cleanKitchenScreen})`,
+          '--game-bg': `url(${liveKitchenScreen})`,
+          '--kitchen-live-bg': `url(${liveKitchenScreen})`,
           '--scene-scale': sceneScale,
           '--scene-inverse-scale': sceneInverseScale,
         } as React.CSSProperties}
       >
         <img
-          className="game-screen__background game-screen__background--approved"
-          src={kitchenScreen}
+          className="game-screen__background"
+          src={liveKitchenScreen}
           alt=""
           aria-hidden="true"
-          data-kitchen-approved-plate
-        />
-        <img
-          className="game-screen__background game-screen__background--clean"
-          src={cleanKitchenScreen}
-          alt=""
-          aria-hidden="true"
-          data-kitchen-clean-plate
+          data-kitchen-live-plate
+          data-kitchen-source="kitchen-screen-user-final.png"
         />
         <TopHud
           day={day.day}

@@ -204,7 +204,7 @@ describe('App landscape route', () => {
     const kitchenRoot = createRoot(kitchenContainer)
     act(() => kitchenRoot.render(<App />))
     expect(kitchenContainer.querySelector<HTMLImageElement>('[data-screen-art="kitchen"] .game-screen__background')?.src)
-      .toContain('kitchen-screen-user-final.png')
+      .toContain('kitchen-screen-live-clean.png')
     act(() => kitchenRoot.unmount())
 
     window.history.replaceState({}, '', '/?playDay=1&qaScreen=summary')

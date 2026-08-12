@@ -10,11 +10,12 @@ interface DragState {
   moving: boolean
 }
 
-export function TableIngredient({ id, label, art, rackIndex, painted = false, disabled = false, findSlotAtPoint, onDrop, onTapEgg }: {
+export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, painted = false, disabled = false, findSlotAtPoint, onDrop, onTapEgg }: {
   id: IngredientId
   label: string
   art: string
   rackIndex: number
+  rackColumns?: number
   painted?: boolean
   disabled?: boolean
   findSlotAtPoint: (clientX: number, clientY: number) => SlotId | null
@@ -23,8 +24,8 @@ export function TableIngredient({ id, label, art, rackIndex, painted = false, di
 }) {
   const drag = useRef<DragState | null>(null)
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null)
-  const rackColumn = rackIndex % 3
-  const rackRow = Math.floor(rackIndex / 3)
+  const rackColumn = rackIndex % rackColumns
+  const rackRow = Math.floor(rackIndex / rackColumns)
   const rackStyle = {
     '--ingredient-rack-column': rackColumn,
     '--ingredient-rack-row': rackRow,
