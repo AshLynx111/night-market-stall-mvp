@@ -301,22 +301,23 @@
   .kitchen-customer__bubble { animation: none; }
 }
 
-/* The reference plate paints this plaque into the counter. Only the live copy
-   is layered here, leaving the player and cooking area unobstructed. */
+/* The live kitchen derivative has no baked tutorial plaque. Keep the guided
+   copy on an opaque card in the empty right-side customer area so neither the
+   ingredient rack nor either griddle has to carry instructional text. */
 .guided-tutorial {
-  left: 45px;
-  top: 600px;
-  width: 206px;
-  min-height: 142px;
-  padding: 45px 16px 18px 88px;
+  left: 1070px;
+  top: 245px;
+  width: 300px;
+  min-height: 74px;
+  padding: 12px 18px 13px 62px;
   transform: none;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+  border: 3px solid #6b3b28;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgb(255 248 215 / .98), rgb(255 222 150 / .98));
+  box-shadow: 0 5px 0 rgb(46 25 18 / .52), 0 8px 20px rgb(20 11 8 / .3);
   color: #6f432a;
-  text-align: center;
+  text-align: left;
 }
-.guided-tutorial::before { display: none; }
-.guided-tutorial b { margin: 0 0 9px; color: #85452d; font-size: 15px; }
-.guided-tutorial span { font-size: 11px; line-height: 1.45; }
+.guided-tutorial::before { display: grid; }
+.guided-tutorial b { margin: 0 0 3px; color: #85452d; font-size: 14px; }
+.guided-tutorial span { font-size: 11px; line-height: 1.4; }

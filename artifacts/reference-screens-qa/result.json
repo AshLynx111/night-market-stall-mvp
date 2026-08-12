@@ -1,0 +1,884 @@
+{
+  "browser": "Microsoft Edge",
+  "viewport": {
+    "width": 1440,
+    "height": 810,
+    "deviceScaleFactor": 1
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "audio": {
+    "mixed": {
+      "loop": true,
+      "paused": false,
+      "muted": false,
+      "volume": 0.31
+    },
+    "muted": {
+      "muted": true,
+      "volume": 0
+    },
+    "afterNavigation": {
+      "count": 1,
+      "paused": false,
+      "muted": false,
+      "volume": 0.31,
+      "currentTime": 10.478522
+    },
+    "sliders": {
+      "master": 0.62,
+      "music": 0.5,
+      "effects": 0.3
+    }
+  },
+  "screens": {
+    "home": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "right": 1440,
+        "bottom": 810,
+        "width": 1440,
+        "height": 810
+      },
+      "art": {
+        "src": "/src/assets/approved/main-ui/home-screen-user-final.png",
+        "naturalWidth": 1672,
+        "naturalHeight": 941,
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810
+      },
+      "dynamic": [],
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      }
+    },
+    "settings": {
+      "rect": {
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810,
+        "width": 1439.234375,
+        "height": 810
+      },
+      "art": {
+        "src": "/src/assets/approved/main-ui/settings-screen-user-final.png",
+        "naturalWidth": 1672,
+        "naturalHeight": 941,
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810
+      },
+      "dynamic": [],
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      }
+    },
+    "select": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "right": 1440,
+        "bottom": 810,
+        "width": 1440,
+        "height": 810
+      },
+      "art": {
+        "src": "/src/assets/approved/main-ui/day-select-user-final.png",
+        "naturalWidth": 1672,
+        "naturalHeight": 941,
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810
+      },
+      "dynamic": [
+        {
+          "text": "☆☆☆",
+          "x": 434.34375,
+          "y": 205.96875,
+          "right": 520.34375,
+          "bottom": 234.390625,
+          "width": 86,
+          "height": 28.421875
+        },
+        {
+          "text": "☆☆☆",
+          "x": 799.921875,
+          "y": 205.96875,
+          "right": 885.921875,
+          "bottom": 234.390625,
+          "width": 86,
+          "height": 28.421875
+        },
+        {
+          "text": "☆☆☆",
+          "x": 1171.234375,
+          "y": 205.96875,
+          "right": 1257.234375,
+          "bottom": 234.390625,
+          "width": 86,
+          "height": 28.421875
+        },
+        {
+          "text": "🔒完成前一天后解锁",
+          "x": 950.84375,
+          "y": 359.046875,
+          "right": 1190.9375,
+          "bottom": 391.84375,
+          "width": 240.09375,
+          "height": 32.796875
+        },
+        {
+          "text": "☆☆☆",
+          "x": 434.34375,
+          "y": 436.296875,
+          "right": 520.34375,
+          "bottom": 463.984375,
+          "width": 86,
+          "height": 27.6875
+        },
+        {
+          "text": "🔒完成前一天后解锁",
+          "x": 213.953125,
+          "y": 585.421875,
+          "right": 454.046875,
+          "bottom": 617.359375,
+          "width": 240.09375,
+          "height": 31.9375
+        },
+        {
+          "text": "☆☆☆",
+          "x": 799.921875,
+          "y": 436.296875,
+          "right": 885.921875,
+          "bottom": 463.984375,
+          "width": 86,
+          "height": 27.6875
+        },
+        {
+          "text": "🔒完成前一天后解锁",
+          "x": 579.53125,
+          "y": 585.421875,
+          "right": 819.625,
+          "bottom": 617.359375,
+          "width": 240.09375,
+          "height": 31.9375
+        },
+        {
+          "text": "☆☆☆",
+          "x": 1171.234375,
+          "y": 436.296875,
+          "right": 1257.234375,
+          "bottom": 463.984375,
+          "width": 86,
+          "height": 27.6875
+        },
+        {
+          "text": "🔒完成前一天后解锁",
+          "x": 950.84375,
+          "y": 585.421875,
+          "right": 1190.9375,
+          "bottom": 617.359375,
+          "width": 240.09375,
+          "height": 31.9375
+        },
+        {
+          "text": "当前资金¥ 36",
+          "x": 309.796875,
+          "y": 669.859375,
+          "right": 498.328125,
+          "bottom": 750.859375,
+          "width": 188.53125,
+          "height": 81
+        },
+        {
+          "text": "升级火力 Lv.1顾客耐心 +3秒 · ¥40",
+          "x": 592.296875,
+          "y": 664.578125,
+          "right": 834.078125,
+          "bottom": 754.484375,
+          "width": 241.78125,
+          "height": 89.90625
+        },
+        {
+          "text": "升级招牌 Lv.1每单额外 +2元 · ¥60",
+          "x": 930.515625,
+          "y": 664.578125,
+          "right": 1172.296875,
+          "bottom": 754.484375,
+          "width": 241.78125,
+          "height": 89.90625
+        }
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      }
+    },
+    "summary": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "right": 1440,
+        "bottom": 810,
+        "width": 1440,
+        "height": 810
+      },
+      "art": {
+        "src": "/src/assets/approved/main-ui/summary-screen-user-final.png",
+        "naturalWidth": 1672,
+        "naturalHeight": 941,
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810
+      },
+      "dynamic": [
+        {
+          "text": "开张第一天 · 营业完成",
+          "x": 426.375,
+          "y": 183.046875,
+          "right": 1010.703125,
+          "bottom": 240.546875,
+          "width": 584.328125,
+          "height": 57.5
+        },
+        {
+          "text": "★★★",
+          "x": 593.328125,
+          "y": 247.046875,
+          "right": 848.0625,
+          "bottom": 306.171875,
+          "width": 254.734375,
+          "height": 59.125
+        },
+        {
+          "text": "手速和品质都无可挑剔，夜市里已经有人专程来找你了！",
+          "x": 445.09375,
+          "y": 314.265625,
+          "right": 997.75,
+          "bottom": 346.65625,
+          "width": 552.65625,
+          "height": 32.390625
+        },
+        {
+          "text": "3",
+          "x": 327,
+          "y": 369.890625,
+          "right": 474.046875,
+          "bottom": 414.921875,
+          "width": 147.046875,
+          "height": 45.03125
+        },
+        {
+          "text": "98%",
+          "x": 539.953125,
+          "y": 369.890625,
+          "right": 687.015625,
+          "bottom": 414.921875,
+          "width": 147.0625,
+          "height": 45.03125
+        },
+        {
+          "text": "0",
+          "x": 752.921875,
+          "y": 369.890625,
+          "right": 899.984375,
+          "bottom": 414.921875,
+          "width": 147.0625,
+          "height": 45.03125
+        },
+        {
+          "text": "¥46",
+          "x": 965.890625,
+          "y": 369.890625,
+          "right": 1112.953125,
+          "bottom": 414.921875,
+          "width": 147.0625,
+          "height": 45.03125
+        },
+        {
+          "text": "当前资金¥ 46",
+          "x": 406.234375,
+          "y": 514.34375,
+          "right": 541.515625,
+          "bottom": 588.046875,
+          "width": 135.28125,
+          "height": 73.703125
+        },
+        {
+          "text": "升级火力 Lv.1顾客耐心 +3秒 · ¥40",
+          "x": 633.109375,
+          "y": 503.375,
+          "right": 829.546875,
+          "bottom": 598.171875,
+          "width": 196.4375,
+          "height": 94.796875
+        },
+        {
+          "text": "升级招牌 Lv.1每单额外 +2元 · ¥60",
+          "x": 930.21875,
+          "y": 503.375,
+          "right": 1135.734375,
+          "bottom": 598.171875,
+          "width": 205.515625,
+          "height": 94.796875
+        }
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      }
+    }
+  },
+  "guidedFlow": [
+    {
+      "name": "noodle",
+      "expectedStep": "egg",
+      "phase": "phase-assembling",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/classic/classic-01-noodle.png"
+    },
+    {
+      "name": "egg-ready",
+      "expectedStep": "hot-dog",
+      "phase": "phase-cooking",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/heat/classic/02-egg-ready.png"
+    },
+    {
+      "name": "hot-dog-ready",
+      "expectedStep": "sauce",
+      "phase": "phase-cooking",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/heat/classic/03-hot-dog-ready.png"
+    },
+    {
+      "name": "sauce-two-strokes",
+      "expectedStep": "scallion",
+      "phase": "phase-gesturing",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/classic/classic-04-sauce.png"
+    },
+    {
+      "name": "scallion",
+      "expectedStep": "cut",
+      "phase": "phase-assembling",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/classic/classic-05-scallion.png"
+    },
+    {
+      "name": "three-cuts",
+      "expectedStep": "roll",
+      "phase": "phase-gesturing",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/classic/classic-06-cut.png"
+    }
+  ],
+  "kitchenFixtures": {
+    "day3": {
+      "day": null,
+      "bins": [
+        {
+          "id": "noodle",
+          "rect": {
+            "x": 18,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 527
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-noodle.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "egg",
+          "rect": {
+            "x": 120,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 527
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-egg.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "hot-dog",
+          "rect": {
+            "x": 222,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 527
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-hot-dog.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "scallion",
+          "rect": {
+            "x": 120,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 592
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-scallion.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "cilantro",
+          "rect": {
+            "x": 222,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 592
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-cilantro.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "onion",
+          "rect": {
+            "x": 18,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 657
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-onion.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "chili-powder",
+          "rect": {
+            "x": 120,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 657
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-chili-powder.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "turkey-noodle",
+          "rect": {
+            "x": 222,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 657
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-turkey-noodle.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "cheese",
+          "rect": {
+            "x": 18,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 722
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-cheese.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "corn",
+          "rect": {
+            "x": 120,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 722
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-corn.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        }
+      ],
+      "sauceBrushCount": 1,
+      "floatingBareIngredientImages": 0,
+      "binPairs": [],
+      "binGriddleOverlaps": [],
+      "binTutorialOverlaps": [],
+      "bakedCustomerCount": 0,
+      "livePlateCount": 1,
+      "bubbleFaceCollisions": [],
+      "activeCustomers": 3
+    },
+    "day5": {
+      "day": null,
+      "bins": [
+        {
+          "id": "noodle",
+          "rect": {
+            "x": 18,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 527
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-noodle.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "egg",
+          "rect": {
+            "x": 120,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 527
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-egg.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "hot-dog",
+          "rect": {
+            "x": 222,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 527
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-hot-dog.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "scallion",
+          "rect": {
+            "x": 120,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 592
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-scallion.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "cilantro",
+          "rect": {
+            "x": 222,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 592
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-cilantro.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "onion",
+          "rect": {
+            "x": 18,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 657
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-onion.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "chili-powder",
+          "rect": {
+            "x": 120,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 657
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-chili-powder.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "turkey-noodle",
+          "rect": {
+            "x": 222,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 657
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-turkey-noodle.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "cheese",
+          "rect": {
+            "x": 18,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 722
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-cheese.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "corn",
+          "rect": {
+            "x": 120,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 722
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-corn.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "orleans",
+          "rect": {
+            "x": 222,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 722
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-orleans.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "bacon",
+          "rect": {
+            "x": 18,
+            "y": 726,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 787
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-bacon.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "tenderloin",
+          "rect": {
+            "x": 120,
+            "y": 726,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 787
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-tenderloin.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "enoki",
+          "rect": {
+            "x": 222,
+            "y": 726,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 787
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-enoki.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        }
+      ],
+      "sauceBrushCount": 1,
+      "floatingBareIngredientImages": 0,
+      "binPairs": [],
+      "binGriddleOverlaps": [],
+      "binTutorialOverlaps": [],
+      "bakedCustomerCount": 0,
+      "livePlateCount": 1,
+      "bubbleFaceCollisions": [],
+      "activeCustomers": 3
+    }
+  },
+  "passed": true
+}
