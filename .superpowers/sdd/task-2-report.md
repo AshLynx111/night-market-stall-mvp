@@ -123,3 +123,15 @@ All files are under `src/assets/approved/menu/ingredient-bins/`:
 - The source art intentionally has slight organic angle and fill variation so the bins do not appear cloned; all remain within the approved approximately 35-degree family.
 - Final PNGs are high-quality 768px assets (roughly 0.48–0.78 MB each). Task 3 should size the complete bin itself and must not add a second CSS-drawn container behind it.
 - Temporary chroma sources and the QA contact sheet remain under the gitignored `tmp/ingredient-bins*` paths and are not runtime dependencies.
+
+## Review fix — chili-powder purity
+
+The initial accepted chili-powder source was subsequently rejected in review because several coin-like circular pieces were mixed into the powder. Only `ingredient-bin-chili-powder.png` was regenerated with one targeted built-in ImageGen call.
+
+Targeted prompt additions:
+
+> A smooth natural mound of uniformly FINE vivid-red chili powder only, with continuous granular texture. Absolutely no coin-like pieces, circular discs, rings, beans, seeds, chili flakes, sliced chili, whole chili peppers, herbs, or other food.
+
+The replacement was inspected at original resolution before chroma removal and again as final transparent RGBA. It contains only a continuous fine red powder mound, retains the complete stainless bin, has transparent padding, and shows no visible magenta fringe.
+
+No automated circular-object detector was added: contour-based detection would incorrectly flag legitimate round food in the egg, corn, and scallion assets and would not reliably distinguish a semantically wrong inclusion from powder texture. Ingredient purity remains an explicit visual acceptance gate; structural transparency, dimensions, coverage, and uniqueness remain automated.
