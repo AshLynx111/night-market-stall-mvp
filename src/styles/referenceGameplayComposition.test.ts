@@ -50,4 +50,13 @@ describe('reference-master gameplay composition', () => {
       expect(landscapeSource).toContain(`data-screen-art="${screen}"`)
     }
   })
+
+  it('binds every semantic screen surface to its corresponding imported plate', () => {
+    expect(landscapeSource).toContain('src={homeScreen}')
+    expect(landscapeSource).toContain("'--home-bg': `url(${daySelectScreen})`")
+    expect(landscapeSource).toContain('src={kitchenScreen}')
+    expect(landscapeSource).toContain("'--home-bg': `url(${summaryScreen})`")
+    expect(landscapeSource).toContain('className="settings-screen__art"')
+    expect(landscapeSource).toContain('src={settingsScreen}')
+  })
 })

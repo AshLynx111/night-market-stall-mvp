@@ -599,16 +599,21 @@ function MenuModal({ onClose }: { onClose: () => void }) {
 
 function HelpModal({ onClose }: { onClose: () => void }) {
   return (
-    <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="玩法说明">
-      <section className="help-modal" data-screen-art="settings" style={{ backgroundImage: `url(${settingsScreen})` }}>
-        <button className="modal-close" onClick={onClose}>×</button>
-        <span className="help-modal__icon">🍳</span>
-        <h2>三步学会摆摊</h2>
-        <div><b>1</b><p>看左侧订单和铁板上方的“下一步”。</p></div>
-        <div><b>2</b><p>点击或拖动食材；刷酱时先拿起桌面酱刷，再沿提示来回滑动。切段要划过三条不同横线。</p></div>
-        <div><b>3</b><p>在耐心耗尽前装袋，速度越快、失误越少，收入和满意度越高。</p></div>
-        <button className="primary-button" onClick={onClose}>知道了，开摊！</button>
-      </section>
-    </div>
+    <main
+      className="settings-screen"
+      role="dialog"
+      aria-modal="true"
+      aria-label="游戏设置"
+      style={{ position: 'fixed', zIndex: 100, inset: 0, display: 'grid', placeItems: 'center', background: '#0c1018' }}
+    >
+      <img
+        className="settings-screen__art"
+        data-screen-art="settings"
+        src={settingsScreen}
+        alt="夜市烤冷面游戏设置"
+        style={{ width: '100vw', height: '100dvh', objectFit: 'contain' }}
+      />
+      <button className="modal-close" onClick={onClose} aria-label="关闭设置">×</button>
+    </main>
   )
 }

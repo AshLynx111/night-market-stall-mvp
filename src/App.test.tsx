@@ -124,6 +124,47 @@ describe('App landscape route', () => {
     act(() => summaryRoot.unmount())
   })
 
+  it('binds each rendered approved screen surface to its matching image URL', () => {
+    const container = document.createElement('div')
+    const root = createRoot(container)
+    act(() => root.render(<App />))
+
+    expect(container.querySelector<HTMLImageElement>('[data-screen-art="home"] .home-screen__art')?.src)
+      .toContain('home-screen-user-final.png')
+
+    act(() => container.querySelector<HTMLButtonElement>('[aria-label="查看关卡与成就"]')!.click())
+    expect(container.querySelector<HTMLElement>('[data-screen-art="select"]')?.style.getPropertyValue('--home-bg'))
+      .toContain('day-select-user-final.png')
+
+    act(() => [...container.querySelectorAll<HTMLButtonElement>('button')]
+      .find((button) => button.textContent?.includes('返回'))!.click())
+    act(() => container.querySelector<HTMLButtonElement>('[aria-label="设置与玩法说明"]')!.click())
+    const settingsPlate = container.querySelector<HTMLImageElement>('[data-screen-art="settings"]')
+    expect(settingsPlate?.src).toContain('settings-screen-user-final.png')
+    expect(settingsPlate?.classList.contains('settings-screen__art')).toBe(true)
+    expect(settingsPlate?.parentElement?.classList.contains('settings-screen')).toBe(true)
+    expect((settingsPlate?.parentElement as HTMLElement | null)?.style.position).toBe('fixed')
+    expect((settingsPlate?.parentElement as HTMLElement | null)?.style.inset).toBe('0px')
+    expect(settingsPlate?.style.objectFit).toBe('contain')
+    act(() => root.unmount())
+
+    window.history.replaceState({}, '', '/?playDay=1')
+    const kitchenContainer = document.createElement('div')
+    const kitchenRoot = createRoot(kitchenContainer)
+    act(() => kitchenRoot.render(<App />))
+    expect(kitchenContainer.querySelector<HTMLImageElement>('[data-screen-art="kitchen"] .game-screen__background')?.src)
+      .toContain('kitchen-screen-user-final.png')
+    act(() => kitchenRoot.unmount())
+
+    window.history.replaceState({}, '', '/?playDay=1&qaScreen=summary')
+    const summaryContainer = document.createElement('div')
+    const summaryRoot = createRoot(summaryContainer)
+    act(() => summaryRoot.render(<App />))
+    expect(summaryContainer.querySelector<HTMLElement>('[data-screen-art="summary"]')?.style.getPropertyValue('--home-bg'))
+      .toContain('summary-screen-user-final.png')
+    act(() => summaryRoot.unmount())
+  })
+
   it('keeps the home to level-select path operable and locks five days for a blank campaign', () => {
     const container = document.createElement('div')
     const root = createRoot(container)
