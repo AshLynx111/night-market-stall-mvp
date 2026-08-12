@@ -22,6 +22,11 @@ function bounds(left: number, top: number, width: number, height: number): DOMRe
   }
 }
 
+function setRangeValue(target: HTMLInputElement, value: string) {
+  Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')?.set?.call(target, value)
+  target.dispatchEvent(new Event('input', { bubbles: true }))
+}
+
 afterEach(() => {
   window.history.replaceState({}, '', '/')
   localStorage.clear()
@@ -90,6 +95,54 @@ describe('App landscape route', () => {
     act(() => root.unmount())
   })
 
+  it('provides persistent settings controls without replacing the gameplay help action', () => {
+    vi.stubGlobal('requestAnimationFrame', vi.fn(() => 1))
+    vi.stubGlobal('cancelAnimationFrame', vi.fn())
+    localStorage.setItem('night-market-audio-settings-v1', JSON.stringify({
+      master: 2,
+      music: -1,
+      effects: 0.4,
+      musicMuted: false,
+    }))
+    const container = document.createElement('div')
+    document.body.append(container)
+    const root = createRoot(container)
+    act(() => root.render(<App />))
+
+    expect(container.querySelectorAll('.home-hotspot')).toHaveLength(5)
+    const homeMusic = container.querySelector<HTMLButtonElement>('[aria-label="背景音乐"]')!
+    expect(homeMusic.getAttribute('aria-pressed')).toBe('false')
+    act(() => homeMusic.click())
+    expect(homeMusic.getAttribute('aria-pressed')).toBe('true')
+
+    act(() => container.querySelector<HTMLButtonElement>('[aria-label="打开设置"]')!.click())
+    expect(container.querySelector('[data-screen-art="settings"]')).not.toBeNull()
+    const sliders = [...container.querySelectorAll<HTMLInputElement>('input[type="range"]')]
+    expect(sliders.map((slider) => slider.getAttribute('aria-label'))).toEqual(['总音量', '背景音乐音量', '音效音量'])
+    expect(sliders.map((slider) => slider.value)).toEqual(['1', '0', '0.4'])
+
+    const settingsMusic = container.querySelector<HTMLButtonElement>('.settings-screen__music-toggle')!
+    expect(settingsMusic.getAttribute('aria-pressed')).toBe('true')
+    act(() => settingsMusic.click())
+    expect(settingsMusic.getAttribute('aria-pressed')).toBe('false')
+    expect(JSON.parse(localStorage.getItem('night-market-audio-settings-v1')!).musicMuted).toBe(false)
+
+    act(() => {
+      setRangeValue(sliders[1], '0.35')
+    })
+    expect(JSON.parse(localStorage.getItem('night-market-audio-settings-v1')!).music).toBe(0.35)
+
+    act(() => container.querySelector<HTMLButtonElement>('[aria-label="返回主菜单"]')!.click())
+    expect(container.querySelector('.home-screen')).not.toBeNull()
+    expect(container.querySelector<HTMLButtonElement>('[aria-label="背景音乐"]')?.getAttribute('aria-pressed')).toBe('false')
+
+    act(() => container.querySelector<HTMLButtonElement>('[aria-label="开始游戏"]')!.click())
+    act(() => container.querySelector<HTMLButtonElement>('.help-fab')!.click())
+    expect(container.querySelector('[role="dialog"][aria-label="玩法说明"]')).not.toBeNull()
+    expect(container.querySelector('[data-screen-art="settings"]')).toBeNull()
+    act(() => root.unmount())
+  })
+
   it('renders the approved art marker for each campaign screen', () => {
     const container = document.createElement('div')
     const root = createRoot(container)
@@ -104,7 +157,7 @@ describe('App landscape route', () => {
     const back = [...container.querySelectorAll<HTMLButtonElement>('button')]
       .find((button) => button.textContent?.includes('返回'))!
     act(() => back.click())
-    const settings = container.querySelector<HTMLButtonElement>('[aria-label="设置与玩法说明"]')!
+    const settings = container.querySelector<HTMLButtonElement>('[aria-label="打开设置"]')!
     act(() => settings.click())
     expect(container.querySelector('[data-screen-art="settings"]')).not.toBeNull()
     act(() => root.unmount())
@@ -138,14 +191,12 @@ describe('App landscape route', () => {
 
     act(() => [...container.querySelectorAll<HTMLButtonElement>('button')]
       .find((button) => button.textContent?.includes('返回'))!.click())
-    act(() => container.querySelector<HTMLButtonElement>('[aria-label="设置与玩法说明"]')!.click())
+    act(() => container.querySelector<HTMLButtonElement>('[aria-label="打开设置"]')!.click())
     const settingsPlate = container.querySelector<HTMLImageElement>('[data-screen-art="settings"]')
     expect(settingsPlate?.src).toContain('settings-screen-user-final.png')
     expect(settingsPlate?.classList.contains('settings-screen__art')).toBe(true)
-    expect(settingsPlate?.parentElement?.classList.contains('settings-screen')).toBe(true)
-    expect((settingsPlate?.parentElement as HTMLElement | null)?.style.position).toBe('fixed')
-    expect((settingsPlate?.parentElement as HTMLElement | null)?.style.inset).toBe('0px')
-    expect(settingsPlate?.style.objectFit).toBe('contain')
+    expect(settingsPlate?.parentElement?.classList.contains('settings-screen__plate')).toBe(true)
+    expect(settingsPlate?.closest('.settings-screen')).not.toBeNull()
     act(() => root.unmount())
 
     window.history.replaceState({}, '', '/?playDay=1')

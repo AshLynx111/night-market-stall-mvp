@@ -7,6 +7,7 @@ import settingsScreen from '../assets/approved/main-ui/settings-screen-user-fina
 import menuBoard from '../assets/approved/menu/menu-board.png'
 import celebrityArt from '../assets/approved/events/day5-celebrity-event-key-art.png'
 import takeawayBag from '../assets/approved/menu/takeaway-bag.png'
+import { loadAudioSettings, saveAudioSettings, type AudioSettings } from '../game/audioSettings'
 import { DAYS, RECIPES, incomeForDelivery, starsForDay } from '../landscape/campaign'
 import type { CookingStep, DayConfig, Recipe } from '../landscape/campaign'
 import { useKitchenGame } from '../landscape/kitchen/useKitchenGame'
@@ -20,7 +21,7 @@ import {
 } from '../landscape/progression'
 import { KitchenScene } from './game/KitchenScene'
 
-type Screen = 'home' | 'select' | 'playing' | 'event' | 'summary'
+type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
 const SAVE_KEY = 'night-market-campaign-v1'
 export const GUIDED_TUTORIAL_KEY = 'night-market-guided-tutorial-v2'
@@ -329,6 +330,7 @@ export function LandscapeGame() {
   const [showHelp, setShowHelp] = useState(false)
   const [showAbandonConfirm, setShowAbandonConfirm] = useState(false)
   const [sound, setSound] = useState(true)
+  const [audioSettings, setAudioSettings] = useState<AudioSettings>(loadAudioSettings)
   const [sessionId, setSessionId] = useState(1)
   const [guidedTutorialComplete, setGuidedTutorialComplete] = useState(readGuidedTutorialComplete)
   const abandonTriggerRef = useRef<HTMLElement | null>(null)
@@ -353,6 +355,10 @@ export function LandscapeGame() {
   useEffect(() => {
     localStorage.setItem(SAVE_KEY, JSON.stringify(save))
   }, [save])
+
+  useEffect(() => {
+    saveAudioSettings(audioSettings)
+  }, [audioSettings])
 
   useEffect(() => {
     if (showAbandonConfirm || !restoreAbandonFocus.current) return
@@ -404,6 +410,14 @@ export function LandscapeGame() {
     setScreen('playing')
   }
 
+  const toggleMusic = () => {
+    setAudioSettings((current) => ({ ...current, musicMuted: !current.musicMuted }))
+  }
+
+  const setAudioLevel = (key: 'master' | 'music' | 'effects', value: number) => {
+    setAudioSettings((current) => ({ ...current, [key]: value }))
+  }
+
   if (screen === 'home') {
     return (
       <main className="home-screen home-screen--illustrated" data-screen-art="home" style={{ '--home-bg': `url(${homeScreen})` } as React.CSSProperties}>
@@ -412,13 +426,82 @@ export function LandscapeGame() {
           <nav className="home-screen__hotspots" aria-label="主菜单">
             <button className="home-hotspot home-hotspot--start" aria-label="开始游戏" onClick={() => startDay(DAYS[0])}><span className="sr-only">开始游戏</span></button>
             <button className="home-hotspot home-hotspot--continue" aria-label="继续游戏" onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}><span className="sr-only">继续游戏</span></button>
-            <button className="home-hotspot home-hotspot--settings" aria-label="设置与玩法说明" onClick={() => setShowHelp(true)}><span className="sr-only">设置</span></button>
+            <button className="home-hotspot home-hotspot--settings" aria-label="打开设置" onClick={() => setScreen('settings')}><span className="sr-only">设置</span></button>
             <button className="home-hotspot home-hotspot--collection" aria-label="打开图鉴" onClick={() => setShowMenu(true)}><span className="sr-only">图鉴</span></button>
             <button className="home-hotspot home-hotspot--achievements" aria-label="查看关卡与成就" onClick={() => setScreen('select')}><span className="sr-only">选择关卡</span></button>
           </nav>
+          <button
+            className="home-screen__music-toggle"
+            type="button"
+            aria-label="背景音乐"
+            aria-pressed={audioSettings.musicMuted}
+            onClick={toggleMusic}
+          ><span className="sr-only">{audioSettings.musicMuted ? '恢复背景音乐' : '静音背景音乐'}</span></button>
         </div>
         {showMenu && <MenuModal onClose={() => setShowMenu(false)} />}
-        {showHelp && <HelpModal onClose={() => setShowHelp(false)} />}
+      </main>
+    )
+  }
+
+  if (screen === 'settings') {
+    return (
+      <main className="settings-screen" aria-label="音量设置">
+        <div className="settings-screen__plate">
+          <img
+            className="settings-screen__art"
+            data-screen-art="settings"
+            src={settingsScreen}
+            alt="夜市烤冷面游戏音量设置"
+          />
+          <div className="settings-screen__controls">
+            <label className="settings-slider settings-slider--master">
+              <span className="sr-only">总音量</span>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={audioSettings.master}
+                aria-label="总音量"
+                onChange={(event) => setAudioLevel('master', Number(event.currentTarget.value))}
+              />
+            </label>
+            <label className="settings-slider settings-slider--music">
+              <span className="sr-only">背景音乐音量</span>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={audioSettings.music}
+                aria-label="背景音乐音量"
+                onChange={(event) => setAudioLevel('music', Number(event.currentTarget.value))}
+              />
+            </label>
+            <label className="settings-slider settings-slider--effects">
+              <span className="sr-only">音效音量</span>
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={audioSettings.effects}
+                aria-label="音效音量"
+                onChange={(event) => setAudioLevel('effects', Number(event.currentTarget.value))}
+              />
+            </label>
+          </div>
+          <button
+            className="settings-screen__music-toggle"
+            type="button"
+            aria-label="背景音乐"
+            aria-pressed={audioSettings.musicMuted}
+            onClick={toggleMusic}
+          ><span className="sr-only">{audioSettings.musicMuted ? '恢复背景音乐' : '静音背景音乐'}</span></button>
+          <button className="settings-screen__return" type="button" aria-label="返回主菜单" onClick={() => setScreen('home')}>
+            <span className="sr-only">返回主菜单</span>
+          </button>
+        </div>
       </main>
     )
   }
@@ -599,21 +682,16 @@ function MenuModal({ onClose }: { onClose: () => void }) {
 
 function HelpModal({ onClose }: { onClose: () => void }) {
   return (
-    <main
-      className="settings-screen"
-      role="dialog"
-      aria-modal="true"
-      aria-label="游戏设置"
-      style={{ position: 'fixed', zIndex: 100, inset: 0, display: 'grid', placeItems: 'center', background: '#0c1018' }}
-    >
-      <img
-        className="settings-screen__art"
-        data-screen-art="settings"
-        src={settingsScreen}
-        alt="夜市烤冷面游戏设置"
-        style={{ width: '100vw', height: '100dvh', objectFit: 'contain' }}
-      />
-      <button className="modal-close" onClick={onClose} aria-label="关闭设置">×</button>
-    </main>
+    <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="玩法说明">
+      <section className="help-modal">
+        <button className="modal-close" onClick={onClose} aria-label="关闭玩法说明">×</button>
+        <span className="help-modal__icon">🍳</span>
+        <h2>三步学会摆摊</h2>
+        <div><b>1</b><p>看左侧订单和铁板上方的“下一步”。</p></div>
+        <div><b>2</b><p>点击或拖动食材；刷酱时先拿起桌面酱刷，再沿提示来回滑动。切段要划过三条不同横线。</p></div>
+        <div><b>3</b><p>在耐心耗尽前装袋，速度越快、失误越少，收入和满意度越高。</p></div>
+        <button className="primary-button" onClick={onClose}>知道了，开摊！</button>
+      </section>
+    </div>
   )
 }
