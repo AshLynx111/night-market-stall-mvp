@@ -18,18 +18,83 @@
       "muted": true,
       "volume": 0
     },
-    "afterNavigation": {
-      "count": 1,
-      "paused": false,
-      "muted": false,
-      "volume": 0.31,
-      "currentTime": 10.478522
-    },
     "sliders": {
       "master": 0.62,
       "music": 0.5,
       "effects": 0.3
-    }
+    },
+    "checkpoints": [
+      {
+        "label": "settings",
+        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "count": 1,
+        "currentTime": 7,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "select",
+        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "count": 1,
+        "currentTime": 10.53226,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "day-1-entry",
+        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "count": 1,
+        "currentTime": 16.465968,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "day-1-after-order-1",
+        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "count": 1,
+        "currentTime": 26.754185,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "day-1-after-order-2",
+        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "count": 1,
+        "currentTime": 37.854437,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "summary",
+        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "count": 1,
+        "currentTime": 47.114157,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "day-2",
+        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "count": 1,
+        "currentTime": 48.213858,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      }
+    ]
   },
   "screens": {
     "home": {
@@ -278,7 +343,7 @@
           "height": 45.03125
         },
         {
-          "text": "98%",
+          "text": "93%",
           "x": 539.953125,
           "y": 369.890625,
           "right": 687.015625,
@@ -296,7 +361,7 @@
           "height": 45.03125
         },
         {
-          "text": "¥46",
+          "text": "¥66",
           "x": 965.890625,
           "y": 369.890625,
           "right": 1112.953125,
@@ -305,7 +370,7 @@
           "height": 45.03125
         },
         {
-          "text": "当前资金¥ 46",
+          "text": "当前资金¥ 66",
           "x": 406.234375,
           "y": 514.34375,
           "right": 541.515625,
@@ -392,11 +457,26 @@
       "foodImages": 1,
       "overlays": 0,
       "stageSrc": "/src/assets/approved/stages/classic/classic-06-cut.png"
+    },
+    {
+      "name": "actual-delivery-1",
+      "slotId": "left",
+      "realInteraction": true
+    },
+    {
+      "name": "actual-delivery-2",
+      "slotId": "left",
+      "realInteraction": true
+    },
+    {
+      "name": "actual-delivery-3",
+      "slotId": "left",
+      "realInteraction": true
     }
   ],
   "kitchenFixtures": {
     "day3": {
-      "day": null,
+      "day": 3,
       "bins": [
         {
           "id": "noodle",
@@ -600,7 +680,7 @@
       "activeCustomers": 3
     },
     "day5": {
-      "day": null,
+      "day": 5,
       "bins": [
         {
           "id": "noodle",

@@ -191,6 +191,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
     <main
       className="game-screen"
       data-screen-art="kitchen"
+      data-day={day.day}
       data-kitchen-tutorial-mode={state.tutorialMode}
       data-kitchen-customer-count={state.customers.length}
       inert={backgroundInert}

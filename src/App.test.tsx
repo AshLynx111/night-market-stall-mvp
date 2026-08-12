@@ -239,6 +239,21 @@ describe('App landscape route', () => {
     act(() => summaryRoot.unmount())
   })
 
+  it('exposes the exact live campaign day on the kitchen screen', () => {
+    vi.stubGlobal('requestAnimationFrame', vi.fn(() => 1))
+    vi.stubGlobal('cancelAnimationFrame', vi.fn())
+    localStorage.setItem('night-market-guided-tutorial-v2', 'true')
+
+    for (const day of [3, 5]) {
+      window.history.replaceState({}, '', `/?playDay=${day}`)
+      const container = document.createElement('div')
+      const root = createRoot(container)
+      act(() => root.render(<App />))
+      expect(container.querySelector('.game-screen')?.getAttribute('data-day')).toBe(String(day))
+      act(() => root.unmount())
+    }
+  })
+
   it('keeps the home to level-select path operable and locks five days for a blank campaign', () => {
     const container = document.createElement('div')
     const root = createRoot(container)

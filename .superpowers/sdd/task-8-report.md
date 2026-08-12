@@ -45,3 +45,13 @@ The runner additionally rejects floating/bare ingredient controls, missing/zero-
 ## Remaining concern
 
 No release-blocking functional or visual concern was found at the required 1440×810 viewport. The production build is asset-heavy, so initial download size remains a future optimization opportunity; it does not affect this acceptance contract.
+
+## Evidence-integrity re-review
+
+The acceptance runner was tightened after review and re-executed successfully:
+
+- Removed `qaServedOrders` from the acceptance path. After the initial home load, the runner does not call `page.goto` until the completed Day 2 checkpoint; it enters Day 1 from the select screen and completes all three required orders with real pointer clicks, drags, cooking waits, sauce strokes, cuts, roll, packing, and delivery in the same SPA document.
+- Each replacement customer must physically arrive and expose an active order bubble before the next order begins. The result records `actual-delivery-1`, `actual-delivery-2`, and `actual-delivery-3`.
+- The BGM element receives one QA-only identity marker. The same identity, one-element count, `loop=true`, playing/unmuted state, and strictly increasing `currentTime` are asserted at settings, select, Day 1 entry, after orders 1 and 2, summary, and Day 2. `currentTime` is set only once before the journey begins.
+- The live kitchen now exposes `data-day={day.day}`. A product test covers Days 3 and 5, and fixture screenshots reject any requested/rendered day mismatch.
+- Re-review gates: 36 test files / 234 tests, full art validation, production build, and Microsoft Edge 1440×810 journey all pass.

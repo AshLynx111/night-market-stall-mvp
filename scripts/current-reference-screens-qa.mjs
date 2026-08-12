@@ -100,9 +100,9 @@ async function stroke(selector, from, to) {
   await page.mouse.up()
 }
 
-async function stageCheckpoint(name, expectedStep) {
-  await page.waitForFunction((step) => document.querySelector('[data-slot-id="left"]')?.dataset.expectedStepId === step, expectedStep, { timeout: 12_000 })
-  const checkpoint = await page.locator('[data-slot-id="left"]').evaluate((slot, checkpointName) => ({
+async function stageCheckpoint(name, expectedStep, slotId) {
+  await page.waitForFunction(({ step, id }) => document.querySelector(`[data-slot-id="${id}"]`)?.dataset.expectedStepId === step, { step: expectedStep, id: slotId }, { timeout: 12_000 })
+  const checkpoint = await page.locator(`[data-slot-id="${slotId}"]`).evaluate((slot, checkpointName) => ({
     name: checkpointName,
     expectedStep: slot.dataset.expectedStepId,
     phase: [...slot.classList].find((className) => className.startsWith('phase-')),
@@ -113,6 +113,73 @@ async function stageCheckpoint(name, expectedStep) {
   }), name)
   assert(checkpoint.stageImages === 1 && checkpoint.foodImages === 1 && checkpoint.overlays === 0, `Non-cumulative stage at ${name}`)
   result.guidedFlow.push(checkpoint)
+}
+
+let audioIdentity = null
+let previousAudioTime = -1
+async function audioCheckpoint(label) {
+  await page.waitForTimeout(350)
+  const checkpoint = await page.locator('audio[data-game-bgm]').evaluate((audio, checkpointLabel) => {
+    if (!audio.__referenceScreensQaIdentity) {
+      audio.__referenceScreensQaIdentity = `reference-bgm-${Date.now()}-${Math.random()}`
+    }
+    return {
+      label: checkpointLabel,
+      identity: audio.__referenceScreensQaIdentity,
+      count: document.querySelectorAll('audio[data-game-bgm]').length,
+      currentTime: audio.currentTime,
+      loop: audio.loop,
+      paused: audio.paused,
+      muted: audio.muted,
+      volume: audio.volume,
+    }
+  }, label)
+  if (audioIdentity === null) audioIdentity = checkpoint.identity
+  assert(checkpoint.identity === audioIdentity, `${label}: BGM element identity changed`)
+  assert(checkpoint.count === 1 && checkpoint.loop && !checkpoint.paused && !checkpoint.muted, `${label}: BGM lifecycle invalid ${JSON.stringify(checkpoint)}`)
+  assert(checkpoint.currentTime > previousAudioTime, `${label}: BGM time did not strictly increase (${previousAudioTime} -> ${checkpoint.currentTime})`)
+  previousAudioTime = checkpoint.currentTime
+  result.audio.checkpoints.push(checkpoint)
+  return checkpoint
+}
+
+async function makeAndDeliverClassic(orderNumber, guided = false) {
+  await page.locator('[data-customer-bubble-for]').first().waitFor({ timeout: 12_000 })
+  const emptySlot = page.locator('[data-slot-id].phase-empty').first()
+  await emptySlot.waitFor({ timeout: 8_000 })
+  const slotId = await emptySlot.getAttribute('data-slot-id')
+  assert(slotId === 'left' || slotId === 'right', `Order ${orderNumber}: no usable griddle slot`)
+  const slotSelector = `[data-slot-id="${slotId}"]`
+  const gestureSelector = `[data-gesture-slot-id="${slotId}"]`
+  await drag('[data-ingredient-id="noodle"]', slotSelector)
+  if (guided) await stageCheckpoint('noodle', 'egg', slotId)
+  await page.locator('[data-ingredient-id="egg"]').click()
+  await page.waitForFunction(({ id }) => document.querySelector(`[data-slot-id="${id}"]`)?.dataset.expectedStepId === 'hot-dog', { id: slotId }, { timeout: 12_000 })
+  if (guided) await stageCheckpoint('egg-ready', 'hot-dog', slotId)
+  await drag('[data-ingredient-id="hot-dog"]', slotSelector)
+  await page.waitForFunction(({ id }) => document.querySelector(`[data-slot-id="${id}"]`)?.dataset.expectedStepId === 'sauce', { id: slotId }, { timeout: 12_000 })
+  if (guided) await stageCheckpoint('hot-dog-ready', 'sauce', slotId)
+  await page.locator('[data-sauce-brush]').click()
+  await stroke(gestureSelector, [.15, .44], [.74, .46])
+  await stroke(gestureSelector, [.76, .58], [.2, .56])
+  if (guided) await stageCheckpoint('sauce-two-strokes', 'scallion', slotId)
+  await drag('[data-ingredient-id="scallion"]', slotSelector)
+  if (guided) await stageCheckpoint('scallion', 'cut', slotId)
+  for (const ratio of [.3, .5, .7]) await stroke(gestureSelector, [.15, ratio], [.85, ratio])
+  if (guided) await stageCheckpoint('three-cuts', 'roll', slotId)
+  await stroke(gestureSelector, [.2, .52], [.52, .5])
+  await page.waitForFunction(({ id }) => document.querySelector(`[data-slot-id="${id}"]`)?.dataset.expectedStepId === 'pack', { id: slotId }, { timeout: 5_000 })
+  const orderId = await page.locator(slotSelector).getAttribute('data-order-id')
+  assert(orderId, `Order ${orderNumber}: griddle has no bound order`)
+  const customerId = await page.locator(`[data-customer-bubble-for][data-order-id="${orderId}"]`).getAttribute('data-customer-bubble-for')
+  assert(customerId, `Order ${orderNumber}: intended customer bubble missing`)
+  await page.locator(`${slotSelector} .griddle-slot__food`).click()
+  await page.locator(`[data-tray-slot-id="${slotId}"]`).waitFor()
+  await drag(`[data-tray-slot-id="${slotId}"]`, `[data-customer-id="${customerId}"]`)
+  if (orderNumber < 3) {
+    await page.waitForFunction((count) => document.body.textContent?.includes(`完成订单 ${count}/3`), orderNumber, { timeout: 8_000 })
+  }
+  result.guidedFlow.push({ name: `actual-delivery-${orderNumber}`, slotId, realInteraction: true })
 }
 
 async function inspectKitchen(day) {
@@ -163,6 +230,7 @@ async function inspectKitchen(day) {
     }
   })
   const expectedBins = day <= 1 ? 4 : day === 3 ? 10 : 14
+  assert(record.day === day, `Day fixture identity mismatch: requested ${day}, rendered ${record.day}`)
   assert(record.bins.length === expectedBins, `Day ${day}: expected ${expectedBins} complete bins, got ${record.bins.length}`)
   assert(record.sauceBrushCount === 1, `Day ${day}: sauce brush missing`)
   assert(record.floatingBareIngredientImages === 0, `Day ${day}: floating ingredient found`)
@@ -195,6 +263,8 @@ try {
   assert(muted.muted && muted.volume === 0, `Mute did not apply ${JSON.stringify(muted)}`)
   await page.getByRole('button', { name: '背景音乐' }).click()
   await page.locator('audio[data-game-bgm]').evaluate((audio) => { audio.currentTime = 7 })
+  result.audio = { mixed, muted, sliders: { master: .62, music: .5, effects: .3 }, checkpoints: [] }
+  await audioCheckpoint('settings')
   result.screens.settings = await screenMetrics('.settings-screen__plate')
   assertPlate(result.screens.settings, 'settings')
   await screenshot('02-settings-audio-controls')
@@ -202,50 +272,31 @@ try {
   await page.getByRole('button', { name: '查看关卡与成就' }).click()
   result.screens.select = await screenMetrics('[data-screen-art="select"]')
   assertPlate(result.screens.select, 'select')
-  const afterNavigation = await page.locator('audio[data-game-bgm]').evaluate((audio) => ({ count: document.querySelectorAll('audio[data-game-bgm]').length, paused: audio.paused, muted: audio.muted, volume: audio.volume, currentTime: audio.currentTime }))
-  assert(afterNavigation.count === 1 && !afterNavigation.paused && !afterNavigation.muted && afterNavigation.currentTime >= 7, `BGM did not persist across screens ${JSON.stringify(afterNavigation)}`)
-  result.audio = { mixed, muted, afterNavigation, sliders: { master: .62, music: .5, effects: .3 } }
+  await audioCheckpoint('select')
   await screenshot('03-day-select')
 
   await page.getByRole('button', { name: /进入第 1 天/ }).click()
   await page.locator('.kitchen-scene').waitFor()
-  assert(await page.locator('audio[data-game-bgm]').count() === 1, 'Day transition duplicated BGM element')
-
-  // Dev-only fixture preserves the complete tutorial but pre-credits two orders,
-  // so a real first-order gesture journey reaches the real summary deterministically.
-  await page.goto(`${origin}/?playDay=1&qaServedOrders=2`, { waitUntil: 'networkidle', timeout: 60_000 })
   await page.locator('[data-tutorial-step="noodle"]').waitFor({ timeout: 8_000 })
   await page.waitForTimeout(2_800)
+  assert(await page.locator('.game-screen').getAttribute('data-day') === '1', 'Selection did not open actual Day 1')
+  await audioCheckpoint('day-1-entry')
   await screenshot('04-day-1-guided-entry')
-  await drag('[data-ingredient-id="noodle"]', '[data-slot-id="left"]')
-  await stageCheckpoint('noodle', 'egg')
-  await drag('[data-ingredient-id="egg"]', '[data-slot-id="left"]')
-  await page.locator('[data-tutorial-step="hot-dog"]').waitFor({ timeout: 10_000 })
-  await stageCheckpoint('egg-ready', 'hot-dog')
-  await drag('[data-ingredient-id="hot-dog"]', '[data-slot-id="left"]')
-  await page.locator('[data-tutorial-step="sauce"]').waitFor({ timeout: 10_000 })
-  await stageCheckpoint('hot-dog-ready', 'sauce')
-  await page.locator('[data-sauce-brush]').click()
-  await stroke('[data-gesture-slot-id="left"]', [.15, .44], [.74, .46])
-  await stroke('[data-gesture-slot-id="left"]', [.76, .58], [.2, .56])
-  await stageCheckpoint('sauce-two-strokes', 'scallion')
-  await drag('[data-ingredient-id="scallion"]', '[data-slot-id="left"]')
-  await stageCheckpoint('scallion', 'cut')
-  for (const ratio of [.3, .5, .7]) await stroke('[data-gesture-slot-id="left"]', [.15, ratio], [.85, ratio])
-  await stageCheckpoint('three-cuts', 'roll')
-  await stroke('[data-gesture-slot-id="left"]', [.2, .52], [.52, .5])
-  await page.locator('[data-tutorial-step="pack"]').waitFor({ timeout: 5_000 })
-  await page.locator('[data-slot-id="left"] .griddle-slot__food').click()
-  await page.locator('[data-tray-slot-id="left"]').waitFor()
-  await drag('[data-tray-slot-id="left"]', '[data-customer-id].presence-active')
+  await makeAndDeliverClassic(1, true)
+  await audioCheckpoint('day-1-after-order-1')
+  await makeAndDeliverClassic(2)
+  await audioCheckpoint('day-1-after-order-2')
+  await makeAndDeliverClassic(3)
   await page.locator('[data-screen-art="summary"]').waitFor({ timeout: 8_000 })
+  await audioCheckpoint('summary')
   result.screens.summary = await screenMetrics('[data-screen-art="summary"]')
   assertPlate(result.screens.summary, 'summary')
   const summaryText = await page.locator('.summary-card').innerText()
   assert(summaryText.includes('3') && summaryText.includes('%') && summaryText.includes('¥'), `Summary dynamic values missing: ${summaryText}`)
   await screenshot('05-day-1-summary')
   await page.getByRole('button', { name: '进入下一天' }).click()
-  await page.getByRole('button', { name: '返回主页' }).getByText('第 2 天').waitFor({ timeout: 8_000 })
+  await page.locator('.game-screen[data-day="2"]').waitFor({ timeout: 8_000 })
+  await audioCheckpoint('day-2')
   await screenshot('06-next-day')
 
   await inspectKitchen(3)
