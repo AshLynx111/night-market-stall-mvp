@@ -105,8 +105,7 @@
 .griddle-slot__food:disabled { opacity: 1; }
 .griddle-slot__food:not(:disabled) { cursor: pointer; filter: drop-shadow(0 0 11px #ffd169); }
 .griddle-slot__food img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
-.griddle-slot__base-art { z-index: 1; }
-.griddle-slot__modifier-art { z-index: 2; filter: drop-shadow(0 2px 2px rgb(46 23 12 / .28)); }
+.griddle-slot__stage-art { z-index: 1; filter: drop-shadow(0 3px 2px rgb(46 23 12 / .3)); }
 .griddle-slot__pack-hint { position: absolute; z-index: 7; left: 50%; bottom: 4%; padding: 3px 8px; transform: translateX(-50%); border-radius: 10px; background: rgb(46 32 25 / .8); color: #ffe8a2; font-size: 9px; font-weight: 900; white-space: nowrap; }
 .griddle-slot__status { position: absolute; z-index: 10; left: 50%; top: 3%; max-width: 78%; padding: 4px 9px; transform: translate(-50%, -50%); border: 1px solid rgb(255 222 151 / .65); border-radius: 9px; background: rgb(49 34 27 / .9); color: #fff0b3; box-shadow: 0 3px 4px rgb(20 12 9 / .34); font-size: 9px; font-weight: 900; line-height: 1.2; text-align: center; white-space: nowrap; pointer-events: none; }
 .heat-ready .griddle-slot__status { border-color: #ffc64e; color: #fff6c9; box-shadow: 0 0 8px rgb(255 187 64 / .48); }
@@ -149,15 +148,19 @@
 .griddle-slot__steam i:nth-child(3) { left: 73%; animation-delay: -1.2s; }
 
 .table-ingredient { position: absolute; z-index: 8; width: 9%; height: 12%; padding: 0; border: 0; background: transparent; cursor: grab; pointer-events: auto; touch-action: none; }
-.table-ingredient img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; filter: drop-shadow(0 4px 3px rgb(29 18 13 / .4)); }
+.table-ingredient__vessel { position: absolute; inset: 0; display: block; overflow: hidden; border: 0; border-radius: 9px 9px 15px 15px; background: transparent; box-shadow: none; pointer-events: none; }
+.table-ingredient__vessel::before { display: none; }
+.table-ingredient__contents { position: absolute; z-index: 3; inset: 10% 8% 8%; display: block; overflow: hidden; border-radius: 7px 7px 12px 12px; background: transparent; box-shadow: none; pointer-events: none; }
+.table-ingredient__contents img { width: 100%; height: 100%; object-fit: contain; object-position: center; transform: scale(1.08); pointer-events: none; filter: saturate(1.14) brightness(1.08) drop-shadow(0 2px 2px rgb(29 18 13 / .34)); }
 .table-ingredient[data-painted="true"] img { opacity: 1; }
 .table-ingredient:disabled { border-radius: 18px; background: rgb(38 28 24 / .08); cursor: default; filter: grayscale(.18); opacity: .82; }
 .kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled) { border-radius: 18px; background: rgb(255 216 91 / .16); box-shadow: 0 0 0 3px rgb(255 216 91 / .88), 0 0 18px rgb(255 186 56 / .78); animation: tutorial-target-pulse 1.25s ease-in-out infinite; }
-.table-ingredient--egg { left: 8.4%; top: 62.5%; width: 13%; height: 11%; }
-.table-ingredient--hot-dog { left: 13.2%; top: 74.2%; width: 14.8%; height: 12%; }
-.table-ingredient--scallion { left: 18.8%; top: 62.3%; width: 12.5%; height: 11%; }
-.table-ingredient--cilantro { left: 1.2%; top: 63.7%; width: 8.5%; height: 9.5%; }
-.table-ingredient--noodle { left: 77%; top: 62%; }
+.table-ingredient--egg { left: 18.1%; top: 62.5%; width: 8.7%; height: 11%; }
+.table-ingredient--egg .table-ingredient__contents img { object-fit: contain; transform: scale(1.02); }
+.table-ingredient--hot-dog { left: 18%; top: 74.2%; width: 9%; height: 12%; }
+.table-ingredient--scallion { left: 1.2%; top: 63.7%; width: 8%; height: 10%; }
+.table-ingredient--cilantro { left: 9.4%; top: 74.2%; width: 8.5%; height: 11%; }
+.table-ingredient--noodle { left: 9.4%; top: 62.5%; width: 8.2%; height: 11%; }
 .table-ingredient--turkey-noodle { left: 87%; top: 62%; }
 .table-ingredient--cheese { left: 77%; top: 73%; }
 .table-ingredient--corn { left: 87%; top: 73%; }

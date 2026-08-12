@@ -106,8 +106,8 @@ const heatStageAssets = import.meta.glob<string>(
   { eager: true, import: 'default', query: '?url' },
 )
 
-const modifierToppingAssets = import.meta.glob<string>(
-  '../../assets/approved/stages/modifiers/toppings/*.png',
+const flattenedStageAssets = import.meta.glob<string>(
+  '../../assets/approved/stages/flattened/*/*.png',
   { eager: true, import: 'default', query: '?url' },
 )
 
@@ -152,11 +152,6 @@ function canonicalStageIndex(recipeId: RecipeId, completedStepIds: readonly stri
   }, -1)
 }
 
-export interface ModifierOverlayAsset {
-  ingredient: IngredientId
-  src: string
-}
-
 const TOPPING_INGREDIENTS = new Set<IngredientId>([
   'egg',
   'cilantro',
@@ -166,24 +161,22 @@ const TOPPING_INGREDIENTS = new Set<IngredientId>([
   'enoki',
 ])
 
-export function modifierOverlayArt(
+function completedTopping(
   recipeId: RecipeId,
   completedStepIds: readonly string[],
   modifiers: readonly OrderModifier[],
-): ModifierOverlayAsset[] {
+): IngredientId | null {
   const requested: IngredientId[] = modifiers.flatMap((modifier) => {
     if (modifier.kind === 'extra' && TOPPING_INGREDIENTS.has(modifier.ingredient)) return [modifier.ingredient]
     if (modifier.kind === 'heat' && modifier.level === 'hot') return ['chili-powder']
     return []
   })
 
-  return [...new Set(requested)].flatMap((ingredient) => {
+  return [...new Set(requested)].find((ingredient) => {
     const canonicalCount = RECIPES[recipeId].steps.filter((step) => step.id === ingredient).length
     const completedCount = completedStepIds.filter((stepId) => stepId === ingredient).length
-    if (completedCount <= canonicalCount) return []
-    const key = `../../assets/approved/stages/modifiers/toppings/topping-${ingredient}.png`
-    return [{ ingredient, src: requireAsset(modifierToppingAssets, key) }]
-  })
+    return completedCount > canonicalCount
+  }) ?? null
 }
 
 export function isKitchenCustomerArtId(value: string): value is KitchenCustomerArtId {
@@ -225,17 +218,30 @@ export function stageArt(
   const withoutScallion = modifiers.some(
     (modifier) => modifier.kind === 'without' && modifier.ingredient === 'scallion',
   )
+  const topping = completedTopping(recipeId, completedStepIds, modifiers)
   if (withoutScallion && completedStepIds.includes('roll')) {
+    if (topping === 'enoki' || topping === 'chili-powder') {
+      const key = `../../assets/approved/stages/flattened/${recipeId}/no-scallion-${recipeId}-roll--${topping}.png`
+      return requireAsset(flattenedStageAssets, key)
+    }
     const key = `../../assets/approved/stages/modifiers/no-scallion/${recipeId}-roll.png`
     return requireAsset(noScallionStageAssets, key)
   }
   if (withoutScallion && completedStepIds.includes('cut')) {
+    if (topping === 'enoki' || topping === 'chili-powder') {
+      const key = `../../assets/approved/stages/flattened/${recipeId}/no-scallion-${recipeId}-cut--${topping}.png`
+      return requireAsset(flattenedStageAssets, key)
+    }
     const key = `../../assets/approved/stages/modifiers/no-scallion/${recipeId}-cut.png`
     return requireAsset(noScallionStageAssets, key)
   }
   const stageIndex = canonicalIndex + 1
   const index = String(stageIndex).padStart(2, '0')
   const stage = canonicalIndex < 0 ? 'empty' : canonicalSteps[canonicalIndex].id
+  if (topping) {
+    const key = `../../assets/approved/stages/flattened/${recipeId}/${recipeId}-${index}-${stage}--${topping}.png`
+    return requireAsset(flattenedStageAssets, key)
+  }
   const key = `../../assets/approved/stages/${recipeId}/${recipeId}-${index}-${stage}.png`
   return requireAsset(cumulativeStageAssets, key)
 }

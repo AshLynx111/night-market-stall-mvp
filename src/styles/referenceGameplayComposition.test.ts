@@ -22,4 +22,16 @@ describe('reference-master gameplay composition', () => {
     expect(kitchenCss).toContain('width: 132px')
     expect(kitchenCss).toContain('min-height: 94px')
   })
+
+  it('uses physical ingredient vessels and forbids runtime food overlay layers', () => {
+    expect(kitchenCss).toMatch(/\.table-ingredient__vessel\s*\{/)
+    expect(kitchenCss).toMatch(/\.table-ingredient__contents\s*\{/)
+    expect(kitchenCss).not.toContain('.griddle-slot__modifier-art')
+  })
+
+  it('uses the supplied start-menu plate with transparent interaction hotspots', () => {
+    expect(landscapeSource).toContain('start-screen-user-final.png')
+    expect(landscapeSource).toContain('home-screen__art')
+    expect(landscapeCss).toMatch(/\.home-hotspot\s*\{/)
+  })
 })

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import mainBackground from '../assets/approved/main-ui/game-main-screen-final.png'
+import startScreen from '../assets/approved/main-ui/start-screen-user-final.png'
 import menuBoard from '../assets/approved/menu/menu-board.png'
 import celebrityArt from '../assets/approved/events/day5-celebrity-event-key-art.png'
 import takeawayBag from '../assets/approved/menu/takeaway-bag.png'
@@ -401,17 +402,18 @@ export function LandscapeGame() {
 
   if (screen === 'home') {
     return (
-      <main className="home-screen" style={{ '--home-bg': `url(${mainBackground})` } as React.CSSProperties}>
-        <div className="home-screen__veil" />
-        <section className="home-card">
-          <div className="home-card__eyebrow">大学城 · 夜市经营游戏</div>
-          <h1>今晚吃烤冷面</h1>
-          <p>从一张面皮的小摊开始，接单、制作、升级，经营属于你的夜市招牌。</p>
-          <button className="primary-button" onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}>开始营业</button>
-          <button className="secondary-button" onClick={() => setScreen('select')}>选择关卡</button>
-          <button className="text-button" onClick={() => setShowHelp(true)}>怎么玩？</button>
-          <small>进度已自动保存 · 当前 ¥{save.coins}</small>
-        </section>
+      <main className="home-screen home-screen--illustrated" style={{ '--home-bg': `url(${startScreen})` } as React.CSSProperties}>
+        <div className="home-screen__plate">
+          <img className="home-screen__art" src={startScreen} alt="夜市烤冷面游戏主菜单" />
+          <nav className="home-screen__hotspots" aria-label="主菜单">
+            <button className="home-hotspot home-hotspot--start" aria-label="开始游戏" onClick={() => startDay(DAYS[0])}><span className="sr-only">开始游戏</span></button>
+            <button className="home-hotspot home-hotspot--continue" aria-label="继续游戏" onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}><span className="sr-only">继续游戏</span></button>
+            <button className="home-hotspot home-hotspot--settings" aria-label="设置与玩法说明" onClick={() => setShowHelp(true)}><span className="sr-only">设置</span></button>
+            <button className="home-hotspot home-hotspot--collection" aria-label="打开图鉴" onClick={() => setShowMenu(true)}><span className="sr-only">图鉴</span></button>
+            <button className="home-hotspot home-hotspot--achievements" aria-label="查看关卡与成就" onClick={() => setScreen('select')}><span className="sr-only">选择关卡</span></button>
+          </nav>
+        </div>
+        {showMenu && <MenuModal onClose={() => setShowMenu(false)} />}
         {showHelp && <HelpModal onClose={() => setShowHelp(false)} />}
       </main>
     )

@@ -64,7 +64,11 @@ export function TableIngredient({ id, label, art, painted = false, disabled = fa
         }}
         onPointerCancel={(event) => finish(event, true)}
       >
-        <img src={art} alt="" draggable={false} />
+        <span className="table-ingredient__vessel" aria-hidden="true">
+          <span className="table-ingredient__contents">
+            <img src={art} alt="" draggable={false} />
+          </span>
+        </span>
       </button>
       {ghost && (
         <img

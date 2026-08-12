@@ -124,7 +124,7 @@ describe('KitchenScene', () => {
     expect(bubble.getAttribute('aria-label')).toContain('剩余耐心')
   })
 
-  it('renders a Day 4 bacon overlay in both raw and ready heat without a missing stage', () => {
+  it('renders one complete stage image instead of a base image plus ingredient overlays', () => {
     let state = activeKitchenState(4, 1)
     state = kitchenReducer(state, { type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
     state = kitchenReducer(state, { type: 'TAP_EGG', slotId: 'left' })
@@ -134,12 +134,21 @@ describe('KitchenScene', () => {
     state = kitchenReducer(state, { type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'bacon' })
     const { container, rerender } = renderScene(state)
 
-    expect(container.querySelector('.griddle-slot--left.heat-raw [data-modifier-overlay="bacon"]')).not.toBeNull()
-    expect(container.querySelector('.griddle-slot--left .griddle-slot__food img')).not.toBeNull()
+    expect(container.querySelectorAll('.griddle-slot--left .griddle-slot__food img')).toHaveLength(1)
+    expect(container.querySelector('.griddle-slot--left .griddle-slot__stage-art')).not.toBeNull()
+    expect(container.querySelector('[data-modifier-overlay]')).toBeNull()
 
     state = kitchenReducer(state, { type: 'TICK', deltaMs: 3_500 })
     rerender(state)
-    expect(container.querySelector('.griddle-slot--left.heat-ready [data-modifier-overlay="bacon"]')).not.toBeNull()
+    expect(container.querySelectorAll('.griddle-slot--left .griddle-slot__food img')).toHaveLength(1)
+  })
+
+  it('grounds every tabletop ingredient inside a physical bowl or tray', () => {
+    const { container } = renderScene(activeKitchenState(3, 1))
+    const ingredients = [...container.querySelectorAll('[data-ingredient-id]')]
+    expect(ingredients.length).toBeGreaterThan(4)
+    expect(container.querySelectorAll('.table-ingredient__vessel')).toHaveLength(ingredients.length)
+    expect(container.querySelectorAll('.table-ingredient__contents')).toHaveLength(ingredients.length)
   })
 
   it('exposes perspective pose variables on foot-anchored customer actors', () => {

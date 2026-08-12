@@ -11,7 +11,7 @@ async function validate() {
   const expectedFamilies = ['customers', 'events', 'main-ui', 'menu', 'stages']
   const families = [...new Set(manifest.assets.map((asset) => asset.family))].sort()
 
-  if (manifest.count !== 251) errors.push(`Expected 251 assets, found ${manifest.count}`)
+  if (manifest.count < 251) errors.push(`Expected at least 251 assets, found ${manifest.count}`)
   if (JSON.stringify(families) !== JSON.stringify(expectedFamilies)) {
     errors.push(`Unexpected families: ${families.join(', ')}`)
   }

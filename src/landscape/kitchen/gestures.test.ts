@@ -71,8 +71,17 @@ describe('gesture metrics', () => {
     ], rect, []).complete).toBe(false)
   })
 
-  it('completes a wide horizontal roll and rejects taps or primarily vertical paths', () => {
-    expect(measureRoll([{ x: 100, y: 200 }, { x: 700, y: 210 }], rect).progress).toBeGreaterThanOrEqual(0.75)
+  it('completes one short rightward roll swipe and rejects reverse, taps, or vertical paths', () => {
+    const right = measureRoll([
+      { x: rect.x + rect.width * 0.2, y: rect.y + rect.height * 0.5 },
+      { x: rect.x + rect.width * 0.52, y: rect.y + rect.height * 0.54 },
+    ], rect)
+    expect(right.progress).toBeGreaterThanOrEqual(0.3)
+    expect(right.complete).toBe(true)
+    expect(measureRoll([
+      { x: rect.x + rect.width * 0.7, y: rect.y + rect.height * 0.5 },
+      { x: rect.x + rect.width * 0.35, y: rect.y + rect.height * 0.5 },
+    ], rect).complete).toBe(false)
     expect(measureRoll([{ x: 100, y: 200 }, { x: 150, y: 600 }], rect).complete).toBe(false)
     expect(measureRoll([{ x: 200, y: 300 }, { x: 205, y: 303 }], rect).complete).toBe(false)
   })

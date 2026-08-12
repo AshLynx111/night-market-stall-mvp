@@ -79,7 +79,7 @@ function TutorialGestureCue({ kind, slotId, cutTargetIndices, sauceSelected, sau
   const points = tutorialGesturePath(kind, cutTargetIndex)
   const label = kind === 'sauce'
     ? sauceSelected ? '左右刷两下' : '先拿起酱刷，再左右刷两下'
-    : kind === 'cut' ? '沿下一条横向虚线切开' : '沿虚线从一侧长滑卷起'
+    : kind === 'cut' ? '沿下一条横向虚线切开' : '在饼上向右滑一下'
   return (
     <div
       className={`tutorial-gesture-cue tutorial-gesture-cue--${slotId}`}

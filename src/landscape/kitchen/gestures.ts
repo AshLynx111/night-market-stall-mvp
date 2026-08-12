@@ -160,11 +160,10 @@ export function measureRoll(path: Point[], rect: Rect): RollGestureResult {
   const points = pointsOnFood(path, rect)
   if (points.length < 2) return { kind: 'roll', progress: 0, verticalDeviation: 0, complete: false }
 
-  const progress = clamp(
-    (Math.max(...points.map((point) => point.x)) - Math.min(...points.map((point) => point.x))) / rect.width,
-  )
+  const horizontalTravel = points.at(-1)!.x - points[0].x
+  const progress = clamp(horizontalTravel / rect.width)
   const verticalDeviation = clamp(
     (Math.max(...points.map((point) => point.y)) - Math.min(...points.map((point) => point.y))) / rect.height,
   )
-  return { kind: 'roll', progress, verticalDeviation, complete: progress >= 0.75 && verticalDeviation < 0.3 }
+  return { kind: 'roll', progress, verticalDeviation, complete: progress >= 0.3 && verticalDeviation <= 0.6 }
 }

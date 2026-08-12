@@ -42,6 +42,7 @@ function roleFor(relativePath) {
   if (relativePath.startsWith('events/')) return 'event-key-art'
   if (relativePath === 'main-ui/night-market-clean-background.png') return 'clean-background'
   if (relativePath === 'main-ui/game-main-screen-final.png') return 'screen-composite'
+  if (relativePath === 'main-ui/start-screen-user-final.png') return 'start-screen-composite'
   if (relativePath.startsWith('menu/dishes/')) return 'finished-dish'
   if (relativePath.startsWith('menu/ingredients/')) return 'tabletop-ingredient'
   if (relativePath === 'menu/menu-board.svg') return 'editable-menu'
@@ -49,6 +50,7 @@ function roleFor(relativePath) {
   if (relativePath === 'menu/takeaway-bag.png') return 'packaging'
   if (relativePath.endsWith('-stage-atlas.png')) return 'stage-atlas'
   if (relativePath.startsWith('stages/heat/')) return 'heat-stage'
+  if (relativePath.startsWith('stages/flattened/')) return 'precomposed-stage'
   if (relativePath.startsWith('stages/modifiers/')) return 'modifier-stage'
   if (relativePath.startsWith('stages/')) return 'cumulative-stage'
   return 'unclassified'
@@ -72,6 +74,9 @@ function derivativeFor(relativePath) {
   if (relativePath === 'menu/menu-board.png') return 'menu/menu-board.svg'
   if (relativePath === 'main-ui/game-main-screen-final.png') {
     return 'main-ui/night-market-clean-background.png + runtime layout reference'
+  }
+  if (relativePath === 'main-ui/start-screen-user-final.png') {
+    return 'user-supplied approved start-screen reference'
   }
   const atlasMatch = relativePath.match(/^stages\/(.+)-stage-atlas\.png$/)
   if (atlasMatch) return `stages/${atlasMatch[1]}/*.png`

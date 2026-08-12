@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { modifierOverlayArt, stageArt } from '../../landscape/kitchen/assets'
+import { stageArt } from '../../landscape/kitchen/assets'
 import { slotExpectedAction } from '../../landscape/kitchen/griddle'
 import type { KitchenState, SlotId } from '../../landscape/kitchen/types'
 
@@ -18,9 +18,6 @@ export function GriddleSlot({ state, slotId, onMoveToTray }: {
         slot.orderModifiers,
       )
     : null
-  const modifierOverlays = slot.recipeId && slot.phase !== 'on-tray'
-    ? modifierOverlayArt(slot.recipeId, slot.completedStepIds, slot.orderModifiers)
-    : []
   const heatDuration = Math.max(1, slot.heatBurnAtMs + 1_000)
   const heatProgress = Math.min(1, Math.max(0, slot.heatElapsedMs / heatDuration))
   const status = slot.phase === 'cooking'
@@ -49,17 +46,7 @@ export function GriddleSlot({ state, slotId, onMoveToTray }: {
           onClick={() => slot.phase === 'rolled' && onMoveToTray(slotId)}
           aria-label={slot.phase === 'rolled' ? '把做好的烤冷面移到托盘' : '铁板上的烤冷面'}
         >
-          <img className="griddle-slot__base-art" src={art} alt="" draggable={false} />
-          {modifierOverlays.map((overlay) => (
-            <img
-              className="griddle-slot__modifier-art"
-              data-modifier-overlay={overlay.ingredient}
-              src={overlay.src}
-              alt=""
-              draggable={false}
-              key={overlay.ingredient}
-            />
-          ))}
+          <img className="griddle-slot__stage-art" src={art} alt="" draggable={false} />
         </button>
       )}
       {slot.phase === 'rolled' && <span className="griddle-slot__pack-hint">点一下装盘</span>}
