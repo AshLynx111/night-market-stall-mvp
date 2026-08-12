@@ -48,6 +48,31 @@ afterEach(() => {
 })
 
 describe('KitchenScene', () => {
+  it('uses the approved clean kitchen composition with live customer lanes above the mask', () => {
+    const { container } = renderScene(activeKitchenState(1, 1))
+
+    expect(container.querySelector('.kitchen-scene')?.getAttribute('data-kitchen-composition')).toBe('approved-clean-live')
+    expect(container.querySelector('.kitchen-scene__customers')?.getAttribute('data-live-customer-layer')).toBe('dynamic-only')
+    expect(container.querySelectorAll('[data-customer-lane-anchor]')).toHaveLength(3)
+    expect(container.querySelectorAll('[data-baked-customer]')).toHaveLength(0)
+  })
+
+  it('keeps every active order bubble clear of its customer face in the three-lane composition', () => {
+    const { container } = renderScene(activeKitchenState(3, 1))
+
+    expect(container.querySelectorAll('[data-customer-bubble-for]')).toHaveLength(3)
+    expect(container.querySelectorAll('[data-customer-lane-anchor][data-bubble-face-clearance="true"]')).toHaveLength(3)
+  })
+
+  it('declares the approved left bin rack and exact two-griddle interaction anchors', () => {
+    const { container } = renderScene(activeKitchenState(5, 1))
+
+    expect(container.querySelector('.kitchen-scene__ingredients')?.getAttribute('data-kitchen-bin-rack')).toBe('left')
+    expect(container.querySelectorAll('.griddle-slot[data-griddle-hitbox]')).toHaveLength(2)
+    expect(container.querySelector('.griddle-slot--left')?.getAttribute('data-griddle-hitbox')).toBe('left')
+    expect(container.querySelector('.griddle-slot--right')?.getAttribute('data-griddle-hitbox')).toBe('right')
+  })
+
   it('renders the two-slot, three-customer Day 3 scene without legacy panels', () => {
     const { container } = renderScene(createKitchenState(3, 1))
 

@@ -230,14 +230,22 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
   const bubbleLayout = layoutOrderBubbles(state.customers)
 
   return (
-    <div className="kitchen-scene" data-guided-tutorial={guided ? 'true' : undefined} ref={sceneRef}>
-      <section className="kitchen-scene__customers" aria-label="顾客队伍">
+    <div
+      className="kitchen-scene"
+      data-guided-tutorial={guided ? 'true' : undefined}
+      data-kitchen-composition="approved-clean-live"
+      ref={sceneRef}
+    >
+      <section className="kitchen-scene__customers" aria-label="顾客队伍" data-live-customer-layer="dynamic-only">
         {state.customers.map((customer) => (
-          <CustomerLane
-            customer={customer}
-            bubblePose={bubbleLayout[customer.id]}
+          <div
+            className={`kitchen-scene__lane-anchor kitchen-scene__lane-anchor--${customer.lane}`}
+            data-customer-lane-anchor={customer.lane}
+            data-bubble-face-clearance={bubbleLayout[customer.id]?.clearOfCharacter ? 'true' : undefined}
             key={customer.id}
-          />
+          >
+            <CustomerLane customer={customer} bubblePose={bubbleLayout[customer.id]} />
+          </div>
         ))}
       </section>
 
@@ -254,7 +262,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
         ))}
       </section>
 
-      <section className="kitchen-scene__ingredients" aria-label="桌面食材">
+      <section className="kitchen-scene__ingredients" aria-label="桌面食材" data-kitchen-bin-rack="left">
         {unlockedIngredients.filter((id) => id !== 'sauce').map((id) => (
           <TableIngredient
             key={id}

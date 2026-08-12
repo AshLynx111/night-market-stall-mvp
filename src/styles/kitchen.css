@@ -13,6 +13,8 @@
 .kitchen-scene button { font: inherit; }
 .kitchen-scene__customers,
 .kitchen-scene__griddle { position: absolute; inset: 0; pointer-events: none; }
+.kitchen-scene__customers { z-index: 2; }
+.kitchen-scene__lane-anchor { position: static; }
 .kitchen-scene__ingredients {
   --ingredient-rack-columns: 3;
   --ingredient-rack-rows: 5;
@@ -31,7 +33,7 @@
   position: absolute;
   z-index: 4;
   inset: 0;
-  background-image: var(--game-bg);
+  background-image: var(--kitchen-clean-bg);
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 56.5%, 100% 56.5%, 100% 100%, 0 100%);
