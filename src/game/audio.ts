@@ -56,6 +56,11 @@ export function setKitchenAudioEnabled(enabled: boolean) {
 
 export function setAudioEffectLevel(level: number) {
   effectLevel = Math.min(1, Math.max(0, Number.isFinite(level) ? level : 1))
+  const now = audioContext?.currentTime ?? 0
+  for (const { gain } of sizzleLoops.values()) {
+    gain.gain.cancelScheduledValues(now)
+    gain.gain.setTargetAtTime(0.008 * effectLevel, now, 0.02)
+  }
 }
 
 export function startSizzle(slotId: KitchenAudioSlotId) {

@@ -143,6 +143,29 @@ describe('App landscape route', () => {
     act(() => root.unmount())
   })
 
+  it('keeps the kitchen HUD music toggle unmuted at zero slider volume and persists its toggle', () => {
+    vi.stubGlobal('requestAnimationFrame', vi.fn(() => 1))
+    vi.stubGlobal('cancelAnimationFrame', vi.fn())
+    localStorage.setItem('night-market-audio-settings-v1', JSON.stringify({
+      master: 0,
+      music: 0,
+      effects: 1,
+      musicMuted: false,
+    }))
+    window.history.replaceState({}, '', '/?playDay=1')
+    const container = document.createElement('div')
+    const root = createRoot(container)
+    act(() => root.render(<App />))
+
+    const hudMusic = container.querySelector<HTMLButtonElement>('.icon-button--sound')!
+    expect(hudMusic.textContent).toBe('♪')
+    act(() => hudMusic.click())
+    expect(hudMusic.textContent).toBe('×')
+    expect(JSON.parse(localStorage.getItem('night-market-audio-settings-v1')!).musicMuted).toBe(true)
+
+    act(() => root.unmount())
+  })
+
   it('renders the approved art marker for each campaign screen', () => {
     const container = document.createElement('div')
     const root = createRoot(container)

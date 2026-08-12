@@ -15,6 +15,7 @@ describe('kitchen audio loops', () => {
   const stopped: Array<ReturnType<typeof vi.fn>> = []
   const gainValues: number[] = []
   const rampValues: number[] = []
+  const liveMixValues: number[] = []
 
   beforeEach(() => {
     stopAllKitchenAudio()
@@ -22,6 +23,7 @@ describe('kitchen audio loops', () => {
     stopped.length = 0
     gainValues.length = 0
     rampValues.length = 0
+    liveMixValues.length = 0
     class MockAudioContext {
       currentTime = 0
       destination = {}
@@ -48,6 +50,7 @@ describe('kitchen audio loops', () => {
             setValueAtTime: vi.fn((value: number) => gainValues.push(value)),
             exponentialRampToValueAtTime: vi.fn((value: number) => rampValues.push(value)),
             cancelScheduledValues: vi.fn(),
+            setTargetAtTime: vi.fn((value: number) => liveMixValues.push(value)),
           },
           connect: vi.fn(),
           disconnect: vi.fn(),
@@ -105,5 +108,14 @@ describe('kitchen audio loops', () => {
     gainValues.length = 0
     startSizzle('right')
     expect(gainValues.some((value) => Math.abs(value - (0.008 * 0.2)) < 0.000001)).toBe(true)
+  })
+
+  it('ramps every already-playing sizzle loop when the effects mix changes', () => {
+    startSizzle('left')
+    startSizzle('right')
+
+    setAudioEffectLevel(0.35)
+
+    expect(liveMixValues).toEqual([0.008 * 0.35, 0.008 * 0.35])
   })
 })

@@ -617,7 +617,7 @@ export function LandscapeGame() {
         paused={screen === 'event' || showMenu || showHelp || showAbandonConfirm}
         backgroundInert={showAbandonConfirm}
         eventOpen={screen === 'event'}
-        musicEnabled={!audioSettings.musicMuted && audioSettings.master * audioSettings.music > 0}
+        musicEnabled={!audioSettings.musicMuted}
         effectsEnabled={audioSettings.master * audioSettings.effects > 0}
         guidedTutorial={day.day === 1 && !guidedTutorialComplete}
         qaCelebrityPatienceMs={qaCelebrityPatienceMs}
