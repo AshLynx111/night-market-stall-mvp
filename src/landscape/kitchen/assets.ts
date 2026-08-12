@@ -1,19 +1,4 @@
-import bacon from '../../assets/approved/menu/ingredients/ingredient-bacon.png'
-import cheese from '../../assets/approved/menu/ingredients/ingredient-cheese.png'
-import chiliPowder from '../../assets/approved/menu/ingredients/ingredient-chili-powder.png'
-import cilantro from '../../assets/approved/menu/ingredients/ingredient-cilantro.png'
-import corn from '../../assets/approved/menu/ingredients/ingredient-corn.png'
-import egg from '../../assets/approved/menu/ingredients/ingredient-egg.png'
-import enoki from '../../assets/approved/menu/ingredients/ingredient-enoki.png'
-import hotDog from '../../assets/approved/menu/ingredients/ingredient-hot-dog.png'
-import noodle from '../../assets/approved/menu/ingredients/ingredient-noodle-sheet.png'
-import onion from '../../assets/approved/menu/ingredients/ingredient-onion.png'
-import orleans from '../../assets/approved/menu/ingredients/ingredient-orleans-chicken.png'
-import sauce from '../../assets/approved/menu/ingredients/ingredient-sauce.png'
-import scallion from '../../assets/approved/menu/ingredients/ingredient-scallion.png'
-import tenderloin from '../../assets/approved/menu/ingredients/ingredient-tenderloin.png'
-import turkeyNoodle from '../../assets/approved/menu/ingredients/ingredient-turkey-noodle.png'
-import { RECIPES } from '../campaign'
+import { INGREDIENT_BIN_ART, RECIPES } from '../campaign'
 import type { IngredientId, OrderModifier, RecipeId } from '../campaign'
 import type { CustomerMood, HeatState } from './types'
 
@@ -116,23 +101,7 @@ const noScallionStageAssets = import.meta.glob<string>(
   { eager: true, import: 'default', query: '?url' },
 )
 
-const ingredientAssets: Record<IngredientId, string> = {
-  noodle,
-  egg,
-  'hot-dog': hotDog,
-  sauce,
-  scallion,
-  cilantro,
-  onion,
-  'chili-powder': chiliPowder,
-  'turkey-noodle': turkeyNoodle,
-  cheese,
-  corn,
-  orleans,
-  bacon,
-  tenderloin,
-  enoki,
-}
+const ingredientAssets: Record<IngredientId, string> = INGREDIENT_BIN_ART
 
 function requireAsset(map: Record<string, string>, key: string): string {
   const value = map[key]

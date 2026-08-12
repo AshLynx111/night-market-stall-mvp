@@ -3,21 +3,21 @@ import bigEaterDish from '../assets/approved/menu/dishes/dish-big-eater-noodle.p
 import orleansDish from '../assets/approved/menu/dishes/dish-orleans-chicken-noodle.png'
 import signatureDish from '../assets/approved/menu/dishes/dish-signature-cheese-turkey-noodle.png'
 import tenderloinDish from '../assets/approved/menu/dishes/dish-tenderloin-turkey-noodle.png'
-import noodleSheet from '../assets/approved/menu/ingredients/ingredient-noodle-sheet.png'
-import egg from '../assets/approved/menu/ingredients/ingredient-egg.png'
-import hotDog from '../assets/approved/menu/ingredients/ingredient-hot-dog.png'
-import cheese from '../assets/approved/menu/ingredients/ingredient-cheese.png'
-import turkeyNoodle from '../assets/approved/menu/ingredients/ingredient-turkey-noodle.png'
-import corn from '../assets/approved/menu/ingredients/ingredient-corn.png'
-import orleansChicken from '../assets/approved/menu/ingredients/ingredient-orleans-chicken.png'
-import tenderloin from '../assets/approved/menu/ingredients/ingredient-tenderloin.png'
-import sauce from '../assets/approved/menu/ingredients/ingredient-sauce.png'
-import scallion from '../assets/approved/menu/ingredients/ingredient-scallion.png'
-import cilantro from '../assets/approved/menu/ingredients/ingredient-cilantro.png'
-import onion from '../assets/approved/menu/ingredients/ingredient-onion.png'
-import chiliPowder from '../assets/approved/menu/ingredients/ingredient-chili-powder.png'
-import bacon from '../assets/approved/menu/ingredients/ingredient-bacon.png'
-import enoki from '../assets/approved/menu/ingredients/ingredient-enoki.png'
+import bacon from '../assets/approved/menu/ingredient-bins/ingredient-bin-bacon.png'
+import cheese from '../assets/approved/menu/ingredient-bins/ingredient-bin-cheese.png'
+import chiliPowder from '../assets/approved/menu/ingredient-bins/ingredient-bin-chili-powder.png'
+import cilantro from '../assets/approved/menu/ingredient-bins/ingredient-bin-cilantro.png'
+import corn from '../assets/approved/menu/ingredient-bins/ingredient-bin-corn.png'
+import egg from '../assets/approved/menu/ingredient-bins/ingredient-bin-egg.png'
+import enoki from '../assets/approved/menu/ingredient-bins/ingredient-bin-enoki.png'
+import hotDog from '../assets/approved/menu/ingredient-bins/ingredient-bin-hot-dog.png'
+import noodleSheet from '../assets/approved/menu/ingredient-bins/ingredient-bin-noodle.png'
+import onion from '../assets/approved/menu/ingredient-bins/ingredient-bin-onion.png'
+import orleansChicken from '../assets/approved/menu/ingredient-bins/ingredient-bin-orleans.png'
+import sauce from '../assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png'
+import scallion from '../assets/approved/menu/ingredient-bins/ingredient-bin-scallion.png'
+import tenderloin from '../assets/approved/menu/ingredient-bins/ingredient-bin-tenderloin.png'
+import turkeyNoodle from '../assets/approved/menu/ingredient-bins/ingredient-bin-turkey-noodle.png'
 
 export type RecipeId = 'classic' | 'big-eater' | 'orleans' | 'tenderloin' | 'signature'
 export type IngredientId =
@@ -36,6 +36,24 @@ export type IngredientId =
   | 'bacon'
   | 'tenderloin'
   | 'enoki'
+
+export const INGREDIENT_BIN_ART: Record<IngredientId, string> = {
+  noodle: noodleSheet,
+  egg,
+  'hot-dog': hotDog,
+  sauce,
+  scallion,
+  cilantro,
+  onion,
+  'chili-powder': chiliPowder,
+  'turkey-noodle': turkeyNoodle,
+  cheese,
+  corn,
+  orleans: orleansChicken,
+  bacon,
+  tenderloin,
+  enoki,
+}
 
 export type OrderModifier =
   | { kind: 'extra'; ingredient: IngredientId }

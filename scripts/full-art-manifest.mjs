@@ -52,6 +52,7 @@ function roleFor(relativePath) {
   if (relativePath === 'main-ui/game-main-screen-final.png') return 'screen-composite'
   if (relativePath === 'main-ui/start-screen-user-final.png') return 'start-screen-composite'
   if (relativePath.startsWith('menu/dishes/')) return 'finished-dish'
+  if (relativePath.startsWith('menu/ingredient-bins/')) return 'tabletop-ingredient-bin'
   if (relativePath.startsWith('menu/ingredients/')) return 'tabletop-ingredient'
   if (relativePath === 'menu/menu-board.svg') return 'editable-menu'
   if (relativePath === 'menu/menu-board.png') return 'menu-raster-export'
