@@ -8,6 +8,8 @@ import menuBoard from '../assets/approved/menu/menu-board.png'
 import celebrityArt from '../assets/approved/events/day5-celebrity-event-key-art.png'
 import takeawayBag from '../assets/approved/menu/takeaway-bag.png'
 import { loadAudioSettings, saveAudioSettings, type AudioSettings } from '../game/audioSettings'
+import { applyAudioSettings, unlockAndPlayBgm } from '../game/bgm'
+import { setAudioEffectLevel } from '../game/audio'
 import { DAYS, RECIPES, incomeForDelivery, starsForDay } from '../landscape/campaign'
 import type { CookingStep, DayConfig, Recipe } from '../landscape/campaign'
 import { useKitchenGame } from '../landscape/kitchen/useKitchenGame'
@@ -89,13 +91,14 @@ function TopHud({ day, coins, served, target, satisfaction, sound, onHome, onMen
   )
 }
 
-function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, sound, guidedTutorial, qaCelebrityPatienceMs, qaServedOrders, onHome, onMenu, onSound, onHelp, onOrderServed, onEvent, onResumeEvent, onTutorialComplete, onComplete }: {
+function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musicEnabled, effectsEnabled, guidedTutorial, qaCelebrityPatienceMs, qaServedOrders, onHome, onMenu, onSound, onHelp, onOrderServed, onEvent, onResumeEvent, onTutorialComplete, onComplete }: {
   day: DayConfig
   save: CampaignSave
   paused: boolean
   backgroundInert: boolean
   eventOpen: boolean
-  sound: boolean
+  musicEnabled: boolean
+  effectsEnabled: boolean
   guidedTutorial: boolean
   qaCelebrityPatienceMs?: number
   qaServedOrders?: number
@@ -216,12 +219,12 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, soun
           served={state.servedQualities.length}
           target={day.targetOrders}
           satisfaction={average}
-          sound={sound}
+          sound={musicEnabled}
           onHome={onHome}
           onMenu={onMenu}
           onSound={onSound}
         />
-        <KitchenScene state={state} dispatch={dispatch} soundEnabled={sound} />
+        <KitchenScene state={state} dispatch={dispatch} soundEnabled={effectsEnabled} />
         <button className="help-fab" onClick={onHelp}>？</button>
         {eventOpen && (
           <div className="event-screen event-screen--overlay">
@@ -341,7 +344,6 @@ export function LandscapeGame() {
   const [showMenu, setShowMenu] = useState(false)
   const [showHelp, setShowHelp] = useState(false)
   const [showAbandonConfirm, setShowAbandonConfirm] = useState(false)
-  const [sound, setSound] = useState(true)
   const [audioSettings, setAudioSettings] = useState<AudioSettings>(loadAudioSettings)
   const [sessionId, setSessionId] = useState(1)
   const [guidedTutorialComplete, setGuidedTutorialComplete] = useState(readGuidedTutorialComplete)
@@ -370,7 +372,24 @@ export function LandscapeGame() {
 
   useEffect(() => {
     saveAudioSettings(audioSettings)
+    applyAudioSettings(audioSettings)
+    setAudioEffectLevel(audioSettings.master * audioSettings.effects)
   }, [audioSettings])
+
+  useEffect(() => {
+    const unlock = (event: PointerEvent | KeyboardEvent) => {
+      if (!event.isTrusted) return
+      window.removeEventListener('pointerdown', unlock)
+      window.removeEventListener('keydown', unlock)
+      void unlockAndPlayBgm(audioSettings)
+    }
+    window.addEventListener('pointerdown', unlock)
+    window.addEventListener('keydown', unlock)
+    return () => {
+      window.removeEventListener('pointerdown', unlock)
+      window.removeEventListener('keydown', unlock)
+    }
+  }, [])
 
   useEffect(() => {
     if (showAbandonConfirm || !restoreAbandonFocus.current) return
@@ -598,13 +617,14 @@ export function LandscapeGame() {
         paused={screen === 'event' || showMenu || showHelp || showAbandonConfirm}
         backgroundInert={showAbandonConfirm}
         eventOpen={screen === 'event'}
-        sound={sound}
+        musicEnabled={!audioSettings.musicMuted && audioSettings.master * audioSettings.music > 0}
+        effectsEnabled={audioSettings.master * audioSettings.effects > 0}
         guidedTutorial={day.day === 1 && !guidedTutorialComplete}
         qaCelebrityPatienceMs={qaCelebrityPatienceMs}
         qaServedOrders={sessionId === 1 ? qaServedOrders : undefined}
         onHome={openAbandonConfirm}
         onMenu={() => setShowMenu(true)}
-        onSound={() => setSound((value) => !value)}
+        onSound={toggleMusic}
         onHelp={() => setShowHelp(true)}
         onOrderServed={(delivery) => {
           const income = incomeForDelivery(delivery.recipeId, delivery.quality, save.signLevel)

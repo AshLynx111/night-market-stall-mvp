@@ -14,6 +14,7 @@ interface ActiveTone {
 
 let audioContext: AudioContext | null = null
 let kitchenAudioEnabled = true
+let effectLevel = 1
 const sizzleLoops = new Map<KitchenAudioSlotId, SizzleLoop>()
 const activeTones = new Set<ActiveTone>()
 
@@ -29,8 +30,8 @@ function tone(context: AudioContext, frequency: number, start: number, duration:
   const gain = context.createGain()
   oscillator.type = 'sine'
   oscillator.frequency.setValueAtTime(frequency, start)
-  gain.gain.setValueAtTime(volume, start)
-  gain.gain.exponentialRampToValueAtTime(0.001, start + duration)
+  gain.gain.setValueAtTime(volume * effectLevel, start)
+  gain.gain.exponentialRampToValueAtTime(Math.max(0.000001, 0.001 * effectLevel), start + duration)
   oscillator.connect(gain)
   gain.connect(context.destination)
   const activeTone = { oscillator, gain }
@@ -53,6 +54,10 @@ export function setKitchenAudioEnabled(enabled: boolean) {
   if (!enabled) stopAllKitchenAudio()
 }
 
+export function setAudioEffectLevel(level: number) {
+  effectLevel = Math.min(1, Math.max(0, Number.isFinite(level) ? level : 1))
+}
+
 export function startSizzle(slotId: KitchenAudioSlotId) {
   if (!kitchenAudioEnabled || sizzleLoops.has(slotId)) return
   try {
@@ -63,7 +68,7 @@ export function startSizzle(slotId: KitchenAudioSlotId) {
     const gain = context.createGain()
     oscillator.type = 'sawtooth'
     oscillator.frequency.setValueAtTime(slotId === 'left' ? 92 : 101, context.currentTime)
-    gain.gain.setValueAtTime(0.008, context.currentTime)
+    gain.gain.setValueAtTime(0.008 * effectLevel, context.currentTime)
     oscillator.connect(gain)
     gain.connect(context.destination)
     oscillator.start()
