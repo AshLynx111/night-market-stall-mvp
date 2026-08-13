@@ -1,7 +1,14 @@
 import { spawn } from 'node:child_process'
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readdir, rm, writeFile } from 'node:fs/promises'
 import path from 'node:path'
+import sharp from 'sharp'
 import { chromium } from 'file:///C:/Users/qianwu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs'
+import {
+  SPATIAL_SCHEMA_VERSION,
+  analyzeRangeThumbPixels,
+  assertExactScreenshotManifest,
+  assertSpatialEvidenceSchema,
+} from './spatial-alignment-qa-contract.mjs'
 
 const root = process.cwd()
 const outputDir = path.join(root, 'artifacts', 'spatial-alignment-qa')
@@ -12,6 +19,12 @@ const expectedIngredientIds = {
   3: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn'],
   5: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn', 'orleans', 'bacon', 'tenderloin', 'enoki'],
 }
+const resolvedOutputDir = path.resolve(outputDir)
+const expectedOutputParent = path.resolve(root, 'artifacts')
+if (path.dirname(resolvedOutputDir) !== expectedOutputParent || path.basename(resolvedOutputDir) !== 'spatial-alignment-qa') {
+  throw new Error(`Refusing to normalize unexpected QA output path: ${resolvedOutputDir}`)
+}
+await rm(resolvedOutputDir, { recursive: true, force: true })
 await mkdir(outputDir, { recursive: true })
 
 const server = spawn(process.execPath, [
@@ -29,7 +42,7 @@ for (let attempt = 0; attempt < 120; attempt += 1) {
 const browser = await chromium.launch({ headless: true, executablePath: edgePath })
 const page = await browser.newPage({ viewport: { width: 1440, height: 810 }, deviceScaleFactor: 1 })
 const result = {
-  schemaVersion: 'spatial-alignment-v1',
+  schemaVersion: SPATIAL_SCHEMA_VERSION,
   browser: 'Microsoft Edge',
   viewport: { width: 1440, height: 810, deviceScaleFactor: 1 },
   consoleErrors: [],
@@ -46,6 +59,7 @@ const result = {
     crossSlot: [],
     viewportClipping: [],
   },
+  screenshotManifest: [],
 }
 
 page.on('console', (message) => { if (message.type() === 'error') result.consoleErrors.push(message.text()) })
@@ -73,10 +87,19 @@ async function waitForImages() {
 
 async function screenshot(name) {
   await waitForImages()
-  await page.screenshot({ path: path.join(outputDir, `${name}.png`), fullPage: false })
+  return page.screenshot({ path: path.join(outputDir, `${name}.png`), fullPage: false })
 }
 
-async function captureGriddleGeometry(label, expectedStageSlots = []) {
+async function readScreenshotManifest() {
+  const pngNames = (await readdir(outputDir)).filter((name) => name.toLowerCase().endsWith('.png')).sort()
+  const manifest = await Promise.all(pngNames.map(async (name) => {
+    const metadata = await sharp(path.join(outputDir, name)).metadata()
+    return { name, width: metadata.width, height: metadata.height, format: metadata.format }
+  }))
+  return assertExactScreenshotManifest(manifest)
+}
+
+async function captureGriddleGeometry(label, { expectedStageSlots = [], requiredInteractionSlots = [] } = {}) {
   await waitForImages()
   const record = await page.locator('.kitchen-scene').evaluate((scene, checkpointLabel) => {
     const rect = (node) => {
@@ -130,6 +153,10 @@ async function captureGriddleGeometry(label, expectedStageSlots = []) {
       assert(slot.stage, `${label}: ${slot.slotId} stage art is absent`)
       assert(Math.abs(slot.stageCenterDelta.x) <= 2 && Math.abs(slot.stageCenterDelta.y) <= 2, `${label}: ${slot.slotId} stage center is misaligned ${JSON.stringify(slot.stageCenterDelta)}`)
       assert(Math.abs(slot.innerCenterDelta.x) <= 2 && Math.abs(slot.innerCenterDelta.y) <= 2, `${label}: ${slot.slotId} food inner center is misaligned ${JSON.stringify(slot.innerCenterDelta)}`)
+    }
+    if (requiredInteractionSlots.includes(slot.slotId)) {
+      assert(slot.gesture, `${label}: ${slot.slotId} gesture target is absent`)
+      assert(slot.tutorial, `${label}: ${slot.slotId} tutorial cue is absent`)
     }
     for (const [kind, geometry] of [['gesture', slot.gestureRectDelta], ['tutorial', slot.tutorialRectDelta]]) {
       if (!geometry) continue
@@ -200,7 +227,7 @@ async function stageCheckpoint(name, expectedStep, slotId) {
   }), name)
   assert(checkpoint.stageImages === 1 && checkpoint.foodImages === 1 && checkpoint.overlays === 0, `Non-cumulative stage at ${name}`)
   result.guidedFlow.push(checkpoint)
-  await captureGriddleGeometry(`guided-${name}`, [slotId])
+  await captureGriddleGeometry(`guided-${name}`, { expectedStageSlots: [slotId] })
 }
 
 let audioIdentity = null
@@ -259,15 +286,22 @@ async function finishAndDeliverClassic(orderNumber, slotId, guided = false) {
   await page.waitForFunction(({ id }) => document.querySelector(`[data-slot-id="${id}"]`)?.dataset.expectedStepId === 'sauce', { id: slotId }, { timeout: 12_000 })
   if (guided) await stageCheckpoint('hot-dog-ready', 'sauce', slotId)
   await page.locator('[data-ingredient-id="sauce"]').click()
+  if (guided) await captureGriddleGeometry('guided-sauce-active', { expectedStageSlots: [slotId], requiredInteractionSlots: [slotId] })
   await stroke(gestureSelector, [.15, .44], [.74, .46])
   await page.waitForFunction(({ id }) => document.querySelector(`[data-slot-id="${id}"]`)?.dataset.expectedStepId === 'sauce', { id: slotId }, { timeout: 5_000 })
   await stroke(gestureSelector, [.76, .58], [.2, .56])
   result.guidedFlow.push({ name: `actual-sauce-${orderNumber}`, slotId, strokes: 2, directions: ['right', 'left'], realInteraction: true })
   if (guided) await stageCheckpoint('sauce-two-strokes', 'scallion', slotId)
   await drag('[data-ingredient-id="scallion"]', slotSelector)
-  if (guided) await stageCheckpoint('scallion', 'cut', slotId)
+  if (guided) {
+    await stageCheckpoint('scallion', 'cut', slotId)
+    await captureGriddleGeometry('guided-cut-active', { expectedStageSlots: [slotId], requiredInteractionSlots: [slotId] })
+  }
   for (const ratio of [.3, .5, .7]) await stroke(gestureSelector, [.15, ratio], [.85, ratio])
-  if (guided) await stageCheckpoint('three-cuts', 'roll', slotId)
+  if (guided) {
+    await stageCheckpoint('three-cuts', 'roll', slotId)
+    await captureGriddleGeometry('guided-roll-active', { expectedStageSlots: [slotId], requiredInteractionSlots: [slotId] })
+  }
   await stroke(gestureSelector, [.2, .52], [.52, .5])
   await page.waitForFunction(({ id }) => document.querySelector(`[data-slot-id="${id}"]`)?.dataset.expectedStepId === 'pack', { id: slotId }, { timeout: 5_000 })
   result.guidedFlow.push({ name: `actual-roll-${orderNumber}`, slotId, swipes: 1, direction: 'right', realInteraction: true })
@@ -404,7 +438,7 @@ async function inspectKitchen(day, screenshotName, navigate = true) {
 }
 
 try {
-  assert(result.schemaVersion === 'spatial-alignment-v1', 'Spatial-alignment result schema is absent')
+  assert(result.schemaVersion === SPATIAL_SCHEMA_VERSION, 'Spatial-alignment result schema is absent')
   await page.goto(origin, { waitUntil: 'networkidle', timeout: 60_000 })
   assert(await page.locator('audio[data-game-bgm]').count() === 0, 'BGM autoplayed before trusted interaction')
   result.screens.home = await screenMetrics('[data-screen-art="home"]')
@@ -431,8 +465,7 @@ try {
         value,
         dataLevel: slider.dataset.level,
         effectiveCssLevel: style.getPropertyValue('--settings-level').trim(),
-        nativeThumbCount: 1,
-        nativeThumbVisible: rect.width > thumbWidth && rect.height > 0 && style.display !== 'none' && style.visibility === 'visible' && Number(style.opacity) > 0 && document.elementFromPoint(expectedThumbCenterX, expectedThumbCenterY) === slider,
+        rangeOwnsExpectedCenter: rect.width > thumbWidth && rect.height > 0 && style.display !== 'none' && style.visibility === 'visible' && Number(style.opacity) > 0 && document.elementFromPoint(expectedThumbCenterX, expectedThumbCenterY) === slider,
         expectedThumbCenter: { x: expectedThumbCenterX, y: expectedThumbCenterY },
         rail: { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, width: rect.width, height: rect.height },
       }
@@ -442,18 +475,39 @@ try {
       patch: patch ? { src: patch.getAttribute('src'), naturalWidth: patch.naturalWidth, naturalHeight: patch.naturalHeight } : null,
       rangeCount: ranges.length,
       decorativeThumbCount: plate.querySelectorAll('.settings-slider__decorative-thumb,[data-decorative-thumb]').length,
-      visibleNativeThumbCount: ranges.filter((range) => range.nativeThumbVisible).length,
       ranges,
     }
   })
   assert(result.settings.patchCount === 1 && result.settings.patch?.src.includes('settings-slider-clean-patch.png') && result.settings.patch.naturalWidth > 0 && result.settings.patch.naturalHeight > 0, `Settings localized patch invalid ${JSON.stringify(result.settings.patch)}`)
   assert(result.settings.rangeCount === 3, `Settings expected three ranges, got ${result.settings.rangeCount}`)
   assert(result.settings.decorativeThumbCount === 0, `Settings decorative thumbs rendered: ${result.settings.decorativeThumbCount}`)
-  assert(result.settings.visibleNativeThumbCount === 3 && result.settings.ranges.every((range) => range.nativeThumbCount === 1), `Settings native thumbs invalid ${JSON.stringify(result.settings.ranges)}`)
+  assert(result.settings.ranges.every((range) => range.rangeOwnsExpectedCenter), `Settings range geometry invalid ${JSON.stringify(result.settings.ranges)}`)
   assert(result.settings.ranges.map((range) => range.effectiveCssLevel).join(',') === '0%,50%,100%', `Settings effective levels invalid ${JSON.stringify(result.settings.ranges)}`)
   result.screens.settings = await screenMetrics('.settings-screen__plate')
   assertPlate(result.screens.settings, 'settings')
-  await screenshot('settings')
+  const settingsLiveBuffer = await screenshot('settings')
+  await page.locator('.settings-slider input').evaluateAll((sliders) => sliders.forEach((slider) => { slider.style.visibility = 'hidden' }))
+  const settingsHiddenBuffer = await page.screenshot({ fullPage: false })
+  await page.locator('.settings-slider input').evaluateAll((sliders) => sliders.forEach((slider) => { slider.style.removeProperty('visibility') }))
+  const [{ data: livePixels, info: liveInfo }, { data: hiddenPixels, info: hiddenInfo }] = await Promise.all([
+    sharp(settingsLiveBuffer).removeAlpha().raw().toBuffer({ resolveWithObject: true }),
+    sharp(settingsHiddenBuffer).removeAlpha().raw().toBuffer({ resolveWithObject: true }),
+  ])
+  assert(liveInfo.width === hiddenInfo.width && liveInfo.height === hiddenInfo.height && liveInfo.channels === hiddenInfo.channels, 'Settings screenshot pixel buffers differ')
+  const thumbMeasurements = analyzeRangeThumbPixels({
+    live: livePixels,
+    hidden: hiddenPixels,
+    width: liveInfo.width,
+    height: liveInfo.height,
+    channels: liveInfo.channels,
+    ranges: result.settings.ranges,
+  })
+  result.settings.ranges = result.settings.ranges.map((range) => ({
+    ...range,
+    ...thumbMeasurements.find((measurement) => measurement.label === range.label),
+  }))
+  assert(result.settings.ranges.every((range) => range.measuredVisibleThumbCount === 1), `Settings visible thumb pixel count invalid ${JSON.stringify(result.settings.ranges)}`)
+  assert(result.settings.ranges.every((range) => Math.abs(range.matchedComponents[0].centerX - range.expectedThumbCenter.x) <= 4), `Settings visible thumb pixels are not at the expected level ${JSON.stringify(result.settings.ranges)}`)
 
   await page.getByRole('slider', { name: '总音量' }).fill('0.62')
   await page.getByRole('slider', { name: '背景音乐音量' }).fill('0.5')
@@ -490,7 +544,7 @@ try {
   await audioCheckpoint('day-1-after-order-1')
   const secondSlotId = await startClassic(2, 'left')
   const thirdSlotId = await startClassic(3, 'right')
-  await captureGriddleGeometry('day-1-two-griddles-populated', ['left', 'right'])
+  await captureGriddleGeometry('day-1-two-griddles-populated', { expectedStageSlots: ['left', 'right'] })
   await screenshot('day-1-two-griddles')
   await finishAndDeliverClassic(2, secondSlotId)
   await audioCheckpoint('day-1-after-order-2')
@@ -524,6 +578,8 @@ try {
 
   assert(result.consoleErrors.length === 0, `Console errors: ${JSON.stringify(result.consoleErrors)}`)
   assert(result.pageErrors.length === 0, `Page errors: ${JSON.stringify(result.pageErrors)}`)
+  result.screenshotManifest = await readScreenshotManifest()
+  assertSpatialEvidenceSchema(result)
   result.passed = true
   await writeFile(path.join(outputDir, 'result.json'), `${JSON.stringify(result, null, 2)}\n`)
   process.stdout.write(`Spatial-alignment Edge QA passed (${Object.keys(result.kitchenFixtures).length} progression fixtures)\n`)

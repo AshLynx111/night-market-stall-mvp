@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "spatial-alignment-v1",
+  "schemaVersion": "spatial-alignment-v2",
   "browser": "Microsoft Edge",
   "viewport": {
     "width": 1440,
@@ -27,9 +27,9 @@
     "checkpoints": [
       {
         "label": "settings",
-        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "identity": "reference-bgm-1786639361393-0.9957453206582932",
         "count": 1,
-        "currentTime": 7.303524,
+        "currentTime": 7.289452,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -37,9 +37,9 @@
       },
       {
         "label": "select",
-        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "identity": "reference-bgm-1786639361393-0.9957453206582932",
         "count": 1,
-        "currentTime": 7.783678,
+        "currentTime": 7.772604,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -47,9 +47,9 @@
       },
       {
         "label": "day-1-entry",
-        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "identity": "reference-bgm-1786639361393-0.9957453206582932",
         "count": 1,
-        "currentTime": 16.501467,
+        "currentTime": 16.532251,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -57,9 +57,9 @@
       },
       {
         "label": "day-1-after-order-1",
-        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "identity": "reference-bgm-1786639361393-0.9957453206582932",
         "count": 1,
-        "currentTime": 25.083313,
+        "currentTime": 25.218457,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -67,9 +67,9 @@
       },
       {
         "label": "day-1-after-order-2",
-        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "identity": "reference-bgm-1786639361393-0.9957453206582932",
         "count": 1,
-        "currentTime": 36.474853,
+        "currentTime": 36.648308,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -77,9 +77,9 @@
       },
       {
         "label": "summary",
-        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "identity": "reference-bgm-1786639361393-0.9957453206582932",
         "count": 1,
-        "currentTime": 44.74717,
+        "currentTime": 44.953756,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -87,9 +87,9 @@
       },
       {
         "label": "day-2",
-        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "identity": "reference-bgm-1786639361393-0.9957453206582932",
         "count": 1,
-        "currentTime": 45.168719,
+        "currentTime": 45.389931,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -97,8 +97,8 @@
       }
     ],
     "resume": {
-      "before": 7.309951,
-      "after": 7.32101,
+      "before": 7.29687,
+      "after": 7.30907,
       "attempts": 3
     }
   },
@@ -111,15 +111,13 @@
     },
     "rangeCount": 3,
     "decorativeThumbCount": 0,
-    "visibleNativeThumbCount": 3,
     "ranges": [
       {
         "label": "总音量",
         "value": 0,
         "dataLevel": "0.00",
         "effectiveCssLevel": "0%",
-        "nativeThumbCount": 1,
-        "nativeThumbVisible": true,
+        "rangeOwnsExpectedCenter": true,
         "expectedThumbCenter": {
           "x": 659.859375,
           "y": 427.265625
@@ -131,15 +129,25 @@
           "bottom": 433.265625,
           "width": 254.015625,
           "height": 12
-        }
+        },
+        "measuredVisibleThumbCount": 1,
+        "matchedComponents": [
+          {
+            "left": 650,
+            "right": 673,
+            "changedPixels": 278,
+            "width": 24,
+            "centerX": 661.5,
+            "centerY": 427.265625
+          }
+        ]
       },
       {
         "label": "背景音乐音量",
         "value": 0.5,
         "dataLevel": "0.50",
         "effectiveCssLevel": "50%",
-        "nativeThumbCount": 1,
-        "nativeThumbVisible": true,
+        "rangeOwnsExpectedCenter": true,
         "expectedThumbCenter": {
           "x": 772.8671875,
           "y": 493.6875
@@ -151,15 +159,25 @@
           "bottom": 499.6875,
           "width": 254.015625,
           "height": 12
-        }
+        },
+        "measuredVisibleThumbCount": 1,
+        "matchedComponents": [
+          {
+            "left": 762,
+            "right": 783,
+            "changedPixels": 271,
+            "width": 22,
+            "centerX": 772.5,
+            "centerY": 493.6875
+          }
+        ]
       },
       {
         "label": "音效音量",
         "value": 1,
         "dataLevel": "1.00",
         "effectiveCssLevel": "100%",
-        "nativeThumbCount": 1,
-        "nativeThumbVisible": true,
+        "rangeOwnsExpectedCenter": true,
         "expectedThumbCenter": {
           "x": 885.875,
           "y": 559.296875
@@ -171,7 +189,18 @@
           "bottom": 565.296875,
           "width": 254.015625,
           "height": 12
-        }
+        },
+        "measuredVisibleThumbCount": 1,
+        "matchedComponents": [
+          {
+            "left": 872,
+            "right": 901,
+            "changedPixels": 405,
+            "width": 30,
+            "centerX": 886.5,
+            "centerY": 559.296875
+          }
+        ]
       }
     ]
   },
@@ -810,6 +839,94 @@
       "crossSlotCollisions": []
     },
     {
+      "label": "guided-sauce-active",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "tutorial": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "tutorialRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": null,
+          "stage": null,
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": null,
+          "innerCenterDelta": null,
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    },
+    {
       "label": "guided-sauce-two-strokes",
       "slots": [
         {
@@ -962,7 +1079,183 @@
       "crossSlotCollisions": []
     },
     {
+      "label": "guided-cut-active",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "tutorial": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "tutorialRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": null,
+          "stage": null,
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": null,
+          "innerCenterDelta": null,
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    },
+    {
       "label": "guided-three-cuts",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "tutorial": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "tutorialRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": null,
+          "stage": null,
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": null,
+          "innerCenterDelta": null,
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    },
+    {
+      "label": "guided-roll-active",
       "slots": [
         {
           "slotId": "left",
@@ -2814,5 +3107,37 @@
     "crossSlot": [],
     "viewportClipping": []
   },
+  "screenshotManifest": [
+    {
+      "name": "day-1-empty.png",
+      "width": 1440,
+      "height": 810,
+      "format": "png"
+    },
+    {
+      "name": "day-1-two-griddles.png",
+      "width": 1440,
+      "height": 810,
+      "format": "png"
+    },
+    {
+      "name": "day-3.png",
+      "width": 1440,
+      "height": 810,
+      "format": "png"
+    },
+    {
+      "name": "day-5.png",
+      "width": 1440,
+      "height": 810,
+      "format": "png"
+    },
+    {
+      "name": "settings.png",
+      "width": 1440,
+      "height": 810,
+      "format": "png"
+    }
+  ],
   "passed": true
 }

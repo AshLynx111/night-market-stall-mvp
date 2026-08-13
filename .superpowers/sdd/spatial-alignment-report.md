@@ -97,3 +97,61 @@ Machine-readable evidence: `artifacts/spatial-alignment-qa/result.json` is 73,35
 ## Concerns
 
 No release-blocking product concern remains. The only issue observed during Task 5 was the runner's initial customer-arrival race, which was corrected within the QA script by waiting for an unbound order. The final rerun, all regression gates, all automated assertions, and all five original-detail visual inspections are clean.
+
+## Code-quality follow-up: measurable thumbs, mandatory interaction geometry, and exact output manifest
+
+The review follow-up supersedes the original `spatial-alignment-v1` result details with `spatial-alignment-v2`. This remained QA-only; no production instrumentation, style, component, asset, or behavior changed.
+
+### TDD evidence
+
+- RED: `npm test -- --run scripts/spatial-alignment-qa-contract.test.mjs` failed before collection because `spatial-alignment-qa-contract.mjs` did not exist.
+- GREEN: the initial contract suite passed 4/4 tests and the focused product plus QA run passed 5 files / 85 tests.
+- The first Edge trial correctly rejected a narrow focus-ring edge as a possible second effects thumb. A synthetic focus-edge test was added RED (`expected 2 to be 1`) and then passed GREEN after the analyzer required a thumb-shaped run of at least 12 pixels and 150 changed pixels.
+- Final contract suite: 1 file / 5 tests passed. It proves one thumb, a detectable second thumb, focus-edge exclusion, exact screenshot manifests/dimensions, schema versioning, measured thumb evidence, and mandatory sauce/cut/roll nodes.
+
+### Sound live-thumb evidence
+
+The runner no longer emits or asserts a hard-coded `nativeThumbCount`. For each range, it compares the saved live Edge screenshot against an immediate in-memory screenshot with only the three range inputs temporarily hidden. It scans the full rail width for connected changed-pixel runs that extend both above and below the 12px rail, excludes narrow focus-edge noise, requires exactly one thumb-shaped component, and requires that component center to be within 4px of the computed live value position.
+
+| Range | Effective level | Measured visible thumb count | Pixel component | Measured x | Expected x | Absolute delta |
+| --- | ---: | ---: | --- | ---: | ---: | ---: |
+| 总音量 | 0% | 1 | width 24, 278 changed pixels | 661.5 | 659.859375 | 1.640625px |
+| 背景音乐音量 | 50% | 1 | width 22, 271 changed pixels | 772.5 | 772.8671875 | 0.3671875px |
+| 音效音量 | 100% | 1 | width 30, 405 changed pixels | 886.5 | 885.875 | 0.625px |
+
+The synthetic duplicate test produces two measured components, so the acceptance cannot pass merely because three range elements exist.
+
+### Mandatory active gesture geometry
+
+The guided journey now records dedicated `guided-sauce-active`, `guided-cut-active`, and `guided-roll-active` checkpoints. Sauce is captured after selecting the sauce tool and before the first stroke. At all three checkpoints, the left gesture target and left tutorial cue are required to exist; absence throws immediately rather than being skipped. Every gesture and tutorial x/y/width/height delta against the griddle rect is exactly 0, and every stage-center delta remains (0, 0)px.
+
+### Normalized exact output
+
+Before every run, the runner validates the resolved target as exactly `artifacts/spatial-alignment-qa`, removes that directory, and recreates it. Before success it reads the output directory, requires exactly these five PNG names, and reads each file through Sharp to require PNG format and 1440 × 810 dimensions:
+
+- `settings.png`
+- `day-1-empty.png`
+- `day-1-two-griddles.png`
+- `day-3.png`
+- `day-5.png`
+
+The final v2 result is 80,634 bytes with SHA-256 `fdb60317e570ae98b6247fc0be745421af575ae9f99497c45c57546a184d618c`. Refreshed screenshot hashes are:
+
+- `settings.png`: `e461b94faae2de82eb8e3884f21eb94a9292b7234f71a0c73fe36d18f26d3bd7`
+- `day-1-empty.png`: `70f91ec84f09f6c51fdd6f06e7a38a5b1ecc771184a2bac3efca3345ef70d4aa`
+- `day-1-two-griddles.png`: `aa546acb8ddd7e1137999f90b49382773281bec132356c52afc4b3060715a0f2`
+- `day-3.png`: `7667269a3f9949afffb20a8570a354cd912a1da1615f2b166bb80ec08ea46861`
+- `day-5.png`: `1ad927c072a25c9bc37062dd14de136e258a169947c083482437a4f6b3ee113a`
+
+All five refreshed captures were inspected again at original detail and remain visually accepted.
+
+### Final follow-up gates and concerns
+
+- Focused: 5 files / 85 tests passed.
+- Full: 39 files / 259 tests passed.
+- Art validation: 427 assets across 5 families passed.
+- Build: 420 modules transformed and completed successfully.
+- Edge 1440 × 810: passed with three fixtures, three real deliveries, seven continuous BGM checkpoints, zero console/page errors, and zero collision findings.
+- `git diff --check`: passed.
+
+No product concern or production defect was found. The two failed Edge trials in this follow-up were both QA implementation issues (focus-edge classification and restoring temporarily hidden inputs through a visibility-filtering role locator); both have focused coverage or stable-selector correction, and the final complete rerun is green.
