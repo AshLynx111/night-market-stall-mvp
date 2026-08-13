@@ -65,9 +65,12 @@ describe('KitchenScene', () => {
   })
 
   it('declares the approved left bin rack and exact two-griddle interaction anchors', () => {
-    const { container } = renderScene(activeKitchenState(5, 1))
+    const { container } = renderScene(activeKitchenState(1, 1))
 
     expect(container.querySelector('.kitchen-scene__ingredients')?.getAttribute('data-kitchen-bin-rack')).toBe('left')
+    const rack = container.querySelector<HTMLElement>('.kitchen-scene__ingredients')!
+    expect(rack.style.getPropertyValue('--ingredient-rack-columns')).toBe('2')
+    expect(rack.style.getPropertyValue('--ingredient-rack-left')).toBe('80px')
     expect(container.querySelectorAll('.griddle-slot[data-griddle-hitbox]')).toHaveLength(2)
     expect(container.querySelector('.griddle-slot--left')?.getAttribute('data-griddle-hitbox')).toBe('left')
     expect(container.querySelector('.griddle-slot--right')?.getAttribute('data-griddle-hitbox')).toBe('right')
@@ -172,7 +175,7 @@ describe('KitchenScene', () => {
     { day: 1, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion'], rackSlots: 5 },
     { day: 3, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn'], rackSlots: 11 },
     { day: 5, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn', 'orleans', 'bacon', 'tenderloin', 'enoki'], rackSlots: 15 },
-  ])('renders Day $day unlocked ingredients as complete bins in unique rack cells', ({ day, ids, rackSlots }) => {
+  ])('renders Day $day unlocked ingredients in unique physical rack cells', ({ day, ids, rackSlots }) => {
     const { container } = renderScene(activeKitchenState(day, 1))
     const ingredients = [...container.querySelectorAll<HTMLButtonElement>('[data-ingredient-id]')]
     const controls = ingredients
@@ -180,10 +183,15 @@ describe('KitchenScene', () => {
     expect(ingredients.map((ingredient) => ingredient.dataset.ingredientId)).toEqual(ids)
     expect(container.querySelector('.table-ingredient__vessel')).toBeNull()
     expect(container.querySelector('.table-ingredient__contents')).toBeNull()
+    expect(container.querySelectorAll('.table-ingredient__bin-art')).toHaveLength(0)
+    if (day === 1) expect(container.querySelectorAll('.table-ingredient__viewport')).toHaveLength(5)
     ingredients.forEach((ingredient) => {
-      expect(ingredient.querySelectorAll(':scope > img.table-ingredient__bin-art')).toHaveLength(1)
+      expect(ingredient.children).toHaveLength(1)
+      const viewport = ingredient.querySelector(':scope > .table-ingredient__viewport')
+      expect(viewport?.children).toHaveLength(1)
+      expect(viewport?.querySelector(':scope > img.table-ingredient__food-art')).not.toBeNull()
     })
-    expect(container.querySelector('[data-ingredient-id="sauce"] img')?.getAttribute('src')).toContain('ingredient-bin-sauce.png')
+    expect(container.querySelector('[data-ingredient-id="sauce"] .table-ingredient__food-art')?.getAttribute('src')).toContain('ingredient-bin-sauce.png')
     expect(container.querySelector('[data-sauce-brush]')).toBeNull()
 
     expect(controls).toHaveLength(rackSlots)
@@ -263,6 +271,21 @@ describe('KitchenScene', () => {
     expect(dispatch).toHaveBeenCalledWith({ type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
   })
 
+  it('removes the one ingredient drag ghost when the pointer is cancelled', () => {
+    const { container } = renderScene(createKitchenState(1, 1))
+    const noodle = container.querySelector('[data-ingredient-id="noodle"]')!
+
+    pointer(noodle, 'pointerdown', { x: 10, y: 10, pointerId: 51 })
+    pointer(noodle, 'pointermove', { x: 40, y: 40, pointerId: 51 })
+
+    const ghost = container.querySelector<HTMLImageElement>('.table-ingredient__ghost')!
+    expect(container.querySelectorAll('.table-ingredient__ghost')).toHaveLength(1)
+    expect(ghost.getAttribute('src')).toBe(noodle.querySelector('.table-ingredient__food-art')?.getAttribute('src'))
+
+    pointer(noodle, 'pointercancel', { x: 40, y: 40, pointerId: 51 })
+    expect(container.querySelectorAll('.table-ingredient__ghost')).toHaveLength(0)
+  })
+
   it('taps eggs into the first slot currently expecting an egg', () => {
     const readyForEgg = kitchenReducer(createKitchenState(1, 1), {
       type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle',
@@ -299,11 +322,11 @@ describe('KitchenScene', () => {
     pointer(noodle, 'pointerdown', { x: 110, y: 60, pointerId: 41 })
     pointer(noodle, 'pointermove', { x: 460, y: 185, pointerId: 41 })
 
-    const binArt = noodle.querySelector<HTMLImageElement>('.table-ingredient__bin-art')!
+    const foodArt = noodle.querySelector<HTMLImageElement>('.table-ingredient__food-art')!
     const ghost = container.querySelector<HTMLImageElement>('.table-ingredient__ghost')!
     expect(ghost.style.left).toBe('720px')
     expect(ghost.style.top).toBe('270px')
-    expect(ghost.src).toBe(binArt.src)
+    expect(ghost.src).toBe(foodArt.src)
   })
 
   it('keeps a cooking gesture bound to the slot under pointer-down', () => {

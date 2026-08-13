@@ -23,8 +23,10 @@ describe('reference-master gameplay composition', () => {
     expect(kitchenCss).toContain('min-height: 94px')
   })
 
-  it('uses complete physical bin art without nested fake vessels or runtime food overlays', () => {
-    expect(kitchenCss).toMatch(/\.table-ingredient__bin-art\s*\{/)
+  it('crops supplied bin art into the physical background rack without a second container', () => {
+    expect(kitchenCss).toMatch(/\.table-ingredient__viewport\s*\{[^}]*overflow:\s*hidden/s)
+    expect(kitchenCss).toMatch(/\.table-ingredient__food-art\s*\{[^}]*width:\s*145%/s)
+    expect(kitchenCss).not.toContain('.table-ingredient__bin-art')
     expect(kitchenCss).not.toContain('.table-ingredient__vessel')
     expect(kitchenCss).not.toContain('.table-ingredient__contents')
     expect(kitchenCss).not.toContain('.griddle-slot__modifier-art')

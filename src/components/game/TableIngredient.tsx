@@ -87,7 +87,9 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
           onKeyboardApply?.(id)
         }}
       >
-        <img className="table-ingredient__bin-art" src={art} alt="" aria-hidden="true" draggable={false} />
+        <span className="table-ingredient__viewport" aria-hidden="true">
+          <img className="table-ingredient__food-art" src={art} alt="" draggable={false} />
+        </span>
       </button>
       {ghost && (
         <img
