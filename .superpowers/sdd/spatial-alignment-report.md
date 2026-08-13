@@ -90,4 +90,8 @@ Machine evidence: `artifacts/spatial-alignment-qa/result.json`, 126,356 bytes, S
 
 ## Portability and concerns
 
-Clean-clone reproduction is required after the implementation commit and will be recorded here by the final report commit. No release-blocking product or visual concern remains in the working-tree evidence. The generated source is retained only for provenance and localized rebuilding; it is never shipped or selected as a whole-screen replacement.
+Fresh clone `D:\game_demo_cleanclone_expanded` at implementation commit `4cf4425f354834a5f06daa01aa376a55da17204e` proved the portable path without the original checkout's dependencies: `npm ci` installed 118 packages from the lockfile; focused rebuild/schema/product tests passed 4 files / 45 tests; production build transformed 439 modules; and the complete Edge v4 runner passed all three fixtures, three deliveries, matching-background pixel analysis, and exact five screenshots on Edge `151.0.4129.78`. The deterministic Day 3 and Day 5 PNG hashes exactly match the primary run.
+
+No release-blocking product or visual concern remains. The generated source is retained only for provenance and localized rebuilding; it is never shipped or selected as a whole-screen replacement.
+
+Independent final review: Spec Compliance PASS and Code Quality PASS, with 0 Critical and 0 Important findings. The reviewer inspected Day 3/5 at original detail and explicitly confirmed Day 5 at 15/15 ingredients in distinct physical steel wells. Its two minor hardening notes were closed in the report commit: clean-clone wording was finalized and the full fifteen-control coordinate table is now pinned by test.

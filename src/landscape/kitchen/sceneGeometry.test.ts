@@ -46,7 +46,23 @@ describe('canonical kitchen scene geometry', () => {
     const rectangles = rackRectangles('expanded-3x5')
     const innerPolygons = rackInnerPolygons('expanded-3x5')
 
-    expect(rectangles).toHaveLength(15)
+    expect(rectangles).toEqual([
+      { left: 113.68, top: 469.13, width: 116.27, height: 53.37, right: 229.95, bottom: 522.5 },
+      { left: 229.95, top: 469.13, width: 88.71, height: 53.37, right: 318.66, bottom: 522.5 },
+      { left: 318.66, top: 469.13, width: 94.74, height: 53.37, right: 413.4, bottom: 522.5 },
+      { left: 86.99, top: 522.5, width: 122.29, height: 49.06, right: 209.28, bottom: 571.56 },
+      { left: 209.28, top: 522.5, width: 93.01, height: 49.06, right: 302.29, bottom: 571.56 },
+      { left: 302.3, top: 522.5, width: 99.04, height: 49.06, right: 401.34, bottom: 571.56 },
+      { left: 62.01, top: 571.56, width: 126.6, height: 55.95, right: 188.61, bottom: 627.51 },
+      { left: 188.61, top: 571.56, width: 98.18, height: 55.95, right: 286.79, bottom: 627.51 },
+      { left: 286.79, top: 571.56, width: 105.07, height: 55.95, right: 391.86, bottom: 627.51 },
+      { left: 36.17, top: 627.51, width: 130.91, height: 61.12, right: 167.08, bottom: 688.63 },
+      { left: 167.08, top: 627.51, width: 101.62, height: 61.12, right: 268.7, bottom: 688.63 },
+      { left: 268.71, top: 627.51, width: 111.96, height: 61.12, right: 380.67, bottom: 688.63 },
+      { left: 10.33, top: 688.63, width: 135.22, height: 68, right: 145.55, bottom: 756.63 },
+      { left: 145.55, top: 688.63, width: 108.52, height: 68, right: 254.07, bottom: 756.63 },
+      { left: 254.07, top: 688.63, width: 115.41, height: 68, right: 369.48, bottom: 756.63 },
+    ])
     expect(innerPolygons).toHaveLength(15)
     expect(new Set(rectangles.map((rectangle) => `${rectangle.left}:${rectangle.top}:${rectangle.width}:${rectangle.height}`)).size)
       .toBeGreaterThan(5)
