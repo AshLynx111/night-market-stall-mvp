@@ -7,6 +7,7 @@ import { createKitchenState } from '../../landscape/kitchen/state'
 import type { KitchenState } from '../../landscape/kitchen/types'
 import { TUTORIAL_GESTURE_RECT, tutorialGesturePath } from '../../landscape/kitchen/tutorialPaths'
 import { KitchenScene } from './KitchenScene'
+import { INGREDIENT_FOOD_CROPS } from './TableIngredient'
 
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true
 
@@ -200,6 +201,20 @@ describe('KitchenScene', () => {
     )
     expect(new Set(controls.map((control) => `${control.dataset.rackColumn}:${control.dataset.rackRow}`)).size)
       .toBe(controls.length)
+  })
+
+  it('publishes a verified per-ingredient crop contract for every physical rack slot', () => {
+    const { container } = renderScene(activeKitchenState(5, 1))
+    const crops = Object.entries(INGREDIENT_FOOD_CROPS)
+
+    expect(crops).toHaveLength(15)
+    expect(new Set(crops.map(([, crop]) => `${crop.scale}:${crop.shiftX}:${crop.shiftY}`)).size).toBeGreaterThan(1)
+    crops.forEach(([id, crop]) => {
+      const ingredient = container.querySelector<HTMLElement>(`[data-ingredient-id="${id}"]`)!
+      expect(ingredient.style.getPropertyValue('--ingredient-food-scale')).toBe(crop.scale)
+      expect(ingredient.style.getPropertyValue('--ingredient-food-shift-x')).toBe(crop.shiftX)
+      expect(ingredient.style.getPropertyValue('--ingredient-food-shift-y')).toBe(crop.shiftY)
+    })
   })
 
   it('exposes perspective pose variables on foot-anchored customer actors', () => {

@@ -187,7 +187,7 @@
   touch-action: none;
 }
 .table-ingredient__viewport { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-.table-ingredient__food-art { position: absolute; left: 50%; top: 50%; width: 145%; max-width: none; height: auto; transform: translate(-50%, -50%); pointer-events: none; filter: saturate(1.08) brightness(1.04); }
+.table-ingredient__food-art { position: absolute; left: 50%; top: 50%; width: var(--ingredient-food-scale); max-width: none; height: auto; transform: translate(calc(-50% + var(--ingredient-food-shift-x)), calc(-50% + var(--ingredient-food-shift-y))); pointer-events: none; filter: saturate(1.08) brightness(1.04); }
 .table-ingredient[data-painted="true"] .table-ingredient__food-art { opacity: 1; }
 .table-ingredient:disabled { cursor: default; filter: grayscale(.18); opacity: .82; }
 .kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled) { outline: 3px solid rgb(255 216 91 / .88); outline-offset: -3px; animation: tutorial-target-pulse 1.25s ease-in-out infinite; }

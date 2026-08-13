@@ -10,6 +10,32 @@ interface DragState {
   moving: boolean
 }
 
+export interface IngredientFoodCrop {
+  scale: `${number}%`
+  shiftX: `${number}%`
+  shiftY: `${number}%`
+}
+
+// Each source image includes a generated steel bin. These crops isolate its
+// food interior inside both rack sizes without introducing another container.
+export const INGREDIENT_FOOD_CROPS = {
+  noodle: { scale: '275%', shiftX: '0%', shiftY: '0%' },
+  egg: { scale: '275%', shiftX: '1%', shiftY: '3%' },
+  'hot-dog': { scale: '290%', shiftX: '1%', shiftY: '4%' },
+  sauce: { scale: '300%', shiftX: '0%', shiftY: '7%' },
+  scallion: { scale: '285%', shiftX: '0%', shiftY: '5%' },
+  cilantro: { scale: '280%', shiftX: '1%', shiftY: '6%' },
+  onion: { scale: '300%', shiftX: '-1%', shiftY: '5%' },
+  'chili-powder': { scale: '280%', shiftX: '-1%', shiftY: '5%' },
+  'turkey-noodle': { scale: '285%', shiftX: '-2%', shiftY: '4%' },
+  cheese: { scale: '300%', shiftX: '-1%', shiftY: '7%' },
+  corn: { scale: '280%', shiftX: '1%', shiftY: '5%' },
+  orleans: { scale: '290%', shiftX: '1%', shiftY: '4%' },
+  bacon: { scale: '280%', shiftX: '1%', shiftY: '2%' },
+  tenderloin: { scale: '290%', shiftX: '0%', shiftY: '3%' },
+  enoki: { scale: '280%', shiftX: '0%', shiftY: '4%' },
+} as const satisfies Record<IngredientId, IngredientFoodCrop>
+
 export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, painted = false, disabled = false, findSlotAtPoint, onDrop, onTapEgg, onKeyboardApply }: {
   id: IngredientId
   label: string
@@ -27,9 +53,13 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null)
   const rackColumn = rackIndex % rackColumns
   const rackRow = Math.floor(rackIndex / rackColumns)
+  const crop = INGREDIENT_FOOD_CROPS[id]
   const rackStyle = {
     '--ingredient-rack-column': rackColumn,
     '--ingredient-rack-row': rackRow,
+    '--ingredient-food-scale': crop.scale,
+    '--ingredient-food-shift-x': crop.shiftX,
+    '--ingredient-food-shift-y': crop.shiftY,
   } as CSSProperties
 
   const finish = (event: ReactPointerEvent<HTMLButtonElement>, cancelled = false) => {
