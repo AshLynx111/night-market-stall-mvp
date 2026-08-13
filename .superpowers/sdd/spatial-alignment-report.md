@@ -103,6 +103,6 @@ Machine-readable evidence: `artifacts/spatial-alignment-qa/result.json`, 109,933
 
 ## Portability and remaining concerns
 
-The runner imports `chromium` from project package `playwright`; `package.json` and `package-lock.json` pin `1.62.1`. A clean-clone install/rebuild/Edge result is recorded after the implementation commit in the final handoff.
+The runner imports `chromium` from project package `playwright`; `package.json` and `package-lock.json` pin `1.62.1`. A fresh local clone of implementation commit `f323cfe82dcc3853319fafda5de82e098fd4072e` proved the full portable path: `npm ci` installed 118 packages from the lockfile; the rebuild plus analyzer suite passed 2 files / 13 tests; the production build transformed 438 modules; and `node scripts/current-reference-screens-qa.mjs` passed all three progression fixtures, Day 1/3/5 pixel records, active drag, exact five captures, and actual Edge `151.0.4129.78` without the original repository's `node_modules` or user-cache import.
 
 No release-blocking product or visual concern remains. The expanded Day 3/5 rack is intentionally a compact 3 × 5 overflow presentation rather than a literal redraw of six steel bins, but its controls and food are canonical, readable, non-overlapping, masked, and pixel-confined. The only accepted non-zero tolerance is the two Day 5 pixels within one physical pixel of a polygon edge; the allowance and cap are explicit in evidence.
