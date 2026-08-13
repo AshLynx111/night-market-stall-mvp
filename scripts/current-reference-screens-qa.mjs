@@ -225,6 +225,7 @@ async function inspectKitchen(day) {
     return {
       day: Number(document.querySelector('.game-screen')?.dataset.day),
       bins,
+      completeBinCount: bins.length,
       sauceBrushCount: scene.querySelectorAll('[data-sauce-brush]').length,
       sauceBinSrc: scene.querySelector('[data-ingredient-id="sauce"] > img.table-ingredient__bin-art')?.getAttribute('src') ?? '',
       floatingBareIngredientImages: scene.querySelectorAll('.table-ingredient:not(:has(> img.table-ingredient__bin-art))').length,
@@ -239,7 +240,7 @@ async function inspectKitchen(day) {
   })
   const expectedBins = day <= 1 ? 5 : day === 3 ? 11 : 15
   assert(record.day === day, `Day fixture identity mismatch: requested ${day}, rendered ${record.day}`)
-  assert(record.bins.length === expectedBins, `Day ${day}: expected ${expectedBins} complete bins, got ${record.bins.length}`)
+  assert(record.completeBinCount === expectedBins, `Day ${day}: expected ${expectedBins} complete bins, got ${record.completeBinCount}`)
   assert(record.sauceBrushCount === 0, `Day ${day}: legacy sauce brush rendered`)
   assert(record.sauceBinSrc.includes('ingredient-bin-sauce.png'), `Day ${day}: complete sauce bin missing`)
   assert(record.floatingBareIngredientImages === 0, `Day ${day}: floating ingredient found`)
@@ -308,11 +309,11 @@ try {
   assert(await page.locator('.game-screen').getAttribute('data-day') === '1', 'Selection did not open actual Day 1')
   const day1Bins = await page.locator('.kitchen-scene').evaluate((scene) => ({
     day: Number(document.querySelector('.game-screen')?.dataset.day),
-    count: scene.querySelectorAll('[data-ingredient-id] > img.table-ingredient__bin-art').length,
+    completeBinCount: scene.querySelectorAll('[data-ingredient-id] > img.table-ingredient__bin-art').length,
     sauceBinSrc: scene.querySelector('[data-ingredient-id="sauce"] > img.table-ingredient__bin-art')?.getAttribute('src') ?? '',
     legacyBrushCount: scene.querySelectorAll('[data-sauce-brush]').length,
   }))
-  assert(day1Bins.day === 1 && day1Bins.count === 5, `Day 1: expected 5 complete bins ${JSON.stringify(day1Bins)}`)
+  assert(day1Bins.day === 1 && day1Bins.completeBinCount === 5, `Day 1: expected 5 complete bins ${JSON.stringify(day1Bins)}`)
   assert(day1Bins.sauceBinSrc.includes('ingredient-bin-sauce.png') && day1Bins.legacyBrushCount === 0, `Day 1: complete sauce bin missing ${JSON.stringify(day1Bins)}`)
   result.kitchenFixtures.day1 = day1Bins
   await audioCheckpoint('day-1-entry')
@@ -336,6 +337,12 @@ try {
 
   await inspectKitchen(3)
   await inspectKitchen(5)
+
+  const fixtureKeys = Object.keys(result.kitchenFixtures)
+  assert(fixtureKeys.join(',') === 'day1,day3,day5', `Progression fixtures incomplete or out of order: ${fixtureKeys.join(',')}`)
+  assert(result.kitchenFixtures.day1.day === 1 && result.kitchenFixtures.day1.completeBinCount === 5, 'Day 1 fixture must record exactly 5 complete bins')
+  assert(result.kitchenFixtures.day3.day === 3 && result.kitchenFixtures.day3.completeBinCount === 11, 'Day 3 fixture must record exactly 11 complete bins')
+  assert(result.kitchenFixtures.day5.day === 5 && result.kitchenFixtures.day5.completeBinCount === 15, 'Day 5 fixture must record exactly 15 complete bins')
 
   assert(result.consoleErrors.length === 0, `Console errors: ${JSON.stringify(result.consoleErrors)}`)
   assert(result.pageErrors.length === 0, `Page errors: ${JSON.stringify(result.pageErrors)}`)

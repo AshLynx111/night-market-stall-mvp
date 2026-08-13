@@ -360,11 +360,96 @@ describe('KitchenScene', () => {
     expect(container.querySelector('.table-ingredient__ghost')).toBeNull()
   })
 
+  it.each(['mouse', 'touch'] as const)('uses the sauce bin as a tool selector and requires two %s strokes before sauce is complete', (pointerType) => {
+    const start = createKitchenState(1, 1)
+    const slots = [...start.slots] as KitchenState['slots']
+    slots[0] = {
+      ...slots[0], phase: 'gesturing', orderId: start.customers[0].order.id, recipeId: 'classic',
+      completedStepIds: ['noodle', 'egg', 'hot-dog'],
+    }
+    const sauceState = { ...start, slots }
+    const { container, dispatch } = renderScene(sauceState)
+    const sauceBin = container.querySelector<HTMLElement>('[data-ingredient-id="sauce"]')!
+    const leftSlot = container.querySelector('[data-slot-id="left"]')!
+    vi.spyOn(leftSlot, 'getBoundingClientRect').mockReturnValue(bounds(200, 200, 100, 100))
+
+    // Tap, click, and a pointer drag all choose the tool; none can place sauce as an ingredient.
+    pointer(sauceBin, 'pointerdown', { x: 10, y: 10, pointerId: 70, pointerType })
+    pointer(sauceBin, 'pointerup', { x: 10, y: 10, pointerId: 70, pointerType })
+    act(() => sauceBin.click())
+    pointer(sauceBin, 'pointerdown', { x: 10, y: 10, pointerId: 71, pointerType })
+    pointer(sauceBin, 'pointermove', { x: 230, y: 230, pointerId: 71, pointerType })
+    pointer(sauceBin, 'pointerup', { x: 230, y: 230, pointerId: 71, pointerType })
+
+    expect(sauceBin.getAttribute('aria-pressed')).toBe('true')
+    expect(dispatch).not.toHaveBeenCalledWith(expect.objectContaining({ type: 'DROP_INGREDIENT', ingredient: 'sauce' }))
+    expect(dispatch).not.toHaveBeenCalledWith(expect.objectContaining({ type: 'COMPLETE_GESTURE', gesture: expect.objectContaining({ kind: 'sauce' }) }))
+
+    const target = container.querySelector<HTMLElement>('[data-gesture-slot-id="left"]')!
+    vi.spyOn(target, 'getBoundingClientRect').mockReturnValue(bounds(0, 0, 100, 100))
+    const path = tutorialGesturePath('sauce').map((point) => ({
+      x: point.x / TUTORIAL_GESTURE_RECT.width * 100,
+      y: point.y / TUTORIAL_GESTURE_RECT.height * 100,
+    }))
+    const stroke = (pointerId: number) => {
+      pointer(target, 'pointerdown', { ...path[0], pointerId, pointerType })
+      path.slice(1, -1).forEach((point) => pointer(target, 'pointermove', { ...point, pointerId, pointerType }))
+      pointer(target, 'pointerup', { ...path.at(-1), pointerId, pointerType })
+    }
+    stroke(72)
+    stroke(73)
+
+    const sauceActions = dispatch.mock.calls
+      .map(([action]) => action)
+      .filter((action): action is Extract<KitchenAction, { type: 'COMPLETE_GESTURE' }> => action.type === 'COMPLETE_GESTURE' && action.gesture.kind === 'sauce')
+    expect(sauceActions).toHaveLength(2)
+    const afterFirst = kitchenReducer(sauceState, sauceActions[0])
+    expect(afterFirst.slots[0].completedStepIds).not.toContain('sauce')
+    expect(afterFirst.slots[0].sauceStrokeCount).toBe(1)
+    const afterSecond = kitchenReducer(afterFirst, sauceActions[1])
+    expect(afterSecond.slots[0].completedStepIds).toContain('sauce')
+    expect(afterSecond.slots[0].sauceStrokeCount).toBe(2)
+  })
+
   it('supports keyboard ingredient application to the first eligible griddle', () => {
     const { container, dispatch } = renderScene(activeKitchenState(1, 1))
     const noodle = container.querySelector<HTMLElement>('[data-ingredient-id="noodle"]')!
     act(() => noodle.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })))
     expect(dispatch).toHaveBeenCalledWith({ type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
+  })
+
+  it('routes keyboard Enter and Space through first and second noodle/egg recipe steps', () => {
+    const start = activeKitchenState(2, 1)
+    const slots = [...start.slots] as KitchenState['slots']
+    slots[0] = {
+      ...slots[0], phase: 'assembling', orderId: start.customers[0].order.id, recipeId: 'big-eater', completedStepIds: [],
+    }
+    const { container, dispatch, rerender } = renderScene({ ...start, slots })
+    const noodle = container.querySelector<HTMLElement>('[data-ingredient-id="noodle"]')!
+
+    act(() => noodle.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })))
+    expect(dispatch).toHaveBeenCalledWith({ type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
+
+    const afterFirstNoodle = kitchenReducer({ ...start, slots }, { type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
+    const readyForFirstEgg = { ...afterFirstNoodle, slots: [{ ...afterFirstNoodle.slots[0], phase: 'assembling' as const, heatState: 'ready' as const }, afterFirstNoodle.slots[1]] as KitchenState['slots'] }
+    rerender(readyForFirstEgg)
+    const egg = container.querySelector<HTMLElement>('[data-ingredient-id="egg"]')!
+    act(() => egg.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true })))
+    expect(dispatch).toHaveBeenLastCalledWith({ type: 'TAP_EGG', slotId: 'left' })
+
+    const afterFirstEgg = kitchenReducer(readyForFirstEgg, { type: 'TAP_EGG', slotId: 'left' })
+    const readyForSecondNoodle = { ...afterFirstEgg, slots: [{ ...afterFirstEgg.slots[0], phase: 'assembling' as const, heatState: 'ready' as const }, afterFirstEgg.slots[1]] as KitchenState['slots'] }
+    rerender(readyForSecondNoodle)
+    act(() => noodle.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })))
+    expect(dispatch).toHaveBeenLastCalledWith({ type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
+
+    const afterSecondNoodle = kitchenReducer(readyForSecondNoodle, { type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
+    rerender(afterSecondNoodle)
+    act(() => egg.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true })))
+    expect(dispatch).toHaveBeenLastCalledWith({ type: 'TAP_EGG', slotId: 'left' })
+
+    const afterSecondEgg = kitchenReducer(afterSecondNoodle, { type: 'TAP_EGG', slotId: 'left' })
+    expect(afterSecondEgg.slots[0].completedStepIds).toEqual(['noodle', 'egg', 'second-noodle', 'second-egg'])
   })
 
   it('supports keyboard completion for sauce strokes, cuts, and rolling', () => {

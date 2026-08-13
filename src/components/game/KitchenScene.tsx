@@ -8,7 +8,7 @@ import {
   stopAllKitchenAudio,
   stopSizzle,
 } from '../../game/audio'
-import { availableIngredients, type IngredientId } from '../../landscape/campaign'
+import { availableIngredients, ingredientForCookingStep, type IngredientId } from '../../landscape/campaign'
 import { ingredientArt } from '../../landscape/kitchen/assets'
 import { placeIngredient, slotExpectedAction } from '../../landscape/kitchen/griddle'
 import { layoutOrderBubbles } from '../../landscape/kitchen/orderBubbleLayout'
@@ -213,6 +213,11 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
   }
 
   const dropIngredient = (ingredient: IngredientId, slotId: SlotId) => {
+    // Sauce is a tool selection, never a generic ingredient placement.
+    if (ingredient === 'sauce') {
+      if (sauceEnabled) setSauceBrushSelected(true)
+      return
+    }
     if (!tutorialAllowsIngredient(state, ingredient, slotId)) return
     if (ingredient === 'egg') dispatchScene({ type: 'TAP_EGG', slotId })
     else dispatchScene({ type: 'DROP_INGREDIENT', slotId, ingredient })
@@ -232,8 +237,14 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
       if (sauceEnabled) setSauceBrushSelected(true)
       return
     }
-    const slot = state.slots.find((candidate) => tutorialAllowsIngredient(state, ingredient, candidate.id)
-      && (slotExpectedAction(state, candidate.id)?.id === ingredient || (ingredient === 'noodle' && candidate.phase === 'empty')))
+    const slot = state.slots.find((candidate) => {
+      const expected = slotExpectedAction(state, candidate.id)
+      const matchesExpectedStep = expected !== null
+        && ingredientForCookingStep(expected) === ingredient
+      const startsEmptySlot = ingredient === 'noodle' && candidate.phase === 'empty'
+      return tutorialAllowsIngredient(state, ingredient, candidate.id)
+        && (matchesExpectedStep || startsEmptySlot)
+    })
     if (slot) dropIngredient(ingredient, slot.id)
   }
 

@@ -36,7 +36,9 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
     const active = drag.current
     if (!active || active.pointerId !== event.pointerId) return
     if (event.currentTarget.hasPointerCapture?.(event.pointerId)) event.currentTarget.releasePointerCapture?.(event.pointerId)
-    if (!cancelled && active.moving) {
+    if (!cancelled && id === 'sauce') {
+      onKeyboardApply?.(id)
+    } else if (!cancelled && active.moving) {
       const slotId = findSlotAtPoint(event.clientX, event.clientY)
       if (slotId) onDrop(id, slotId)
     } else if (!cancelled && id === 'egg') {
@@ -75,8 +77,8 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
         }}
         onPointerUp={(event) => {
           if (disabled) return
-          if (id === 'sauce') onKeyboardApply?.(id)
-          finish(event)
+          if (id === 'sauce' && !drag.current) onKeyboardApply?.(id)
+          else finish(event)
         }}
         onPointerCancel={(event) => finish(event, true)}
         onKeyDown={(event) => {

@@ -199,6 +199,8 @@
 .cooking-gesture-target--left { left: 34.1%; }
 .cooking-gesture-target--right { left: 52.8%; }
 .cooking-gesture-tool { position: absolute; z-index: 90; transform: translate(-32%, -72%); font-size: 34px; pointer-events: none; filter: drop-shadow(0 4px 3px rgb(0 0 0 / .5)); }
+.cooking-gesture-tool--sauce { width: 84px; height: 64px; transform: translate(-40%, -65%); }
+.cooking-gesture-tool--sauce img { width: 100%; height: 100%; object-fit: contain; }
 .cooking-gesture-tool--roll { color: #ffe5a3; font-size: 48px; font-weight: 900; }
 
 .tutorial-gesture-cue { position: absolute; z-index: 23; top: 59%; width: 18.7%; height: 23%; pointer-events: none; }

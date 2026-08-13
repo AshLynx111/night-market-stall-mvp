@@ -6,6 +6,7 @@ import { slotExpectedAction } from '../../landscape/kitchen/griddle'
 import type { KitchenAction } from '../../landscape/kitchen/reducer'
 import { TUTORIAL_GESTURE_RECT } from '../../landscape/kitchen/tutorialPaths'
 import type { KitchenState, SlotId } from '../../landscape/kitchen/types'
+import { ingredientArt } from '../../landscape/kitchen/assets'
 
 type GestureKind = 'sauce' | 'cut' | 'roll'
 
@@ -121,7 +122,9 @@ export function CookingGestureLayer({ state, dispatch, sauceEnabled = false }: {
       })}
       {tool && (
         <span className={`cooking-gesture-tool cooking-gesture-tool--${tool.kind}`} style={{ left: tool.x, top: tool.y }}>
-          {tool.kind === 'sauce' ? '🖌️' : tool.kind === 'cut' ? '🔪' : '↻'}
+          {tool.kind === 'sauce'
+            ? <img src={ingredientArt('sauce')} alt="" aria-hidden="true" />
+            : tool.kind === 'cut' ? '🔪' : '↻'}
         </span>
       )}
     </div>

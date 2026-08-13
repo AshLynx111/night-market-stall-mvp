@@ -26,9 +26,9 @@
     "checkpoints": [
       {
         "label": "settings",
-        "identity": "reference-bgm-1786546887791-0.04933592746573401",
+        "identity": "reference-bgm-1786630964617-0.976240708455292",
         "count": 1,
-        "currentTime": 7,
+        "currentTime": 7.127853,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -36,9 +36,9 @@
       },
       {
         "label": "select",
-        "identity": "reference-bgm-1786546887791-0.04933592746573401",
+        "identity": "reference-bgm-1786630964617-0.976240708455292",
         "count": 1,
-        "currentTime": 10.918972,
+        "currentTime": 8.487256,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -46,9 +46,9 @@
       },
       {
         "label": "day-1-entry",
-        "identity": "reference-bgm-1786546887791-0.04933592746573401",
+        "identity": "reference-bgm-1786630964617-0.976240708455292",
         "count": 1,
-        "currentTime": 16.982384,
+        "currentTime": 14.516527,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -56,9 +56,9 @@
       },
       {
         "label": "day-1-after-order-1",
-        "identity": "reference-bgm-1786546887791-0.04933592746573401",
+        "identity": "reference-bgm-1786630964617-0.976240708455292",
         "count": 1,
-        "currentTime": 26.967471,
+        "currentTime": 25.15732,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -66,9 +66,9 @@
       },
       {
         "label": "day-1-after-order-2",
-        "identity": "reference-bgm-1786546887791-0.04933592746573401",
+        "identity": "reference-bgm-1786630964617-0.976240708455292",
         "count": 1,
-        "currentTime": 37.782483,
+        "currentTime": 35.907088,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -76,9 +76,9 @@
       },
       {
         "label": "summary",
-        "identity": "reference-bgm-1786546887791-0.04933592746573401",
+        "identity": "reference-bgm-1786630964617-0.976240708455292",
         "count": 1,
-        "currentTime": 46.936089,
+        "currentTime": 44.539865,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -86,9 +86,9 @@
       },
       {
         "label": "day-2",
-        "identity": "reference-bgm-1786546887791-0.04933592746573401",
+        "identity": "reference-bgm-1786630964617-0.976240708455292",
         "count": 1,
-        "currentTime": 48.031983,
+        "currentTime": 45.677647,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -96,8 +96,8 @@
       }
     ],
     "resume": {
-      "before": 7,
-      "after": 7,
+      "before": 7.144734,
+      "after": 7.160256,
       "attempts": 3
     }
   },
@@ -512,6 +512,12 @@
     }
   ],
   "kitchenFixtures": {
+    "day1": {
+      "day": 1,
+      "completeBinCount": 5,
+      "sauceBinSrc": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
+      "legacyBrushCount": 0
+    },
     "day3": {
       "day": 3,
       "bins": [
@@ -725,6 +731,7 @@
           }
         }
       ],
+      "completeBinCount": 11,
       "sauceBrushCount": 0,
       "sauceBinSrc": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
       "floatingBareIngredientImages": 0,
@@ -1025,6 +1032,7 @@
           }
         }
       ],
+      "completeBinCount": 15,
       "sauceBrushCount": 0,
       "sauceBinSrc": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
       "floatingBareIngredientImages": 0,

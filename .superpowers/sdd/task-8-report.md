@@ -32,8 +32,8 @@ Evidence is stored at `artifacts/reference-screens-qa/` (ignored local QA eviden
 - `04-day-1-guided-entry.png`: after correction, tutorial copy is on an opaque card in the empty right customer area; no ingredient/griddle overlap.
 - `05-day-1-summary.png`: dynamic values replace baked values cleanly and remain readable.
 - `06-next-day.png`: next-day transition reaches Day 2 with a fresh kitchen.
-- `07-day-3-all-unlocked-bins.png`: 10 complete ingredient-bin controls plus the physical sauce brush; all contents recognizable.
-- `08-day-5-all-unlocked-bins.png`: 14 complete ingredient-bin controls plus the physical sauce brush, covering all 15 unlocked ingredients.
+- `07-day-3-all-unlocked-bins.png`: 11 complete ingredient-bin controls, including sauce; all contents recognizable.
+- `08-day-5-all-unlocked-bins.png`: 15 complete ingredient-bin controls, including sauce and every Day 5 ingredient.
 
 The runner additionally rejects floating/bare ingredient controls, missing/zero-size bin art, legacy nested vessel UI, bin-to-bin overlap, bin/griddle overlap, bin/tutorial overlap, clipped plate/dynamic masks, baked-customer duplication, order-bubble/face collisions, duplicate audio nodes, inactive mute, and BGM restart on navigation. All checks passed with zero console/page errors.
 
