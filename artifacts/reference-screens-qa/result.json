@@ -26,7 +26,7 @@
     "checkpoints": [
       {
         "label": "settings",
-        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "identity": "reference-bgm-1786546887791-0.04933592746573401",
         "count": 1,
         "currentTime": 7,
         "loop": true,
@@ -36,9 +36,9 @@
       },
       {
         "label": "select",
-        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "identity": "reference-bgm-1786546887791-0.04933592746573401",
         "count": 1,
-        "currentTime": 10.53226,
+        "currentTime": 10.918972,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -46,9 +46,9 @@
       },
       {
         "label": "day-1-entry",
-        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "identity": "reference-bgm-1786546887791-0.04933592746573401",
         "count": 1,
-        "currentTime": 16.465968,
+        "currentTime": 16.982384,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -56,9 +56,9 @@
       },
       {
         "label": "day-1-after-order-1",
-        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "identity": "reference-bgm-1786546887791-0.04933592746573401",
         "count": 1,
-        "currentTime": 26.754185,
+        "currentTime": 26.967471,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -66,9 +66,9 @@
       },
       {
         "label": "day-1-after-order-2",
-        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "identity": "reference-bgm-1786546887791-0.04933592746573401",
         "count": 1,
-        "currentTime": 37.854437,
+        "currentTime": 37.782483,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -76,9 +76,9 @@
       },
       {
         "label": "summary",
-        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "identity": "reference-bgm-1786546887791-0.04933592746573401",
         "count": 1,
-        "currentTime": 47.114157,
+        "currentTime": 46.936089,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -86,15 +86,20 @@
       },
       {
         "label": "day-2",
-        "identity": "reference-bgm-1786543756089-0.3253475381448965",
+        "identity": "reference-bgm-1786546887791-0.04933592746573401",
         "count": 1,
-        "currentTime": 48.213858,
+        "currentTime": 48.031983,
         "loop": true,
         "paused": false,
         "muted": false,
         "volume": 0.31
       }
-    ]
+    ],
+    "resume": {
+      "before": 7,
+      "after": 7,
+      "attempts": 3
+    }
   },
   "screens": {
     "home": {
@@ -121,6 +126,38 @@
         "height": 810
       }
     },
+    "settingsSliderGeometry": [
+      {
+        "label": "总音量",
+        "value": 0.62,
+        "level": "0.62",
+        "expectedThumbCenterX": 802.2365625,
+        "rail": {
+          "left": 645.859375,
+          "width": 257.640625
+        }
+      },
+      {
+        "label": "背景音乐音量",
+        "value": 0.5,
+        "level": "0.50",
+        "expectedThumbCenterX": 774.6796875,
+        "rail": {
+          "left": 645.859375,
+          "width": 257.640625
+        }
+      },
+      {
+        "label": "音效音量",
+        "value": 0.3,
+        "level": "0.30",
+        "expectedThumbCenterX": 728.7515625,
+        "rail": {
+          "left": 645.859375,
+          "width": 257.640625
+        }
+      }
+    ],
     "settings": {
       "rect": {
         "x": 0.375,
@@ -536,6 +573,25 @@
           }
         },
         {
+          "id": "sauce",
+          "rect": {
+            "x": 18,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 592
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
           "id": "scallion",
           "rect": {
             "x": 120,
@@ -669,7 +725,8 @@
           }
         }
       ],
-      "sauceBrushCount": 1,
+      "sauceBrushCount": 0,
+      "sauceBinSrc": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
       "floatingBareIngredientImages": 0,
       "binPairs": [],
       "binGriddleOverlaps": [],
@@ -734,6 +791,25 @@
           "legacyVessels": 0,
           "image": {
             "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-hot-dog.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1"
+          }
+        },
+        {
+          "id": "sauce",
+          "rect": {
+            "x": 18,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 592
+          },
+          "completeBinImages": 1,
+          "legacyVessels": 0,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
             "naturalWidth": 768,
             "naturalHeight": 768,
             "opacity": "1"
@@ -949,7 +1025,8 @@
           }
         }
       ],
-      "sauceBrushCount": 1,
+      "sauceBrushCount": 0,
+      "sauceBinSrc": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
       "floatingBareIngredientImages": 0,
       "binPairs": [],
       "binGriddleOverlaps": [],

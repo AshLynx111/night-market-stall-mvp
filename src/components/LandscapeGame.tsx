@@ -346,6 +346,7 @@ export function LandscapeGame() {
   const [showHelp, setShowHelp] = useState(false)
   const [showAbandonConfirm, setShowAbandonConfirm] = useState(false)
   const [audioSettings, setAudioSettings] = useState<AudioSettings>(loadAudioSettings)
+  const audioSettingsRef = useRef(audioSettings)
   const [sessionId, setSessionId] = useState(1)
   const [guidedTutorialComplete, setGuidedTutorialComplete] = useState(readGuidedTutorialComplete)
   const abandonTriggerRef = useRef<HTMLElement | null>(null)
@@ -368,10 +369,15 @@ export function LandscapeGame() {
   }
 
   useEffect(() => {
-    localStorage.setItem(SAVE_KEY, JSON.stringify(save))
+    try {
+      localStorage.setItem(SAVE_KEY, JSON.stringify(save))
+    } catch {
+      // Storage can be denied in private or embedded browser contexts.
+    }
   }, [save])
 
   useEffect(() => {
+    audioSettingsRef.current = audioSettings
     saveAudioSettings(audioSettings)
     applyAudioSettings(audioSettings)
     setAudioEffectLevel(audioSettings.master * audioSettings.effects)
@@ -380,9 +386,7 @@ export function LandscapeGame() {
   useEffect(() => {
     const unlock = (event: PointerEvent | KeyboardEvent) => {
       if (!event.isTrusted) return
-      window.removeEventListener('pointerdown', unlock)
-      window.removeEventListener('keydown', unlock)
-      void unlockAndPlayBgm(audioSettings)
+      void unlockAndPlayBgm(audioSettingsRef.current)
     }
     window.addEventListener('pointerdown', unlock)
     window.addEventListener('keydown', unlock)
@@ -494,6 +498,8 @@ export function LandscapeGame() {
                 max="1"
                 step="0.01"
                 value={audioSettings.master}
+                data-level={audioSettings.master.toFixed(2)}
+                style={{ '--settings-level': `${audioSettings.master * 100}%` } as React.CSSProperties}
                 aria-label="总音量"
                 onChange={(event) => setAudioLevel('master', Number(event.currentTarget.value))}
               />
@@ -506,6 +512,8 @@ export function LandscapeGame() {
                 max="1"
                 step="0.01"
                 value={audioSettings.music}
+                data-level={audioSettings.music.toFixed(2)}
+                style={{ '--settings-level': `${audioSettings.music * 100}%` } as React.CSSProperties}
                 aria-label="背景音乐音量"
                 onChange={(event) => setAudioLevel('music', Number(event.currentTarget.value))}
               />
@@ -518,6 +526,8 @@ export function LandscapeGame() {
                 max="1"
                 step="0.01"
                 value={audioSettings.effects}
+                data-level={audioSettings.effects.toFixed(2)}
+                style={{ '--settings-level': `${audioSettings.effects * 100}%` } as React.CSSProperties}
                 aria-label="音效音量"
                 onChange={(event) => setAudioLevel('effects', Number(event.currentTarget.value))}
               />

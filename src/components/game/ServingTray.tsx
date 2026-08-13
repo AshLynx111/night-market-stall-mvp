@@ -60,6 +60,12 @@ export function ServingTray({ state, dispatch, findCustomerAtPoint }: {
               }}
               onPointerUp={(event) => finish(event)}
               onPointerCancel={(event) => finish(event, true)}
+              onKeyDown={(event) => {
+                if (event.key !== 'Enter' && event.key !== ' ') return
+                event.preventDefault()
+                const customer = state.customers.find((candidate) => candidate.presence === 'active' && candidate.order.id === slot.orderId)
+                if (customer) dispatch({ type: 'DELIVER', slotId: slot.id, customerId: customer.id })
+              }}
             >
               <img src={src} alt="" draggable={false} />
             </button>

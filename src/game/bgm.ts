@@ -2,7 +2,6 @@ import soundtrackUrl from '../assets/audio/night-market-bgm.mp3'
 import type { AudioSettings } from './audioSettings'
 
 let bgm: HTMLAudioElement | null = null
-let hasStarted = false
 
 function musicVolume(settings: AudioSettings) {
   return settings.musicMuted ? 0 : settings.master * settings.music
@@ -31,13 +30,14 @@ export async function unlockAndPlayBgm(settings: AudioSettings) {
     }
     syncElement(settings)
   }
-  if (hasStarted) return
+  if (!bgm.paused) return true
   try {
     await bgm.play()
-    hasStarted = true
+    return !bgm.paused
   } catch {
     // Browsers can still decline a gesture in unusual embedded contexts.
     // A later trusted interaction retries this same persistent element.
+    return false
   }
 }
 
@@ -45,5 +45,4 @@ export function stopBgm() {
   if (bgm) bgm.pause()
   if (bgm instanceof HTMLElement) bgm.remove()
   bgm = null
-  hasStarted = false
 }

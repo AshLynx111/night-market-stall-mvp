@@ -169,13 +169,13 @@ describe('KitchenScene', () => {
   })
 
   it.each([
-    { day: 1, ids: ['noodle', 'egg', 'hot-dog', 'scallion'], rackSlots: 5 },
-    { day: 3, ids: ['noodle', 'egg', 'hot-dog', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn'], rackSlots: 11 },
-    { day: 5, ids: ['noodle', 'egg', 'hot-dog', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn', 'orleans', 'bacon', 'tenderloin', 'enoki'], rackSlots: 15 },
+    { day: 1, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion'], rackSlots: 5 },
+    { day: 3, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn'], rackSlots: 11 },
+    { day: 5, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn', 'orleans', 'bacon', 'tenderloin', 'enoki'], rackSlots: 15 },
   ])('renders Day $day unlocked ingredients as complete bins in unique rack cells', ({ day, ids, rackSlots }) => {
     const { container } = renderScene(activeKitchenState(day, 1))
     const ingredients = [...container.querySelectorAll<HTMLButtonElement>('[data-ingredient-id]')]
-    const controls = [...ingredients, container.querySelector<HTMLButtonElement>('[data-sauce-brush]')!]
+    const controls = ingredients
 
     expect(ingredients.map((ingredient) => ingredient.dataset.ingredientId)).toEqual(ids)
     expect(container.querySelector('.table-ingredient__vessel')).toBeNull()
@@ -183,6 +183,8 @@ describe('KitchenScene', () => {
     ingredients.forEach((ingredient) => {
       expect(ingredient.querySelectorAll(':scope > img.table-ingredient__bin-art')).toHaveLength(1)
     })
+    expect(container.querySelector('[data-ingredient-id="sauce"] img')?.getAttribute('src')).toContain('ingredient-bin-sauce.png')
+    expect(container.querySelector('[data-sauce-brush]')).toBeNull()
 
     expect(controls).toHaveLength(rackSlots)
     expect(controls.map((control) => Number(control.dataset.rackIndex)).sort((left, right) => left - right)).toEqual(
@@ -275,7 +277,7 @@ describe('KitchenScene', () => {
   })
 
   it('drops a dragged ingredient onto the slot intersecting its release point', () => {
-    const { container, dispatch } = renderScene(createKitchenState(1, 1))
+    const { container, dispatch } = renderScene(activeKitchenState(1, 1))
     const noodle = container.querySelector('[data-ingredient-id="noodle"]')!
     const rightSlot = container.querySelector('[data-slot-id="right"]')!
     vi.spyOn(rightSlot, 'getBoundingClientRect').mockReturnValue(bounds(200, 200, 100, 100))
@@ -330,9 +332,9 @@ describe('KitchenScene', () => {
       completedStepIds: ['noodle', 'egg', 'hot-dog'],
     }
     const { container, dispatch } = renderScene({ ...start, slots })
-    const brush = container.querySelector('[data-sauce-brush]')!
+    const brush = container.querySelector('[data-ingredient-id="sauce"]')!
 
-    expect(container.querySelector('[data-ingredient-id="sauce"]')).toBeNull()
+    expect(brush.querySelector('img')?.getAttribute('src')).toContain('ingredient-bin-sauce.png')
     expect(container.querySelector('[data-gesture-slot-id="left"]')).toBeNull()
     pointer(brush, 'pointerup', { pointerId: 61, pointerType })
 
@@ -356,6 +358,41 @@ describe('KitchenScene', () => {
     expect(container.querySelector('[data-gesture-slot-id="left"]')).not.toBeNull()
     expect(brush.getAttribute('aria-pressed')).toBe('true')
     expect(container.querySelector('.table-ingredient__ghost')).toBeNull()
+  })
+
+  it('supports keyboard ingredient application to the first eligible griddle', () => {
+    const { container, dispatch } = renderScene(activeKitchenState(1, 1))
+    const noodle = container.querySelector<HTMLElement>('[data-ingredient-id="noodle"]')!
+    act(() => noodle.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })))
+    expect(dispatch).toHaveBeenCalledWith({ type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
+  })
+
+  it('supports keyboard completion for sauce strokes, cuts, and rolling', () => {
+    const start = createKitchenState(1, 1)
+    const stateFor = (completedStepIds: string[], cutTargetIndices: number[] = []) => ({
+      ...start,
+      slots: [{ ...start.slots[0], phase: 'gesturing' as const, recipeId: 'classic' as const, orderId: start.customers[0].order.id, completedStepIds, cutTargetIndices }, start.slots[1]] as KitchenState['slots'],
+    })
+    const { container, dispatch, rerender } = renderScene(stateFor(['noodle', 'egg', 'hot-dog']))
+    act(() => container.querySelector<HTMLElement>('[data-ingredient-id="sauce"]')!.click())
+    act(() => container.querySelector<HTMLElement>('[data-gesture-slot-id="left"]')!.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', bubbles: true })))
+    expect(dispatch).toHaveBeenLastCalledWith(expect.objectContaining({ type: 'COMPLETE_GESTURE', gesture: expect.objectContaining({ kind: 'sauce', complete: true }) }))
+
+    rerender(stateFor(['noodle', 'egg', 'hot-dog', 'sauce', 'scallion']))
+    act(() => container.querySelector<HTMLElement>('[data-gesture-slot-id="left"]')!.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })))
+    expect(dispatch).toHaveBeenLastCalledWith(expect.objectContaining({ gesture: expect.objectContaining({ kind: 'cut', targetIndex: 0, complete: true }) }))
+
+    rerender(stateFor(['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cut'], [0, 1, 2]))
+    act(() => container.querySelector<HTMLElement>('[data-gesture-slot-id="left"]')!.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })))
+    expect(dispatch).toHaveBeenLastCalledWith(expect.objectContaining({ gesture: expect.objectContaining({ kind: 'roll', complete: true }) }))
+  })
+
+  it('delivers a tray dish to its intended active customer with Enter', () => {
+    const start = activeKitchenState(1, 1)
+    const state = { ...start, slots: [{ ...start.slots[0], phase: 'on-tray' as const, recipeId: start.customers[0].order.recipeId, orderId: start.customers[0].order.id }, start.slots[1]] as KitchenState['slots'] }
+    const { container, dispatch } = renderScene(state)
+    act(() => container.querySelector<HTMLElement>('[data-tray-slot-id="left"]')!.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true })))
+    expect(dispatch).toHaveBeenCalledWith({ type: 'DELIVER', slotId: 'left', customerId: start.customers[0].id })
   })
 
   it('renders the tested guided SVG for brush pickup, the next unique cut, and roll', () => {
@@ -535,7 +572,7 @@ describe('KitchenScene', () => {
     expect(noodle.hasAttribute('disabled')).toBe(true)
     expect(hotDog.hasAttribute('disabled')).toBe(true)
     expect(container.querySelector('[data-ingredient-id="egg"]')?.hasAttribute('disabled')).toBe(true)
-    expect(container.querySelector('[data-sauce-brush]')?.hasAttribute('disabled')).toBe(true)
+    expect(container.querySelector('[data-ingredient-id="sauce"]')?.hasAttribute('disabled')).toBe(true)
 
     state = kitchenReducer(state, { type: 'TICK', deltaMs: 1_700 })
     rerender(state)
@@ -571,7 +608,7 @@ describe('KitchenScene', () => {
     rerender(state)
     expect(container.querySelector('[data-tutorial-step="sauce"]')).not.toBeNull()
     expect(container.textContent).toContain('拿起酱刷')
-    expect(container.querySelector('[data-sauce-brush]')?.hasAttribute('disabled')).toBe(false)
+    expect(container.querySelector('[data-ingredient-id="sauce"]')?.hasAttribute('disabled')).toBe(false)
   })
 
   it('shows the first-order completion confirmation for one stable transition window without restoring guided restrictions', () => {

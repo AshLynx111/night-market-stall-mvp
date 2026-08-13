@@ -4,15 +4,23 @@ import type { AudioSettings } from './audioSettings'
 
 describe('persistent background music', () => {
   const instances: MockAudio[] = []
+  let rejectNextPlay = false
 
   class MockAudio {
     loop = false
     preload = ''
     volume = 1
     muted = false
+    paused = true
     currentTime = 0
-    play = vi.fn().mockResolvedValue(undefined)
-    pause = vi.fn()
+    play = vi.fn(async () => {
+      if (rejectNextPlay) {
+        rejectNextPlay = false
+        throw new Error('blocked')
+      }
+      this.paused = false
+    })
+    pause = vi.fn(() => { this.paused = true })
 
     constructor(public src = '') {
       instances.push(this)
@@ -30,6 +38,7 @@ describe('persistent background music', () => {
   beforeEach(() => {
     stopBgm()
     instances.length = 0
+    rejectNextPlay = false
     vi.stubGlobal('Audio', MockAudio)
   })
 
@@ -60,5 +69,26 @@ describe('persistent background music', () => {
     applyAudioSettings(settings({ musicMuted: true }))
     expect(instances[0].volume).toBe(0)
     expect(instances[0].muted).toBe(true)
+  })
+
+  it('retries the same singleton after an initial rejected play', async () => {
+    rejectNextPlay = true
+    await unlockAndPlayBgm(settings())
+    await unlockAndPlayBgm(settings())
+
+    expect(instances).toHaveLength(1)
+    expect(instances[0].play).toHaveBeenCalledTimes(2)
+    expect(instances[0].paused).toBe(false)
+  })
+
+  it('resumes a paused singleton on a later trusted unlock without resetting time', async () => {
+    await unlockAndPlayBgm(settings())
+    instances[0].currentTime = 18.25
+    instances[0].paused = true
+    await unlockAndPlayBgm(settings())
+
+    expect(instances).toHaveLength(1)
+    expect(instances[0].play).toHaveBeenCalledTimes(2)
+    expect(instances[0].currentTime).toBe(18.25)
   })
 })

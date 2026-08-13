@@ -28,6 +28,7 @@ function setRangeValue(target: HTMLInputElement, value: string) {
 }
 
 afterEach(() => {
+  vi.restoreAllMocks()
   window.history.replaceState({}, '', '/')
   localStorage.clear()
   vi.unstubAllEnvs()
@@ -36,6 +37,16 @@ afterEach(() => {
 })
 
 describe('App landscape route', () => {
+  it('tolerates denied campaign storage writes', () => {
+    vi.stubGlobal('requestAnimationFrame', vi.fn(() => 1))
+    vi.stubGlobal('cancelAnimationFrame', vi.fn())
+    const denied = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new DOMException('denied') })
+    const container = document.createElement('div')
+    const root = createRoot(container)
+    expect(() => act(() => root.render(<App />))).not.toThrow()
+    act(() => root.unmount())
+    denied.mockRestore()
+  })
   it('starts an unfinished Day 1 with one guided customer', () => {
     vi.stubGlobal('requestAnimationFrame', vi.fn(() => 1))
     vi.stubGlobal('cancelAnimationFrame', vi.fn())
@@ -120,6 +131,8 @@ describe('App landscape route', () => {
     const sliders = [...container.querySelectorAll<HTMLInputElement>('input[type="range"]')]
     expect(sliders.map((slider) => slider.getAttribute('aria-label'))).toEqual(['总音量', '背景音乐音量', '音效音量'])
     expect(sliders.map((slider) => slider.value)).toEqual(['1', '0', '0.4'])
+    expect(sliders.map((slider) => slider.dataset.level)).toEqual(['1.00', '0.00', '0.40'])
+    expect(sliders.map((slider) => slider.style.getPropertyValue('--settings-level'))).toEqual(['100%', '0%', '40%'])
 
     const settingsMusic = container.querySelector<HTMLButtonElement>('.settings-screen__music-toggle')!
     expect(settingsMusic.getAttribute('aria-pressed')).toBe('true')

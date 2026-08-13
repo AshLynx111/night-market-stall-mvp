@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
   playBurnWarning,
   playCustomerReaction,
@@ -222,14 +222,20 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
   const unlockedIngredients = availableIngredients(state.day)
   const rackColumns = unlockedIngredients.length <= 6 ? 2 : 3
   const rackLayout = rackColumns === 2 ? 'approved-2x3' : 'expanded-3x5'
-  const sauceRackIndex = unlockedIngredients.indexOf('sauce')
-  const sauceRackColumn = sauceRackIndex % rackColumns
-  const sauceRackRow = Math.floor(sauceRackIndex / rackColumns)
   const guidedStep = tutorialStep(state)
   const guided = guidedStep !== 'done'
   const guidedHand = HAND_FOR_STEP[guidedStep]
   const sauceEnabled = sauceExpected && (!guided || guidedStep === 'sauce')
   const bubbleLayout = layoutOrderBubbles(state.customers)
+  const keyboardApply = (ingredient: IngredientId) => {
+    if (ingredient === 'sauce') {
+      if (sauceEnabled) setSauceBrushSelected(true)
+      return
+    }
+    const slot = state.slots.find((candidate) => tutorialAllowsIngredient(state, ingredient, candidate.id)
+      && (slotExpectedAction(state, candidate.id)?.id === ingredient || (ingredient === 'noodle' && candidate.phase === 'empty')))
+    if (slot) dropIngredient(ingredient, slot.id)
+  }
 
   return (
     <div
@@ -265,7 +271,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
       </section>
 
       <section className="kitchen-scene__ingredients" aria-label="桌面食材" data-kitchen-bin-rack="left" data-rack-layout={rackLayout}>
-        {unlockedIngredients.filter((id) => id !== 'sauce').map((id) => (
+        {unlockedIngredients.map((id) => (
           <TableIngredient
             key={id}
             id={id}
@@ -273,34 +279,14 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
             art={ingredientArt(id)}
             rackIndex={unlockedIngredients.indexOf(id)}
             rackColumns={rackColumns}
-            disabled={guided && !tutorialAllowsIngredient(state, id, 'left')}
+            painted={id === 'sauce' && sauceBrushSelected}
+            disabled={id === 'sauce' ? guided && guidedStep !== 'sauce' : guided && !tutorialAllowsIngredient(state, id, 'left')}
             findSlotAtPoint={findSlotAtPoint}
             onDrop={dropIngredient}
             onTapEgg={tapEgg}
+            onKeyboardApply={keyboardApply}
           />
         ))}
-        {unlockedIngredients.includes('sauce') && (
-          <button
-            type="button"
-            className={`sauce-brush${sauceBrushSelected ? ' is-selected' : ''}${guidedStep === 'sauce' ? ' is-tutorial-target' : ''}`}
-            data-sauce-brush
-            data-rack-index={sauceRackIndex}
-            data-rack-column={sauceRackColumn}
-            data-rack-row={sauceRackRow}
-            style={{
-              '--ingredient-rack-column': sauceRackColumn,
-              '--ingredient-rack-row': sauceRackRow,
-            } as CSSProperties}
-            aria-label="拿起酱刷，然后在需要刷酱的铁板上来回滑动"
-            aria-pressed={sauceBrushSelected}
-            disabled={!sauceEnabled}
-            onPointerUp={() => sauceEnabled && setSauceBrushSelected(true)}
-            onClick={() => sauceEnabled && setSauceBrushSelected(true)}
-          >
-            <span aria-hidden="true">🖌️</span>
-            <small>{sauceBrushSelected ? '酱刷已拿起' : '拿酱刷'}</small>
-          </button>
-        )}
       </section>
 
       {!guided && <section className="kitchen-scene__trash" aria-label="清理铁板">

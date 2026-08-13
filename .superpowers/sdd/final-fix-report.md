@@ -171,3 +171,25 @@ GREEN npx vitest run scripts/art-remake/build-live-kitchen-plate.test.mjs
 ```
 
 The focused regression hashes the tracked source (`3c7046b8a5a4736ad79c414dfaf3819930095fa3bc61b1c2f95affe5dac5084c`) and asserts a temporary rebuild is byte-for-byte identical to the tracked live plate.
+## Final coordinated fix wave (Important 1–3, Minor 1–2)
+
+### TDD evidence
+
+- RED: `npm test -- --run src/game/bgm.test.ts src/components/game/KitchenScene.test.tsx src/App.test.tsx` failed with the missing sauce-bin counts/runtime URL, rejected-play retry, paused-singleton resume, keyboard cooking/delivery, and denied-storage cases.
+- GREEN focused: the same command passes 3 files / 65 tests.
+- Important 1: sauce is now a normal `TableIngredient` backed by `ingredient-bin-sauce.png`; legacy emoji brush DOM/CSS is gone. Day 1 renders 5 complete bins and Day 5 renders all 15.
+- Important 2: `unlockAndPlayBgm` retries rejected starts and resumes a paused singleton without replacing it or resetting `currentTime`; trusted pointer/key listeners stay available for later resume.
+- Important 3: the baked rails are masked by opaque reference-style live rails/thumbs bound to persisted values. Edge records distinct 0.62/0.50/0.30 thumb centers at 802.24/774.68/728.75 px.
+- Minor 1: Enter/Space applies the selected ingredient to the first eligible griddle, completes each required sauce/cut/roll reducer gesture step, and delivers a tray dish to its bound active customer.
+- Minor 2: campaign save writes tolerate storage denial.
+
+### Final gates
+
+- `npm run validate:art` — PASS, 426 assets across 5 families.
+- `npm test -- --run` — PASS, 37 files / 241 tests.
+- `npm run build` — PASS.
+- `node scripts/current-reference-screens-qa.mjs` — PASS in Microsoft Edge at 1440×810.
+- Edge completed three real Day 1 deliveries; simulated initial BGM rejection then successful retry; paused/resumed the same singleton at `currentTime=7`; verified exact Day 3/5 IDs and 11/15 complete bins including the sauce PNG.
+- Original-detail screenshots inspected: settings thumbs visibly differ, Day 1 shows five metal bins, Day 3 shows eleven, Day 5 shows all fifteen; no floating legacy sauce control.
+
+No push was performed.

@@ -43,6 +43,17 @@ export function CookingGestureLayer({ state, dispatch, sauceEnabled = false }: {
   const active = useRef<ActiveGesture | null>(null)
   const [tool, setTool] = useState<{ x: number; y: number; kind: GestureKind } | null>(null)
 
+  const completeWithKeyboard = (slotId: SlotId, kind: GestureKind) => {
+    const slot = state.slots.find((candidate) => candidate.id === slotId)
+    if (!slot) return
+    const gesture = kind === 'sauce'
+      ? { kind: 'sauce' as const, coverage: 1, uniformity: 1, complete: true }
+      : kind === 'cut'
+        ? { kind: 'cut' as const, targetIndex: [0, 1, 2].find((index) => !slot.cutTargetIndices.includes(index)) ?? null, accuracy: 1, progress: 1, verticalDeviation: 0, complete: true }
+        : { kind: 'roll' as const, progress: 1, verticalDeviation: 0, complete: true }
+    dispatch({ type: 'COMPLETE_GESTURE', slotId, gesture })
+  }
+
   const finish = (event: ReactPointerEvent<HTMLDivElement>, cancelled = false) => {
     const gesture = active.current
     if (!gesture || gesture.pointerId !== event.pointerId) return
@@ -70,7 +81,8 @@ export function CookingGestureLayer({ state, dispatch, sauceEnabled = false }: {
             key={slot.id}
             className={`cooking-gesture-target cooking-gesture-target--${slot.id}`}
             data-gesture-slot-id={slot.id}
-            role="application"
+            role="button"
+            tabIndex={0}
             aria-label={kind === 'sauce'
               ? `${slot.id === 'left' ? '左侧' : '右侧'}铁板刷酱区，拿起酱刷后在这里来回滑动`
               : `${slot.id === 'left' ? '左侧' : '右侧'}铁板${kind === 'cut' ? '切段' : '卷起'}手势区`}
@@ -97,6 +109,13 @@ export function CookingGestureLayer({ state, dispatch, sauceEnabled = false }: {
             }}
             onPointerUp={(event) => finish(event)}
             onPointerCancel={(event) => finish(event, true)}
+            onKeyDown={(event) => {
+              if (event.key !== 'Enter' && event.key !== ' ') return
+              event.preventDefault()
+              const slotId = event.currentTarget.dataset.gestureSlotId as SlotId
+              const kind = gestureKind(state, slotId, sauceEnabled)
+              if (kind) completeWithKeyboard(slotId, kind)
+            }}
           />
         )
       })}

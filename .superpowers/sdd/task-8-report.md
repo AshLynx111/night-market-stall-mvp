@@ -46,6 +46,15 @@ The runner additionally rejects floating/bare ingredient controls, missing/zero-
 
 No release-blocking functional or visual concern was found at the required 1440×810 viewport. The production build is asset-heavy, so initial download size remains a future optimization opportunity; it does not affect this acceptance contract.
 
+## Final review fix-wave addendum
+
+- Replaced the emoji sauce brush with the complete generated sauce metal-bin PNG. Exact complete-bin counts are now Day 1 = 5, Day 3 = 11, Day 5 = 15.
+- Added BGM rejected-start retry and paused-singleton resume evidence while preserving identity, loop and time.
+- Replaced nearly transparent settings inputs with opaque live rails/thumbs; 0.62/0.50/0.30 produce distinct recorded thumb centers.
+- Added keyboard ingredient, sauce/cut/roll, and serving paths plus denied-storage regression coverage.
+- Moved the accepted kitchen inpaint source into tracked art-source files and added a byte-for-byte clean-clone rebuild test.
+- Final gates: focused 65/65, full 241/241, 426 art assets, production build, and Edge 1440×810 three-delivery journey all PASS.
+
 ## Evidence-integrity re-review
 
 The acceptance runner was tightened after review and re-executed successfully:

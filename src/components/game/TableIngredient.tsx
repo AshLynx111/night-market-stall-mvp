@@ -10,7 +10,7 @@ interface DragState {
   moving: boolean
 }
 
-export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, painted = false, disabled = false, findSlotAtPoint, onDrop, onTapEgg }: {
+export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, painted = false, disabled = false, findSlotAtPoint, onDrop, onTapEgg, onKeyboardApply }: {
   id: IngredientId
   label: string
   art: string
@@ -21,6 +21,7 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
   findSlotAtPoint: (clientX: number, clientY: number) => SlotId | null
   onDrop: (id: IngredientId, slotId: SlotId) => void
   onTapEgg: () => void
+  onKeyboardApply?: (id: IngredientId) => void
 }) {
   const drag = useRef<DragState | null>(null)
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null)
@@ -49,7 +50,7 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
     <>
       <button
         type="button"
-        className={`table-ingredient table-ingredient--${id}`}
+        className={`table-ingredient table-ingredient--${id}${painted ? ' is-selected' : ''}`}
         disabled={disabled}
         data-ingredient-id={id}
         data-rack-index={rackIndex}
@@ -58,6 +59,8 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
         data-painted={painted ? 'true' : undefined}
         style={rackStyle}
         aria-label={id === 'egg' ? `${label}，点击或拖到铁板` : `${label}，拖到铁板`}
+        aria-pressed={id === 'sauce' ? painted : undefined}
+        onClick={() => id === 'sauce' && !disabled && onKeyboardApply?.(id)}
         onPointerDown={(event) => {
           if (disabled) return
           event.currentTarget.setPointerCapture?.(event.pointerId)
@@ -72,9 +75,15 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
         }}
         onPointerUp={(event) => {
           if (disabled) return
+          if (id === 'sauce') onKeyboardApply?.(id)
           finish(event)
         }}
         onPointerCancel={(event) => finish(event, true)}
+        onKeyDown={(event) => {
+          if (disabled || (event.key !== 'Enter' && event.key !== ' ')) return
+          event.preventDefault()
+          onKeyboardApply?.(id)
+        }}
       >
         <img className="table-ingredient__bin-art" src={art} alt="" aria-hidden="true" draggable={false} />
       </button>

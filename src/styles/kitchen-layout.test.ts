@@ -120,6 +120,7 @@ describe('logical kitchen layout CSS', () => {
     expect(expanded.top + 4 * expanded.rowGap + expanded.height).toBeLessThanOrEqual(810)
 
     expect(kitchenCss).toMatch(/\.table-ingredient\s*\{[^}]*left:\s*calc\(var\(--ingredient-rack-left\)[^}]*top:\s*calc\(var\(--ingredient-rack-top\)/s)
-    expect(kitchenCss).toMatch(/\.sauce-brush\s*\{[^}]*left:\s*calc\(var\(--ingredient-rack-left\)[^}]*top:\s*calc\(var\(--ingredient-rack-top\)/s)
+    expect(kitchenCss).not.toContain('.sauce-brush {')
+    expect(kitchenCss).toContain('.table-ingredient--sauce.is-selected')
   })
 })

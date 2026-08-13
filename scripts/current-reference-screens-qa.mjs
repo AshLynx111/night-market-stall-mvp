@@ -40,6 +40,13 @@ await page.addInitScript(() => {
   localStorage.removeItem('night-market-campaign-v1')
   localStorage.removeItem('night-market-guided-tutorial-v2')
   localStorage.removeItem('night-market-audio-settings-v1')
+  window.__qaBgmPlayAttempts = 0
+  const nativePlay = HTMLMediaElement.prototype.play
+  HTMLMediaElement.prototype.play = function qaRetryablePlay() {
+    window.__qaBgmPlayAttempts += 1
+    if (window.__qaBgmPlayAttempts === 1) return Promise.reject(new DOMException('QA initial rejection', 'NotAllowedError'))
+    return nativePlay.call(this)
+  }
 })
 
 function assert(condition, message) {
@@ -159,7 +166,7 @@ async function makeAndDeliverClassic(orderNumber, guided = false) {
   await drag('[data-ingredient-id="hot-dog"]', slotSelector)
   await page.waitForFunction(({ id }) => document.querySelector(`[data-slot-id="${id}"]`)?.dataset.expectedStepId === 'sauce', { id: slotId }, { timeout: 12_000 })
   if (guided) await stageCheckpoint('hot-dog-ready', 'sauce', slotId)
-  await page.locator('[data-sauce-brush]').click()
+  await page.locator('[data-ingredient-id="sauce"]').click()
   await stroke(gestureSelector, [.15, .44], [.74, .46])
   await stroke(gestureSelector, [.76, .58], [.2, .56])
   if (guided) await stageCheckpoint('sauce-two-strokes', 'scallion', slotId)
@@ -219,6 +226,7 @@ async function inspectKitchen(day) {
       day: Number(document.querySelector('.game-screen')?.dataset.day),
       bins,
       sauceBrushCount: scene.querySelectorAll('[data-sauce-brush]').length,
+      sauceBinSrc: scene.querySelector('[data-ingredient-id="sauce"] > img.table-ingredient__bin-art')?.getAttribute('src') ?? '',
       floatingBareIngredientImages: scene.querySelectorAll('.table-ingredient:not(:has(> img.table-ingredient__bin-art))').length,
       binPairs,
       binGriddleOverlaps: bins.flatMap((bin) => griddles.filter((griddle) => overlap(bin.rect, griddle.rect)).map((griddle) => [bin.id, griddle.id])),
@@ -229,10 +237,11 @@ async function inspectKitchen(day) {
       activeCustomers: customers.filter((customer) => customer.phase === 'active').length,
     }
   })
-  const expectedBins = day <= 1 ? 4 : day === 3 ? 10 : 14
+  const expectedBins = day <= 1 ? 5 : day === 3 ? 11 : 15
   assert(record.day === day, `Day fixture identity mismatch: requested ${day}, rendered ${record.day}`)
   assert(record.bins.length === expectedBins, `Day ${day}: expected ${expectedBins} complete bins, got ${record.bins.length}`)
-  assert(record.sauceBrushCount === 1, `Day ${day}: sauce brush missing`)
+  assert(record.sauceBrushCount === 0, `Day ${day}: legacy sauce brush rendered`)
+  assert(record.sauceBinSrc.includes('ingredient-bin-sauce.png'), `Day ${day}: complete sauce bin missing`)
   assert(record.floatingBareIngredientImages === 0, `Day ${day}: floating ingredient found`)
   assert(record.bins.every((bin) => bin.completeBinImages === 1 && bin.legacyVessels === 0 && bin.image?.naturalWidth > 0 && bin.image?.naturalHeight > 0 && bin.image.opacity !== '0'), `Day ${day}: incomplete or empty rendered bin`)
   assert(record.binPairs.length === 0, `Day ${day}: bins overlap ${JSON.stringify(record.binPairs)}`)
@@ -252,7 +261,9 @@ try {
   await screenshot('01-home')
 
   await page.getByRole('button', { name: '打开设置' }).click()
+  await page.mouse.click(1200, 700)
   await page.waitForFunction(() => document.querySelector('audio[data-game-bgm]')?.paused === false)
+  assert(await page.evaluate(() => window.__qaBgmPlayAttempts >= 2), 'BGM did not retry after initial rejected play')
   await page.getByRole('slider', { name: '总音量' }).fill('0.62')
   await page.getByRole('slider', { name: '背景音乐音量' }).fill('0.5')
   await page.getByRole('slider', { name: '音效音量' }).fill('0.3')
@@ -265,6 +276,21 @@ try {
   await page.locator('audio[data-game-bgm]').evaluate((audio) => { audio.currentTime = 7 })
   result.audio = { mixed, muted, sliders: { master: .62, music: .5, effects: .3 }, checkpoints: [] }
   await audioCheckpoint('settings')
+  const sliderGeometry = await page.getByRole('slider').evaluateAll((sliders) => sliders.map((slider) => {
+    const rect = slider.getBoundingClientRect()
+    const value = Number(slider.value)
+    const thumbWidth = 28
+    return { label: slider.getAttribute('aria-label'), value, level: slider.dataset.level, expectedThumbCenterX: rect.left + thumbWidth / 2 + (rect.width - thumbWidth) * value, rail: { left: rect.left, width: rect.width } }
+  }))
+  assert(sliderGeometry.map((item) => item.level).join(',') === '0.62,0.50,0.30', `Slider values not visibly bound ${JSON.stringify(sliderGeometry)}`)
+  assert(sliderGeometry.every((item) => item.expectedThumbCenterX >= item.rail.left + 14 && item.expectedThumbCenterX <= item.rail.left + item.rail.width - 14), `Slider thumb geometry invalid ${JSON.stringify(sliderGeometry)}`)
+  result.screens.settingsSliderGeometry = sliderGeometry
+  const resumeBefore = await page.locator('audio[data-game-bgm]').evaluate((audio) => { const before = audio.currentTime; audio.pause(); return before })
+  await page.mouse.click(1200, 700)
+  await page.waitForFunction(() => document.querySelector('audio[data-game-bgm]')?.paused === false)
+  const resumeAfter = await page.locator('audio[data-game-bgm]').evaluate((audio) => audio.currentTime)
+  assert(resumeAfter >= resumeBefore, `Paused singleton did not resume continuously (${resumeBefore} -> ${resumeAfter})`)
+  result.audio.resume = { before: resumeBefore, after: resumeAfter, attempts: await page.evaluate(() => window.__qaBgmPlayAttempts) }
   result.screens.settings = await screenMetrics('.settings-screen__plate')
   assertPlate(result.screens.settings, 'settings')
   await screenshot('02-settings-audio-controls')
@@ -280,6 +306,15 @@ try {
   await page.locator('[data-tutorial-step="noodle"]').waitFor({ timeout: 8_000 })
   await page.waitForTimeout(2_800)
   assert(await page.locator('.game-screen').getAttribute('data-day') === '1', 'Selection did not open actual Day 1')
+  const day1Bins = await page.locator('.kitchen-scene').evaluate((scene) => ({
+    day: Number(document.querySelector('.game-screen')?.dataset.day),
+    count: scene.querySelectorAll('[data-ingredient-id] > img.table-ingredient__bin-art').length,
+    sauceBinSrc: scene.querySelector('[data-ingredient-id="sauce"] > img.table-ingredient__bin-art')?.getAttribute('src') ?? '',
+    legacyBrushCount: scene.querySelectorAll('[data-sauce-brush]').length,
+  }))
+  assert(day1Bins.day === 1 && day1Bins.count === 5, `Day 1: expected 5 complete bins ${JSON.stringify(day1Bins)}`)
+  assert(day1Bins.sauceBinSrc.includes('ingredient-bin-sauce.png') && day1Bins.legacyBrushCount === 0, `Day 1: complete sauce bin missing ${JSON.stringify(day1Bins)}`)
+  result.kitchenFixtures.day1 = day1Bins
   await audioCheckpoint('day-1-entry')
   await screenshot('04-day-1-guided-entry')
   await makeAndDeliverClassic(1, true)

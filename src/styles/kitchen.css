@@ -192,12 +192,7 @@
 .kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled) { border-radius: 18px; background: rgb(255 216 91 / .16); box-shadow: 0 0 0 3px rgb(255 216 91 / .88), 0 0 18px rgb(255 186 56 / .78); animation: tutorial-target-pulse 1.25s ease-in-out infinite; }
 .table-ingredient__ghost, .serving-tray__ghost { position: absolute; z-index: 80; width: 105px; height: 82px; object-fit: contain; transform: translate(-50%, -50%) scale(1.08); pointer-events: none; filter: drop-shadow(0 8px 5px rgb(0 0 0 / .45)); }
 
-.sauce-brush { position: absolute; z-index: 9; left: calc(var(--ingredient-rack-left) + var(--ingredient-rack-column) * var(--ingredient-rack-column-gap)); top: calc(var(--ingredient-rack-top) + var(--ingredient-rack-row) * var(--ingredient-rack-row-gap)); width: var(--ingredient-rack-control-width); height: var(--ingredient-rack-control-height); padding: 0; border: 2px solid transparent; border-radius: 16px; background: rgb(255 240 190 / .08); cursor: pointer; pointer-events: auto; touch-action: manipulation; }
-.sauce-brush > span { display: block; font-size: 38px; transform: rotate(-22deg); filter: drop-shadow(0 4px 3px rgb(29 18 13 / .5)); }
-.sauce-brush > small { position: absolute; left: 50%; bottom: -2px; min-width: 58px; padding: 2px 5px; transform: translateX(-50%); border-radius: 8px; background: rgb(48 32 24 / .78); color: #ffe7a2; font-size: 8px; font-weight: 900; white-space: nowrap; }
-.sauce-brush:disabled { opacity: .55; cursor: default; }
-.sauce-brush.is-selected { border-color: #ffd05f; background: rgb(255 208 91 / .24); box-shadow: 0 0 13px rgb(255 202 77 / .78); }
-.sauce-brush.is-tutorial-target:not(:disabled) { border-color: #ffd05f; background: rgb(255 208 91 / .22); box-shadow: 0 0 16px rgb(255 202 77 / .84); animation: tutorial-target-pulse 1.25s ease-in-out infinite; }
+.table-ingredient--sauce.is-selected { border-color: #ffd05f; background: rgb(255 208 91 / .2); box-shadow: 0 0 14px rgb(255 202 77 / .82); }
 
 .cooking-gesture-layer { position: absolute; z-index: 11; inset: 0; pointer-events: none; }
 .cooking-gesture-target { position: absolute; top: 59%; width: 18.7%; height: 23%; pointer-events: auto; touch-action: none; }
@@ -297,7 +292,7 @@
 @media (prefers-reduced-motion: reduce) {
   .tutorial-hand > span { opacity: .9; transform: translate(var(--tutorial-dx), var(--tutorial-dy)); }
   .kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled),
-  .sauce-brush.is-tutorial-target:not(:disabled),
+  .table-ingredient--sauce:not(:disabled),
   .kitchen-customer__bubble { animation: none; }
 }
 

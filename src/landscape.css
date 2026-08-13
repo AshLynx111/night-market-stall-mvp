@@ -83,11 +83,13 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .settings-screen__plate { position: relative; width: min(100vw, calc(100dvh * 1.776833)); height: min(100dvh, 56.28vw); }
 .settings-screen__art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; user-select: none; pointer-events: none; }
 .settings-screen__controls { position: absolute; z-index: 4; inset: 0; pointer-events: none; }
-.settings-slider { position: absolute; left: 44.8%; width: 17.8%; height: 5%; display: grid; align-items: center; pointer-events: auto; }
+.settings-slider { position: absolute; left: 44.3%; width: 19%; height: 5%; display: grid; align-items: center; padding: 0 .55%; border-radius: 999px; background: linear-gradient(180deg, #ebc98f 0%, #d5a45d 100%); box-shadow: inset 0 2px 3px rgb(255 240 190 / .72), inset 0 -2px 3px rgb(92 47 17 / .45), 0 1px 2px rgb(56 28 10 / .42); pointer-events: auto; }
 .settings-slider--master { top: 50.25%; }
 .settings-slider--music { top: 58.45%; }
 .settings-slider--effects { top: 66.55%; }
-.settings-slider input { width: 100%; height: 100%; margin: 0; opacity: .025; cursor: pointer; }
+.settings-slider input { appearance: none; width: 100%; height: 12px; margin: 0; border: 2px solid #7d431b; border-radius: 999px; background: linear-gradient(90deg, #bf7626 0 var(--settings-level), #6e3c1b var(--settings-level) 100%); box-shadow: inset 0 2px 3px rgb(36 18 9 / .65), 0 1px 0 rgb(255 231 169 / .72); cursor: pointer; }
+.settings-slider input::-webkit-slider-thumb { appearance: none; width: 28px; height: 28px; border: 3px solid #754018; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe09a 0 19%, #e9a83d 45%, #b86720 100%); box-shadow: 0 2px 3px rgb(41 20 7 / .62), inset 0 1px 1px rgb(255 245 201 / .72); }
+.settings-slider input::-moz-range-thumb { width: 22px; height: 22px; border: 3px solid #754018; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe09a 0 19%, #e9a83d 45%, #b86720 100%); box-shadow: 0 2px 3px rgb(41 20 7 / .62); }
 .settings-slider:focus-within { border-radius: 20px; background: rgb(255 226 132 / .12); box-shadow: 0 0 0 4px rgb(255 226 132 / .78), 0 0 24px rgb(255 177 57 / .58); }
 .settings-screen__return { position: absolute; z-index: 4; left: 44.4%; top: 74.55%; width: 11.2%; height: 6.4%; padding: 0; border: 0; border-radius: 24px; background: transparent; cursor: pointer; }
 .settings-screen__return:hover,
