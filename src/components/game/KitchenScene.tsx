@@ -85,6 +85,7 @@ function TutorialGestureCue({ kind, slotId, cutTargetIndices, sauceSelected, sau
     <div
       className={`tutorial-gesture-cue tutorial-gesture-cue--${slotId}`}
       data-sauce-progress={kind === 'sauce' ? `${sauceStrokeCount}/2` : undefined}
+      data-griddle-inner-area={slotId}
     >
       <svg
         viewBox="0 0 1000 500"
@@ -255,6 +256,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
       data-guided-tutorial={guided ? 'true' : undefined}
       data-kitchen-composition="approved-clean-live"
       ref={sceneRef}
+      style={kitchenGeometryStyle(rackLayout)}
     >
       <section className="kitchen-scene__customers" aria-label="顾客队伍" data-live-customer-layer="dynamic-only">
         {state.customers.map((customer) => (
@@ -287,7 +289,6 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
         aria-label="桌面食材"
         data-kitchen-bin-rack="left"
         data-rack-layout={rackLayout}
-        style={kitchenGeometryStyle(rackLayout)}
       >
         {unlockedIngredients.map((id) => (
           <TableIngredient

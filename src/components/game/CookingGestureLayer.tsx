@@ -82,6 +82,7 @@ export function CookingGestureLayer({ state, dispatch, sauceEnabled = false }: {
             key={slot.id}
             className={`cooking-gesture-target cooking-gesture-target--${slot.id}`}
             data-gesture-slot-id={slot.id}
+            data-griddle-inner-area={slot.id}
             role="button"
             tabIndex={0}
             aria-label={kind === 'sauce'

@@ -116,21 +116,43 @@
 .griddle-slot {
   position: absolute;
   z-index: 6;
-  top: 59%;
-  width: 18.7%;
-  height: 23%;
   border: 0;
   border-radius: 0;
   background: transparent;
   pointer-events: auto;
 }
-.griddle-slot--left { left: 34.1%; }
-.griddle-slot--right { left: 52.8%; }
-.griddle-slot__food { position: absolute; inset: 4%; padding: 0; border: 0; background: transparent; cursor: default; }
+.griddle-slot--left,
+.cooking-gesture-target--left,
+.tutorial-gesture-cue--left {
+  left: var(--griddle-left-left);
+  top: var(--griddle-left-top);
+  width: var(--griddle-left-width);
+  height: var(--griddle-left-height);
+}
+.griddle-slot--right,
+.cooking-gesture-target--right,
+.tutorial-gesture-cue--right {
+  left: var(--griddle-right-left);
+  top: var(--griddle-right-top);
+  width: var(--griddle-right-width);
+  height: var(--griddle-right-height);
+}
+.griddle-slot__food {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(100% - 32px);
+  height: calc(100% - 28px);
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
 .griddle-slot__food:disabled { opacity: 1; }
 .griddle-slot__food:not(:disabled) { cursor: pointer; filter: drop-shadow(0 0 11px #ffd169); }
-.griddle-slot__food img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
-.griddle-slot__stage-art { z-index: 1; filter: drop-shadow(0 3px 2px rgb(46 23 12 / .3)); }
+.griddle-slot__food img { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.griddle-slot__stage-art { z-index: 1; object-fit: contain; object-position: 50% 50%; filter: drop-shadow(0 3px 2px rgb(46 23 12 / .3)); }
 .griddle-slot__pack-hint { position: absolute; z-index: 7; left: 50%; bottom: 4%; padding: 3px 8px; transform: translateX(-50%); border-radius: 10px; background: rgb(46 32 25 / .8); color: #ffe8a2; font-size: 9px; font-weight: 900; white-space: nowrap; }
 .griddle-slot__status { position: absolute; z-index: 10; left: 50%; top: 3%; max-width: 78%; padding: 4px 9px; transform: translate(-50%, -50%); border: 1px solid rgb(255 222 151 / .65); border-radius: 9px; background: rgb(49 34 27 / .9); color: #fff0b3; box-shadow: 0 3px 4px rgb(20 12 9 / .34); font-size: 9px; font-weight: 900; line-height: 1.2; text-align: center; white-space: nowrap; pointer-events: none; }
 .heat-ready .griddle-slot__status { border-color: #ffc64e; color: #fff6c9; box-shadow: 0 0 8px rgb(255 187 64 / .48); }
@@ -196,17 +218,13 @@
 .table-ingredient--sauce.is-selected { outline: 3px solid #ffd05f; outline-offset: -3px; }
 
 .cooking-gesture-layer { position: absolute; z-index: 11; inset: 0; pointer-events: none; }
-.cooking-gesture-target { position: absolute; top: 59%; width: 18.7%; height: 23%; pointer-events: auto; touch-action: none; }
-.cooking-gesture-target--left { left: 34.1%; }
-.cooking-gesture-target--right { left: 52.8%; }
+.cooking-gesture-target { position: absolute; pointer-events: auto; touch-action: none; }
 .cooking-gesture-tool { position: absolute; z-index: 90; transform: translate(-32%, -72%); font-size: 34px; pointer-events: none; filter: drop-shadow(0 4px 3px rgb(0 0 0 / .5)); }
 .cooking-gesture-tool--sauce { width: 84px; height: 64px; transform: translate(-40%, -65%); }
 .cooking-gesture-tool--sauce img { width: 100%; height: 100%; object-fit: contain; }
 .cooking-gesture-tool--roll { color: #ffe5a3; font-size: 48px; font-weight: 900; }
 
-.tutorial-gesture-cue { position: absolute; z-index: 23; top: 59%; width: 18.7%; height: 23%; pointer-events: none; }
-.tutorial-gesture-cue--left { left: 34.1%; }
-.tutorial-gesture-cue--right { left: 52.8%; }
+.tutorial-gesture-cue { position: absolute; z-index: 23; pointer-events: none; }
 .tutorial-gesture-cue svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .tutorial-gesture-cue path { fill: none; stroke: #ffd45f; stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 28 18; filter: drop-shadow(0 3px 2px rgb(0 0 0 / .72)); animation: tutorial-path-dash 1.1s linear infinite; }
 .tutorial-gesture-cue--left::after {

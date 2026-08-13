@@ -62,4 +62,15 @@ describe('canonical kitchen scene geometry', () => {
       '--ingredient-rack-rows': '5',
     })
   })
+
+  it('publishes each griddle rectangle as the shared positioning variables for every cooking layer', () => {
+    const style = kitchenGeometryStyle('approved-2x3') as Record<string, string>
+
+    for (const [slotId, rect] of Object.entries(KITCHEN_GRIDDLE_RECTS)) {
+      expect(style[`--griddle-${slotId}-left`]).toBe(`${rect.left}px`)
+      expect(style[`--griddle-${slotId}-top`]).toBe(`${rect.top}px`)
+      expect(style[`--griddle-${slotId}-width`]).toBe(`${rect.width}px`)
+      expect(style[`--griddle-${slotId}-height`]).toBe(`${rect.height}px`)
+    }
+  })
 })

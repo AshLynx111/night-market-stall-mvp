@@ -6,6 +6,7 @@ import { advanceCustomers } from '../../landscape/kitchen/queue'
 import { createKitchenState } from '../../landscape/kitchen/state'
 import type { KitchenState } from '../../landscape/kitchen/types'
 import { TUTORIAL_GESTURE_RECT, tutorialGesturePath } from '../../landscape/kitchen/tutorialPaths'
+import { KITCHEN_GRIDDLE_RECTS } from '../../landscape/kitchen/sceneGeometry'
 import { KitchenScene } from './KitchenScene'
 import { INGREDIENT_FOOD_CROPS } from './TableIngredient'
 
@@ -69,12 +70,39 @@ describe('KitchenScene', () => {
     const { container } = renderScene(activeKitchenState(1, 1))
 
     expect(container.querySelector('.kitchen-scene__ingredients')?.getAttribute('data-kitchen-bin-rack')).toBe('left')
-    const rack = container.querySelector<HTMLElement>('.kitchen-scene__ingredients')!
+    const rack = container.querySelector<HTMLElement>('.kitchen-scene')!
     expect(rack.style.getPropertyValue('--ingredient-rack-columns')).toBe('2')
     expect(rack.style.getPropertyValue('--ingredient-rack-left')).toBe('80px')
     expect(container.querySelectorAll('.griddle-slot[data-griddle-hitbox]')).toHaveLength(2)
     expect(container.querySelector('.griddle-slot--left')?.getAttribute('data-griddle-hitbox')).toBe('left')
     expect(container.querySelector('.griddle-slot--right')?.getAttribute('data-griddle-hitbox')).toBe('right')
+  })
+
+  it('centers independent cooking stages, gesture targets, and tutorial cues on their shared griddle records', () => {
+    const initial = activeKitchenState(3, 1)
+    const state = {
+      ...initial,
+      slots: initial.slots.map((slot, index) => ({
+        ...slot,
+        phase: 'cooking' as const,
+        heatState: 'raw' as const,
+        orderId: initial.customers[index].order.id,
+        recipeId: 'classic' as const,
+        completedStepIds: ['noodle'],
+      })) as KitchenState['slots'],
+    }
+    const { container } = renderScene(state)
+    const scene = container.querySelector<HTMLElement>('.kitchen-scene')!
+
+    for (const slotId of ['left', 'right'] as const) {
+      const rect = KITCHEN_GRIDDLE_RECTS[slotId]
+      expect(scene.style.getPropertyValue(`--griddle-${slotId}-left`)).toBe(`${rect.left}px`)
+      expect(scene.style.getPropertyValue(`--griddle-${slotId}-top`)).toBe(`${rect.top}px`)
+      const slot = container.querySelector(`.griddle-slot--${slotId}`)!
+      expect(slot.getAttribute('data-food-anchor')).toBe('center')
+      expect(slot.querySelector('.griddle-slot__food')?.getAttribute('data-griddle-inner-area')).toBe(slotId)
+      expect(slot.querySelectorAll('.griddle-slot__stage-art')).toHaveLength(1)
+    }
   })
 
   it('renders the two-slot, three-customer Day 3 scene without legacy panels', () => {

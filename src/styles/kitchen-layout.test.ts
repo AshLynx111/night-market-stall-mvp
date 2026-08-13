@@ -21,6 +21,27 @@ describe('logical kitchen layout CSS', () => {
     expect(rackRectangles('approved-2x3')).toHaveLength(6)
   })
 
+  it('centers food, hit targets, and tutorial paths from the same griddle custom properties', () => {
+    const leftGeometry = kitchenCss.match(/\.griddle-slot--left,\s*\.cooking-gesture-target--left,\s*\.tutorial-gesture-cue--left\s*\{[^}]+\}/s)?.[0] ?? ''
+    const rightGeometry = kitchenCss.match(/\.griddle-slot--right,\s*\.cooking-gesture-target--right,\s*\.tutorial-gesture-cue--right\s*\{[^}]+\}/s)?.[0] ?? ''
+    const food = kitchenCss.match(/\.griddle-slot__food\s*\{[^}]+\}/s)?.[0] ?? ''
+    const stageArt = kitchenCss.match(/\.griddle-slot__stage-art\s*\{[^}]+\}/s)?.[0] ?? ''
+
+    for (const geometry of [leftGeometry, rightGeometry]) {
+      expect(geometry).toContain('left: var(--griddle-')
+      expect(geometry).toContain('top: var(--griddle-')
+      expect(geometry).toContain('width: var(--griddle-')
+      expect(geometry).toContain('height: var(--griddle-')
+    }
+    expect(food).toMatch(/left:\s*50%/)
+    expect(food).toMatch(/top:\s*50%/)
+    expect(food).toMatch(/width:\s*calc\(100% - \d+px\)/)
+    expect(food).toMatch(/height:\s*calc\(100% - \d+px\)/)
+    expect(food).toContain('transform: translate(-50%, -50%)')
+    expect(stageArt).toContain('object-fit: contain')
+    expect(stageArt).toContain('object-position: 50% 50%')
+  })
+
   it('does not physically resize the gameplay HUD or help control in viewport media rules', () => {
     const narrow = mediaBlock('@media (max-width: 1050px)', '@media (max-height: 690px)')
     const short = mediaBlock('@media (max-height: 690px)', '@media (orientation: portrait)')

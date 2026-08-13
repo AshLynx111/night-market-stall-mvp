@@ -35,6 +35,7 @@ export function GriddleSlot({ state, slotId, onMoveToTray }: {
       className={`griddle-slot griddle-slot--${slotId} phase-${slot.phase} heat-${slot.heatState}`}
       data-slot-id={slotId}
       data-griddle-hitbox={slotId}
+      data-food-anchor="center"
       data-order-id={slot.orderId ?? undefined}
       data-expected-step-id={expected?.id}
       aria-label={`${slotId === 'left' ? '左侧' : '右侧'}铁板${expected ? `，下一步${expected.verb}` : ''}`}
@@ -42,6 +43,7 @@ export function GriddleSlot({ state, slotId, onMoveToTray }: {
       {art && (
         <button
           className="griddle-slot__food"
+          data-griddle-inner-area={slotId}
           type="button"
           disabled={slot.phase !== 'rolled'}
           onClick={() => slot.phase === 'rolled' && onMoveToTray(slotId)}
