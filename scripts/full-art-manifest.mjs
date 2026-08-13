@@ -49,6 +49,7 @@ function roleFor(relativePath) {
   if (relativePath.startsWith('events/')) return 'event-key-art'
   if (relativePath in APPROVED_SCREEN_SOURCES) return 'approved-screen-composite'
   if (relativePath === 'main-ui/kitchen-screen-live-clean.png') return 'approved-screen-live-derivative'
+  if (relativePath === 'main-ui/settings-slider-clean-patch.png') return 'approved-screen-clean-patch'
   if (relativePath === 'main-ui/night-market-clean-background.png') return 'clean-background'
   if (relativePath === 'main-ui/game-main-screen-final.png') return 'screen-composite'
   if (relativePath === 'main-ui/start-screen-user-final.png') return 'start-screen-composite'
@@ -94,6 +95,9 @@ function derivativeFor(relativePath) {
   if (relativePath === 'main-ui/kitchen-screen-live-clean.png') {
     return 'main-ui/kitchen-screen-user-final.png; customer region replaced for dynamic live actors'
   }
+  if (relativePath === 'main-ui/settings-slider-clean-patch.png') {
+    return 'main-ui/settings-screen-user-final.png; localized baked-slider cleanup patch'
+  }
   const atlasMatch = relativePath.match(/^stages\/(.+)-stage-atlas\.png$/)
   if (atlasMatch) return `stages/${atlasMatch[1]}/*.png`
   return undefined
@@ -101,6 +105,7 @@ function derivativeFor(relativePath) {
 
 function requiresAlpha(relativePath) {
   if (!relativePath.endsWith('.png')) return false
+  if (relativePath === 'main-ui/settings-slider-clean-patch.png') return true
   if (relativePath.startsWith('main-ui/')) return false
   if (relativePath.startsWith('events/')) return false
   if (relativePath === 'menu/menu-board.png') return false

@@ -4,6 +4,7 @@ import daySelectScreen from '../assets/approved/main-ui/day-select-user-final.pn
 import liveKitchenScreen from '../assets/approved/main-ui/kitchen-screen-live-clean.png'
 import summaryScreen from '../assets/approved/main-ui/summary-screen-user-final.png'
 import settingsScreen from '../assets/approved/main-ui/settings-screen-user-final.png'
+import settingsSliderCleanPatch from '../assets/approved/main-ui/settings-slider-clean-patch.png'
 import menuBoard from '../assets/approved/menu/menu-board.png'
 import celebrityArt from '../assets/approved/events/day5-celebrity-event-key-art.png'
 import takeawayBag from '../assets/approved/menu/takeaway-bag.png'
@@ -488,6 +489,12 @@ export function LandscapeGame() {
             data-screen-art="settings"
             src={settingsScreen}
             alt="夜市烤冷面游戏音量设置"
+          />
+          <img
+            className="settings-screen__rail-clean-patch"
+            src={settingsSliderCleanPatch}
+            alt=""
+            aria-hidden="true"
           />
           <div className="settings-screen__controls">
             <label className="settings-slider settings-slider--master">

@@ -128,7 +128,12 @@ describe('App landscape route', () => {
 
     act(() => container.querySelector<HTMLButtonElement>('[aria-label="打开设置"]')!.click())
     expect(container.querySelector('[data-screen-art="settings"]')).not.toBeNull()
+    const sliderCleanPatches = container.querySelectorAll<HTMLImageElement>('.settings-screen__rail-clean-patch')
+    expect(sliderCleanPatches).toHaveLength(1)
+    expect(sliderCleanPatches[0].src).toContain('settings-slider-clean-patch.png')
+    expect(container.querySelectorAll('.settings-slider__decorative-thumb')).toHaveLength(0)
     const sliders = [...container.querySelectorAll<HTMLInputElement>('input[type="range"]')]
+    expect(sliders).toHaveLength(3)
     expect(sliders.map((slider) => slider.getAttribute('aria-label'))).toEqual(['总音量', '背景音乐音量', '音效音量'])
     expect(sliders.map((slider) => slider.value)).toEqual(['1', '0', '0.4'])
     expect(sliders.map((slider) => slider.dataset.level)).toEqual(['1.00', '0.00', '0.40'])
