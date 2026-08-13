@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
+import { KITCHEN_GRIDDLE_RECTS, KITCHEN_RACK_LAYOUTS, rackRectangles } from '../landscape/kitchen/sceneGeometry'
 
 const landscapeCss = readFileSync('src/landscape.css', 'utf8')
 const kitchenCss = readFileSync('src/styles/kitchen.css', 'utf8')
@@ -11,6 +12,15 @@ function mediaBlock(from: string, to: string, source = landscapeCss) {
 }
 
 describe('logical kitchen layout CSS', () => {
+  it('has one canonical source for the griddle and rack geometry consumed by later scene layers', () => {
+    expect(KITCHEN_GRIDDLE_RECTS).toEqual({
+      left: { left: 491, top: 559, width: 269, height: 218 },
+      right: { left: 760, top: 559, width: 269, height: 218 },
+    })
+    expect(KITCHEN_RACK_LAYOUTS['approved-2x3']).toMatchObject({ columns: 2, rows: 3 })
+    expect(rackRectangles('approved-2x3')).toHaveLength(6)
+  })
+
   it('does not physically resize the gameplay HUD or help control in viewport media rules', () => {
     const narrow = mediaBlock('@media (max-width: 1050px)', '@media (max-height: 690px)')
     const short = mediaBlock('@media (max-height: 690px)', '@media (orientation: portrait)')
