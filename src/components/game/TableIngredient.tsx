@@ -1,6 +1,13 @@
 import { useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react'
 import type { IngredientId } from '../../landscape/campaign'
 import { toLogicalScenePoint } from '../../landscape/geometry'
+import {
+  KITCHEN_RACK_LAYOUTS,
+  ghostInnerPolygon,
+  ingredientGhostGeometryStyle,
+  rackInnerPolygons,
+  type RackLayout,
+} from '../../landscape/kitchen/sceneGeometry'
 import type { SlotId } from '../../landscape/kitchen/types'
 
 interface DragState {
@@ -10,38 +17,12 @@ interface DragState {
   moving: boolean
 }
 
-export interface IngredientFoodCrop {
-  scale: `${number}%`
-  shiftX: `${number}%`
-  shiftY: `${number}%`
-}
-
-// Each source image includes a generated steel bin. These crops isolate its
-// food interior inside both rack sizes without introducing another container.
-export const INGREDIENT_FOOD_CROPS = {
-  noodle: { scale: '275%', shiftX: '0%', shiftY: '0%' },
-  egg: { scale: '275%', shiftX: '1%', shiftY: '3%' },
-  'hot-dog': { scale: '290%', shiftX: '1%', shiftY: '4%' },
-  sauce: { scale: '300%', shiftX: '0%', shiftY: '7%' },
-  scallion: { scale: '285%', shiftX: '0%', shiftY: '5%' },
-  cilantro: { scale: '280%', shiftX: '1%', shiftY: '6%' },
-  onion: { scale: '300%', shiftX: '-1%', shiftY: '5%' },
-  'chili-powder': { scale: '280%', shiftX: '-1%', shiftY: '5%' },
-  'turkey-noodle': { scale: '285%', shiftX: '-2%', shiftY: '4%' },
-  cheese: { scale: '300%', shiftX: '-1%', shiftY: '7%' },
-  corn: { scale: '280%', shiftX: '1%', shiftY: '5%' },
-  orleans: { scale: '290%', shiftX: '1%', shiftY: '4%' },
-  bacon: { scale: '280%', shiftX: '1%', shiftY: '2%' },
-  tenderloin: { scale: '290%', shiftX: '0%', shiftY: '3%' },
-  enoki: { scale: '280%', shiftX: '0%', shiftY: '4%' },
-} as const satisfies Record<IngredientId, IngredientFoodCrop>
-
-export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, painted = false, disabled = false, findSlotAtPoint, onDrop, onTapEgg, onKeyboardApply }: {
+export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted = false, disabled = false, findSlotAtPoint, onDrop, onTapEgg, onKeyboardApply }: {
   id: IngredientId
   label: string
   art: string
   rackIndex: number
-  rackColumns?: number
+  rackLayout: RackLayout
   painted?: boolean
   disabled?: boolean
   findSlotAtPoint: (clientX: number, clientY: number) => SlotId | null
@@ -51,16 +32,15 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
 }) {
   const drag = useRef<DragState | null>(null)
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null)
+  const rackColumns = KITCHEN_RACK_LAYOUTS[rackLayout].columns
   const rackColumn = rackIndex % rackColumns
   const rackRow = Math.floor(rackIndex / rackColumns)
-  const crop = INGREDIENT_FOOD_CROPS[id]
   const rackStyle = {
     '--ingredient-rack-column': rackColumn,
     '--ingredient-rack-row': rackRow,
-    '--ingredient-food-scale': crop.scale,
-    '--ingredient-food-shift-x': crop.shiftX,
-    '--ingredient-food-shift-y': crop.shiftY,
   } as CSSProperties
+  const innerMaskPolygon = JSON.stringify(rackInnerPolygons(rackLayout)[rackIndex])
+  const ghostMaskPolygon = JSON.stringify(ghostInnerPolygon())
 
   const finish = (event: ReactPointerEvent<HTMLButtonElement>, cancelled = false) => {
     const active = drag.current
@@ -117,19 +97,27 @@ export function TableIngredient({ id, label, art, rackIndex, rackColumns = 3, pa
           onKeyboardApply?.(id)
         }}
       >
-        <span className="table-ingredient__viewport" aria-hidden="true">
+        <span
+          className="table-ingredient__viewport"
+          data-ingredient-food-viewport="true"
+          data-inner-mask-polygon={innerMaskPolygon}
+          aria-hidden="true"
+        >
           <img className="table-ingredient__food-art" src={art} alt="" draggable={false} />
         </span>
       </button>
       {ghost && (
-        <img
+        <span
           className="table-ingredient__ghost"
-          src={art}
-          alt=""
+          data-ingredient-drag-ghost={id}
+          data-inner-mask-polygon={ghostMaskPolygon}
           aria-hidden="true"
-          style={{ left: ghost.x, top: ghost.y }}
-          draggable={false}
-        />
+          style={{ ...ingredientGhostGeometryStyle(), left: ghost.x, top: ghost.y }}
+        >
+          <span className="table-ingredient__ghost-viewport">
+            <img className="table-ingredient__ghost-food-art" src={art} alt="" draggable={false} />
+          </span>
+        </span>
       )}
     </>
   )

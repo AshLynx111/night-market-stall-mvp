@@ -102,6 +102,27 @@ const noScallionStageAssets = import.meta.glob<string>(
 )
 
 const ingredientAssets: Record<IngredientId, string> = INGREDIENT_BIN_ART
+const ingredientFoodAssets = import.meta.glob<string>(
+  '../../assets/approved/menu/ingredients/*.png',
+  { eager: true, import: 'default', query: '?url' },
+)
+const INGREDIENT_FOOD_FILE_IDS: Record<IngredientId, string> = {
+  noodle: 'noodle-sheet',
+  egg: 'egg',
+  'hot-dog': 'hot-dog',
+  sauce: 'sauce',
+  scallion: 'scallion',
+  cilantro: 'cilantro',
+  onion: 'onion',
+  'chili-powder': 'chili-powder',
+  'turkey-noodle': 'turkey-noodle',
+  cheese: 'cheese',
+  corn: 'corn',
+  orleans: 'orleans-chicken',
+  bacon: 'bacon',
+  tenderloin: 'tenderloin',
+  enoki: 'enoki',
+}
 
 function requireAsset(map: Record<string, string>, key: string): string {
   const value = map[key]
@@ -164,6 +185,10 @@ export function customerMotionAtlas(artId: KitchenCustomerArtId): string {
 
 export function ingredientArt(id: IngredientId): string {
   return requireAsset(ingredientAssets, id)
+}
+
+export function ingredientFoodArt(id: IngredientId): string {
+  return requireAsset(ingredientFoodAssets, `../../assets/approved/menu/ingredients/ingredient-${INGREDIENT_FOOD_FILE_IDS[id]}.png`)
 }
 
 export function stageArt(

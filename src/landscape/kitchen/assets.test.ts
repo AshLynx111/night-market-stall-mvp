@@ -8,6 +8,7 @@ import {
   customerEmotionArt,
   customerMotionAtlas,
   ingredientArt,
+  ingredientFoodArt,
   stageArt,
   isKitchenCustomerArtId,
 } from './assets'
@@ -45,6 +46,7 @@ describe('kitchen art manifest', () => {
   it('resolves every tabletop ingredient', () => {
     for (const id of Object.keys(INGREDIENT_UNLOCK_DAY) as (keyof typeof INGREDIENT_UNLOCK_DAY)[]) {
       expect(ingredientArt(id)).toMatch(new RegExp(`ingredient-bin-${id}\\.png$`))
+      expect(ingredientFoodArt(id)).toMatch(/menu\/ingredients\/ingredient-[^/]+\.png$/)
     }
   })
 

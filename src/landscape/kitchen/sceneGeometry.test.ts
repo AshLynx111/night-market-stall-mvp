@@ -1,8 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import {
+  KITCHEN_GHOST_GEOMETRY,
   KITCHEN_GRIDDLE_RECTS,
   KITCHEN_RACK_LAYOUTS,
+  ghostInnerPolygon,
   kitchenGeometryStyle,
+  rackInnerPolygons,
   rackRectangles,
   rectCenter,
 } from './sceneGeometry'
@@ -39,6 +42,27 @@ describe('canonical kitchen scene geometry', () => {
     })
   })
 
+  it.each(['approved-2x3', 'expanded-3x5'] as const)('defines canonical %s inner polygons strictly inside every control', (layout) => {
+    const controls = rackRectangles(layout)
+    const innerPolygons = rackInnerPolygons(layout)
+
+    expect(innerPolygons).toHaveLength(controls.length)
+    innerPolygons.forEach((polygon, index) => {
+      const control = controls[index]
+      expect(polygon).toHaveLength(4)
+      expect(polygon.every((point) => point.x > control.left && point.x < control.right)).toBe(true)
+      expect(polygon.every((point) => point.y > control.top && point.y < control.bottom)).toBe(true)
+    })
+  })
+
+  it('defines a cropped food-only drag mask with positive inset on every side', () => {
+    const polygon = ghostInnerPolygon()
+
+    expect(polygon).toHaveLength(4)
+    expect(polygon.every((point) => point.x > 0 && point.x < KITCHEN_GHOST_GEOMETRY.width)).toBe(true)
+    expect(polygon.every((point) => point.y > 0 && point.y < KITCHEN_GHOST_GEOMETRY.height)).toBe(true)
+  })
+
   it('serializes the selected rack and both griddles as exact CSS custom-property pixels', () => {
     const style = kitchenGeometryStyle('expanded-3x5') as Record<string, string>
 
@@ -60,6 +84,11 @@ describe('canonical kitchen scene geometry', () => {
       '--ingredient-rack-control-height': '61px',
       '--ingredient-rack-columns': '3',
       '--ingredient-rack-rows': '5',
+      '--ingredient-rack-inner-left': '7px',
+      '--ingredient-rack-inner-top': '6px',
+      '--ingredient-rack-inner-width': '84px',
+      '--ingredient-rack-inner-height': '45px',
+      '--ingredient-rack-inner-clip': '9% 2%, 91% 2%, 99% 94%, 1% 94%',
     })
   })
 

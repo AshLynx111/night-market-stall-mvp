@@ -13,6 +13,15 @@ const maskRects = [
   { left: 1050, top: 205, width: 280, height: 330 },
 ] as const
 
+const binInteriorPolygons = [
+  [[150, 554], [305, 554], [293, 623], [133, 621]],
+  [[321, 554], [462, 556], [447, 625], [301, 622]],
+  [[125, 634], [290, 636], [274, 725], [94, 722]],
+  [[296, 636], [447, 638], [429, 721], [273, 717]],
+  [[96, 729], [268, 732], [245, 813], [61, 807]],
+  [[274, 731], [431, 734], [411, 816], [250, 811]],
+] as const
+
 describe('approved kitchen live derivative', () => {
   it('is pixel aligned to the approved plate and changes only localized customer/bubble masks', async () => {
     const approved = await sharp(approvedPath).removeAlpha().raw().toBuffer({ resolveWithObject: true })
@@ -27,7 +36,16 @@ describe('approved kitchen live derivative', () => {
         const offset = (y * 1672 + x) * 3
         const changed = Math.max(...[0, 1, 2].map((channel) => Math.abs(approved.data[offset + channel] - live.data[offset + channel]))) > 2
         if (!changed) continue
-        const inside = maskRects.some((rect) => x >= rect.left && x < rect.left + rect.width && y >= rect.top && y < rect.top + rect.height)
+        const insidePolygon = binInteriorPolygons.some((polygon) => {
+          let inside = false
+          for (let current = 0, previous = polygon.length - 1; current < polygon.length; previous = current++) {
+            const [ax, ay] = polygon[current]
+            const [bx, by] = polygon[previous]
+            if ((ay > y + .5) !== (by > y + .5) && x + .5 < (bx - ax) * (y + .5 - ay) / (by - ay) + ax) inside = !inside
+          }
+          return inside
+        })
+        const inside = insidePolygon || maskRects.some((rect) => x >= rect.left && x < rect.left + rect.width && y >= rect.top && y < rect.top + rect.height)
         if (inside) changedInsideMask += 1
         else changedOutsideMask += 1
       }

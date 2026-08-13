@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
-import { KITCHEN_GRIDDLE_RECTS, KITCHEN_RACK_LAYOUTS, rackRectangles } from '../landscape/kitchen/sceneGeometry'
+import { KITCHEN_GRIDDLE_RECTS, KITCHEN_RACK_LAYOUTS, rackInnerPolygons, rackRectangles } from '../landscape/kitchen/sceneGeometry'
 
 const landscapeCss = readFileSync('src/landscape.css', 'utf8')
 const kitchenCss = readFileSync('src/styles/kitchen.css', 'utf8')
@@ -99,18 +99,7 @@ describe('logical kitchen layout CSS', () => {
 
   it('starts in the approved 2 by 3 physical rack and switches to a non-overlapping 3 by 5 overflow rack', () => {
     const rackRule = kitchenCss.match(/\.kitchen-scene__ingredients\s*\{[^}]+\}/s)?.[0] ?? ''
-    const px = (name: string) => Number(rackRule.match(new RegExp(`${name}:\\s*(\\d+)px`))?.[1])
-    const count = (name: string) => Number(rackRule.match(new RegExp(`${name}:\\s*(\\d+)`))?.[1])
-    const rack = {
-      columns: count('--ingredient-rack-columns'),
-      rows: count('--ingredient-rack-rows'),
-      left: px('--ingredient-rack-left'),
-      top: px('--ingredient-rack-top'),
-      columnGap: px('--ingredient-rack-column-gap'),
-      rowGap: px('--ingredient-rack-row-gap'),
-      width: px('--ingredient-rack-control-width'),
-      height: px('--ingredient-rack-control-height'),
-    }
+    const rack = KITCHEN_RACK_LAYOUTS['approved-2x3']
 
     expect(rack.columns).toBe(2)
     expect(rack.rows).toBe(3)
@@ -118,12 +107,7 @@ describe('logical kitchen layout CSS', () => {
     expect(rack.top + 2 * rack.rowGap + rack.height).toBeLessThanOrEqual(710)
     expect(rack.top + (rack.rows - 1) * rack.rowGap + rack.height).toBeLessThanOrEqual(710)
 
-    const rectangles = Array.from({ length: rack.columns * rack.rows }, (_, index) => ({
-      left: rack.left + (index % rack.columns) * rack.columnGap,
-      top: rack.top + Math.floor(index / rack.columns) * rack.rowGap,
-      right: rack.left + (index % rack.columns) * rack.columnGap + rack.width,
-      bottom: rack.top + Math.floor(index / rack.columns) * rack.rowGap + rack.height,
-    }))
+    const rectangles = rackRectangles('approved-2x3')
     rectangles.forEach((rectangle, index) => {
       rectangles.slice(index + 1).forEach((other) => {
         const overlaps = rectangle.left < other.right && rectangle.right > other.left
@@ -132,25 +116,18 @@ describe('logical kitchen layout CSS', () => {
       })
     })
 
-    const expandedRule = kitchenCss.match(/\.kitchen-scene__ingredients\[data-rack-layout="expanded-3x5"\]\s*\{[^}]+\}/s)?.[0] ?? ''
-    const expandedPx = (name: string) => Number(expandedRule.match(new RegExp(`${name}:\\s*(\\d+)px`))?.[1])
-    const expandedCount = (name: string) => Number(expandedRule.match(new RegExp(`${name}:\\s*(\\d+)`))?.[1])
-    const expanded = {
-      columns: expandedCount('--ingredient-rack-columns'),
-      rows: expandedCount('--ingredient-rack-rows'),
-      left: expandedPx('--ingredient-rack-left'),
-      top: expandedPx('--ingredient-rack-top'),
-      columnGap: expandedPx('--ingredient-rack-column-gap'),
-      rowGap: expandedPx('--ingredient-rack-row-gap'),
-      width: expandedPx('--ingredient-rack-control-width'),
-      height: expandedPx('--ingredient-rack-control-height'),
-    }
+    const expanded = KITCHEN_RACK_LAYOUTS['expanded-3x5']
     expect(expanded.columns).toBe(3)
     expect(expanded.rows).toBe(5)
     expect(expanded.left + 2 * expanded.columnGap + expanded.width).toBeLessThan(1440 * .341)
     expect(expanded.top + 4 * expanded.rowGap + expanded.height).toBeLessThanOrEqual(810)
 
+    expect(rackRule).not.toContain('--ingredient-rack-')
+    expect(kitchenCss).not.toMatch(/\.kitchen-scene__ingredients\[data-rack-layout="expanded-3x5"\]\s*\{[^}]*--ingredient-rack-/s)
+    expect(rackInnerPolygons('approved-2x3')).toHaveLength(6)
+    expect(rackInnerPolygons('expanded-3x5')).toHaveLength(15)
     expect(kitchenCss).toMatch(/\.table-ingredient\s*\{[^}]*left:\s*calc\(var\(--ingredient-rack-left\)[^}]*top:\s*calc\(var\(--ingredient-rack-top\)/s)
+    expect(kitchenCss).toMatch(/\.table-ingredient__viewport\s*\{[^}]*left:\s*var\(--ingredient-rack-inner-left\)[^}]*clip-path:\s*polygon\(var\(--ingredient-rack-inner-clip\)\)/s)
     expect(kitchenCss).not.toContain('.sauce-brush {')
     expect(kitchenCss).toContain('.table-ingredient--sauce.is-selected')
   })

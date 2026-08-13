@@ -93,7 +93,7 @@ function derivativeFor(relativePath) {
     return 'user-supplied approved start-screen reference'
   }
   if (relativePath === 'main-ui/kitchen-screen-live-clean.png') {
-    return 'main-ui/kitchen-screen-user-final.png; customer region replaced for dynamic live actors'
+    return 'main-ui/kitchen-screen-user-final.png + art-source/kitchen-live-inpaint-source.png + art-source/kitchen-empty-bins-imagegen-source.png; deterministic localized customer and six-bin-interior masks'
   }
   if (relativePath === 'main-ui/settings-slider-clean-patch.png') {
     return 'main-ui/settings-screen-user-final.png; localized baked-slider cleanup patch'

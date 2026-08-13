@@ -2,9 +2,10 @@ import { spawn } from 'node:child_process'
 import { mkdir, readdir, rm, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import sharp from 'sharp'
-import { chromium } from 'file:///C:/Users/qianwu/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs'
+import { chromium } from 'playwright'
 import {
   SPATIAL_SCHEMA_VERSION,
+  analyzeDynamicFoodPixels,
   analyzeRangeThumbPixels,
   assertExactScreenshotManifest,
   assertSpatialEvidenceSchema,
@@ -19,6 +20,9 @@ const expectedIngredientIds = {
   3: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn'],
   5: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn', 'orleans', 'bacon', 'tenderloin', 'enoki'],
 }
+const DYNAMIC_FOOD_PIXEL_THRESHOLD = 18
+const CLIP_ANTIALIAS_TOLERANCE_PX = 1
+const CLIP_ANTIALIAS_MAX_PER_MASK = 360
 const resolvedOutputDir = path.resolve(outputDir)
 const expectedOutputParent = path.resolve(root, 'artifacts')
 if (path.dirname(resolvedOutputDir) !== expectedOutputParent || path.basename(resolvedOutputDir) !== 'spatial-alignment-qa') {
@@ -43,7 +47,7 @@ const browser = await chromium.launch({ headless: true, executablePath: edgePath
 const page = await browser.newPage({ viewport: { width: 1440, height: 810 }, deviceScaleFactor: 1 })
 const result = {
   schemaVersion: SPATIAL_SCHEMA_VERSION,
-  browser: 'Microsoft Edge',
+  browser: { name: 'Microsoft Edge', version: browser.version() },
   viewport: { width: 1440, height: 810, deviceScaleFactor: 1 },
   consoleErrors: [],
   pageErrors: [],
@@ -53,6 +57,7 @@ const result = {
   guidedFlow: [],
   griddleGeometry: [],
   kitchenFixtures: {},
+  dragGhost: null,
   collisions: {
     rackGriddle: [],
     rackTutorial: [],
@@ -88,6 +93,105 @@ async function waitForImages() {
 async function screenshot(name) {
   await waitForImages()
   return page.screenshot({ path: path.join(outputDir, `${name}.png`), fullPage: false })
+}
+
+async function screenshotPixels(buffer) {
+  return sharp(buffer).removeAlpha().raw().toBuffer({ resolveWithObject: true })
+}
+
+async function compareDynamicFoodPixels({ liveBuffer, baselineBuffer, allowedMasks, controlMasks, unusedMasks = [] }) {
+  const [{ data: live, info: liveInfo }, { data: baseline, info: baselineInfo }] = await Promise.all([
+    screenshotPixels(liveBuffer),
+    screenshotPixels(baselineBuffer),
+  ])
+  assert(liveInfo.width === baselineInfo.width && liveInfo.height === baselineInfo.height && liveInfo.channels === baselineInfo.channels, 'Dynamic-food screenshot pixel buffers differ')
+  return analyzeDynamicFoodPixels({
+    live,
+    baseline,
+    width: liveInfo.width,
+    height: liveInfo.height,
+    channels: liveInfo.channels,
+    allowedMasks,
+    controlMasks,
+    unusedMasks,
+    threshold: DYNAMIC_FOOD_PIXEL_THRESHOLD,
+    antialiasTolerance: CLIP_ANTIALIAS_TOLERANCE_PX,
+    maxAntialiasPixels: allowedMasks.length * CLIP_ANTIALIAS_MAX_PER_MASK,
+  })
+}
+
+async function captureStationaryFoodPixels(record) {
+  const scene = page.locator('.kitchen-scene')
+  await scene.evaluate((node) => {
+    node.setAttribute('data-qa-freeze', 'true')
+    node.setAttribute('data-qa-hide-stationary-food', 'true')
+  })
+  const baselineBuffer = await page.screenshot({ fullPage: false })
+  await scene.evaluate((node) => node.removeAttribute('data-qa-hide-stationary-food'))
+  const liveBuffer = await page.screenshot({ fullPage: false })
+  const measurement = await compareDynamicFoodPixels({
+    liveBuffer,
+    baselineBuffer,
+    allowedMasks: record.bins.map((bin) => ({ id: bin.id, polygon: bin.canonicalInnerPolygon })),
+    controlMasks: record.rackControlPolygons.map((polygon, index) => ({ id: `control-${index}`, polygon })),
+    unusedMasks: record.unusedControlPolygons.map((polygon, index) => ({ id: `unused-${record.ingredientCount + index}`, polygon })),
+  })
+  assert(measurement.accepted, `Day ${record.day}: dynamic food pixels escaped canonical inner masks ${JSON.stringify(measurement)}`)
+  return measurement
+}
+
+async function captureIngredientDragPixels() {
+  const source = await page.locator('[data-ingredient-id="noodle"]').boundingBox()
+  assert(source, 'Day 1: noodle drag source is absent')
+  await page.mouse.move(source.x + source.width / 2, source.y + source.height / 2)
+  await page.mouse.down()
+  await page.mouse.move(850, 430, { steps: 10 })
+  const ghost = page.locator('[data-ingredient-drag-ghost="noodle"]')
+  await ghost.waitFor()
+  const geometry = await ghost.evaluate((node) => {
+    const rect = node.getBoundingClientRect()
+    const localPolygon = JSON.parse(node.getAttribute('data-inner-mask-polygon') ?? '[]')
+    const width = Number.parseFloat(getComputedStyle(node).getPropertyValue('--ingredient-ghost-width'))
+    const height = Number.parseFloat(getComputedStyle(node).getPropertyValue('--ingredient-ghost-height'))
+    const polygon = localPolygon.map((point) => ({
+      x: rect.x + point.x / width * rect.width,
+      y: rect.y + point.y / height * rect.height,
+    }))
+    return {
+      rect: { x: rect.x, y: rect.y, width: rect.width, height: rect.height, right: rect.right, bottom: rect.bottom },
+      polygon,
+      directImageSource: node.getAttribute('src'),
+      croppedImageCount: node.querySelectorAll(':scope > .table-ingredient__ghost-viewport > .table-ingredient__ghost-food-art').length,
+    }
+  })
+  assert(geometry.directImageSource === null && geometry.croppedImageCount === 1, `Drag ghost reused a complete-container image ${JSON.stringify(geometry)}`)
+  const scene = page.locator('.kitchen-scene')
+  await scene.evaluate((node) => {
+    node.setAttribute('data-qa-freeze', 'true')
+    node.setAttribute('data-qa-hide-drag-ghost', 'true')
+  })
+  const baselineBuffer = await page.screenshot({ fullPage: false })
+  await scene.evaluate((node) => node.removeAttribute('data-qa-hide-drag-ghost'))
+  const liveBuffer = await page.screenshot({ fullPage: false })
+  const controlPolygon = [
+    { x: geometry.rect.x, y: geometry.rect.y },
+    { x: geometry.rect.right, y: geometry.rect.y },
+    { x: geometry.rect.right, y: geometry.rect.bottom },
+    { x: geometry.rect.x, y: geometry.rect.bottom },
+  ]
+  const measurement = await compareDynamicFoodPixels({
+    liveBuffer,
+    baselineBuffer,
+    allowedMasks: [{ id: 'noodle-drag-ghost', polygon: geometry.polygon }],
+    controlMasks: [{ id: 'drag-ghost-control', polygon: controlPolygon }],
+  })
+  assert(measurement.accepted, `Active drag ghost pixels escaped its canonical inner mask ${JSON.stringify(measurement)}`)
+  await scene.evaluate((node) => node.removeAttribute('data-qa-freeze'))
+  await screenshot('day-1-empty')
+  await page.mouse.up()
+  await ghost.waitFor({ state: 'detached' })
+  result.dragGhost = { ingredientId: 'noodle', ...geometry, ...measurement }
+  return result.dragGhost
 }
 
 async function readScreenshotManifest() {
@@ -323,7 +427,7 @@ async function makeAndDeliverClassic(orderNumber, guided = false) {
   await finishAndDeliverClassic(orderNumber, slotId, guided)
 }
 
-async function inspectKitchen(day, screenshotName, navigate = true) {
+async function inspectKitchen(day, screenshotName, navigate = true, captureScreenshot = true) {
   if (navigate) await page.goto(`${origin}/?playDay=${day}`, { waitUntil: 'networkidle', timeout: 60_000 })
   await page.locator('.kitchen-scene').waitFor()
   await page.waitForTimeout(2_800)
@@ -334,24 +438,45 @@ async function inspectKitchen(day, screenshotName, navigate = true) {
       const r = node.getBoundingClientRect()
       return { x: r.x, y: r.y, width: r.width, height: r.height, right: r.right, bottom: r.bottom }
     }
-    const intersect = (a, b) => ({
-      x: Math.max(a.x, b.x),
-      y: Math.max(a.y, b.y),
-      right: Math.min(a.right, b.right),
-      bottom: Math.min(a.bottom, b.bottom),
-      width: Math.max(0, Math.min(a.right, b.right) - Math.max(a.x, b.x)),
-      height: Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.y, b.y)),
-    })
     const contains = (outer, inner, tolerance = .5) => inner.x >= outer.x - tolerance && inner.y >= outer.y - tolerance && inner.right <= outer.right + tolerance && inner.bottom <= outer.bottom + tolerance
     const overlap = (a, b) => a.x < b.right - 1 && a.right > b.x + 1 && a.y < b.bottom - 1 && a.bottom > b.y + 1
+    const sceneRect = rect(scene)
+    const sceneStyle = getComputedStyle(scene)
+    const customNumber = (name) => Number.parseFloat(sceneStyle.getPropertyValue(name))
+    const toScreenPoint = (point) => ({
+      x: sceneRect.x + point.x / 1440 * sceneRect.width,
+      y: sceneRect.y + point.y / 810 * sceneRect.height,
+    })
+    const rectanglePolygon = ({ left, top, width, height }) => [
+      toScreenPoint({ x: left, y: top }),
+      toScreenPoint({ x: left + width, y: top }),
+      toScreenPoint({ x: left + width, y: top + height }),
+      toScreenPoint({ x: left, y: top + height }),
+    ]
+    const rack = {
+      columns: customNumber('--ingredient-rack-columns'),
+      rows: customNumber('--ingredient-rack-rows'),
+      left: customNumber('--ingredient-rack-left'),
+      top: customNumber('--ingredient-rack-top'),
+      columnGap: customNumber('--ingredient-rack-column-gap'),
+      rowGap: customNumber('--ingredient-rack-row-gap'),
+      width: customNumber('--ingredient-rack-control-width'),
+      height: customNumber('--ingredient-rack-control-height'),
+    }
+    const rackControlPolygons = Array.from({ length: rack.columns * rack.rows }, (_, index) => rectanglePolygon({
+      left: rack.left + index % rack.columns * rack.columnGap,
+      top: rack.top + Math.floor(index / rack.columns) * rack.rowGap,
+      width: rack.width,
+      height: rack.height,
+    }))
     const bins = [...scene.querySelectorAll('[data-ingredient-id]')].map((node) => {
       const controlRect = rect(node)
       const viewport = node.querySelector(':scope > .table-ingredient__viewport')
       const image = viewport?.querySelector(':scope > .table-ingredient__food-art')
       const viewportRect = rect(viewport)
       const imageRect = rect(image)
-      const visibleFoodRect = viewportRect && imageRect ? intersect(viewportRect, imageRect) : null
       const viewportStyle = viewport ? getComputedStyle(viewport) : null
+      const canonicalInnerPolygon = JSON.parse(viewport?.getAttribute('data-inner-mask-polygon') ?? '[]').map(toScreenPoint)
       const controlStyle = getComputedStyle(node)
       const borderWidth = ['borderTopWidth', 'borderRightWidth', 'borderBottomWidth', 'borderLeftWidth']
         .reduce((sum, property) => sum + Number.parseFloat(controlStyle[property] || '0'), 0)
@@ -361,10 +486,13 @@ async function inspectKitchen(day, screenshotName, navigate = true) {
         controlRect,
         viewportRect,
         imageRect,
-        visibleFoodRect,
-        visibleFoodInsideViewport: Boolean(viewportRect && visibleFoodRect && visibleFoodRect.width > 0 && visibleFoodRect.height > 0 && contains(viewportRect, visibleFoodRect)),
+        canonicalInnerPolygon,
+        canonicalMaskInsideViewport: Boolean(viewportRect && canonicalInnerPolygon.length === 4 && canonicalInnerPolygon.every((point) => point.x >= viewportRect.x - .5 && point.x <= viewportRect.right + .5 && point.y >= viewportRect.y - .5 && point.y <= viewportRect.bottom + .5)),
         viewportInsideControl: Boolean(viewportRect && contains(controlRect, viewportRect)),
+        viewportHasPositiveInset: Boolean(viewportRect && viewportRect.x > controlRect.x + .5 && viewportRect.y > controlRect.y + .5 && viewportRect.right < controlRect.right - .5 && viewportRect.bottom < controlRect.bottom - .5),
         viewportOverflow: viewportStyle ? `${viewportStyle.overflowX}/${viewportStyle.overflowY}` : '',
+        viewportClipPath: viewportStyle?.clipPath ?? '',
+        viewportUsesPolygonMask: Boolean(viewportStyle?.clipPath && viewportStyle.clipPath !== 'none'),
         imageExtendsBeyondViewport: Boolean(viewportRect && imageRect && !contains(viewportRect, imageRect)),
         viewportCount: node.querySelectorAll(':scope > .table-ingredient__viewport').length,
         foodArtCount: node.querySelectorAll(':scope > .table-ingredient__viewport > .table-ingredient__food-art').length,
@@ -394,12 +522,15 @@ async function inspectKitchen(day, screenshotName, navigate = true) {
       const face = { x: actor.rect.x + actor.rect.width * .28, right: actor.rect.x + actor.rect.width * .72, y: actor.rect.y + actor.rect.height * .25, bottom: actor.rect.y + actor.rect.height * .52 }
       return overlap(bubble.rect, face) ? [{ id: bubble.id, bubble: bubble.rect, face }] : []
     })
-    const viewportClippingCollisions = bins.filter((bin) => !bin.visibleFoodInsideViewport || !bin.viewportInsideControl || bin.viewportOverflow !== 'hidden/hidden').map((bin) => bin.id)
+    const viewportClippingCollisions = bins.filter((bin) => !bin.viewportInsideControl || !bin.viewportHasPositiveInset || !bin.canonicalMaskInsideViewport || !bin.viewportUsesPolygonMask || bin.viewportOverflow !== 'hidden/hidden').map((bin) => bin.id)
     return {
       day: Number(document.querySelector('.game-screen')?.dataset.day),
       ingredientIds: bins.map((bin) => bin.id),
       ingredientCount: bins.length,
       rackLayout: scene.querySelector('[data-rack-layout]')?.dataset.rackLayout ?? '',
+      rack,
+      rackControlPolygons,
+      unusedControlPolygons: rackControlPolygons.slice(bins.length),
       bins,
       legacyBinArtNodeCount: scene.querySelectorAll('.table-ingredient__bin-art').length,
       outerRimIndicatorCount: scene.querySelectorAll('.table-ingredient__vessel,.table-ingredient__contents,[data-outer-rim-indicator]').length + bins.filter((bin) => bin.hasOuterRimStyle).length,
@@ -422,7 +553,7 @@ async function inspectKitchen(day, screenshotName, navigate = true) {
   assert(record.outerRimIndicatorCount === 0, `Day ${day}: generated outer-rim indicator rendered`)
   assert(record.sauceBrushCount === 0, `Day ${day}: legacy sauce brush rendered`)
   assert(record.bins.every((bin) => bin.viewportCount === 1 && bin.foodArtCount === 1 && bin.image?.naturalWidth > 0 && bin.image?.naturalHeight > 0 && bin.image.opacity !== '0'), `Day ${day}: invalid viewport or food-art structure`)
-  assert(record.bins.every((bin) => bin.visibleFoodInsideViewport && bin.viewportInsideControl && bin.imageExtendsBeyondViewport), `Day ${day}: visible food crop escaped its physical viewport`)
+  assert(record.bins.every((bin) => bin.viewportInsideControl && bin.viewportHasPositiveInset && bin.canonicalMaskInsideViewport && bin.viewportUsesPolygonMask && bin.imageExtendsBeyondViewport), `Day ${day}: canonical food viewport is not a shaped positive-inset inner mask`)
   assert(record.rackPairs.length === 0, `Day ${day}: rack slots overlap ${JSON.stringify(record.rackPairs)}`)
   assert(record.rackGriddleCollisions.length === 0, `Day ${day}: rack/griddle collision ${JSON.stringify(record.rackGriddleCollisions)}`)
   assert(record.rackTutorialCollisions.length === 0, `Day ${day}: rack/tutorial collision ${JSON.stringify(record.rackTutorialCollisions)}`)
@@ -432,8 +563,10 @@ async function inspectKitchen(day, screenshotName, navigate = true) {
   result.collisions.rackGriddle.push(...record.rackGriddleCollisions.map((collision) => ({ day, collision })))
   result.collisions.rackTutorial.push(...record.rackTutorialCollisions.map((ingredientId) => ({ day, ingredientId })))
   result.collisions.viewportClipping.push(...record.viewportClippingCollisions.map((ingredientId) => ({ day, ingredientId })))
+  record.stationaryFoodPixels = await captureStationaryFoodPixels(record)
+  await page.locator('.kitchen-scene').evaluate((scene) => scene.removeAttribute('data-qa-freeze'))
   result.kitchenFixtures[`day${day}`] = record
-  await screenshot(screenshotName)
+  if (captureScreenshot) await screenshot(screenshotName)
   return record
 }
 
@@ -538,7 +671,8 @@ try {
   await page.locator('[data-tutorial-step="noodle"]').waitFor({ timeout: 8_000 })
   await page.waitForTimeout(2_800)
   assert(await page.locator('.game-screen').getAttribute('data-day') === '1', 'Selection did not open actual Day 1')
-  await inspectKitchen(1, 'day-1-empty', false)
+  await inspectKitchen(1, 'day-1-empty', false, false)
+  await captureIngredientDragPixels()
   await audioCheckpoint('day-1-entry')
   await makeAndDeliverClassic(1, true)
   await audioCheckpoint('day-1-after-order-1')

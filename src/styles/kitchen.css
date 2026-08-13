@@ -16,28 +16,9 @@
 .kitchen-scene__customers { z-index: 2; }
 .kitchen-scene__lane-anchor { position: static; }
 .kitchen-scene__ingredients {
-  --ingredient-rack-columns: 2;
-  --ingredient-rack-rows: 3;
-  --ingredient-rack-left: 80px;
-  --ingredient-rack-top: 466px;
-  --ingredient-rack-column-gap: 155px;
-  --ingredient-rack-row-gap: 75px;
-  --ingredient-rack-control-width: 150px;
-  --ingredient-rack-control-height: 70px;
   position: absolute;
   inset: 0;
   pointer-events: none;
-}
-
-.kitchen-scene__ingredients[data-rack-layout="expanded-3x5"] {
-  --ingredient-rack-columns: 3;
-  --ingredient-rack-rows: 5;
-  --ingredient-rack-left: 18px;
-  --ingredient-rack-top: 466px;
-  --ingredient-rack-column-gap: 102px;
-  --ingredient-rack-row-gap: 65px;
-  --ingredient-rack-control-width: 98px;
-  --ingredient-rack-control-height: 61px;
 }
 
 .kitchen-scene__counter-foreground {
@@ -208,12 +189,50 @@
   pointer-events: auto;
   touch-action: none;
 }
-.table-ingredient__viewport { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
-.table-ingredient__food-art { position: absolute; left: 50%; top: 50%; width: var(--ingredient-food-scale); max-width: none; height: auto; transform: translate(calc(-50% + var(--ingredient-food-shift-x)), calc(-50% + var(--ingredient-food-shift-y))); pointer-events: none; filter: saturate(1.08) brightness(1.04); }
+.table-ingredient__viewport {
+  position: absolute;
+  left: var(--ingredient-rack-inner-left);
+  top: var(--ingredient-rack-inner-top);
+  width: var(--ingredient-rack-inner-width);
+  height: var(--ingredient-rack-inner-height);
+  overflow: hidden;
+  clip-path: polygon(var(--ingredient-rack-inner-clip));
+  pointer-events: none;
+}
+.table-ingredient__food-art { position: absolute; left: 50%; top: 50%; width: 118%; max-width: none; height: 118%; object-fit: contain; transform: translate(-50%, -50%); pointer-events: none; filter: saturate(1.08) brightness(1.04); }
 .table-ingredient[data-painted="true"] .table-ingredient__food-art { opacity: 1; }
 .table-ingredient:disabled { cursor: default; filter: grayscale(.18); opacity: .82; }
 .kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled) { outline: 3px solid rgb(255 216 91 / .88); outline-offset: -3px; animation: tutorial-target-pulse 1.25s ease-in-out infinite; }
-.table-ingredient__ghost, .serving-tray__ghost { position: absolute; z-index: 80; width: 105px; height: 82px; object-fit: contain; transform: translate(-50%, -50%) scale(1.08); pointer-events: none; filter: drop-shadow(0 8px 5px rgb(0 0 0 / .45)); }
+.table-ingredient__ghost {
+  position: absolute;
+  z-index: 80;
+  width: var(--ingredient-ghost-width);
+  height: var(--ingredient-ghost-height);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.table-ingredient__ghost-viewport {
+  position: absolute;
+  left: var(--ingredient-ghost-inner-left);
+  top: var(--ingredient-ghost-inner-top);
+  width: var(--ingredient-ghost-inner-width);
+  height: var(--ingredient-ghost-inner-height);
+  overflow: hidden;
+  clip-path: polygon(var(--ingredient-ghost-inner-clip));
+  filter: drop-shadow(0 6px 4px rgb(0 0 0 / .38));
+}
+.table-ingredient__ghost-food-art { position: absolute; left: 50%; top: 50%; width: 118%; max-width: none; height: 118%; object-fit: contain; transform: translate(-50%, -50%); pointer-events: none; }
+.serving-tray__ghost { position: absolute; z-index: 80; width: 105px; height: 82px; object-fit: contain; transform: translate(-50%, -50%) scale(1.08); pointer-events: none; filter: drop-shadow(0 8px 5px rgb(0 0 0 / .45)); }
+
+.kitchen-scene[data-qa-hide-stationary-food="true"] .table-ingredient__food-art,
+.kitchen-scene[data-qa-hide-drag-ghost="true"] .table-ingredient__ghost { visibility: hidden; }
+.kitchen-scene[data-qa-freeze="true"] .kitchen-customer__actor,
+.kitchen-scene[data-qa-freeze="true"] .kitchen-customer__bubble,
+.kitchen-scene[data-qa-freeze="true"] .guided-tutorial,
+.kitchen-scene[data-qa-freeze="true"] .tutorial-completion-toast { visibility: hidden; }
+.kitchen-scene[data-qa-freeze="true"] *,
+.kitchen-scene[data-qa-freeze="true"] *::before,
+.kitchen-scene[data-qa-freeze="true"] *::after { animation-play-state: paused !important; transition: none !important; }
 
 .table-ingredient--sauce.is-selected { outline: 3px solid #ffd05f; outline-offset: -3px; }
 

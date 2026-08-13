@@ -9,7 +9,7 @@ import {
   stopSizzle,
 } from '../../game/audio'
 import { availableIngredients, ingredientForCookingStep, type IngredientId } from '../../landscape/campaign'
-import { ingredientArt } from '../../landscape/kitchen/assets'
+import { ingredientFoodArt } from '../../landscape/kitchen/assets'
 import { placeIngredient, slotExpectedAction } from '../../landscape/kitchen/griddle'
 import { layoutOrderBubbles } from '../../landscape/kitchen/orderBubbleLayout'
 import { kitchenGeometryStyle } from '../../landscape/kitchen/sceneGeometry'
@@ -295,9 +295,9 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
             key={id}
             id={id}
             label={INGREDIENT_LABELS[id]}
-            art={ingredientArt(id)}
+            art={ingredientFoodArt(id)}
             rackIndex={unlockedIngredients.indexOf(id)}
-            rackColumns={rackColumns}
+            rackLayout={rackLayout}
             painted={id === 'sauce' && sauceBrushSelected}
             disabled={id === 'sauce' ? guided && guidedStep !== 'sauce' : guided && !tutorialAllowsIngredient(state, id, 'left')}
             findSlotAtPoint={findSlotAtPoint}

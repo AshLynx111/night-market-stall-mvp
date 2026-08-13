@@ -25,8 +25,7 @@ describe('reference-master gameplay composition', () => {
 
   it('crops supplied bin art into the physical background rack without a second container', () => {
     expect(kitchenCss).toMatch(/\.table-ingredient__viewport\s*\{[^}]*overflow:\s*hidden/s)
-    expect(kitchenCss).toMatch(/\.table-ingredient__food-art\s*\{[^}]*width:\s*var\(--ingredient-food-scale\)/s)
-    expect(kitchenCss).toMatch(/\.table-ingredient__food-art\s*\{[^}]*--ingredient-food-shift-y/s)
+    expect(kitchenCss).toMatch(/\.table-ingredient__food-art\s*\{[^}]*object-fit:\s*contain/s)
     expect(kitchenCss).not.toContain('width: 145%')
     expect(kitchenCss).not.toContain('.table-ingredient__bin-art')
     expect(kitchenCss).not.toContain('.table-ingredient__vessel')

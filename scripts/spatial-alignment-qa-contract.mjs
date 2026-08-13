@@ -1,4 +1,4 @@
-export const SPATIAL_SCHEMA_VERSION = 'spatial-alignment-v2'
+export const SPATIAL_SCHEMA_VERSION = 'spatial-alignment-v3'
 
 export const REQUIRED_SCREENSHOT_NAMES = [
   'settings.png',
@@ -18,6 +18,105 @@ function pixelDifference(live, hidden, offset, channels) {
     difference = Math.max(difference, Math.abs(live[offset + channel] - hidden[offset + channel]))
   }
   return difference
+}
+
+function pointInPolygon(x, y, polygon) {
+  let inside = false
+  for (let current = 0, previous = polygon.length - 1; current < polygon.length; previous = current++) {
+    const a = polygon[current]
+    const b = polygon[previous]
+    if ((a.y > y) !== (b.y > y) && x < (b.x - a.x) * (y - a.y) / (b.y - a.y) + a.x) inside = !inside
+  }
+  return inside
+}
+
+function distanceToSegment(x, y, start, end) {
+  const dx = end.x - start.x
+  const dy = end.y - start.y
+  const lengthSquared = dx * dx + dy * dy
+  const ratio = lengthSquared === 0 ? 0 : Math.max(0, Math.min(1, ((x - start.x) * dx + (y - start.y) * dy) / lengthSquared))
+  return Math.hypot(x - (start.x + ratio * dx), y - (start.y + ratio * dy))
+}
+
+function distanceToPolygon(x, y, polygon) {
+  let distance = Number.POSITIVE_INFINITY
+  for (let current = 0, previous = polygon.length - 1; current < polygon.length; previous = current++) {
+    distance = Math.min(distance, distanceToSegment(x, y, polygon[previous], polygon[current]))
+  }
+  return distance
+}
+
+export function analyzeDynamicFoodPixels({
+  live,
+  baseline,
+  width,
+  height,
+  channels,
+  allowedMasks,
+  controlMasks = [],
+  unusedMasks = [],
+  threshold = 18,
+  antialiasTolerance = 1,
+  maxAntialiasPixels = 0,
+}) {
+  assert(live.length === baseline.length, 'Live and baseline screenshot buffers differ in length')
+  assert(live.length === width * height * channels, 'Dynamic-food screenshot pixel buffer dimensions are inconsistent')
+  assert(allowedMasks.length > 0, 'Dynamic-food acceptance requires at least one canonical allowed mask')
+
+  const masks = allowedMasks.map((mask) => ({ id: mask.id, changedPixelCount: 0 }))
+  let changedPixelCount = 0
+  let outsideAllowedPixelCount = 0
+  let rimChangedPixelCount = 0
+  let unusedCellChangedPixelCount = 0
+  let antialiasTolerancePixelCount = 0
+  let bounds = null
+
+  for (let y = 0; y < height; y += 1) for (let x = 0; x < width; x += 1) {
+    const offset = (y * width + x) * channels
+    if (pixelDifference(live, baseline, offset, channels) < threshold) continue
+    changedPixelCount += 1
+    bounds = bounds
+      ? { left: Math.min(bounds.left, x), top: Math.min(bounds.top, y), right: Math.max(bounds.right, x), bottom: Math.max(bounds.bottom, y) }
+      : { left: x, top: y, right: x, bottom: y }
+    const pixelX = x + .5
+    const pixelY = y + .5
+    const allowedIndex = allowedMasks.findIndex((mask) => pointInPolygon(pixelX, pixelY, mask.polygon))
+    if (allowedIndex >= 0) {
+      masks[allowedIndex].changedPixelCount += 1
+      continue
+    }
+
+    const antialiasedEdge = antialiasTolerance > 0
+      && allowedMasks.some((mask) => distanceToPolygon(pixelX, pixelY, mask.polygon) <= antialiasTolerance)
+    if (antialiasedEdge) {
+      antialiasTolerancePixelCount += 1
+      continue
+    }
+
+    outsideAllowedPixelCount += 1
+    if (unusedMasks.some((mask) => pointInPolygon(pixelX, pixelY, mask.polygon))) unusedCellChangedPixelCount += 1
+    else if (controlMasks.some((mask) => pointInPolygon(pixelX, pixelY, mask.polygon))) rimChangedPixelCount += 1
+  }
+
+  const accepted = changedPixelCount > 0
+    && masks.every((mask) => mask.changedPixelCount > 0)
+    && outsideAllowedPixelCount === 0
+    && rimChangedPixelCount === 0
+    && unusedCellChangedPixelCount === 0
+    && antialiasTolerancePixelCount <= maxAntialiasPixels
+
+  return {
+    accepted,
+    changedPixelCount,
+    outsideAllowedPixelCount,
+    rimChangedPixelCount,
+    unusedCellChangedPixelCount,
+    antialiasTolerancePixelCount,
+    antialiasTolerance,
+    maxAntialiasPixels,
+    bounds,
+    masks,
+  }
 }
 
 export function analyzeRangeThumbPixels({ live, hidden, width, height, channels, ranges }) {
@@ -89,6 +188,7 @@ export function assertExactScreenshotManifest(manifest) {
 
 export function assertSpatialEvidenceSchema(result) {
   assert(result.schemaVersion === SPATIAL_SCHEMA_VERSION, `Spatial evidence schema must be ${SPATIAL_SCHEMA_VERSION}`)
+  assert(result.browser?.name === 'Microsoft Edge' && typeof result.browser?.version === 'string' && result.browser.version.length > 0, 'Actual Microsoft Edge version is required')
   assert(result.settings?.ranges?.length === 3, 'Settings evidence must include three ranges')
   assert(result.settings.ranges.every((range) => range.measuredVisibleThumbCount === 1), 'Every settings range must have exactly one measured visible thumb')
   for (const kind of ['sauce', 'cut', 'roll']) {
@@ -98,6 +198,12 @@ export function assertSpatialEvidenceSchema(result) {
     assert(slot?.gesture, `Missing active ${kind} gesture target`)
     assert(slot?.tutorial, `Missing active ${kind} tutorial cue`)
   }
+  for (const day of [1, 3, 5]) {
+    const pixels = result.kitchenFixtures?.[`day${day}`]?.stationaryFoodPixels
+    assert(pixels?.accepted === true && pixels.changedPixelCount > 0 && pixels.outsideAllowedPixelCount === 0 && pixels.rimChangedPixelCount === 0 && pixels.unusedCellChangedPixelCount === 0 && pixels.masks?.every((mask) => mask.changedPixelCount > 0), `Day ${day} dynamic food pixels failed canonical inner-mask acceptance`)
+  }
+  const drag = result.dragGhost
+  assert(drag?.accepted === true && drag.changedPixelCount > 0 && drag.outsideAllowedPixelCount === 0 && drag.rimChangedPixelCount === 0 && drag.unusedCellChangedPixelCount === 0 && drag.masks?.every((mask) => mask.changedPixelCount > 0), 'Active ingredient drag ghost failed canonical inner-mask acceptance')
   assertExactScreenshotManifest(result.screenshotManifest ?? [])
   return true
 }

@@ -6,9 +6,8 @@ import { advanceCustomers } from '../../landscape/kitchen/queue'
 import { createKitchenState } from '../../landscape/kitchen/state'
 import type { KitchenState } from '../../landscape/kitchen/types'
 import { TUTORIAL_GESTURE_RECT, tutorialGesturePath } from '../../landscape/kitchen/tutorialPaths'
-import { KITCHEN_GRIDDLE_RECTS } from '../../landscape/kitchen/sceneGeometry'
+import { KITCHEN_GRIDDLE_RECTS, rackInnerPolygons } from '../../landscape/kitchen/sceneGeometry'
 import { KitchenScene } from './KitchenScene'
-import { INGREDIENT_FOOD_CROPS } from './TableIngredient'
 
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true
 
@@ -76,6 +75,10 @@ describe('KitchenScene', () => {
     expect(container.querySelectorAll('.griddle-slot[data-griddle-hitbox]')).toHaveLength(2)
     expect(container.querySelector('.griddle-slot--left')?.getAttribute('data-griddle-hitbox')).toBe('left')
     expect(container.querySelector('.griddle-slot--right')?.getAttribute('data-griddle-hitbox')).toBe('right')
+    const masks = rackInnerPolygons('approved-2x3')
+    const viewports = [...container.querySelectorAll<HTMLElement>('[data-ingredient-food-viewport]')]
+    expect(viewports).toHaveLength(5)
+    expect(viewports.map((viewport) => JSON.parse(viewport.dataset.innerMaskPolygon ?? 'null'))).toEqual(masks.slice(0, 5))
   })
 
   it('centers independent cooking stages, gesture targets, and tutorial cues on their shared griddle records', () => {
@@ -220,7 +223,7 @@ describe('KitchenScene', () => {
       expect(viewport?.children).toHaveLength(1)
       expect(viewport?.querySelector(':scope > img.table-ingredient__food-art')).not.toBeNull()
     })
-    expect(container.querySelector('[data-ingredient-id="sauce"] .table-ingredient__food-art')?.getAttribute('src')).toContain('ingredient-bin-sauce.png')
+    expect(container.querySelector('[data-ingredient-id="sauce"] .table-ingredient__food-art')?.getAttribute('src')).toContain('ingredient-sauce.png')
     expect(container.querySelector('[data-sauce-brush]')).toBeNull()
 
     expect(controls).toHaveLength(rackSlots)
@@ -231,17 +234,14 @@ describe('KitchenScene', () => {
       .toBe(controls.length)
   })
 
-  it('publishes a verified per-ingredient crop contract for every physical rack slot', () => {
+  it('uses transparent food-only art for every physical rack slot', () => {
     const { container } = renderScene(activeKitchenState(5, 1))
-    const crops = Object.entries(INGREDIENT_FOOD_CROPS)
+    const foodArt = [...container.querySelectorAll<HTMLImageElement>('[data-ingredient-id] .table-ingredient__food-art')]
 
-    expect(crops).toHaveLength(15)
-    expect(new Set(crops.map(([, crop]) => `${crop.scale}:${crop.shiftX}:${crop.shiftY}`)).size).toBeGreaterThan(1)
-    crops.forEach(([id, crop]) => {
-      const ingredient = container.querySelector<HTMLElement>(`[data-ingredient-id="${id}"]`)!
-      expect(ingredient.style.getPropertyValue('--ingredient-food-scale')).toBe(crop.scale)
-      expect(ingredient.style.getPropertyValue('--ingredient-food-shift-x')).toBe(crop.shiftX)
-      expect(ingredient.style.getPropertyValue('--ingredient-food-shift-y')).toBe(crop.shiftY)
+    expect(foodArt).toHaveLength(15)
+    foodArt.forEach((image) => {
+      expect(image.src).toMatch(/\/menu\/ingredients\/ingredient-[^/]+\.png$/)
+      expect(image.src).not.toContain('ingredient-bin-')
     })
   })
 
@@ -321,9 +321,12 @@ describe('KitchenScene', () => {
     pointer(noodle, 'pointerdown', { x: 10, y: 10, pointerId: 51 })
     pointer(noodle, 'pointermove', { x: 40, y: 40, pointerId: 51 })
 
-    const ghost = container.querySelector<HTMLImageElement>('.table-ingredient__ghost')!
+    const ghost = container.querySelector<HTMLElement>('.table-ingredient__ghost')!
     expect(container.querySelectorAll('.table-ingredient__ghost')).toHaveLength(1)
-    expect(ghost.getAttribute('src')).toBe(noodle.querySelector('.table-ingredient__food-art')?.getAttribute('src'))
+    expect(ghost.hasAttribute('src')).toBe(false)
+    expect(ghost.querySelectorAll(':scope > .table-ingredient__ghost-viewport > .table-ingredient__ghost-food-art')).toHaveLength(1)
+    expect(ghost.querySelector('img')?.getAttribute('src')).toBe(noodle.querySelector('.table-ingredient__food-art')?.getAttribute('src'))
+    expect(JSON.parse(ghost.dataset.innerMaskPolygon ?? 'null')).toHaveLength(4)
 
     pointer(noodle, 'pointercancel', { x: 40, y: 40, pointerId: 51 })
     expect(container.querySelectorAll('.table-ingredient__ghost')).toHaveLength(0)
@@ -366,10 +369,10 @@ describe('KitchenScene', () => {
     pointer(noodle, 'pointermove', { x: 460, y: 185, pointerId: 41 })
 
     const foodArt = noodle.querySelector<HTMLImageElement>('.table-ingredient__food-art')!
-    const ghost = container.querySelector<HTMLImageElement>('.table-ingredient__ghost')!
+    const ghost = container.querySelector<HTMLElement>('.table-ingredient__ghost')!
     expect(ghost.style.left).toBe('720px')
     expect(ghost.style.top).toBe('270px')
-    expect(ghost.src).toBe(foodArt.src)
+    expect(ghost.querySelector<HTMLImageElement>('.table-ingredient__ghost-food-art')?.src).toBe(foodArt.src)
   })
 
   it('keeps a cooking gesture bound to the slot under pointer-down', () => {
@@ -400,7 +403,7 @@ describe('KitchenScene', () => {
     const { container, dispatch } = renderScene({ ...start, slots })
     const brush = container.querySelector('[data-ingredient-id="sauce"]')!
 
-    expect(brush.querySelector('img')?.getAttribute('src')).toContain('ingredient-bin-sauce.png')
+    expect(brush.querySelector('img')?.getAttribute('src')).toContain('ingredient-sauce.png')
     expect(container.querySelector('[data-gesture-slot-id="left"]')).toBeNull()
     pointer(brush, 'pointerup', { pointerId: 61, pointerType })
 
