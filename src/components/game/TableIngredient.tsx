@@ -5,7 +5,9 @@ import {
   KITCHEN_RACK_LAYOUTS,
   ghostInnerPolygon,
   ingredientGhostGeometryStyle,
+  ingredientRackCellStyle,
   rackInnerPolygons,
+  rackRectangles,
   type RackLayout,
 } from '../../landscape/kitchen/sceneGeometry'
 import type { SlotId } from '../../landscape/kitchen/types'
@@ -35,11 +37,17 @@ export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted
   const rackColumns = KITCHEN_RACK_LAYOUTS[rackLayout].columns
   const rackColumn = rackIndex % rackColumns
   const rackRow = Math.floor(rackIndex / rackColumns)
-  const rackStyle = {
-    '--ingredient-rack-column': rackColumn,
-    '--ingredient-rack-row': rackRow,
-  } as CSSProperties
+  const rackStyle = ingredientRackCellStyle(rackLayout, rackIndex) as CSSProperties
   const innerMaskPolygon = JSON.stringify(rackInnerPolygons(rackLayout)[rackIndex])
+  const controlPolygon = JSON.stringify((() => {
+    const control = rackRectangles(rackLayout)[rackIndex]
+    return [
+      { x: control.left, y: control.top },
+      { x: control.right, y: control.top },
+      { x: control.right, y: control.bottom },
+      { x: control.left, y: control.bottom },
+    ]
+  })())
   const ghostMaskPolygon = JSON.stringify(ghostInnerPolygon())
 
   const finish = (event: ReactPointerEvent<HTMLButtonElement>, cancelled = false) => {
@@ -68,6 +76,7 @@ export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted
         data-rack-index={rackIndex}
         data-rack-column={rackColumn}
         data-rack-row={rackRow}
+        data-control-polygon={controlPolygon}
         data-painted={painted ? 'true' : undefined}
         style={rackStyle}
         aria-label={id === 'egg' ? `${label}，点击或拖到铁板` : `${label}，拖到铁板`}

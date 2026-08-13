@@ -2,107 +2,92 @@
 
 ## Release verdict
 
-PASS. The final coordinated fix wave satisfies the physical-bin, canonical-geometry, pixel-acceptance, and portability requirements. Microsoft Edge `151.0.4129.78` accepted the `spatial-alignment-v3` evidence at 1440 × 810. The run completed three real Day 1 orders, exercised sauce/cut/roll and both griddles, captured the exact five PNGs, and recorded zero console errors, page errors, or spatial collisions.
+PASS. The expanded-rack correction satisfies the controller's physical-bin requirement. Day 1 retains the approved 2 × 3 steel rack; every later day with more than six unlocked ingredients selects a distinct, localized 3 × 5 physical-rack derivative. Microsoft Edge `151.0.4129.78` accepted the `spatial-alignment-v4` evidence at 1440 × 810 with the exact five PNG captures, three real Day 1 deliveries, dual-griddle use, two-stroke sauce, roll, settings, and BGM checks.
 
-All five captures and both the accepted empty-bin source and final composite were inspected at original detail. Day 1 food sits inside the painted 2 × 3 rack; the Day 3/5 overflow rack uses transparent food-only silhouettes rather than rectangular generated-bin tiles; the active drag ghost is food-only; and no baked food remains in empty or unused cells. No protected customer, order, recipe, gesture, heat, unlock, price, audio, or screen-composition behavior changed.
+Original-detail inspection of `day-5.png` confirms all fifteen items are centered inside fifteen visible steel wells. `day-3.png` shows eleven occupied wells and four visibly empty steel wells. There are no loose icons, duplicate generated rims, griddle changes, or collateral HUD/composition changes.
 
-## TDD and reviewer findings
+## TDD and product correction
 
-The pre-fix RED suite reproduced all four Important findings:
+RED contracts first required a distinct later-day background, exactly fifteen measured physical controls, non-uniform perspective geometry, deterministic rebuild equality, and zero changed pixels outside the localized rack contour. The initial focused run produced four expected failures: missing background selection, missing expanded rebuild exports, and retained nominal geometry. Final focused and full suites are green.
 
-- rack viewports equalled their full control rectangles and the drag ghost was a raw complete-bin image;
-- child CSS rack variables shadowed `kitchenGeometryStyle()`;
-- the runner used a tautological visible-image intersection and had no live-versus-baseline food analyzer;
-- Playwright came from an absolute user cache, no project dependency was locked, and evidence omitted the Edge version.
-
-GREEN coverage now proves positive-inset canonical inner polygons in both layouts and the ghost; no child geometry overrides; nested food-only rendering; synthetic accept/reject cases for mask, rim, unused-cell, outside-mask, and empty comparisons; exact evidence schema/manifest; a tracked ImageGen source with deterministic localized rebuilding; and exact `playwright@1.62.1` resolution through the package import.
-
-The first food-only Edge rerun exposed a QA-only false delta: moving scene actors changed between the hidden-ghost and live-ghost frames. The paired capture now freezes animation only while acquiring those two in-memory frames, restores the live scene for the persisted screenshot, and passes the same polygon proof as stationary food.
+Runtime background selection is based on `availableIngredients(day.day).length > 6` and is applied to both the base image and the counter foreground slice. `approved-2x3` remains unchanged. `expanded-3x5` uses fifteen explicit row-major controls and fifteen conservative floor polygons; shared uniform row/column arithmetic is no longer used for the perspective rack.
 
 ## Localized deterministic asset edit
 
-The accepted built-in ImageGen edit is tracked at `src/assets/art-source/kitchen-empty-bins-imagegen-source.png` (2,301,568 bytes, SHA-256 `ad36f73c4db3524da46c7e2dfac2847995ced82db46bba046bca61f0084d6673`). Its accepted original dimensions are 1668 × 943; the deterministic script resizes it to the approved 1672 × 941 plate coordinate space.
+The accepted built-in ImageGen source is tracked at `src/assets/art-source/kitchen-expanded-rack-imagegen-source.png` (2,331,003 bytes, 1672 × 941 RGB, SHA-256 `5b8b82f7894e884d6c082fed324ea6ec33e4c9523ca08839ab69ac9c0035644f`). Prompt intent and provenance are recorded beside it in `kitchen-expanded-rack-imagegen-prompt.md`.
 
-`scripts/art-remake/build-live-kitchen-plate.mjs` first rebuilds the existing customer/bubble cleanup, then composites the accepted source through exactly six feathered bin-floor polygons. It never replaces the whole background. The final `src/assets/approved/main-ui/kitchen-screen-live-clean.png` is 3,661,799 bytes with SHA-256 `78d8bb8d8d985a1a0c5d26291e17e121a65f12cac289ac7a62ce52be1bc4ab37`.
+`scripts/art-remake/build-live-kitchen-plate.mjs` starts from the deterministic Day 1 plate and takes pixels from the accepted source only through this 11-point source-space rack contour:
 
-The rebuild test proves:
+`(12,856) (22,772) (167,545) (190,539) (351,540) (462,542) (484,549) (443,774) (416,859) (390,875) (33,867)`
 
-- byte-for-byte output equality from tracked inputs;
-- all six interior masks receive material changes (more than 10,000 pixels total);
-- exactly zero changed pixels outside the six polygons when compared with the customer-clean baseline.
+The contour uses a 2-pixel feather. Its live maximum x is 416.84, leaving 74.16 logical pixels before the left griddle at x 491. The expanded output `src/assets/approved/main-ui/kitchen-screen-live-expanded-clean.png` is 3,688,791 bytes with SHA-256 `2536f655101dcd6b60978d5c12788c234cdd98c68e663af4b59f345590d262c8`.
 
-Original-detail inspection confirms clean empty bin floors, retained steel rims/dividers, and no collateral HUD, counter, utensil, griddle, or background replacement.
+Rebuild tests prove byte-for-byte equality and more than 30,000 materially changed rack pixels with exactly zero changed pixels outside the contour. Original-detail comparison confirms the HUD, market, counter outside the rack, utensils, and both griddles remain on the approved plate.
 
-## Canonical rack and food geometry
+## Canonical physical-well geometry
 
-The full `.table-ingredient` remains the input hitbox. `sceneGeometry.ts` is now the sole source for controls, inner masks, griddles, gestures, tutorial paths, and the drag viewport; CSS consumes the published variables without shadowing them.
+Day 1 keeps its six uniform 150 × 70 hitboxes and existing six floor masks. The expanded rack uses these measured live control envelopes by row (left, top, width, height):
 
-| Layout | Control | Inner rect | Inner polygon |
+| Row | Column 1 | Column 2 | Column 3 |
 | --- | --- | --- | --- |
-| `approved-2x3` | 150 × 70 | left 12, top 7, 126 × 52 | `9% 2%, 91% 2%, 99% 94%, 1% 94%` |
-| `expanded-3x5` | 98 × 61 | left 7, top 6, 84 × 45 | `9% 2%, 91% 2%, 99% 94%, 1% 94%` |
-| drag ghost | 112 × 70 | left 8, top 6, 96 × 54 | `9% 2%, 91% 2%, 99% 94%, 1% 94%` |
+| 1 | 113.68, 469.13, 116.27, 53.37 | 229.95, 469.13, 88.71, 53.37 | 318.66, 469.13, 94.74, 53.37 |
+| 2 | 86.99, 522.50, 122.29, 49.06 | 209.28, 522.50, 93.01, 49.06 | 302.30, 522.50, 99.04, 49.06 |
+| 3 | 62.01, 571.56, 126.60, 55.95 | 188.61, 571.56, 98.18, 55.95 | 286.79, 571.56, 105.07, 55.95 |
+| 4 | 36.17, 627.51, 130.91, 61.12 | 167.08, 627.51, 101.62, 61.12 | 268.71, 627.51, 111.96, 61.12 |
+| 5 | 10.33, 688.63, 135.22, 68.00 | 145.55, 688.63, 108.52, 68.00 | 254.07, 688.63, 115.41, 68.00 |
 
-The tabletop now resolves the existing transparent `menu/ingredients` food assets. Complete generated-bin art remains available only where independently required by existing non-rack UI; neither stationary rack food nor the drag ghost renders it.
+All controls are pairwise disjoint, every floor polygon is strictly inside its matching control, all controls remain inside 1440 × 810, and the closest rack edge remains clear of both griddles. Each `TableIngredient` receives per-cell left/top/width/height and a control-local clip derived from the same canonical absolute polygon exposed to QA.
 
-## Non-tautological pixel acceptance
+## Matching-background pixel acceptance
 
-For each Day 1/3/5 fixture, the Edge runner captures a frozen no-stationary-food baseline, restores food, and compares raw RGB pixels at threshold 18. Every changed pixel must be inside the canonical polygon. Rim/control-space pixels, unused cells, and pixels outside all allowed masks must remain zero. A one-pixel boundary distance is documented solely for clip antialiasing and is capped at 360 pixels per active mask.
+The Edge runner hides only stationary food, so each paired baseline retains the currently selected empty physical background: the 2 × 3 plate for Day 1 and the 3 × 5 plate for Day 3/5. RGB changes use threshold 18 and must stay inside the active well-floor polygons. Rim/control space, unused wells, and pixels outside all active masks must stay zero.
 
-| Fixture | Active food masks | Changed pixels | Outside | Rim | Unused | 1px antialias edge |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Day 1, `approved-2x3` | 5 | 7,542 | 0 | 0 | 0 | 0 |
-| Day 3, `expanded-3x5` | 11 | 12,125 | 0 | 0 | 0 | 0 |
-| Day 5, `expanded-3x5` | 15 | 16,303 | 0 | 0 | 0 | 2 |
-| Active noodle drag ghost | 1 | 2,503 | 0 | 0 | 0 | 0 |
+| Fixture | Physical wells | Active items | Changed pixels | Outside | Rim | Unused | 1px edge |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Day 1, `approved-2x3` | 6 | 5 | 6,377 | 0 | 0 | 0 | 0 |
+| Day 3, `expanded-3x5` | 15 | 11 | 2,727 | 0 | 0 | 0 | 0 |
+| Day 5, `expanded-3x5` | 15 | 15 | 3,937 | 0 | 0 | 0 | 0 |
+| Active noodle drag | 1 | 1 | 2,503 | 0 | 0 | 0 | 0 |
 
-Every individual active mask contains a non-zero delta. Day 1's sixth unused physical cell and Day 3's four unused overflow cells record no change. The drag checkpoint additionally proves no direct image source on the ghost, exactly one nested food-art image, and all changed pixels inside the shaped ghost polygon.
+Every active mask has a non-zero food delta. Day 1's sixth well and Day 3's four unused wells stay unchanged. The active drag remains one nested food-only image with no direct complete-bin source and zero leakage.
 
-## Preserved interaction and spatial evidence
+## Preserved interactions and portable runner
 
-- Three deliveries completed through real pointer/click/drag input; orders 2 and 3 occupied left and right griddles simultaneously.
-- Sauce required exactly two strokes, right then left, for every order; roll required one rightward swipe.
-- Active sauce, cut, and roll gesture/tutorial rectangles equal the left griddle at x 491, y 559, 269 × 218 with `(0, 0, 0, 0)` deltas.
-- Populated griddle stage centers remain exact: left `(625.5, 668)`, right `(894.5, 668)`, both with `(0, 0)` stage-center deltas.
-- Seven BGM checkpoints retained one audio-element identity with increasing playback time; mixed volume is 0.31, mute yields 0, and the pause/retry probe advanced from 7.294354 to 7.306826 seconds.
-- Settings measured exactly one live native thumb at min/mid/max. Measured x positions are 661.5, 772.5, and 886.5 against expected 659.859375, 772.8671875, and 885.875.
+- Three Day 1 orders were delivered through real interactions; orders two and three occupied left and right griddles simultaneously with exact stage-center deltas `(0,0)`.
+- Sauce required exactly two strokes, right then left; roll required one rightward swipe.
+- Active sauce, cut, and roll gesture/tutorial bounds remain x 491, y 559, 269 × 218 with zero deltas.
+- Seven BGM checkpoints retained one audio identity and increasing playback time; mixed volume is 0.31, mute is 0, and paused-singleton resume advanced 7.305230 → 7.321487 seconds.
+- Settings measured exactly one native thumb at min/mid/max. Measured centers were 661.5, 772.5, and 886.5.
+- The QA runner imports pinned project `playwright@1.62.1`; no user-cache module path is used.
 
 ## Regression gates
 
 | Gate | Result | Exact result |
 | --- | --- | --- |
-| Focused product/QA | PASS | 6 files, 95 tests |
-| Composite/rebuild | PASS | 2 files, 4 tests |
-| `npm run validate:art` | PASS | 427 assets, 5 families |
-| `npm test -- --run` | PASS | 39 files, 269 tests |
-| `npm run build` | PASS | 438 modules transformed |
+| Critical focused trio | PASS | 3 files, 34 tests |
+| Expanded QA/schema focus | PASS | 3 files, 60 tests |
+| `npm run validate:art` | PASS | 428 assets, 5 families |
+| `npm test -- --run` | PASS | 39 files, 274 tests |
+| `npm run build` | PASS | 439 modules transformed |
 | `git diff --check` | PASS | exit 0 |
-| Edge acceptance | PASS | 3 progression fixtures, active drag, 3 deliveries, 5 screenshots |
+| Edge v4 acceptance | PASS | 3 fixtures, 3 deliveries, exact 5 screenshots |
 
-The production build emitted 303 files under `dist/assets`. Relevant outputs include:
+Production emits both `kitchen-screen-live-clean-DGrbZUtB.png` (Day 1) and `kitchen-screen-live-expanded-clean-BRP2QaYo.png` (later days).
 
-- `index-Cb6Xl3o-.js` — 328,713 bytes
-- `index-XdcW5NWu.css` — 56,280 bytes
-- `kitchen-screen-live-clean-DGrbZUtB.png` — 3,661,799 bytes
-- `settings-slider-clean-patch-y4vfjroj.png` — 64,297 bytes
-- `night-market-bgm-Dsrq8fsL.mp3` — 2,401,307 bytes
+## Exact screenshot evidence
 
-## Screenshot evidence
+All captures are Microsoft Edge PNGs at 1440 × 810 and device scale factor 1.
 
-All captures are 1440 × 810 PNGs from Microsoft Edge at device scale factor 1 and were inspected at original detail.
-
-| Capture | Bytes | SHA-256 | Visual verdict |
+| Capture | Bytes | SHA-256 | Original-detail verdict |
 | --- | ---: | --- | --- |
-| `settings.png` | 1,920,906 | `e461b94faae2de82eb8e3884f21eb94a9292b7234f71a0c73fe36d18f26d3bd7` | One clean thumb at each min/mid/max rail; no duplicate. |
-| `day-1-empty.png` | 1,627,814 | `336d33e9811578b02f05a87be49a04aaf98663cd27331ba8fa8fecf0ba07f3ac` | Five food-only silhouettes seated in the real 2 × 3 bins; active noodle ghost is food-only; live customer/tutorial context restored. |
-| `day-1-two-griddles.png` | 1,653,890 | `3e7c864bb17caca7cfb627be3124b5830db35f61cefebc7630f6eaf30b07e088` | Both stages centered with matching insets and no cross-slot intrusion. |
-| `day-3.png` | 1,668,819 | `cc2d2963f8970ed4d1e0cd5b3dff51c25d56560bb513f54ce5980d03a58453a6` | Eleven transparent shapes in the compact overflow rack; no hard rectangular tiles or generated metal rims. |
-| `day-5.png` | 1,677,851 | `36398a1e045c1a66b5123a853c74a35d9a984e903c640c3b8ebc8612e9bb8164` | All fifteen shapes are readable, disjoint, and clear of griddles/tutorial/HUD. |
+| `settings.png` | 1,920,913 | `2d9718f8a910a84fe003a085b8e3618e1d78060e97c4c76920fdaed475ea6372` | One visible native thumb per rail; no duplicate. |
+| `day-1-empty.png` | 1,626,923 | `a815956dfd08f04c03cf5f2705f0d95c0004d7b956ecf3916181444c6f8ca8ce` | Five items remain in the approved 2 × 3 steel rack. |
+| `day-1-two-griddles.png` | 1,652,947 | `34bd7ec8f9ccddbd669036837ab914b0a67ae14c35b9396eed13c66b9249567f` | Both cooking stages centered and isolated. |
+| `day-3.png` | 1,679,672 | `51e31cd0d5960ad394544451ebab7303e2143a94c0f88c9777b550e42e75245b` | Eleven items each occupy a visible steel well; four empty wells remain. |
+| `day-5.png` | 1,682,291 | `ef3e6b8b45a27373c6fd4cd25b5b75992a4f2ebd683e901a0d273f1cf4171ffe` | All fifteen items occupy fifteen distinct visible physical steel wells; no loose icons. |
 
-Machine-readable evidence: `artifacts/spatial-alignment-qa/result.json`, 109,933 bytes, SHA-256 `c90dbb5206d28816667d964e401b592b5bfff3ad225b76240b4cc81ddbf97d10`.
+Machine evidence: `artifacts/spatial-alignment-qa/result.json`, 126,356 bytes, SHA-256 `f13f933feb9dac0df32ea90283b0aafb8e9548ffba7845cddf7b49a94ab3a6f0`.
 
-## Portability and remaining concerns
+## Portability and concerns
 
-The runner imports `chromium` from project package `playwright`; `package.json` and `package-lock.json` pin `1.62.1`. A fresh local clone of implementation commit `f323cfe82dcc3853319fafda5de82e098fd4072e` proved the full portable path: `npm ci` installed 118 packages from the lockfile; the rebuild plus analyzer suite passed 2 files / 13 tests; the production build transformed 438 modules; and `node scripts/current-reference-screens-qa.mjs` passed all three progression fixtures, Day 1/3/5 pixel records, active drag, exact five captures, and actual Edge `151.0.4129.78` without the original repository's `node_modules` or user-cache import.
-
-No release-blocking product or visual concern remains. The expanded Day 3/5 rack is intentionally a compact 3 × 5 overflow presentation rather than a literal redraw of six steel bins, but its controls and food are canonical, readable, non-overlapping, masked, and pixel-confined. The only accepted non-zero tolerance is the two Day 5 pixels within one physical pixel of a polygon edge; the allowance and cap are explicit in evidence.
+Clean-clone reproduction is required after the implementation commit and will be recorded here by the final report commit. No release-blocking product or visual concern remains in the working-tree evidence. The generated source is retained only for provenance and localized rebuilding; it is never shipped or selected as a whole-screen replacement.

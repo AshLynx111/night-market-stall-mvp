@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "spatial-alignment-v3",
+  "schemaVersion": "spatial-alignment-v4",
   "browser": {
     "name": "Microsoft Edge",
     "version": "151.0.4129.78"
@@ -30,9 +30,9 @@
     "checkpoints": [
       {
         "label": "settings",
-        "identity": "reference-bgm-1786643092103-0.4919123657904537",
+        "identity": "reference-bgm-1786645659083-0.39219033057140096",
         "count": 1,
-        "currentTime": 7.285092,
+        "currentTime": 7.297345,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -40,9 +40,9 @@
       },
       {
         "label": "select",
-        "identity": "reference-bgm-1786643092103-0.4919123657904537",
+        "identity": "reference-bgm-1786645659083-0.39219033057140096",
         "count": 1,
-        "currentTime": 7.799604,
+        "currentTime": 7.79275,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -50,9 +50,9 @@
       },
       {
         "label": "day-1-entry",
-        "identity": "reference-bgm-1786643092103-0.4919123657904537",
+        "identity": "reference-bgm-1786645659083-0.39219033057140096",
         "count": 1,
-        "currentTime": 20.08861,
+        "currentTime": 20.073721,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -60,9 +60,9 @@
       },
       {
         "label": "day-1-after-order-1",
-        "identity": "reference-bgm-1786643092103-0.4919123657904537",
+        "identity": "reference-bgm-1786645659083-0.39219033057140096",
         "count": 1,
-        "currentTime": 28.727314,
+        "currentTime": 28.767192,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -70,9 +70,9 @@
       },
       {
         "label": "day-1-after-order-2",
-        "identity": "reference-bgm-1786643092103-0.4919123657904537",
+        "identity": "reference-bgm-1786645659083-0.39219033057140096",
         "count": 1,
-        "currentTime": 40.527242,
+        "currentTime": 40.300051,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -80,9 +80,9 @@
       },
       {
         "label": "summary",
-        "identity": "reference-bgm-1786643092103-0.4919123657904537",
+        "identity": "reference-bgm-1786645659083-0.39219033057140096",
         "count": 1,
-        "currentTime": 48.901792,
+        "currentTime": 48.679692,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -90,9 +90,9 @@
       },
       {
         "label": "day-2",
-        "identity": "reference-bgm-1786643092103-0.4919123657904537",
+        "identity": "reference-bgm-1786645659083-0.39219033057140096",
         "count": 1,
-        "currentTime": 49.324956,
+        "currentTime": 49.116167,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -100,8 +100,8 @@
       }
     ],
     "resume": {
-      "before": 7.294354,
-      "after": 7.306826,
+      "before": 7.30523,
+      "after": 7.321487,
       "attempts": 3
     }
   },
@@ -1442,6 +1442,9 @@
       ],
       "ingredientCount": 5,
       "rackLayout": "approved-2x3",
+      "rackBackground": "approved-2x3",
+      "backgroundSource": "/src/assets/approved/main-ui/kitchen-screen-live-clean.png",
+      "physicalWellCount": 6,
       "rack": {
         "columns": 2,
         "rows": 3,
@@ -1594,20 +1597,20 @@
             "bottom": 536
           },
           "viewportRect": {
-            "x": 92,
-            "y": 473,
-            "width": 126,
-            "height": 52,
-            "right": 218,
-            "bottom": 525
+            "x": 93.25,
+            "y": 474.03125,
+            "width": 123.46875,
+            "height": 47.828125,
+            "right": 216.71875,
+            "bottom": 521.859375
           },
           "imageRect": {
-            "x": 80.6640625,
-            "y": 468.3203125,
-            "width": 148.671875,
-            "height": 61.359375,
-            "right": 229.3359375,
-            "bottom": 529.6796875
+            "x": 82.140625,
+            "y": 469.7265625,
+            "width": 145.6875,
+            "height": 56.421875,
+            "right": 227.828125,
+            "bottom": 526.1484375
           },
           "canonicalInnerPolygon": [
             {
@@ -1627,11 +1630,30 @@
               "y": 521.88
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 80,
+              "y": 466
+            },
+            {
+              "x": 229.99999999999997,
+              "y": 466
+            },
+            {
+              "x": 229.99999999999997,
+              "y": 536
+            },
+            {
+              "x": 80,
+              "y": 536
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.16327% 0%, 91.8367% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -1658,20 +1680,20 @@
             "bottom": 536
           },
           "viewportRect": {
-            "x": 247,
-            "y": 473,
-            "width": 126,
-            "height": 52,
-            "right": 373,
-            "bottom": 525
+            "x": 248.25,
+            "y": 474.03125,
+            "width": 123.46875,
+            "height": 47.828125,
+            "right": 371.71875,
+            "bottom": 521.859375
           },
           "imageRect": {
-            "x": 235.6640625,
-            "y": 468.3203125,
-            "width": 148.671875,
-            "height": 61.359375,
-            "right": 384.3359375,
-            "bottom": 529.6796875
+            "x": 237.140625,
+            "y": 469.7265625,
+            "width": 145.6875,
+            "height": 56.421875,
+            "right": 382.828125,
+            "bottom": 526.1484375
           },
           "canonicalInnerPolygon": [
             {
@@ -1691,11 +1713,30 @@
               "y": 521.88
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 235,
+              "y": 466
+            },
+            {
+              "x": 385,
+              "y": 466
+            },
+            {
+              "x": 385,
+              "y": 536
+            },
+            {
+              "x": 235,
+              "y": 536
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.16327% 0%, 91.8367% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -1722,20 +1763,20 @@
             "bottom": 611
           },
           "viewportRect": {
-            "x": 92,
-            "y": 548,
-            "width": 126,
-            "height": 52,
-            "right": 218,
-            "bottom": 600
+            "x": 93.25,
+            "y": 549.03125,
+            "width": 123.46875,
+            "height": 47.828125,
+            "right": 216.71875,
+            "bottom": 596.859375
           },
           "imageRect": {
-            "x": 80.6640625,
-            "y": 543.3203125,
-            "width": 148.671875,
-            "height": 61.359375,
-            "right": 229.3359375,
-            "bottom": 604.6796875
+            "x": 82.140625,
+            "y": 544.7265625,
+            "width": 145.6875,
+            "height": 56.421875,
+            "right": 227.828125,
+            "bottom": 601.1484375
           },
           "canonicalInnerPolygon": [
             {
@@ -1755,11 +1796,30 @@
               "y": 596.88
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 80,
+              "y": 541
+            },
+            {
+              "x": 229.99999999999997,
+              "y": 541
+            },
+            {
+              "x": 229.99999999999997,
+              "y": 611
+            },
+            {
+              "x": 80,
+              "y": 611
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.16327% 0%, 91.8367% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -1786,20 +1846,20 @@
             "bottom": 611
           },
           "viewportRect": {
-            "x": 247,
-            "y": 548,
-            "width": 126,
-            "height": 52,
-            "right": 373,
-            "bottom": 600
+            "x": 248.25,
+            "y": 549.03125,
+            "width": 123.46875,
+            "height": 47.828125,
+            "right": 371.71875,
+            "bottom": 596.859375
           },
           "imageRect": {
-            "x": 235.6640625,
-            "y": 543.3203125,
-            "width": 148.671875,
-            "height": 61.359375,
-            "right": 384.3359375,
-            "bottom": 604.6796875
+            "x": 237.140625,
+            "y": 544.7265625,
+            "width": 145.6875,
+            "height": 56.421875,
+            "right": 382.828125,
+            "bottom": 601.1484375
           },
           "canonicalInnerPolygon": [
             {
@@ -1819,11 +1879,30 @@
               "y": 596.88
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 235,
+              "y": 541
+            },
+            {
+              "x": 385,
+              "y": 541
+            },
+            {
+              "x": 385,
+              "y": 611
+            },
+            {
+              "x": 235,
+              "y": 611
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.16327% 0%, 91.8367% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -1850,20 +1929,20 @@
             "bottom": 686
           },
           "viewportRect": {
-            "x": 92,
-            "y": 623,
-            "width": 126,
-            "height": 52,
-            "right": 218,
-            "bottom": 675
+            "x": 93.25,
+            "y": 624.03125,
+            "width": 123.46875,
+            "height": 47.828125,
+            "right": 216.71875,
+            "bottom": 671.859375
           },
           "imageRect": {
-            "x": 80.6640625,
-            "y": 618.3203125,
-            "width": 148.671875,
-            "height": 61.359375,
-            "right": 229.3359375,
-            "bottom": 679.6796875
+            "x": 82.140625,
+            "y": 619.7265625,
+            "width": 145.6875,
+            "height": 56.421875,
+            "right": 227.828125,
+            "bottom": 676.1484375
           },
           "canonicalInnerPolygon": [
             {
@@ -1883,11 +1962,30 @@
               "y": 671.88
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 80,
+              "y": 616
+            },
+            {
+              "x": 229.99999999999997,
+              "y": 616
+            },
+            {
+              "x": 229.99999999999997,
+              "y": 686
+            },
+            {
+              "x": 80,
+              "y": 686
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.16327% 0%, 91.8367% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -1917,7 +2015,7 @@
       "activeCustomers": 1,
       "stationaryFoodPixels": {
         "accepted": true,
-        "changedPixelCount": 7542,
+        "changedPixelCount": 6377,
         "outsideAllowedPixelCount": 0,
         "rimChangedPixelCount": 0,
         "unusedCellChangedPixelCount": 0,
@@ -1925,31 +2023,31 @@
         "antialiasTolerance": 1,
         "maxAntialiasPixels": 1800,
         "bounds": {
-          "left": 126,
-          "top": 478,
-          "right": 335,
-          "bottom": 665
+          "left": 128,
+          "top": 479,
+          "right": 333,
+          "bottom": 663
         },
         "masks": [
           {
             "id": "noodle",
-            "changedPixelCount": 2193
+            "changedPixelCount": 1884
           },
           {
             "id": "egg",
-            "changedPixelCount": 1383
+            "changedPixelCount": 1159
           },
           {
             "id": "hot-dog",
-            "changedPixelCount": 1247
+            "changedPixelCount": 1047
           },
           {
             "id": "sauce",
-            "changedPixelCount": 1525
+            "changedPixelCount": 1288
           },
           {
             "id": "scallion",
-            "changedPixelCount": 1194
+            "changedPixelCount": 999
           }
         ]
       }
@@ -1971,359 +2069,362 @@
       ],
       "ingredientCount": 11,
       "rackLayout": "expanded-3x5",
+      "rackBackground": "expanded-3x5",
+      "backgroundSource": "/src/assets/approved/main-ui/kitchen-screen-live-expanded-clean.png",
+      "physicalWellCount": 15,
       "rack": {
         "columns": 3,
         "rows": 5,
-        "left": 18,
-        "top": 466,
-        "columnGap": 102,
-        "rowGap": 65,
-        "width": 98,
-        "height": 61
+        "left": 10.33,
+        "top": 469.13,
+        "columnGap": 0,
+        "rowGap": 0,
+        "width": 403.07,
+        "height": 287.5
       },
       "rackControlPolygons": [
         [
           {
-            "x": 18,
-            "y": 466
+            "x": 113.68000000000002,
+            "y": 469.13
           },
           {
-            "x": 116.00000000000001,
-            "y": 466
+            "x": 229.95,
+            "y": 469.13
           },
           {
-            "x": 116.00000000000001,
-            "y": 527
+            "x": 229.95,
+            "y": 522.5
           },
           {
-            "x": 18,
-            "y": 527
+            "x": 113.68000000000002,
+            "y": 522.5
           }
         ],
         [
           {
-            "x": 120,
-            "y": 466
+            "x": 229.95,
+            "y": 469.13
           },
           {
-            "x": 217.99999999999997,
-            "y": 466
+            "x": 318.65999999999997,
+            "y": 469.13
           },
           {
-            "x": 217.99999999999997,
-            "y": 527
+            "x": 318.65999999999997,
+            "y": 522.5
           },
           {
-            "x": 120,
-            "y": 527
+            "x": 229.95,
+            "y": 522.5
           }
         ],
         [
           {
-            "x": 222,
-            "y": 466
+            "x": 318.66,
+            "y": 469.13
           },
           {
-            "x": 320,
-            "y": 466
+            "x": 413.40000000000003,
+            "y": 469.13
           },
           {
-            "x": 320,
-            "y": 527
+            "x": 413.40000000000003,
+            "y": 522.5
           },
           {
-            "x": 222,
-            "y": 527
+            "x": 318.66,
+            "y": 522.5
           }
         ],
         [
           {
-            "x": 18,
-            "y": 531
+            "x": 86.99,
+            "y": 522.5
           },
           {
-            "x": 116.00000000000001,
-            "y": 531
+            "x": 209.28,
+            "y": 522.5
           },
           {
-            "x": 116.00000000000001,
-            "y": 592
+            "x": 209.28,
+            "y": 571.56
           },
           {
-            "x": 18,
-            "y": 592
+            "x": 86.99,
+            "y": 571.56
           }
         ],
         [
           {
-            "x": 120,
-            "y": 531
+            "x": 209.28,
+            "y": 522.5
           },
           {
-            "x": 217.99999999999997,
-            "y": 531
+            "x": 302.29,
+            "y": 522.5
           },
           {
-            "x": 217.99999999999997,
-            "y": 592
+            "x": 302.29,
+            "y": 571.56
           },
           {
-            "x": 120,
-            "y": 592
+            "x": 209.28,
+            "y": 571.56
           }
         ],
         [
           {
-            "x": 222,
-            "y": 531
+            "x": 302.3,
+            "y": 522.5
           },
           {
-            "x": 320,
-            "y": 531
+            "x": 401.34000000000003,
+            "y": 522.5
           },
           {
-            "x": 320,
-            "y": 592
+            "x": 401.34000000000003,
+            "y": 571.56
           },
           {
-            "x": 222,
-            "y": 592
+            "x": 302.3,
+            "y": 571.56
           }
         ],
         [
           {
-            "x": 18,
-            "y": 596
+            "x": 62.01,
+            "y": 571.56
           },
           {
-            "x": 116.00000000000001,
-            "y": 596
+            "x": 188.60999999999996,
+            "y": 571.56
           },
           {
-            "x": 116.00000000000001,
-            "y": 657
+            "x": 188.60999999999996,
+            "y": 627.51
           },
           {
-            "x": 18,
-            "y": 657
+            "x": 62.01,
+            "y": 627.51
           }
         ],
         [
           {
-            "x": 120,
-            "y": 596
+            "x": 188.61,
+            "y": 571.56
           },
           {
-            "x": 217.99999999999997,
-            "y": 596
+            "x": 286.79,
+            "y": 571.56
           },
           {
-            "x": 217.99999999999997,
-            "y": 657
+            "x": 286.79,
+            "y": 627.51
           },
           {
-            "x": 120,
-            "y": 657
+            "x": 188.61,
+            "y": 627.51
           }
         ],
         [
           {
-            "x": 222,
-            "y": 596
+            "x": 286.79,
+            "y": 571.56
           },
           {
-            "x": 320,
-            "y": 596
+            "x": 391.86,
+            "y": 571.56
           },
           {
-            "x": 320,
-            "y": 657
+            "x": 391.86,
+            "y": 627.51
           },
           {
-            "x": 222,
-            "y": 657
+            "x": 286.79,
+            "y": 627.51
           }
         ],
         [
           {
-            "x": 18,
-            "y": 661
+            "x": 36.17,
+            "y": 627.51
           },
           {
-            "x": 116.00000000000001,
-            "y": 661
+            "x": 167.07999999999998,
+            "y": 627.51
           },
           {
-            "x": 116.00000000000001,
-            "y": 722
+            "x": 167.07999999999998,
+            "y": 688.63
           },
           {
-            "x": 18,
-            "y": 722
+            "x": 36.17,
+            "y": 688.63
           }
         ],
         [
           {
-            "x": 120,
-            "y": 661
+            "x": 167.08,
+            "y": 627.51
           },
           {
-            "x": 217.99999999999997,
-            "y": 661
+            "x": 268.70000000000005,
+            "y": 627.51
           },
           {
-            "x": 217.99999999999997,
-            "y": 722
+            "x": 268.70000000000005,
+            "y": 688.63
           },
           {
-            "x": 120,
-            "y": 722
+            "x": 167.08,
+            "y": 688.63
           }
         ],
         [
           {
-            "x": 222,
-            "y": 661
+            "x": 268.71,
+            "y": 627.51
           },
           {
-            "x": 320,
-            "y": 661
+            "x": 380.6699999999999,
+            "y": 627.51
           },
           {
-            "x": 320,
-            "y": 722
+            "x": 380.6699999999999,
+            "y": 688.63
           },
           {
-            "x": 222,
-            "y": 722
+            "x": 268.71,
+            "y": 688.63
           }
         ],
         [
           {
-            "x": 18,
-            "y": 726
+            "x": 10.33,
+            "y": 688.63
           },
           {
-            "x": 116.00000000000001,
-            "y": 726
+            "x": 145.55,
+            "y": 688.63
           },
           {
-            "x": 116.00000000000001,
-            "y": 787
+            "x": 145.55,
+            "y": 756.63
           },
           {
-            "x": 18,
-            "y": 787
+            "x": 10.33,
+            "y": 756.63
           }
         ],
         [
           {
-            "x": 120,
-            "y": 726
+            "x": 145.55,
+            "y": 688.63
           },
           {
-            "x": 217.99999999999997,
-            "y": 726
+            "x": 254.07,
+            "y": 688.63
           },
           {
-            "x": 217.99999999999997,
-            "y": 787
+            "x": 254.07,
+            "y": 756.63
           },
           {
-            "x": 120,
-            "y": 787
+            "x": 145.55,
+            "y": 756.63
           }
         ],
         [
           {
-            "x": 222,
-            "y": 726
+            "x": 254.07,
+            "y": 688.63
           },
           {
-            "x": 320,
-            "y": 726
+            "x": 369.48,
+            "y": 688.63
           },
           {
-            "x": 320,
-            "y": 787
+            "x": 369.48,
+            "y": 756.63
           },
           {
-            "x": 222,
-            "y": 787
+            "x": 254.07,
+            "y": 756.63
           }
         ]
       ],
       "unusedControlPolygons": [
         [
           {
-            "x": 222,
-            "y": 661
+            "x": 268.71,
+            "y": 627.51
           },
           {
-            "x": 320,
-            "y": 661
+            "x": 380.6699999999999,
+            "y": 627.51
           },
           {
-            "x": 320,
-            "y": 722
+            "x": 380.6699999999999,
+            "y": 688.63
           },
           {
-            "x": 222,
-            "y": 722
+            "x": 268.71,
+            "y": 688.63
           }
         ],
         [
           {
-            "x": 18,
-            "y": 726
+            "x": 10.33,
+            "y": 688.63
           },
           {
-            "x": 116.00000000000001,
-            "y": 726
+            "x": 145.55,
+            "y": 688.63
           },
           {
-            "x": 116.00000000000001,
-            "y": 787
+            "x": 145.55,
+            "y": 756.63
           },
           {
-            "x": 18,
-            "y": 787
+            "x": 10.33,
+            "y": 756.63
           }
         ],
         [
           {
-            "x": 120,
-            "y": 726
+            "x": 145.55,
+            "y": 688.63
           },
           {
-            "x": 217.99999999999997,
-            "y": 726
+            "x": 254.07,
+            "y": 688.63
           },
           {
-            "x": 217.99999999999997,
-            "y": 787
+            "x": 254.07,
+            "y": 756.63
           },
           {
-            "x": 120,
-            "y": 787
+            "x": 145.55,
+            "y": 756.63
           }
         ],
         [
           {
-            "x": 222,
-            "y": 726
+            "x": 254.07,
+            "y": 688.63
           },
           {
-            "x": 320,
-            "y": 726
+            "x": 369.48,
+            "y": 688.63
           },
           {
-            "x": 320,
-            "y": 787
+            "x": 369.48,
+            "y": 756.63
           },
           {
-            "x": 222,
-            "y": 787
+            "x": 254.07,
+            "y": 756.63
           }
         ]
       ],
@@ -2331,52 +2432,71 @@
         {
           "id": "noodle",
           "controlRect": {
-            "x": 18,
-            "y": 466,
-            "width": 98,
-            "height": 61,
-            "right": 116,
-            "bottom": 527
+            "x": 113.671875,
+            "y": 469.125,
+            "width": 116.265625,
+            "height": 53.359375,
+            "right": 229.9375,
+            "bottom": 522.484375
           },
           "viewportRect": {
-            "x": 25,
-            "y": 472,
-            "width": 84,
-            "height": 45,
-            "right": 109,
-            "bottom": 517
+            "x": 145.53125,
+            "y": 482.03125,
+            "width": 80.09375,
+            "height": 18.078125,
+            "right": 225.625,
+            "bottom": 500.109375
           },
           "imageRect": {
-            "x": 17.4453125,
-            "y": 467.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 116.5546875,
-            "bottom": 521.046875
+            "x": 138.328125,
+            "y": 480.3984375,
+            "width": 94.5,
+            "height": 21.328125,
+            "right": 232.828125,
+            "bottom": 501.7265625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 32.56,
-              "y": 472.9
+              "x": 152.44,
+              "y": 482.04
             },
             {
-              "x": 101.44000000000001,
-              "y": 472.9
+              "x": 219.62,
+              "y": 482.04
             },
             {
-              "x": 108.16000000000001,
-              "y": 514.3
+              "x": 225.65000000000003,
+              "y": 500.12000000000006
             },
             {
-              "x": 25.84,
-              "y": 514.3
+              "x": 145.55,
+              "y": 500.12000000000006
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 113.68000000000002,
+              "y": 469.13
+            },
+            {
+              "x": 229.95,
+              "y": 469.13
+            },
+            {
+              "x": 229.95,
+              "y": 522.5
+            },
+            {
+              "x": 113.68000000000002,
+              "y": 522.5
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.60175% 0%, 92.4719% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2395,52 +2515,71 @@
         {
           "id": "egg",
           "controlRect": {
-            "x": 120,
-            "y": 466,
-            "width": 98,
-            "height": 61,
-            "right": 218,
-            "bottom": 527
+            "x": 229.9375,
+            "y": 469.125,
+            "width": 88.703125,
+            "height": 53.359375,
+            "right": 318.640625,
+            "bottom": 522.484375
           },
           "viewportRect": {
-            "x": 127,
-            "y": 472,
-            "width": 84,
-            "height": 45,
-            "right": 211,
-            "bottom": 517
+            "x": 234.234375,
+            "y": 482.03125,
+            "width": 80.078125,
+            "height": 18.078125,
+            "right": 314.3125,
+            "bottom": 500.109375
           },
           "imageRect": {
-            "x": 119.4453125,
-            "y": 467.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 218.5546875,
-            "bottom": 521.046875
+            "x": 227.0234375,
+            "y": 480.3984375,
+            "width": 94.484375,
+            "height": 21.328125,
+            "right": 321.5078125,
+            "bottom": 501.7265625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 134.56,
-              "y": 472.9
+              "x": 241.15,
+              "y": 482.04
             },
             {
-              "x": 203.44,
-              "y": 472.9
+              "x": 308.33,
+              "y": 482.04
             },
             {
-              "x": 210.15999999999997,
-              "y": 514.3
+              "x": 314.35,
+              "y": 500.12000000000006
             },
             {
-              "x": 127.83999999999999,
-              "y": 514.3
+              "x": 234.26,
+              "y": 500.12000000000006
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 229.95,
+              "y": 469.13
+            },
+            {
+              "x": 318.65999999999997,
+              "y": 469.13
+            },
+            {
+              "x": 318.65999999999997,
+              "y": 522.5
+            },
+            {
+              "x": 229.95,
+              "y": 522.5
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.60282% 0%, 92.4835% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2459,52 +2598,71 @@
         {
           "id": "hot-dog",
           "controlRect": {
-            "x": 222,
-            "y": 466,
-            "width": 98,
-            "height": 61,
-            "right": 320,
-            "bottom": 527
+            "x": 318.65625,
+            "y": 469.125,
+            "width": 94.734375,
+            "height": 53.359375,
+            "right": 413.390625,
+            "bottom": 522.484375
           },
           "viewportRect": {
-            "x": 229,
-            "y": 472,
-            "width": 84,
-            "height": 45,
-            "right": 313,
-            "bottom": 517
+            "x": 322.953125,
+            "y": 482.890625,
+            "width": 79.21875,
+            "height": 18.078125,
+            "right": 402.171875,
+            "bottom": 500.96875
           },
           "imageRect": {
-            "x": 221.4453125,
-            "y": 467.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 320.5546875,
-            "bottom": 521.046875
+            "x": 315.828125,
+            "y": 481.2578125,
+            "width": 93.46875,
+            "height": 21.328125,
+            "right": 409.296875,
+            "bottom": 502.5859375
           },
           "canonicalInnerPolygon": [
             {
-              "x": 236.56,
-              "y": 472.9
+              "x": 329.86,
+              "y": 482.9
             },
             {
-              "x": 305.44,
-              "y": 472.9
+              "x": 396.17,
+              "y": 482.9
             },
             {
-              "x": 312.15999999999997,
-              "y": 514.3
+              "x": 402.2,
+              "y": 500.98
             },
             {
-              "x": 229.84,
-              "y": 514.3
+              "x": 322.97,
+              "y": 500.98
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 318.66,
+              "y": 469.13
+            },
+            {
+              "x": 413.40000000000003,
+              "y": 469.13
+            },
+            {
+              "x": 413.40000000000003,
+              "y": 522.5
+            },
+            {
+              "x": 318.66,
+              "y": 522.5
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.6962% 0%, 92.3892% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2523,52 +2681,71 @@
         {
           "id": "sauce",
           "controlRect": {
-            "x": 18,
-            "y": 531,
-            "width": 98,
-            "height": 61,
-            "right": 116,
-            "bottom": 592
+            "x": 86.984375,
+            "y": 522.5,
+            "width": 122.28125,
+            "height": 49.046875,
+            "right": 209.265625,
+            "bottom": 571.546875
           },
           "viewportRect": {
-            "x": 25,
-            "y": 537,
-            "width": 84,
-            "height": 45,
-            "right": 109,
-            "bottom": 582
+            "x": 119.703125,
+            "y": 529.375,
+            "width": 85.265625,
+            "height": 19.796875,
+            "right": 204.96875,
+            "bottom": 549.171875
           },
           "imageRect": {
-            "x": 17.4453125,
-            "y": 532.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 116.5546875,
-            "bottom": 586.046875
+            "x": 112.0234375,
+            "y": 527.5859375,
+            "width": 100.609375,
+            "height": 23.359375,
+            "right": 212.6328125,
+            "bottom": 550.9453125
           },
           "canonicalInnerPolygon": [
             {
-              "x": 32.56,
-              "y": 537.9
+              "x": 128.33,
+              "y": 529.38
             },
             {
-              "x": 101.44000000000001,
-              "y": 537.9
+              "x": 198.09,
+              "y": 529.38
             },
             {
-              "x": 108.16000000000001,
-              "y": 579.3
+              "x": 204.98,
+              "y": 549.18
             },
             {
-              "x": 25.84,
-              "y": 579.3
+              "x": 119.71,
+              "y": 549.18
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 86.99,
+              "y": 522.5
+            },
+            {
+              "x": 209.28,
+              "y": 522.5
+            },
+            {
+              "x": 209.28,
+              "y": 571.56
+            },
+            {
+              "x": 86.99,
+              "y": 571.56
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(10.1091% 0%, 91.9198% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2587,52 +2764,71 @@
         {
           "id": "scallion",
           "controlRect": {
-            "x": 120,
-            "y": 531,
-            "width": 98,
-            "height": 61,
-            "right": 218,
-            "bottom": 592
+            "x": 209.265625,
+            "y": 522.5,
+            "width": 93,
+            "height": 49.046875,
+            "right": 302.265625,
+            "bottom": 571.546875
           },
           "viewportRect": {
-            "x": 127,
-            "y": 537,
-            "width": 84,
-            "height": 45,
-            "right": 211,
-            "bottom": 582
+            "x": 212.703125,
+            "y": 529.375,
+            "width": 85.25,
+            "height": 20.65625,
+            "right": 297.953125,
+            "bottom": 550.03125
           },
           "imageRect": {
-            "x": 119.4453125,
-            "y": 532.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 218.5546875,
-            "bottom": 586.046875
+            "x": 205.03125,
+            "y": 527.5234375,
+            "width": 100.59375,
+            "height": 24.359375,
+            "right": 305.625,
+            "bottom": 551.8828125
           },
           "canonicalInnerPolygon": [
             {
-              "x": 134.56,
-              "y": 537.9
+              "x": 220.48000000000002,
+              "y": 529.38
             },
             {
-              "x": 203.44,
-              "y": 537.9
+              "x": 291.1,
+              "y": 529.38
             },
             {
-              "x": 210.15999999999997,
-              "y": 579.3
+              "x": 297.99,
+              "y": 550.04
             },
             {
-              "x": 127.83999999999999,
-              "y": 579.3
+              "x": 212.73,
+              "y": 550.04
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 209.28,
+              "y": 522.5
+            },
+            {
+              "x": 302.29,
+              "y": 522.5
+            },
+            {
+              "x": 302.29,
+              "y": 571.56
+            },
+            {
+              "x": 209.28,
+              "y": 571.56
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(9.08984% 0%, 91.9188% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2651,52 +2847,71 @@
         {
           "id": "cilantro",
           "controlRect": {
-            "x": 222,
-            "y": 531,
-            "width": 98,
-            "height": 61,
-            "right": 320,
-            "bottom": 592
+            "x": 302.296875,
+            "y": 522.5,
+            "width": 99.03125,
+            "height": 49.046875,
+            "right": 401.328125,
+            "bottom": 571.546875
           },
           "viewportRect": {
-            "x": 229,
-            "y": 537,
-            "width": 84,
-            "height": 45,
-            "right": 313,
-            "bottom": 582
+            "x": 305.734375,
+            "y": 530.234375,
+            "width": 85.25,
+            "height": 19.796875,
+            "right": 390.984375,
+            "bottom": 550.03125
           },
           "imageRect": {
-            "x": 221.4453125,
-            "y": 532.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 320.5546875,
-            "bottom": 586.046875
+            "x": 298.0625,
+            "y": 528.4453125,
+            "width": 100.59375,
+            "height": 23.359375,
+            "right": 398.65625,
+            "bottom": 551.8046875
           },
           "canonicalInnerPolygon": [
             {
-              "x": 236.56,
-              "y": 537.9
+              "x": 313.49,
+              "y": 530.24
             },
             {
-              "x": 305.44,
-              "y": 537.9
+              "x": 384.11,
+              "y": 530.24
             },
             {
-              "x": 312.15999999999997,
-              "y": 579.3
+              "x": 390.99999999999994,
+              "y": 550.04
             },
             {
-              "x": 229.84,
-              "y": 579.3
+              "x": 305.74,
+              "y": 550.04
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 302.3,
+              "y": 522.5
+            },
+            {
+              "x": 401.34000000000003,
+              "y": 522.5
+            },
+            {
+              "x": 401.34000000000003,
+              "y": 571.56
+            },
+            {
+              "x": 302.3,
+              "y": 571.56
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(9.08984% 0%, 91.9188% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2715,52 +2930,71 @@
         {
           "id": "onion",
           "controlRect": {
-            "x": 18,
-            "y": 596,
-            "width": 98,
-            "height": 61,
-            "right": 116,
-            "bottom": 657
+            "x": 62,
+            "y": 571.546875,
+            "width": 126.59375,
+            "height": 55.9375,
+            "right": 188.59375,
+            "bottom": 627.484375
           },
           "viewportRect": {
-            "x": 25,
-            "y": 602,
-            "width": 84,
-            "height": 45,
-            "right": 109,
-            "bottom": 647
+            "x": 96.4375,
+            "y": 580.15625,
+            "width": 87.84375,
+            "height": 22.375,
+            "right": 184.28125,
+            "bottom": 602.53125
           },
           "imageRect": {
-            "x": 17.4453125,
-            "y": 597.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 116.5546875,
-            "bottom": 651.046875
+            "x": 88.5390625,
+            "y": 578.1484375,
+            "width": 103.640625,
+            "height": 26.390625,
+            "right": 192.1796875,
+            "bottom": 604.5390625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 32.56,
-              "y": 602.9
+              "x": 102.49,
+              "y": 580.17
             },
             {
-              "x": 101.44000000000001,
-              "y": 602.9
+              "x": 181.72,
+              "y": 580.17
             },
             {
-              "x": 108.16000000000001,
-              "y": 644.3
+              "x": 184.31000000000003,
+              "y": 602.55
             },
             {
-              "x": 25.84,
-              "y": 644.3
+              "x": 96.46,
+              "y": 602.55
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 62.01,
+              "y": 571.56
+            },
+            {
+              "x": 188.60999999999996,
+              "y": 571.56
+            },
+            {
+              "x": 188.60999999999996,
+              "y": 627.51
+            },
+            {
+              "x": 62.01,
+              "y": 627.51
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(6.86397% 0%, 97.0518% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2779,52 +3013,71 @@
         {
           "id": "chili-powder",
           "controlRect": {
-            "x": 120,
-            "y": 596,
-            "width": 98,
-            "height": 61,
-            "right": 218,
-            "bottom": 657
+            "x": 188.609375,
+            "y": 571.546875,
+            "width": 98.171875,
+            "height": 55.9375,
+            "right": 286.78125,
+            "bottom": 627.484375
           },
           "viewportRect": {
-            "x": 127,
-            "y": 602,
-            "width": 84,
-            "height": 45,
-            "right": 211,
-            "bottom": 647
+            "x": 192.90625,
+            "y": 580.15625,
+            "width": 89.5625,
+            "height": 22.375,
+            "right": 282.46875,
+            "bottom": 602.53125
           },
           "imageRect": {
-            "x": 119.4453125,
-            "y": 597.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 218.5546875,
-            "bottom": 651.046875
+            "x": 184.8515625,
+            "y": 578.1484375,
+            "width": 105.671875,
+            "height": 26.390625,
+            "right": 290.5234375,
+            "bottom": 604.5390625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 134.56,
-              "y": 602.9
+              "x": 198.09,
+              "y": 580.17
             },
             {
-              "x": 203.44,
-              "y": 602.9
+              "x": 278.18,
+              "y": 580.17
             },
             {
-              "x": 210.15999999999997,
-              "y": 644.3
+              "x": 282.49,
+              "y": 602.55
             },
             {
-              "x": 127.83999999999999,
-              "y": 644.3
+              "x": 192.92,
+              "y": 602.55
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 188.61,
+              "y": 571.56
+            },
+            {
+              "x": 286.79,
+              "y": 571.56
+            },
+            {
+              "x": 286.79,
+              "y": 627.51
+            },
+            {
+              "x": 188.61,
+              "y": 627.51
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(5.77202% 0%, 95.1881% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2843,52 +3096,71 @@
         {
           "id": "turkey-noodle",
           "controlRect": {
-            "x": 222,
-            "y": 596,
-            "width": 98,
-            "height": 61,
-            "right": 320,
-            "bottom": 657
+            "x": 286.78125,
+            "y": 571.546875,
+            "width": 105.0625,
+            "height": 55.9375,
+            "right": 391.84375,
+            "bottom": 627.484375
           },
           "viewportRect": {
-            "x": 229,
-            "y": 602,
-            "width": 84,
-            "height": 45,
-            "right": 313,
-            "bottom": 647
+            "x": 290.21875,
+            "y": 581.015625,
+            "width": 88.703125,
+            "height": 22.375,
+            "right": 378.921875,
+            "bottom": 603.390625
           },
           "imageRect": {
-            "x": 221.4453125,
-            "y": 597.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 320.5546875,
-            "bottom": 651.046875
+            "x": 282.234375,
+            "y": 579.0078125,
+            "width": 104.65625,
+            "height": 26.390625,
+            "right": 386.890625,
+            "bottom": 605.3984375
           },
           "canonicalInnerPolygon": [
             {
-              "x": 236.56,
-              "y": 602.9
+              "x": 295.41,
+              "y": 581.03
             },
             {
-              "x": 305.44,
-              "y": 602.9
+              "x": 375.5,
+              "y": 581.03
             },
             {
-              "x": 312.15999999999997,
-              "y": 644.3
+              "x": 378.95,
+              "y": 603.41
             },
             {
-              "x": 229.84,
-              "y": 644.3
+              "x": 290.24,
+              "y": 603.41
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 286.79,
+              "y": 571.56
+            },
+            {
+              "x": 391.86,
+              "y": 571.56
+            },
+            {
+              "x": 391.86,
+              "y": 627.51
+            },
+            {
+              "x": 286.79,
+              "y": 627.51
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(5.82798% 0%, 96.1109% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2907,52 +3179,71 @@
         {
           "id": "cheese",
           "controlRect": {
-            "x": 18,
-            "y": 661,
-            "width": 98,
-            "height": 61,
-            "right": 116,
-            "bottom": 722
+            "x": 36.15625,
+            "y": 627.5,
+            "width": 130.90625,
+            "height": 61.109375,
+            "right": 167.0625,
+            "bottom": 688.609375
           },
           "viewportRect": {
-            "x": 25,
-            "y": 667,
-            "width": 84,
-            "height": 45,
-            "right": 109,
-            "bottom": 712
+            "x": 68.875,
+            "y": 638.6875,
+            "width": 94.734375,
+            "height": 23.234375,
+            "right": 163.609375,
+            "bottom": 661.921875
           },
           "imageRect": {
-            "x": 17.4453125,
-            "y": 662.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 116.5546875,
-            "bottom": 716.046875
+            "x": 60.34375,
+            "y": 636.59375,
+            "width": 111.78125,
+            "height": 27.40625,
+            "right": 172.125,
+            "bottom": 664
           },
           "canonicalInnerPolygon": [
             {
-              "x": 32.56,
-              "y": 667.9
+              "x": 74.93,
+              "y": 638.7
             },
             {
-              "x": 101.44000000000001,
-              "y": 667.9
+              "x": 158.47,
+              "y": 638.7
             },
             {
-              "x": 108.16000000000001,
-              "y": 709.3
+              "x": 163.64,
+              "y": 661.94
             },
             {
-              "x": 25.84,
-              "y": 709.3
+              "x": 68.9,
+              "y": 661.94
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 36.17,
+              "y": 627.51
+            },
+            {
+              "x": 167.07999999999998,
+              "y": 627.51
+            },
+            {
+              "x": 167.07999999999998,
+              "y": 688.63
+            },
+            {
+              "x": 36.17,
+              "y": 688.63
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(6.36479% 0%, 94.543% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -2971,52 +3262,71 @@
         {
           "id": "corn",
           "controlRect": {
-            "x": 120,
-            "y": 661,
-            "width": 98,
-            "height": 61,
-            "right": 218,
-            "bottom": 722
+            "x": 167.078125,
+            "y": 627.5,
+            "width": 101.609375,
+            "height": 61.109375,
+            "right": 268.6875,
+            "bottom": 688.609375
           },
           "viewportRect": {
-            "x": 127,
-            "y": 667,
-            "width": 84,
-            "height": 45,
-            "right": 211,
-            "bottom": 712
+            "x": 170.515625,
+            "y": 639.546875,
+            "width": 93.859375,
+            "height": 23.25,
+            "right": 264.375,
+            "bottom": 662.796875
           },
           "imageRect": {
-            "x": 119.4453125,
-            "y": 662.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 218.5546875,
-            "bottom": 716.046875
+            "x": 162.0625,
+            "y": 637.4609375,
+            "width": 110.75,
+            "height": 27.421875,
+            "right": 272.8125,
+            "bottom": 664.8828125
           },
           "canonicalInnerPolygon": [
             {
-              "x": 134.56,
-              "y": 667.9
+              "x": 176.56,
+              "y": 639.56
             },
             {
-              "x": 203.44,
-              "y": 667.9
+              "x": 260.1,
+              "y": 639.56
             },
             {
-              "x": 210.15999999999997,
-              "y": 709.3
+              "x": 264.4,
+              "y": 662.81
             },
             {
-              "x": 127.83999999999999,
-              "y": 709.3
+              "x": 170.53,
+              "y": 662.81
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 167.08,
+              "y": 627.51
+            },
+            {
+              "x": 268.70000000000005,
+              "y": 627.51
+            },
+            {
+              "x": 268.70000000000005,
+              "y": 688.63
+            },
+            {
+              "x": 167.08,
+              "y": 688.63
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(6.42378% 0%, 95.4192% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3046,7 +3356,7 @@
       "activeCustomers": 3,
       "stationaryFoodPixels": {
         "accepted": true,
-        "changedPixelCount": 12125,
+        "changedPixelCount": 2727,
         "outsideAllowedPixelCount": 0,
         "rimChangedPixelCount": 0,
         "unusedCellChangedPixelCount": 0,
@@ -3054,55 +3364,55 @@
         "antialiasTolerance": 1,
         "maxAntialiasPixels": 3960,
         "bounds": {
-          "left": 41,
-          "top": 477,
-          "right": 293,
-          "bottom": 707
+          "left": 104,
+          "top": 483,
+          "right": 371,
+          "bottom": 659
         },
         "masks": [
           {
             "id": "noodle",
-            "changedPixelCount": 1682
+            "changedPixelCount": 285
           },
           {
             "id": "egg",
-            "changedPixelCount": 1061
+            "changedPixelCount": 174
           },
           {
             "id": "hot-dog",
-            "changedPixelCount": 955
+            "changedPixelCount": 160
           },
           {
             "id": "sauce",
-            "changedPixelCount": 1190
+            "changedPixelCount": 236
           },
           {
             "id": "scallion",
-            "changedPixelCount": 902
+            "changedPixelCount": 202
           },
           {
             "id": "cilantro",
-            "changedPixelCount": 1242
+            "changedPixelCount": 242
           },
           {
             "id": "onion",
-            "changedPixelCount": 1230
+            "changedPixelCount": 337
           },
           {
             "id": "chili-powder",
-            "changedPixelCount": 959
+            "changedPixelCount": 261
           },
           {
             "id": "turkey-noodle",
-            "changedPixelCount": 1042
+            "changedPixelCount": 273
           },
           {
             "id": "cheese",
-            "changedPixelCount": 1116
+            "changedPixelCount": 333
           },
           {
             "id": "corn",
-            "changedPixelCount": 746
+            "changedPixelCount": 224
           }
         ]
       }
@@ -3128,285 +3438,288 @@
       ],
       "ingredientCount": 15,
       "rackLayout": "expanded-3x5",
+      "rackBackground": "expanded-3x5",
+      "backgroundSource": "/src/assets/approved/main-ui/kitchen-screen-live-expanded-clean.png",
+      "physicalWellCount": 15,
       "rack": {
         "columns": 3,
         "rows": 5,
-        "left": 18,
-        "top": 466,
-        "columnGap": 102,
-        "rowGap": 65,
-        "width": 98,
-        "height": 61
+        "left": 10.33,
+        "top": 469.13,
+        "columnGap": 0,
+        "rowGap": 0,
+        "width": 403.07,
+        "height": 287.5
       },
       "rackControlPolygons": [
         [
           {
-            "x": 18,
-            "y": 466
+            "x": 113.68000000000002,
+            "y": 469.13
           },
           {
-            "x": 116.00000000000001,
-            "y": 466
+            "x": 229.95,
+            "y": 469.13
           },
           {
-            "x": 116.00000000000001,
-            "y": 527
+            "x": 229.95,
+            "y": 522.5
           },
           {
-            "x": 18,
-            "y": 527
+            "x": 113.68000000000002,
+            "y": 522.5
           }
         ],
         [
           {
-            "x": 120,
-            "y": 466
+            "x": 229.95,
+            "y": 469.13
           },
           {
-            "x": 217.99999999999997,
-            "y": 466
+            "x": 318.65999999999997,
+            "y": 469.13
           },
           {
-            "x": 217.99999999999997,
-            "y": 527
+            "x": 318.65999999999997,
+            "y": 522.5
           },
           {
-            "x": 120,
-            "y": 527
+            "x": 229.95,
+            "y": 522.5
           }
         ],
         [
           {
-            "x": 222,
-            "y": 466
+            "x": 318.66,
+            "y": 469.13
           },
           {
-            "x": 320,
-            "y": 466
+            "x": 413.40000000000003,
+            "y": 469.13
           },
           {
-            "x": 320,
-            "y": 527
+            "x": 413.40000000000003,
+            "y": 522.5
           },
           {
-            "x": 222,
-            "y": 527
+            "x": 318.66,
+            "y": 522.5
           }
         ],
         [
           {
-            "x": 18,
-            "y": 531
+            "x": 86.99,
+            "y": 522.5
           },
           {
-            "x": 116.00000000000001,
-            "y": 531
+            "x": 209.28,
+            "y": 522.5
           },
           {
-            "x": 116.00000000000001,
-            "y": 592
+            "x": 209.28,
+            "y": 571.56
           },
           {
-            "x": 18,
-            "y": 592
+            "x": 86.99,
+            "y": 571.56
           }
         ],
         [
           {
-            "x": 120,
-            "y": 531
+            "x": 209.28,
+            "y": 522.5
           },
           {
-            "x": 217.99999999999997,
-            "y": 531
+            "x": 302.29,
+            "y": 522.5
           },
           {
-            "x": 217.99999999999997,
-            "y": 592
+            "x": 302.29,
+            "y": 571.56
           },
           {
-            "x": 120,
-            "y": 592
+            "x": 209.28,
+            "y": 571.56
           }
         ],
         [
           {
-            "x": 222,
-            "y": 531
+            "x": 302.3,
+            "y": 522.5
           },
           {
-            "x": 320,
-            "y": 531
+            "x": 401.34000000000003,
+            "y": 522.5
           },
           {
-            "x": 320,
-            "y": 592
+            "x": 401.34000000000003,
+            "y": 571.56
           },
           {
-            "x": 222,
-            "y": 592
+            "x": 302.3,
+            "y": 571.56
           }
         ],
         [
           {
-            "x": 18,
-            "y": 596
+            "x": 62.01,
+            "y": 571.56
           },
           {
-            "x": 116.00000000000001,
-            "y": 596
+            "x": 188.60999999999996,
+            "y": 571.56
           },
           {
-            "x": 116.00000000000001,
-            "y": 657
+            "x": 188.60999999999996,
+            "y": 627.51
           },
           {
-            "x": 18,
-            "y": 657
+            "x": 62.01,
+            "y": 627.51
           }
         ],
         [
           {
-            "x": 120,
-            "y": 596
+            "x": 188.61,
+            "y": 571.56
           },
           {
-            "x": 217.99999999999997,
-            "y": 596
+            "x": 286.79,
+            "y": 571.56
           },
           {
-            "x": 217.99999999999997,
-            "y": 657
+            "x": 286.79,
+            "y": 627.51
           },
           {
-            "x": 120,
-            "y": 657
+            "x": 188.61,
+            "y": 627.51
           }
         ],
         [
           {
-            "x": 222,
-            "y": 596
+            "x": 286.79,
+            "y": 571.56
           },
           {
-            "x": 320,
-            "y": 596
+            "x": 391.86,
+            "y": 571.56
           },
           {
-            "x": 320,
-            "y": 657
+            "x": 391.86,
+            "y": 627.51
           },
           {
-            "x": 222,
-            "y": 657
+            "x": 286.79,
+            "y": 627.51
           }
         ],
         [
           {
-            "x": 18,
-            "y": 661
+            "x": 36.17,
+            "y": 627.51
           },
           {
-            "x": 116.00000000000001,
-            "y": 661
+            "x": 167.07999999999998,
+            "y": 627.51
           },
           {
-            "x": 116.00000000000001,
-            "y": 722
+            "x": 167.07999999999998,
+            "y": 688.63
           },
           {
-            "x": 18,
-            "y": 722
+            "x": 36.17,
+            "y": 688.63
           }
         ],
         [
           {
-            "x": 120,
-            "y": 661
+            "x": 167.08,
+            "y": 627.51
           },
           {
-            "x": 217.99999999999997,
-            "y": 661
+            "x": 268.70000000000005,
+            "y": 627.51
           },
           {
-            "x": 217.99999999999997,
-            "y": 722
+            "x": 268.70000000000005,
+            "y": 688.63
           },
           {
-            "x": 120,
-            "y": 722
+            "x": 167.08,
+            "y": 688.63
           }
         ],
         [
           {
-            "x": 222,
-            "y": 661
+            "x": 268.71,
+            "y": 627.51
           },
           {
-            "x": 320,
-            "y": 661
+            "x": 380.6699999999999,
+            "y": 627.51
           },
           {
-            "x": 320,
-            "y": 722
+            "x": 380.6699999999999,
+            "y": 688.63
           },
           {
-            "x": 222,
-            "y": 722
+            "x": 268.71,
+            "y": 688.63
           }
         ],
         [
           {
-            "x": 18,
-            "y": 726
+            "x": 10.33,
+            "y": 688.63
           },
           {
-            "x": 116.00000000000001,
-            "y": 726
+            "x": 145.55,
+            "y": 688.63
           },
           {
-            "x": 116.00000000000001,
-            "y": 787
+            "x": 145.55,
+            "y": 756.63
           },
           {
-            "x": 18,
-            "y": 787
+            "x": 10.33,
+            "y": 756.63
           }
         ],
         [
           {
-            "x": 120,
-            "y": 726
+            "x": 145.55,
+            "y": 688.63
           },
           {
-            "x": 217.99999999999997,
-            "y": 726
+            "x": 254.07,
+            "y": 688.63
           },
           {
-            "x": 217.99999999999997,
-            "y": 787
+            "x": 254.07,
+            "y": 756.63
           },
           {
-            "x": 120,
-            "y": 787
+            "x": 145.55,
+            "y": 756.63
           }
         ],
         [
           {
-            "x": 222,
-            "y": 726
+            "x": 254.07,
+            "y": 688.63
           },
           {
-            "x": 320,
-            "y": 726
+            "x": 369.48,
+            "y": 688.63
           },
           {
-            "x": 320,
-            "y": 787
+            "x": 369.48,
+            "y": 756.63
           },
           {
-            "x": 222,
-            "y": 787
+            "x": 254.07,
+            "y": 756.63
           }
         ]
       ],
@@ -3415,52 +3728,71 @@
         {
           "id": "noodle",
           "controlRect": {
-            "x": 18,
-            "y": 466,
-            "width": 98,
-            "height": 61,
-            "right": 116,
-            "bottom": 527
+            "x": 113.671875,
+            "y": 469.125,
+            "width": 116.265625,
+            "height": 53.359375,
+            "right": 229.9375,
+            "bottom": 522.484375
           },
           "viewportRect": {
-            "x": 25,
-            "y": 472,
-            "width": 84,
-            "height": 45,
-            "right": 109,
-            "bottom": 517
+            "x": 145.53125,
+            "y": 482.03125,
+            "width": 80.09375,
+            "height": 18.078125,
+            "right": 225.625,
+            "bottom": 500.109375
           },
           "imageRect": {
-            "x": 17.4453125,
-            "y": 467.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 116.5546875,
-            "bottom": 521.046875
+            "x": 138.328125,
+            "y": 480.3984375,
+            "width": 94.5,
+            "height": 21.328125,
+            "right": 232.828125,
+            "bottom": 501.7265625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 32.56,
-              "y": 472.9
+              "x": 152.44,
+              "y": 482.04
             },
             {
-              "x": 101.44000000000001,
-              "y": 472.9
+              "x": 219.62,
+              "y": 482.04
             },
             {
-              "x": 108.16000000000001,
-              "y": 514.3
+              "x": 225.65000000000003,
+              "y": 500.12000000000006
             },
             {
-              "x": 25.84,
-              "y": 514.3
+              "x": 145.55,
+              "y": 500.12000000000006
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 113.68000000000002,
+              "y": 469.13
+            },
+            {
+              "x": 229.95,
+              "y": 469.13
+            },
+            {
+              "x": 229.95,
+              "y": 522.5
+            },
+            {
+              "x": 113.68000000000002,
+              "y": 522.5
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.60175% 0%, 92.4719% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3479,52 +3811,71 @@
         {
           "id": "egg",
           "controlRect": {
-            "x": 120,
-            "y": 466,
-            "width": 98,
-            "height": 61,
-            "right": 218,
-            "bottom": 527
+            "x": 229.9375,
+            "y": 469.125,
+            "width": 88.703125,
+            "height": 53.359375,
+            "right": 318.640625,
+            "bottom": 522.484375
           },
           "viewportRect": {
-            "x": 127,
-            "y": 472,
-            "width": 84,
-            "height": 45,
-            "right": 211,
-            "bottom": 517
+            "x": 234.234375,
+            "y": 482.03125,
+            "width": 80.078125,
+            "height": 18.078125,
+            "right": 314.3125,
+            "bottom": 500.109375
           },
           "imageRect": {
-            "x": 119.4453125,
-            "y": 467.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 218.5546875,
-            "bottom": 521.046875
+            "x": 227.0234375,
+            "y": 480.3984375,
+            "width": 94.484375,
+            "height": 21.328125,
+            "right": 321.5078125,
+            "bottom": 501.7265625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 134.56,
-              "y": 472.9
+              "x": 241.15,
+              "y": 482.04
             },
             {
-              "x": 203.44,
-              "y": 472.9
+              "x": 308.33,
+              "y": 482.04
             },
             {
-              "x": 210.15999999999997,
-              "y": 514.3
+              "x": 314.35,
+              "y": 500.12000000000006
             },
             {
-              "x": 127.83999999999999,
-              "y": 514.3
+              "x": 234.26,
+              "y": 500.12000000000006
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 229.95,
+              "y": 469.13
+            },
+            {
+              "x": 318.65999999999997,
+              "y": 469.13
+            },
+            {
+              "x": 318.65999999999997,
+              "y": 522.5
+            },
+            {
+              "x": 229.95,
+              "y": 522.5
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.60282% 0%, 92.4835% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3543,52 +3894,71 @@
         {
           "id": "hot-dog",
           "controlRect": {
-            "x": 222,
-            "y": 466,
-            "width": 98,
-            "height": 61,
-            "right": 320,
-            "bottom": 527
+            "x": 318.65625,
+            "y": 469.125,
+            "width": 94.734375,
+            "height": 53.359375,
+            "right": 413.390625,
+            "bottom": 522.484375
           },
           "viewportRect": {
-            "x": 229,
-            "y": 472,
-            "width": 84,
-            "height": 45,
-            "right": 313,
-            "bottom": 517
+            "x": 322.953125,
+            "y": 482.890625,
+            "width": 79.21875,
+            "height": 18.078125,
+            "right": 402.171875,
+            "bottom": 500.96875
           },
           "imageRect": {
-            "x": 221.4453125,
-            "y": 467.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 320.5546875,
-            "bottom": 521.046875
+            "x": 315.828125,
+            "y": 481.2578125,
+            "width": 93.46875,
+            "height": 21.328125,
+            "right": 409.296875,
+            "bottom": 502.5859375
           },
           "canonicalInnerPolygon": [
             {
-              "x": 236.56,
-              "y": 472.9
+              "x": 329.86,
+              "y": 482.9
             },
             {
-              "x": 305.44,
-              "y": 472.9
+              "x": 396.17,
+              "y": 482.9
             },
             {
-              "x": 312.15999999999997,
-              "y": 514.3
+              "x": 402.2,
+              "y": 500.98
             },
             {
-              "x": 229.84,
-              "y": 514.3
+              "x": 322.97,
+              "y": 500.98
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 318.66,
+              "y": 469.13
+            },
+            {
+              "x": 413.40000000000003,
+              "y": 469.13
+            },
+            {
+              "x": 413.40000000000003,
+              "y": 522.5
+            },
+            {
+              "x": 318.66,
+              "y": 522.5
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(8.6962% 0%, 92.3892% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3607,52 +3977,71 @@
         {
           "id": "sauce",
           "controlRect": {
-            "x": 18,
-            "y": 531,
-            "width": 98,
-            "height": 61,
-            "right": 116,
-            "bottom": 592
+            "x": 86.984375,
+            "y": 522.5,
+            "width": 122.28125,
+            "height": 49.046875,
+            "right": 209.265625,
+            "bottom": 571.546875
           },
           "viewportRect": {
-            "x": 25,
-            "y": 537,
-            "width": 84,
-            "height": 45,
-            "right": 109,
-            "bottom": 582
+            "x": 119.703125,
+            "y": 529.375,
+            "width": 85.265625,
+            "height": 19.796875,
+            "right": 204.96875,
+            "bottom": 549.171875
           },
           "imageRect": {
-            "x": 17.4453125,
-            "y": 532.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 116.5546875,
-            "bottom": 586.046875
+            "x": 112.0234375,
+            "y": 527.5859375,
+            "width": 100.609375,
+            "height": 23.359375,
+            "right": 212.6328125,
+            "bottom": 550.9453125
           },
           "canonicalInnerPolygon": [
             {
-              "x": 32.56,
-              "y": 537.9
+              "x": 128.33,
+              "y": 529.38
             },
             {
-              "x": 101.44000000000001,
-              "y": 537.9
+              "x": 198.09,
+              "y": 529.38
             },
             {
-              "x": 108.16000000000001,
-              "y": 579.3
+              "x": 204.98,
+              "y": 549.18
             },
             {
-              "x": 25.84,
-              "y": 579.3
+              "x": 119.71,
+              "y": 549.18
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 86.99,
+              "y": 522.5
+            },
+            {
+              "x": 209.28,
+              "y": 522.5
+            },
+            {
+              "x": 209.28,
+              "y": 571.56
+            },
+            {
+              "x": 86.99,
+              "y": 571.56
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(10.1091% 0%, 91.9198% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3671,52 +4060,71 @@
         {
           "id": "scallion",
           "controlRect": {
-            "x": 120,
-            "y": 531,
-            "width": 98,
-            "height": 61,
-            "right": 218,
-            "bottom": 592
+            "x": 209.265625,
+            "y": 522.5,
+            "width": 93,
+            "height": 49.046875,
+            "right": 302.265625,
+            "bottom": 571.546875
           },
           "viewportRect": {
-            "x": 127,
-            "y": 537,
-            "width": 84,
-            "height": 45,
-            "right": 211,
-            "bottom": 582
+            "x": 212.703125,
+            "y": 529.375,
+            "width": 85.25,
+            "height": 20.65625,
+            "right": 297.953125,
+            "bottom": 550.03125
           },
           "imageRect": {
-            "x": 119.4453125,
-            "y": 532.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 218.5546875,
-            "bottom": 586.046875
+            "x": 205.03125,
+            "y": 527.5234375,
+            "width": 100.59375,
+            "height": 24.359375,
+            "right": 305.625,
+            "bottom": 551.8828125
           },
           "canonicalInnerPolygon": [
             {
-              "x": 134.56,
-              "y": 537.9
+              "x": 220.48000000000002,
+              "y": 529.38
             },
             {
-              "x": 203.44,
-              "y": 537.9
+              "x": 291.1,
+              "y": 529.38
             },
             {
-              "x": 210.15999999999997,
-              "y": 579.3
+              "x": 297.99,
+              "y": 550.04
             },
             {
-              "x": 127.83999999999999,
-              "y": 579.3
+              "x": 212.73,
+              "y": 550.04
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 209.28,
+              "y": 522.5
+            },
+            {
+              "x": 302.29,
+              "y": 522.5
+            },
+            {
+              "x": 302.29,
+              "y": 571.56
+            },
+            {
+              "x": 209.28,
+              "y": 571.56
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(9.08984% 0%, 91.9188% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3735,52 +4143,71 @@
         {
           "id": "cilantro",
           "controlRect": {
-            "x": 222,
-            "y": 531,
-            "width": 98,
-            "height": 61,
-            "right": 320,
-            "bottom": 592
+            "x": 302.296875,
+            "y": 522.5,
+            "width": 99.03125,
+            "height": 49.046875,
+            "right": 401.328125,
+            "bottom": 571.546875
           },
           "viewportRect": {
-            "x": 229,
-            "y": 537,
-            "width": 84,
-            "height": 45,
-            "right": 313,
-            "bottom": 582
+            "x": 305.734375,
+            "y": 530.234375,
+            "width": 85.25,
+            "height": 19.796875,
+            "right": 390.984375,
+            "bottom": 550.03125
           },
           "imageRect": {
-            "x": 221.4453125,
-            "y": 532.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 320.5546875,
-            "bottom": 586.046875
+            "x": 298.0625,
+            "y": 528.4453125,
+            "width": 100.59375,
+            "height": 23.359375,
+            "right": 398.65625,
+            "bottom": 551.8046875
           },
           "canonicalInnerPolygon": [
             {
-              "x": 236.56,
-              "y": 537.9
+              "x": 313.49,
+              "y": 530.24
             },
             {
-              "x": 305.44,
-              "y": 537.9
+              "x": 384.11,
+              "y": 530.24
             },
             {
-              "x": 312.15999999999997,
-              "y": 579.3
+              "x": 390.99999999999994,
+              "y": 550.04
             },
             {
-              "x": 229.84,
-              "y": 579.3
+              "x": 305.74,
+              "y": 550.04
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 302.3,
+              "y": 522.5
+            },
+            {
+              "x": 401.34000000000003,
+              "y": 522.5
+            },
+            {
+              "x": 401.34000000000003,
+              "y": 571.56
+            },
+            {
+              "x": 302.3,
+              "y": 571.56
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(9.08984% 0%, 91.9188% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3799,52 +4226,71 @@
         {
           "id": "onion",
           "controlRect": {
-            "x": 18,
-            "y": 596,
-            "width": 98,
-            "height": 61,
-            "right": 116,
-            "bottom": 657
+            "x": 62,
+            "y": 571.546875,
+            "width": 126.59375,
+            "height": 55.9375,
+            "right": 188.59375,
+            "bottom": 627.484375
           },
           "viewportRect": {
-            "x": 25,
-            "y": 602,
-            "width": 84,
-            "height": 45,
-            "right": 109,
-            "bottom": 647
+            "x": 96.4375,
+            "y": 580.15625,
+            "width": 87.84375,
+            "height": 22.375,
+            "right": 184.28125,
+            "bottom": 602.53125
           },
           "imageRect": {
-            "x": 17.4453125,
-            "y": 597.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 116.5546875,
-            "bottom": 651.046875
+            "x": 88.5390625,
+            "y": 578.1484375,
+            "width": 103.640625,
+            "height": 26.390625,
+            "right": 192.1796875,
+            "bottom": 604.5390625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 32.56,
-              "y": 602.9
+              "x": 102.49,
+              "y": 580.17
             },
             {
-              "x": 101.44000000000001,
-              "y": 602.9
+              "x": 181.72,
+              "y": 580.17
             },
             {
-              "x": 108.16000000000001,
-              "y": 644.3
+              "x": 184.31000000000003,
+              "y": 602.55
             },
             {
-              "x": 25.84,
-              "y": 644.3
+              "x": 96.46,
+              "y": 602.55
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 62.01,
+              "y": 571.56
+            },
+            {
+              "x": 188.60999999999996,
+              "y": 571.56
+            },
+            {
+              "x": 188.60999999999996,
+              "y": 627.51
+            },
+            {
+              "x": 62.01,
+              "y": 627.51
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(6.86397% 0%, 97.0518% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3863,52 +4309,71 @@
         {
           "id": "chili-powder",
           "controlRect": {
-            "x": 120,
-            "y": 596,
-            "width": 98,
-            "height": 61,
-            "right": 218,
-            "bottom": 657
+            "x": 188.609375,
+            "y": 571.546875,
+            "width": 98.171875,
+            "height": 55.9375,
+            "right": 286.78125,
+            "bottom": 627.484375
           },
           "viewportRect": {
-            "x": 127,
-            "y": 602,
-            "width": 84,
-            "height": 45,
-            "right": 211,
-            "bottom": 647
+            "x": 192.90625,
+            "y": 580.15625,
+            "width": 89.5625,
+            "height": 22.375,
+            "right": 282.46875,
+            "bottom": 602.53125
           },
           "imageRect": {
-            "x": 119.4453125,
-            "y": 597.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 218.5546875,
-            "bottom": 651.046875
+            "x": 184.8515625,
+            "y": 578.1484375,
+            "width": 105.671875,
+            "height": 26.390625,
+            "right": 290.5234375,
+            "bottom": 604.5390625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 134.56,
-              "y": 602.9
+              "x": 198.09,
+              "y": 580.17
             },
             {
-              "x": 203.44,
-              "y": 602.9
+              "x": 278.18,
+              "y": 580.17
             },
             {
-              "x": 210.15999999999997,
-              "y": 644.3
+              "x": 282.49,
+              "y": 602.55
             },
             {
-              "x": 127.83999999999999,
-              "y": 644.3
+              "x": 192.92,
+              "y": 602.55
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 188.61,
+              "y": 571.56
+            },
+            {
+              "x": 286.79,
+              "y": 571.56
+            },
+            {
+              "x": 286.79,
+              "y": 627.51
+            },
+            {
+              "x": 188.61,
+              "y": 627.51
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(5.77202% 0%, 95.1881% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3927,52 +4392,71 @@
         {
           "id": "turkey-noodle",
           "controlRect": {
-            "x": 222,
-            "y": 596,
-            "width": 98,
-            "height": 61,
-            "right": 320,
-            "bottom": 657
+            "x": 286.78125,
+            "y": 571.546875,
+            "width": 105.0625,
+            "height": 55.9375,
+            "right": 391.84375,
+            "bottom": 627.484375
           },
           "viewportRect": {
-            "x": 229,
-            "y": 602,
-            "width": 84,
-            "height": 45,
-            "right": 313,
-            "bottom": 647
+            "x": 290.21875,
+            "y": 581.015625,
+            "width": 88.703125,
+            "height": 22.375,
+            "right": 378.921875,
+            "bottom": 603.390625
           },
           "imageRect": {
-            "x": 221.4453125,
-            "y": 597.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 320.5546875,
-            "bottom": 651.046875
+            "x": 282.234375,
+            "y": 579.0078125,
+            "width": 104.65625,
+            "height": 26.390625,
+            "right": 386.890625,
+            "bottom": 605.3984375
           },
           "canonicalInnerPolygon": [
             {
-              "x": 236.56,
-              "y": 602.9
+              "x": 295.41,
+              "y": 581.03
             },
             {
-              "x": 305.44,
-              "y": 602.9
+              "x": 375.5,
+              "y": 581.03
             },
             {
-              "x": 312.15999999999997,
-              "y": 644.3
+              "x": 378.95,
+              "y": 603.41
             },
             {
-              "x": 229.84,
-              "y": 644.3
+              "x": 290.24,
+              "y": 603.41
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 286.79,
+              "y": 571.56
+            },
+            {
+              "x": 391.86,
+              "y": 571.56
+            },
+            {
+              "x": 391.86,
+              "y": 627.51
+            },
+            {
+              "x": 286.79,
+              "y": 627.51
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(5.82798% 0%, 96.1109% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -3991,52 +4475,71 @@
         {
           "id": "cheese",
           "controlRect": {
-            "x": 18,
-            "y": 661,
-            "width": 98,
-            "height": 61,
-            "right": 116,
-            "bottom": 722
+            "x": 36.15625,
+            "y": 627.5,
+            "width": 130.90625,
+            "height": 61.109375,
+            "right": 167.0625,
+            "bottom": 688.609375
           },
           "viewportRect": {
-            "x": 25,
-            "y": 667,
-            "width": 84,
-            "height": 45,
-            "right": 109,
-            "bottom": 712
+            "x": 68.875,
+            "y": 638.6875,
+            "width": 94.734375,
+            "height": 23.234375,
+            "right": 163.609375,
+            "bottom": 661.921875
           },
           "imageRect": {
-            "x": 17.4453125,
-            "y": 662.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 116.5546875,
-            "bottom": 716.046875
+            "x": 60.34375,
+            "y": 636.59375,
+            "width": 111.78125,
+            "height": 27.40625,
+            "right": 172.125,
+            "bottom": 664
           },
           "canonicalInnerPolygon": [
             {
-              "x": 32.56,
-              "y": 667.9
+              "x": 74.93,
+              "y": 638.7
             },
             {
-              "x": 101.44000000000001,
-              "y": 667.9
+              "x": 158.47,
+              "y": 638.7
             },
             {
-              "x": 108.16000000000001,
-              "y": 709.3
+              "x": 163.64,
+              "y": 661.94
             },
             {
-              "x": 25.84,
-              "y": 709.3
+              "x": 68.9,
+              "y": 661.94
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 36.17,
+              "y": 627.51
+            },
+            {
+              "x": 167.07999999999998,
+              "y": 627.51
+            },
+            {
+              "x": 167.07999999999998,
+              "y": 688.63
+            },
+            {
+              "x": 36.17,
+              "y": 688.63
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(6.36479% 0%, 94.543% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -4055,52 +4558,71 @@
         {
           "id": "corn",
           "controlRect": {
-            "x": 120,
-            "y": 661,
-            "width": 98,
-            "height": 61,
-            "right": 218,
-            "bottom": 722
+            "x": 167.078125,
+            "y": 627.5,
+            "width": 101.609375,
+            "height": 61.109375,
+            "right": 268.6875,
+            "bottom": 688.609375
           },
           "viewportRect": {
-            "x": 127,
-            "y": 667,
-            "width": 84,
-            "height": 45,
-            "right": 211,
-            "bottom": 712
+            "x": 170.515625,
+            "y": 639.546875,
+            "width": 93.859375,
+            "height": 23.25,
+            "right": 264.375,
+            "bottom": 662.796875
           },
           "imageRect": {
-            "x": 119.4453125,
-            "y": 662.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 218.5546875,
-            "bottom": 716.046875
+            "x": 162.0625,
+            "y": 637.4609375,
+            "width": 110.75,
+            "height": 27.421875,
+            "right": 272.8125,
+            "bottom": 664.8828125
           },
           "canonicalInnerPolygon": [
             {
-              "x": 134.56,
-              "y": 667.9
+              "x": 176.56,
+              "y": 639.56
             },
             {
-              "x": 203.44,
-              "y": 667.9
+              "x": 260.1,
+              "y": 639.56
             },
             {
-              "x": 210.15999999999997,
-              "y": 709.3
+              "x": 264.4,
+              "y": 662.81
             },
             {
-              "x": 127.83999999999999,
-              "y": 709.3
+              "x": 170.53,
+              "y": 662.81
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 167.08,
+              "y": 627.51
+            },
+            {
+              "x": 268.70000000000005,
+              "y": 627.51
+            },
+            {
+              "x": 268.70000000000005,
+              "y": 688.63
+            },
+            {
+              "x": 167.08,
+              "y": 688.63
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(6.42378% 0%, 95.4192% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -4119,52 +4641,71 @@
         {
           "id": "orleans",
           "controlRect": {
-            "x": 222,
-            "y": 661,
-            "width": 98,
-            "height": 61,
-            "right": 320,
-            "bottom": 722
+            "x": 268.703125,
+            "y": 627.5,
+            "width": 111.953125,
+            "height": 61.109375,
+            "right": 380.65625,
+            "bottom": 688.609375
           },
           "viewportRect": {
-            "x": 229,
-            "y": 667,
-            "width": 84,
-            "height": 45,
-            "right": 313,
-            "bottom": 712
+            "x": 272.140625,
+            "y": 640.40625,
+            "width": 93.875,
+            "height": 22.375,
+            "right": 366.015625,
+            "bottom": 662.78125
           },
           "imageRect": {
-            "x": 221.4453125,
-            "y": 662.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 320.5546875,
-            "bottom": 716.046875
+            "x": 263.6953125,
+            "y": 638.3984375,
+            "width": 110.765625,
+            "height": 26.390625,
+            "right": 374.4609375,
+            "bottom": 664.7890625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 236.56,
-              "y": 667.9
+              "x": 279.04,
+              "y": 640.43
             },
             {
-              "x": 305.44,
-              "y": 667.9
+              "x": 361.71999999999997,
+              "y": 640.43
             },
             {
-              "x": 312.15999999999997,
-              "y": 709.3
+              "x": 366.0299999999999,
+              "y": 662.81
             },
             {
-              "x": 229.84,
-              "y": 709.3
+              "x": 272.15,
+              "y": 662.81
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 268.71,
+              "y": 627.51
+            },
+            {
+              "x": 380.6699999999999,
+              "y": 627.51
+            },
+            {
+              "x": 380.6699999999999,
+              "y": 688.63
+            },
+            {
+              "x": 268.71,
+              "y": 688.63
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(7.33916% 0%, 95.409% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -4183,52 +4724,71 @@
         {
           "id": "bacon",
           "controlRect": {
-            "x": 18,
-            "y": 726,
-            "width": 98,
-            "height": 61,
-            "right": 116,
-            "bottom": 787
+            "x": 10.328125,
+            "y": 688.625,
+            "width": 135.21875,
+            "height": 68,
+            "right": 145.546875,
+            "bottom": 756.625
           },
           "viewportRect": {
-            "x": 25,
-            "y": 732,
-            "width": 84,
-            "height": 45,
-            "right": 109,
-            "bottom": 777
+            "x": 40.46875,
+            "y": 698.09375,
+            "width": 101.625,
+            "height": 24.09375,
+            "right": 142.09375,
+            "bottom": 722.1875
           },
           "imageRect": {
-            "x": 17.4453125,
-            "y": 727.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 116.5546875,
-            "bottom": 781.046875
+            "x": 31.328125,
+            "y": 695.9296875,
+            "width": 119.90625,
+            "height": 28.421875,
+            "right": 151.234375,
+            "bottom": 724.3515625
           },
           "canonicalInnerPolygon": [
             {
-              "x": 32.56,
-              "y": 732.9
+              "x": 47.37,
+              "y": 698.1
             },
             {
-              "x": 101.44000000000001,
-              "y": 732.9
+              "x": 136.08,
+              "y": 698.1
             },
             {
-              "x": 108.16000000000001,
-              "y": 774.3
+              "x": 142.11,
+              "y": 722.2
             },
             {
-              "x": 25.84,
-              "y": 774.3
+              "x": 40.48,
+              "y": 722.2
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 10.33,
+              "y": 688.63
+            },
+            {
+              "x": 145.55,
+              "y": 688.63
+            },
+            {
+              "x": 145.55,
+              "y": 756.63
+            },
+            {
+              "x": 10.33,
+              "y": 756.63
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(6.77949% 0%, 94.0667% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -4247,52 +4807,71 @@
         {
           "id": "tenderloin",
           "controlRect": {
-            "x": 120,
-            "y": 726,
-            "width": 98,
-            "height": 61,
-            "right": 218,
-            "bottom": 787
+            "x": 145.546875,
+            "y": 688.625,
+            "width": 108.515625,
+            "height": 68,
+            "right": 254.0625,
+            "bottom": 756.625
           },
           "viewportRect": {
-            "x": 127,
-            "y": 732,
-            "width": 84,
-            "height": 45,
-            "right": 211,
-            "bottom": 777
+            "x": 148.984375,
+            "y": 698.953125,
+            "width": 100.75,
+            "height": 24.09375,
+            "right": 249.734375,
+            "bottom": 723.046875
           },
           "imageRect": {
-            "x": 119.4453125,
-            "y": 727.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 218.5546875,
-            "bottom": 781.046875
+            "x": 139.921875,
+            "y": 696.7890625,
+            "width": 118.875,
+            "height": 28.421875,
+            "right": 258.796875,
+            "bottom": 725.2109375
           },
           "canonicalInnerPolygon": [
             {
-              "x": 134.56,
-              "y": 732.9
+              "x": 155.02,
+              "y": 698.96
             },
             {
-              "x": 203.44,
-              "y": 732.9
+              "x": 244.59,
+              "y": 698.96
             },
             {
-              "x": 210.15999999999997,
-              "y": 774.3
+              "x": 249.76,
+              "y": 723.06
             },
             {
-              "x": 127.83999999999999,
-              "y": 774.3
+              "x": 149,
+              "y": 723.06
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 145.55,
+              "y": 688.63
+            },
+            {
+              "x": 254.07,
+              "y": 688.63
+            },
+            {
+              "x": 254.07,
+              "y": 756.63
+            },
+            {
+              "x": 145.55,
+              "y": 756.63
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(5.97459% 0%, 94.869% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -4311,52 +4890,71 @@
         {
           "id": "enoki",
           "controlRect": {
-            "x": 222,
-            "y": 726,
-            "width": 98,
-            "height": 61,
-            "right": 320,
-            "bottom": 787
+            "x": 254.0625,
+            "y": 688.625,
+            "width": 115.40625,
+            "height": 68,
+            "right": 369.46875,
+            "bottom": 756.625
           },
           "viewportRect": {
-            "x": 229,
-            "y": 732,
-            "width": 84,
-            "height": 45,
-            "right": 313,
-            "bottom": 777
+            "x": 257.5,
+            "y": 699.8125,
+            "width": 99.90625,
+            "height": 23.234375,
+            "right": 357.40625,
+            "bottom": 723.046875
           },
           "imageRect": {
-            "x": 221.4453125,
-            "y": 727.953125,
-            "width": 99.109375,
-            "height": 53.09375,
-            "right": 320.5546875,
-            "bottom": 781.046875
+            "x": 248.515625,
+            "y": 697.71875,
+            "width": 117.875,
+            "height": 27.40625,
+            "right": 366.390625,
+            "bottom": 725.125
           },
           "canonicalInnerPolygon": [
             {
-              "x": 236.56,
-              "y": 732.9
+              "x": 264.4,
+              "y": 699.82
             },
             {
-              "x": 305.44,
-              "y": 732.9
+              "x": 353.11,
+              "y": 699.82
             },
             {
-              "x": 312.15999999999997,
-              "y": 774.3
+              "x": 357.42,
+              "y": 723.06
             },
             {
-              "x": 229.84,
-              "y": 774.3
+              "x": 257.51,
+              "y": 723.06
             }
           ],
+          "canonicalControlPolygon": [
+            {
+              "x": 254.07,
+              "y": 688.63
+            },
+            {
+              "x": 369.48,
+              "y": 688.63
+            },
+            {
+              "x": 369.48,
+              "y": 756.63
+            },
+            {
+              "x": 254.07,
+              "y": 756.63
+            }
+          ],
+          "physicalWellMapped": true,
           "canonicalMaskInsideViewport": true,
           "viewportInsideControl": true,
           "viewportHasPositiveInset": true,
           "viewportOverflow": "hidden/hidden",
-          "viewportClipPath": "polygon(9% 2%, 91% 2%, 99% 94%, 1% 94%)",
+          "viewportClipPath": "polygon(6.89621% 0%, 95.6861% 0%, 100% 100%, 0% 100%)",
           "viewportUsesPolygonMask": true,
           "imageExtendsBeyondViewport": true,
           "viewportCount": 1,
@@ -4386,79 +4984,79 @@
       "activeCustomers": 3,
       "stationaryFoodPixels": {
         "accepted": true,
-        "changedPixelCount": 16303,
+        "changedPixelCount": 3937,
         "outsideAllowedPixelCount": 0,
         "rimChangedPixelCount": 0,
         "unusedCellChangedPixelCount": 0,
-        "antialiasTolerancePixelCount": 2,
+        "antialiasTolerancePixelCount": 0,
         "antialiasTolerance": 1,
         "maxAntialiasPixels": 5400,
         "bounds": {
-          "left": 41,
-          "top": 477,
-          "right": 295,
-          "bottom": 774
+          "left": 78,
+          "top": 483,
+          "right": 371,
+          "bottom": 720
         },
         "masks": [
           {
             "id": "noodle",
-            "changedPixelCount": 1682
+            "changedPixelCount": 285
           },
           {
             "id": "egg",
-            "changedPixelCount": 1061
+            "changedPixelCount": 174
           },
           {
             "id": "hot-dog",
-            "changedPixelCount": 955
+            "changedPixelCount": 160
           },
           {
             "id": "sauce",
-            "changedPixelCount": 1190
+            "changedPixelCount": 236
           },
           {
             "id": "scallion",
-            "changedPixelCount": 902
+            "changedPixelCount": 202
           },
           {
             "id": "cilantro",
-            "changedPixelCount": 1242
+            "changedPixelCount": 242
           },
           {
             "id": "onion",
-            "changedPixelCount": 1230
+            "changedPixelCount": 337
           },
           {
             "id": "chili-powder",
-            "changedPixelCount": 959
+            "changedPixelCount": 261
           },
           {
             "id": "turkey-noodle",
-            "changedPixelCount": 1042
+            "changedPixelCount": 273
           },
           {
             "id": "cheese",
-            "changedPixelCount": 1116
+            "changedPixelCount": 333
           },
           {
             "id": "corn",
-            "changedPixelCount": 746
+            "changedPixelCount": 224
           },
           {
             "id": "orleans",
-            "changedPixelCount": 1168
+            "changedPixelCount": 307
           },
           {
             "id": "bacon",
-            "changedPixelCount": 1208
+            "changedPixelCount": 373
           },
           {
             "id": "tenderloin",
-            "changedPixelCount": 1079
+            "changedPixelCount": 321
           },
           {
             "id": "enoki",
-            "changedPixelCount": 721
+            "changedPixelCount": 209
           }
         ]
       }

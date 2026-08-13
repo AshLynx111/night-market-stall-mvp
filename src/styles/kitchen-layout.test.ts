@@ -119,14 +119,14 @@ describe('logical kitchen layout CSS', () => {
     const expanded = KITCHEN_RACK_LAYOUTS['expanded-3x5']
     expect(expanded.columns).toBe(3)
     expect(expanded.rows).toBe(5)
-    expect(expanded.left + 2 * expanded.columnGap + expanded.width).toBeLessThan(1440 * .341)
-    expect(expanded.top + 4 * expanded.rowGap + expanded.height).toBeLessThanOrEqual(810)
+    expect(Math.max(...rackRectangles('expanded-3x5').map((rectangle) => rectangle.right))).toBeLessThan(1440 * .341)
+    expect(Math.max(...rackRectangles('expanded-3x5').map((rectangle) => rectangle.bottom))).toBeLessThanOrEqual(810)
 
     expect(rackRule).not.toContain('--ingredient-rack-')
     expect(kitchenCss).not.toMatch(/\.kitchen-scene__ingredients\[data-rack-layout="expanded-3x5"\]\s*\{[^}]*--ingredient-rack-/s)
     expect(rackInnerPolygons('approved-2x3')).toHaveLength(6)
     expect(rackInnerPolygons('expanded-3x5')).toHaveLength(15)
-    expect(kitchenCss).toMatch(/\.table-ingredient\s*\{[^}]*left:\s*calc\(var\(--ingredient-rack-left\)[^}]*top:\s*calc\(var\(--ingredient-rack-top\)/s)
+    expect(kitchenCss).toMatch(/\.table-ingredient\s*\{[^}]*left:\s*var\(--ingredient-rack-control-left\)[^}]*top:\s*var\(--ingredient-rack-control-top\)/s)
     expect(kitchenCss).toMatch(/\.table-ingredient__viewport\s*\{[^}]*left:\s*var\(--ingredient-rack-inner-left\)[^}]*clip-path:\s*polygon\(var\(--ingredient-rack-inner-clip\)\)/s)
     expect(kitchenCss).not.toContain('.sauce-brush {')
     expect(kitchenCss).toContain('.table-ingredient--sauce.is-selected')

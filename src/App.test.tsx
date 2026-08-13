@@ -218,6 +218,30 @@ describe('App landscape route', () => {
     act(() => summaryRoot.unmount())
   })
 
+  it('uses distinct physical rack backgrounds for Day 1 and later expanded days', () => {
+    vi.stubGlobal('requestAnimationFrame', vi.fn(() => 1))
+    vi.stubGlobal('cancelAnimationFrame', vi.fn())
+    const renderDay = (day: number) => {
+      window.history.replaceState({}, '', `/?playDay=${day}`)
+      const container = document.createElement('div')
+      const root = createRoot(container)
+      act(() => root.render(<App />))
+      const background = container.querySelector<HTMLImageElement>('[data-kitchen-live-plate]')!
+      const result = { src: background.src, rack: background.dataset.kitchenRackBackground }
+      act(() => root.unmount())
+      return result
+    }
+
+    const day1 = renderDay(1)
+    const day5 = renderDay(5)
+
+    expect(day1.src).toContain('kitchen-screen-live-clean.png')
+    expect(day1.rack).toBe('approved-2x3')
+    expect(day5.src).toContain('kitchen-screen-live-expanded-clean.png')
+    expect(day5.rack).toBe('expanded-3x5')
+    expect(day5.src).not.toBe(day1.src)
+  })
+
   it('binds each rendered approved screen surface to its matching image URL', () => {
     const container = document.createElement('div')
     const root = createRoot(container)

@@ -178,8 +178,8 @@
 .table-ingredient {
   position: absolute;
   z-index: 8;
-  left: calc(var(--ingredient-rack-left) + var(--ingredient-rack-column) * var(--ingredient-rack-column-gap));
-  top: calc(var(--ingredient-rack-top) + var(--ingredient-rack-row) * var(--ingredient-rack-row-gap));
+  left: var(--ingredient-rack-control-left);
+  top: var(--ingredient-rack-control-top);
   width: var(--ingredient-rack-control-width);
   height: var(--ingredient-rack-control-height);
   padding: 0;

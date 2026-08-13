@@ -5,7 +5,9 @@ import sharp from 'sharp'
 export const approvedPath = 'src/assets/approved/main-ui/kitchen-screen-user-final.png'
 export const cleanPath = 'src/assets/art-source/kitchen-live-inpaint-source.png'
 export const emptyBinsPath = 'src/assets/art-source/kitchen-empty-bins-imagegen-source.png'
+export const expandedRackSourcePath = 'src/assets/art-source/kitchen-expanded-rack-imagegen-source.png'
 export const outputPath = 'src/assets/approved/main-ui/kitchen-screen-live-clean.png'
+export const expandedOutputPath = 'src/assets/approved/main-ui/kitchen-screen-live-expanded-clean.png'
 
 const OUTPUT_WIDTH = 1672
 const OUTPUT_HEIGHT = 941
@@ -31,6 +33,24 @@ export const EMPTY_BIN_INTERIOR_POLYGONS = [
   [{ x: 274, y: 731 }, { x: 431, y: 734 }, { x: 411, y: 816 }, { x: 250, y: 811 }],
 ]
 
+// The accepted ImageGen edit is intentionally not used as a whole-screen
+// replacement. This measured contour follows only the new physical rack and
+// leaves the HUD, market, utensils, counter, and both griddles on the approved
+// deterministic Day 1 plate unchanged.
+export const EXPANDED_RACK_COMPOSITE_POLYGON = [
+  { x: 12, y: 856 },
+  { x: 22, y: 772 },
+  { x: 167, y: 545 },
+  { x: 190, y: 539 },
+  { x: 351, y: 540 },
+  { x: 462, y: 542 },
+  { x: 484, y: 549 },
+  { x: 443, y: 774 },
+  { x: 416, y: 859 },
+  { x: 390, y: 875 },
+  { x: 33, y: 867 },
+]
+
 function pointInPolygon(x, y, polygon) {
   let inside = false
   for (let current = 0, previous = polygon.length - 1; current < polygon.length; previous = current++) {
@@ -49,7 +69,7 @@ function distanceToSegment(x, y, start, end) {
   return Math.hypot(x - (start.x + ratio * dx), y - (start.y + ratio * dy))
 }
 
-function polygonPatch(polygon) {
+function polygonPatch(polygon, feather = 3) {
   const left = Math.floor(Math.min(...polygon.map((point) => point.x)))
   const top = Math.floor(Math.min(...polygon.map((point) => point.y)))
   const right = Math.ceil(Math.max(...polygon.map((point) => point.x)))
@@ -57,8 +77,6 @@ function polygonPatch(polygon) {
   const width = right - left
   const height = bottom - top
   const alpha = Buffer.alloc(width * height)
-  const feather = 3
-
   for (let y = 0; y < height; y += 1) for (let x = 0; x < width; x += 1) {
     const sceneX = left + x + .5
     const sceneY = top + y + .5
@@ -91,12 +109,9 @@ async function customerCleanPlate() {
   return sharp(base).composite(overlays).png({ compressionLevel: 9 }).toBuffer()
 }
 
-export async function buildLiveKitchenPlate({ output = outputPath, includeEmptyBins = true } = {}) {
+async function liveKitchenPlateBuffer({ includeEmptyBins = true } = {}) {
   const customerCleaned = await customerCleanPlate()
-  if (!includeEmptyBins) {
-    await sharp(customerCleaned).png({ compressionLevel: 9 }).toFile(output)
-    return output
-  }
+  if (!includeEmptyBins) return sharp(customerCleaned).png({ compressionLevel: 9 }).toBuffer()
 
   const emptyBins = await sharp(emptyBinsPath).resize(OUTPUT_WIDTH, OUTPUT_HEIGHT, { fit: 'fill' }).png().toBuffer()
   const overlays = []
@@ -107,11 +122,36 @@ export async function buildLiveKitchenPlate({ output = outputPath, includeEmptyB
     overlays.push({ input: patch, left, top })
   }
 
-  await sharp(customerCleaned).composite(overlays).png({ compressionLevel: 9 }).toFile(output)
+  return sharp(customerCleaned).composite(overlays).png({ compressionLevel: 9 }).toBuffer()
+}
+
+export async function buildLiveKitchenPlate({ output = outputPath, includeEmptyBins = true } = {}) {
+  await sharp(await liveKitchenPlateBuffer({ includeEmptyBins })).png({ compressionLevel: 9 }).toFile(output)
+  return output
+}
+
+export async function buildExpandedKitchenPlate({ output = expandedOutputPath } = {}) {
+  const base = await liveKitchenPlateBuffer()
+  const acceptedEdit = await sharp(expandedRackSourcePath)
+    .resize(OUTPUT_WIDTH, OUTPUT_HEIGHT, { fit: 'fill' })
+    .png()
+    .toBuffer()
+  const { left, top, width, height, alpha } = polygonPatch(EXPANDED_RACK_COMPOSITE_POLYGON, 2)
+  const patch = await sharp(acceptedEdit)
+    .extract({ left, top, width, height })
+    .joinChannel(alpha, { raw: { width, height, channels: 1 } })
+    .png()
+    .toBuffer()
+
+  await sharp(base)
+    .composite([{ input: patch, left, top }])
+    .png({ compressionLevel: 9 })
+    .toFile(output)
   return output
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const builtPath = await buildLiveKitchenPlate()
-  process.stdout.write(`${builtPath}\n`)
+  const builtExpandedPath = await buildExpandedKitchenPlate()
+  process.stdout.write(`${builtPath}\n${builtExpandedPath}\n`)
 }

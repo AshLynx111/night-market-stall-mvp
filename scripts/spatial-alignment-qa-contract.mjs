@@ -1,4 +1,4 @@
-export const SPATIAL_SCHEMA_VERSION = 'spatial-alignment-v3'
+export const SPATIAL_SCHEMA_VERSION = 'spatial-alignment-v4'
 
 export const REQUIRED_SCREENSHOT_NAMES = [
   'settings.png',
@@ -199,9 +199,16 @@ export function assertSpatialEvidenceSchema(result) {
     assert(slot?.tutorial, `Missing active ${kind} tutorial cue`)
   }
   for (const day of [1, 3, 5]) {
-    const pixels = result.kitchenFixtures?.[`day${day}`]?.stationaryFoodPixels
+    const fixture = result.kitchenFixtures?.[`day${day}`]
+    const pixels = fixture?.stationaryFoodPixels
+    const expectedBackground = day === 1 ? 'approved-2x3' : 'expanded-3x5'
+    const expectedWellCount = day === 1 ? 6 : 15
+    assert(fixture?.rackBackground === expectedBackground, `Day ${day} must use ${expectedBackground} physical rack background`)
+    assert(fixture?.physicalWellCount === expectedWellCount && fixture?.rackControlPolygons?.length === expectedWellCount, `Day ${day} must map exactly ${expectedWellCount} physical wells`)
+    assert(fixture?.bins?.every((bin) => bin.physicalWellMapped === true), `Day ${day} contains an ingredient without a physical steel well`)
     assert(pixels?.accepted === true && pixels.changedPixelCount > 0 && pixels.outsideAllowedPixelCount === 0 && pixels.rimChangedPixelCount === 0 && pixels.unusedCellChangedPixelCount === 0 && pixels.masks?.every((mask) => mask.changedPixelCount > 0), `Day ${day} dynamic food pixels failed canonical inner-mask acceptance`)
   }
+  assert(result.kitchenFixtures.day1.backgroundSource !== result.kitchenFixtures.day5.backgroundSource, 'Day 5 physical rack background must differ from Day 1')
   const drag = result.dragGhost
   assert(drag?.accepted === true && drag.changedPixelCount > 0 && drag.outsideAllowedPixelCount === 0 && drag.rimChangedPixelCount === 0 && drag.unusedCellChangedPixelCount === 0 && drag.masks?.every((mask) => mask.changedPixelCount > 0), 'Active ingredient drag ghost failed canonical inner-mask acceptance')
   assertExactScreenshotManifest(result.screenshotManifest ?? [])

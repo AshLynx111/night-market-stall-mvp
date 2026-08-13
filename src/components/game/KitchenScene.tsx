@@ -12,7 +12,7 @@ import { availableIngredients, ingredientForCookingStep, type IngredientId } fro
 import { ingredientFoodArt } from '../../landscape/kitchen/assets'
 import { placeIngredient, slotExpectedAction } from '../../landscape/kitchen/griddle'
 import { layoutOrderBubbles } from '../../landscape/kitchen/orderBubbleLayout'
-import { kitchenGeometryStyle } from '../../landscape/kitchen/sceneGeometry'
+import { kitchenGeometryStyle, rackRectangles } from '../../landscape/kitchen/sceneGeometry'
 import type { KitchenAction } from '../../landscape/kitchen/reducer'
 import { applyGesture, deliverDish } from '../../landscape/kitchen/service'
 import {
@@ -289,6 +289,12 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
         aria-label="桌面食材"
         data-kitchen-bin-rack="left"
         data-rack-layout={rackLayout}
+        data-rack-control-polygons={JSON.stringify(rackRectangles(rackLayout).map((control) => [
+          { x: control.left, y: control.top },
+          { x: control.right, y: control.top },
+          { x: control.right, y: control.bottom },
+          { x: control.left, y: control.bottom },
+        ]))}
       >
         {unlockedIngredients.map((id) => (
           <TableIngredient

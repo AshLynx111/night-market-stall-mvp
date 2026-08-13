@@ -49,6 +49,7 @@ function roleFor(relativePath) {
   if (relativePath.startsWith('events/')) return 'event-key-art'
   if (relativePath in APPROVED_SCREEN_SOURCES) return 'approved-screen-composite'
   if (relativePath === 'main-ui/kitchen-screen-live-clean.png') return 'approved-screen-live-derivative'
+  if (relativePath === 'main-ui/kitchen-screen-live-expanded-clean.png') return 'approved-screen-live-expanded-derivative'
   if (relativePath === 'main-ui/settings-slider-clean-patch.png') return 'approved-screen-clean-patch'
   if (relativePath === 'main-ui/night-market-clean-background.png') return 'clean-background'
   if (relativePath === 'main-ui/game-main-screen-final.png') return 'screen-composite'
@@ -94,6 +95,9 @@ function derivativeFor(relativePath) {
   }
   if (relativePath === 'main-ui/kitchen-screen-live-clean.png') {
     return 'main-ui/kitchen-screen-user-final.png + art-source/kitchen-live-inpaint-source.png + art-source/kitchen-empty-bins-imagegen-source.png; deterministic localized customer and six-bin-interior masks'
+  }
+  if (relativePath === 'main-ui/kitchen-screen-live-expanded-clean.png') {
+    return 'main-ui/kitchen-screen-live-clean.png + art-source/kitchen-expanded-rack-imagegen-source.png; deterministic localized 3x5 physical-rack contour only'
   }
   if (relativePath === 'main-ui/settings-slider-clean-patch.png') {
     return 'main-ui/settings-screen-user-final.png; localized baked-slider cleanup patch'

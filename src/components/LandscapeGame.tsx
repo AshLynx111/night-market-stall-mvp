@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import homeScreen from '../assets/approved/main-ui/home-screen-user-final.png'
 import daySelectScreen from '../assets/approved/main-ui/day-select-user-final.png'
 import liveKitchenScreen from '../assets/approved/main-ui/kitchen-screen-live-clean.png'
+import expandedLiveKitchenScreen from '../assets/approved/main-ui/kitchen-screen-live-expanded-clean.png'
 import summaryScreen from '../assets/approved/main-ui/summary-screen-user-final.png'
 import settingsScreen from '../assets/approved/main-ui/settings-screen-user-final.png'
 import settingsSliderCleanPatch from '../assets/approved/main-ui/settings-slider-clean-patch.png'
@@ -11,7 +12,7 @@ import takeawayBag from '../assets/approved/menu/takeaway-bag.png'
 import { loadAudioSettings, saveAudioSettings, type AudioSettings } from '../game/audioSettings'
 import { applyAudioSettings, unlockAndPlayBgm } from '../game/bgm'
 import { setAudioEffectLevel } from '../game/audio'
-import { DAYS, RECIPES, incomeForDelivery, starsForDay } from '../landscape/campaign'
+import { DAYS, RECIPES, availableIngredients, incomeForDelivery, starsForDay } from '../landscape/campaign'
 import type { CookingStep, DayConfig, Recipe } from '../landscape/campaign'
 import { useKitchenGame } from '../landscape/kitchen/useKitchenGame'
 import { isKitchenDayComplete } from '../landscape/kitchen/progress'
@@ -131,6 +132,9 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
     : 100
   const [sceneScale, setSceneScale] = useState(() => Math.min(window.innerWidth / 1440, window.innerHeight / 810))
   const sceneInverseScale = sceneScale > 0 ? Math.max(1, 1 / sceneScale) : 1
+  const expandedRack = availableIngredients(day.day).length > 6
+  const kitchenScreen = expandedRack ? expandedLiveKitchenScreen : liveKitchenScreen
+  const rackBackground = expandedRack ? 'expanded-3x5' : 'approved-2x3'
 
   useEffect(() => {
     const updateScale = () => setSceneScale(Math.min(window.innerWidth / 1440, window.innerHeight / 810))
@@ -201,18 +205,19 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
       <div
         className="game-screen__logical"
         style={{
-          '--game-bg': `url(${liveKitchenScreen})`,
-          '--kitchen-live-bg': `url(${liveKitchenScreen})`,
+          '--game-bg': `url(${kitchenScreen})`,
+          '--kitchen-live-bg': `url(${kitchenScreen})`,
           '--scene-scale': sceneScale,
           '--scene-inverse-scale': sceneInverseScale,
         } as React.CSSProperties}
       >
         <img
           className="game-screen__background"
-          src={liveKitchenScreen}
+          src={kitchenScreen}
           alt=""
           aria-hidden="true"
           data-kitchen-live-plate
+          data-kitchen-rack-background={rackBackground}
           data-kitchen-source="kitchen-screen-user-final.png"
         />
         <TopHud

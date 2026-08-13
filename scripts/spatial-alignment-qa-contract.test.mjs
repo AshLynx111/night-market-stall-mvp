@@ -80,6 +80,11 @@ function validEvidence() {
     settings: { ranges: [0, .5, 1].map((value) => ({ value, measuredVisibleThumbCount: 1 })) },
     griddleGeometry: geometry,
     kitchenFixtures: Object.fromEntries([1, 3, 5].map((day) => [`day${day}`, {
+      rackBackground: day === 1 ? 'approved-2x3' : 'expanded-3x5',
+      physicalWellCount: day === 1 ? 6 : 15,
+      backgroundSource: day === 1 ? 'kitchen-screen-live-clean.png' : 'kitchen-screen-live-expanded-clean.png',
+      rackControlPolygons: Array.from({ length: day === 1 ? 6 : 15 }, () => []),
+      bins: Array.from({ length: day === 1 ? 5 : day === 3 ? 11 : 15 }, () => ({ physicalWellMapped: true })),
       stationaryFoodPixels: {
         accepted: true,
         changedPixelCount: 100,
@@ -174,6 +179,12 @@ describe('spatial alignment QA evidence contract', () => {
     leakedFood.kitchenFixtures.day3.stationaryFoodPixels = { ...leakedFood.kitchenFixtures.day3.stationaryFoodPixels, accepted: false, rimChangedPixelCount: 1 }
     expect(() => assertSpatialEvidenceSchema(leakedFood)).toThrow(/food pixels/i)
     expect(() => assertSpatialEvidenceSchema({ ...validEvidence(), dragGhost: { ...validEvidence().dragGhost, accepted: false } })).toThrow(/drag ghost/i)
+    const wrongBackground = validEvidence()
+    wrongBackground.kitchenFixtures.day5.rackBackground = 'approved-2x3'
+    expect(() => assertSpatialEvidenceSchema(wrongBackground)).toThrow(/expanded-3x5/i)
+    const looseIngredient = validEvidence()
+    looseIngredient.kitchenFixtures.day5.bins[14].physicalWellMapped = false
+    expect(() => assertSpatialEvidenceSchema(looseIngredient)).toThrow(/physical steel well/i)
   })
 
   it('uses the pinned project Playwright package and contains no tautological visible-food intersection proof', () => {

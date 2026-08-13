@@ -463,12 +463,8 @@ async function inspectKitchen(day, screenshotName, navigate = true, captureScree
       width: customNumber('--ingredient-rack-control-width'),
       height: customNumber('--ingredient-rack-control-height'),
     }
-    const rackControlPolygons = Array.from({ length: rack.columns * rack.rows }, (_, index) => rectanglePolygon({
-      left: rack.left + index % rack.columns * rack.columnGap,
-      top: rack.top + Math.floor(index / rack.columns) * rack.rowGap,
-      width: rack.width,
-      height: rack.height,
-    }))
+    const rackControlPolygons = JSON.parse(scene.querySelector('[data-rack-control-polygons]')?.getAttribute('data-rack-control-polygons') ?? '[]')
+      .map((polygon) => polygon.map(toScreenPoint))
     const bins = [...scene.querySelectorAll('[data-ingredient-id]')].map((node) => {
       const controlRect = rect(node)
       const viewport = node.querySelector(':scope > .table-ingredient__viewport')
@@ -487,6 +483,8 @@ async function inspectKitchen(day, screenshotName, navigate = true, captureScree
         viewportRect,
         imageRect,
         canonicalInnerPolygon,
+        canonicalControlPolygon: JSON.parse(node.getAttribute('data-control-polygon') ?? '[]').map(toScreenPoint),
+        physicalWellMapped: JSON.parse(node.getAttribute('data-control-polygon') ?? '[]').length === 4 && canonicalInnerPolygon.length === 4,
         canonicalMaskInsideViewport: Boolean(viewportRect && canonicalInnerPolygon.length === 4 && canonicalInnerPolygon.every((point) => point.x >= viewportRect.x - .5 && point.x <= viewportRect.right + .5 && point.y >= viewportRect.y - .5 && point.y <= viewportRect.bottom + .5)),
         viewportInsideControl: Boolean(viewportRect && contains(controlRect, viewportRect)),
         viewportHasPositiveInset: Boolean(viewportRect && viewportRect.x > controlRect.x + .5 && viewportRect.y > controlRect.y + .5 && viewportRect.right < controlRect.right - .5 && viewportRect.bottom < controlRect.bottom - .5),
@@ -528,6 +526,9 @@ async function inspectKitchen(day, screenshotName, navigate = true, captureScree
       ingredientIds: bins.map((bin) => bin.id),
       ingredientCount: bins.length,
       rackLayout: scene.querySelector('[data-rack-layout]')?.dataset.rackLayout ?? '',
+      rackBackground: document.querySelector('[data-kitchen-live-plate]')?.dataset.kitchenRackBackground ?? '',
+      backgroundSource: document.querySelector('[data-kitchen-live-plate]')?.getAttribute('src') ?? '',
+      physicalWellCount: rack.columns * rack.rows,
       rack,
       rackControlPolygons,
       unusedControlPolygons: rackControlPolygons.slice(bins.length),
@@ -549,6 +550,11 @@ async function inspectKitchen(day, screenshotName, navigate = true, captureScree
   assert(record.day === day, `Day fixture identity mismatch: requested ${day}, rendered ${record.day}`)
   assert(JSON.stringify(record.ingredientIds) === JSON.stringify(expectedIds), `Day ${day}: ingredient IDs differ ${JSON.stringify(record.ingredientIds)}`)
   assert(record.ingredientCount === expectedIds.length, `Day ${day}: expected ${expectedIds.length} ingredients, got ${record.ingredientCount}`)
+  const expectedRackBackground = day === 1 ? 'approved-2x3' : 'expanded-3x5'
+  const expectedPhysicalWells = day === 1 ? 6 : 15
+  assert(record.rackBackground === expectedRackBackground, `Day ${day}: wrong physical rack background ${record.rackBackground}`)
+  assert(record.physicalWellCount === expectedPhysicalWells && record.rackControlPolygons.length === expectedPhysicalWells, `Day ${day}: expected ${expectedPhysicalWells} mapped physical wells`)
+  assert(record.bins.every((bin) => bin.physicalWellMapped), `Day ${day}: ingredient lacks a canonical physical well`)
   assert(record.legacyBinArtNodeCount === 0, `Day ${day}: legacy bin-art nodes rendered`)
   assert(record.outerRimIndicatorCount === 0, `Day ${day}: generated outer-rim indicator rendered`)
   assert(record.sauceBrushCount === 0, `Day ${day}: legacy sauce brush rendered`)

@@ -42,6 +42,22 @@ describe('canonical kitchen scene geometry', () => {
     })
   })
 
+  it('maps the expanded rack to fifteen measured perspective wells instead of a nominal uniform grid', () => {
+    const rectangles = rackRectangles('expanded-3x5')
+    const innerPolygons = rackInnerPolygons('expanded-3x5')
+
+    expect(rectangles).toHaveLength(15)
+    expect(innerPolygons).toHaveLength(15)
+    expect(new Set(rectangles.map((rectangle) => `${rectangle.left}:${rectangle.top}:${rectangle.width}:${rectangle.height}`)).size)
+      .toBeGreaterThan(5)
+    expect(rectangles[0].top).toBeLessThan(rectangles[12].top)
+    expect(rectangles[0].width).toBeLessThan(rectangles[12].width)
+    expect(innerPolygons.every((polygon, index) => polygon.every((point) => {
+      const control = rectangles[index]
+      return point.x > control.left && point.x < control.right && point.y > control.top && point.y < control.bottom
+    }))).toBe(true)
+  })
+
   it.each(['approved-2x3', 'expanded-3x5'] as const)('defines canonical %s inner polygons strictly inside every control', (layout) => {
     const controls = rackRectangles(layout)
     const innerPolygons = rackInnerPolygons(layout)
@@ -76,19 +92,19 @@ describe('canonical kitchen scene geometry', () => {
       '--griddle-right-top': '559px',
       '--griddle-right-width': '269px',
       '--griddle-right-height': '218px',
-      '--ingredient-rack-left': '18px',
-      '--ingredient-rack-top': '466px',
-      '--ingredient-rack-column-gap': '102px',
-      '--ingredient-rack-row-gap': '65px',
-      '--ingredient-rack-control-width': '98px',
-      '--ingredient-rack-control-height': '61px',
+      '--ingredient-rack-left': '10.33px',
+      '--ingredient-rack-top': '469.13px',
+      '--ingredient-rack-column-gap': '0px',
+      '--ingredient-rack-row-gap': '0px',
+      '--ingredient-rack-control-width': '403.07px',
+      '--ingredient-rack-control-height': '287.5px',
       '--ingredient-rack-columns': '3',
       '--ingredient-rack-rows': '5',
-      '--ingredient-rack-inner-left': '7px',
-      '--ingredient-rack-inner-top': '6px',
-      '--ingredient-rack-inner-width': '84px',
-      '--ingredient-rack-inner-height': '45px',
-      '--ingredient-rack-inner-clip': '9% 2%, 91% 2%, 99% 94%, 1% 94%',
+      '--ingredient-rack-inner-left': '0px',
+      '--ingredient-rack-inner-top': '0px',
+      '--ingredient-rack-inner-width': '1px',
+      '--ingredient-rack-inner-height': '1px',
+      '--ingredient-rack-inner-clip': '0% 0%, 100% 0%, 100% 100%, 0% 100%',
     })
   })
 
