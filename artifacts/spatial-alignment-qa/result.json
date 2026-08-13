@@ -1,0 +1,2818 @@
+{
+  "schemaVersion": "spatial-alignment-v1",
+  "browser": "Microsoft Edge",
+  "viewport": {
+    "width": 1440,
+    "height": 810,
+    "deviceScaleFactor": 1
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "audio": {
+    "mixed": {
+      "loop": true,
+      "paused": false,
+      "muted": false,
+      "volume": 0.31
+    },
+    "muted": {
+      "muted": true,
+      "volume": 0
+    },
+    "sliders": {
+      "master": 0.62,
+      "music": 0.5,
+      "effects": 0.3
+    },
+    "checkpoints": [
+      {
+        "label": "settings",
+        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "count": 1,
+        "currentTime": 7.303524,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "select",
+        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "count": 1,
+        "currentTime": 7.783678,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "day-1-entry",
+        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "count": 1,
+        "currentTime": 16.501467,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "day-1-after-order-1",
+        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "count": 1,
+        "currentTime": 25.083313,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "day-1-after-order-2",
+        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "count": 1,
+        "currentTime": 36.474853,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "summary",
+        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "count": 1,
+        "currentTime": 44.74717,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      },
+      {
+        "label": "day-2",
+        "identity": "reference-bgm-1786638250812-0.20289518713496624",
+        "count": 1,
+        "currentTime": 45.168719,
+        "loop": true,
+        "paused": false,
+        "muted": false,
+        "volume": 0.31
+      }
+    ],
+    "resume": {
+      "before": 7.309951,
+      "after": 7.32101,
+      "attempts": 3
+    }
+  },
+  "settings": {
+    "patchCount": 1,
+    "patch": {
+      "src": "/src/assets/approved/main-ui/settings-slider-clean-patch.png",
+      "naturalWidth": 1672,
+      "naturalHeight": 941
+    },
+    "rangeCount": 3,
+    "decorativeThumbCount": 0,
+    "visibleNativeThumbCount": 3,
+    "ranges": [
+      {
+        "label": "总音量",
+        "value": 0,
+        "dataLevel": "0.00",
+        "effectiveCssLevel": "0%",
+        "nativeThumbCount": 1,
+        "nativeThumbVisible": true,
+        "expectedThumbCenter": {
+          "x": 659.859375,
+          "y": 427.265625
+        },
+        "rail": {
+          "left": 645.859375,
+          "top": 421.265625,
+          "right": 899.875,
+          "bottom": 433.265625,
+          "width": 254.015625,
+          "height": 12
+        }
+      },
+      {
+        "label": "背景音乐音量",
+        "value": 0.5,
+        "dataLevel": "0.50",
+        "effectiveCssLevel": "50%",
+        "nativeThumbCount": 1,
+        "nativeThumbVisible": true,
+        "expectedThumbCenter": {
+          "x": 772.8671875,
+          "y": 493.6875
+        },
+        "rail": {
+          "left": 645.859375,
+          "top": 487.6875,
+          "right": 899.875,
+          "bottom": 499.6875,
+          "width": 254.015625,
+          "height": 12
+        }
+      },
+      {
+        "label": "音效音量",
+        "value": 1,
+        "dataLevel": "1.00",
+        "effectiveCssLevel": "100%",
+        "nativeThumbCount": 1,
+        "nativeThumbVisible": true,
+        "expectedThumbCenter": {
+          "x": 885.875,
+          "y": 559.296875
+        },
+        "rail": {
+          "left": 645.859375,
+          "top": 553.296875,
+          "right": 899.875,
+          "bottom": 565.296875,
+          "width": 254.015625,
+          "height": 12
+        }
+      }
+    ]
+  },
+  "screens": {
+    "home": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "right": 1440,
+        "bottom": 810,
+        "width": 1440,
+        "height": 810
+      },
+      "art": {
+        "src": "/src/assets/approved/main-ui/home-screen-user-final.png",
+        "naturalWidth": 1672,
+        "naturalHeight": 941,
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810
+      },
+      "dynamic": [],
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      }
+    },
+    "settings": {
+      "rect": {
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810,
+        "width": 1439.234375,
+        "height": 810
+      },
+      "art": {
+        "src": "/src/assets/approved/main-ui/settings-screen-user-final.png",
+        "naturalWidth": 1672,
+        "naturalHeight": 941,
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810
+      },
+      "dynamic": [],
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      }
+    },
+    "select": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "right": 1440,
+        "bottom": 810,
+        "width": 1440,
+        "height": 810
+      },
+      "art": {
+        "src": "/src/assets/approved/main-ui/day-select-user-final.png",
+        "naturalWidth": 1672,
+        "naturalHeight": 941,
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810
+      },
+      "dynamic": [
+        {
+          "text": "☆☆☆",
+          "x": 434.34375,
+          "y": 205.96875,
+          "right": 520.34375,
+          "bottom": 234.390625,
+          "width": 86,
+          "height": 28.421875
+        },
+        {
+          "text": "☆☆☆",
+          "x": 799.921875,
+          "y": 205.96875,
+          "right": 885.921875,
+          "bottom": 234.390625,
+          "width": 86,
+          "height": 28.421875
+        },
+        {
+          "text": "☆☆☆",
+          "x": 1171.234375,
+          "y": 205.96875,
+          "right": 1257.234375,
+          "bottom": 234.390625,
+          "width": 86,
+          "height": 28.421875
+        },
+        {
+          "text": "🔒完成前一天后解锁",
+          "x": 950.84375,
+          "y": 359.046875,
+          "right": 1190.9375,
+          "bottom": 391.84375,
+          "width": 240.09375,
+          "height": 32.796875
+        },
+        {
+          "text": "☆☆☆",
+          "x": 434.34375,
+          "y": 436.296875,
+          "right": 520.34375,
+          "bottom": 463.984375,
+          "width": 86,
+          "height": 27.6875
+        },
+        {
+          "text": "🔒完成前一天后解锁",
+          "x": 213.953125,
+          "y": 585.421875,
+          "right": 454.046875,
+          "bottom": 617.359375,
+          "width": 240.09375,
+          "height": 31.9375
+        },
+        {
+          "text": "☆☆☆",
+          "x": 799.921875,
+          "y": 436.296875,
+          "right": 885.921875,
+          "bottom": 463.984375,
+          "width": 86,
+          "height": 27.6875
+        },
+        {
+          "text": "🔒完成前一天后解锁",
+          "x": 579.53125,
+          "y": 585.421875,
+          "right": 819.625,
+          "bottom": 617.359375,
+          "width": 240.09375,
+          "height": 31.9375
+        },
+        {
+          "text": "☆☆☆",
+          "x": 1171.234375,
+          "y": 436.296875,
+          "right": 1257.234375,
+          "bottom": 463.984375,
+          "width": 86,
+          "height": 27.6875
+        },
+        {
+          "text": "🔒完成前一天后解锁",
+          "x": 950.84375,
+          "y": 585.421875,
+          "right": 1190.9375,
+          "bottom": 617.359375,
+          "width": 240.09375,
+          "height": 31.9375
+        },
+        {
+          "text": "当前资金¥ 36",
+          "x": 309.796875,
+          "y": 669.859375,
+          "right": 498.328125,
+          "bottom": 750.859375,
+          "width": 188.53125,
+          "height": 81
+        },
+        {
+          "text": "升级火力 Lv.1顾客耐心 +3秒 · ¥40",
+          "x": 592.296875,
+          "y": 664.578125,
+          "right": 834.078125,
+          "bottom": 754.484375,
+          "width": 241.78125,
+          "height": 89.90625
+        },
+        {
+          "text": "升级招牌 Lv.1每单额外 +2元 · ¥60",
+          "x": 930.515625,
+          "y": 664.578125,
+          "right": 1172.296875,
+          "bottom": 754.484375,
+          "width": 241.78125,
+          "height": 89.90625
+        }
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      }
+    },
+    "summary": {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "right": 1440,
+        "bottom": 810,
+        "width": 1440,
+        "height": 810
+      },
+      "art": {
+        "src": "/src/assets/approved/main-ui/summary-screen-user-final.png",
+        "naturalWidth": 1672,
+        "naturalHeight": 941,
+        "x": 0.375,
+        "y": 0,
+        "right": 1439.609375,
+        "bottom": 810
+      },
+      "dynamic": [
+        {
+          "text": "开张第一天 · 营业完成",
+          "x": 426.375,
+          "y": 183.046875,
+          "right": 1010.703125,
+          "bottom": 240.546875,
+          "width": 584.328125,
+          "height": 57.5
+        },
+        {
+          "text": "★★★",
+          "x": 593.328125,
+          "y": 247.046875,
+          "right": 848.0625,
+          "bottom": 306.171875,
+          "width": 254.734375,
+          "height": 59.125
+        },
+        {
+          "text": "手速和品质都无可挑剔，夜市里已经有人专程来找你了！",
+          "x": 445.09375,
+          "y": 314.265625,
+          "right": 997.75,
+          "bottom": 346.65625,
+          "width": 552.65625,
+          "height": 32.390625
+        },
+        {
+          "text": "3",
+          "x": 327,
+          "y": 369.890625,
+          "right": 474.046875,
+          "bottom": 414.921875,
+          "width": 147.046875,
+          "height": 45.03125
+        },
+        {
+          "text": "93%",
+          "x": 539.953125,
+          "y": 369.890625,
+          "right": 687.015625,
+          "bottom": 414.921875,
+          "width": 147.0625,
+          "height": 45.03125
+        },
+        {
+          "text": "0",
+          "x": 752.921875,
+          "y": 369.890625,
+          "right": 899.984375,
+          "bottom": 414.921875,
+          "width": 147.0625,
+          "height": 45.03125
+        },
+        {
+          "text": "¥66",
+          "x": 965.890625,
+          "y": 369.890625,
+          "right": 1112.953125,
+          "bottom": 414.921875,
+          "width": 147.0625,
+          "height": 45.03125
+        },
+        {
+          "text": "当前资金¥ 66",
+          "x": 406.234375,
+          "y": 514.34375,
+          "right": 541.515625,
+          "bottom": 588.046875,
+          "width": 135.28125,
+          "height": 73.703125
+        },
+        {
+          "text": "升级火力 Lv.1顾客耐心 +3秒 · ¥40",
+          "x": 633.109375,
+          "y": 503.375,
+          "right": 829.546875,
+          "bottom": 598.171875,
+          "width": 196.4375,
+          "height": 94.796875
+        },
+        {
+          "text": "升级招牌 Lv.1每单额外 +2元 · ¥60",
+          "x": 930.21875,
+          "y": 503.375,
+          "right": 1135.734375,
+          "bottom": 598.171875,
+          "width": 205.515625,
+          "height": 94.796875
+        }
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      }
+    }
+  },
+  "guidedFlow": [
+    {
+      "name": "noodle",
+      "expectedStep": "egg",
+      "phase": "phase-assembling",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/classic/classic-01-noodle.png"
+    },
+    {
+      "name": "egg-ready",
+      "expectedStep": "hot-dog",
+      "phase": "phase-cooking",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/heat/classic/02-egg-ready.png"
+    },
+    {
+      "name": "hot-dog-ready",
+      "expectedStep": "sauce",
+      "phase": "phase-cooking",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/heat/classic/03-hot-dog-ready.png"
+    },
+    {
+      "name": "actual-sauce-1",
+      "slotId": "left",
+      "strokes": 2,
+      "directions": [
+        "right",
+        "left"
+      ],
+      "realInteraction": true
+    },
+    {
+      "name": "sauce-two-strokes",
+      "expectedStep": "scallion",
+      "phase": "phase-gesturing",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/classic/classic-04-sauce.png"
+    },
+    {
+      "name": "scallion",
+      "expectedStep": "cut",
+      "phase": "phase-assembling",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/classic/classic-05-scallion.png"
+    },
+    {
+      "name": "three-cuts",
+      "expectedStep": "roll",
+      "phase": "phase-gesturing",
+      "stageImages": 1,
+      "foodImages": 1,
+      "overlays": 0,
+      "stageSrc": "/src/assets/approved/stages/classic/classic-06-cut.png"
+    },
+    {
+      "name": "actual-roll-1",
+      "slotId": "left",
+      "swipes": 1,
+      "direction": "right",
+      "realInteraction": true
+    },
+    {
+      "name": "actual-delivery-1",
+      "slotId": "left",
+      "realInteraction": true
+    },
+    {
+      "name": "actual-sauce-2",
+      "slotId": "left",
+      "strokes": 2,
+      "directions": [
+        "right",
+        "left"
+      ],
+      "realInteraction": true
+    },
+    {
+      "name": "actual-roll-2",
+      "slotId": "left",
+      "swipes": 1,
+      "direction": "right",
+      "realInteraction": true
+    },
+    {
+      "name": "actual-delivery-2",
+      "slotId": "left",
+      "realInteraction": true
+    },
+    {
+      "name": "actual-sauce-3",
+      "slotId": "right",
+      "strokes": 2,
+      "directions": [
+        "right",
+        "left"
+      ],
+      "realInteraction": true
+    },
+    {
+      "name": "actual-roll-3",
+      "slotId": "right",
+      "swipes": 1,
+      "direction": "right",
+      "realInteraction": true
+    },
+    {
+      "name": "actual-delivery-3",
+      "slotId": "right",
+      "realInteraction": true
+    }
+  ],
+  "griddleGeometry": [
+    {
+      "label": "guided-noodle",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": null,
+          "stage": null,
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": null,
+          "innerCenterDelta": null,
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    },
+    {
+      "label": "guided-egg-ready",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": null,
+          "stage": null,
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": null,
+          "innerCenterDelta": null,
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    },
+    {
+      "label": "guided-hot-dog-ready",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": null,
+          "tutorial": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": null,
+          "tutorialRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": null,
+          "stage": null,
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": null,
+          "innerCenterDelta": null,
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    },
+    {
+      "label": "guided-sauce-two-strokes",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": null,
+          "stage": null,
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": null,
+          "innerCenterDelta": null,
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    },
+    {
+      "label": "guided-scallion",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "tutorial": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "tutorialRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": null,
+          "stage": null,
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": null,
+          "innerCenterDelta": null,
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    },
+    {
+      "label": "guided-three-cuts",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "tutorial": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          },
+          "tutorialRectDelta": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": null,
+          "stage": null,
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": null,
+          "innerCenterDelta": null,
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    },
+    {
+      "label": "day-1-two-griddles-populated",
+      "slots": [
+        {
+          "slotId": "left",
+          "griddle": {
+            "x": 491,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 760,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          },
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        },
+        {
+          "slotId": "right",
+          "griddle": {
+            "x": 760,
+            "y": 559,
+            "width": 269,
+            "height": 218,
+            "right": 1029,
+            "bottom": 777
+          },
+          "inner": {
+            "x": 776,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 1013,
+            "bottom": 763
+          },
+          "stage": {
+            "x": 776,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 1013,
+            "bottom": 763
+          },
+          "gesture": null,
+          "tutorial": null,
+          "stageCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "innerCenterDelta": {
+            "x": 0,
+            "y": 0
+          },
+          "gestureRectDelta": null,
+          "tutorialRectDelta": null
+        }
+      ],
+      "crossSlotCollisions": []
+    }
+  ],
+  "kitchenFixtures": {
+    "day1": {
+      "day": 1,
+      "ingredientIds": [
+        "noodle",
+        "egg",
+        "hot-dog",
+        "sauce",
+        "scallion"
+      ],
+      "ingredientCount": 5,
+      "rackLayout": "approved-2x3",
+      "bins": [
+        {
+          "id": "noodle",
+          "controlRect": {
+            "x": 80,
+            "y": 466,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 536
+          },
+          "viewportRect": {
+            "x": 80,
+            "y": 466,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 536
+          },
+          "imageRect": {
+            "x": -51.25,
+            "y": 294.75,
+            "width": 412.5,
+            "height": 412.5,
+            "right": 361.25,
+            "bottom": 707.25
+          },
+          "visibleFoodRect": {
+            "x": 80,
+            "y": 466,
+            "right": 230,
+            "bottom": 536,
+            "width": 150,
+            "height": 70
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-noodle.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "275%",
+            "shiftX": "0%",
+            "shiftY": "0%"
+          }
+        },
+        {
+          "id": "egg",
+          "controlRect": {
+            "x": 235,
+            "y": 466,
+            "width": 150,
+            "height": 70,
+            "right": 385,
+            "bottom": 536
+          },
+          "viewportRect": {
+            "x": 235,
+            "y": 466,
+            "width": 150,
+            "height": 70,
+            "right": 385,
+            "bottom": 536
+          },
+          "imageRect": {
+            "x": 107.875,
+            "y": 307.125,
+            "width": 412.5,
+            "height": 412.5,
+            "right": 520.375,
+            "bottom": 719.625
+          },
+          "visibleFoodRect": {
+            "x": 235,
+            "y": 466,
+            "right": 385,
+            "bottom": 536,
+            "width": 150,
+            "height": 70
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-egg.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "275%",
+            "shiftX": "1%",
+            "shiftY": "3%"
+          }
+        },
+        {
+          "id": "hot-dog",
+          "controlRect": {
+            "x": 80,
+            "y": 541,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 611
+          },
+          "viewportRect": {
+            "x": 80,
+            "y": 541,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 611
+          },
+          "imageRect": {
+            "x": -58.149993896484375,
+            "y": 375.8999938964844,
+            "width": 435,
+            "height": 435.0000305175781,
+            "right": 376.8500061035156,
+            "bottom": 810.9000244140625
+          },
+          "visibleFoodRect": {
+            "x": 80,
+            "y": 541,
+            "right": 230,
+            "bottom": 611,
+            "width": 150,
+            "height": 70
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-hot-dog.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "290%",
+            "shiftX": "1%",
+            "shiftY": "4%"
+          }
+        },
+        {
+          "id": "sauce",
+          "controlRect": {
+            "x": 235,
+            "y": 541,
+            "width": 150,
+            "height": 70,
+            "right": 385,
+            "bottom": 611
+          },
+          "viewportRect": {
+            "x": 235,
+            "y": 541,
+            "width": 150,
+            "height": 70,
+            "right": 385,
+            "bottom": 611
+          },
+          "imageRect": {
+            "x": 85,
+            "y": 382.5,
+            "width": 450,
+            "height": 450,
+            "right": 535,
+            "bottom": 832.5
+          },
+          "visibleFoodRect": {
+            "x": 235,
+            "y": 541,
+            "right": 385,
+            "bottom": 611,
+            "width": 150,
+            "height": 70
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "300%",
+            "shiftX": "0%",
+            "shiftY": "7%"
+          }
+        },
+        {
+          "id": "scallion",
+          "controlRect": {
+            "x": 80,
+            "y": 616,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 686
+          },
+          "viewportRect": {
+            "x": 80,
+            "y": 616,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 686
+          },
+          "imageRect": {
+            "x": -58.75,
+            "y": 458.625,
+            "width": 427.5,
+            "height": 427.5,
+            "right": 368.75,
+            "bottom": 886.125
+          },
+          "visibleFoodRect": {
+            "x": 80,
+            "y": 616,
+            "right": 230,
+            "bottom": 686,
+            "width": 150,
+            "height": 70
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-scallion.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "285%",
+            "shiftX": "0%",
+            "shiftY": "5%"
+          }
+        }
+      ],
+      "legacyBinArtNodeCount": 0,
+      "outerRimIndicatorCount": 0,
+      "sauceBrushCount": 0,
+      "rackPairs": [],
+      "rackGriddleCollisions": [],
+      "rackTutorialCollisions": [],
+      "viewportClippingCollisions": [],
+      "bakedCustomerCount": 0,
+      "livePlateCount": 1,
+      "bubbleFaceCollisions": [],
+      "activeCustomers": 1
+    },
+    "day3": {
+      "day": 3,
+      "ingredientIds": [
+        "noodle",
+        "egg",
+        "hot-dog",
+        "sauce",
+        "scallion",
+        "cilantro",
+        "onion",
+        "chili-powder",
+        "turkey-noodle",
+        "cheese",
+        "corn"
+      ],
+      "ingredientCount": 11,
+      "rackLayout": "expanded-3x5",
+      "bins": [
+        {
+          "id": "noodle",
+          "controlRect": {
+            "x": 18,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 527
+          },
+          "viewportRect": {
+            "x": 18,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 527
+          },
+          "imageRect": {
+            "x": -67.75,
+            "y": 361.75,
+            "width": 269.5,
+            "height": 269.5,
+            "right": 201.75,
+            "bottom": 631.25
+          },
+          "visibleFoodRect": {
+            "x": 18,
+            "y": 466,
+            "right": 116,
+            "bottom": 527,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-noodle.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "275%",
+            "shiftX": "0%",
+            "shiftY": "0%"
+          }
+        },
+        {
+          "id": "egg",
+          "controlRect": {
+            "x": 120,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 527
+          },
+          "viewportRect": {
+            "x": 120,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 527
+          },
+          "imageRect": {
+            "x": 36.94500732421875,
+            "y": 369.8349914550781,
+            "width": 269.5,
+            "height": 269.4999694824219,
+            "right": 306.44500732421875,
+            "bottom": 639.3349609375
+          },
+          "visibleFoodRect": {
+            "x": 120,
+            "y": 466,
+            "right": 218,
+            "bottom": 527,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-egg.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "275%",
+            "shiftX": "1%",
+            "shiftY": "3%"
+          }
+        },
+        {
+          "id": "hot-dog",
+          "controlRect": {
+            "x": 222,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 527
+          },
+          "viewportRect": {
+            "x": 222,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 527
+          },
+          "imageRect": {
+            "x": 131.7481231689453,
+            "y": 365.77374267578125,
+            "width": 284.1875,
+            "height": 284.1875,
+            "right": 415.9356231689453,
+            "bottom": 649.9612426757812
+          },
+          "visibleFoodRect": {
+            "x": 222,
+            "y": 466,
+            "right": 320,
+            "bottom": 527,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-hot-dog.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "290%",
+            "shiftX": "1%",
+            "shiftY": "4%"
+          }
+        },
+        {
+          "id": "sauce",
+          "controlRect": {
+            "x": 18,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 592
+          },
+          "viewportRect": {
+            "x": 18,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 592
+          },
+          "imageRect": {
+            "x": -80,
+            "y": 435.08001708984375,
+            "width": 294,
+            "height": 294,
+            "right": 214,
+            "bottom": 729.0800170898438
+          },
+          "visibleFoodRect": {
+            "x": 18,
+            "y": 531,
+            "right": 116,
+            "bottom": 592,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "300%",
+            "shiftX": "0%",
+            "shiftY": "7%"
+          }
+        },
+        {
+          "id": "scallion",
+          "controlRect": {
+            "x": 120,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 592
+          },
+          "viewportRect": {
+            "x": 120,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 592
+          },
+          "imageRect": {
+            "x": 29.3515625,
+            "y": 435.81640625,
+            "width": 279.296875,
+            "height": 279.296875,
+            "right": 308.6484375,
+            "bottom": 715.11328125
+          },
+          "visibleFoodRect": {
+            "x": 120,
+            "y": 531,
+            "right": 218,
+            "bottom": 592,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-scallion.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "285%",
+            "shiftX": "0%",
+            "shiftY": "5%"
+          }
+        },
+        {
+          "id": "cilantro",
+          "controlRect": {
+            "x": 222,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 592
+          },
+          "viewportRect": {
+            "x": 222,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 592
+          },
+          "imageRect": {
+            "x": 136.54859924316406,
+            "y": 440.76812744140625,
+            "width": 274.390625,
+            "height": 274.390625,
+            "right": 410.93922424316406,
+            "bottom": 715.1587524414062
+          },
+          "visibleFoodRect": {
+            "x": 222,
+            "y": 531,
+            "right": 320,
+            "bottom": 592,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-cilantro.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "280%",
+            "shiftX": "1%",
+            "shiftY": "6%"
+          }
+        },
+        {
+          "id": "onion",
+          "controlRect": {
+            "x": 18,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 657
+          },
+          "viewportRect": {
+            "x": 18,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 657
+          },
+          "imageRect": {
+            "x": -82.94000244140625,
+            "y": 494.20001220703125,
+            "width": 294,
+            "height": 294,
+            "right": 211.05999755859375,
+            "bottom": 788.2000122070312
+          },
+          "visibleFoodRect": {
+            "x": 18,
+            "y": 596,
+            "right": 116,
+            "bottom": 657,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-onion.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "300%",
+            "shiftX": "-1%",
+            "shiftY": "5%"
+          }
+        },
+        {
+          "id": "chili-powder",
+          "controlRect": {
+            "x": 120,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 657
+          },
+          "viewportRect": {
+            "x": 120,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 657
+          },
+          "imageRect": {
+            "x": 29.060775756835938,
+            "y": 503.02423095703125,
+            "width": 274.390625,
+            "height": 274.390625,
+            "right": 303.45140075683594,
+            "bottom": 777.4148559570312
+          },
+          "visibleFoodRect": {
+            "x": 120,
+            "y": 596,
+            "right": 218,
+            "bottom": 657,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-chili-powder.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "280%",
+            "shiftX": "-1%",
+            "shiftY": "5%"
+          }
+        },
+        {
+          "id": "turkey-noodle",
+          "controlRect": {
+            "x": 222,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 657
+          },
+          "viewportRect": {
+            "x": 222,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 657
+          },
+          "imageRect": {
+            "x": 125.765625,
+            "y": 498.0234375,
+            "width": 279.296875,
+            "height": 279.296875,
+            "right": 405.0625,
+            "bottom": 777.3203125
+          },
+          "visibleFoodRect": {
+            "x": 222,
+            "y": 596,
+            "right": 320,
+            "bottom": 657,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-turkey-noodle.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "285%",
+            "shiftX": "-2%",
+            "shiftY": "4%"
+          }
+        },
+        {
+          "id": "cheese",
+          "controlRect": {
+            "x": 18,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 722
+          },
+          "viewportRect": {
+            "x": 18,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 722
+          },
+          "imageRect": {
+            "x": -82.94000244140625,
+            "y": 565.0800170898438,
+            "width": 294,
+            "height": 294,
+            "right": 211.05999755859375,
+            "bottom": 859.0800170898438
+          },
+          "visibleFoodRect": {
+            "x": 18,
+            "y": 661,
+            "right": 116,
+            "bottom": 722,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-cheese.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "300%",
+            "shiftX": "-1%",
+            "shiftY": "7%"
+          }
+        },
+        {
+          "id": "corn",
+          "controlRect": {
+            "x": 120,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 722
+          },
+          "viewportRect": {
+            "x": 120,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 722
+          },
+          "imageRect": {
+            "x": 34.54859924316406,
+            "y": 568.0242309570312,
+            "width": 274.390625,
+            "height": 274.390625,
+            "right": 308.93922424316406,
+            "bottom": 842.4148559570312
+          },
+          "visibleFoodRect": {
+            "x": 120,
+            "y": 661,
+            "right": 218,
+            "bottom": 722,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-corn.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "280%",
+            "shiftX": "1%",
+            "shiftY": "5%"
+          }
+        }
+      ],
+      "legacyBinArtNodeCount": 0,
+      "outerRimIndicatorCount": 0,
+      "sauceBrushCount": 0,
+      "rackPairs": [],
+      "rackGriddleCollisions": [],
+      "rackTutorialCollisions": [],
+      "viewportClippingCollisions": [],
+      "bakedCustomerCount": 0,
+      "livePlateCount": 1,
+      "bubbleFaceCollisions": [],
+      "activeCustomers": 3
+    },
+    "day5": {
+      "day": 5,
+      "ingredientIds": [
+        "noodle",
+        "egg",
+        "hot-dog",
+        "sauce",
+        "scallion",
+        "cilantro",
+        "onion",
+        "chili-powder",
+        "turkey-noodle",
+        "cheese",
+        "corn",
+        "orleans",
+        "bacon",
+        "tenderloin",
+        "enoki"
+      ],
+      "ingredientCount": 15,
+      "rackLayout": "expanded-3x5",
+      "bins": [
+        {
+          "id": "noodle",
+          "controlRect": {
+            "x": 18,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 527
+          },
+          "viewportRect": {
+            "x": 18,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 527
+          },
+          "imageRect": {
+            "x": -67.75,
+            "y": 361.75,
+            "width": 269.5,
+            "height": 269.5,
+            "right": 201.75,
+            "bottom": 631.25
+          },
+          "visibleFoodRect": {
+            "x": 18,
+            "y": 466,
+            "right": 116,
+            "bottom": 527,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-noodle.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "275%",
+            "shiftX": "0%",
+            "shiftY": "0%"
+          }
+        },
+        {
+          "id": "egg",
+          "controlRect": {
+            "x": 120,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 527
+          },
+          "viewportRect": {
+            "x": 120,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 527
+          },
+          "imageRect": {
+            "x": 36.94500732421875,
+            "y": 369.8349914550781,
+            "width": 269.5,
+            "height": 269.4999694824219,
+            "right": 306.44500732421875,
+            "bottom": 639.3349609375
+          },
+          "visibleFoodRect": {
+            "x": 120,
+            "y": 466,
+            "right": 218,
+            "bottom": 527,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-egg.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "275%",
+            "shiftX": "1%",
+            "shiftY": "3%"
+          }
+        },
+        {
+          "id": "hot-dog",
+          "controlRect": {
+            "x": 222,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 527
+          },
+          "viewportRect": {
+            "x": 222,
+            "y": 466,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 527
+          },
+          "imageRect": {
+            "x": 131.7481231689453,
+            "y": 365.77374267578125,
+            "width": 284.1875,
+            "height": 284.1875,
+            "right": 415.9356231689453,
+            "bottom": 649.9612426757812
+          },
+          "visibleFoodRect": {
+            "x": 222,
+            "y": 466,
+            "right": 320,
+            "bottom": 527,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-hot-dog.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "290%",
+            "shiftX": "1%",
+            "shiftY": "4%"
+          }
+        },
+        {
+          "id": "sauce",
+          "controlRect": {
+            "x": 18,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 592
+          },
+          "viewportRect": {
+            "x": 18,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 592
+          },
+          "imageRect": {
+            "x": -80,
+            "y": 435.08001708984375,
+            "width": 294,
+            "height": 294,
+            "right": 214,
+            "bottom": 729.0800170898438
+          },
+          "visibleFoodRect": {
+            "x": 18,
+            "y": 531,
+            "right": 116,
+            "bottom": 592,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "300%",
+            "shiftX": "0%",
+            "shiftY": "7%"
+          }
+        },
+        {
+          "id": "scallion",
+          "controlRect": {
+            "x": 120,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 592
+          },
+          "viewportRect": {
+            "x": 120,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 592
+          },
+          "imageRect": {
+            "x": 29.3515625,
+            "y": 435.81640625,
+            "width": 279.296875,
+            "height": 279.296875,
+            "right": 308.6484375,
+            "bottom": 715.11328125
+          },
+          "visibleFoodRect": {
+            "x": 120,
+            "y": 531,
+            "right": 218,
+            "bottom": 592,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-scallion.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "285%",
+            "shiftX": "0%",
+            "shiftY": "5%"
+          }
+        },
+        {
+          "id": "cilantro",
+          "controlRect": {
+            "x": 222,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 592
+          },
+          "viewportRect": {
+            "x": 222,
+            "y": 531,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 592
+          },
+          "imageRect": {
+            "x": 136.54859924316406,
+            "y": 440.76812744140625,
+            "width": 274.390625,
+            "height": 274.390625,
+            "right": 410.93922424316406,
+            "bottom": 715.1587524414062
+          },
+          "visibleFoodRect": {
+            "x": 222,
+            "y": 531,
+            "right": 320,
+            "bottom": 592,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-cilantro.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "280%",
+            "shiftX": "1%",
+            "shiftY": "6%"
+          }
+        },
+        {
+          "id": "onion",
+          "controlRect": {
+            "x": 18,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 657
+          },
+          "viewportRect": {
+            "x": 18,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 657
+          },
+          "imageRect": {
+            "x": -82.94000244140625,
+            "y": 494.20001220703125,
+            "width": 294,
+            "height": 294,
+            "right": 211.05999755859375,
+            "bottom": 788.2000122070312
+          },
+          "visibleFoodRect": {
+            "x": 18,
+            "y": 596,
+            "right": 116,
+            "bottom": 657,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-onion.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "300%",
+            "shiftX": "-1%",
+            "shiftY": "5%"
+          }
+        },
+        {
+          "id": "chili-powder",
+          "controlRect": {
+            "x": 120,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 657
+          },
+          "viewportRect": {
+            "x": 120,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 657
+          },
+          "imageRect": {
+            "x": 29.060775756835938,
+            "y": 503.02423095703125,
+            "width": 274.390625,
+            "height": 274.390625,
+            "right": 303.45140075683594,
+            "bottom": 777.4148559570312
+          },
+          "visibleFoodRect": {
+            "x": 120,
+            "y": 596,
+            "right": 218,
+            "bottom": 657,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-chili-powder.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "280%",
+            "shiftX": "-1%",
+            "shiftY": "5%"
+          }
+        },
+        {
+          "id": "turkey-noodle",
+          "controlRect": {
+            "x": 222,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 657
+          },
+          "viewportRect": {
+            "x": 222,
+            "y": 596,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 657
+          },
+          "imageRect": {
+            "x": 125.765625,
+            "y": 498.0234375,
+            "width": 279.296875,
+            "height": 279.296875,
+            "right": 405.0625,
+            "bottom": 777.3203125
+          },
+          "visibleFoodRect": {
+            "x": 222,
+            "y": 596,
+            "right": 320,
+            "bottom": 657,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-turkey-noodle.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "285%",
+            "shiftX": "-2%",
+            "shiftY": "4%"
+          }
+        },
+        {
+          "id": "cheese",
+          "controlRect": {
+            "x": 18,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 722
+          },
+          "viewportRect": {
+            "x": 18,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 722
+          },
+          "imageRect": {
+            "x": -82.94000244140625,
+            "y": 565.0800170898438,
+            "width": 294,
+            "height": 294,
+            "right": 211.05999755859375,
+            "bottom": 859.0800170898438
+          },
+          "visibleFoodRect": {
+            "x": 18,
+            "y": 661,
+            "right": 116,
+            "bottom": 722,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-cheese.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "300%",
+            "shiftX": "-1%",
+            "shiftY": "7%"
+          }
+        },
+        {
+          "id": "corn",
+          "controlRect": {
+            "x": 120,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 722
+          },
+          "viewportRect": {
+            "x": 120,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 722
+          },
+          "imageRect": {
+            "x": 34.54859924316406,
+            "y": 568.0242309570312,
+            "width": 274.390625,
+            "height": 274.390625,
+            "right": 308.93922424316406,
+            "bottom": 842.4148559570312
+          },
+          "visibleFoodRect": {
+            "x": 120,
+            "y": 661,
+            "right": 218,
+            "bottom": 722,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-corn.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "280%",
+            "shiftX": "1%",
+            "shiftY": "5%"
+          }
+        },
+        {
+          "id": "orleans",
+          "controlRect": {
+            "x": 222,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 722
+          },
+          "viewportRect": {
+            "x": 222,
+            "y": 661,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 722
+          },
+          "imageRect": {
+            "x": 131.7481231689453,
+            "y": 560.7737426757812,
+            "width": 284.1875,
+            "height": 284.1875,
+            "right": 415.9356231689453,
+            "bottom": 844.9612426757812
+          },
+          "visibleFoodRect": {
+            "x": 222,
+            "y": 661,
+            "right": 320,
+            "bottom": 722,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-orleans.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "290%",
+            "shiftX": "1%",
+            "shiftY": "4%"
+          }
+        },
+        {
+          "id": "bacon",
+          "controlRect": {
+            "x": 18,
+            "y": 726,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 787
+          },
+          "viewportRect": {
+            "x": 18,
+            "y": 726,
+            "width": 98,
+            "height": 61,
+            "right": 116,
+            "bottom": 787
+          },
+          "imageRect": {
+            "x": -67.45140075683594,
+            "y": 624.79248046875,
+            "width": 274.390625,
+            "height": 274.390625,
+            "right": 206.93922424316406,
+            "bottom": 899.18310546875
+          },
+          "visibleFoodRect": {
+            "x": 18,
+            "y": 726,
+            "right": 116,
+            "bottom": 787,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-bacon.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "280%",
+            "shiftX": "1%",
+            "shiftY": "2%"
+          }
+        },
+        {
+          "id": "tenderloin",
+          "controlRect": {
+            "x": 120,
+            "y": 726,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 787
+          },
+          "viewportRect": {
+            "x": 120,
+            "y": 726,
+            "width": 98,
+            "height": 61,
+            "right": 218,
+            "bottom": 787
+          },
+          "imageRect": {
+            "x": 26.90625,
+            "y": 622.931884765625,
+            "width": 284.1875,
+            "height": 284.1875,
+            "right": 311.09375,
+            "bottom": 907.119384765625
+          },
+          "visibleFoodRect": {
+            "x": 120,
+            "y": 726,
+            "right": 218,
+            "bottom": 787,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-tenderloin.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "290%",
+            "shiftX": "0%",
+            "shiftY": "3%"
+          }
+        },
+        {
+          "id": "enoki",
+          "controlRect": {
+            "x": 222,
+            "y": 726,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 787
+          },
+          "viewportRect": {
+            "x": 222,
+            "y": 726,
+            "width": 98,
+            "height": 61,
+            "right": 320,
+            "bottom": 787
+          },
+          "imageRect": {
+            "x": 133.8046875,
+            "y": 630.2803344726562,
+            "width": 274.390625,
+            "height": 274.39056396484375,
+            "right": 408.1953125,
+            "bottom": 904.6708984375
+          },
+          "visibleFoodRect": {
+            "x": 222,
+            "y": 726,
+            "right": 320,
+            "bottom": 787,
+            "width": 98,
+            "height": 61
+          },
+          "visibleFoodInsideViewport": true,
+          "viewportInsideControl": true,
+          "viewportOverflow": "hidden/hidden",
+          "imageExtendsBeyondViewport": true,
+          "viewportCount": 1,
+          "foodArtCount": 1,
+          "hasOuterRimStyle": false,
+          "image": {
+            "src": "/src/assets/approved/menu/ingredient-bins/ingredient-bin-enoki.png",
+            "naturalWidth": 768,
+            "naturalHeight": 768,
+            "opacity": "1",
+            "scale": "280%",
+            "shiftX": "0%",
+            "shiftY": "4%"
+          }
+        }
+      ],
+      "legacyBinArtNodeCount": 0,
+      "outerRimIndicatorCount": 0,
+      "sauceBrushCount": 0,
+      "rackPairs": [],
+      "rackGriddleCollisions": [],
+      "rackTutorialCollisions": [],
+      "viewportClippingCollisions": [],
+      "bakedCustomerCount": 0,
+      "livePlateCount": 1,
+      "bubbleFaceCollisions": [],
+      "activeCustomers": 3
+    }
+  },
+  "collisions": {
+    "rackGriddle": [],
+    "rackTutorial": [],
+    "crossSlot": [],
+    "viewportClipping": []
+  },
+  "passed": true
+}
