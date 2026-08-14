@@ -57,8 +57,8 @@ const HAND_FOR_STEP: Partial<Record<TutorialStep, TutorialHandKind>> = {
 }
 
 const INGREDIENT_LABELS: Record<IngredientId, string> = {
-  noodle: '面皮', egg: '鸡蛋', 'hot-dog': '热狗', sauce: '酱刷', scallion: '葱花', cilantro: '香菜', onion: '洋葱',
-  'chili-powder': '辣椒粉', 'turkey-noodle': '火鸡面', cheese: '芝士', corn: '玉米', orleans: '奥尔良鸡排', bacon: '培根',
+  noodle: '面皮', egg: '鸡蛋', 'hot-dog': '热狗', sauce: '刷酱', scallion: '葱花', cilantro: '香菜', onion: '洋葱',
+  'chili-powder': '辣椒粉', 'turkey-noodle': '火鸡面', cheese: '芝士', corn: '玉米粒', orleans: '奥尔良鸡排', bacon: '培根',
   tenderloin: '里脊肉', enoki: '金针菇',
 }
 

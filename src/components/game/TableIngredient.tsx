@@ -114,6 +114,13 @@ export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted
         >
           <img className="table-ingredient__food-art" src={art} alt="" draggable={false} />
         </span>
+        <span
+          className="table-ingredient__label"
+          data-ingredient-label-for={id}
+          aria-hidden="true"
+        >
+          {label}
+        </span>
       </button>
       {ghost && (
         <span

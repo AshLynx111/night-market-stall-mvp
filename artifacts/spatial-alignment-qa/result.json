@@ -30,9 +30,9 @@
     "checkpoints": [
       {
         "label": "settings",
-        "identity": "reference-bgm-1786645659083-0.39219033057140096",
+        "identity": "reference-bgm-1786723165134-0.4605315401689063",
         "count": 1,
-        "currentTime": 7.297345,
+        "currentTime": 7.28811,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -40,9 +40,9 @@
       },
       {
         "label": "select",
-        "identity": "reference-bgm-1786645659083-0.39219033057140096",
+        "identity": "reference-bgm-1786723165134-0.4605315401689063",
         "count": 1,
-        "currentTime": 7.79275,
+        "currentTime": 7.808743,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -50,9 +50,9 @@
       },
       {
         "label": "day-1-entry",
-        "identity": "reference-bgm-1786645659083-0.39219033057140096",
+        "identity": "reference-bgm-1786723165134-0.4605315401689063",
         "count": 1,
-        "currentTime": 20.073721,
+        "currentTime": 20.437955,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -60,9 +60,9 @@
       },
       {
         "label": "day-1-after-order-1",
-        "identity": "reference-bgm-1786645659083-0.39219033057140096",
+        "identity": "reference-bgm-1786723165134-0.4605315401689063",
         "count": 1,
-        "currentTime": 28.767192,
+        "currentTime": 29.619501,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -70,9 +70,9 @@
       },
       {
         "label": "day-1-after-order-2",
-        "identity": "reference-bgm-1786645659083-0.39219033057140096",
+        "identity": "reference-bgm-1786723165134-0.4605315401689063",
         "count": 1,
-        "currentTime": 40.300051,
+        "currentTime": 41.674239,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -80,9 +80,9 @@
       },
       {
         "label": "summary",
-        "identity": "reference-bgm-1786645659083-0.39219033057140096",
+        "identity": "reference-bgm-1786723165134-0.4605315401689063",
         "count": 1,
-        "currentTime": 48.679692,
+        "currentTime": 50.216131,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -90,9 +90,9 @@
       },
       {
         "label": "day-2",
-        "identity": "reference-bgm-1786645659083-0.39219033057140096",
+        "identity": "reference-bgm-1786723165134-0.4605315401689063",
         "count": 1,
-        "currentTime": 49.116167,
+        "currentTime": 50.708265,
         "loop": true,
         "paused": false,
         "muted": false,
@@ -100,8 +100,8 @@
       }
     ],
     "resume": {
-      "before": 7.30523,
-      "after": 7.321487,
+      "before": 7.299098,
+      "after": 7.313951,
       "attempts": 3
     }
   },
@@ -1605,12 +1605,12 @@
             "bottom": 521.859375
           },
           "imageRect": {
-            "x": 82.140625,
-            "y": 469.7265625,
-            "width": 145.6875,
-            "height": 56.421875,
-            "right": 227.828125,
-            "bottom": 526.1484375
+            "x": 98.1953125,
+            "y": 441.1484375,
+            "width": 113.578125,
+            "height": 113.578125,
+            "right": 211.7734375,
+            "bottom": 554.7265625
           },
           "canonicalInnerPolygon": [
             {
@@ -1688,12 +1688,12 @@
             "bottom": 521.859375
           },
           "imageRect": {
-            "x": 237.140625,
-            "y": 469.7265625,
-            "width": 145.6875,
-            "height": 56.421875,
-            "right": 382.828125,
-            "bottom": 526.1484375
+            "x": 253.1953125,
+            "y": 441.1484375,
+            "width": 113.578125,
+            "height": 113.578125,
+            "right": 366.7734375,
+            "bottom": 554.7265625
           },
           "canonicalInnerPolygon": [
             {
@@ -1771,12 +1771,12 @@
             "bottom": 596.859375
           },
           "imageRect": {
-            "x": 82.140625,
-            "y": 544.7265625,
-            "width": 145.6875,
-            "height": 56.421875,
-            "right": 227.828125,
-            "bottom": 601.1484375
+            "x": 98.1953125,
+            "y": 516.1484375,
+            "width": 113.578125,
+            "height": 113.578125,
+            "right": 211.7734375,
+            "bottom": 629.7265625
           },
           "canonicalInnerPolygon": [
             {
@@ -1854,12 +1854,12 @@
             "bottom": 596.859375
           },
           "imageRect": {
-            "x": 237.140625,
-            "y": 544.7265625,
-            "width": 145.6875,
-            "height": 56.421875,
-            "right": 382.828125,
-            "bottom": 601.1484375
+            "x": 253.1953125,
+            "y": 516.1484375,
+            "width": 113.578125,
+            "height": 113.578125,
+            "right": 366.7734375,
+            "bottom": 629.7265625
           },
           "canonicalInnerPolygon": [
             {
@@ -1937,12 +1937,12 @@
             "bottom": 671.859375
           },
           "imageRect": {
-            "x": 82.140625,
-            "y": 619.7265625,
-            "width": 145.6875,
-            "height": 56.421875,
-            "right": 227.828125,
-            "bottom": 676.1484375
+            "x": 98.1953125,
+            "y": 591.1484375,
+            "width": 113.578125,
+            "height": 113.578125,
+            "right": 211.7734375,
+            "bottom": 704.7265625
           },
           "canonicalInnerPolygon": [
             {
@@ -2015,7 +2015,7 @@
       "activeCustomers": 1,
       "stationaryFoodPixels": {
         "accepted": true,
-        "changedPixelCount": 6377,
+        "changedPixelCount": 19443,
         "outsideAllowedPixelCount": 0,
         "rimChangedPixelCount": 0,
         "unusedCellChangedPixelCount": 0,
@@ -2023,31 +2023,31 @@
         "antialiasTolerance": 1,
         "maxAntialiasPixels": 1800,
         "bounds": {
-          "left": 128,
-          "top": 479,
-          "right": 333,
-          "bottom": 663
+          "left": 101,
+          "top": 474,
+          "right": 358,
+          "bottom": 671
         },
         "masks": [
           {
             "id": "noodle",
-            "changedPixelCount": 1884
+            "changedPixelCount": 4777
           },
           {
             "id": "egg",
-            "changedPixelCount": 1159
+            "changedPixelCount": 3743
           },
           {
             "id": "hot-dog",
-            "changedPixelCount": 1047
+            "changedPixelCount": 3432
           },
           {
             "id": "sauce",
-            "changedPixelCount": 1288
+            "changedPixelCount": 4101
           },
           {
             "id": "scallion",
-            "changedPixelCount": 999
+            "changedPixelCount": 3390
           }
         ]
       }
@@ -2107,11 +2107,11 @@
             "y": 469.13
           },
           {
-            "x": 318.65999999999997,
+            "x": 318.66,
             "y": 469.13
           },
           {
-            "x": 318.65999999999997,
+            "x": 318.66,
             "y": 522.5
           },
           {
@@ -2125,11 +2125,11 @@
             "y": 469.13
           },
           {
-            "x": 413.40000000000003,
+            "x": 413.4,
             "y": 469.13
           },
           {
-            "x": 413.40000000000003,
+            "x": 413.4,
             "y": 522.5
           },
           {
@@ -2197,11 +2197,11 @@
             "y": 571.56
           },
           {
-            "x": 188.60999999999996,
+            "x": 188.61,
             "y": 571.56
           },
           {
-            "x": 188.60999999999996,
+            "x": 188.61,
             "y": 627.51
           },
           {
@@ -2251,11 +2251,11 @@
             "y": 627.51
           },
           {
-            "x": 167.07999999999998,
+            "x": 167.08,
             "y": 627.51
           },
           {
-            "x": 167.07999999999998,
+            "x": 167.08,
             "y": 688.63
           },
           {
@@ -2269,11 +2269,11 @@
             "y": 627.51
           },
           {
-            "x": 268.70000000000005,
+            "x": 268.7,
             "y": 627.51
           },
           {
-            "x": 268.70000000000005,
+            "x": 268.7,
             "y": 688.63
           },
           {
@@ -2287,11 +2287,11 @@
             "y": 627.51
           },
           {
-            "x": 380.6699999999999,
+            "x": 380.67,
             "y": 627.51
           },
           {
-            "x": 380.6699999999999,
+            "x": 380.67,
             "y": 688.63
           },
           {
@@ -2361,11 +2361,11 @@
             "y": 627.51
           },
           {
-            "x": 380.6699999999999,
+            "x": 380.67,
             "y": 627.51
           },
           {
-            "x": 380.6699999999999,
+            "x": 380.67,
             "y": 688.63
           },
           {
@@ -2448,12 +2448,12 @@
             "bottom": 500.109375
           },
           "imageRect": {
-            "x": 138.328125,
-            "y": 480.3984375,
-            "width": 94.5,
-            "height": 21.328125,
-            "right": 232.828125,
-            "bottom": 501.7265625
+            "x": 150.34375,
+            "y": 455.828125,
+            "width": 70.46875,
+            "height": 70.46875,
+            "right": 220.8125,
+            "bottom": 526.296875
           },
           "canonicalInnerPolygon": [
             {
@@ -2531,12 +2531,12 @@
             "bottom": 500.109375
           },
           "imageRect": {
-            "x": 227.0234375,
-            "y": 480.3984375,
-            "width": 94.484375,
-            "height": 21.328125,
-            "right": 321.5078125,
-            "bottom": 501.7265625
+            "x": 239.03125,
+            "y": 455.828125,
+            "width": 70.46875,
+            "height": 70.46875,
+            "right": 309.5,
+            "bottom": 526.296875
           },
           "canonicalInnerPolygon": [
             {
@@ -2562,11 +2562,11 @@
               "y": 469.13
             },
             {
-              "x": 318.65999999999997,
+              "x": 318.66,
               "y": 469.13
             },
             {
-              "x": 318.65999999999997,
+              "x": 318.66,
               "y": 522.5
             },
             {
@@ -2614,12 +2614,12 @@
             "bottom": 500.96875
           },
           "imageRect": {
-            "x": 315.828125,
-            "y": 481.2578125,
-            "width": 93.46875,
-            "height": 21.328125,
-            "right": 409.296875,
-            "bottom": 502.5859375
+            "x": 327.7109375,
+            "y": 457.0703125,
+            "width": 69.703125,
+            "height": 69.703125,
+            "right": 397.4140625,
+            "bottom": 526.7734375
           },
           "canonicalInnerPolygon": [
             {
@@ -2645,11 +2645,11 @@
               "y": 469.13
             },
             {
-              "x": 413.40000000000003,
+              "x": 413.4,
               "y": 469.13
             },
             {
-              "x": 413.40000000000003,
+              "x": 413.4,
               "y": 522.5
             },
             {
@@ -2697,12 +2697,12 @@
             "bottom": 549.171875
           },
           "imageRect": {
-            "x": 112.0234375,
-            "y": 527.5859375,
-            "width": 100.609375,
-            "height": 23.359375,
-            "right": 212.6328125,
-            "bottom": 550.9453125
+            "x": 124.8125,
+            "y": 501.75,
+            "width": 75.03125,
+            "height": 75.03125,
+            "right": 199.84375,
+            "bottom": 576.78125
           },
           "canonicalInnerPolygon": [
             {
@@ -2780,12 +2780,12 @@
             "bottom": 550.03125
           },
           "imageRect": {
-            "x": 205.03125,
-            "y": 527.5234375,
-            "width": 100.59375,
-            "height": 24.359375,
-            "right": 305.625,
-            "bottom": 551.8828125
+            "x": 217.8203125,
+            "y": 502.1953125,
+            "width": 75.015625,
+            "height": 75.015625,
+            "right": 292.8359375,
+            "bottom": 577.2109375
           },
           "canonicalInnerPolygon": [
             {
@@ -2863,12 +2863,12 @@
             "bottom": 550.03125
           },
           "imageRect": {
-            "x": 298.0625,
-            "y": 528.4453125,
-            "width": 100.59375,
-            "height": 23.359375,
-            "right": 398.65625,
-            "bottom": 551.8046875
+            "x": 310.8515625,
+            "y": 502.6171875,
+            "width": 75.015625,
+            "height": 75.015625,
+            "right": 385.8671875,
+            "bottom": 577.6328125
           },
           "canonicalInnerPolygon": [
             {
@@ -2946,12 +2946,12 @@
             "bottom": 602.53125
           },
           "imageRect": {
-            "x": 88.5390625,
-            "y": 578.1484375,
-            "width": 103.640625,
-            "height": 26.390625,
-            "right": 192.1796875,
-            "bottom": 604.5390625
+            "x": 101.7109375,
+            "y": 552.6953125,
+            "width": 77.296875,
+            "height": 77.296875,
+            "right": 179.0078125,
+            "bottom": 629.9921875
           },
           "canonicalInnerPolygon": [
             {
@@ -2977,11 +2977,11 @@
               "y": 571.56
             },
             {
-              "x": 188.60999999999996,
+              "x": 188.61,
               "y": 571.56
             },
             {
-              "x": 188.60999999999996,
+              "x": 188.61,
               "y": 627.51
             },
             {
@@ -3029,12 +3029,12 @@
             "bottom": 602.53125
           },
           "imageRect": {
-            "x": 184.8515625,
-            "y": 578.1484375,
-            "width": 105.671875,
-            "height": 26.390625,
-            "right": 290.5234375,
-            "bottom": 604.5390625
+            "x": 198.28125,
+            "y": 551.9375,
+            "width": 78.8125,
+            "height": 78.8125,
+            "right": 277.09375,
+            "bottom": 630.75
           },
           "canonicalInnerPolygon": [
             {
@@ -3112,12 +3112,12 @@
             "bottom": 603.390625
           },
           "imageRect": {
-            "x": 282.234375,
-            "y": 579.0078125,
-            "width": 104.65625,
-            "height": 26.390625,
-            "right": 386.890625,
-            "bottom": 605.3984375
+            "x": 295.5390625,
+            "y": 553.1796875,
+            "width": 78.046875,
+            "height": 78.046875,
+            "right": 373.5859375,
+            "bottom": 631.2265625
           },
           "canonicalInnerPolygon": [
             {
@@ -3195,12 +3195,12 @@
             "bottom": 661.921875
           },
           "imageRect": {
-            "x": 60.34375,
-            "y": 636.59375,
-            "width": 111.78125,
-            "height": 27.40625,
-            "right": 172.125,
-            "bottom": 664
+            "x": 74.5546875,
+            "y": 608.6171875,
+            "width": 83.359375,
+            "height": 83.359375,
+            "right": 157.9140625,
+            "bottom": 691.9765625
           },
           "canonicalInnerPolygon": [
             {
@@ -3226,11 +3226,11 @@
               "y": 627.51
             },
             {
-              "x": 167.07999999999998,
+              "x": 167.08,
               "y": 627.51
             },
             {
-              "x": 167.07999999999998,
+              "x": 167.08,
               "y": 688.63
             },
             {
@@ -3278,12 +3278,12 @@
             "bottom": 662.796875
           },
           "imageRect": {
-            "x": 162.0625,
-            "y": 637.4609375,
-            "width": 110.75,
-            "height": 27.421875,
-            "right": 272.8125,
-            "bottom": 664.8828125
+            "x": 176.140625,
+            "y": 609.875,
+            "width": 82.59375,
+            "height": 82.59375,
+            "right": 258.734375,
+            "bottom": 692.46875
           },
           "canonicalInnerPolygon": [
             {
@@ -3309,11 +3309,11 @@
               "y": 627.51
             },
             {
-              "x": 268.70000000000005,
+              "x": 268.7,
               "y": 627.51
             },
             {
-              "x": 268.70000000000005,
+              "x": 268.7,
               "y": 688.63
             },
             {
@@ -3356,7 +3356,7 @@
       "activeCustomers": 3,
       "stationaryFoodPixels": {
         "accepted": true,
-        "changedPixelCount": 2727,
+        "changedPixelCount": 13406,
         "outsideAllowedPixelCount": 0,
         "rimChangedPixelCount": 0,
         "unusedCellChangedPixelCount": 0,
@@ -3364,55 +3364,55 @@
         "antialiasTolerance": 1,
         "maxAntialiasPixels": 3960,
         "bounds": {
-          "left": 104,
-          "top": 483,
-          "right": 371,
-          "bottom": 659
+          "left": 80,
+          "top": 482,
+          "right": 391,
+          "bottom": 662
         },
         "masks": [
           {
             "id": "noodle",
-            "changedPixelCount": 285
+            "changedPixelCount": 1145
           },
           {
             "id": "egg",
-            "changedPixelCount": 174
+            "changedPixelCount": 982
           },
           {
             "id": "hot-dog",
-            "changedPixelCount": 160
+            "changedPixelCount": 935
           },
           {
             "id": "sauce",
-            "changedPixelCount": 236
+            "changedPixelCount": 1242
           },
           {
             "id": "scallion",
-            "changedPixelCount": 202
+            "changedPixelCount": 1101
           },
           {
             "id": "cilantro",
-            "changedPixelCount": 242
+            "changedPixelCount": 1219
           },
           {
             "id": "onion",
-            "changedPixelCount": 337
+            "changedPixelCount": 1400
           },
           {
             "id": "chili-powder",
-            "changedPixelCount": 261
+            "changedPixelCount": 1347
           },
           {
             "id": "turkey-noodle",
-            "changedPixelCount": 273
+            "changedPixelCount": 1296
           },
           {
             "id": "cheese",
-            "changedPixelCount": 333
+            "changedPixelCount": 1540
           },
           {
             "id": "corn",
-            "changedPixelCount": 224
+            "changedPixelCount": 1199
           }
         ]
       }
@@ -3476,11 +3476,11 @@
             "y": 469.13
           },
           {
-            "x": 318.65999999999997,
+            "x": 318.66,
             "y": 469.13
           },
           {
-            "x": 318.65999999999997,
+            "x": 318.66,
             "y": 522.5
           },
           {
@@ -3494,11 +3494,11 @@
             "y": 469.13
           },
           {
-            "x": 413.40000000000003,
+            "x": 413.4,
             "y": 469.13
           },
           {
-            "x": 413.40000000000003,
+            "x": 413.4,
             "y": 522.5
           },
           {
@@ -3566,11 +3566,11 @@
             "y": 571.56
           },
           {
-            "x": 188.60999999999996,
+            "x": 188.61,
             "y": 571.56
           },
           {
-            "x": 188.60999999999996,
+            "x": 188.61,
             "y": 627.51
           },
           {
@@ -3620,11 +3620,11 @@
             "y": 627.51
           },
           {
-            "x": 167.07999999999998,
+            "x": 167.08,
             "y": 627.51
           },
           {
-            "x": 167.07999999999998,
+            "x": 167.08,
             "y": 688.63
           },
           {
@@ -3638,11 +3638,11 @@
             "y": 627.51
           },
           {
-            "x": 268.70000000000005,
+            "x": 268.7,
             "y": 627.51
           },
           {
-            "x": 268.70000000000005,
+            "x": 268.7,
             "y": 688.63
           },
           {
@@ -3656,11 +3656,11 @@
             "y": 627.51
           },
           {
-            "x": 380.6699999999999,
+            "x": 380.67,
             "y": 627.51
           },
           {
-            "x": 380.6699999999999,
+            "x": 380.67,
             "y": 688.63
           },
           {
@@ -3744,12 +3744,12 @@
             "bottom": 500.109375
           },
           "imageRect": {
-            "x": 138.328125,
-            "y": 480.3984375,
-            "width": 94.5,
-            "height": 21.328125,
-            "right": 232.828125,
-            "bottom": 501.7265625
+            "x": 150.34375,
+            "y": 455.828125,
+            "width": 70.46875,
+            "height": 70.46875,
+            "right": 220.8125,
+            "bottom": 526.296875
           },
           "canonicalInnerPolygon": [
             {
@@ -3827,12 +3827,12 @@
             "bottom": 500.109375
           },
           "imageRect": {
-            "x": 227.0234375,
-            "y": 480.3984375,
-            "width": 94.484375,
-            "height": 21.328125,
-            "right": 321.5078125,
-            "bottom": 501.7265625
+            "x": 239.03125,
+            "y": 455.828125,
+            "width": 70.46875,
+            "height": 70.46875,
+            "right": 309.5,
+            "bottom": 526.296875
           },
           "canonicalInnerPolygon": [
             {
@@ -3858,11 +3858,11 @@
               "y": 469.13
             },
             {
-              "x": 318.65999999999997,
+              "x": 318.66,
               "y": 469.13
             },
             {
-              "x": 318.65999999999997,
+              "x": 318.66,
               "y": 522.5
             },
             {
@@ -3910,12 +3910,12 @@
             "bottom": 500.96875
           },
           "imageRect": {
-            "x": 315.828125,
-            "y": 481.2578125,
-            "width": 93.46875,
-            "height": 21.328125,
-            "right": 409.296875,
-            "bottom": 502.5859375
+            "x": 327.7109375,
+            "y": 457.0703125,
+            "width": 69.703125,
+            "height": 69.703125,
+            "right": 397.4140625,
+            "bottom": 526.7734375
           },
           "canonicalInnerPolygon": [
             {
@@ -3941,11 +3941,11 @@
               "y": 469.13
             },
             {
-              "x": 413.40000000000003,
+              "x": 413.4,
               "y": 469.13
             },
             {
-              "x": 413.40000000000003,
+              "x": 413.4,
               "y": 522.5
             },
             {
@@ -3993,12 +3993,12 @@
             "bottom": 549.171875
           },
           "imageRect": {
-            "x": 112.0234375,
-            "y": 527.5859375,
-            "width": 100.609375,
-            "height": 23.359375,
-            "right": 212.6328125,
-            "bottom": 550.9453125
+            "x": 124.8125,
+            "y": 501.75,
+            "width": 75.03125,
+            "height": 75.03125,
+            "right": 199.84375,
+            "bottom": 576.78125
           },
           "canonicalInnerPolygon": [
             {
@@ -4076,12 +4076,12 @@
             "bottom": 550.03125
           },
           "imageRect": {
-            "x": 205.03125,
-            "y": 527.5234375,
-            "width": 100.59375,
-            "height": 24.359375,
-            "right": 305.625,
-            "bottom": 551.8828125
+            "x": 217.8203125,
+            "y": 502.1953125,
+            "width": 75.015625,
+            "height": 75.015625,
+            "right": 292.8359375,
+            "bottom": 577.2109375
           },
           "canonicalInnerPolygon": [
             {
@@ -4159,12 +4159,12 @@
             "bottom": 550.03125
           },
           "imageRect": {
-            "x": 298.0625,
-            "y": 528.4453125,
-            "width": 100.59375,
-            "height": 23.359375,
-            "right": 398.65625,
-            "bottom": 551.8046875
+            "x": 310.8515625,
+            "y": 502.6171875,
+            "width": 75.015625,
+            "height": 75.015625,
+            "right": 385.8671875,
+            "bottom": 577.6328125
           },
           "canonicalInnerPolygon": [
             {
@@ -4242,12 +4242,12 @@
             "bottom": 602.53125
           },
           "imageRect": {
-            "x": 88.5390625,
-            "y": 578.1484375,
-            "width": 103.640625,
-            "height": 26.390625,
-            "right": 192.1796875,
-            "bottom": 604.5390625
+            "x": 101.7109375,
+            "y": 552.6953125,
+            "width": 77.296875,
+            "height": 77.296875,
+            "right": 179.0078125,
+            "bottom": 629.9921875
           },
           "canonicalInnerPolygon": [
             {
@@ -4273,11 +4273,11 @@
               "y": 571.56
             },
             {
-              "x": 188.60999999999996,
+              "x": 188.61,
               "y": 571.56
             },
             {
-              "x": 188.60999999999996,
+              "x": 188.61,
               "y": 627.51
             },
             {
@@ -4325,12 +4325,12 @@
             "bottom": 602.53125
           },
           "imageRect": {
-            "x": 184.8515625,
-            "y": 578.1484375,
-            "width": 105.671875,
-            "height": 26.390625,
-            "right": 290.5234375,
-            "bottom": 604.5390625
+            "x": 198.28125,
+            "y": 551.9375,
+            "width": 78.8125,
+            "height": 78.8125,
+            "right": 277.09375,
+            "bottom": 630.75
           },
           "canonicalInnerPolygon": [
             {
@@ -4408,12 +4408,12 @@
             "bottom": 603.390625
           },
           "imageRect": {
-            "x": 282.234375,
-            "y": 579.0078125,
-            "width": 104.65625,
-            "height": 26.390625,
-            "right": 386.890625,
-            "bottom": 605.3984375
+            "x": 295.5390625,
+            "y": 553.1796875,
+            "width": 78.046875,
+            "height": 78.046875,
+            "right": 373.5859375,
+            "bottom": 631.2265625
           },
           "canonicalInnerPolygon": [
             {
@@ -4491,12 +4491,12 @@
             "bottom": 661.921875
           },
           "imageRect": {
-            "x": 60.34375,
-            "y": 636.59375,
-            "width": 111.78125,
-            "height": 27.40625,
-            "right": 172.125,
-            "bottom": 664
+            "x": 74.5546875,
+            "y": 608.6171875,
+            "width": 83.359375,
+            "height": 83.359375,
+            "right": 157.9140625,
+            "bottom": 691.9765625
           },
           "canonicalInnerPolygon": [
             {
@@ -4522,11 +4522,11 @@
               "y": 627.51
             },
             {
-              "x": 167.07999999999998,
+              "x": 167.08,
               "y": 627.51
             },
             {
-              "x": 167.07999999999998,
+              "x": 167.08,
               "y": 688.63
             },
             {
@@ -4574,12 +4574,12 @@
             "bottom": 662.796875
           },
           "imageRect": {
-            "x": 162.0625,
-            "y": 637.4609375,
-            "width": 110.75,
-            "height": 27.421875,
-            "right": 272.8125,
-            "bottom": 664.8828125
+            "x": 176.140625,
+            "y": 609.875,
+            "width": 82.59375,
+            "height": 82.59375,
+            "right": 258.734375,
+            "bottom": 692.46875
           },
           "canonicalInnerPolygon": [
             {
@@ -4605,11 +4605,11 @@
               "y": 627.51
             },
             {
-              "x": 268.70000000000005,
+              "x": 268.7,
               "y": 627.51
             },
             {
-              "x": 268.70000000000005,
+              "x": 268.7,
               "y": 688.63
             },
             {
@@ -4657,12 +4657,12 @@
             "bottom": 662.78125
           },
           "imageRect": {
-            "x": 263.6953125,
-            "y": 638.3984375,
-            "width": 110.765625,
-            "height": 26.390625,
-            "right": 374.4609375,
-            "bottom": 664.7890625
+            "x": 277.7734375,
+            "y": 610.2890625,
+            "width": 82.609375,
+            "height": 82.609375,
+            "right": 360.3828125,
+            "bottom": 692.8984375
           },
           "canonicalInnerPolygon": [
             {
@@ -4688,11 +4688,11 @@
               "y": 627.51
             },
             {
-              "x": 380.6699999999999,
+              "x": 380.67,
               "y": 627.51
             },
             {
-              "x": 380.6699999999999,
+              "x": 380.67,
               "y": 688.63
             },
             {
@@ -4740,12 +4740,12 @@
             "bottom": 722.1875
           },
           "imageRect": {
-            "x": 31.328125,
-            "y": 695.9296875,
-            "width": 119.90625,
-            "height": 28.421875,
-            "right": 151.234375,
-            "bottom": 724.3515625
+            "x": 46.5703125,
+            "y": 665.4296875,
+            "width": 89.421875,
+            "height": 89.421875,
+            "right": 135.9921875,
+            "bottom": 754.8515625
           },
           "canonicalInnerPolygon": [
             {
@@ -4823,12 +4823,12 @@
             "bottom": 723.046875
           },
           "imageRect": {
-            "x": 139.921875,
-            "y": 696.7890625,
-            "width": 118.875,
-            "height": 28.421875,
-            "right": 258.796875,
-            "bottom": 725.2109375
+            "x": 155.03125,
+            "y": 666.671875,
+            "width": 88.65625,
+            "height": 88.65625,
+            "right": 243.6875,
+            "bottom": 755.328125
           },
           "canonicalInnerPolygon": [
             {
@@ -4906,12 +4906,12 @@
             "bottom": 723.046875
           },
           "imageRect": {
-            "x": 248.515625,
-            "y": 697.71875,
-            "width": 117.875,
-            "height": 27.40625,
-            "right": 366.390625,
-            "bottom": 725.125
+            "x": 263.5,
+            "y": 667.46875,
+            "width": 87.90625,
+            "height": 87.90625,
+            "right": 351.40625,
+            "bottom": 755.375
           },
           "canonicalInnerPolygon": [
             {
@@ -4984,7 +4984,7 @@
       "activeCustomers": 3,
       "stationaryFoodPixels": {
         "accepted": true,
-        "changedPixelCount": 3937,
+        "changedPixelCount": 19791,
         "outsideAllowedPixelCount": 0,
         "rimChangedPixelCount": 0,
         "unusedCellChangedPixelCount": 0,
@@ -4992,71 +4992,71 @@
         "antialiasTolerance": 1,
         "maxAntialiasPixels": 5400,
         "bounds": {
-          "left": 78,
-          "top": 483,
-          "right": 371,
-          "bottom": 720
+          "left": 49,
+          "top": 482,
+          "right": 391,
+          "bottom": 722
         },
         "masks": [
           {
             "id": "noodle",
-            "changedPixelCount": 285
+            "changedPixelCount": 1145
           },
           {
             "id": "egg",
-            "changedPixelCount": 174
+            "changedPixelCount": 982
           },
           {
             "id": "hot-dog",
-            "changedPixelCount": 160
+            "changedPixelCount": 935
           },
           {
             "id": "sauce",
-            "changedPixelCount": 236
+            "changedPixelCount": 1242
           },
           {
             "id": "scallion",
-            "changedPixelCount": 202
+            "changedPixelCount": 1101
           },
           {
             "id": "cilantro",
-            "changedPixelCount": 242
+            "changedPixelCount": 1219
           },
           {
             "id": "onion",
-            "changedPixelCount": 337
+            "changedPixelCount": 1400
           },
           {
             "id": "chili-powder",
-            "changedPixelCount": 261
+            "changedPixelCount": 1347
           },
           {
             "id": "turkey-noodle",
-            "changedPixelCount": 273
+            "changedPixelCount": 1296
           },
           {
             "id": "cheese",
-            "changedPixelCount": 333
+            "changedPixelCount": 1540
           },
           {
             "id": "corn",
-            "changedPixelCount": 224
+            "changedPixelCount": 1199
           },
           {
             "id": "orleans",
-            "changedPixelCount": 307
+            "changedPixelCount": 1696
           },
           {
             "id": "bacon",
-            "changedPixelCount": 373
+            "changedPixelCount": 1799
           },
           {
             "id": "tenderloin",
-            "changedPixelCount": 321
+            "changedPixelCount": 1808
           },
           {
             "id": "enoki",
-            "changedPixelCount": 209
+            "changedPixelCount": 1082
           }
         ]
       }
@@ -5093,7 +5093,7 @@
     "directImageSource": null,
     "croppedImageCount": 1,
     "accepted": true,
-    "changedPixelCount": 2503,
+    "changedPixelCount": 2505,
     "outsideAllowedPixelCount": 0,
     "rimChangedPixelCount": 0,
     "unusedCellChangedPixelCount": 0,
@@ -5101,7 +5101,7 @@
     "antialiasTolerance": 1,
     "maxAntialiasPixels": 360,
     "bounds": {
-      "left": 819,
+      "left": 820,
       "top": 406,
       "right": 880,
       "bottom": 451
@@ -5109,7 +5109,7 @@
     "masks": [
       {
         "id": "noodle-drag-ghost",
-        "changedPixelCount": 2503
+        "changedPixelCount": 2505
       }
     ]
   },

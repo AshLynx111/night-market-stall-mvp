@@ -205,7 +205,9 @@ describe('KitchenScene', () => {
 
   it.each([
     { day: 1, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion'], rackSlots: 5 },
+    { day: 2, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder'], rackSlots: 8 },
     { day: 3, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn'], rackSlots: 11 },
+    { day: 4, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn', 'orleans', 'bacon'], rackSlots: 13 },
     { day: 5, ids: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cilantro', 'onion', 'chili-powder', 'turkey-noodle', 'cheese', 'corn', 'orleans', 'bacon', 'tenderloin', 'enoki'], rackSlots: 15 },
   ])('renders Day $day unlocked ingredients in unique physical rack cells', ({ day, ids, rackSlots }) => {
     const { container } = renderScene(activeKitchenState(day, 1))
@@ -218,10 +220,13 @@ describe('KitchenScene', () => {
     expect(container.querySelectorAll('.table-ingredient__bin-art')).toHaveLength(0)
     if (day === 1) expect(container.querySelectorAll('.table-ingredient__viewport')).toHaveLength(5)
     ingredients.forEach((ingredient) => {
-      expect(ingredient.children).toHaveLength(1)
+      expect(ingredient.children).toHaveLength(2)
       const viewport = ingredient.querySelector(':scope > .table-ingredient__viewport')
       expect(viewport?.children).toHaveLength(1)
       expect(viewport?.querySelector(':scope > img.table-ingredient__food-art')).not.toBeNull()
+      const label = ingredient.querySelector<HTMLElement>(':scope > .table-ingredient__label')
+      expect(label?.dataset.ingredientLabelFor).toBe(ingredient.dataset.ingredientId)
+      expect(label?.textContent?.trim()).not.toBe('')
     })
     expect(container.querySelector('[data-ingredient-id="sauce"] .table-ingredient__food-art')?.getAttribute('src')).toContain('ingredient-sauce.png')
     expect(container.querySelector('[data-sauce-brush]')).toBeNull()
@@ -232,6 +237,20 @@ describe('KitchenScene', () => {
     )
     expect(new Set(controls.map((control) => `${control.dataset.rackColumn}:${control.dataset.rackRow}`)).size)
       .toBe(controls.length)
+  })
+
+  it('keeps the exact Chinese ingredient labels visible in Day 5 row-major order', () => {
+    const { container } = renderScene(activeKitchenState(5, 1))
+    const labels = [...container.querySelectorAll<HTMLElement>('.table-ingredient__label')]
+
+    expect(labels.map((label) => label.textContent)).toEqual([
+      '面皮', '鸡蛋', '热狗',
+      '刷酱', '葱花', '香菜',
+      '洋葱', '辣椒粉', '火鸡面',
+      '芝士', '玉米粒', '奥尔良鸡排',
+      '培根', '里脊肉', '金针菇',
+    ])
+    expect(container.querySelector('.table-ingredient__ghost .table-ingredient__label')).toBeNull()
   })
 
   it('uses transparent food-only art for every physical rack slot', () => {
