@@ -4,6 +4,15 @@ import { describe, expect, it } from 'vitest'
 const landscapeSource = readFileSync('src/components/LandscapeGame.tsx', 'utf8')
 const landscapeCss = readFileSync('src/landscape.css', 'utf8')
 const kitchenCss = readFileSync('src/styles/kitchen.css', 'utf8')
+const gameplaySource = [
+  landscapeSource,
+  readFileSync('src/components/game/KitchenScene.tsx', 'utf8'),
+  readFileSync('src/components/game/CookingGestureLayer.tsx', 'utf8'),
+  readFileSync('src/components/game/OrderBubble.tsx', 'utf8'),
+  readFileSync('src/components/game/TutorialOverlay.tsx', 'utf8'),
+  landscapeCss,
+  kitchenCss,
+].join('\n')
 
 describe('reference-master gameplay composition', () => {
   it('uses the clean illustrated kitchen background without baked HUD signs', () => {
@@ -63,5 +72,9 @@ describe('reference-master gameplay composition', () => {
     expect(landscapeSource).toContain("'--home-bg': `url(${summaryScreen})`")
     expect(landscapeSource).toContain('className="settings-screen__art"')
     expect(landscapeSource).toContain('src={settingsScreen}')
+  })
+
+  it('contains no system emoji in the live gameplay presentation', () => {
+    expect(gameplaySource).not.toMatch(/😊|💵|🔥|🎵|☾|♪|Ⅱ|🗑|☝|🌶|🍳|🔪|↻|🏮|📱|🛍/)
   })
 })

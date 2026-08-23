@@ -232,11 +232,7 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
   right: 18px;
   top: 12px;
   height: 52px;
-  display: grid;
-  grid-template-columns: 150px 210px auto 54px 54px;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 10px;
+  display: block;
   pointer-events: none;
 }
 .gameplay-hud button,
@@ -252,6 +248,11 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 }
 .gameplay-hud button { appearance: none; font: inherit; cursor: pointer; }
 .gameplay-hud__day {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 52px;
   padding: 0 18px;
   border-radius: 10px 13px 9px 14px;
   font-size: 20px;
@@ -273,8 +274,11 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .gameplay-hud__orders i { display: block; height: 5px; margin-top: 7px; overflow: hidden; border: 1px solid #69462d; border-radius: 99px; background: rgb(104 72 44 / .38); }
 .gameplay-hud__orders i span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #be5931, #f0ac42); transition: width .24s ease; }
 .gameplay-hud__coins {
-  grid-column: 3;
-  justify-self: end;
+  position: absolute;
+  right: 128px;
+  top: 0;
+  height: 52px;
+  box-sizing: border-box;
   min-width: 132px;
   padding: 0 16px;
   display: flex;
@@ -286,6 +290,9 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 }
 .gameplay-hud__coins .game-icon { color: #b86b25; }
 .gameplay-hud__control { width: 52px; height: 52px; padding: 10px; display: grid; place-items: center; border-radius: 12px 9px 13px 10px; }
+.gameplay-hud__control { position: absolute; top: 0; }
+.gameplay-hud__control--pause { right: 64px; }
+.gameplay-hud__control--sound { right: 0; }
 .gameplay-hud .game-icon { width: 24px; height: 24px; }
 .gameplay-hud button:hover { filter: brightness(1.06) saturate(1.05); transform: translateY(-1px); }
 .gameplay-hud button:active { transform: translateY(3px); box-shadow: inset 0 2px 5px rgb(91 52 27 / .24), 0 1px 0 rgb(39 24 17 / .62); }

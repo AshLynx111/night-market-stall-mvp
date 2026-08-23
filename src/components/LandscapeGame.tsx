@@ -66,7 +66,7 @@ function starsText(count: number) {
   return `${'★'.repeat(safeCount)}${'☆'.repeat(3 - safeCount)}`
 }
 
-function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musicEnabled, effectsEnabled, guidedTutorial, qaCelebrityPatienceMs, qaServedOrders, onHome, onMenu, onSound, onHelp, onOrderServed, onEvent, onResumeEvent, onTutorialComplete, onComplete }: {
+function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musicEnabled, effectsEnabled, guidedTutorial, qaCelebrityPatienceMs, qaServedOrders, qaPatienceRatio, qaDeliveryFeedback, onHome, onMenu, onSound, onHelp, onOrderServed, onEvent, onResumeEvent, onTutorialComplete, onComplete }: {
   day: DayConfig
   save: CampaignSave
   paused: boolean
@@ -77,6 +77,8 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   guidedTutorial: boolean
   qaCelebrityPatienceMs?: number
   qaServedOrders?: number
+  qaPatienceRatio?: number
+  qaDeliveryFeedback?: boolean
   onHome: () => void
   onMenu: () => void
   onSound: () => void
@@ -93,6 +95,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
     save.fireLevel * 3_000,
     qaServedOrders,
     guidedTutorial,
+    qaPatienceRatio,
   )
   const creditedCount = useRef(0)
   const eventReported = useRef(false)
@@ -102,7 +105,9 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   const pendingCelebrityInjection = useRef<{ patienceMs?: number } | null>(null)
   const nextDeliveryFeedbackId = useRef(0)
   const deliveryFeedbackTimer = useRef<number | null>(null)
-  const [deliveryFeedback, setDeliveryFeedback] = useState<DeliveryFeedbackValue | null>(null)
+  const [deliveryFeedback, setDeliveryFeedback] = useState<DeliveryFeedbackValue | null>(() => qaDeliveryFeedback
+    ? { id: 1, income: 9, quality: 96 }
+    : null)
   const [sceneScale, setSceneScale] = useState(() => Math.min(window.innerWidth / 1440, window.innerHeight / 810))
   const sceneInverseScale = sceneScale > 0 ? Math.max(1, 1 / sceneScale) : 1
   const expandedRack = availableIngredients(day.day).length > 6
@@ -226,7 +231,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
           onSound={onSound}
         />
         <KitchenScene state={state} dispatch={dispatch} soundEnabled={effectsEnabled} />
-        <DeliveryFeedback feedback={deliveryFeedback} />
+        <DeliveryFeedback feedback={deliveryFeedback} held={qaDeliveryFeedback} />
         <button className="help-fab" onClick={onHelp}>？</button>
         {eventOpen && (
           <div className="event-screen event-screen--overlay">
@@ -328,6 +333,13 @@ export function LandscapeGame() {
     && Number(query.get('qaServedOrders')) > 0
     ? Number(query.get('qaServedOrders'))
     : undefined
+  const qaPatienceRatio = qaFixturesEnabled
+    && Number.isFinite(Number(query.get('qaPatienceRatio')))
+    && Number(query.get('qaPatienceRatio')) > 0
+    && Number(query.get('qaPatienceRatio')) <= 1
+    ? Number(query.get('qaPatienceRatio'))
+    : undefined
+  const qaDeliveryFeedback = qaFixturesEnabled && query.get('qaDeliveryFeedback') === '1'
   const initialScreen: Screen = qaScreen === 'event' && previewDay?.day === 5
     ? 'event'
     : qaScreen === 'summary' && previewDay
@@ -640,6 +652,8 @@ export function LandscapeGame() {
         guidedTutorial={day.day === 1 && !guidedTutorialComplete}
         qaCelebrityPatienceMs={qaCelebrityPatienceMs}
         qaServedOrders={sessionId === 1 ? qaServedOrders : undefined}
+        qaPatienceRatio={qaPatienceRatio}
+        qaDeliveryFeedback={qaDeliveryFeedback}
         onHome={openAbandonConfirm}
         onMenu={() => setShowMenu(true)}
         onSound={toggleMusic}

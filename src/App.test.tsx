@@ -595,4 +595,17 @@ describe('App landscape route', () => {
     expect(summaryContainer.querySelectorAll('.summary-actions button')).toHaveLength(2)
     act(() => summaryRoot.unmount())
   })
+
+  it('exposes the development-only delivery feedback fixture without changing campaign values', () => {
+    vi.stubGlobal('requestAnimationFrame', vi.fn(() => 1))
+    vi.stubGlobal('cancelAnimationFrame', vi.fn())
+    window.history.replaceState({}, '', '/?playDay=3&qaDeliveryFeedback=1')
+    const container = document.createElement('div')
+    const root = createRoot(container)
+    act(() => root.render(<App />))
+
+    expect(container.querySelector('[data-delivery-feedback]')?.textContent).toContain('+¥9')
+    expect(container.textContent).toContain('订单 0/5')
+    act(() => root.unmount())
+  })
 })

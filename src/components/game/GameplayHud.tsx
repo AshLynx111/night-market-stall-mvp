@@ -26,10 +26,10 @@ export function GameplayHud({ day, coins, served, target, sound, onHome, onPause
         <GameIcon name="coin" />
         <b>¥{coins}</b>
       </div>
-      <button className="gameplay-hud__control" type="button" onClick={onPause} aria-label="暂停并打开菜单">
+      <button className="gameplay-hud__control gameplay-hud__control--pause" type="button" onClick={onPause} aria-label="暂停并打开菜单">
         <GameIcon name="pause" />
       </button>
-      <button className="gameplay-hud__control" type="button" onClick={onSound} aria-label={sound ? '关闭音乐' : '开启音乐'} aria-pressed={!sound}>
+      <button className="gameplay-hud__control gameplay-hud__control--sound" type="button" onClick={onSound} aria-label={sound ? '关闭音乐' : '开启音乐'} aria-pressed={!sound}>
         <GameIcon name={sound ? 'sound-on' : 'sound-off'} />
       </button>
     </header>

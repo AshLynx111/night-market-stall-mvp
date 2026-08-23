@@ -8,22 +8,29 @@ export function useKitchenGame(
   patienceBonusMs = 0,
   initialServedCount = 0,
   guidedTutorial = false,
+  initialPatienceRatio?: number,
 ) {
   const [state, dispatch] = useReducer(
     kitchenReducer,
-    { day, seed, patienceBonusMs, initialServedCount, guidedTutorial },
+    { day, seed, patienceBonusMs, initialServedCount, guidedTutorial, initialPatienceRatio },
     ({
       day: initialDay,
       seed: initialSeed,
       patienceBonusMs: initialPatienceBonusMs,
       initialServedCount: servedCount,
       guidedTutorial: initialGuidedTutorial,
+      initialPatienceRatio: patienceRatio,
     }) => {
       const safeServedCount = Number.isFinite(servedCount)
         ? Math.min(100, Math.max(0, Math.floor(servedCount)))
         : 0
+      const created = createKitchenState(initialDay, initialSeed, initialPatienceBonusMs, initialGuidedTutorial)
+      const safePatienceRatio = Number.isFinite(patienceRatio)
+        ? Math.min(1, Math.max(.01, patienceRatio ?? 1))
+        : 1
       return {
-        ...createKitchenState(initialDay, initialSeed, initialPatienceBonusMs, initialGuidedTutorial),
+        ...created,
+        customers: created.customers.map((customer) => ({ ...customer, patienceMs: customer.maxPatienceMs * safePatienceRatio })),
         servedQualities: Array(safeServedCount).fill(100),
       }
     },
