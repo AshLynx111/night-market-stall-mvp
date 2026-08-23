@@ -234,6 +234,10 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
   const guidedHand = HAND_FOR_STEP[guidedStep]
   const sauceEnabled = sauceExpected && (!guided || guidedStep === 'sauce')
   const bubbleLayout = layoutOrderBubbles(state.customers)
+  const activeCustomers = state.customers.filter((customer) => customer.presence === 'active')
+  const criticalCustomerId = activeCustomers
+    .filter((customer) => customer.patienceMs / customer.maxPatienceMs <= .3)
+    .sort((a, b) => a.patienceMs / a.maxPatienceMs - b.patienceMs / b.maxPatienceMs)[0]?.id
   const keyboardApply = (ingredient: IngredientId) => {
     if (ingredient === 'sauce') {
       if (sauceEnabled) setSauceBrushSelected(true)
@@ -266,7 +270,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
             data-bubble-face-clearance={bubbleLayout[customer.id]?.clearOfCharacter ? 'true' : undefined}
             key={customer.id}
           >
-            <CustomerLane customer={customer} bubblePose={bubbleLayout[customer.id]} />
+            <CustomerLane customer={customer} bubblePose={bubbleLayout[customer.id]} critical={customer.id === criticalCustomerId} />
           </div>
         ))}
       </section>

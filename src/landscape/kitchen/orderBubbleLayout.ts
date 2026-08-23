@@ -24,11 +24,9 @@ const SCREEN = { width: 1440, height: 810 }
 const CHARACTER = { halfWidth: 92, height: 276 }
 
 export const HUD_RESERVED_RECTS: ScreenRect[] = [
-  { x: 24, y: 13, width: 272, height: 158 },
-  { x: 299, y: 25, width: 193, height: 166 },
-  { x: 575, y: 47, width: 330, height: 83 },
-  { x: 1142, y: 42, width: 162, height: 167 },
-  { x: 1328, y: 26, width: 76, height: 118 },
+  { x: 18, y: 12, width: 150, height: 52 },
+  { x: 615, y: 12, width: 210, height: 52 },
+  { x: 1052, y: 12, width: 370, height: 52 },
 ]
 
 const CANDIDATE_OFFSETS = {
