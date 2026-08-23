@@ -1,0 +1,79 @@
+{
+  "capturedAt": "2026-08-23T16:21:34.254Z",
+  "baseUrl": "http://127.0.0.1:4179",
+  "screenshots": [
+    {
+      "filename": "day1-initial-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "guided initial"
+    },
+    {
+      "filename": "first-customer-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "first active customer"
+    },
+    {
+      "filename": "cooking-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "noodle on left griddle"
+    },
+    {
+      "filename": "two-customers-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "two active customers"
+    },
+    {
+      "filename": "two-griddles-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "both griddles occupied"
+    },
+    {
+      "filename": "expanded-rack-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "Day 5 expanded rack"
+    },
+    {
+      "filename": "delivery-feedback-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "delivery reward fixture"
+    },
+    {
+      "filename": "low-patience-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "critical patience fixture"
+    },
+    {
+      "filename": "mobile-landscape-844x390.png",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": "mobile landscape"
+    }
+  ],
+  "consoleErrors": []
+}
