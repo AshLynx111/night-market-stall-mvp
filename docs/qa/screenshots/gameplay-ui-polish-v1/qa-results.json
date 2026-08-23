@@ -1,5 +1,5 @@
 {
-  "capturedAt": "2026-08-23T16:21:34.254Z",
+  "capturedAt": "2026-08-23T16:28:32.180Z",
   "baseUrl": "http://127.0.0.1:4179",
   "screenshots": [
     {
@@ -24,7 +24,15 @@
         "width": 1440,
         "height": 810
       },
-      "state": "noodle on left griddle"
+      "state": "actual guided noodle placement"
+    },
+    {
+      "filename": "delivery-feedback-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "actual completed order reward"
     },
     {
       "filename": "two-customers-1440x810.png",
@@ -51,14 +59,6 @@
       "state": "Day 5 expanded rack"
     },
     {
-      "filename": "delivery-feedback-1440x810.png",
-      "viewport": {
-        "width": 1440,
-        "height": 810
-      },
-      "state": "delivery reward fixture"
-    },
-    {
       "filename": "low-patience-1440x810.png",
       "viewport": {
         "width": 1440,
@@ -75,5 +75,12 @@
       "state": "mobile landscape"
     }
   ],
+  "flowChecks": {
+    "tutorialCompleted": true,
+    "saveCoinsAfterDelivery": 46,
+    "pauseMenuOpened": true,
+    "musicToggledOffAndOn": true,
+    "enteredNextDay": true
+  },
   "consoleErrors": []
 }
