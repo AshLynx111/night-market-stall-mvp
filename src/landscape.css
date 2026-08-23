@@ -27,6 +27,12 @@ body { overflow: hidden; background: #101a2c; }
 button { font: inherit; color: inherit; touch-action: manipulation; }
 button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 
+.ui-screen { animation: ui-screen-enter .24s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes ui-screen-enter {
+  from { opacity: 0; filter: brightness(.86) saturate(.9); }
+  to { opacity: 1; filter: none; }
+}
+
 .home-screen,
 .select-screen,
 .summary-screen,
@@ -196,7 +202,8 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .day-card__stars { left: 70.5%; top: 9%; width: 24%; height: 13%; color: #d88a25; font-size: clamp(12px, 1.45vw, 24px); letter-spacing: .08em; text-shadow: 0 1px 0 #9c5b27; }
 .day-hotspot__status { left: 9%; top: 84.5%; width: 58%; height: 9%; color: #574231; font-size: clamp(7px, .78vw, 13px); white-space: nowrap; }
 .day-hotspot__status--mask { top: 79%; width: 67%; height: 15%; }
-.day-card__lock { margin-right: .3em; }
+.day-card__lock { width: 1.05em; height: 1.05em; margin-right: .3em; display: inline-grid; place-items: center; }
+.day-card__lock .game-icon { width: 100%; height: 100%; }
 
 .upgrade-shop { position: absolute; inset: 0; pointer-events: none; }
 .upgrade-shop__funds,
@@ -471,10 +478,12 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .summary-actions button:last-child span { left: 18%; width: 64%; background: #ec6614; box-shadow: 0 0 7px 6px #ec6614; }
 
 /* Modals */
-.modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 18px; background: rgba(7,13,22,.78); backdrop-filter: blur(7px); }
+.modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 18px; background: rgba(7,13,22,.78); backdrop-filter: blur(7px); animation: ui-backdrop-in .18s ease-out both; }
 .menu-modal,
 .help-modal,
-.abandon-modal { position: relative; max-height: 92vh; border: 3px solid #664937; border-radius: 22px 17px 25px 15px; background: #fff0cd; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+.abandon-modal { position: relative; max-height: 92vh; border: 3px solid #664937; border-radius: 22px 17px 25px 15px; background: #fff0cd; box-shadow: 0 20px 60px rgba(0,0,0,.45); animation: ui-panel-in .22s cubic-bezier(.2, .8, .2, 1.1) both; }
+@keyframes ui-backdrop-in { from { opacity: 0; } }
+@keyframes ui-panel-in { from { opacity: 0; transform: translateY(12px) scale(.97); } }
 .menu-modal { width: min(1050px, 92vw); padding: 14px 14px 10px; }
 .menu-modal img { display: block; width: 100%; max-height: 76vh; object-fit: contain; border-radius: 8px; }
 .menu-modal p { margin: 8px 0 0; color: #7c5d4b; text-align: center; font-size: 11px; font-weight: 800; }
@@ -567,6 +576,37 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 
   .event-screen--overlay .dialogue-box { padding: 22px; }
   .event-screen--overlay .primary-button { min-height: 64px; }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .gameplay-hud__day {
+    transform: scale(var(--scene-inverse-scale));
+    transform-origin: top left;
+  }
+  .gameplay-hud__orders {
+    transform: translateX(-50%) scale(var(--scene-inverse-scale));
+    transform-origin: top center;
+  }
+  .gameplay-hud__coins {
+    right: calc(128px * var(--scene-inverse-scale));
+    transform: scale(var(--scene-inverse-scale));
+    transform-origin: top right;
+  }
+  .gameplay-hud__control {
+    transform: scale(var(--scene-inverse-scale));
+    transform-origin: top right;
+  }
+  .gameplay-hud__control--pause { right: calc(64px * var(--scene-inverse-scale)); }
+  .gameplay-hud__day:hover,
+  .gameplay-hud__control:hover { transform: scale(var(--scene-inverse-scale)) translateY(-1px); }
+  .gameplay-hud__day:active,
+  .gameplay-hud__control:active { transform: scale(var(--scene-inverse-scale)) translateY(3px); }
+  .help-fab {
+    right: calc(18px * var(--scene-inverse-scale));
+    bottom: calc(84px * var(--scene-inverse-scale));
+    transform: scale(var(--scene-inverse-scale));
+    transform-origin: bottom right;
+  }
 }
 
 @media (orientation: portrait) and (max-width: 760px) {

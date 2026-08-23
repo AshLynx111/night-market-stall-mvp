@@ -13,6 +13,7 @@ export type GameIconName =
   | 'extra'
   | 'without'
   | 'sign'
+  | 'lock'
 
 const ICON_PATHS: Record<GameIconName, ReactNode> = {
   coin: <><circle cx="12" cy="12" r="8" /><path d="M9 9.3c.8-1.2 4.8-1 4.8.8 0 2.3-4.9 1-4.9 3.4 0 1.9 4.7 2.1 5.5.6M12 6.7v10.6" /></>,
@@ -27,6 +28,7 @@ const ICON_PATHS: Record<GameIconName, ReactNode> = {
   extra: <><circle cx="12" cy="12" r="8" /><path d="M12 8v8M8 12h8" /></>,
   without: <><circle cx="12" cy="12" r="8" /><path d="M8.5 8.5l7 7" /></>,
   sign: <><path d="M8 5h8l1 5-2 2v7H9v-7l-2-2 1-5Z" /><path d="M10 5V3h4v2M9 12h6" /></>,
+  lock: <><rect x="6" y="10" width="12" height="10" rx="2" /><path d="M9 10V7a3 3 0 0 1 6 0v3M12 14v2" /></>,
 }
 
 export function GameIcon({ name, title, className }: {

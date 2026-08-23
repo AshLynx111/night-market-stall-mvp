@@ -12,6 +12,10 @@ export function recipeOrderIngredients(recipeId: RecipeId) {
   })
 }
 
+export function orderBubbleDensity(ingredientCount: number, modifierCount: number): 'regular' | 'compact' {
+  return ingredientCount > 6 || (ingredientCount >= 6 && modifierCount > 0) ? 'compact' : 'regular'
+}
+
 function ingredientLabel(id: IngredientId) {
   for (const recipe of Object.values(RECIPES)) {
     const step = recipe.steps.find((candidate) => ingredientForCookingStep(candidate) === id)
@@ -34,6 +38,7 @@ export function OrderBubble({ customer, pose, critical = false }: {
 }) {
   const recipe = RECIPES[customer.order.recipeId]
   const ingredients = recipeOrderIngredients(recipe.id)
+  const density = orderBubbleDensity(ingredients.length, customer.order.modifiers.length)
   const patienceRatio = Math.max(0, Math.min(1, customer.patienceMs / customer.maxPatienceMs))
   const patienceLevel = patienceRatio <= .2 ? 'critical' : patienceRatio <= .45 ? 'warning' : 'steady'
   const modifiers = customer.order.modifiers.length
@@ -46,6 +51,7 @@ export function OrderBubble({ customer, pose, critical = false }: {
       data-customer-bubble-for={customer.id}
       data-order-id={customer.order.id}
       data-patience-level={patienceLevel}
+      data-order-density={density}
       data-critical-customer={critical ? 'true' : undefined}
       aria-label={`${customer.name}的订单：${recipe.name}，${modifiers}，剩余耐心${Math.ceil(customer.patienceMs / 1_000)}秒`}
       style={{

@@ -77,4 +77,16 @@ describe('reference-master gameplay composition', () => {
   it('contains no system emoji in the live gameplay presentation', () => {
     expect(gameplaySource).not.toMatch(/😊|💵|🔥|🎵|☾|♪|Ⅱ|🗑|☝|🌶|🍳|🔪|↻|🏮|📱|🛍/)
   })
+
+  it('keeps critical UI readable in short landscape viewports', () => {
+    expect(landscapeCss).toMatch(/@media \(max-height: 480px\) and \(orientation: landscape\)/)
+    expect(landscapeCss).toContain('scale(var(--scene-inverse-scale))')
+    expect(landscapeCss).toContain('calc(128px * var(--scene-inverse-scale))')
+    expect(kitchenCss).toContain('transform-origin: top center')
+  })
+
+  it('removes the remaining platform lock emoji from illustrated screens', () => {
+    expect(landscapeSource).not.toContain('🔒')
+    expect(landscapeSource).toContain('<GameIcon name="lock" />')
+  })
 })

@@ -9,4 +9,11 @@ describe('GameIcon', () => {
     expect(markup).toContain('<title>金币</title>')
     expect(markup).not.toMatch(/💵|😊|♪|☾/)
   })
+
+  it('provides a platform-independent lock symbol', () => {
+    const markup = renderToStaticMarkup(<GameIcon name="lock" title="未解锁" />)
+    expect(markup).toContain('<title>未解锁</title>')
+    expect(markup).toContain('<path')
+    expect(markup).not.toContain('🔒')
+  })
 })

@@ -93,6 +93,11 @@
 .kitchen-customer__bubble[data-patience-level="warning"] .kitchen-customer__patience > span { background: #e0a83a; }
 .kitchen-customer__bubble[data-patience-level="critical"] .kitchen-customer__patience > span { background: #d54e36; }
 .kitchen-customer__bubble.is-critical { border-color: #ba3e2c; animation: order-bubble-critical 1s ease-in-out infinite; }
+.kitchen-customer__bubble[data-order-density="compact"] { min-height: 86px; padding: 6px 7px; }
+.kitchen-customer__bubble[data-order-density="compact"] .kitchen-customer__order-ingredients { min-height: 43px; gap: 1px; }
+.kitchen-customer__bubble[data-order-density="compact"] .kitchen-customer__order-ingredient { width: 28px; height: 20px; }
+.kitchen-customer__bubble[data-order-density="compact"] .kitchen-customer__order-ingredient img { width: 26px; height: 19px; }
+.kitchen-customer__bubble[data-order-density="compact"] .kitchen-customer__modifiers { min-height: 18px; }
 
 @keyframes order-bubble-in {
   from { opacity: 0; transform: translateX(-50%) scale(.88); }
@@ -401,6 +406,16 @@
 @keyframes tutorial-completion-in { from { opacity: 0; transform: translate(-50%, -8px); } }
 
 @media (max-height: 480px) and (orientation: landscape) {
+  .kitchen-customer__bubble {
+    transform: translateX(-50%) scale(var(--scene-inverse-scale));
+    transform-origin: top center;
+    animation: none;
+  }
+  .kitchen-customer__bubble.is-critical { animation: order-bubble-critical-shadow 1s ease-in-out infinite; }
+  .delivery-feedback.is-held {
+    transform: translateX(-50%) scale(var(--scene-inverse-scale));
+    transform-origin: top center;
+  }
   .guided-tutorial {
     left: calc(50% + 128px);
     transform: translateX(-50%) scale(var(--scene-inverse-scale));
@@ -424,6 +439,10 @@
   .cooking-feedback__cue,
   .delivery-feedback,
   .griddle-slot__stage-art { animation: none; }
+}
+
+@keyframes order-bubble-critical-shadow {
+  50% { box-shadow: 0 4px 0 rgb(30 23 20 / .28), 0 0 22px rgb(213 78 54 / .72); }
 }
 
 /* The live kitchen derivative has no baked tutorial plaque. Keep the guided

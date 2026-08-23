@@ -98,6 +98,7 @@ describe('App landscape route', () => {
     act(() => root.render(<App />))
 
     expect(container.querySelector('.home-screen')).not.toBeNull()
+    expect(container.querySelector('.home-screen.ui-screen')?.getAttribute('data-ui-screen')).toBe('home')
     expect(container.querySelector('.home-screen__art')).not.toBeNull()
     expect(container.querySelectorAll('.home-hotspot')).toHaveLength(5)
     expect(container.querySelector<HTMLImageElement>('.home-screen__art')?.src).toContain('home-screen-user-final')

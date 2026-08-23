@@ -2,7 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { createKitchenState } from '../../landscape/kitchen/state'
 import type { OrderBubblePose } from '../../landscape/kitchen/orderBubbleLayout'
-import { OrderBubble, recipeOrderIngredients } from './OrderBubble'
+import { OrderBubble, orderBubbleDensity, recipeOrderIngredients } from './OrderBubble'
 
 const pose: OrderBubblePose = {
   x: 200,
@@ -15,6 +15,13 @@ const pose: OrderBubblePose = {
 describe('OrderBubble', () => {
   it('derives a classic order from visual ingredient assets', () => {
     expect(recipeOrderIngredients('classic').map(({ id }) => id)).toEqual(['noodle', 'egg', 'hot-dog', 'sauce', 'scallion'])
+    expect(orderBubbleDensity(5, 0)).toBe('regular')
+  })
+
+  it('compacts long orders without removing repeated ingredients', () => {
+    const ingredients = recipeOrderIngredients('big-eater')
+    expect(ingredients.map(({ id }) => id)).toEqual(['noodle', 'egg', 'noodle', 'egg', 'sauce', 'scallion'])
+    expect(orderBubbleDensity(ingredients.length, 1)).toBe('compact')
   })
 
   it('marks low patience and renders modifiers without emoji', () => {
@@ -24,6 +31,7 @@ describe('OrderBubble', () => {
     expect(markup).toContain('data-order-ingredient="noodle"')
     expect(markup).toContain('data-patience-level="critical"')
     expect(markup).toContain('data-critical-customer="true"')
+    expect(markup).toContain('data-order-density="regular"')
     expect(markup).not.toContain('🌶')
   })
 })

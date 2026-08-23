@@ -12,6 +12,7 @@ import takeawayBag from '../assets/approved/menu/takeaway-bag.png'
 import { loadAudioSettings, saveAudioSettings, type AudioSettings } from '../game/audioSettings'
 import { applyAudioSettings, unlockAndPlayBgm } from '../game/bgm'
 import { setAudioEffectLevel } from '../game/audio'
+import { createUiFeedback } from '../game/uiFeedback'
 import { DAYS, RECIPES, availableIngredients, incomeForDelivery, starsForDay } from '../landscape/campaign'
 import type { CookingStep, DayConfig, Recipe } from '../landscape/campaign'
 import { useKitchenGame } from '../landscape/kitchen/useKitchenGame'
@@ -185,7 +186,8 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
 
   return (
     <main
-      className="game-screen"
+      className="game-screen ui-screen"
+      data-ui-screen={eventOpen ? 'event' : 'playing'}
       data-screen-art="kitchen"
       data-day={day.day}
       data-kitchen-tutorial-mode={state.tutorialMode}
@@ -366,6 +368,7 @@ export function LandscapeGame() {
   const restoreAbandonFocus = useRef(false)
   const served = qualities.length
   const average = served ? Math.round(qualities.reduce((sum, value) => sum + value, 0) / served) : 100
+  const uiFeedback = createUiFeedback(audioSettings.master * audioSettings.effects > 0)
 
   const stageRequest = new URLSearchParams(window.location.search).get('renderStage')
   if (stageRequest) {
@@ -416,6 +419,7 @@ export function LandscapeGame() {
   }, [showAbandonConfirm])
 
   const openAbandonConfirm = () => {
+    uiFeedback.tap()
     abandonTriggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
     setShowAbandonConfirm(true)
   }
@@ -426,7 +430,11 @@ export function LandscapeGame() {
   }
 
   const startDay = (nextDay: DayConfig) => {
-    if (nextDay.day > highestPlayableDay(save)) return
+    if (nextDay.day > highestPlayableDay(save)) {
+      uiFeedback.upgrade(false)
+      return
+    }
+    uiFeedback.success()
     setSessionId((value) => value + 1)
     setDay(nextDay)
     setQualities([])
@@ -446,6 +454,10 @@ export function LandscapeGame() {
   const buyUpgrade = (type: 'fire' | 'sign') => {
     const levelKey = type === 'fire' ? 'fireLevel' : 'signLevel'
     const costs = type === 'fire' ? [40, 80] : [60, 110]
+    const level = save[levelKey]
+    const cost = costs[level]
+    const accepted = level < 2 && cost !== undefined && save.coins >= cost
+    uiFeedback.upgrade(accepted)
     setSave((current) => {
       const level = current[levelKey]
       const cost = costs[level]
@@ -460,6 +472,7 @@ export function LandscapeGame() {
   }
 
   const toggleMusic = () => {
+    uiFeedback.tap()
     setAudioSettings((current) => ({ ...current, musicMuted: !current.musicMuted }))
   }
 
@@ -467,17 +480,32 @@ export function LandscapeGame() {
     setAudioSettings((current) => ({ ...current, [key]: value }))
   }
 
+  const openScreen = (nextScreen: Screen) => {
+    uiFeedback.tap()
+    setScreen(nextScreen)
+  }
+
+  const openMenu = () => {
+    uiFeedback.tap()
+    setShowMenu(true)
+  }
+
+  const closeMenu = () => {
+    uiFeedback.tap()
+    setShowMenu(false)
+  }
+
   if (screen === 'home') {
     return (
-      <main className="home-screen home-screen--illustrated" data-screen-art="home" style={{ '--home-bg': `url(${homeScreen})` } as React.CSSProperties}>
+      <main className="home-screen home-screen--illustrated ui-screen" data-screen-art="home" data-ui-screen="home" style={{ '--home-bg': `url(${homeScreen})` } as React.CSSProperties}>
         <div className="home-screen__plate">
           <img className="home-screen__art" src={homeScreen} alt="夜市烤冷面游戏主菜单" />
           <nav className="home-screen__hotspots" aria-label="主菜单">
             <button className="home-hotspot home-hotspot--start" aria-label="开始游戏" onClick={() => startDay(DAYS[0])}><span className="sr-only">开始游戏</span></button>
             <button className="home-hotspot home-hotspot--continue" aria-label="继续游戏" onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}><span className="sr-only">继续游戏</span></button>
-            <button className="home-hotspot home-hotspot--settings" aria-label="打开设置" onClick={() => setScreen('settings')}><span className="sr-only">设置</span></button>
-            <button className="home-hotspot home-hotspot--collection" aria-label="打开图鉴" onClick={() => setShowMenu(true)}><span className="sr-only">图鉴</span></button>
-            <button className="home-hotspot home-hotspot--achievements" aria-label="查看关卡与成就" onClick={() => setScreen('select')}><span className="sr-only">选择关卡</span></button>
+            <button className="home-hotspot home-hotspot--settings" aria-label="打开设置" onClick={() => openScreen('settings')}><span className="sr-only">设置</span></button>
+            <button className="home-hotspot home-hotspot--collection" aria-label="打开图鉴" onClick={openMenu}><span className="sr-only">图鉴</span></button>
+            <button className="home-hotspot home-hotspot--achievements" aria-label="查看关卡与成就" onClick={() => openScreen('select')}><span className="sr-only">选择关卡</span></button>
           </nav>
           <button
             className="home-screen__music-toggle"
@@ -487,14 +515,14 @@ export function LandscapeGame() {
             onClick={toggleMusic}
           ><span className="sr-only">{audioSettings.musicMuted ? '恢复背景音乐' : '静音背景音乐'}</span></button>
         </div>
-        {showMenu && <MenuModal onClose={() => setShowMenu(false)} />}
+        {showMenu && <MenuModal onClose={closeMenu} />}
       </main>
     )
   }
 
   if (screen === 'settings') {
     return (
-      <main className="settings-screen" aria-label="音量设置">
+      <main className="settings-screen ui-screen" data-ui-screen="settings" aria-label="音量设置">
         <div className="settings-screen__plate">
           <img
             className="settings-screen__art"
@@ -559,7 +587,7 @@ export function LandscapeGame() {
             aria-pressed={audioSettings.musicMuted}
             onClick={toggleMusic}
           ><span className="sr-only">{audioSettings.musicMuted ? '恢复背景音乐' : '静音背景音乐'}</span></button>
-          <button className="settings-screen__return" type="button" aria-label="返回主菜单" onClick={() => setScreen('home')}>
+          <button className="settings-screen__return" type="button" aria-label="返回主菜单" onClick={() => openScreen('home')}>
             <span className="sr-only">返回主菜单</span>
           </button>
         </div>
@@ -569,12 +597,12 @@ export function LandscapeGame() {
 
   if (screen === 'select') {
     return (
-      <main className="select-screen" data-screen-art="select" style={{ '--home-bg': `url(${daySelectScreen})` } as React.CSSProperties}>
+      <main className="select-screen ui-screen" data-screen-art="select" data-ui-screen="select" style={{ '--home-bg': `url(${daySelectScreen})` } as React.CSSProperties}>
         <div className="select-screen__plate">
           <img className="select-screen__art" src={daySelectScreen} alt="夜市营业日选择" />
           <div className="select-screen__controls">
-            <button className="select-hotspot select-hotspot--back" type="button" aria-label="返回主菜单" onClick={() => setScreen('home')}><span className="sr-only">返回主菜单</span></button>
-            <button className="select-hotspot select-hotspot--menu" type="button" aria-label="查看完整菜单" onClick={() => setShowMenu(true)}><span className="sr-only">查看完整菜单</span></button>
+            <button className="select-hotspot select-hotspot--back" type="button" aria-label="返回主菜单" onClick={() => openScreen('home')}><span className="sr-only">返回主菜单</span></button>
+            <button className="select-hotspot select-hotspot--menu" type="button" aria-label="查看完整菜单" onClick={openMenu}><span className="sr-only">查看完整菜单</span></button>
             <section className="day-grid" aria-label="营业日">
               {DAYS.map((item) => {
                 const locked = item.day > highestPlayableDay(save)
@@ -593,7 +621,7 @@ export function LandscapeGame() {
                         data-dynamic-mask={item.day >= 3 ? 'parchment' : undefined}
                         aria-hidden="true"
                       >
-                        {locked && <><span className="day-card__lock" aria-hidden="true">🔒</span>完成前一天后解锁</>}
+                        {locked && <><span className="day-card__lock" aria-hidden="true"><GameIcon name="lock" /></span>完成前一天后解锁</>}
                         {!locked && item.day === 5 && '★ 特别人物登场'}
                         {!locked && item.day === 6 && '明星同款热潮'}
                       </span>
@@ -605,7 +633,7 @@ export function LandscapeGame() {
             <UpgradeShop save={save} onBuy={buyUpgrade} />
           </div>
         </div>
-        {showMenu && <MenuModal onClose={() => setShowMenu(false)} />}
+        {showMenu && <MenuModal onClose={closeMenu} />}
       </main>
     )
   }
@@ -613,7 +641,7 @@ export function LandscapeGame() {
   if (screen === 'summary') {
     const stars = starsForDay(qualities, mistakes)
     return (
-      <main className="summary-screen" data-screen-art="summary" style={{ '--home-bg': `url(${summaryScreen})` } as React.CSSProperties}>
+      <main className="summary-screen ui-screen" data-screen-art="summary" data-ui-screen="summary" style={{ '--home-bg': `url(${summaryScreen})` } as React.CSSProperties}>
         <div className="summary-screen__plate">
           <img className="summary-screen__art" src={summaryScreen} alt="今日打烊营业总结" />
           <section className="summary-card">
@@ -630,7 +658,7 @@ export function LandscapeGame() {
             <UpgradeShop save={save} onBuy={buyUpgrade} />
             <div className="summary-actions">
               <button type="button" aria-label="再玩一次" onClick={() => startDay(day)}><span>再玩一次</span></button>
-              <button type="button" aria-label={day.day < 6 ? '进入下一天' : '返回选关'} onClick={() => day.day < 6 ? startDay(DAYS[day.day]) : setScreen('select')}><span>{day.day < 6 ? '进入下一天' : '返回选关'}</span></button>
+              <button type="button" aria-label={day.day < 6 ? '进入下一天' : '返回选关'} onClick={() => day.day < 6 ? startDay(DAYS[day.day]) : openScreen('select')}><span>{day.day < 6 ? '进入下一天' : '返回选关'}</span></button>
             </div>
           </section>
         </div>
@@ -655,9 +683,12 @@ export function LandscapeGame() {
         qaPatienceRatio={qaPatienceRatio}
         qaDeliveryFeedback={qaDeliveryFeedback}
         onHome={openAbandonConfirm}
-        onMenu={() => setShowMenu(true)}
+        onMenu={openMenu}
         onSound={toggleMusic}
-        onHelp={() => setShowHelp(true)}
+        onHelp={() => {
+          uiFeedback.tap()
+          setShowHelp(true)
+        }}
         onOrderServed={(delivery) => {
           const income = incomeForDelivery(delivery.recipeId, delivery.quality, save.signLevel)
           setSave((current) => ({ ...current, coins: current.coins + income }))
@@ -675,8 +706,11 @@ export function LandscapeGame() {
         }}
         onComplete={finishDay}
       />
-      {showMenu && <MenuModal onClose={() => setShowMenu(false)} />}
-      {showHelp && <HelpModal onClose={() => setShowHelp(false)} />}
+      {showMenu && <MenuModal onClose={closeMenu} />}
+      {showHelp && <HelpModal onClose={() => {
+        uiFeedback.tap()
+        setShowHelp(false)
+      }} />}
       {showAbandonConfirm && (
         <AbandonModal
           onContinue={continueCurrentSession}
@@ -684,7 +718,7 @@ export function LandscapeGame() {
             setShowAbandonConfirm(false)
             setShowMenu(false)
             setShowHelp(false)
-            setScreen('select')
+            openScreen('select')
           }}
         />
       )}
