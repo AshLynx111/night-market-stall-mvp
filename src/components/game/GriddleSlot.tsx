@@ -38,6 +38,9 @@ export function GriddleSlot({ state, slotId, onMoveToTray }: {
       data-food-anchor="center"
       data-order-id={slot.orderId ?? undefined}
       data-expected-step-id={expected?.id}
+      data-stage-step={slot.completedStepIds.at(-1) ?? 'empty'}
+      data-sauce-strokes={slot.sauceStrokeCount ?? 0}
+      data-cut-count={slot.cutTargetIndices.length}
       aria-label={`${slotId === 'left' ? '左侧' : '右侧'}铁板${expected ? `，下一步${expected.verb}` : ''}`}
     >
       {art && (

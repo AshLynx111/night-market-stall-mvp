@@ -24,6 +24,7 @@ import {
 import { tutorialAllowsIngredient, tutorialInstruction, tutorialStep, type TutorialStep } from '../../landscape/kitchen/tutorial'
 import type { KitchenState, SlotId } from '../../landscape/kitchen/types'
 import { CookingGestureLayer } from './CookingGestureLayer'
+import { CookingFeedback } from './CookingFeedback'
 import { CustomerLane } from './CustomerLane'
 import { GriddleSlot } from './GriddleSlot'
 import { ServingTray } from './ServingTray'
@@ -335,6 +336,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
 
       <CookingGestureLayer state={state} dispatch={dispatchScene} sauceEnabled={sauceBrushSelected && sauceEnabled} />
       <ServingTray state={state} dispatch={dispatchScene} findCustomerAtPoint={findCustomerAtPoint} />
+      <CookingFeedback slots={state.slots} />
       {guided && (guidedStep === 'sauce' || guidedStep === 'cut' || guidedStep === 'roll') ? (
         <TutorialGestureCue
           kind={guidedStep}

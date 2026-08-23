@@ -138,7 +138,11 @@
 .griddle-slot__food:disabled { opacity: 1; }
 .griddle-slot__food:not(:disabled) { cursor: pointer; filter: drop-shadow(0 0 11px #ffd169); }
 .griddle-slot__food img { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-.griddle-slot__stage-art { z-index: 1; object-fit: contain; object-position: 50% 50%; filter: drop-shadow(0 3px 2px rgb(46 23 12 / .3)); }
+.griddle-slot__stage-art { z-index: 1; object-fit: contain; object-position: 50% 50%; transform: scale(1.045); filter: drop-shadow(0 3px 2px rgb(46 23 12 / .3)); transition: transform .18s ease, filter .18s ease; }
+.griddle-slot[data-stage-step="egg"] .griddle-slot__stage-art,
+.griddle-slot[data-stage-step="second-egg"] .griddle-slot__stage-art { animation: egg-stage-spread .24s ease-out; }
+.griddle-slot[data-stage-step="sauce"] .griddle-slot__stage-art { filter: saturate(1.18) contrast(1.06) drop-shadow(0 3px 2px rgb(46 23 12 / .35)); }
+.griddle-slot.phase-rolled .griddle-slot__stage-art { animation: food-roll-in .3s cubic-bezier(.2,.85,.35,1.15); }
 .griddle-slot__pack-hint { position: absolute; z-index: 7; left: 50%; bottom: 4%; padding: 3px 8px; transform: translateX(-50%); border-radius: 10px; background: rgb(46 32 25 / .8); color: #ffe8a2; font-size: 9px; font-weight: 900; white-space: nowrap; }
 .griddle-slot__status { position: absolute; z-index: 10; left: 50%; top: 3%; max-width: 78%; padding: 4px 9px; transform: translate(-50%, -50%); border: 1px solid rgb(255 222 151 / .65); border-radius: 9px; background: rgb(49 34 27 / .9); color: #fff0b3; box-shadow: 0 3px 4px rgb(20 12 9 / .34); font-size: 9px; font-weight: 900; line-height: 1.2; text-align: center; white-space: nowrap; pointer-events: none; }
 .heat-ready .griddle-slot__status { border-color: #ffc64e; color: #fff6c9; box-shadow: 0 0 8px rgb(255 187 64 / .48); }
@@ -148,7 +152,7 @@
 .griddle-slot__cut-marks i:nth-child(1) { top: 30%; }
 .griddle-slot__cut-marks i:nth-child(2) { top: 50%; }
 .griddle-slot__cut-marks i:nth-child(3) { top: 70%; }
-.griddle-slot__cut-marks i.is-done { border-top-style: solid; border-color: #ffd05e; }
+.griddle-slot__cut-marks i.is-done { border-top: 4px solid #6f2921; filter: drop-shadow(0 1px 0 #ffd7a5); }
 
 .griddle-slot__heat-ring {
   --heat-color: #d8a13b;
@@ -220,6 +224,26 @@
   0%, 100% { box-shadow: 0 4px 0 rgb(30 23 20 / .28), 0 0 0 0 rgb(213 78 54 / 0); }
   50% { box-shadow: 0 4px 0 rgb(30 23 20 / .28), 0 0 0 5px rgb(213 78 54 / .25); }
 }
+@keyframes egg-stage-spread { from { transform: scale(.82); filter: brightness(1.35) saturate(1.25); } to { transform: scale(1.045); } }
+@keyframes food-roll-in { from { transform: scaleX(.35) scaleY(1.12) rotate(-2deg); } to { transform: scale(1.045); } }
+
+.cooking-feedback { position: absolute; z-index: 31; inset: 0; overflow: hidden; pointer-events: none; }
+.cooking-feedback__cue { position: absolute; top: 520px; width: 132px; min-height: 34px; display: flex; align-items: center; justify-content: center; gap: 5px; transform: translateX(-50%); border: 2px solid rgb(255 218 131 / .88); border-radius: 13px 9px 14px 10px; background: rgb(67 42 29 / .9); color: #fff0bd; box-shadow: 0 4px 0 rgb(31 20 15 / .42), 0 0 15px rgb(255 184 66 / .3); font-size: 11px; animation: cooking-cue .7s ease-out both; }
+.cooking-feedback__cue--left { left: 660px; }
+.cooking-feedback__cue--right { left: 930px; }
+.cooking-feedback__cue .game-icon { width: 16px; height: 16px; }
+.cooking-feedback__cue.is-ready { color: #fff7cb; animation-duration: .9s; }
+.cooking-feedback__cue.is-egg::after { content: ""; position: absolute; width: 74px; height: 22px; border: 3px solid rgb(255 224 109 / .68); border-radius: 50%; animation: egg-spread .5s ease-out both; }
+.cooking-feedback__cue.is-sauce { border-color: #bc5135; color: #ffd5a2; }
+.cooking-feedback__cue.is-cut { animation-name: cooking-cut-cue; }
+@keyframes cooking-cue { 0% { opacity: 0; transform: translate(-50%, 12px) scale(.82); } 24% { opacity: 1; transform: translate(-50%, 0) scale(1.04); } 75% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -9px) scale(.96); } }
+@keyframes cooking-cut-cue { 0% { opacity: 0; transform: translate(-50%, 0); } 22% { opacity: 1; transform: translate(calc(-50% - 4px), 0); } 35% { transform: translate(calc(-50% + 4px), 0); } 100% { opacity: 0; transform: translate(-50%, -8px); } }
+@keyframes egg-spread { from { opacity: .9; transform: scale(.35); } to { opacity: 0; transform: scale(1.5); } }
+
+.delivery-feedback { position: absolute; z-index: 42; left: 50%; top: 78px; min-width: 136px; padding: 10px 18px; display: flex; align-items: center; justify-content: center; gap: 12px; transform: translateX(-50%); border: 3px solid #6c3d28; border-radius: 13px 10px 15px 9px; background: linear-gradient(180deg, rgb(255 241 190 / .98), rgb(231 178 91 / .98)); color: #713722; box-shadow: 0 5px 0 rgb(43 25 17 / .5), 0 10px 18px rgb(8 15 25 / .24); pointer-events: none; animation: delivery-reward 1s ease-out both; }
+.delivery-feedback b { color: #a53e29; font-size: 23px; }
+.delivery-feedback span { font-size: 15px; font-weight: 950; }
+@keyframes delivery-reward { 0% { opacity: 0; transform: translate(-50%, 15px) scale(.8); } 18%, 72% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, -12px) scale(.96); } }
 .kitchen-scene__ingredients[data-rack-layout="expanded-3x5"] .table-ingredient__food-art { width: 88%; }
 .table-ingredient__label {
   position: absolute;

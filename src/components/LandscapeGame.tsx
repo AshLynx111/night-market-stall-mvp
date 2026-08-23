@@ -25,6 +25,7 @@ import {
 } from '../landscape/progression'
 import { KitchenScene } from './game/KitchenScene'
 import { GameplayHud } from './game/GameplayHud'
+import { DeliveryFeedback, type DeliveryFeedbackValue } from './game/DeliveryFeedback'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -98,6 +99,9 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   const tutorialCompletionReported = useRef(false)
   const previousTutorialMode = useRef(state.tutorialMode)
   const pendingCelebrityInjection = useRef<{ patienceMs?: number } | null>(null)
+  const nextDeliveryFeedbackId = useRef(0)
+  const deliveryFeedbackTimer = useRef<number | null>(null)
+  const [deliveryFeedback, setDeliveryFeedback] = useState<DeliveryFeedbackValue | null>(null)
   const [sceneScale, setSceneScale] = useState(() => Math.min(window.innerWidth / 1440, window.innerHeight / 810))
   const sceneInverseScale = sceneScale > 0 ? Math.max(1, 1 / sceneScale) : 1
   const expandedRack = availableIngredients(day.day).length > 6
@@ -134,7 +138,15 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
 
   useEffect(() => {
     while (creditedCount.current < state.deliveries.length) {
-      onOrderServed(state.deliveries[creditedCount.current])
+      const delivery = state.deliveries[creditedCount.current]
+      onOrderServed(delivery)
+      setDeliveryFeedback({
+        id: ++nextDeliveryFeedbackId.current,
+        income: incomeForDelivery(delivery.recipeId, delivery.quality, save.signLevel),
+        quality: delivery.quality,
+      })
+      if (deliveryFeedbackTimer.current !== null) window.clearTimeout(deliveryFeedbackTimer.current)
+      deliveryFeedbackTimer.current = window.setTimeout(() => setDeliveryFeedback(null), 1_000)
       creditedCount.current += 1
     }
 
@@ -158,7 +170,12 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
     state.deliveries,
     state.mistakes,
     state.servedQualities,
+    save.signLevel,
   ])
+
+  useEffect(() => () => {
+    if (deliveryFeedbackTimer.current !== null) window.clearTimeout(deliveryFeedbackTimer.current)
+  }, [])
 
   return (
     <main
@@ -208,6 +225,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
           onSound={onSound}
         />
         <KitchenScene state={state} dispatch={dispatch} soundEnabled={effectsEnabled} />
+        <DeliveryFeedback feedback={deliveryFeedback} />
         <button className="help-fab" onClick={onHelp}>？</button>
         {eventOpen && (
           <div className="event-screen event-screen--overlay">
