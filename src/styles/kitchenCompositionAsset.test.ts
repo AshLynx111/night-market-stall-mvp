@@ -54,11 +54,11 @@ describe('approved kitchen live derivative', () => {
     expect(changedOutsideMask).toBe(0)
   })
 
-  it('renders the pixel-aligned derivative as the only visible kitchen background', () => {
+  it('renders the clean background and reserves the derivative for expanded-rack overlay', () => {
     const source = readFileSync('src/components/LandscapeGame.tsx', 'utf8')
-    expect(source).toContain("kitchen-screen-live-clean.png")
+    expect(source).toContain("night-market-clean-background.png")
     expect(source).toContain('data-kitchen-live-plate')
-    expect(source).not.toContain('game-screen__background--clean')
+    expect(source).toContain('data-kitchen-expanded-rack-overlay')
   })
 })
 

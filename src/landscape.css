@@ -223,6 +223,74 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .game-screen__logical::before { content: ""; position: absolute; z-index: -2; inset: 0; background-image: var(--game-bg); background-size: cover; background-position: center; }
 .game-screen__logical::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(rgba(6,15,28,.1) 0 54%, rgba(16,15,17,.08) 68%, rgba(15,16,20,.14)); pointer-events: none; }
 .game-screen__background { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.game-screen__background--expanded-rack { z-index: -1; clip-path: inset(54% 0 0 0); pointer-events: none; }
+
+.gameplay-hud {
+  position: absolute;
+  z-index: 24;
+  left: 18px;
+  right: 18px;
+  top: 12px;
+  height: 52px;
+  display: grid;
+  grid-template-columns: 150px 210px auto 54px 54px;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 10px;
+  pointer-events: none;
+}
+.gameplay-hud button,
+.gameplay-hud__orders,
+.gameplay-hud__coins {
+  min-width: 0;
+  border: 2px solid #60432d;
+  background: linear-gradient(180deg, rgb(255 239 196 / .97), rgb(221 176 101 / .97));
+  color: #53331f;
+  box-shadow: inset 0 2px 0 rgb(255 251 221 / .72), 0 4px 0 rgb(39 24 17 / .62), 0 7px 14px rgb(8 14 24 / .28);
+  text-shadow: 0 1px 0 rgb(255 249 220 / .68);
+  pointer-events: auto;
+}
+.gameplay-hud button { appearance: none; font: inherit; cursor: pointer; }
+.gameplay-hud__day {
+  padding: 0 18px;
+  border-radius: 10px 13px 9px 14px;
+  font-size: 20px;
+  font-weight: 950;
+  letter-spacing: .04em;
+}
+.gameplay-hud__orders {
+  position: absolute;
+  left: 50%;
+  width: 210px;
+  height: 52px;
+  padding: 8px 18px 7px;
+  transform: translateX(-50%);
+  border-radius: 12px 9px 14px 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.gameplay-hud__orders b { display: block; font-size: 16px; line-height: 1.1; }
+.gameplay-hud__orders i { display: block; height: 5px; margin-top: 7px; overflow: hidden; border: 1px solid #69462d; border-radius: 99px; background: rgb(104 72 44 / .38); }
+.gameplay-hud__orders i span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #be5931, #f0ac42); transition: width .24s ease; }
+.gameplay-hud__coins {
+  grid-column: 3;
+  justify-self: end;
+  min-width: 132px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 13px 10px 12px 9px;
+  font-size: 18px;
+}
+.gameplay-hud__coins .game-icon { color: #b86b25; }
+.gameplay-hud__control { width: 52px; height: 52px; padding: 10px; display: grid; place-items: center; border-radius: 12px 9px 13px 10px; }
+.gameplay-hud .game-icon { width: 24px; height: 24px; }
+.gameplay-hud button:hover { filter: brightness(1.06) saturate(1.05); transform: translateY(-1px); }
+.gameplay-hud button:active { transform: translateY(3px); box-shadow: inset 0 2px 5px rgb(91 52 27 / .24), 0 1px 0 rgb(39 24 17 / .62); }
+.gameplay-hud button:focus-visible { outline: 4px solid #ffd66b; outline-offset: 3px; }
+.gameplay-hud button:disabled { cursor: default; filter: grayscale(.7); opacity: .5; }
 .hud { position: absolute; z-index: 20; left: 16px; right: 16px; top: 14px; height: 72px; display: flex; gap: 12px; align-items: stretch; }
 .paper-button,
 .hud__pill,

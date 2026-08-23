@@ -175,10 +175,10 @@ describe('App landscape route', () => {
     const root = createRoot(container)
     act(() => root.render(<App />))
 
-    const hudMusic = container.querySelector<HTMLButtonElement>('.icon-button--sound')!
-    expect(hudMusic.textContent).toBe('♪')
+    const hudMusic = container.querySelector<HTMLButtonElement>('[aria-label="关闭音乐"]')!
+    expect(hudMusic.querySelector('svg')).not.toBeNull()
     act(() => hudMusic.click())
-    expect(hudMusic.textContent).toBe('×')
+    expect(hudMusic.getAttribute('aria-label')).toBe('开启音乐')
     expect(JSON.parse(localStorage.getItem('night-market-audio-settings-v1')!).musicMuted).toBe(true)
 
     act(() => root.unmount())
@@ -227,7 +227,8 @@ describe('App landscape route', () => {
       const root = createRoot(container)
       act(() => root.render(<App />))
       const background = container.querySelector<HTMLImageElement>('[data-kitchen-live-plate]')!
-      const result = { src: background.src, rack: background.dataset.kitchenRackBackground }
+      const overlay = container.querySelector<HTMLImageElement>('[data-kitchen-expanded-rack-overlay]')
+      const result = { src: background.src, rack: background.dataset.kitchenRackBackground, overlay: overlay?.src }
       act(() => root.unmount())
       return result
     }
@@ -235,11 +236,12 @@ describe('App landscape route', () => {
     const day1 = renderDay(1)
     const day5 = renderDay(5)
 
-    expect(day1.src).toContain('kitchen-screen-live-clean.png')
+    expect(day1.src).toContain('night-market-clean-background.png')
     expect(day1.rack).toBe('approved-2x3')
-    expect(day5.src).toContain('kitchen-screen-live-expanded-clean.png')
+    expect(day1.overlay).toBeUndefined()
+    expect(day5.src).toContain('night-market-clean-background.png')
     expect(day5.rack).toBe('expanded-3x5')
-    expect(day5.src).not.toBe(day1.src)
+    expect(day5.overlay).toContain('kitchen-screen-live-expanded-clean.png')
   })
 
   it('binds each rendered approved screen surface to its matching image URL', () => {
@@ -269,7 +271,7 @@ describe('App landscape route', () => {
     const kitchenRoot = createRoot(kitchenContainer)
     act(() => kitchenRoot.render(<App />))
     expect(kitchenContainer.querySelector<HTMLImageElement>('[data-screen-art="kitchen"] .game-screen__background')?.src)
-      .toContain('kitchen-screen-live-clean.png')
+      .toContain('night-market-clean-background.png')
     act(() => kitchenRoot.unmount())
 
     window.history.replaceState({}, '', '/?playDay=1&qaScreen=summary')
@@ -474,7 +476,7 @@ describe('App landscape route', () => {
     const root = createRoot(container)
     act(() => root.render(<App />))
 
-    expect(container.textContent).toContain('完成订单 2/3')
+    expect(container.textContent).toContain('订单 2/3')
     const returnHome = container.querySelector<HTMLButtonElement>('[aria-label="返回主页"]')!
     act(() => returnHome.click())
     expect(container.querySelector('.select-screen')).toBeNull()
@@ -486,7 +488,7 @@ describe('App landscape route', () => {
 
     const dayOne = container.querySelector<HTMLButtonElement>('.day-card--1')!
     act(() => dayOne.click())
-    expect(container.textContent).toContain('完成订单 0/3')
+    expect(container.textContent).toContain('订单 0/3')
     expect(container.querySelectorAll('[data-slot-id]')).toHaveLength(2)
     act(() => root.unmount())
   })

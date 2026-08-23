@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import homeScreen from '../assets/approved/main-ui/home-screen-user-final.png'
 import daySelectScreen from '../assets/approved/main-ui/day-select-user-final.png'
-import liveKitchenScreen from '../assets/approved/main-ui/kitchen-screen-live-clean.png'
+import cleanKitchenScreen from '../assets/approved/main-ui/night-market-clean-background.png'
 import expandedLiveKitchenScreen from '../assets/approved/main-ui/kitchen-screen-live-expanded-clean.png'
 import summaryScreen from '../assets/approved/main-ui/summary-screen-user-final.png'
 import settingsScreen from '../assets/approved/main-ui/settings-screen-user-final.png'
@@ -24,6 +24,7 @@ import {
   type CampaignSave,
 } from '../landscape/progression'
 import { KitchenScene } from './game/KitchenScene'
+import { GameplayHud } from './game/GameplayHud'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -63,36 +64,6 @@ function starsText(count: number) {
   return `${'★'.repeat(safeCount)}${'☆'.repeat(3 - safeCount)}`
 }
 
-function TopHud({ day, coins, served, target, satisfaction, sound, onHome, onMenu, onSound }: {
-  day: number
-  coins: number
-  served: number
-  target: number
-  satisfaction: number
-  sound: boolean
-  onHome: () => void
-  onMenu: () => void
-  onSound: () => void
-}) {
-  return (
-    <header className="hud">
-      <button className="hud__day paper-button" onClick={onHome} aria-label="返回主页">
-        <span className="hud__moon">☾</span>
-        <span><b>第 {day} 天</b><small>18:45 · 夜市营业中</small></span>
-      </button>
-      <div className="hud__pill hud__satisfaction"><span aria-hidden="true">😊</span><b>满意度<br />{satisfaction}%</b></div>
-      <div className="hud__pill hud__coins"><span>💵</span><b>¥ {coins}</b></div>
-      <div className="hud__goal">
-        <small>今日目标</small>
-        <b><span className="sr-only">完成订单 </span>{served}/{target}</b>
-        <i><span style={{ width: `${(served / target) * 100}%` }} /></i>
-      </div>
-      <button className="icon-button icon-button--menu" onClick={onMenu} aria-label="暂停并打开菜单">Ⅱ</button>
-      <button className="icon-button icon-button--sound" onClick={onSound} aria-label="切换声音">{sound ? '♪' : '×'}</button>
-    </header>
-  )
-}
-
 function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musicEnabled, effectsEnabled, guidedTutorial, qaCelebrityPatienceMs, qaServedOrders, onHome, onMenu, onSound, onHelp, onOrderServed, onEvent, onResumeEvent, onTutorialComplete, onComplete }: {
   day: DayConfig
   save: CampaignSave
@@ -127,13 +98,10 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   const tutorialCompletionReported = useRef(false)
   const previousTutorialMode = useRef(state.tutorialMode)
   const pendingCelebrityInjection = useRef<{ patienceMs?: number } | null>(null)
-  const average = state.servedQualities.length
-    ? Math.round(state.servedQualities.reduce((sum, quality) => sum + quality, 0) / state.servedQualities.length)
-    : 100
   const [sceneScale, setSceneScale] = useState(() => Math.min(window.innerWidth / 1440, window.innerHeight / 810))
   const sceneInverseScale = sceneScale > 0 ? Math.max(1, 1 / sceneScale) : 1
   const expandedRack = availableIngredients(day.day).length > 6
-  const kitchenScreen = expandedRack ? expandedLiveKitchenScreen : liveKitchenScreen
+  const kitchenScreen = cleanKitchenScreen
   const rackBackground = expandedRack ? 'expanded-3x5' : 'approved-2x3'
 
   useEffect(() => {
@@ -218,17 +186,25 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
           aria-hidden="true"
           data-kitchen-live-plate
           data-kitchen-rack-background={rackBackground}
-          data-kitchen-source="kitchen-screen-user-final.png"
+          data-kitchen-source="night-market-clean-background.png"
         />
-        <TopHud
+        {expandedRack && (
+          <img
+            className="game-screen__background game-screen__background--expanded-rack"
+            src={expandedLiveKitchenScreen}
+            alt=""
+            aria-hidden="true"
+            data-kitchen-expanded-rack-overlay
+          />
+        )}
+        <GameplayHud
           day={day.day}
           coins={save.coins}
           served={state.servedQualities.length}
           target={day.targetOrders}
-          satisfaction={average}
           sound={musicEnabled}
           onHome={onHome}
-          onMenu={onMenu}
+          onPause={onMenu}
           onSound={onSound}
         />
         <KitchenScene state={state} dispatch={dispatch} soundEnabled={effectsEnabled} />

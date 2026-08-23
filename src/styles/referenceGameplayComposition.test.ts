@@ -6,16 +6,16 @@ const landscapeCss = readFileSync('src/landscape.css', 'utf8')
 const kitchenCss = readFileSync('src/styles/kitchen.css', 'utf8')
 
 describe('reference-master gameplay composition', () => {
-  it('uses the illustrated final UI plate as the live kitchen background', () => {
-    expect(landscapeSource).toContain("kitchen-screen-user-final.png")
-    expect(landscapeSource).not.toContain("mainBackground from '../assets/approved/main-ui/night-market-clean-background.png'")
+  it('uses the clean illustrated kitchen background without baked HUD signs', () => {
+    expect(landscapeSource).toContain("night-market-clean-background.png")
+    expect(landscapeSource).toContain('data-kitchen-expanded-rack-overlay')
   })
 
-  it('positions live HUD values inside the painted hanging signs', () => {
-    expect(landscapeCss).toMatch(/\.hud__day\s*\{[^}]*position:\s*absolute[^}]*left:\s*24px[^}]*top:\s*13px/s)
-    expect(landscapeCss).toMatch(/\.hud__satisfaction\s*\{[^}]*position:\s*absolute[^}]*left:\s*299px/s)
-    expect(landscapeCss).toMatch(/\.hud__coins\s*\{[^}]*position:\s*absolute[^}]*left:\s*575px/s)
-    expect(landscapeCss).toMatch(/\.hud__goal\s*\{[^}]*position:\s*absolute[^}]*left:\s*1142px/s)
+  it('keeps the compact gameplay HUD in one shallow top row', () => {
+    expect(landscapeCss).toMatch(/\.gameplay-hud\s*\{[^}]*top:\s*12px[^}]*height:\s*52px/s)
+    expect(landscapeCss).toContain('.gameplay-hud__orders')
+    expect(landscapeCss).toContain('.gameplay-hud__coins')
+    expect(landscapeSource).not.toContain('hud__satisfaction')
   })
 
   it('keeps the order bubble directly above its customer instead of beside them', () => {
@@ -39,11 +39,11 @@ describe('reference-master gameplay composition', () => {
     expect(landscapeCss).toMatch(/\.home-hotspot\s*\{/)
   })
 
-  it('imports the five approved user screen plates and gives each screen a semantic art marker', () => {
+  it('imports the approved screen plates and gives each screen a semantic art marker', () => {
     for (const filename of [
       'home-screen-user-final.png',
       'day-select-user-final.png',
-      'kitchen-screen-user-final.png',
+      'night-market-clean-background.png',
       'summary-screen-user-final.png',
       'settings-screen-user-final.png',
     ]) {
