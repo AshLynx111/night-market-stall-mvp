@@ -578,7 +578,7 @@ describe('KitchenScene', () => {
     const { container, rerender } = renderScene({ ...start, slots })
 
     expect(container.querySelector('[data-tutorial-path="sauce"]')).not.toBeNull()
-    expect(container.textContent).toContain('先拿起酱刷')
+    expect(container.textContent).toContain('点击酱刷')
 
     const cutSlots = [...slots] as KitchenState['slots']
     cutSlots[0] = {

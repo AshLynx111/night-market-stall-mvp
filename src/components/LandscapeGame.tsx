@@ -26,6 +26,7 @@ import {
 import { KitchenScene } from './game/KitchenScene'
 import { GameplayHud } from './game/GameplayHud'
 import { DeliveryFeedback, type DeliveryFeedbackValue } from './game/DeliveryFeedback'
+import { GameIcon } from './game/GameIcon'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -246,7 +247,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
           </div>
         )}
       </div>
-      <div className="rotate-device"><span>↻</span><b>请横屏体验夜市经营</b></div>
+      <div className="rotate-device"><GameIcon name="roll" /><b>请横屏体验夜市经营</b></div>
     </main>
   )
 }
@@ -300,11 +301,11 @@ function UpgradeShop({ save, onBuy }: { save: CampaignSave; onBuy: (type: 'fire'
         <span>当前资金</span><b>¥ {save.coins}</b>
       </div>
       <button aria-label="升级火力" disabled={save.fireLevel >= 2 || save.coins < (firePrice ?? Infinity)} onClick={() => onBuy('fire')}>
-        <span className="upgrade-shop__icon" aria-hidden="true">🔥</span>
+        <span className="upgrade-shop__icon" aria-hidden="true"><GameIcon name="heat" /></span>
         <span className="upgrade-shop__copy" data-dynamic-mask="wood"><b>升级火力 Lv.{Math.min(2, save.fireLevel + 1)}</b><small>{firePrice ? `顾客耐心 +3秒 · ¥${firePrice}` : '已经满级'}</small></span>
       </button>
       <button aria-label="升级招牌" disabled={save.signLevel >= 2 || save.coins < (signPrice ?? Infinity)} onClick={() => onBuy('sign')}>
-        <span className="upgrade-shop__icon" aria-hidden="true">🏮</span>
+        <span className="upgrade-shop__icon" aria-hidden="true"><GameIcon name="sign" /></span>
         <span className="upgrade-shop__copy" data-dynamic-mask="wood"><b>升级招牌 Lv.{Math.min(2, save.signLevel + 1)}</b><small>{signPrice ? `每单额外 +2元 · ¥${signPrice}` : '已经满级'}</small></span>
       </button>
     </section>
@@ -582,7 +583,7 @@ export function LandscapeGame() {
                       >
                         {locked && <><span className="day-card__lock" aria-hidden="true">🔒</span>完成前一天后解锁</>}
                         {!locked && item.day === 5 && '★ 特别人物登场'}
-                        {!locked && item.day === 6 && '🔥 明星同款热潮'}
+                        {!locked && item.day === 6 && '明星同款热潮'}
                       </span>
                     )}
                   </button>
@@ -613,7 +614,7 @@ export function LandscapeGame() {
               <div><b className="summary-stat__value" data-dynamic-mask="parchment">{mistakes}</b><span className="sr-only">操作失误</span></div>
               <div><b className="summary-stat__value" data-dynamic-mask="parchment">¥{save.coins}</b><span className="sr-only">当前资金</span></div>
             </div>
-            {day.day === 5 && celebrityDone && <div className="buzz-note">📱 明星礼貌地拍下了招牌烤冷面，第 6 天将出现“明星同款”热潮！</div>}
+            {day.day === 5 && celebrityDone && <div className="buzz-note">明星礼貌地拍下了招牌烤冷面，第 6 天将出现“明星同款”热潮！</div>}
             <UpgradeShop save={save} onBuy={buyUpgrade} />
             <div className="summary-actions">
               <button type="button" aria-label="再玩一次" onClick={() => startDay(day)}><span>再玩一次</span></button>
@@ -741,7 +742,7 @@ function HelpModal({ onClose }: { onClose: () => void }) {
     <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="玩法说明">
       <section className="help-modal">
         <button className="modal-close" onClick={onClose} aria-label="关闭玩法说明">×</button>
-        <span className="help-modal__icon">🍳</span>
+        <span className="help-modal__icon" aria-hidden="true"><GameIcon name="heat" /></span>
         <h2>三步学会摆摊</h2>
         <div><b>1</b><p>看左侧订单和铁板上方的“下一步”。</p></div>
         <div><b>2</b><p>点击或拖动食材；刷酱时先拿起桌面酱刷，再沿提示来回滑动。切段要划过三条不同横线。</p></div>

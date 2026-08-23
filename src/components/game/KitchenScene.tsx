@@ -15,47 +15,16 @@ import { layoutOrderBubbles } from '../../landscape/kitchen/orderBubbleLayout'
 import { kitchenGeometryStyle, rackRectangles } from '../../landscape/kitchen/sceneGeometry'
 import type { KitchenAction } from '../../landscape/kitchen/reducer'
 import { applyGesture, deliverDish } from '../../landscape/kitchen/service'
-import {
-  nextCutTargetIndex,
-  tutorialGesturePath,
-  tutorialSvgPath,
-  type TutorialPathKind,
-} from '../../landscape/kitchen/tutorialPaths'
-import { tutorialAllowsIngredient, tutorialInstruction, tutorialStep, type TutorialStep } from '../../landscape/kitchen/tutorial'
+import { tutorialAllowsIngredient, tutorialStep } from '../../landscape/kitchen/tutorial'
 import type { KitchenState, SlotId } from '../../landscape/kitchen/types'
 import { CookingGestureLayer } from './CookingGestureLayer'
 import { CookingFeedback } from './CookingFeedback'
+import { GameIcon } from './GameIcon'
 import { CustomerLane } from './CustomerLane'
 import { GriddleSlot } from './GriddleSlot'
 import { ServingTray } from './ServingTray'
 import { TableIngredient } from './TableIngredient'
-
-type TutorialHandKind = 'drag' | 'egg' | 'hot-dog' | 'scallion' | 'pack' | 'serve'
-
-const GUIDED_TITLES: Record<TutorialStep, string> = {
-  'customer-arrival': '顾客正在走来',
-  noodle: '第一步 · 放面皮',
-  egg: '第二步 · 加鸡蛋',
-  'wait-egg': '看火候',
-  'hot-dog': '第三步 · 加热狗',
-  'wait-hot-dog': '看火候',
-  sauce: '第四步 · 刷酱',
-  scallion: '第五步 · 撒葱花',
-  cut: '第六步 · 切三刀',
-  roll: '第七步 · 卷起来',
-  pack: '第八步 · 装盘',
-  serve: '最后一步 · 上菜',
-  done: '新手引导完成',
-}
-
-const HAND_FOR_STEP: Partial<Record<TutorialStep, TutorialHandKind>> = {
-  noodle: 'drag',
-  egg: 'egg',
-  'hot-dog': 'hot-dog',
-  scallion: 'scallion',
-  pack: 'pack',
-  serve: 'serve',
-}
+import { TutorialOverlay } from './TutorialOverlay'
 
 const INGREDIENT_LABELS: Record<IngredientId, string> = {
   noodle: '面皮', egg: '鸡蛋', 'hot-dog': '热狗', sauce: '刷酱', scallion: '葱花', cilantro: '香菜', onion: '洋葱',
@@ -68,43 +37,6 @@ const TUTORIAL_COMPLETION_TOAST_MS = 2_200
 function pointInside(element: Element, clientX: number, clientY: number) {
   const rect = element.getBoundingClientRect()
   return rect.width > 0 && rect.height > 0 && clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom
-}
-
-function TutorialGestureCue({ kind, slotId, cutTargetIndices, sauceSelected, sauceStrokeCount }: {
-  kind: TutorialPathKind
-  slotId: SlotId
-  cutTargetIndices: readonly number[]
-  sauceSelected: boolean
-  sauceStrokeCount: number
-}) {
-  const cutTargetIndex = nextCutTargetIndex(cutTargetIndices)
-  const points = tutorialGesturePath(kind, cutTargetIndex)
-  const label = kind === 'sauce'
-    ? sauceSelected ? '左右刷两下' : '先拿起酱刷，再左右刷两下'
-    : kind === 'cut' ? '沿下一条横向虚线切开' : '在饼上向右滑一下'
-  return (
-    <div
-      className={`tutorial-gesture-cue tutorial-gesture-cue--${slotId}`}
-      data-sauce-progress={kind === 'sauce' ? `${sauceStrokeCount}/2` : undefined}
-      data-griddle-inner-area={slotId}
-    >
-      <svg
-        viewBox="0 0 1000 500"
-        preserveAspectRatio="none"
-        data-tutorial-path={kind}
-        data-cut-target-index={kind === 'cut' ? cutTargetIndex : undefined}
-        aria-hidden="true"
-      >
-        {kind === 'sauce' ? (
-          <>
-            <path d={tutorialSvgPath(points.slice(0, 2))} />
-            <path d={tutorialSvgPath(points.slice(2))} />
-          </>
-        ) : <path d={tutorialSvgPath(points)} />}
-      </svg>
-      <span>{label}</span>
-    </div>
-  )
 }
 
 export function KitchenScene({ state, dispatch, soundEnabled = true }: {
@@ -232,7 +164,6 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
   const rackLayout = rackColumns === 2 ? 'approved-2x3' : 'expanded-3x5'
   const guidedStep = tutorialStep(state)
   const guided = guidedStep !== 'done'
-  const guidedHand = HAND_FOR_STEP[guidedStep]
   const sauceEnabled = sauceExpected && (!guided || guidedStep === 'sauce')
   const bubbleLayout = layoutOrderBubbles(state.customers)
   const activeCustomers = state.customers.filter((customer) => customer.presence === 'active')
@@ -328,7 +259,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
             onClick={() => dispatchScene({ type: 'DISCARD_SLOT', slotId: slot.id })}
             aria-label={`丢弃${slot.id === 'left' ? '左侧' : '右侧'}铁板上的食物`}
           >
-            <span aria-hidden="true">🗑️</span>
+            <GameIcon name="trash" />
             {slot.id === 'left' ? '清左板' : '清右板'}
           </button>
         ))}
@@ -337,34 +268,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
       <CookingGestureLayer state={state} dispatch={dispatchScene} sauceEnabled={sauceBrushSelected && sauceEnabled} />
       <ServingTray state={state} dispatch={dispatchScene} findCustomerAtPoint={findCustomerAtPoint} />
       <CookingFeedback slots={state.slots} />
-      {guided && (guidedStep === 'sauce' || guidedStep === 'cut' || guidedStep === 'roll') ? (
-        <TutorialGestureCue
-          kind={guidedStep}
-          slotId="left"
-          cutTargetIndices={state.slots[0].cutTargetIndices}
-          sauceSelected={sauceBrushSelected}
-          sauceStrokeCount={state.slots[0].sauceStrokeCount ?? 0}
-        />
-      ) : guidedHand && (
-        <div
-          className={`tutorial-hand tutorial-hand--${guidedHand} tutorial-hand--slot-left${guidedHand === 'serve' ? ' tutorial-hand--lane-left' : ''}`}
-          data-tutorial-gesture={guidedHand}
-          aria-label="操作手势提示"
-        >
-          <span aria-hidden="true">☝️</span>
-        </div>
-      )}
-      {guided && (
-        <aside className="guided-tutorial" data-tutorial-step={guidedStep} role="status">
-          <b>{GUIDED_TITLES[guidedStep]}</b>
-          <span>{tutorialInstruction(state)}</span>
-        </aside>
-      )}
-      {showTutorialCompletion && (
-        <aside className="tutorial-completion-toast" role="status">
-          第一份完成！现在可以同时服务顾客了
-        </aside>
-      )}
+      <TutorialOverlay state={state} sauceSelected={sauceBrushSelected} showCompletion={showTutorialCompletion} />
     </div>
   )
 }

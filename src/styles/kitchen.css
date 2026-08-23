@@ -219,6 +219,7 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   filter: saturate(1.1) brightness(1.05) drop-shadow(0 2px 1px rgb(45 23 12 / .3));
+  transition: transform .12s ease, filter .12s ease;
 }
 @keyframes order-bubble-critical {
   0%, 100% { box-shadow: 0 4px 0 rgb(30 23 20 / .28), 0 0 0 0 rgb(213 78 54 / 0); }
@@ -280,6 +281,10 @@
 .table-ingredient--orleans .table-ingredient__label { padding-inline: 3px; font-size: 7.5px; letter-spacing: 0; }
 .table-ingredient[data-painted="true"] .table-ingredient__food-art { opacity: 1; }
 .table-ingredient:disabled { cursor: default; filter: grayscale(.18); opacity: .82; }
+.table-ingredient:not(:disabled):hover .table-ingredient__food-art { transform: translate(-50%, -53%) scale(1.05); filter: saturate(1.18) brightness(1.1) drop-shadow(0 4px 2px rgb(45 23 12 / .34)); }
+.table-ingredient:not(:disabled):active .table-ingredient__food-art,
+.table-ingredient.is-selected .table-ingredient__food-art { transform: translate(-50%, -48%) scale(.96); }
+.table-ingredient:focus-visible { outline: 4px solid #ffd66b; outline-offset: -2px; border-radius: 12px; }
 .kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled) { outline: 3px solid rgb(255 216 91 / .88); outline-offset: -3px; animation: tutorial-target-pulse 1.25s ease-in-out infinite; }
 .table-ingredient__ghost {
   position: absolute;
@@ -320,6 +325,7 @@
 .cooking-gesture-tool--sauce { width: 84px; height: 64px; transform: translate(-40%, -65%); }
 .cooking-gesture-tool--sauce img { width: 100%; height: 100%; object-fit: contain; }
 .cooking-gesture-tool--roll { color: #ffe5a3; font-size: 48px; font-weight: 900; }
+.cooking-gesture-tool .game-icon { width: 44px; height: 44px; color: #ffe5a3; stroke-width: 2.2; }
 
 .tutorial-gesture-cue { position: absolute; z-index: 23; pointer-events: none; }
 .tutorial-gesture-cue svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
@@ -345,7 +351,10 @@
 
 .kitchen-scene__trash { position: absolute; z-index: 12; right: 1.5%; bottom: 2.5%; display: flex; gap: 5px; pointer-events: none; }
 .kitchen-scene__trash button { min-width: 58px; padding: 5px 7px; border: 2px solid #4d3b32; border-radius: 11px; background: rgb(255 237 197 / .9); color: #81412f; cursor: pointer; font-size: 9px; font-weight: 900; pointer-events: auto; touch-action: manipulation; box-shadow: 0 3px 0 rgb(44 29 23 / .45); }
-.kitchen-scene__trash button span { display: block; font-size: 17px; }
+.kitchen-scene__trash button .game-icon { display: block; width: 18px; height: 18px; margin: 0 auto 2px; }
+.kitchen-scene__trash button:hover { filter: brightness(1.08); }
+.kitchen-scene__trash button:active { transform: translateY(2px); box-shadow: 0 1px 0 rgb(44 29 23 / .45); }
+.kitchen-scene__trash button:focus-visible { outline: 4px solid #ffd66b; outline-offset: 2px; }
 
 .tutorial-hand {
   --tutorial-dx: 0px;
@@ -359,7 +368,7 @@
   pointer-events: none;
   filter: drop-shadow(0 3px 3px rgb(0 0 0 / .45));
 }
-.tutorial-hand > span { display: block; font-size: 31px; transform-origin: 50% 85%; animation: kitchen-hand-path 1.45s cubic-bezier(.35,.05,.3,1) infinite; }
+.tutorial-hand > .game-icon { display: block; width: 36px; height: 36px; color: #ffd45f; stroke-width: 2.2; transform-origin: 50% 85%; animation: kitchen-hand-path 1.45s cubic-bezier(.35,.05,.3,1) infinite; }
 .tutorial-hand--drag { left: 1165px; top: 565px; --tutorial-dx: -545px; --tutorial-dy: -15px; }
 .tutorial-hand--drag.tutorial-hand--slot-right { --tutorial-dx: -275px; }
 .tutorial-hand--egg { left: 195px; top: 565px; --tutorial-dx: 425px; --tutorial-dy: -15px; }
@@ -377,10 +386,9 @@
 .tutorial-hand--serve.tutorial-hand--lane-center { --tutorial-dx: -425px; --tutorial-dy: -405px; }
 .tutorial-hand--serve.tutorial-hand--lane-right { --tutorial-dx: -95px; --tutorial-dy: -395px; }
 
-.guided-tutorial { position: absolute; z-index: 32; left: 50%; top: 93px; width: 352px; min-height: 58px; padding: 9px 18px 10px 62px; transform: translateX(-50%); border: 3px solid #6b3b28; border-radius: 16px; background: linear-gradient(180deg, rgb(255 248 215 / .98), rgb(255 222 150 / .98)); color: #713722; box-shadow: 0 5px 0 rgb(46 25 18 / .52), 0 8px 20px rgb(20 11 8 / .3); pointer-events: none; }
-.guided-tutorial::before { content: "🍳"; position: absolute; left: 17px; top: 50%; width: 34px; height: 34px; display: grid; place-items: center; transform: translateY(-50%); border-radius: 50%; background: #b6492d; color: white; font-size: 20px; box-shadow: inset 0 -3px 0 rgb(79 32 23 / .28); }
-.guided-tutorial b, .guided-tutorial span { display: block; }
-.guided-tutorial b { margin-bottom: 2px; color: #a23f29; font-size: 12px; letter-spacing: .04em; }
+.guided-tutorial { position: absolute; z-index: 32; left: 50%; top: 78px; width: 230px; min-height: 38px; padding: 9px 14px; transform: translateX(-50%); border: 3px solid #6b3b28; border-radius: 14px 10px 15px 9px; background: linear-gradient(180deg, rgb(255 248 215 / .98), rgb(255 222 150 / .98)); color: #713722; box-shadow: 0 4px 0 rgb(46 25 18 / .52), 0 7px 15px rgb(20 11 8 / .24); text-align: center; pointer-events: none; }
+.guided-tutorial::before { content: none; display: none; }
+.guided-tutorial span { display: block; }
 .guided-tutorial span { font-size: 11px; font-weight: 800; line-height: 1.35; }
 .tutorial-completion-toast { position: absolute; z-index: 34; left: 50%; top: 112px; width: 420px; padding: 13px 22px; transform: translateX(-50%); border: 3px solid #6b3b28; border-radius: 16px; background: linear-gradient(180deg, rgb(255 248 215 / .98), rgb(255 213 120 / .98)); color: #8d3927; box-shadow: 0 5px 0 rgb(46 25 18 / .52), 0 8px 20px rgb(20 11 8 / .3); font-size: 15px; font-weight: 900; line-height: 1.35; text-align: center; pointer-events: none; animation: tutorial-completion-in .18s ease-out; }
 
@@ -408,10 +416,13 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tutorial-hand > span { opacity: .9; transform: translate(var(--tutorial-dx), var(--tutorial-dy)); }
+  .tutorial-hand > .game-icon { opacity: .9; transform: translate(var(--tutorial-dx), var(--tutorial-dy)); }
   .kitchen-scene[data-guided-tutorial="true"] .table-ingredient:not(:disabled),
   .table-ingredient--sauce:not(:disabled),
-  .kitchen-customer__bubble { animation: none; }
+  .kitchen-customer__bubble,
+  .cooking-feedback__cue,
+  .delivery-feedback,
+  .griddle-slot__stage-art { animation: none; }
 }
 
 /* The live kitchen derivative has no baked tutorial plaque. Keep the guided
@@ -420,9 +431,9 @@
 .guided-tutorial {
   left: 1070px;
   top: 245px;
-  width: 300px;
-  min-height: 74px;
-  padding: 12px 18px 13px 62px;
+  width: 210px;
+  min-height: 40px;
+  padding: 10px 14px;
   transform: none;
   border: 3px solid #6b3b28;
   border-radius: 16px;
@@ -431,6 +442,4 @@
   color: #6f432a;
   text-align: left;
 }
-.guided-tutorial::before { display: grid; }
-.guided-tutorial b { margin: 0 0 3px; color: #85452d; font-size: 14px; }
 .guided-tutorial span { font-size: 11px; line-height: 1.4; }
