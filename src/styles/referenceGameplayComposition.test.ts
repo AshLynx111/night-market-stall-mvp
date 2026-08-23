@@ -82,6 +82,8 @@ describe('reference-master gameplay composition', () => {
     expect(landscapeCss).toMatch(/@media \(max-height: 480px\) and \(orientation: landscape\)/)
     expect(landscapeCss).toContain('scale(var(--scene-inverse-scale))')
     expect(landscapeCss).toContain('calc(128px * var(--scene-inverse-scale))')
+    expect(landscapeCss).toContain('--short-overlay-scale: min(var(--scene-inverse-scale), 1.35)')
+    expect(kitchenCss).toContain('scale(var(--short-overlay-scale))')
     expect(kitchenCss).toContain('transform-origin: top center')
   })
 

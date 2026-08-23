@@ -407,13 +407,14 @@
 
 @media (max-height: 480px) and (orientation: landscape) {
   .kitchen-customer__bubble {
-    transform: translateX(-50%) scale(var(--scene-inverse-scale));
+    transform: translateX(-50%) scale(var(--short-overlay-scale));
     transform-origin: top center;
     animation: none;
   }
   .kitchen-customer__bubble.is-critical { animation: order-bubble-critical-shadow 1s ease-in-out infinite; }
   .delivery-feedback.is-held {
-    transform: translateX(-50%) scale(var(--scene-inverse-scale));
+    top: calc(72px * var(--scene-inverse-scale));
+    transform: translateX(-50%) scale(var(--short-overlay-scale));
     transform-origin: top center;
   }
   .guided-tutorial {
