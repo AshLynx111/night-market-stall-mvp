@@ -42,15 +42,17 @@ describe('logical kitchen layout CSS', () => {
     expect(stageArt).toContain('object-position: 50% 50%')
   })
 
-  it('does not physically resize the gameplay HUD or help control in viewport media rules', () => {
+  it('keeps logical gameplay geometry fixed while counter-scaling critical short-screen controls', () => {
     const narrow = mediaBlock('@media (max-width: 1050px)', '@media (max-height: 690px)')
     const short = mediaBlock('@media (max-height: 690px)', '@media (orientation: portrait)')
 
-    for (const block of [narrow, short]) {
-      expect(block).not.toMatch(/\.hud(?:\b|__)/)
-      expect(block).not.toContain('.help-fab')
-      expect(block).not.toContain('.game-screen__logical')
-    }
+    expect(narrow).not.toMatch(/\.hud(?:\b|__)/)
+    expect(narrow).not.toContain('.help-fab')
+    expect(narrow).not.toContain('.game-screen__logical')
+    expect(short).toContain('.game-screen__logical { --short-overlay-scale:')
+    expect(short).toMatch(/\.gameplay-hud__day\s*\{[^}]*scale\(var\(--scene-inverse-scale\)\)/)
+    expect(short).toMatch(/\.help-fab\s*\{[^}]*scale\(var\(--scene-inverse-scale\)\)/)
+    expect(short).not.toMatch(/\.game-screen__logical\s*\{[^}]*(?:width|height):/)
   })
 
   it('keeps the help control above the bottom discard-control band', () => {

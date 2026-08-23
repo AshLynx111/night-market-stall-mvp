@@ -1,0 +1,75 @@
+{
+  "capturedAt": "2026-08-23T17:27:26.522Z",
+  "baseUrl": "http://127.0.0.1:4180",
+  "screenshots": [
+    {
+      "filename": "home-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "shared home screen presentation"
+    },
+    {
+      "filename": "day-select-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "day select with SVG lock states"
+    },
+    {
+      "filename": "summary-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "shared summary screen presentation"
+    },
+    {
+      "filename": "dense-orders-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "content-derived compact order bubble"
+    },
+    {
+      "filename": "mobile-landscape-844x390.png",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": "inverse-scaled HUD, critical order and reward"
+    }
+  ],
+  "flowChecks": {
+    "homeToSelect": true,
+    "lockIconCount": 5,
+    "summaryToNextDay": true,
+    "compactOrderVisible": true,
+    "mobileReadableTargets": {
+      ".gameplay-hud__day": {
+        "width": 150,
+        "height": 52
+      },
+      ".gameplay-hud__orders": {
+        "width": 210,
+        "height": 52
+      },
+      ".gameplay-hud__coins": {
+        "width": 132,
+        "height": 52
+      },
+      "[data-customer-bubble-for]": {
+        "width": 86,
+        "height": 64
+      },
+      "[data-delivery-feedback]": {
+        "width": 88,
+        "height": 36
+      }
+    }
+  },
+  "consoleErrors": []
+}
