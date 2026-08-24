@@ -17,15 +17,15 @@ Existing approved PNG masters remain untouched. Runtime WebP assets, audio behav
 
 ## Acceptance Architecture
 
-`scripts/capture-gameplay-ui-polish-final.mjs` builds no fixtures into production code. It starts `vite preview` against the already-built `dist`, opens isolated browser contexts with deterministic local-storage setup and existing development-only query fixtures, drives the real UI with Playwright, captures screenshots, and writes `qa-results.json`.
+`scripts/capture-gameplay-ui-polish-final.mjs` builds no fixtures into production code. It starts `vite preview` against the already-built `dist` for real home, cooking, campaign-selection, and mobile flows. A separate Vite development server is used only for the existing low-patience and summary query fixtures, which production deliberately ignores. Isolated browser contexts provide deterministic local storage, drive the UI with Playwright, capture screenshots, and write `qa-results.json`.
 
 The run is divided into independent scenarios so waiting customers and timers in one scenario cannot contaminate another:
 
 1. Cold home to Day 1 guided order: test music, pause, every cooking input, delivery feedback, tutorial persistence, and campaign coin persistence.
-2. Day 3 composition: wait for two active customers and place noodles on both left and right griddles before capturing.
-3. Day 5 composition: capture the expanded 3×5 rack with multiple customers.
-4. Critical patience: use the existing `qaPatienceRatio` fixture and require the production critical-customer marker.
-5. Day 1 summary: invoke the real next-day control and verify Day 2 plus persisted settled progress.
+2. Day 3 production composition: seed valid settled Day 1–2 save data, enter Day 3 through the real selection screen, wait for two active customers, and place noodles on both left and right griddles before capturing.
+3. Day 5 production composition: seed valid settled Day 1–4 save data, enter Day 5 through selection, and capture the expanded 3×5 rack with multiple customers.
+4. Critical patience development fixture: use the existing `qaPatienceRatio` fixture and require the same critical-customer marker rendered by normal gameplay.
+5. Day 1 summary development fixture: invoke the real next-day control and verify Day 2 plus persisted settled progress.
 6. Mobile landscape: run at 844×390 with touch enabled, place food using tap, open pause, and require all critical surfaces to stay inside the viewport.
 
 Every page records console errors and requires all visible images to decode successfully.
