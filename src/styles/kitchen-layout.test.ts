@@ -90,12 +90,12 @@ describe('logical kitchen layout CSS', () => {
     expect(landscapeCss).toMatch(/\.menu-modal\s*\{[^}]*width:\s*min\(1050px, 100%\)/)
   })
 
-  it('provides a dedicated 844 by 390 campaign-shell layout with no forced body overflow', () => {
+  it('provides a dedicated 844 by 390 campaign shell without desynchronizing summary overlays from their plate', () => {
     const short = mediaBlock('@media (max-height: 690px)', '@media (orientation: portrait)')
 
     expect(short).toMatch(/\.home-screen[\s\S]*\.select-screen[\s\S]*\.summary-screen[\s\S]*min-height:\s*0/)
     expect(short).toMatch(/\.day-grid\s*\{[^}]*grid-template-columns:\s*repeat\(3,\s*1fr\)/)
-    expect(short).toMatch(/\.summary-card\s*\{[^}]*max-height:\s*calc\(100dvh/)
+    expect(short).not.toMatch(/\.summary-card\s*\{[^}]*max-height:/)
     expect(short).toContain('.event-screen--overlay')
   })
 

@@ -500,7 +500,7 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .summary-actions button:first-child { left: 29.8%; }
 .summary-actions button:last-child { left: 50.8%; color: white; }
 .summary-actions button span { position: absolute; left: 23%; top: 29%; width: 54%; height: 42%; display: grid; place-items: center; background: #f5dfb5; box-shadow: 0 0 7px 6px #f5dfb5; white-space: nowrap; }
-.summary-actions button:last-child span { left: 18%; width: 64%; background: #ec6614; box-shadow: 0 0 7px 6px #ec6614; }
+.summary-actions button:last-child span { left: 6%; width: 88%; background: #ec6614; box-shadow: 0 0 7px 6px #ec6614; }
 
 /* Modals */
 .modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; box-sizing: border-box; padding: max(18px, env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) max(18px, env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px)); background: rgba(7,13,22,.78); backdrop-filter: blur(7px); animation: ui-backdrop-in .18s ease-out both; }
@@ -597,7 +597,6 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
   .select-screen,
   .summary-screen { overflow: hidden; }
   .day-grid { display: block; grid-template-columns: repeat(3, 1fr); }
-  .summary-card { max-height: calc(100dvh - 16px); }
 
   .event-screen--overlay .dialogue-box { padding: 22px; }
   .event-screen--overlay .primary-button { min-height: 64px; }

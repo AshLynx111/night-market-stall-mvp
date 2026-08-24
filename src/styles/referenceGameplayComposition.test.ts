@@ -85,6 +85,7 @@ describe('reference-master gameplay composition', () => {
     expect(landscapeCss).toContain('--short-overlay-scale: min(var(--scene-inverse-scale), 1.35)')
     expect(kitchenCss).toContain('scale(var(--short-overlay-scale))')
     expect(kitchenCss).toContain('transform-origin: top center')
+    expect(landscapeCss).not.toMatch(/\.summary-card\s*\{[^}]*max-height:/s)
   })
 
   it('removes the remaining platform lock emoji from illustrated screens', () => {
