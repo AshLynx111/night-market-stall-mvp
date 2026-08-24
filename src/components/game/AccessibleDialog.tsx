@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 
 const FOCUSABLE = [
   'button:not(:disabled)',
@@ -16,10 +16,11 @@ export function AccessibleDialog({ label, className, onClose, children }: {
   children: ReactNode
 }) {
   const dialogRef = useRef<HTMLElement>(null)
-  const restoreFocusRef = useRef<HTMLElement | null>(null)
+  const restoreFocusRef = useRef<HTMLElement | null>(
+    typeof document !== 'undefined' && document.activeElement instanceof HTMLElement ? document.activeElement : null,
+  )
 
-  useLayoutEffect(() => {
-    restoreFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
+  useEffect(() => {
     const dialog = dialogRef.current
     const firstControl = dialog?.querySelector<HTMLElement>(FOCUSABLE)
     ;(firstControl ?? dialog)?.focus()
