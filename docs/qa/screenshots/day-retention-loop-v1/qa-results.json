@@ -1,0 +1,45 @@
+{
+  "capturedAt": "2026-08-24T14:56:54.864Z",
+  "browser": {
+    "name": "Microsoft Edge",
+    "version": "151.0.4129.101"
+  },
+  "baseUrl": "http://127.0.0.1:4188",
+  "screenshots": [
+    {
+      "filename": "summary-next-day-1440x810.png",
+      "state": "real Day 1 completion with Day 2 retention cue"
+    },
+    {
+      "filename": "summary-next-day-844x390.png",
+      "state": "compact landscape Day 1 completion cue"
+    },
+    {
+      "filename": "current-day-select-1440x810.png",
+      "state": "Day 3 is the single current retention target"
+    }
+  ],
+  "flowChecks": {
+    "summaryReachedByThreeRealOrders": true,
+    "nextCueText": "明日 · 饭量挑战 大胃王解锁",
+    "nextCueNamesTomorrow": true,
+    "nextCueNamesUnlock": true,
+    "nextButtonText": "明天 · 饭量挑战",
+    "nextButtonIsSpecific": true,
+    "tutorialCompleted": true,
+    "allImagesDecoded": true,
+    "nextActionStartsDay2": true,
+    "day1Persisted": true
+  },
+  "selectChecks": {
+    "exactlyOneCurrentHook": true,
+    "hookText": "招牌芝士火鸡解锁",
+    "hookOnDay3": true,
+    "hookNamesUnlock": true,
+    "settledDaysHaveNoHook": true,
+    "futureDaysLocked": true,
+    "playableDaysUnlocked": true
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}
