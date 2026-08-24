@@ -1,0 +1,130 @@
+{
+  "capturedAt": "2026-08-24T14:25:18.351Z",
+  "browser": "Microsoft Edge via Playwright Chromium",
+  "productionBaseUrl": "http://127.0.0.1:4186",
+  "developmentFixtureBaseUrl": "http://127.0.0.1:4187",
+  "fixtureScenarios": [
+    "low patience still frame",
+    "summary-to-Day-2 setup"
+  ],
+  "screenshots": [
+    {
+      "filename": "day1-initial-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "guided Day 1 initial state",
+      "environment": "production preview"
+    },
+    {
+      "filename": "first-customer-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "first active customer and visual order",
+      "environment": "production preview"
+    },
+    {
+      "filename": "cooking-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "guided noodle placement on the left griddle",
+      "environment": "production preview"
+    },
+    {
+      "filename": "delivery-feedback-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "non-blocking income and quality feedback",
+      "environment": "production preview"
+    },
+    {
+      "filename": "two-customers-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "two simultaneous active customers and separate bubbles",
+      "environment": "production preview"
+    },
+    {
+      "filename": "two-griddles-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "left and right griddles simultaneously occupied",
+      "environment": "production preview"
+    },
+    {
+      "filename": "expanded-rack-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "Day 5 expanded 3×5 ingredient rack",
+      "environment": "production preview"
+    },
+    {
+      "filename": "low-patience-1440x810.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "critical customer patience presentation",
+      "environment": "development fixture"
+    },
+    {
+      "filename": "mobile-landscape-844x390.png",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": "touch placement in mobile landscape",
+      "environment": "production preview"
+    }
+  ],
+  "flowChecks": {
+    "guidedOrder": {
+      "completedOrders": 1,
+      "tutorialCompleted": true,
+      "savedCoins": 46,
+      "pauseOpenedAndClosed": true,
+      "musicToggledOffAndOn": true
+    },
+    "multipleCustomers": 2,
+    "bothGriddles": {
+      "leftOccupied": true,
+      "rightOccupied": true
+    },
+    "expandedRack": {
+      "overlayPresent": true,
+      "ingredientCount": 15
+    },
+    "criticalPatience": {
+      "markerPresent": true,
+      "criticalBarPresent": true
+    },
+    "nextDayAndSave": {
+      "enteredDay2": true,
+      "day1StarsPreserved": true,
+      "unlockedDayPreserved": true,
+      "coinsPreserved": true
+    },
+    "mobileLandscape": {
+      "touchPlacementCompleted": true,
+      "pauseOpened": true,
+      "logicalInsideViewport": true,
+      "dialogInsideViewport": true
+    },
+    "allImagesDecoded": true
+  },
+  "consoleErrors": [],
+  "passed": true
+}
