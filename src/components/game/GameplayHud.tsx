@@ -18,7 +18,14 @@ export function GameplayHud({ day, coins, served, target, sound, onHome, onPause
       <button className="gameplay-hud__day" type="button" onClick={onHome} aria-label="返回主页">
         <span>第 {day} 天</span>
       </button>
-      <div className="gameplay-hud__orders" aria-label={`已完成订单 ${served}，目标 ${target}`}>
+      <div
+        className="gameplay-hud__orders"
+        role="progressbar"
+        aria-label={`已完成订单 ${served}，目标 ${target}`}
+        aria-valuemin={0}
+        aria-valuemax={target}
+        aria-valuenow={served}
+      >
         <b>订单 {served}/{target}</b>
         <i aria-hidden="true"><span style={{ width: `${progress}%` }} /></i>
       </div>
@@ -26,10 +33,10 @@ export function GameplayHud({ day, coins, served, target, sound, onHome, onPause
         <GameIcon name="coin" />
         <b>¥{coins}</b>
       </div>
-      <button className="gameplay-hud__control gameplay-hud__control--pause" type="button" onClick={onPause} aria-label="暂停并打开菜单">
+      <button className="gameplay-hud__control gameplay-hud__control--pause" type="button" onClick={onPause} aria-label="暂停并打开菜单" aria-keyshortcuts="Escape">
         <GameIcon name="pause" />
       </button>
-      <button className="gameplay-hud__control gameplay-hud__control--sound" type="button" onClick={onSound} aria-label={sound ? '关闭音乐' : '开启音乐'} aria-pressed={!sound}>
+      <button className="gameplay-hud__control gameplay-hud__control--sound" type="button" onClick={onSound} aria-label={sound ? '关闭音乐' : '开启音乐'} aria-pressed={!sound} aria-keyshortcuts="M">
         <GameIcon name={sound ? 'sound-on' : 'sound-off'} />
       </button>
     </header>

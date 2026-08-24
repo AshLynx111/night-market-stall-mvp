@@ -28,6 +28,8 @@ import { KitchenScene } from './game/KitchenScene'
 import { GameplayHud } from './game/GameplayHud'
 import { DeliveryFeedback, type DeliveryFeedbackValue } from './game/DeliveryFeedback'
 import { GameIcon } from './game/GameIcon'
+import { AccessibleDialog } from './game/AccessibleDialog'
+import { useGameplayShortcuts } from '../landscape/useGameplayShortcuts'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -234,7 +236,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
         />
         <KitchenScene state={state} dispatch={dispatch} soundEnabled={effectsEnabled} />
         <DeliveryFeedback feedback={deliveryFeedback} held={qaDeliveryFeedback} />
-        <button className="help-fab" onClick={onHelp}>？</button>
+        <button className="help-fab" onClick={onHelp} aria-label="打开玩法说明" aria-keyshortcuts="H">？</button>
         {eventOpen && (
           <div className="event-screen event-screen--overlay">
             <div className="event-screen__art" style={{ backgroundImage: `url(${celebrityArt})` }} />
@@ -364,11 +366,27 @@ export function LandscapeGame() {
   const audioSettingsRef = useRef(audioSettings)
   const [sessionId, setSessionId] = useState(1)
   const [guidedTutorialComplete, setGuidedTutorialComplete] = useState(readGuidedTutorialComplete)
-  const abandonTriggerRef = useRef<HTMLElement | null>(null)
-  const restoreAbandonFocus = useRef(false)
   const served = qualities.length
   const average = served ? Math.round(qualities.reduce((sum, value) => sum + value, 0) / served) : 100
   const uiFeedback = createUiFeedback(audioSettings.master * audioSettings.effects > 0)
+  const dialogOpen = showMenu || showHelp || showAbandonConfirm
+
+  useGameplayShortcuts({
+    enabled: screen === 'playing',
+    dialogOpen,
+    onPause: () => {
+      uiFeedback.tap()
+      setShowMenu(true)
+    },
+    onHelp: () => {
+      uiFeedback.tap()
+      setShowHelp(true)
+    },
+    onMusic: () => {
+      uiFeedback.tap()
+      setAudioSettings((current) => ({ ...current, musicMuted: !current.musicMuted }))
+    },
+  })
 
   const stageRequest = new URLSearchParams(window.location.search).get('renderStage')
   if (stageRequest) {
@@ -412,20 +430,12 @@ export function LandscapeGame() {
     }
   }, [])
 
-  useEffect(() => {
-    if (showAbandonConfirm || !restoreAbandonFocus.current) return
-    restoreAbandonFocus.current = false
-    abandonTriggerRef.current?.focus()
-  }, [showAbandonConfirm])
-
   const openAbandonConfirm = () => {
     uiFeedback.tap()
-    abandonTriggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
     setShowAbandonConfirm(true)
   }
 
   const continueCurrentSession = () => {
-    restoreAbandonFocus.current = true
     setShowAbandonConfirm(false)
   }
 
@@ -673,7 +683,7 @@ export function LandscapeGame() {
         day={day}
         save={save}
         paused={screen === 'event' || showMenu || showHelp || showAbandonConfirm}
-        backgroundInert={showAbandonConfirm}
+        backgroundInert={dialogOpen}
         eventOpen={screen === 'event'}
         musicEnabled={!audioSettings.musicMuted}
         effectsEnabled={audioSettings.master * audioSettings.effects > 0}
@@ -727,68 +737,31 @@ export function LandscapeGame() {
 }
 
 function AbandonModal({ onContinue, onAbandon }: { onContinue: () => void; onAbandon: () => void }) {
-  const dialogRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    dialogRef.current?.querySelector<HTMLButtonElement>('button')?.focus()
-  }, [])
-
   return (
-    <div className="modal-backdrop">
-      <section
-        className="abandon-modal"
-        ref={dialogRef}
-        role="dialog"
-        aria-modal="true"
-        aria-label="放弃本次营业确认"
-        onKeyDown={(event) => {
-          if (event.key === 'Escape') {
-            event.preventDefault()
-            onContinue()
-            return
-          }
-          if (event.key !== 'Tab') return
-
-          const buttons = [...(dialogRef.current?.querySelectorAll<HTMLButtonElement>('button:not(:disabled)') ?? [])]
-          if (buttons.length === 0) return
-          const first = buttons[0]
-          const last = buttons.at(-1)!
-          if (event.shiftKey && (document.activeElement === first || !dialogRef.current?.contains(document.activeElement))) {
-            event.preventDefault()
-            last.focus()
-          } else if (!event.shiftKey && document.activeElement === last) {
-            event.preventDefault()
-            first.focus()
-          }
-        }}
-      >
+    <AccessibleDialog label="放弃本次营业确认" className="abandon-modal" onClose={onContinue}>
         <h2>要结束这次营业吗？</h2>
         <p>本次未结算的订单不会计入关卡进度。</p>
         <div>
           <button className="secondary-button" onClick={onContinue}>继续营业</button>
           <button className="primary-button" onClick={onAbandon}>放弃本次营业</button>
         </div>
-      </section>
-    </div>
+    </AccessibleDialog>
   )
 }
 
 function MenuModal({ onClose }: { onClose: () => void }) {
   return (
-    <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="完整菜单">
-      <section className="menu-modal">
+    <AccessibleDialog label="完整菜单" className="menu-modal" onClose={onClose}>
         <button className="modal-close" onClick={onClose}>×</button>
         <img src={menuBoard} alt="烤冷面完整菜单" />
         <p>五款正式菜谱 · 关卡推进后会依次加入订单</p>
-      </section>
-    </div>
+    </AccessibleDialog>
   )
 }
 
 function HelpModal({ onClose }: { onClose: () => void }) {
   return (
-    <div className="modal-backdrop" role="dialog" aria-modal="true" aria-label="玩法说明">
-      <section className="help-modal">
+    <AccessibleDialog label="玩法说明" className="help-modal" onClose={onClose}>
         <button className="modal-close" onClick={onClose} aria-label="关闭玩法说明">×</button>
         <span className="help-modal__icon" aria-hidden="true"><GameIcon name="heat" /></span>
         <h2>三步学会摆摊</h2>
@@ -796,7 +769,6 @@ function HelpModal({ onClose }: { onClose: () => void }) {
         <div><b>2</b><p>点击或拖动食材；刷酱时先拿起桌面酱刷，再沿提示来回滑动。切段要划过三条不同横线。</p></div>
         <div><b>3</b><p>在耐心耗尽前装袋，速度越快、失误越少，收入和满意度越高。</p></div>
         <button className="primary-button" onClick={onClose}>知道了，开摊！</button>
-      </section>
-    </div>
+    </AccessibleDialog>
   )
 }

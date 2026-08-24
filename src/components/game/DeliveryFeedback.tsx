@@ -9,7 +9,7 @@ export function qualityLabel(quality: number): '完美' | '很好' | '可以' {
 export function DeliveryFeedback({ feedback, held = false }: { feedback: DeliveryFeedbackValue | null; held?: boolean }) {
   if (!feedback) return null
   return (
-    <aside className={`delivery-feedback${held ? ' is-held' : ''}`} data-delivery-feedback={feedback.id} role="status" aria-live="polite">
+    <aside className={`delivery-feedback${held ? ' is-held' : ''}`} data-delivery-feedback={feedback.id} role="status" aria-live="polite" aria-atomic="true">
       <b>+¥{feedback.income}</b>
       <span>{qualityLabel(feedback.quality)}</span>
     </aside>

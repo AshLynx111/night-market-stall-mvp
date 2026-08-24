@@ -46,12 +46,12 @@ export function TutorialOverlay({ state, sauceSelected, showCompletion = false }
         </div>
       ) : null}
       {guided && (
-        <aside className="guided-tutorial" data-tutorial-step={step} role="status">
+        <aside className="guided-tutorial" data-tutorial-step={step} role="status" aria-live="polite" aria-atomic="true">
           <span aria-hidden="true">{tutorialShortInstruction(step, sauceSelected)}</span>
           <span className="sr-only">{tutorialInstruction(state)}</span>
         </aside>
       )}
-      {showCompletion && <aside className="tutorial-completion-toast" role="status">第一份完成！现在可以同时服务顾客了</aside>}
+      {showCompletion && <aside className="tutorial-completion-toast" role="status" aria-live="polite" aria-atomic="true">第一份完成！现在可以同时服务顾客了</aside>}
     </>
   )
 }
