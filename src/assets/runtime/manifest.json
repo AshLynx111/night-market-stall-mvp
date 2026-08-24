@@ -1,0 +1,3675 @@
+{
+  "version": 1,
+  "encoding": {
+    "format": "webp",
+    "quality": 92,
+    "alphaQuality": 100,
+    "effort": 5,
+    "smartSubsample": true
+  },
+  "assets": [
+    {
+      "source": "src/assets/approved/customers/emotions/celebrity/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/celebrity/arriving.webp",
+      "sourceHash": "445194ebf101aa1e7e2fa0ce87c34debe9a6b463ddd782bc50134e2a282e7f60",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 221437,
+      "runtimeBytes": 31740
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/celebrity/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/celebrity/disappointed.webp",
+      "sourceHash": "e989ca658067ddf4a7565252d5528a227a5e969c83bb189dcb50070585b75fd8",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 218437,
+      "runtimeBytes": 29368
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/celebrity/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/celebrity/happy.webp",
+      "sourceHash": "919e9c4276b33e06df938eb0b386dd1c2a211b07f5fd9822cc33f24eeeceb6ab",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 230694,
+      "runtimeBytes": 31138
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/celebrity/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/celebrity/impatient.webp",
+      "sourceHash": "b1eb2e99414fca625fd2cb23261ffb78d41021d0fc0bb861b3c2609f5bec234e",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 214565,
+      "runtimeBytes": 30790
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/celebrity/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/celebrity/ordering.webp",
+      "sourceHash": "8c852b9ba38747c0d38d760f1838fc45180a5068bbee47ae51e12b8cfeacee2e",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 241161,
+      "runtimeBytes": 35736
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/celebrity/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/celebrity/urgent.webp",
+      "sourceHash": "713ecaf785e8630ff398a00825b96ea820492ba4bb56f92e7df70e5daf8eb092",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 225577,
+      "runtimeBytes": 30656
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/celebrity/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/celebrity/waiting.webp",
+      "sourceHash": "db5a7d3b2aebd19cf9a784b37c88ccc3943704b356dacd05051a247f605cf9ea",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 205508,
+      "runtimeBytes": 30960
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-01-xiaolin/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-01-xiaolin/arriving.webp",
+      "sourceHash": "7c5c80227f6c1f36b60ef2e34373b7a1116cb793928c2222d2b9d007f6654aa5",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 181474,
+      "runtimeBytes": 34594
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-01-xiaolin/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-01-xiaolin/disappointed.webp",
+      "sourceHash": "fc1f430f19d61c617b4cbaff4d0a5942ace37831055a52e664641e1099fa39a7",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 168677,
+      "runtimeBytes": 32022
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-01-xiaolin/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-01-xiaolin/happy.webp",
+      "sourceHash": "b908adfbe0c825978f1019b936988f1cb1917fee111a44d2b5b7ba279294a70c",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 173314,
+      "runtimeBytes": 33710
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-01-xiaolin/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-01-xiaolin/impatient.webp",
+      "sourceHash": "47ff6c5c6dfe8e4f57163fe7ee3091c9533d93c2e336fcfc12ed6e94880dd9d8",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 174775,
+      "runtimeBytes": 33016
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-01-xiaolin/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-01-xiaolin/ordering.webp",
+      "sourceHash": "94340f95b62747c8c1b35c5f7177b18bacd54a5b9ed7ae76cb7fa7038de4d4d7",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 187179,
+      "runtimeBytes": 37150
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-01-xiaolin/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-01-xiaolin/urgent.webp",
+      "sourceHash": "f3b4fbef6f880817d48ebe46c8dd3a6796b0bb61279d14d5f9c7a38648da5239",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 181648,
+      "runtimeBytes": 35538
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-01-xiaolin/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-01-xiaolin/waiting.webp",
+      "sourceHash": "b945d86a1f3f0ecea11c3384db7cb4b5e6741db82a431fbf11749e9cb70627db",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 176521,
+      "runtimeBytes": 33004
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-02-ajie/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-02-ajie/arriving.webp",
+      "sourceHash": "a28d7fc55f41b88fccbf749cc09d8d67ba15684f95df3e7fd71f83644c11e78a",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 179546,
+      "runtimeBytes": 29862
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-02-ajie/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-02-ajie/disappointed.webp",
+      "sourceHash": "f2b58ff4aa2d4e87ba746fa353fc90a4719f40d08e0edcf4f2dd3e31a2eee1c1",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 170557,
+      "runtimeBytes": 28080
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-02-ajie/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-02-ajie/happy.webp",
+      "sourceHash": "aa11fcbd75d3076e8be5e830f8d292795540d05df3317e987be9d3d36ebb6daf",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 181134,
+      "runtimeBytes": 30158
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-02-ajie/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-02-ajie/impatient.webp",
+      "sourceHash": "420c9d7b10f8269bf5f8fcc2df97c8d3329ae010421bff7659ea96c2c3ae4086",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 171161,
+      "runtimeBytes": 28708
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-02-ajie/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-02-ajie/ordering.webp",
+      "sourceHash": "7ede9700a3d0662a2823181ff87c8c95bff6ea217a6c0df3313e3e05da22ed66",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 186561,
+      "runtimeBytes": 32678
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-02-ajie/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-02-ajie/urgent.webp",
+      "sourceHash": "518bf78edcdb290205f4be26df0d8e4a0008bb40648df261d1a92803cf11be93",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 180111,
+      "runtimeBytes": 29832
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-02-ajie/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-02-ajie/waiting.webp",
+      "sourceHash": "4eefd1f45b6d9686bda1e4067eb50cf4d08794ebc97248c505654f5b65b7bde3",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 175038,
+      "runtimeBytes": 29420
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-03-xiaoyu/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-03-xiaoyu/arriving.webp",
+      "sourceHash": "be3eeac8f75404b93e6edab2d46a44683c052988f4a204f583aecbfec510c427",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 212409,
+      "runtimeBytes": 36512
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-03-xiaoyu/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-03-xiaoyu/disappointed.webp",
+      "sourceHash": "9255e9df0644f5ed57b842ec4bc75a55fe00219c9776ccaea1b9df1a9e7de564",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 204794,
+      "runtimeBytes": 35640
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-03-xiaoyu/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-03-xiaoyu/happy.webp",
+      "sourceHash": "4e2dc8e72c06485330437685513390d0783aa01b723894aff1147e8d9b9f4bee",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 214259,
+      "runtimeBytes": 37246
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-03-xiaoyu/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-03-xiaoyu/impatient.webp",
+      "sourceHash": "537dcd2fb833ee2b9ebc6eea372927d3da36b08814b79902b147b1bf53c1a170",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 216572,
+      "runtimeBytes": 36910
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-03-xiaoyu/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-03-xiaoyu/ordering.webp",
+      "sourceHash": "0ea31782e9e09747a58478b3d06191606b06f6ba496f91d4837e4806103d0715",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 230010,
+      "runtimeBytes": 39924
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-03-xiaoyu/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-03-xiaoyu/urgent.webp",
+      "sourceHash": "090335f5ae4c0244f4ceb13fe80d21953cd03e787804320e00ba777e282824dc",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 232473,
+      "runtimeBytes": 41860
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-03-xiaoyu/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-03-xiaoyu/waiting.webp",
+      "sourceHash": "86fdb984f12963c6ce9161a9a2e1dbb43eca3d1fd56c4c1260a38e58ecbea39f",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 217081,
+      "runtimeBytes": 36796
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-04-senior/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-04-senior/arriving.webp",
+      "sourceHash": "55c898669e4f6802138bf83879fc449d59b10e217aa2801c3f81d4f67cd61142",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 207255,
+      "runtimeBytes": 32206
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-04-senior/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-04-senior/disappointed.webp",
+      "sourceHash": "ea671bb72ee669442630a3fb7753fcd6752c8313d6dd96af3eff2ec04ef4e26e",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 208289,
+      "runtimeBytes": 32360
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-04-senior/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-04-senior/happy.webp",
+      "sourceHash": "7e5d6cfba213b6ac9cbb4f43d822262d09c9194c2827fb4aefa7b85dfae3e0d1",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 208739,
+      "runtimeBytes": 31280
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-04-senior/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-04-senior/impatient.webp",
+      "sourceHash": "55d697b6e9b402b34b13418997d644c291b470b60fb71207813de5e81f0073ab",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 209563,
+      "runtimeBytes": 32772
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-04-senior/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-04-senior/ordering.webp",
+      "sourceHash": "0071302ca0bffe7ff32d77ad48c5b92bbdfc99fc47332637b2dba771e165ed99",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 209161,
+      "runtimeBytes": 32576
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-04-senior/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-04-senior/urgent.webp",
+      "sourceHash": "25eb30e69d73252608039f3cd67dd4c2f595f3cf66822e719b0794b3c4cc6660",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 207157,
+      "runtimeBytes": 32084
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-04-senior/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-04-senior/waiting.webp",
+      "sourceHash": "7ddc4aa31334a1932ded37cd1a9210e6a6c8da237d1026cb71c8d4a8e9b13c85",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 211863,
+      "runtimeBytes": 32954
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-05-suqing/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-05-suqing/arriving.webp",
+      "sourceHash": "b3bd0aa98be9e0c384b3cf50c3471104a314cebc4ed8f66b7a520039c02019fa",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 223601,
+      "runtimeBytes": 39270
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-05-suqing/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-05-suqing/disappointed.webp",
+      "sourceHash": "b1268963013d7908e1e404c5a99407f86e8763c8b8da5533f2a89134c5ebf4c6",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 219397,
+      "runtimeBytes": 37198
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-05-suqing/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-05-suqing/happy.webp",
+      "sourceHash": "5951bd39bbaa3fb75f145a68bb64d68eec4a34ad1cf5f5ebefd10e9c7bf363d0",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 216736,
+      "runtimeBytes": 37550
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-05-suqing/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-05-suqing/impatient.webp",
+      "sourceHash": "82aa86170d677941717bae1c17b1a5b30dc6cee431ec1de88abddcaedcf41b8b",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 222298,
+      "runtimeBytes": 39626
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-05-suqing/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-05-suqing/ordering.webp",
+      "sourceHash": "c8def4e1417b4546f36ca7cea1e918ac28ebffffb46c20500944a22aecba6f29",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 237336,
+      "runtimeBytes": 42858
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-05-suqing/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-05-suqing/urgent.webp",
+      "sourceHash": "181b6e73810fb518a4fbcca3dab27dc0abfc5aadfceb5042bc152dde026706c6",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 228796,
+      "runtimeBytes": 40458
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-05-suqing/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-05-suqing/waiting.webp",
+      "sourceHash": "c72fb113eecd29d6decec4f86ea35408eb892566a40c65a6496909ca6b34c2c2",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 223642,
+      "runtimeBytes": 39716
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-06-dazhuang/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-06-dazhuang/arriving.webp",
+      "sourceHash": "073851025b04015df0f10cd7bce3b506c38c21eaa1bb0d0a771f3e518c99b44d",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 157733,
+      "runtimeBytes": 23924
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-06-dazhuang/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-06-dazhuang/disappointed.webp",
+      "sourceHash": "4df83f37901b19087e9ae1eacd9f3a13b0e177e1ac1abf69d3385688d8a10d0e",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 155720,
+      "runtimeBytes": 23212
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-06-dazhuang/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-06-dazhuang/happy.webp",
+      "sourceHash": "fa06daae3d3691cfed63f4c8abf01d82485262ec285e976693f45ef0fae7036b",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 171488,
+      "runtimeBytes": 26240
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-06-dazhuang/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-06-dazhuang/impatient.webp",
+      "sourceHash": "fb4a4b335b9ed94139acb973ef827518344abb43183bbb75cfe980409d647bfd",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 158150,
+      "runtimeBytes": 24066
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-06-dazhuang/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-06-dazhuang/ordering.webp",
+      "sourceHash": "f9a7a4dc442499ce56d6fbbc73fc097bf958aaade91e9c58d8cd1591b438002b",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 162203,
+      "runtimeBytes": 26562
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-06-dazhuang/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-06-dazhuang/urgent.webp",
+      "sourceHash": "e05fd1473f1d62c12f2b122d740c405075c3a714d7fee7832fd30ae7b128974c",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 182544,
+      "runtimeBytes": 29512
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-06-dazhuang/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-06-dazhuang/waiting.webp",
+      "sourceHash": "fb1cb16826f50189d9a8ab07ef3f4891b5318730207e9d4c329d3bb90aa196f6",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 149406,
+      "runtimeBytes": 23404
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-07-xuyan/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-07-xuyan/arriving.webp",
+      "sourceHash": "75e2970fd9f591c04e1503df94bfdcdb49146a72e22c040a199e34e13df5be76",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 250183,
+      "runtimeBytes": 40006
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-07-xuyan/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-07-xuyan/disappointed.webp",
+      "sourceHash": "c06769b9adfb3a419dd5b0ccd9fc1ddcdb6a8846b99126dac0638ac58727b5b0",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 229938,
+      "runtimeBytes": 37124
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-07-xuyan/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-07-xuyan/happy.webp",
+      "sourceHash": "4b08a3c3eed5ecbf68ded81a163ac6d64c84dbaae8d3674490737fa8510f5983",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 229275,
+      "runtimeBytes": 37262
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-07-xuyan/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-07-xuyan/impatient.webp",
+      "sourceHash": "3584bbc3be29c99ab6b5faf29b7b99ca0e51d56bab6fbc3cdf672d105c00a389",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 227192,
+      "runtimeBytes": 37286
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-07-xuyan/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-07-xuyan/ordering.webp",
+      "sourceHash": "85d6fc514c4c5824c7d9c691f1eca1b875231384ee14386125585c93ea1ecab4",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 240555,
+      "runtimeBytes": 38910
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-07-xuyan/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-07-xuyan/urgent.webp",
+      "sourceHash": "076c487ab03fe4630067451ed93e962c2a405bf2c6e03a35999a737b53fe03e0",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 232218,
+      "runtimeBytes": 36596
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-07-xuyan/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-07-xuyan/waiting.webp",
+      "sourceHash": "3074527cf5c00be1d121e29c1cc245af9b7ae993e07ee5ad71fa799340ac7795",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 229401,
+      "runtimeBytes": 38484
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-08-azhe/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-08-azhe/arriving.webp",
+      "sourceHash": "7158a4f51c142140f5fcc10cbfc25b5aa3dbde2581846bad1073ab092c35a247",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 209650,
+      "runtimeBytes": 48182
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-08-azhe/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-08-azhe/disappointed.webp",
+      "sourceHash": "15face53b1444b824cf45006f891d906fe2d81a2df690bf8b8e4712c5ef61356",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 201643,
+      "runtimeBytes": 44746
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-08-azhe/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-08-azhe/happy.webp",
+      "sourceHash": "a9192378cbae0cfde6f3caba6c008fdc6f538a4b70173b2ecbc599e81b59266b",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 205230,
+      "runtimeBytes": 45838
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-08-azhe/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-08-azhe/impatient.webp",
+      "sourceHash": "57515b0d552bede5db60acb7330f1ac8c6be12a8ba27b243af4c54599c2eabfc",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 199230,
+      "runtimeBytes": 45258
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-08-azhe/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-08-azhe/ordering.webp",
+      "sourceHash": "cdfc93f53419098414785d17c6d13d4d6c85b16dcb1890e7d31b2cd5befc0195",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 229208,
+      "runtimeBytes": 51718
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-08-azhe/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-08-azhe/urgent.webp",
+      "sourceHash": "6d218176302bf01e448196fff4162b8e59c33f99a2820c3a90ebfb735ec7b858",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 236778,
+      "runtimeBytes": 53066
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-08-azhe/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-08-azhe/waiting.webp",
+      "sourceHash": "889d943d73fcd6e9cfd4b4ed963e3ccb334ec502220ccb94df240b16c629e2d5",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 211704,
+      "runtimeBytes": 48554
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-09-teacher-chen/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-09-teacher-chen/arriving.webp",
+      "sourceHash": "ae265252cb17cc0fab611bc554ec6abf4045c77fb9a7b76cab7e31880dcfa52d",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 205926,
+      "runtimeBytes": 33166
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-09-teacher-chen/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-09-teacher-chen/disappointed.webp",
+      "sourceHash": "fdb069194a9d84f4f9ff506e324261bb3327e3a92f24343d78083d5670d2c3fa",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 203948,
+      "runtimeBytes": 30476
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-09-teacher-chen/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-09-teacher-chen/happy.webp",
+      "sourceHash": "22e44c1585f3ebbd676584861c1d6c6ac6117751612722405f1138981dd1bf8b",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 213450,
+      "runtimeBytes": 34192
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-09-teacher-chen/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-09-teacher-chen/impatient.webp",
+      "sourceHash": "226c447ec0667ee2e3b2bba5d42e4fdfe3d7eae4916218cdc2717a19b8106d27",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 206723,
+      "runtimeBytes": 33264
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-09-teacher-chen/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-09-teacher-chen/ordering.webp",
+      "sourceHash": "0a9f21e4249678ae640e713914feb4d414b93a157caae719f1b909bc22bd486b",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 220417,
+      "runtimeBytes": 37658
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-09-teacher-chen/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-09-teacher-chen/urgent.webp",
+      "sourceHash": "eedacd0cb04c629a93802543313725a8ff7ba007989c732a734ab7a8a72d545d",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 211784,
+      "runtimeBytes": 33524
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-09-teacher-chen/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-09-teacher-chen/waiting.webp",
+      "sourceHash": "b9db2c07fbd7873cf9a35588f2b3f59f1c32ae5df03d191f0be2775295ce4d39",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 197430,
+      "runtimeBytes": 31058
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-10-grandma-wang/arriving.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-10-grandma-wang/arriving.webp",
+      "sourceHash": "73d41a655eff69ab183b043dd84036210e4b244f926025e481d714f17e7d0ddd",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 162343,
+      "runtimeBytes": 27276
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-10-grandma-wang/disappointed.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-10-grandma-wang/disappointed.webp",
+      "sourceHash": "626063b4a31ff4d3974791fe4337ecf4b9731fb26c475fac057cea283d6261e7",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 163138,
+      "runtimeBytes": 27234
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-10-grandma-wang/happy.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-10-grandma-wang/happy.webp",
+      "sourceHash": "f3e784e88c504276e09b80f838d8206908437c6818bd5bc289a276335bdad3cf",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 161657,
+      "runtimeBytes": 26924
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-10-grandma-wang/impatient.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-10-grandma-wang/impatient.webp",
+      "sourceHash": "fb3f09a967ffcfc7a0ab7c20e2c1404f29d565a75805b6e8910c8dc715b13713",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 162552,
+      "runtimeBytes": 27210
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-10-grandma-wang/ordering.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-10-grandma-wang/ordering.webp",
+      "sourceHash": "0ef72d64d8e8ad2105af32a68bc07a5cf4af046f7a7fa22d39fc67bf3e37b324",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 161171,
+      "runtimeBytes": 27042
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-10-grandma-wang/urgent.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-10-grandma-wang/urgent.webp",
+      "sourceHash": "b171e8adfc5d8f69fc92f68624b7936fd27c92b79f73dd7b49bee83f381346d9",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 161319,
+      "runtimeBytes": 27558
+    },
+    {
+      "source": "src/assets/approved/customers/emotions/customer-10-grandma-wang/waiting.png",
+      "runtime": "src/assets/runtime/customers/emotions/customer-10-grandma-wang/waiting.webp",
+      "sourceHash": "e13a10d699d045d0f5569c876f7ae8e18edf763d09f2c8ce18814f5ccb754917",
+      "width": 384,
+      "height": 512,
+      "sourceBytes": 161418,
+      "runtimeBytes": 26512
+    },
+    {
+      "source": "src/assets/approved/customers/motion/celebrity-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/celebrity-motion.webp",
+      "sourceHash": "106fb7e0c0bfe0ed1d8717e9c35d447921a7fa335fb9da3bab1df4c945809392",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 2333876,
+      "runtimeBytes": 410050
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-01-xiaolin-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-01-xiaolin-motion.webp",
+      "sourceHash": "a1f648ed09ee90f5b489438a21580fa70c8950d96b6eab901bb51110ccc2d634",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 2799659,
+      "runtimeBytes": 673990
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-02-ajie-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-02-ajie-motion.webp",
+      "sourceHash": "3cd42cf34609c7233ae36001e23c714aa346bbcffe9cf1fb3df061a8c743f958",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 2272625,
+      "runtimeBytes": 459112
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-03-xiaoyu-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-03-xiaoyu-motion.webp",
+      "sourceHash": "af0d8450d8475eb4e5538beaf219b64f06e33b6a28fa97d92172ac400ba520a9",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 2850745,
+      "runtimeBytes": 571592
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-04-senior-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-04-senior-motion.webp",
+      "sourceHash": "80cfa9c3d58125323c8fcfba1c15fd292b2405925c31696d114ad12f869ed217",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 2033568,
+      "runtimeBytes": 399612
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-05-suqing-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-05-suqing-motion.webp",
+      "sourceHash": "44e7c0f8ce92755c6ce84c88843d00ae772cb359461607d153ce153273fa3792",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 3404818,
+      "runtimeBytes": 647094
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-06-dazhuang-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-06-dazhuang-motion.webp",
+      "sourceHash": "76b8b0ab17a212592d6e47aaa775c9141673cab859a8173524636a71978f4d90",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 2132042,
+      "runtimeBytes": 383474
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-07-xuyan-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-07-xuyan-motion.webp",
+      "sourceHash": "61db2acaaf8668013dec44016f14a5528b89ed0a66230d0fbfc7ecfe8a3ebeb7",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 2693465,
+      "runtimeBytes": 514626
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-08-azhe-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-08-azhe-motion.webp",
+      "sourceHash": "64754d7f23d28090416e571ffbaf7b0e93ea55963004a522c723909edb7e33b3",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 2464653,
+      "runtimeBytes": 635478
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-09-teacher-chen-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-09-teacher-chen-motion.webp",
+      "sourceHash": "0315760c007422e57fded36a77f8a875f309023c61b5d4f8ba96f5904f2c355d",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 3001133,
+      "runtimeBytes": 581436
+    },
+    {
+      "source": "src/assets/approved/customers/motion/customer-10-grandma-wang-motion.png",
+      "runtime": "src/assets/runtime/customers/motion/customer-10-grandma-wang-motion.webp",
+      "sourceHash": "d474bbd3da7d917ba960b8a5c38faba4c40394ff515888e17af4da784b845577",
+      "width": 2048,
+      "height": 1152,
+      "sourceBytes": 3022724,
+      "runtimeBytes": 548412
+    },
+    {
+      "source": "src/assets/approved/events/day5-celebrity-event-key-art.png",
+      "runtime": "src/assets/runtime/events/day5-celebrity-event-key-art.webp",
+      "sourceHash": "ac83243e5757ce7d72396c13e1de7ff7a04ac48454c6de192eb7081dcf49e6dd",
+      "width": 1440,
+      "height": 810,
+      "sourceBytes": 2647368,
+      "runtimeBytes": 322570
+    },
+    {
+      "source": "src/assets/approved/main-ui/day-select-user-final.png",
+      "runtime": "src/assets/runtime/main-ui/day-select-user-final.webp",
+      "sourceHash": "3a4fe1823ad6f9a5cde8ec7d5d4c15ea41b7a4106fb5dc9946a6500d580599a7",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 2970700,
+      "runtimeBytes": 374260
+    },
+    {
+      "source": "src/assets/approved/main-ui/game-main-screen-final.png",
+      "runtime": "src/assets/runtime/main-ui/game-main-screen-final.webp",
+      "sourceHash": "7af2c31c4c7537b6e5cad7353c4b40f39f0a86f53c88aa552e5f1a13a0154883",
+      "width": 1440,
+      "height": 810,
+      "sourceBytes": 2902969,
+      "runtimeBytes": 318012
+    },
+    {
+      "source": "src/assets/approved/main-ui/home-screen-user-final.png",
+      "runtime": "src/assets/runtime/main-ui/home-screen-user-final.webp",
+      "sourceHash": "11132b95e26cb034353f8760a455f4e1569f0f43401f94ac3d9a11c9ebf10de9",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 3231311,
+      "runtimeBytes": 547320
+    },
+    {
+      "source": "src/assets/approved/main-ui/kitchen-screen-live-clean.png",
+      "runtime": "src/assets/runtime/main-ui/kitchen-screen-live-clean.webp",
+      "sourceHash": "78d8bb8d8d985a1a0c5d26291e17e121a65f12cac289ac7a62ce52be1bc4ab37",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 3661799,
+      "runtimeBytes": 348494
+    },
+    {
+      "source": "src/assets/approved/main-ui/kitchen-screen-live-expanded-clean.png",
+      "runtime": "src/assets/runtime/main-ui/kitchen-screen-live-expanded-clean.webp",
+      "sourceHash": "2536f655101dcd6b60978d5c12788c234cdd98c68e663af4b59f345590d262c8",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 3688799,
+      "runtimeBytes": 358786
+    },
+    {
+      "source": "src/assets/approved/main-ui/kitchen-screen-user-final.png",
+      "runtime": "src/assets/runtime/main-ui/kitchen-screen-user-final.webp",
+      "sourceHash": "ca8a2a43516ad703576568a48bafda0b63908aa07b4527562d368bbd98fffa16",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 2824743,
+      "runtimeBytes": 356704
+    },
+    {
+      "source": "src/assets/approved/main-ui/night-market-clean-background.png",
+      "runtime": "src/assets/runtime/main-ui/night-market-clean-background.webp",
+      "sourceHash": "48e4a747f7a668861ade68735e9e59bf1683e971472d25942e0797ad2ee14dce",
+      "width": 1440,
+      "height": 810,
+      "sourceBytes": 2803596,
+      "runtimeBytes": 296036
+    },
+    {
+      "source": "src/assets/approved/main-ui/settings-screen-user-final.png",
+      "runtime": "src/assets/runtime/main-ui/settings-screen-user-final.webp",
+      "sourceHash": "21e498d10ac2b253e5f731a36bb20abff719d0f77e370f08ff71ef3a444690f5",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 3158600,
+      "runtimeBytes": 526604
+    },
+    {
+      "source": "src/assets/approved/main-ui/settings-slider-clean-patch.png",
+      "runtime": "src/assets/runtime/main-ui/settings-slider-clean-patch.webp",
+      "sourceHash": "87b615a54362f3b5ad4727cc2985ac1ec19ab1d52e97ceb9281edc4293dc966d",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 64297,
+      "runtimeBytes": 6168
+    },
+    {
+      "source": "src/assets/approved/main-ui/start-screen-user-final.png",
+      "runtime": "src/assets/runtime/main-ui/start-screen-user-final.webp",
+      "sourceHash": "7cd5cb8affc8f0d5aaf26f33e9a090c25af6b29d0a8791b643ac26575389c4d1",
+      "width": 1448,
+      "height": 1086,
+      "sourceBytes": 3257200,
+      "runtimeBytes": 531820
+    },
+    {
+      "source": "src/assets/approved/main-ui/summary-screen-user-final.png",
+      "runtime": "src/assets/runtime/main-ui/summary-screen-user-final.webp",
+      "sourceHash": "3f7831394be2774cd1cfd404b56f11beb2e50abc094e60b4341ce6dda74d8867",
+      "width": 1672,
+      "height": 941,
+      "sourceBytes": 2674435,
+      "runtimeBytes": 295944
+    },
+    {
+      "source": "src/assets/approved/menu/dishes/dish-big-eater-noodle.png",
+      "runtime": "src/assets/runtime/menu/dishes/dish-big-eater-noodle.webp",
+      "sourceHash": "6f56b69b334a5ad4f8db4248d42d67264e8e04e9d6d0ec22de950208698fa7ff",
+      "width": 1024,
+      "height": 1024,
+      "sourceBytes": 1802605,
+      "runtimeBytes": 275016
+    },
+    {
+      "source": "src/assets/approved/menu/dishes/dish-classic-noodle.png",
+      "runtime": "src/assets/runtime/menu/dishes/dish-classic-noodle.webp",
+      "sourceHash": "c34404e1ae487d719e069aa76ad40f73124c16229dbe5e46c014a5b90311b91e",
+      "width": 1024,
+      "height": 1024,
+      "sourceBytes": 1897869,
+      "runtimeBytes": 250632
+    },
+    {
+      "source": "src/assets/approved/menu/dishes/dish-orleans-chicken-noodle.png",
+      "runtime": "src/assets/runtime/menu/dishes/dish-orleans-chicken-noodle.webp",
+      "sourceHash": "6b295f5fb2d644ea13c9b1773abc7ba6781a4dd9be0fd5d362e504eb5c6cc225",
+      "width": 1024,
+      "height": 1024,
+      "sourceBytes": 1845564,
+      "runtimeBytes": 251076
+    },
+    {
+      "source": "src/assets/approved/menu/dishes/dish-signature-cheese-turkey-noodle.png",
+      "runtime": "src/assets/runtime/menu/dishes/dish-signature-cheese-turkey-noodle.webp",
+      "sourceHash": "efee325d576ffbd47be27a72ec96008713fe2097a6fbfc0b4b5693409a8e1efe",
+      "width": 1024,
+      "height": 1024,
+      "sourceBytes": 1766026,
+      "runtimeBytes": 252256
+    },
+    {
+      "source": "src/assets/approved/menu/dishes/dish-tenderloin-turkey-noodle.png",
+      "runtime": "src/assets/runtime/menu/dishes/dish-tenderloin-turkey-noodle.webp",
+      "sourceHash": "81426a57217fd9e6fc8a42fdd7d9b8775d30629b8b9c10be829f14d0e319ecc6",
+      "width": 1024,
+      "height": 1024,
+      "sourceBytes": 1655911,
+      "runtimeBytes": 232986
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-bacon.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-bacon.webp",
+      "sourceHash": "a2e02cc541d0da65168c77ded4d4ea9dc5cbcd870ab59fea81b5bfee9cbe9bad",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 734810,
+      "runtimeBytes": 104044
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-cheese.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-cheese.webp",
+      "sourceHash": "dc48b82cd579c741226e9520e0d59853835b0634fd65852aaf7c61facbce8deb",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 495499,
+      "runtimeBytes": 56796
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-chili-powder.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-chili-powder.webp",
+      "sourceHash": "4d06faa24e1344b0d9eb1b1a0931ca95d79951548c46a7a6fb296de96bcf1c75",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 586027,
+      "runtimeBytes": 122978
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-cilantro.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-cilantro.webp",
+      "sourceHash": "66bec71133dd200e40f3509a302ea7fd43837439c5356b3db667f32ee89a3384",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 703074,
+      "runtimeBytes": 119550
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-corn.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-corn.webp",
+      "sourceHash": "212ff3cd9f04140d8ee9feacd763d49a66bf72f6b01cabcbb6878b677e7a3f15",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 541719,
+      "runtimeBytes": 74888
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-egg.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-egg.webp",
+      "sourceHash": "66133eba0e7fff5e54be0bba053fcaa50c29fb5ada99c18b9a4b440ae0ed205e",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 695444,
+      "runtimeBytes": 82372
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-enoki.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-enoki.webp",
+      "sourceHash": "d10cdeab148b5327a01d504f1eae84fd090aee09e6ff853edf35e3b6725d6fca",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 635221,
+      "runtimeBytes": 83256
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-hot-dog.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-hot-dog.webp",
+      "sourceHash": "4c6cc9c81f9c59e3b23d23090e27699062db9b6c157d515544d95ceba085ce03",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 702262,
+      "runtimeBytes": 97254
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-noodle.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-noodle.webp",
+      "sourceHash": "ce6e84f506d89da5fa030dc6a69692d8f73c2c25aa984225959fc12616e7465f",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 775036,
+      "runtimeBytes": 106256
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-onion.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-onion.webp",
+      "sourceHash": "906133f8ae961c8e46b5c46db9ee4f82b87e11495c6071fbae455185c7cc10c5",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 483336,
+      "runtimeBytes": 60880
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-orleans.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-orleans.webp",
+      "sourceHash": "e33fbac1466eb635b60e0499f5cfcd2ffc4ecf39967c9aa73dc55899d7653e05",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 706213,
+      "runtimeBytes": 134946
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-sauce.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-sauce.webp",
+      "sourceHash": "1061fa085ebba75fe4b8ae96278e933c9d965926727a8527231bd7439bf1f940",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 582223,
+      "runtimeBytes": 98256
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-scallion.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-scallion.webp",
+      "sourceHash": "ea9496b854abc52a70fabf9ea8fa7502cd1d08470c2618d712d98b19f3cf73a6",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 704324,
+      "runtimeBytes": 100684
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-tenderloin.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-tenderloin.webp",
+      "sourceHash": "3043a144e845dd84dcfda79ffe6135d46d744bf528696e6eec94e9c10f87c642",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 694222,
+      "runtimeBytes": 122756
+    },
+    {
+      "source": "src/assets/approved/menu/ingredient-bins/ingredient-bin-turkey-noodle.png",
+      "runtime": "src/assets/runtime/menu/ingredient-bins/ingredient-bin-turkey-noodle.webp",
+      "sourceHash": "1f6cac4e4b94b1c1b9a752909e7d8379bbd9f494ed6555a38a39043c8086acd7",
+      "width": 768,
+      "height": 768,
+      "sourceBytes": 642160,
+      "runtimeBytes": 112406
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-bacon.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-bacon.webp",
+      "sourceHash": "5a4a38ab0d9e737ef6914c3ed7dbcafd111d9d83fbcce4c3f3bdf8a01058fb79",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 333986,
+      "runtimeBytes": 61548
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-cheese.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-cheese.webp",
+      "sourceHash": "e3aa544f7b2a34d070dbbc2008a3f4393c6137e401d53d6030a8bd42a4e472a8",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192317,
+      "runtimeBytes": 25558
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-chili-powder.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-chili-powder.webp",
+      "sourceHash": "ed3fe9736d07c733d768ea75e18feded17a965e299672c55ab34d96d122295bb",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 257183,
+      "runtimeBytes": 73374
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-cilantro.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-cilantro.webp",
+      "sourceHash": "ca37eeef4cda3d73836f5bfa806a965193c9e42a9ce26ae4e3cba1e1cfb5dc5f",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 348101,
+      "runtimeBytes": 75588
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-corn.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-corn.webp",
+      "sourceHash": "8a6a245a44db14584b96097ce96e809f58f73d9fd5bb707fbdcda4e90116ea43",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 139246,
+      "runtimeBytes": 31792
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-egg.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-egg.webp",
+      "sourceHash": "3e1f94faf02530539489fb71b943738262652836658439c5dbbc014db207e8b7",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 234236,
+      "runtimeBytes": 29990
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-enoki.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-enoki.webp",
+      "sourceHash": "0b76e2a947f0efb5f97edfe602241d420224a5668ef26dab89bfdb1d03567010",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 196099,
+      "runtimeBytes": 39472
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-ham-sausage.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-ham-sausage.webp",
+      "sourceHash": "ae99740c8f82f4fd71acba19c21c92ff7d2c05f8c9e467247d6e09aef58427f3",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 276407,
+      "runtimeBytes": 38490
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-hot-dog.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-hot-dog.webp",
+      "sourceHash": "6b9f0eb28f34e0af420d84b8590fd95672a4b452d479a8a9ed7360ccd2bb79a2",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 250970,
+      "runtimeBytes": 38158
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-noodle-sheet.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-noodle-sheet.webp",
+      "sourceHash": "a094e061549dfa2e273826af27befedf3fce797fd1ef65b32dd5e8ffba4e2d45",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 374750,
+      "runtimeBytes": 77598
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-onion.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-onion.webp",
+      "sourceHash": "740194279eaa6a6315f9dcaf1530422114762288c51c8f1c6aa38340474b7245",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 387906,
+      "runtimeBytes": 104200
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-orleans-chicken.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-orleans-chicken.webp",
+      "sourceHash": "7b914b77ecc2da1c6075ee23ef4893111bfeda9b414f1ced5fa89161abf22fd3",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 341970,
+      "runtimeBytes": 79770
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-pork-floss.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-pork-floss.webp",
+      "sourceHash": "0e576f712440d53c9f706ede3f61870a03c27113f301593fa4869d6af8a99593",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 316455,
+      "runtimeBytes": 72846
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-sauce.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-sauce.webp",
+      "sourceHash": "ddc56b0840c0d6f51cdc650afbf682d1a50ac851e0d499dd3d2dba0fa49826de",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 277971,
+      "runtimeBytes": 58488
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-scallion.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-scallion.webp",
+      "sourceHash": "8a8c52ac427480a7167b56e4ba0c5d72e322d003e9bd15107ec6c5c3ab362646",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 262707,
+      "runtimeBytes": 46942
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-spicy-strip.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-spicy-strip.webp",
+      "sourceHash": "a41b63eefe4e34f3916cdf67857254fc7145c9efd5d89784aa3c6eb81ea72c66",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 335458,
+      "runtimeBytes": 74404
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-tenderloin.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-tenderloin.webp",
+      "sourceHash": "d7a97af693dac0e356c41abc0476dc6e465cb71a1031f5909bb7205c03d7c5a2",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 323124,
+      "runtimeBytes": 65856
+    },
+    {
+      "source": "src/assets/approved/menu/ingredients/ingredient-turkey-noodle.png",
+      "runtime": "src/assets/runtime/menu/ingredients/ingredient-turkey-noodle.webp",
+      "sourceHash": "6f171c151f6dab5ae145d662f3a72bc4ff34bd23193e35b8bbf039dd456ac656",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 280360,
+      "runtimeBytes": 54434
+    },
+    {
+      "source": "src/assets/approved/menu/menu-board.png",
+      "runtime": "src/assets/runtime/menu/menu-board.webp",
+      "sourceHash": "bb8e305c51206e0788bd8630bd5130a05a19d71c7710e376c85003cb14dee069",
+      "width": 4096,
+      "height": 1536,
+      "sourceBytes": 2311969,
+      "runtimeBytes": 438024
+    },
+    {
+      "source": "src/assets/approved/menu/takeaway-bag.png",
+      "runtime": "src/assets/runtime/menu/takeaway-bag.webp",
+      "sourceHash": "fc4757744ac8ca10c7ed3f745e83ded752cbabd549a62becf80e1967fc628935",
+      "width": 1024,
+      "height": 1024,
+      "sourceBytes": 1111139,
+      "runtimeBytes": 173614
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater-stage-atlas.png",
+      "runtime": "src/assets/runtime/stages/big-eater-stage-atlas.webp",
+      "sourceHash": "2fb3c419e889d6e84e2f684ba2c361eac03a63c62bc2f976882a1257dc7c5144",
+      "width": 1338,
+      "height": 1002,
+      "sourceBytes": 669782,
+      "runtimeBytes": 144380
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-00-empty.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-00-empty.webp",
+      "sourceHash": "b0aecb2e5045a512b8ad6ba9bd87a094bcb6daf3cb4e0996ec4add8c96a6bf5d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 765,
+      "runtimeBytes": 420
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-01-noodle.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-01-noodle.webp",
+      "sourceHash": "4f09634293194dfa50da49ca8f6f00fa61e8e80770c784ca14ecd6769d81416d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 171751,
+      "runtimeBytes": 35412
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-02-egg.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-02-egg.webp",
+      "sourceHash": "980ab1db2fb308ab37746bd62e2c67b7d5abcfedd31d0ebf4c80f764a020d4ec",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 176856,
+      "runtimeBytes": 32360
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-03-second-noodle.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-03-second-noodle.webp",
+      "sourceHash": "86b1133f5189555ee7e814a24097fe61e878d0fb30ad994bbb7838a5c54c90ce",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 172074,
+      "runtimeBytes": 34524
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-04-second-egg.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-04-second-egg.webp",
+      "sourceHash": "28be183e9d0bd83fb5d6e4b98bfd8060571d2547aeb8d0f844ca48c2eaac2c4e",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 177331,
+      "runtimeBytes": 32498
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-05-sauce.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-05-sauce.webp",
+      "sourceHash": "50f063bb3d35db9f1f09ec58b60a421ceafe5fd8cf51d477c370606578f8f666",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 182317,
+      "runtimeBytes": 35128
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-06-scallion.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-06-scallion.webp",
+      "sourceHash": "231f887105fc3e8dc5979b34f6664bf7753314bec86f56f84a31424717686a19",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 183619,
+      "runtimeBytes": 35794
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-07-cut.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-07-cut.webp",
+      "sourceHash": "7b9f078844119a6854ac498a842a1e658062d9a2c0f825c0f53016234578b35a",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 177097,
+      "runtimeBytes": 38394
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-08-roll.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-08-roll.webp",
+      "sourceHash": "5c9542f3dbf8adaa9c32cf957f9d357c245b4f22806d0cf0ea8c47d814c01a59",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 113424,
+      "runtimeBytes": 26668
+    },
+    {
+      "source": "src/assets/approved/stages/big-eater/big-eater-09-pack.png",
+      "runtime": "src/assets/runtime/stages/big-eater/big-eater-09-pack.webp",
+      "sourceHash": "331a8fdd401620f4b472aad0f06b0be15b1874174d25e62d2b52ea004f79e92b",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 91016,
+      "runtimeBytes": 16784
+    },
+    {
+      "source": "src/assets/approved/stages/classic-stage-atlas.png",
+      "runtime": "src/assets/runtime/stages/classic-stage-atlas.webp",
+      "sourceHash": "187537ac4490b0ff1bd0e1c324e39533d4a1482138bff5384563196031dd00e0",
+      "width": 1002,
+      "height": 1002,
+      "sourceBytes": 569080,
+      "runtimeBytes": 132894
+    },
+    {
+      "source": "src/assets/approved/stages/classic/classic-00-empty.png",
+      "runtime": "src/assets/runtime/stages/classic/classic-00-empty.webp",
+      "sourceHash": "b0aecb2e5045a512b8ad6ba9bd87a094bcb6daf3cb4e0996ec4add8c96a6bf5d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 765,
+      "runtimeBytes": 420
+    },
+    {
+      "source": "src/assets/approved/stages/classic/classic-01-noodle.png",
+      "runtime": "src/assets/runtime/stages/classic/classic-01-noodle.webp",
+      "sourceHash": "4df7ccf8dfd7df769c7f2a2008923d02ccff3707c55598fa2788ec1c30972894",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 218091,
+      "runtimeBytes": 45652
+    },
+    {
+      "source": "src/assets/approved/stages/classic/classic-02-egg.png",
+      "runtime": "src/assets/runtime/stages/classic/classic-02-egg.webp",
+      "sourceHash": "0466a12cb93fa92c17c706a09402c2a3f3288ad8acc255a38bbdddcceaafc902",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 91037,
+      "runtimeBytes": 43362
+    },
+    {
+      "source": "src/assets/approved/stages/classic/classic-03-hot-dog.png",
+      "runtime": "src/assets/runtime/stages/classic/classic-03-hot-dog.webp",
+      "sourceHash": "9acdd2f3ff194489cae0c6d17e4653abcae88a7902de4d9ab2342d7e0ce143ed",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 236566,
+      "runtimeBytes": 44720
+    },
+    {
+      "source": "src/assets/approved/stages/classic/classic-04-sauce.png",
+      "runtime": "src/assets/runtime/stages/classic/classic-04-sauce.webp",
+      "sourceHash": "5d27a96317d633e55100ddd92cc6039a3d443b13bc3603c92581eadbe8b9c75d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 243010,
+      "runtimeBytes": 52184
+    },
+    {
+      "source": "src/assets/approved/stages/classic/classic-05-scallion.png",
+      "runtime": "src/assets/runtime/stages/classic/classic-05-scallion.webp",
+      "sourceHash": "b4d2a4decea53520b25eb7af4d1233aab4252634c9ee4cf2c690e273b95d5baf",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 112265,
+      "runtimeBytes": 64658
+    },
+    {
+      "source": "src/assets/approved/stages/classic/classic-06-cut.png",
+      "runtime": "src/assets/runtime/stages/classic/classic-06-cut.webp",
+      "sourceHash": "050ac1fe820b23d851a219d733053681640e4799739f7695613b2f9e2c1568be",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 245385,
+      "runtimeBytes": 65716
+    },
+    {
+      "source": "src/assets/approved/stages/classic/classic-07-roll.png",
+      "runtime": "src/assets/runtime/stages/classic/classic-07-roll.webp",
+      "sourceHash": "0f525af3dadcfede2cc6292386572e1d381b8a0f2f619e438c760bdb03355e1a",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 156488,
+      "runtimeBytes": 33762
+    },
+    {
+      "source": "src/assets/approved/stages/classic/classic-08-pack.png",
+      "runtime": "src/assets/runtime/stages/classic/classic-08-pack.webp",
+      "sourceHash": "331a8fdd401620f4b472aad0f06b0be15b1874174d25e62d2b52ea004f79e92b",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 91016,
+      "runtimeBytes": 16784
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-04-second-egg--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-04-second-egg--bacon.webp",
+      "sourceHash": "6a04cbef52b06bcc9f11a10dfa9705718eb041df0ea68fb057e84053ab952fa4",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296805,
+      "runtimeBytes": 48622
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-04-second-egg--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-04-second-egg--chili-powder.webp",
+      "sourceHash": "63b93b0815518f954dccf5fece30f3251cd1d81566519b068f9edef71f8acfe2",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 289795,
+      "runtimeBytes": 56422
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-04-second-egg--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-04-second-egg--cilantro.webp",
+      "sourceHash": "7b00e0c191877656d74b8a244d0b3d950bb630c501389a4ab141d66c0fabc123",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301465,
+      "runtimeBytes": 53120
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-04-second-egg--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-04-second-egg--enoki.webp",
+      "sourceHash": "ffa4bec6579bffaedab75cf8d1d02103f7ce55c208146a20080421e0a5cab54d",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 282689,
+      "runtimeBytes": 47716
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-04-second-egg--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-04-second-egg--onion.webp",
+      "sourceHash": "a065c3c0b4e94f7a7b8abebaee40b49dc3025b18b1ff32eccef5621e74a341a0",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 302393,
+      "runtimeBytes": 48188
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-05-sauce--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-05-sauce--bacon.webp",
+      "sourceHash": "3db5442d71e09dbe7bd5e9d20fcc06174b37da60b363de18b2672048ddbbd892",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296825,
+      "runtimeBytes": 48572
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-05-sauce--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-05-sauce--chili-powder.webp",
+      "sourceHash": "883e84ef453f3f2d1477bde5401305cd39bf0129b61817358ee114d5130d26e2",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 289796,
+      "runtimeBytes": 56420
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-05-sauce--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-05-sauce--cilantro.webp",
+      "sourceHash": "7b00e0c191877656d74b8a244d0b3d950bb630c501389a4ab141d66c0fabc123",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301465,
+      "runtimeBytes": 53120
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-05-sauce--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-05-sauce--enoki.webp",
+      "sourceHash": "29eac9976e2d0475c8f6f838afb8a4aae34f6df5f01e8732a0c2ba4b3fa78d0e",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284832,
+      "runtimeBytes": 47986
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-05-sauce--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-05-sauce--onion.webp",
+      "sourceHash": "cffdc5855be3e68442665cb04afd1b70fe0d0056934cf5aae7fb84d2677d7e3a",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 302454,
+      "runtimeBytes": 49110
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-06-scallion--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-06-scallion--bacon.webp",
+      "sourceHash": "a85149943623529120d948a2447e31d14b594d2a628f4019a505cc989ce91250",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296827,
+      "runtimeBytes": 48566
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-06-scallion--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-06-scallion--chili-powder.webp",
+      "sourceHash": "883e84ef453f3f2d1477bde5401305cd39bf0129b61817358ee114d5130d26e2",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 289796,
+      "runtimeBytes": 56420
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-06-scallion--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-06-scallion--cilantro.webp",
+      "sourceHash": "7b00e0c191877656d74b8a244d0b3d950bb630c501389a4ab141d66c0fabc123",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301465,
+      "runtimeBytes": 53120
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-06-scallion--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-06-scallion--enoki.webp",
+      "sourceHash": "29eac9976e2d0475c8f6f838afb8a4aae34f6df5f01e8732a0c2ba4b3fa78d0e",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284832,
+      "runtimeBytes": 47986
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-06-scallion--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-06-scallion--onion.webp",
+      "sourceHash": "eca5ceacb095d731f0c8dd61196ec29ff920284640c67ec9b73efa8d96fa89bb",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 302790,
+      "runtimeBytes": 48366
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-07-cut--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-07-cut--bacon.webp",
+      "sourceHash": "220715836691e3b03b1e72a5d02250fe51a01dccf0c8f05ed2e840c15c304d20",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 277099,
+      "runtimeBytes": 50392
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-07-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-07-cut--chili-powder.webp",
+      "sourceHash": "ff8fa418fcd0dea067554fbd52883ec0ff8c2f30081991eb54914fba8407d8a5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 274066,
+      "runtimeBytes": 57902
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-07-cut--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-07-cut--cilantro.webp",
+      "sourceHash": "3867a715a9b6d53febe386a46232800b902f9f5f86e0f66c201b55d67afa8fe6",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 280407,
+      "runtimeBytes": 54104
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-07-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-07-cut--enoki.webp",
+      "sourceHash": "9fe724a28e5ea3d123bd6c9ce95b4b4ce2095d9ca61a120b5f54a1ab6b32c7aa",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 275374,
+      "runtimeBytes": 52196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-07-cut--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-07-cut--onion.webp",
+      "sourceHash": "71c88a0a84a5262302d1e81c56661b0d2a557cd42d9e7b4041e2a631caca3d4f",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 283423,
+      "runtimeBytes": 51806
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-08-roll--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-08-roll--bacon.webp",
+      "sourceHash": "460b071f71c44ea5557093bc4e613ab1a520c9ea553c6325d5235ab5fb1e4a13",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 202973,
+      "runtimeBytes": 38240
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-08-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-08-roll--chili-powder.webp",
+      "sourceHash": "2fd4905a133b77864761beeb426f935eae4322087f360f2f003fecd6d58f6425",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 184224,
+      "runtimeBytes": 43480
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-08-roll--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-08-roll--cilantro.webp",
+      "sourceHash": "1102b21ce4b7807c421e2661264af93f3d8f08fd75a260ca71f662e15190c0ba",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 206695,
+      "runtimeBytes": 44330
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-08-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-08-roll--enoki.webp",
+      "sourceHash": "69b42c9668380555633512156f661e46124648faf260c3e90b2af6929d391cb9",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192593,
+      "runtimeBytes": 39042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/big-eater-08-roll--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/big-eater-08-roll--onion.webp",
+      "sourceHash": "3ac462b9cd110c1773c91db1ec25089cb40ccc58f521adc6efd335b2b9e3df0a",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 216037,
+      "runtimeBytes": 43498
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/no-scallion-big-eater-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/no-scallion-big-eater-cut--chili-powder.webp",
+      "sourceHash": "ff8fa418fcd0dea067554fbd52883ec0ff8c2f30081991eb54914fba8407d8a5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 274066,
+      "runtimeBytes": 57902
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/no-scallion-big-eater-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/no-scallion-big-eater-cut--enoki.webp",
+      "sourceHash": "9fe724a28e5ea3d123bd6c9ce95b4b4ce2095d9ca61a120b5f54a1ab6b32c7aa",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 275374,
+      "runtimeBytes": 52196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/no-scallion-big-eater-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/no-scallion-big-eater-roll--chili-powder.webp",
+      "sourceHash": "2fd4905a133b77864761beeb426f935eae4322087f360f2f003fecd6d58f6425",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 184224,
+      "runtimeBytes": 43480
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/big-eater/no-scallion-big-eater-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/big-eater/no-scallion-big-eater-roll--enoki.webp",
+      "sourceHash": "69b42c9668380555633512156f661e46124648faf260c3e90b2af6929d391cb9",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192593,
+      "runtimeBytes": 39042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-03-hot-dog--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-03-hot-dog--bacon.webp",
+      "sourceHash": "bd50e68883178c2dcb67c831caae5c66255896cf2b37e0a31136fb7a6e013830",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 382070,
+      "runtimeBytes": 62530
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-03-hot-dog--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-03-hot-dog--chili-powder.webp",
+      "sourceHash": "ca6daeba99fccb5b6b935c66edb1ff3aed22490608952cd6e88e60009466ba75",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 380437,
+      "runtimeBytes": 71006
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-03-hot-dog--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-03-hot-dog--cilantro.webp",
+      "sourceHash": "984ba831a89af3521fac8f595d687705911f65b523495496ece737f643db3526",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 387169,
+      "runtimeBytes": 66352
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-03-hot-dog--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-03-hot-dog--enoki.webp",
+      "sourceHash": "6d02c467380dbd2d82a2fbe0d5d3aed46b7988cf6658f424e97141db644a3b1b",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 378696,
+      "runtimeBytes": 63002
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-03-hot-dog--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-03-hot-dog--onion.webp",
+      "sourceHash": "87f21c0cd39896708a84bbf49c5cd3dfaf7f6308addecc9c137e53001ab2830b",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 389190,
+      "runtimeBytes": 64196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-04-sauce--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-04-sauce--bacon.webp",
+      "sourceHash": "d17d43f1f52dd6727612dbb411708827ec9b5d9758505c43e3ff3e7ee965009c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 385400,
+      "runtimeBytes": 69428
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-04-sauce--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-04-sauce--chili-powder.webp",
+      "sourceHash": "ba76fcbcd621201c487ef592a42823459e52e09708a336791a80550d32054a2c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 380142,
+      "runtimeBytes": 77038
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-04-sauce--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-04-sauce--cilantro.webp",
+      "sourceHash": "4f5e75d801883f53e8cbdddc3f2075f8ef6304b9b02146d0a572b9647411e463",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 386145,
+      "runtimeBytes": 72900
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-04-sauce--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-04-sauce--enoki.webp",
+      "sourceHash": "fc8311b4e89605c4c4788306e629103173e40e3f941794a43137c74e540fc140",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 385431,
+      "runtimeBytes": 71580
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-04-sauce--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-04-sauce--onion.webp",
+      "sourceHash": "c8dc205f5ad9d4f0ee4ec38938ffce05eb1e65b61bf1b6f4dc96a821c34e9939",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 390256,
+      "runtimeBytes": 70532
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-05-scallion--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-05-scallion--bacon.webp",
+      "sourceHash": "e86569c250236cb70d681d39637d1e64a3463bf90005110a5ee680922cbfcaea",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 428894,
+      "runtimeBytes": 78690
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-05-scallion--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-05-scallion--chili-powder.webp",
+      "sourceHash": "f28cd6ad755e4e3bc5f76c368c667130f6eb1fe27a4527861efb32d6ef49be3b",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 425394,
+      "runtimeBytes": 87914
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-05-scallion--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-05-scallion--cilantro.webp",
+      "sourceHash": "03e908211b29689ff393dbf15634ef3518f0e68a052df8010b5df06acbe633ee",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 430358,
+      "runtimeBytes": 82576
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-05-scallion--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-05-scallion--enoki.webp",
+      "sourceHash": "665f6874a519d386825778413e3540f39a1b5ece1210a83ff483394e4f624b1c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 429078,
+      "runtimeBytes": 81176
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-05-scallion--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-05-scallion--onion.webp",
+      "sourceHash": "f2f858f58c04de90f24d9a140f593b9ac87ebaa391bc904fb99824aec63ce93d",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 434539,
+      "runtimeBytes": 80632
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-06-cut--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-06-cut--bacon.webp",
+      "sourceHash": "eb661e599f90a7f30748fe13edb2db9d57563728031d6e4131b56452add28910",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 379541,
+      "runtimeBytes": 84212
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-06-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-06-cut--chili-powder.webp",
+      "sourceHash": "ad814d9bfdd5b8358c3ada00215a2a6c9139ca896b90fc6fa8b2c82cda10a7c3",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 378385,
+      "runtimeBytes": 93576
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-06-cut--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-06-cut--cilantro.webp",
+      "sourceHash": "074198e77fda4fb94be094b7e79d0b0a13646af52ee8c156b21a894789dc52f1",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 382351,
+      "runtimeBytes": 87796
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-06-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-06-cut--enoki.webp",
+      "sourceHash": "04b952b502078766a3a63f765ac32dc96e5d7cdff4a5a204ea2e05fea5cbe13c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 379261,
+      "runtimeBytes": 87266
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-06-cut--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-06-cut--onion.webp",
+      "sourceHash": "01fd94f8aa44814acccd2eba0dbd97419be9bf92e61b6f15d9ff52b4aa518574",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 384823,
+      "runtimeBytes": 86182
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-07-roll--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-07-roll--bacon.webp",
+      "sourceHash": "0fef4cd63cab76abdb6489755e7b6cd3ef89061fe71245102474db7452ff3b39",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 249576,
+      "runtimeBytes": 44516
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-07-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-07-roll--chili-powder.webp",
+      "sourceHash": "12b7d19170e2144bfd1e44dcfbe6fe3235b047cd478abad0cd2a9700e65c953b",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 244210,
+      "runtimeBytes": 51684
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-07-roll--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-07-roll--cilantro.webp",
+      "sourceHash": "5a4b5c806e987e2f634f3a561bf60e6c5d5c4910616e3c9a409ce8e6f8763e22",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 255844,
+      "runtimeBytes": 49610
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-07-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-07-roll--enoki.webp",
+      "sourceHash": "1cdcb9d01eef3763db57f6c07ee1338f87ff62ae7f280afeb8909863a77c1e2b",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 244166,
+      "runtimeBytes": 43878
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/classic-07-roll--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/classic-07-roll--onion.webp",
+      "sourceHash": "01169b979c3fe659a0f30785bce57ed2115028da79a8c651745bcfe3518ffebb",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 261569,
+      "runtimeBytes": 46326
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/no-scallion-classic-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/no-scallion-classic-cut--chili-powder.webp",
+      "sourceHash": "ff8fa418fcd0dea067554fbd52883ec0ff8c2f30081991eb54914fba8407d8a5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 274066,
+      "runtimeBytes": 57902
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/no-scallion-classic-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/no-scallion-classic-cut--enoki.webp",
+      "sourceHash": "9fe724a28e5ea3d123bd6c9ce95b4b4ce2095d9ca61a120b5f54a1ab6b32c7aa",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 275374,
+      "runtimeBytes": 52196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/no-scallion-classic-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/no-scallion-classic-roll--chili-powder.webp",
+      "sourceHash": "2fd4905a133b77864761beeb426f935eae4322087f360f2f003fecd6d58f6425",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 184224,
+      "runtimeBytes": 43480
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/classic/no-scallion-classic-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/classic/no-scallion-classic-roll--enoki.webp",
+      "sourceHash": "69b42c9668380555633512156f661e46124648faf260c3e90b2af6929d391cb9",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192593,
+      "runtimeBytes": 39042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/no-scallion-orleans-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/no-scallion-orleans-cut--chili-powder.webp",
+      "sourceHash": "ff8fa418fcd0dea067554fbd52883ec0ff8c2f30081991eb54914fba8407d8a5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 274066,
+      "runtimeBytes": 57902
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/no-scallion-orleans-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/no-scallion-orleans-cut--enoki.webp",
+      "sourceHash": "9fe724a28e5ea3d123bd6c9ce95b4b4ce2095d9ca61a120b5f54a1ab6b32c7aa",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 275374,
+      "runtimeBytes": 52196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/no-scallion-orleans-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/no-scallion-orleans-roll--chili-powder.webp",
+      "sourceHash": "2fd4905a133b77864761beeb426f935eae4322087f360f2f003fecd6d58f6425",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 184224,
+      "runtimeBytes": 43480
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/no-scallion-orleans-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/no-scallion-orleans-roll--enoki.webp",
+      "sourceHash": "69b42c9668380555633512156f661e46124648faf260c3e90b2af6929d391cb9",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192593,
+      "runtimeBytes": 39042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-03-orleans--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-03-orleans--bacon.webp",
+      "sourceHash": "0706d6fee490aa566ef40d25552d73f928e9181f53011e23428de60fe40126f6",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296885,
+      "runtimeBytes": 49446
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-03-orleans--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-03-orleans--chili-powder.webp",
+      "sourceHash": "9a87a0a0fbdf9eae4661409f41ed3bdcaab9ca8bfee2a3ca7c03768dae1280b0",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 290829,
+      "runtimeBytes": 57554
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-03-orleans--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-03-orleans--cilantro.webp",
+      "sourceHash": "b7e123af6f6cd0169633b48890eafa4a9d10d74657b9d16142ab4cfbcffccf5c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301094,
+      "runtimeBytes": 53310
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-03-orleans--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-03-orleans--enoki.webp",
+      "sourceHash": "95eb18786d50ec68fd09c364f85a2ef5184652908ebbfe0ee63ada98c2cb8b2c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 283523,
+      "runtimeBytes": 48538
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-03-orleans--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-03-orleans--onion.webp",
+      "sourceHash": "9299bdb64ed3aeb8b4e2db0c4ccdb3fdcfe715e1ba0c1966b70207b37a8a5e0e",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301163,
+      "runtimeBytes": 49870
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-04-sauce--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-04-sauce--bacon.webp",
+      "sourceHash": "cc755782590126828cf719bed7805baaf4c956cc55c22d32dc095e7cc1bb797b",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296892,
+      "runtimeBytes": 49438
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-04-sauce--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-04-sauce--chili-powder.webp",
+      "sourceHash": "0090d1109eb8eed55f555711e7d59fb9b1b145b81e9053719a27e94ae513f5bb",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 290828,
+      "runtimeBytes": 57554
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-04-sauce--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-04-sauce--cilantro.webp",
+      "sourceHash": "b7e123af6f6cd0169633b48890eafa4a9d10d74657b9d16142ab4cfbcffccf5c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301094,
+      "runtimeBytes": 53310
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-04-sauce--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-04-sauce--enoki.webp",
+      "sourceHash": "8e6d8abf122b2a076484a023c06a5dd74b4170fc72cada1feb276097eb0c1092",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284216,
+      "runtimeBytes": 48646
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-04-sauce--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-04-sauce--onion.webp",
+      "sourceHash": "63013a3d5a846a1b52e9164950af335ca1f12e7a19ef22a8bb32bb74ca3f39e4",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301023,
+      "runtimeBytes": 48966
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-05-scallion--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-05-scallion--bacon.webp",
+      "sourceHash": "dd955cde9da3ee307f096d221b8d0c88276565e91b2658c9f1edffd9b27caf30",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296895,
+      "runtimeBytes": 49384
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-05-scallion--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-05-scallion--chili-powder.webp",
+      "sourceHash": "0090d1109eb8eed55f555711e7d59fb9b1b145b81e9053719a27e94ae513f5bb",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 290828,
+      "runtimeBytes": 57554
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-05-scallion--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-05-scallion--cilantro.webp",
+      "sourceHash": "b7e123af6f6cd0169633b48890eafa4a9d10d74657b9d16142ab4cfbcffccf5c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301094,
+      "runtimeBytes": 53310
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-05-scallion--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-05-scallion--enoki.webp",
+      "sourceHash": "8e6d8abf122b2a076484a023c06a5dd74b4170fc72cada1feb276097eb0c1092",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284216,
+      "runtimeBytes": 48646
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-05-scallion--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-05-scallion--onion.webp",
+      "sourceHash": "6a252af1cc6c52714cd5f6519b048df0c7706c04de558b89c813174ecb857923",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301322,
+      "runtimeBytes": 49074
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-06-cut--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-06-cut--bacon.webp",
+      "sourceHash": "58c83d134f4e97146a78c2d7fe831e4b3b29e06b2fcbe42ecbf4733140131e1f",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 277095,
+      "runtimeBytes": 50408
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-06-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-06-cut--chili-powder.webp",
+      "sourceHash": "ff8fa418fcd0dea067554fbd52883ec0ff8c2f30081991eb54914fba8407d8a5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 274066,
+      "runtimeBytes": 57902
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-06-cut--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-06-cut--cilantro.webp",
+      "sourceHash": "3867a715a9b6d53febe386a46232800b902f9f5f86e0f66c201b55d67afa8fe6",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 280407,
+      "runtimeBytes": 54104
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-06-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-06-cut--enoki.webp",
+      "sourceHash": "9fe724a28e5ea3d123bd6c9ce95b4b4ce2095d9ca61a120b5f54a1ab6b32c7aa",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 275374,
+      "runtimeBytes": 52196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-06-cut--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-06-cut--onion.webp",
+      "sourceHash": "c03c4a816961d1918e2039539f9fe498fb9e6b273d8c0b2e6e6a808d614b76b8",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 283435,
+      "runtimeBytes": 51798
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-07-roll--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-07-roll--bacon.webp",
+      "sourceHash": "a6fd49087ae868fd211d69295d841ad68c984b174ac774899620550d9c052e42",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 202972,
+      "runtimeBytes": 38250
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-07-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-07-roll--chili-powder.webp",
+      "sourceHash": "2fd4905a133b77864761beeb426f935eae4322087f360f2f003fecd6d58f6425",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 184224,
+      "runtimeBytes": 43480
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-07-roll--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-07-roll--cilantro.webp",
+      "sourceHash": "1102b21ce4b7807c421e2661264af93f3d8f08fd75a260ca71f662e15190c0ba",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 206695,
+      "runtimeBytes": 44330
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-07-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-07-roll--enoki.webp",
+      "sourceHash": "69b42c9668380555633512156f661e46124648faf260c3e90b2af6929d391cb9",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192593,
+      "runtimeBytes": 39042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/orleans/orleans-07-roll--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/orleans/orleans-07-roll--onion.webp",
+      "sourceHash": "9f7c602069024b60626d0a8cf6b05272260d6c795892c283c129317751781483",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 216037,
+      "runtimeBytes": 43544
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/no-scallion-signature-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/no-scallion-signature-cut--chili-powder.webp",
+      "sourceHash": "ff8fa418fcd0dea067554fbd52883ec0ff8c2f30081991eb54914fba8407d8a5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 274066,
+      "runtimeBytes": 57902
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/no-scallion-signature-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/no-scallion-signature-cut--enoki.webp",
+      "sourceHash": "9fe724a28e5ea3d123bd6c9ce95b4b4ce2095d9ca61a120b5f54a1ab6b32c7aa",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 275374,
+      "runtimeBytes": 52196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/no-scallion-signature-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/no-scallion-signature-roll--chili-powder.webp",
+      "sourceHash": "2fd4905a133b77864761beeb426f935eae4322087f360f2f003fecd6d58f6425",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 184224,
+      "runtimeBytes": 43480
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/no-scallion-signature-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/no-scallion-signature-roll--enoki.webp",
+      "sourceHash": "69b42c9668380555633512156f661e46124648faf260c3e90b2af6929d391cb9",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192593,
+      "runtimeBytes": 39042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-02-egg--egg.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-02-egg--egg.webp",
+      "sourceHash": "fa706a03bd0c25666e981c69d4afa2dee1785480e2363fc91f3a361c8ced8f5a",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 271872,
+      "runtimeBytes": 40994
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-03-turkey-noodle--egg.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-03-turkey-noodle--egg.webp",
+      "sourceHash": "596d35558607a37287e1f410dde2f14bf5edae971a08aec61087942c1277fce6",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 271931,
+      "runtimeBytes": 41098
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-04-cheese--egg.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-04-cheese--egg.webp",
+      "sourceHash": "2330e4d31e293d7c91fdf323dd00d8a5dcbf860bbc0c3634864d4799ff823264",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 271928,
+      "runtimeBytes": 41090
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-05-corn--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-05-corn--bacon.webp",
+      "sourceHash": "923a025dbed1bd76799d0a282cb0ae06764b2e27660b1873e917d67c22a851f3",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296900,
+      "runtimeBytes": 49400
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-05-corn--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-05-corn--chili-powder.webp",
+      "sourceHash": "90fafe031601287a38a9a4f220b4ee111006285d6ff8be64695a022a9afc605d",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 290827,
+      "runtimeBytes": 57560
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-05-corn--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-05-corn--cilantro.webp",
+      "sourceHash": "b7e123af6f6cd0169633b48890eafa4a9d10d74657b9d16142ab4cfbcffccf5c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301094,
+      "runtimeBytes": 53310
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-05-corn--egg.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-05-corn--egg.webp",
+      "sourceHash": "2330e4d31e293d7c91fdf323dd00d8a5dcbf860bbc0c3634864d4799ff823264",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 271928,
+      "runtimeBytes": 41090
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-05-corn--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-05-corn--enoki.webp",
+      "sourceHash": "4badfa5cadfefde7b21eb7a0c69d8758ed591d2bf0463826d30e10b50180d0b5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284632,
+      "runtimeBytes": 48782
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-05-corn--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-05-corn--onion.webp",
+      "sourceHash": "682226f29c5973da578bf0f211dccaa7ecb87f379f18a02174d630d7e49203d6",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301404,
+      "runtimeBytes": 49840
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-06-sauce--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-06-sauce--bacon.webp",
+      "sourceHash": "0164a16b6faeafb0407d2cdf27e45ffea86733b02dae83b9942f6995bbefe778",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296927,
+      "runtimeBytes": 49452
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-06-sauce--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-06-sauce--chili-powder.webp",
+      "sourceHash": "0090d1109eb8eed55f555711e7d59fb9b1b145b81e9053719a27e94ae513f5bb",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 290828,
+      "runtimeBytes": 57554
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-06-sauce--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-06-sauce--cilantro.webp",
+      "sourceHash": "b7e123af6f6cd0169633b48890eafa4a9d10d74657b9d16142ab4cfbcffccf5c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301094,
+      "runtimeBytes": 53310
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-06-sauce--egg.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-06-sauce--egg.webp",
+      "sourceHash": "03b6ede460c668cfb79559acb7ec5375cc2d53fb76b7bd20579f0e7aa6e0d66d",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 271938,
+      "runtimeBytes": 41044
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-06-sauce--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-06-sauce--enoki.webp",
+      "sourceHash": "55da1ec2d50ffd8eb9a3cc36e29d39c0e8ccdd3e5315e5488c00cb990e962613",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284571,
+      "runtimeBytes": 48828
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-06-sauce--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-06-sauce--onion.webp",
+      "sourceHash": "46179caa3dd7f2a8b1a63f9949a8697a848d3af622b0977bb4bf5a2030295155",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301229,
+      "runtimeBytes": 49746
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-07-scallion--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-07-scallion--bacon.webp",
+      "sourceHash": "cb2716f7edc9b9a87253814c48704b4ab2b4287069ca0b4db774d537a549f8ab",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296932,
+      "runtimeBytes": 49410
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-07-scallion--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-07-scallion--chili-powder.webp",
+      "sourceHash": "0090d1109eb8eed55f555711e7d59fb9b1b145b81e9053719a27e94ae513f5bb",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 290828,
+      "runtimeBytes": 57554
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-07-scallion--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-07-scallion--cilantro.webp",
+      "sourceHash": "b7e123af6f6cd0169633b48890eafa4a9d10d74657b9d16142ab4cfbcffccf5c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301094,
+      "runtimeBytes": 53310
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-07-scallion--egg.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-07-scallion--egg.webp",
+      "sourceHash": "03b6ede460c668cfb79559acb7ec5375cc2d53fb76b7bd20579f0e7aa6e0d66d",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 271938,
+      "runtimeBytes": 41044
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-07-scallion--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-07-scallion--enoki.webp",
+      "sourceHash": "55da1ec2d50ffd8eb9a3cc36e29d39c0e8ccdd3e5315e5488c00cb990e962613",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284571,
+      "runtimeBytes": 48828
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-07-scallion--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-07-scallion--onion.webp",
+      "sourceHash": "5bd53c698985c1fb6b2081810155826771bf9cfc112519ee7713c4cc4168f261",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301525,
+      "runtimeBytes": 50038
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-08-cut--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-08-cut--bacon.webp",
+      "sourceHash": "df771680396165b528ad369c560a7f54c850fad034e2763bec9297de1a3a3502",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 277094,
+      "runtimeBytes": 50410
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-08-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-08-cut--chili-powder.webp",
+      "sourceHash": "ff8fa418fcd0dea067554fbd52883ec0ff8c2f30081991eb54914fba8407d8a5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 274066,
+      "runtimeBytes": 57902
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-08-cut--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-08-cut--cilantro.webp",
+      "sourceHash": "3867a715a9b6d53febe386a46232800b902f9f5f86e0f66c201b55d67afa8fe6",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 280407,
+      "runtimeBytes": 54104
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-08-cut--egg.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-08-cut--egg.webp",
+      "sourceHash": "6e8b50a57e05d83ba30db1f994ed18ea38e300ff4212dc404811897eaffce067",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 257252,
+      "runtimeBytes": 44206
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-08-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-08-cut--enoki.webp",
+      "sourceHash": "9fe724a28e5ea3d123bd6c9ce95b4b4ce2095d9ca61a120b5f54a1ab6b32c7aa",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 275374,
+      "runtimeBytes": 52196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-08-cut--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-08-cut--onion.webp",
+      "sourceHash": "1b178088ab34f912373b38cdb7d3c8eb8aa20b41a5888303050346e1fb836fad",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 283516,
+      "runtimeBytes": 51844
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-09-roll--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-09-roll--bacon.webp",
+      "sourceHash": "bdc47a0ccebd407cdf904fdab39dced9c2db06ddadec1363f1ce81c7ad92f57e",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 202969,
+      "runtimeBytes": 38258
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-09-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-09-roll--chili-powder.webp",
+      "sourceHash": "2fd4905a133b77864761beeb426f935eae4322087f360f2f003fecd6d58f6425",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 184224,
+      "runtimeBytes": 43480
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-09-roll--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-09-roll--cilantro.webp",
+      "sourceHash": "1102b21ce4b7807c421e2661264af93f3d8f08fd75a260ca71f662e15190c0ba",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 206695,
+      "runtimeBytes": 44330
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-09-roll--egg.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-09-roll--egg.webp",
+      "sourceHash": "be6608998cb4821b52afb234fd4eaad222308e05275b46b99033d694a30e37a2",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 172518,
+      "runtimeBytes": 28638
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-09-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-09-roll--enoki.webp",
+      "sourceHash": "69b42c9668380555633512156f661e46124648faf260c3e90b2af6929d391cb9",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192593,
+      "runtimeBytes": 39042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/signature/signature-09-roll--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/signature/signature-09-roll--onion.webp",
+      "sourceHash": "311d9bf472620ff288e15d90fde1bdd74f32fd7ccfdc13c5b580f0da5a9827df",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 216036,
+      "runtimeBytes": 43474
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/no-scallion-tenderloin-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/no-scallion-tenderloin-cut--chili-powder.webp",
+      "sourceHash": "ff8fa418fcd0dea067554fbd52883ec0ff8c2f30081991eb54914fba8407d8a5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 274066,
+      "runtimeBytes": 57902
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/no-scallion-tenderloin-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/no-scallion-tenderloin-cut--enoki.webp",
+      "sourceHash": "9fe526499adcb441e35414cbba66698132dda8cc583c6d49f44d5fe4958aa521",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 275374,
+      "runtimeBytes": 52196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/no-scallion-tenderloin-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/no-scallion-tenderloin-roll--chili-powder.webp",
+      "sourceHash": "2fd4905a133b77864761beeb426f935eae4322087f360f2f003fecd6d58f6425",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 184224,
+      "runtimeBytes": 43480
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/no-scallion-tenderloin-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/no-scallion-tenderloin-roll--enoki.webp",
+      "sourceHash": "69b42c9668380555633512156f661e46124648faf260c3e90b2af6929d391cb9",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192593,
+      "runtimeBytes": 39042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-04-tenderloin--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-04-tenderloin--bacon.webp",
+      "sourceHash": "c923420296907ec5f8e8ff3e45deee5f8b310349f31b2ea19dcb6d83379e3b0e",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296875,
+      "runtimeBytes": 49372
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-04-tenderloin--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-04-tenderloin--chili-powder.webp",
+      "sourceHash": "770f4dae579e4e27708f6e7d7e7a465265311b4d64928538b7d1cbf408103118",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 290833,
+      "runtimeBytes": 57570
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-04-tenderloin--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-04-tenderloin--cilantro.webp",
+      "sourceHash": "b7e123af6f6cd0169633b48890eafa4a9d10d74657b9d16142ab4cfbcffccf5c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301094,
+      "runtimeBytes": 53310
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-04-tenderloin--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-04-tenderloin--enoki.webp",
+      "sourceHash": "cbf44f41b52dcc9fdb864e31bfda42c5407cb507c0f4feb16573bc9b0b55fc29",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284446,
+      "runtimeBytes": 48984
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-04-tenderloin--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-04-tenderloin--onion.webp",
+      "sourceHash": "f29bd2c2671cfe621d5b4f921d407d8ea5be8943ed0045a4a6b39dd1e0cf7ad3",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301358,
+      "runtimeBytes": 49734
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-05-sauce--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-05-sauce--bacon.webp",
+      "sourceHash": "85a2927b875ae6a53bf12bf2cf7fc2d6af285bd4b05bd3a060582dce0109cb1d",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296893,
+      "runtimeBytes": 49442
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-05-sauce--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-05-sauce--chili-powder.webp",
+      "sourceHash": "0090d1109eb8eed55f555711e7d59fb9b1b145b81e9053719a27e94ae513f5bb",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 290828,
+      "runtimeBytes": 57554
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-05-sauce--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-05-sauce--cilantro.webp",
+      "sourceHash": "b7e123af6f6cd0169633b48890eafa4a9d10d74657b9d16142ab4cfbcffccf5c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301094,
+      "runtimeBytes": 53310
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-05-sauce--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-05-sauce--enoki.webp",
+      "sourceHash": "c1cebc0e940cd749e67a0e729fa33911f5883f205d7721d70406670b36df72dd",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284565,
+      "runtimeBytes": 48812
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-05-sauce--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-05-sauce--onion.webp",
+      "sourceHash": "6599ad41254c0810bc316a5af68b0f0187cff3ca29e2544c34f6a5fec9c16dc6",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301274,
+      "runtimeBytes": 49022
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-06-scallion--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-06-scallion--bacon.webp",
+      "sourceHash": "66391151e7c8a2e5a1352004d1b5bf67a5cbfddbdc627053ce03bf4c429dc8bf",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 296897,
+      "runtimeBytes": 49442
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-06-scallion--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-06-scallion--chili-powder.webp",
+      "sourceHash": "0090d1109eb8eed55f555711e7d59fb9b1b145b81e9053719a27e94ae513f5bb",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 290828,
+      "runtimeBytes": 57554
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-06-scallion--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-06-scallion--cilantro.webp",
+      "sourceHash": "b7e123af6f6cd0169633b48890eafa4a9d10d74657b9d16142ab4cfbcffccf5c",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301094,
+      "runtimeBytes": 53310
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-06-scallion--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-06-scallion--enoki.webp",
+      "sourceHash": "c1cebc0e940cd749e67a0e729fa33911f5883f205d7721d70406670b36df72dd",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 284565,
+      "runtimeBytes": 48812
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-06-scallion--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-06-scallion--onion.webp",
+      "sourceHash": "d0a706c6b56d58536827d7af8ba47886309cf778f03ff70413f72b307a37e9c7",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 301505,
+      "runtimeBytes": 50042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-07-cut--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-07-cut--bacon.webp",
+      "sourceHash": "ae46a9ecccfb20acdae4cfb0c3f8e63ec88f8d5b134c13517ad511f7d4d501ea",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 277098,
+      "runtimeBytes": 50370
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-07-cut--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-07-cut--chili-powder.webp",
+      "sourceHash": "ff8fa418fcd0dea067554fbd52883ec0ff8c2f30081991eb54914fba8407d8a5",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 274066,
+      "runtimeBytes": 57902
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-07-cut--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-07-cut--cilantro.webp",
+      "sourceHash": "3867a715a9b6d53febe386a46232800b902f9f5f86e0f66c201b55d67afa8fe6",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 280407,
+      "runtimeBytes": 54104
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-07-cut--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-07-cut--enoki.webp",
+      "sourceHash": "9fe526499adcb441e35414cbba66698132dda8cc583c6d49f44d5fe4958aa521",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 275374,
+      "runtimeBytes": 52196
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-07-cut--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-07-cut--onion.webp",
+      "sourceHash": "c4c5e3bd3af1b0430d8a585f867281880fdfa8fb54149e5e713542602ed3d90d",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 283437,
+      "runtimeBytes": 51826
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-08-roll--bacon.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-08-roll--bacon.webp",
+      "sourceHash": "211509e7e69f010e718ae1a35b369ac847b7000534209ec2ea474c11d1ab7302",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 202971,
+      "runtimeBytes": 38248
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-08-roll--chili-powder.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-08-roll--chili-powder.webp",
+      "sourceHash": "2fd4905a133b77864761beeb426f935eae4322087f360f2f003fecd6d58f6425",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 184224,
+      "runtimeBytes": 43480
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-08-roll--cilantro.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-08-roll--cilantro.webp",
+      "sourceHash": "1102b21ce4b7807c421e2661264af93f3d8f08fd75a260ca71f662e15190c0ba",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 206695,
+      "runtimeBytes": 44330
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-08-roll--enoki.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-08-roll--enoki.webp",
+      "sourceHash": "69b42c9668380555633512156f661e46124648faf260c3e90b2af6929d391cb9",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 192593,
+      "runtimeBytes": 39042
+    },
+    {
+      "source": "src/assets/approved/stages/flattened/tenderloin/tenderloin-08-roll--onion.png",
+      "runtime": "src/assets/runtime/stages/flattened/tenderloin/tenderloin-08-roll--onion.webp",
+      "sourceHash": "70dc6a528e7d78e0a443f8aa1476ae2bbb34e3085d3b8eb8c1197b34e59c011b",
+      "width": 512,
+      "height": 512,
+      "sourceBytes": 216060,
+      "runtimeBytes": 43514
+    },
+    {
+      "source": "src/assets/approved/stages/heat/big-eater/02-egg-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/big-eater/02-egg-burnt.webp",
+      "sourceHash": "6007a54000ccf49f07ed5b1b1dc9a7e8277b94ab4b6ad05e18de464b441e9b5c",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 153319,
+      "runtimeBytes": 27504
+    },
+    {
+      "source": "src/assets/approved/stages/heat/big-eater/02-egg-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/big-eater/02-egg-raw.webp",
+      "sourceHash": "b209e96b370dffed60fe2122e36033bb5e8a22138ea2226006f10d0407ff58f8",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 159587,
+      "runtimeBytes": 30302
+    },
+    {
+      "source": "src/assets/approved/stages/heat/big-eater/02-egg-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/big-eater/02-egg-ready.webp",
+      "sourceHash": "566ba21c9576af2194b9df2943597104cc75542662fed60e52bd5a231523c8e2",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 170121,
+      "runtimeBytes": 33170
+    },
+    {
+      "source": "src/assets/approved/stages/heat/big-eater/02-egg-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/big-eater/02-egg-scorched.webp",
+      "sourceHash": "3e52c4f56f03c94ae413f9f7d1bacd4ea61be258ff2964e4372081159b651a05",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 111880,
+      "runtimeBytes": 15332
+    },
+    {
+      "source": "src/assets/approved/stages/heat/big-eater/04-second-egg-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/big-eater/04-second-egg-burnt.webp",
+      "sourceHash": "ec46f7cdc9ea7820bad885d81bdd218cf683e0abfe9f46dd79d6e2e25bae31aa",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 153008,
+      "runtimeBytes": 27316
+    },
+    {
+      "source": "src/assets/approved/stages/heat/big-eater/04-second-egg-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/big-eater/04-second-egg-raw.webp",
+      "sourceHash": "1dcbb2ae03fef07cffda45f55e8f627472da716efe8819feafd5aed7fb3617be",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 160294,
+      "runtimeBytes": 30456
+    },
+    {
+      "source": "src/assets/approved/stages/heat/big-eater/04-second-egg-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/big-eater/04-second-egg-ready.webp",
+      "sourceHash": "0889812a4197ddb800ea9ccb24377c41949ff300415cb8fd5b7f986e4cba24ee",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 170623,
+      "runtimeBytes": 33488
+    },
+    {
+      "source": "src/assets/approved/stages/heat/big-eater/04-second-egg-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/big-eater/04-second-egg-scorched.webp",
+      "sourceHash": "e8d94a6bdfaf255ed019e20a08c3fa0ad30109a41eb7e411d03e8b044f42ead4",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 112666,
+      "runtimeBytes": 15598
+    },
+    {
+      "source": "src/assets/approved/stages/heat/classic/02-egg-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/classic/02-egg-burnt.webp",
+      "sourceHash": "1977ceaa444c221abb0cc57cb19492492e96649e1b1e25d3d98065b32814c784",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 90123,
+      "runtimeBytes": 35318
+    },
+    {
+      "source": "src/assets/approved/stages/heat/classic/02-egg-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/classic/02-egg-raw.webp",
+      "sourceHash": "3e23c4f868afd6a80df2974e1a35d58b1f22efee93564ec4c899bd2f17796954",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 91075,
+      "runtimeBytes": 40612
+    },
+    {
+      "source": "src/assets/approved/stages/heat/classic/02-egg-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/classic/02-egg-ready.webp",
+      "sourceHash": "213ff6f21114f3bf146b04793cc341bd7a09910c388a4883da841847e58dfb6f",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 91715,
+      "runtimeBytes": 44284
+    },
+    {
+      "source": "src/assets/approved/stages/heat/classic/02-egg-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/classic/02-egg-scorched.webp",
+      "sourceHash": "28e6afec0084099caa35395bd2700bcc61378809723ae364ed9fa74529c000b4",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 92427,
+      "runtimeBytes": 22656
+    },
+    {
+      "source": "src/assets/approved/stages/heat/classic/03-hot-dog-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/classic/03-hot-dog-burnt.webp",
+      "sourceHash": "52a89a62f8907afe8799a24f094222edf8b364ba6f986ba4e4304a1423b36610",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 174749,
+      "runtimeBytes": 37796
+    },
+    {
+      "source": "src/assets/approved/stages/heat/classic/03-hot-dog-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/classic/03-hot-dog-raw.webp",
+      "sourceHash": "851541b01a30f147313e2a59205ff0561a8cb88e1e4e69da7c6f8d0ff6575f62",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 217627,
+      "runtimeBytes": 42382
+    },
+    {
+      "source": "src/assets/approved/stages/heat/classic/03-hot-dog-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/classic/03-hot-dog-ready.webp",
+      "sourceHash": "765e13b30c93c61c7088f36e641e6d06923eafcb83dbe34e82bd891c1723893d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 220438,
+      "runtimeBytes": 45800
+    },
+    {
+      "source": "src/assets/approved/stages/heat/classic/03-hot-dog-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/classic/03-hot-dog-scorched.webp",
+      "sourceHash": "b6b519695ba8743641505299d713e80f360fe5238f50e9114ac23c7a3d0811a2",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 163878,
+      "runtimeBytes": 25850
+    },
+    {
+      "source": "src/assets/approved/stages/heat/orleans/02-egg-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/orleans/02-egg-burnt.webp",
+      "sourceHash": "6007a54000ccf49f07ed5b1b1dc9a7e8277b94ab4b6ad05e18de464b441e9b5c",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 153319,
+      "runtimeBytes": 27504
+    },
+    {
+      "source": "src/assets/approved/stages/heat/orleans/02-egg-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/orleans/02-egg-raw.webp",
+      "sourceHash": "b209e96b370dffed60fe2122e36033bb5e8a22138ea2226006f10d0407ff58f8",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 159587,
+      "runtimeBytes": 30302
+    },
+    {
+      "source": "src/assets/approved/stages/heat/orleans/02-egg-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/orleans/02-egg-ready.webp",
+      "sourceHash": "566ba21c9576af2194b9df2943597104cc75542662fed60e52bd5a231523c8e2",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 170121,
+      "runtimeBytes": 33170
+    },
+    {
+      "source": "src/assets/approved/stages/heat/orleans/02-egg-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/orleans/02-egg-scorched.webp",
+      "sourceHash": "3e52c4f56f03c94ae413f9f7d1bacd4ea61be258ff2964e4372081159b651a05",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 111880,
+      "runtimeBytes": 15332
+    },
+    {
+      "source": "src/assets/approved/stages/heat/orleans/03-orleans-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/orleans/03-orleans-burnt.webp",
+      "sourceHash": "a938f7c92b16b84ce817219dcace3702c4928d890fab93c2945d2777a6079ecb",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 157848,
+      "runtimeBytes": 29878
+    },
+    {
+      "source": "src/assets/approved/stages/heat/orleans/03-orleans-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/orleans/03-orleans-raw.webp",
+      "sourceHash": "e4fd7669aeff6090271fbc6b75b7f40013a174406f6ca7dfc18ad85423636b99",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 168190,
+      "runtimeBytes": 33054
+    },
+    {
+      "source": "src/assets/approved/stages/heat/orleans/03-orleans-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/orleans/03-orleans-ready.webp",
+      "sourceHash": "fdbb82faaefb8c040b24c0d8521ddce08a74e2e14361a8f09383661a6eb5af6f",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 178126,
+      "runtimeBytes": 36666
+    },
+    {
+      "source": "src/assets/approved/stages/heat/orleans/03-orleans-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/orleans/03-orleans-scorched.webp",
+      "sourceHash": "b32469309ed78c757e838e82806247b592105803dd58468cc60e37524968bb37",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 121055,
+      "runtimeBytes": 17072
+    },
+    {
+      "source": "src/assets/approved/stages/heat/signature/02-egg-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/signature/02-egg-burnt.webp",
+      "sourceHash": "6007a54000ccf49f07ed5b1b1dc9a7e8277b94ab4b6ad05e18de464b441e9b5c",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 153319,
+      "runtimeBytes": 27504
+    },
+    {
+      "source": "src/assets/approved/stages/heat/signature/02-egg-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/signature/02-egg-raw.webp",
+      "sourceHash": "b209e96b370dffed60fe2122e36033bb5e8a22138ea2226006f10d0407ff58f8",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 159587,
+      "runtimeBytes": 30302
+    },
+    {
+      "source": "src/assets/approved/stages/heat/signature/02-egg-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/signature/02-egg-ready.webp",
+      "sourceHash": "566ba21c9576af2194b9df2943597104cc75542662fed60e52bd5a231523c8e2",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 170121,
+      "runtimeBytes": 33170
+    },
+    {
+      "source": "src/assets/approved/stages/heat/signature/02-egg-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/signature/02-egg-scorched.webp",
+      "sourceHash": "3e52c4f56f03c94ae413f9f7d1bacd4ea61be258ff2964e4372081159b651a05",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 111880,
+      "runtimeBytes": 15332
+    },
+    {
+      "source": "src/assets/approved/stages/heat/signature/03-turkey-noodle-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/signature/03-turkey-noodle-burnt.webp",
+      "sourceHash": "4cc2c392bcd75d810c41c831eba152633f1b379fe6e42c993108f4b751195e94",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 155911,
+      "runtimeBytes": 30936
+    },
+    {
+      "source": "src/assets/approved/stages/heat/signature/03-turkey-noodle-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/signature/03-turkey-noodle-raw.webp",
+      "sourceHash": "0859c705de7fc78b410a198c637ca76f7ef857adad71383f0bbe50947fa72ef4",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 169270,
+      "runtimeBytes": 33584
+    },
+    {
+      "source": "src/assets/approved/stages/heat/signature/03-turkey-noodle-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/signature/03-turkey-noodle-ready.webp",
+      "sourceHash": "26c6d29200c82019709f081dd2e39da4b570786e5131160093150b1848403c9a",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 178096,
+      "runtimeBytes": 36992
+    },
+    {
+      "source": "src/assets/approved/stages/heat/signature/03-turkey-noodle-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/signature/03-turkey-noodle-scorched.webp",
+      "sourceHash": "cb4319a2a9c90c768f11c27842e77ec79578807cc4ba1a51a663b2c1c13c1a76",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 121550,
+      "runtimeBytes": 17292
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/02-egg-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/02-egg-burnt.webp",
+      "sourceHash": "6007a54000ccf49f07ed5b1b1dc9a7e8277b94ab4b6ad05e18de464b441e9b5c",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 153319,
+      "runtimeBytes": 27504
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/02-egg-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/02-egg-raw.webp",
+      "sourceHash": "b209e96b370dffed60fe2122e36033bb5e8a22138ea2226006f10d0407ff58f8",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 159587,
+      "runtimeBytes": 30302
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/02-egg-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/02-egg-ready.webp",
+      "sourceHash": "566ba21c9576af2194b9df2943597104cc75542662fed60e52bd5a231523c8e2",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 170121,
+      "runtimeBytes": 33170
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/02-egg-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/02-egg-scorched.webp",
+      "sourceHash": "3e52c4f56f03c94ae413f9f7d1bacd4ea61be258ff2964e4372081159b651a05",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 111880,
+      "runtimeBytes": 15332
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/03-turkey-noodle-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/03-turkey-noodle-burnt.webp",
+      "sourceHash": "4cc2c392bcd75d810c41c831eba152633f1b379fe6e42c993108f4b751195e94",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 155911,
+      "runtimeBytes": 30936
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/03-turkey-noodle-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/03-turkey-noodle-raw.webp",
+      "sourceHash": "0859c705de7fc78b410a198c637ca76f7ef857adad71383f0bbe50947fa72ef4",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 169270,
+      "runtimeBytes": 33584
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/03-turkey-noodle-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/03-turkey-noodle-ready.webp",
+      "sourceHash": "26c6d29200c82019709f081dd2e39da4b570786e5131160093150b1848403c9a",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 178096,
+      "runtimeBytes": 36992
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/03-turkey-noodle-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/03-turkey-noodle-scorched.webp",
+      "sourceHash": "cb4319a2a9c90c768f11c27842e77ec79578807cc4ba1a51a663b2c1c13c1a76",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 121550,
+      "runtimeBytes": 17292
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/04-tenderloin-burnt.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/04-tenderloin-burnt.webp",
+      "sourceHash": "b15ce3c33bad142d7277bf527d3d52f9a40c14ec06ee0a1a235250c7b11626ea",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 159225,
+      "runtimeBytes": 31090
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/04-tenderloin-raw.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/04-tenderloin-raw.webp",
+      "sourceHash": "d754b34f4b56e458d25254d5dff842286418b4824d37a02a7604bb45e9e2167a",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 170563,
+      "runtimeBytes": 33736
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/04-tenderloin-ready.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/04-tenderloin-ready.webp",
+      "sourceHash": "22efdf25fe1073ad9c7f255359403562b8d9d69df6cd16b6b196d8596b8f9c4e",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 181238,
+      "runtimeBytes": 37442
+    },
+    {
+      "source": "src/assets/approved/stages/heat/tenderloin/04-tenderloin-scorched.png",
+      "runtime": "src/assets/runtime/stages/heat/tenderloin/04-tenderloin-scorched.webp",
+      "sourceHash": "5dcb69eeab376a70abf405bb52fdd834d41343ff061d8f5c6dcd378c07846c89",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 123485,
+      "runtimeBytes": 18156
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/big-eater-cut.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/big-eater-cut.webp",
+      "sourceHash": "d08d25aa9082a3d77e2fb4905ef4c601c105e7fe8ad9e6924fa148538fbf7861",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 176146,
+      "runtimeBytes": 38114
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/big-eater-roll.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/big-eater-roll.webp",
+      "sourceHash": "791bba81ffea0f577e6f995be353d00341bcf1651166bc815e9f51a4b8fa558f",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 113050,
+      "runtimeBytes": 26612
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/classic-cut.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/classic-cut.webp",
+      "sourceHash": "28259e05d4da8b5cdd531930070b8baacb81fbbf56fb4470f98825b4edbc38c7",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 177278,
+      "runtimeBytes": 38180
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/classic-roll.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/classic-roll.webp",
+      "sourceHash": "5e1e16f9f7681f8b553b5714a625fcae868df3555cc58555bcdaa9cb2fe84f66",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 113261,
+      "runtimeBytes": 26106
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/orleans-cut.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/orleans-cut.webp",
+      "sourceHash": "550ffd50dc7a034becc8718faff786056199326a66166da277eb55e412a43d7f",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 177445,
+      "runtimeBytes": 38312
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/orleans-roll.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/orleans-roll.webp",
+      "sourceHash": "b65acf89dd3e722a7425891f6c062ae51e92f5f7a1e2bd738e7e41f26f7b2a77",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 113237,
+      "runtimeBytes": 26636
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/signature-cut.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/signature-cut.webp",
+      "sourceHash": "8e40728441d0db55bc2fcb961d9818cb6c6fff3c6e9cd73636637528d40bb695",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 177351,
+      "runtimeBytes": 38290
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/signature-roll.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/signature-roll.webp",
+      "sourceHash": "fcf58b03f05d07c9420c760ba481fb729e934808d82d06307241f01f3bc2b1ae",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 113271,
+      "runtimeBytes": 26646
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/tenderloin-cut.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/tenderloin-cut.webp",
+      "sourceHash": "d24afbe941d2913a8ee77a109f40ea554662917d26bdc83f7a7d0a0e61c52b01",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 177670,
+      "runtimeBytes": 38300
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/no-scallion/tenderloin-roll.png",
+      "runtime": "src/assets/runtime/stages/modifiers/no-scallion/tenderloin-roll.webp",
+      "sourceHash": "249ce8cca0d7fb678b5a4d46550b168c24af944518792524648d816fc997487f",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 113249,
+      "runtimeBytes": 26886
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/toppings/topping-bacon.png",
+      "runtime": "src/assets/runtime/stages/modifiers/toppings/topping-bacon.webp",
+      "sourceHash": "b929903432253b852fa01e786509b66c3d9cdee5a71e6b4821c31f5ea9bfdbfa",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 88773,
+      "runtimeBytes": 19860
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/toppings/topping-chili-powder.png",
+      "runtime": "src/assets/runtime/stages/modifiers/toppings/topping-chili-powder.webp",
+      "sourceHash": "87f5b2898026d0b195a4afd65dfc49239847d447de39aeec41b09e01cb89e1ad",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 68707,
+      "runtimeBytes": 21370
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/toppings/topping-cilantro.png",
+      "runtime": "src/assets/runtime/stages/modifiers/toppings/topping-cilantro.webp",
+      "sourceHash": "28f93830aaf0de14cd633d475d3f1777c69e08c8c0dcb7c93d392ab8d96cb61c",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 92437,
+      "runtimeBytes": 25362
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/toppings/topping-egg.png",
+      "runtime": "src/assets/runtime/stages/modifiers/toppings/topping-egg.webp",
+      "sourceHash": "3ef830a2a80d98debbbab2ee0ec9092fde958cfb2b504f5c1dbf15a74195965c",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 63700,
+      "runtimeBytes": 11164
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/toppings/topping-enoki.png",
+      "runtime": "src/assets/runtime/stages/modifiers/toppings/topping-enoki.webp",
+      "sourceHash": "7a215df8c472fdb8accc2dbf975560f98c145e4781b26480ef023364b4cda893",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 53327,
+      "runtimeBytes": 14460
+    },
+    {
+      "source": "src/assets/approved/stages/modifiers/toppings/topping-onion.png",
+      "runtime": "src/assets/runtime/stages/modifiers/toppings/topping-onion.webp",
+      "sourceHash": "670ab4120cf9aa8d21e67156a42f95ab2b33b40aa1056237c1593d7274d10670",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 102151,
+      "runtimeBytes": 31498
+    },
+    {
+      "source": "src/assets/approved/stages/orleans-stage-atlas.png",
+      "runtime": "src/assets/runtime/stages/orleans-stage-atlas.webp",
+      "sourceHash": "18c51f8a23ff155bf0d5c221e58e0288c599deadf282148087cf22a56c6f4aab",
+      "width": 1002,
+      "height": 1002,
+      "sourceBytes": 569272,
+      "runtimeBytes": 130994
+    },
+    {
+      "source": "src/assets/approved/stages/orleans/orleans-00-empty.png",
+      "runtime": "src/assets/runtime/stages/orleans/orleans-00-empty.webp",
+      "sourceHash": "b0aecb2e5045a512b8ad6ba9bd87a094bcb6daf3cb4e0996ec4add8c96a6bf5d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 765,
+      "runtimeBytes": 420
+    },
+    {
+      "source": "src/assets/approved/stages/orleans/orleans-01-noodle.png",
+      "runtime": "src/assets/runtime/stages/orleans/orleans-01-noodle.webp",
+      "sourceHash": "4f09634293194dfa50da49ca8f6f00fa61e8e80770c784ca14ecd6769d81416d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 171751,
+      "runtimeBytes": 35412
+    },
+    {
+      "source": "src/assets/approved/stages/orleans/orleans-02-egg.png",
+      "runtime": "src/assets/runtime/stages/orleans/orleans-02-egg.webp",
+      "sourceHash": "980ab1db2fb308ab37746bd62e2c67b7d5abcfedd31d0ebf4c80f764a020d4ec",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 176856,
+      "runtimeBytes": 32360
+    },
+    {
+      "source": "src/assets/approved/stages/orleans/orleans-03-orleans.png",
+      "runtime": "src/assets/runtime/stages/orleans/orleans-03-orleans.webp",
+      "sourceHash": "f9bc9091be55990f17d7b37ff01cadf47d4d1a897b1372ff0290240975c6362e",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 184385,
+      "runtimeBytes": 36016
+    },
+    {
+      "source": "src/assets/approved/stages/orleans/orleans-04-sauce.png",
+      "runtime": "src/assets/runtime/stages/orleans/orleans-04-sauce.webp",
+      "sourceHash": "af4f8555f3e00e64d416dcac258704ea4d0d185e483c7fe7a18056f50d05a5e4",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 183075,
+      "runtimeBytes": 35682
+    },
+    {
+      "source": "src/assets/approved/stages/orleans/orleans-05-scallion.png",
+      "runtime": "src/assets/runtime/stages/orleans/orleans-05-scallion.webp",
+      "sourceHash": "b5a362467e9efe8f452881379f8562ce4050be15d53b2e680b87fac0f5c5e520",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 184179,
+      "runtimeBytes": 36424
+    },
+    {
+      "source": "src/assets/approved/stages/orleans/orleans-06-cut.png",
+      "runtime": "src/assets/runtime/stages/orleans/orleans-06-cut.webp",
+      "sourceHash": "181e573a165b0489234fab32dd21fd05c22e093e17e37ba13a88239ad5f66c94",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 177973,
+      "runtimeBytes": 38558
+    },
+    {
+      "source": "src/assets/approved/stages/orleans/orleans-07-roll.png",
+      "runtime": "src/assets/runtime/stages/orleans/orleans-07-roll.webp",
+      "sourceHash": "74cdee408cb7477fff0c190ba76704e252c2d4dab71284dc13b0fd60c3c4d219",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 113803,
+      "runtimeBytes": 26746
+    },
+    {
+      "source": "src/assets/approved/stages/orleans/orleans-08-pack.png",
+      "runtime": "src/assets/runtime/stages/orleans/orleans-08-pack.webp",
+      "sourceHash": "331a8fdd401620f4b472aad0f06b0be15b1874174d25e62d2b52ea004f79e92b",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 91016,
+      "runtimeBytes": 16784
+    },
+    {
+      "source": "src/assets/approved/stages/signature-stage-atlas.png",
+      "runtime": "src/assets/runtime/stages/signature-stage-atlas.webp",
+      "sourceHash": "d8ee5893b898c9ceda5033877b94db88e9f5035d126eb688ae874d874aeed1ab",
+      "width": 1338,
+      "height": 1002,
+      "sourceBytes": 611910,
+      "runtimeBytes": 166778
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-00-empty.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-00-empty.webp",
+      "sourceHash": "b0aecb2e5045a512b8ad6ba9bd87a094bcb6daf3cb4e0996ec4add8c96a6bf5d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 765,
+      "runtimeBytes": 420
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-01-noodle.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-01-noodle.webp",
+      "sourceHash": "4f09634293194dfa50da49ca8f6f00fa61e8e80770c784ca14ecd6769d81416d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 171751,
+      "runtimeBytes": 35412
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-02-egg.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-02-egg.webp",
+      "sourceHash": "980ab1db2fb308ab37746bd62e2c67b7d5abcfedd31d0ebf4c80f764a020d4ec",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 176856,
+      "runtimeBytes": 32360
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-03-turkey-noodle.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-03-turkey-noodle.webp",
+      "sourceHash": "9220faba3982419355c4be19012415f069723f9e152f244026401bcbd613b793",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 185159,
+      "runtimeBytes": 36428
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-04-cheese.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-04-cheese.webp",
+      "sourceHash": "ebcfbb422ed0de3d525a891768f0beac3d939796021b82cd226c8f8395156aae",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 179734,
+      "runtimeBytes": 34318
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-05-corn.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-05-corn.webp",
+      "sourceHash": "f407b162e2cd005b23e6bd11e602c692745aedcd9fd8d2fdfabc05c90244a92a",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 182841,
+      "runtimeBytes": 35490
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-06-sauce.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-06-sauce.webp",
+      "sourceHash": "3bde9f83cc5c9ab22abe29d2d81efebf8a2173891f3c987043b1d5f1d9902e4a",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 183018,
+      "runtimeBytes": 35808
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-07-scallion.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-07-scallion.webp",
+      "sourceHash": "fd38166a21e5e63a2c058ad064af484461c24175bf4af0c1a891e7358ce03690",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 184950,
+      "runtimeBytes": 36596
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-08-cut.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-08-cut.webp",
+      "sourceHash": "bac45bd3f2796c69f254264b6690cbb919bd66ff267b22792498ebfb1d19a7d8",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 177786,
+      "runtimeBytes": 38516
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-09-roll.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-09-roll.webp",
+      "sourceHash": "904844f997bc5dc71d17821a4b18488ebcc4a8f698a3860d30c435c8c430c434",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 113776,
+      "runtimeBytes": 26726
+    },
+    {
+      "source": "src/assets/approved/stages/signature/signature-10-pack.png",
+      "runtime": "src/assets/runtime/stages/signature/signature-10-pack.webp",
+      "sourceHash": "331a8fdd401620f4b472aad0f06b0be15b1874174d25e62d2b52ea004f79e92b",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 91016,
+      "runtimeBytes": 16784
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin-stage-atlas.png",
+      "runtime": "src/assets/runtime/stages/tenderloin-stage-atlas.webp",
+      "sourceHash": "55763206a9302ef1a17ad5c11f387e5d1b6cd510a65dd7b28283b8f9ca02cf4f",
+      "width": 1338,
+      "height": 1002,
+      "sourceBytes": 613268,
+      "runtimeBytes": 150630
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-00-empty.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-00-empty.webp",
+      "sourceHash": "b0aecb2e5045a512b8ad6ba9bd87a094bcb6daf3cb4e0996ec4add8c96a6bf5d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 765,
+      "runtimeBytes": 420
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-01-noodle.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-01-noodle.webp",
+      "sourceHash": "4f09634293194dfa50da49ca8f6f00fa61e8e80770c784ca14ecd6769d81416d",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 171751,
+      "runtimeBytes": 35412
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-02-egg.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-02-egg.webp",
+      "sourceHash": "980ab1db2fb308ab37746bd62e2c67b7d5abcfedd31d0ebf4c80f764a020d4ec",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 176856,
+      "runtimeBytes": 32360
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-03-turkey-noodle.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-03-turkey-noodle.webp",
+      "sourceHash": "9220faba3982419355c4be19012415f069723f9e152f244026401bcbd613b793",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 185159,
+      "runtimeBytes": 36428
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-04-tenderloin.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-04-tenderloin.webp",
+      "sourceHash": "45e1e24c6f1b7b8d30630f75825fc167397b96607cca0be61f0987f448d93b68",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 186305,
+      "runtimeBytes": 36580
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-05-sauce.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-05-sauce.webp",
+      "sourceHash": "39d9e3b3015a9ebb6a89b19d2d571e5d662d8c11bb67e2dd60e4d7f05fcb8309",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 183678,
+      "runtimeBytes": 36146
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-06-scallion.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-06-scallion.webp",
+      "sourceHash": "b7874ed0d84163c63f028ea5d22fc1f0cd53e2bf2ba4ba552ec96d9bd9dbb9fc",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 185118,
+      "runtimeBytes": 36764
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-07-cut.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-07-cut.webp",
+      "sourceHash": "9244125e8cb90d4efa867a26fd9623c918feb5711bda49e570b5b8223d32958f",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 178092,
+      "runtimeBytes": 38544
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-08-roll.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-08-roll.webp",
+      "sourceHash": "126df4d21b1efd43bcb7970403d67cc7b7f5bd7bd7a783fcabffb53d90537425",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 113822,
+      "runtimeBytes": 26694
+    },
+    {
+      "source": "src/assets/approved/stages/tenderloin/tenderloin-09-pack.png",
+      "runtime": "src/assets/runtime/stages/tenderloin/tenderloin-09-pack.webp",
+      "sourceHash": "331a8fdd401620f4b472aad0f06b0be15b1874174d25e62d2b52ea004f79e92b",
+      "width": 414,
+      "height": 414,
+      "sourceBytes": 91016,
+      "runtimeBytes": 16784
+    }
+  ]
+}

@@ -17,45 +17,45 @@ import type { CustomerArtId } from './assets'
 describe('kitchen art manifest', () => {
   it('keeps legacy motion atlases resolvable even though horizontal entrances use emotion art', () => {
     for (const artId of [...CUSTOMER_ART_IDS, CELEBRITY_ART_ID]) {
-      expect(customerMotionAtlas(artId)).toMatch(/-motion\.png(?:\?|$)/)
+      expect(customerMotionAtlas(artId)).toMatch(/-motion\.webp(?:\?|$)/)
     }
   })
 
   it('resolves all seven emotions for every regular customer', () => {
     for (const customerId of CUSTOMER_ART_IDS) {
       for (const mood of CUSTOMER_ART_MOODS) {
-        expect(customerEmotionArt(customerId, mood)).toMatch(/\.png$/)
+        expect(customerEmotionArt(customerId, mood)).toMatch(/\.webp$/)
       }
     }
   })
 
   it('resolves all seven emotions for the celebrity customer', () => {
     for (const mood of CUSTOMER_ART_MOODS) {
-      expect(customerEmotionArt(CELEBRITY_ART_ID, mood)).toMatch(/\.png$/)
+      expect(customerEmotionArt(CELEBRITY_ART_ID, mood)).toMatch(/\.webp$/)
     }
   })
 
   it('resolves every heat state at each declared checkpoint', () => {
     for (const checkpoint of HEAT_CHECKPOINTS) {
       for (const heat of ['raw', 'ready', 'scorched', 'burnt'] as const) {
-        expect(stageArt(checkpoint.recipeId, checkpoint.completedStepIds, heat)).toMatch(/\.png$/)
+        expect(stageArt(checkpoint.recipeId, checkpoint.completedStepIds, heat)).toMatch(/\.webp$/)
       }
     }
   })
 
   it('resolves every tabletop ingredient', () => {
     for (const id of Object.keys(INGREDIENT_UNLOCK_DAY) as (keyof typeof INGREDIENT_UNLOCK_DAY)[]) {
-      expect(ingredientArt(id)).toMatch(new RegExp(`ingredient-bin-${id}\\.png$`))
-      expect(ingredientFoodArt(id)).toMatch(/menu\/ingredients\/ingredient-[^/]+\.png$/)
+      expect(ingredientArt(id)).toMatch(new RegExp(`ingredient-bin-${id}\\.webp$`))
+      expect(ingredientFoodArt(id)).toMatch(/menu\/ingredients\/ingredient-[^/]+\.webp$/)
     }
   })
 
   it('resolves every existing cumulative recipe stage', () => {
     for (const recipe of Object.values(RECIPES)) {
-      expect(stageArt(recipe.id, [], 'none')).toMatch(/\.png$/)
+      expect(stageArt(recipe.id, [], 'none')).toMatch(/\.webp$/)
       for (let count = 1; count <= recipe.steps.length; count += 1) {
         const completedStepIds = recipe.steps.slice(0, count).map((step) => step.id)
-        expect(stageArt(recipe.id, completedStepIds, 'none')).toMatch(/\.png$/)
+        expect(stageArt(recipe.id, completedStepIds, 'none')).toMatch(/\.webp$/)
       }
     }
   })
@@ -66,8 +66,8 @@ describe('kitchen art manifest', () => {
 
     expect(() => stageArt('classic', completed, 'raw', modifiers)).not.toThrow()
     expect(() => stageArt('classic', completed, 'ready', modifiers)).not.toThrow()
-    expect(stageArt('classic', completed, 'raw', modifiers)).toMatch(/flattened.*classic.*bacon.*\.png/)
-    expect(stageArt('classic', completed, 'ready', modifiers)).toMatch(/flattened.*classic.*bacon.*\.png/)
+    expect(stageArt('classic', completed, 'raw', modifiers)).toMatch(/flattened.*classic.*bacon.*\.webp/)
+    expect(stageArt('classic', completed, 'ready', modifiers)).toMatch(/flattened.*classic.*bacon.*\.webp/)
   })
 
   it('keeps the latest signature corn stage under unauthored bacon raw and ready heat', () => {
@@ -76,7 +76,7 @@ describe('kitchen art manifest', () => {
 
     for (const heat of ['raw', 'ready'] as const) {
       const base = stageArt('signature', completed, heat, modifiers)
-      expect(base).toMatch(/flattened.*signature-05-corn--bacon.*\.png/)
+      expect(base).toMatch(/flattened.*signature-05-corn--bacon.*\.webp/)
       expect(base).not.toMatch(/03-turkey-noodle/)
     }
   })
@@ -93,9 +93,9 @@ describe('kitchen art manifest', () => {
     expect(stageArt('signature', beforeExtra, 'none', modifiers)).not.toMatch(/flattened/)
     expect(stageArt('signature', [...afterExtra, 'sauce'], 'none', modifiers)).toMatch(/flattened.*enoki/)
     expect(stageArt('signature', [...afterExtra, 'sauce', 'cut'], 'none', modifiers))
-      .toMatch(/no-scallion.*signature-cut.*\.png/)
+      .toMatch(/no-scallion.*signature-cut.*\.webp/)
     expect(stageArt('signature', [...afterExtra, 'sauce', 'cut', 'roll'], 'none', modifiers))
-      .toMatch(/no-scallion.*signature-roll.*\.png/)
+      .toMatch(/no-scallion.*signature-roll.*\.webp/)
   })
 
   it('resolves every supported topping and keeps it visible through finishing gestures', () => {
@@ -111,7 +111,7 @@ describe('kitchen art manifest', () => {
     for (const [ingredient, completed] of cases) {
       const modifiers = [{ kind: 'extra' as const, ingredient }]
       expect(stageArt('signature', [...completed, 'sauce', 'cut', 'roll'], 'none', modifiers))
-        .toMatch(new RegExp(`flattened.*${ingredient}.*\\.png`))
+        .toMatch(new RegExp(`flattened.*${ingredient}.*\\.webp`))
     }
   })
 
@@ -119,8 +119,8 @@ describe('kitchen art manifest', () => {
     const modifiers = [{ kind: 'without' as const, ingredient: 'scallion' as const }]
 
     for (const recipeId of Object.keys(RECIPES) as (keyof typeof RECIPES)[]) {
-      expect(stageArt(recipeId, ['cut'], 'none', modifiers)).toMatch(new RegExp(`no-scallion.*${recipeId}-cut.*\\.png`))
-      expect(stageArt(recipeId, ['cut', 'roll'], 'none', modifiers)).toMatch(new RegExp(`no-scallion.*${recipeId}-roll.*\\.png`))
+      expect(stageArt(recipeId, ['cut'], 'none', modifiers)).toMatch(new RegExp(`no-scallion.*${recipeId}-cut.*\\.webp`))
+      expect(stageArt(recipeId, ['cut', 'roll'], 'none', modifiers)).toMatch(new RegExp(`no-scallion.*${recipeId}-roll.*\\.webp`))
     }
   })
 

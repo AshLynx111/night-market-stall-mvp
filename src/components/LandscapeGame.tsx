@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
-import homeScreen from '../assets/approved/main-ui/home-screen-user-final.png'
-import daySelectScreen from '../assets/approved/main-ui/day-select-user-final.png'
-import cleanKitchenScreen from '../assets/approved/main-ui/night-market-clean-background.png'
-import expandedLiveKitchenScreen from '../assets/approved/main-ui/kitchen-screen-live-expanded-clean.png'
-import summaryScreen from '../assets/approved/main-ui/summary-screen-user-final.png'
-import settingsScreen from '../assets/approved/main-ui/settings-screen-user-final.png'
-import settingsSliderCleanPatch from '../assets/approved/main-ui/settings-slider-clean-patch.png'
-import menuBoard from '../assets/approved/menu/menu-board.png'
-import celebrityArt from '../assets/approved/events/day5-celebrity-event-key-art.png'
-import takeawayBag from '../assets/approved/menu/takeaway-bag.png'
+import homeScreen from '../assets/runtime/main-ui/home-screen-user-final.webp'
+import daySelectScreen from '../assets/runtime/main-ui/day-select-user-final.webp'
+import cleanKitchenScreen from '../assets/runtime/main-ui/night-market-clean-background.webp'
+import expandedLiveKitchenScreen from '../assets/runtime/main-ui/kitchen-screen-live-expanded-clean.webp'
+import summaryScreen from '../assets/runtime/main-ui/summary-screen-user-final.webp'
+import settingsScreen from '../assets/runtime/main-ui/settings-screen-user-final.webp'
+import settingsSliderCleanPatch from '../assets/runtime/main-ui/settings-slider-clean-patch.webp'
+import menuBoard from '../assets/runtime/menu/menu-board.webp'
+import celebrityArt from '../assets/runtime/events/day5-celebrity-event-key-art.webp'
+import takeawayBag from '../assets/runtime/menu/takeaway-bag.webp'
 import { loadAudioSettings, saveAudioSettings, type AudioSettings } from '../game/audioSettings'
 import { applyAudioSettings, unlockAndPlayBgm } from '../game/bgm'
 import { setAudioEffectLevel } from '../game/audio'
@@ -36,7 +36,7 @@ type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
 const SAVE_KEY = 'night-market-campaign-v1'
 export const GUIDED_TUTORIAL_KEY = 'night-market-guided-tutorial-v2'
-const STAGE_ART = import.meta.glob('../assets/approved/stages/*/*.png', { eager: true, import: 'default', query: '?url' }) as Record<string, string>
+const STAGE_ART = import.meta.glob('../assets/runtime/stages/*/*.webp', { eager: true, import: 'default', query: '?url' }) as Record<string, string>
 const STAGE_NAMES: Record<Recipe['id'], string[]> = {
   classic: ['00-empty', '01-noodle', '02-egg', '03-hot-dog', '04-sauce', '05-scallion', '06-cut', '07-roll', '08-pack'],
   'big-eater': ['00-empty', '01-noodle', '02-egg', '03-second-noodle', '04-second-egg', '05-sauce', '06-scallion', '07-cut', '08-roll', '09-pack'],
@@ -205,6 +205,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
           className="game-screen__background"
           src={kitchenScreen}
           alt=""
+          fetchPriority="high"
           aria-hidden="true"
           data-kitchen-live-plate
           data-kitchen-rack-background={rackBackground}
@@ -266,7 +267,7 @@ function FoodStage({ recipe, completedCount, currentStep, repeatProgress = 0 }: 
   const stageNames = STAGE_NAMES[recipe.id]
   const stageIndex = clamp(completedCount, 0, stageNames.length - 1)
   const stageName = stageNames[stageIndex]
-  const stagePath = `../assets/approved/stages/${recipe.id}/${recipe.id}-${stageName}.png`
+  const stagePath = `../assets/runtime/stages/${recipe.id}/${recipe.id}-${stageName}.webp`
   const completeStageArt = STAGE_ART[stagePath]
   if (completeStageArt) return <img className="stage-complete-art" src={completeStageArt} alt={`${recipe.shortName}制作阶段 ${stageIndex + 1}`} />
   const applied = recipe.steps.slice(0, completedCount)
@@ -505,7 +506,7 @@ export function LandscapeGame() {
     return (
       <main className="home-screen home-screen--illustrated ui-screen" data-screen-art="home" data-ui-screen="home" style={{ '--home-bg': `url(${homeScreen})` } as React.CSSProperties}>
         <div className="home-screen__plate">
-          <img className="home-screen__art" src={homeScreen} alt="夜市烤冷面游戏主菜单" />
+          <img className="home-screen__art" src={homeScreen} alt="夜市烤冷面游戏主菜单" fetchPriority="high" />
           <nav className="home-screen__hotspots" aria-label="主菜单">
             <button className="home-hotspot home-hotspot--start" aria-label="开始游戏" onClick={() => startDay(DAYS[0])}><span className="sr-only">开始游戏</span></button>
             <button className="home-hotspot home-hotspot--continue" aria-label="继续游戏" onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}><span className="sr-only">继续游戏</span></button>
@@ -535,6 +536,7 @@ export function LandscapeGame() {
             data-screen-art="settings"
             src={settingsScreen}
             alt="夜市烤冷面游戏音量设置"
+            fetchPriority="high"
           />
           <img
             className="settings-screen__rail-clean-patch"
@@ -605,7 +607,7 @@ export function LandscapeGame() {
     return (
       <main className="select-screen ui-screen" data-screen-art="select" data-ui-screen="select" style={{ '--home-bg': `url(${daySelectScreen})` } as React.CSSProperties}>
         <div className="select-screen__plate">
-          <img className="select-screen__art" src={daySelectScreen} alt="夜市营业日选择" />
+          <img className="select-screen__art" src={daySelectScreen} alt="夜市营业日选择" fetchPriority="high" />
           <div className="select-screen__controls">
             <button className="select-hotspot select-hotspot--back" type="button" aria-label="返回主菜单" onClick={() => openScreen('home')}><span className="sr-only">返回主菜单</span></button>
             <button className="select-hotspot select-hotspot--menu" type="button" aria-label="查看完整菜单" onClick={openMenu}><span className="sr-only">查看完整菜单</span></button>
@@ -649,7 +651,7 @@ export function LandscapeGame() {
     return (
       <main className="summary-screen ui-screen" data-screen-art="summary" data-ui-screen="summary" style={{ '--home-bg': `url(${summaryScreen})` } as React.CSSProperties}>
         <div className="summary-screen__plate">
-          <img className="summary-screen__art" src={summaryScreen} alt="今日打烊营业总结" />
+          <img className="summary-screen__art" src={summaryScreen} alt="今日打烊营业总结" fetchPriority="high" />
           <section className="summary-card">
             <h1 className="summary-title" data-dynamic-mask="parchment">{day.title} · 营业完成</h1>
             <div className="summary-stars" data-dynamic-mask="parchment" aria-label={`${stars} 星`}>{starsText(stars)}</div>

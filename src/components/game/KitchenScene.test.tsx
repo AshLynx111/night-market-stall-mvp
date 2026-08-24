@@ -228,7 +228,7 @@ describe('KitchenScene', () => {
       expect(label?.dataset.ingredientLabelFor).toBe(ingredient.dataset.ingredientId)
       expect(label?.textContent?.trim()).not.toBe('')
     })
-    expect(container.querySelector('[data-ingredient-id="sauce"] .table-ingredient__food-art')?.getAttribute('src')).toContain('ingredient-sauce.png')
+    expect(container.querySelector('[data-ingredient-id="sauce"] .table-ingredient__food-art')?.getAttribute('src')).toContain('ingredient-sauce.webp')
     expect(container.querySelector('[data-sauce-brush]')).toBeNull()
 
     expect(controls).toHaveLength(rackSlots)
@@ -259,7 +259,7 @@ describe('KitchenScene', () => {
 
     expect(foodArt).toHaveLength(15)
     foodArt.forEach((image) => {
-      expect(image.src).toMatch(/\/menu\/ingredients\/ingredient-[^/]+\.png$/)
+      expect(image.src).toMatch(/\/menu\/ingredients\/ingredient-[^/]+\.webp$/)
       expect(image.src).not.toContain('ingredient-bin-')
     })
   })
@@ -449,7 +449,7 @@ describe('KitchenScene', () => {
     const { container, dispatch } = renderScene({ ...start, slots })
     const brush = container.querySelector('[data-ingredient-id="sauce"]')!
 
-    expect(brush.querySelector('img')?.getAttribute('src')).toContain('ingredient-sauce.png')
+    expect(brush.querySelector('img')?.getAttribute('src')).toContain('ingredient-sauce.webp')
     expect(container.querySelector('[data-gesture-slot-id="left"]')).toBeNull()
     pointer(brush, 'pointerup', { pointerId: 61, pointerType })
 

@@ -56,7 +56,7 @@ describe('approved kitchen live derivative', () => {
 
   it('renders the clean background and reserves the derivative for expanded-rack overlay', () => {
     const source = readFileSync('src/components/LandscapeGame.tsx', 'utf8')
-    expect(source).toContain("night-market-clean-background.png")
+    expect(source).toContain("night-market-clean-background.webp")
     expect(source).toContain('data-kitchen-live-plate')
     expect(source).toContain('data-kitchen-expanded-rack-overlay')
   })
@@ -66,6 +66,6 @@ describe('approved expanded kitchen live derivative', () => {
   it('tracks the distinct 3 by 5 physical-rack plate at the approved canvas size', async () => {
     const metadata = await sharp('src/assets/approved/main-ui/kitchen-screen-live-expanded-clean.png').metadata()
     expect(metadata).toMatchObject({ width: 1672, height: 941 })
-    expect(readFileSync('src/components/LandscapeGame.tsx', 'utf8')).toContain('kitchen-screen-live-expanded-clean.png')
+    expect(readFileSync('src/components/LandscapeGame.tsx', 'utf8')).toContain('kitchen-screen-live-expanded-clean.webp')
   })
 })

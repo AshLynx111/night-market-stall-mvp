@@ -1,0 +1,146 @@
+{
+  "capturedAt": "2026-08-24T13:55:07.378Z",
+  "baseUrl": "http://127.0.0.1:4185",
+  "viewport": {
+    "width": 1440,
+    "height": 810
+  },
+  "budgets": {
+    "homeBytes": 819200,
+    "day1TransitionBytes": 3584000
+  },
+  "screenshots": [
+    {
+      "filename": "optimized-home-1440x810.png",
+      "state": "cold production home screen"
+    },
+    {
+      "filename": "optimized-day1-1440x810.png",
+      "state": "cold home to guided Day 1 transition"
+    },
+    {
+      "filename": "optimized-first-delivery-1440x810.png",
+      "state": "first guided order completed with optimized artwork"
+    }
+  ],
+  "network": {
+    "home": {
+      "bytes": 659482,
+      "browserTransferBytes": 660129,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:4185/index.html",
+          "initiatorType": "navigation",
+          "browserEncodedBytes": 0,
+          "transferBytes": 0,
+          "deploymentBytes": 560
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/index-GuybGeat.js",
+          "initiatorType": "script",
+          "browserEncodedBytes": 96472,
+          "transferBytes": 96772,
+          "deploymentBytes": 96262
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/index-DzVh9R07.css",
+          "initiatorType": "link",
+          "browserEncodedBytes": 15437,
+          "transferBytes": 15737,
+          "deploymentBytes": 15340
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/home-screen-user-final-C8Xn3OJv.webp",
+          "initiatorType": "img",
+          "browserEncodedBytes": 547320,
+          "transferBytes": 547620,
+          "deploymentBytes": 547320
+        }
+      ]
+    },
+    "day1Transition": {
+      "bytes": 3053267,
+      "browserTransferBytes": 3056267,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:4185/assets/night-market-clean-background-DRPGRpdO.webp",
+          "initiatorType": "css",
+          "browserEncodedBytes": 296036,
+          "transferBytes": 296336,
+          "deploymentBytes": 296036
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/arriving-DHz3mSVl.webp",
+          "initiatorType": "img",
+          "browserEncodedBytes": 34594,
+          "transferBytes": 34894,
+          "deploymentBytes": 34594
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+          "initiatorType": "img",
+          "browserEncodedBytes": 77598,
+          "transferBytes": 77898,
+          "deploymentBytes": 77598
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/ingredient-egg-BoDG0Gmq.webp",
+          "initiatorType": "img",
+          "browserEncodedBytes": 29990,
+          "transferBytes": 30290,
+          "deploymentBytes": 29990
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+          "initiatorType": "img",
+          "browserEncodedBytes": 38158,
+          "transferBytes": 38458,
+          "deploymentBytes": 38158
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/ingredient-sauce-BSdOzBjl.webp",
+          "initiatorType": "img",
+          "browserEncodedBytes": 58488,
+          "transferBytes": 58788,
+          "deploymentBytes": 58488
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/ingredient-scallion-DvRe8lSY.webp",
+          "initiatorType": "img",
+          "browserEncodedBytes": 46942,
+          "transferBytes": 47242,
+          "deploymentBytes": 46942
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/night-market-bgm-Dsrq8fsL.mp3",
+          "initiatorType": "audio",
+          "browserEncodedBytes": 2401307,
+          "transferBytes": 2401607,
+          "deploymentBytes": 2401307
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/ordering-8D5bdyzm.webp",
+          "initiatorType": "img",
+          "browserEncodedBytes": 37150,
+          "transferBytes": 37450,
+          "deploymentBytes": 37150
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/waiting-Bl1ofHc3.webp",
+          "initiatorType": "img",
+          "browserEncodedBytes": 33004,
+          "transferBytes": 33304,
+          "deploymentBytes": 33004
+        }
+      ]
+    }
+  },
+  "flowChecks": {
+    "homeWithinBudget": true,
+    "day1TransitionWithinBudget": true,
+    "completedOrders": 1,
+    "tutorialCompleted": true,
+    "allImagesDecoded": true
+  },
+  "consoleErrors": []
+}

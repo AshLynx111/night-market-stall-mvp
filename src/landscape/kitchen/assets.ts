@@ -72,38 +72,38 @@ export const HEAT_CHECKPOINTS = [
 ] as const satisfies readonly HeatCheckpoint[]
 
 const customerEmotionAssets = import.meta.glob<string>(
-  '../../assets/approved/customers/emotions/**/*.png',
+  '../../assets/runtime/customers/emotions/**/*.webp',
   { eager: true, import: 'default', query: '?url' },
 )
 
 const customerMotionAssets = import.meta.glob<string>(
-  '../../assets/approved/customers/motion/*-motion.png',
+  '../../assets/runtime/customers/motion/*-motion.webp',
   { eager: true, import: 'default', query: '?url' },
 )
 
 const cumulativeStageAssets = import.meta.glob<string>(
-  '../../assets/approved/stages/*/*.png',
+  '../../assets/runtime/stages/*/*.webp',
   { eager: true, import: 'default', query: '?url' },
 )
 
 const heatStageAssets = import.meta.glob<string>(
-  '../../assets/approved/stages/heat/*/*.png',
+  '../../assets/runtime/stages/heat/*/*.webp',
   { eager: true, import: 'default', query: '?url' },
 )
 
 const flattenedStageAssets = import.meta.glob<string>(
-  '../../assets/approved/stages/flattened/*/*.png',
+  '../../assets/runtime/stages/flattened/*/*.webp',
   { eager: true, import: 'default', query: '?url' },
 )
 
 const noScallionStageAssets = import.meta.glob<string>(
-  '../../assets/approved/stages/modifiers/no-scallion/*.png',
+  '../../assets/runtime/stages/modifiers/no-scallion/*.webp',
   { eager: true, import: 'default', query: '?url' },
 )
 
 const ingredientAssets: Record<IngredientId, string> = INGREDIENT_BIN_ART
 const ingredientFoodAssets = import.meta.glob<string>(
-  '../../assets/approved/menu/ingredients/*.png',
+  '../../assets/runtime/menu/ingredients/*.webp',
   { eager: true, import: 'default', query: '?url' },
 )
 const INGREDIENT_FOOD_FILE_IDS: Record<IngredientId, string> = {
@@ -174,12 +174,12 @@ export function isKitchenCustomerArtId(value: string): value is KitchenCustomerA
 }
 
 export function customerEmotionArt(artId: KitchenCustomerArtId, mood: CustomerMood): string {
-  const key = `../../assets/approved/customers/emotions/${artId}/${mood}.png`
+  const key = `../../assets/runtime/customers/emotions/${artId}/${mood}.webp`
   return requireAsset(customerEmotionAssets, key)
 }
 
 export function customerMotionAtlas(artId: KitchenCustomerArtId): string {
-  const key = `../../assets/approved/customers/motion/${artId}-motion.png`
+  const key = `../../assets/runtime/customers/motion/${artId}-motion.webp`
   return requireAsset(customerMotionAssets, key)
 }
 
@@ -188,7 +188,7 @@ export function ingredientArt(id: IngredientId): string {
 }
 
 export function ingredientFoodArt(id: IngredientId): string {
-  return requireAsset(ingredientFoodAssets, `../../assets/approved/menu/ingredients/ingredient-${INGREDIENT_FOOD_FILE_IDS[id]}.png`)
+  return requireAsset(ingredientFoodAssets, `../../assets/runtime/menu/ingredients/ingredient-${INGREDIENT_FOOD_FILE_IDS[id]}.webp`)
 }
 
 export function stageArt(
@@ -202,7 +202,7 @@ export function stageArt(
       (candidate) => candidate.recipeId === recipeId && sameSteps(candidate.completedStepIds, completedStepIds),
     )
     if (exactCheckpoint) {
-      const key = `../../assets/approved/stages/heat/${recipeId}/${exactCheckpoint.checkpoint}-${heatState}.png`
+      const key = `../../assets/runtime/stages/heat/${recipeId}/${exactCheckpoint.checkpoint}-${heatState}.webp`
       return requireAsset(heatStageAssets, key)
     }
   }
@@ -215,27 +215,27 @@ export function stageArt(
   const topping = completedTopping(recipeId, completedStepIds, modifiers)
   if (withoutScallion && completedStepIds.includes('roll')) {
     if (topping === 'enoki' || topping === 'chili-powder') {
-      const key = `../../assets/approved/stages/flattened/${recipeId}/no-scallion-${recipeId}-roll--${topping}.png`
+      const key = `../../assets/runtime/stages/flattened/${recipeId}/no-scallion-${recipeId}-roll--${topping}.webp`
       return requireAsset(flattenedStageAssets, key)
     }
-    const key = `../../assets/approved/stages/modifiers/no-scallion/${recipeId}-roll.png`
+    const key = `../../assets/runtime/stages/modifiers/no-scallion/${recipeId}-roll.webp`
     return requireAsset(noScallionStageAssets, key)
   }
   if (withoutScallion && completedStepIds.includes('cut')) {
     if (topping === 'enoki' || topping === 'chili-powder') {
-      const key = `../../assets/approved/stages/flattened/${recipeId}/no-scallion-${recipeId}-cut--${topping}.png`
+      const key = `../../assets/runtime/stages/flattened/${recipeId}/no-scallion-${recipeId}-cut--${topping}.webp`
       return requireAsset(flattenedStageAssets, key)
     }
-    const key = `../../assets/approved/stages/modifiers/no-scallion/${recipeId}-cut.png`
+    const key = `../../assets/runtime/stages/modifiers/no-scallion/${recipeId}-cut.webp`
     return requireAsset(noScallionStageAssets, key)
   }
   const stageIndex = canonicalIndex + 1
   const index = String(stageIndex).padStart(2, '0')
   const stage = canonicalIndex < 0 ? 'empty' : canonicalSteps[canonicalIndex].id
   if (topping) {
-    const key = `../../assets/approved/stages/flattened/${recipeId}/${recipeId}-${index}-${stage}--${topping}.png`
+    const key = `../../assets/runtime/stages/flattened/${recipeId}/${recipeId}-${index}-${stage}--${topping}.webp`
     return requireAsset(flattenedStageAssets, key)
   }
-  const key = `../../assets/approved/stages/${recipeId}/${recipeId}-${index}-${stage}.png`
+  const key = `../../assets/runtime/stages/${recipeId}/${recipeId}-${index}-${stage}.webp`
   return requireAsset(cumulativeStageAssets, key)
 }

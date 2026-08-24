@@ -16,7 +16,7 @@ const gameplaySource = [
 
 describe('reference-master gameplay composition', () => {
   it('uses the clean illustrated kitchen background without baked HUD signs', () => {
-    expect(landscapeSource).toContain("night-market-clean-background.png")
+    expect(landscapeSource).toContain("night-market-clean-background.webp")
     expect(landscapeSource).toContain('data-kitchen-expanded-rack-overlay')
   })
 
@@ -43,18 +43,18 @@ describe('reference-master gameplay composition', () => {
   })
 
   it('uses the supplied home-menu plate with transparent interaction hotspots', () => {
-    expect(landscapeSource).toContain('home-screen-user-final.png')
+    expect(landscapeSource).toContain('home-screen-user-final.webp')
     expect(landscapeSource).toContain('home-screen__art')
     expect(landscapeCss).toMatch(/\.home-hotspot\s*\{/)
   })
 
   it('imports the approved screen plates and gives each screen a semantic art marker', () => {
     for (const filename of [
-      'home-screen-user-final.png',
-      'day-select-user-final.png',
-      'night-market-clean-background.png',
-      'summary-screen-user-final.png',
-      'settings-screen-user-final.png',
+      'home-screen-user-final.webp',
+      'day-select-user-final.webp',
+      'night-market-clean-background.webp',
+      'summary-screen-user-final.webp',
+      'settings-screen-user-final.webp',
     ]) {
       expect(landscapeSource).toContain(filename)
     }
