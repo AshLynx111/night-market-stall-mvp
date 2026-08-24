@@ -1,0 +1,82 @@
+{
+  "capturedAt": "2026-08-24T13:29:35.784Z",
+  "baseUrl": "http://127.0.0.1:4183",
+  "viewport": {
+    "width": 667,
+    "height": 375
+  },
+  "syntheticSafeInsets": {
+    "top": 8,
+    "right": 44,
+    "bottom": 21,
+    "left": 44
+  },
+  "screenshots": [
+    {
+      "filename": "notched-gameplay-667x375.png",
+      "state": "tap placement inside synthetic landscape safe area"
+    },
+    {
+      "filename": "notched-pause-667x375.png",
+      "state": "pause dialog inside synthetic landscape safe area"
+    }
+  ],
+  "bounds": {
+    "safe": {
+      "left": 44,
+      "top": 8,
+      "right": 623,
+      "bottom": 354,
+      "width": 579,
+      "height": 346
+    },
+    "logical": {
+      "left": 44,
+      "top": 18.15625,
+      "right": 623,
+      "bottom": 343.84375,
+      "width": 579,
+      "height": 325.6875
+    },
+    "pause": {
+      "left": 499.7684326171875,
+      "top": 22.981250762939453,
+      "right": 551.7684326171875,
+      "bottom": 74.98125457763672,
+      "width": 52,
+      "height": 52.000003814697266
+    },
+    "scale": 0.40208333333333335,
+    "computedInsets": {
+      "top": "8px",
+      "right": "44px",
+      "bottom": "21px",
+      "left": "44px"
+    },
+    "modal": {
+      "left": 49.34417724609375,
+      "top": 67.07205200195312,
+      "right": 617.6558227539062,
+      "bottom": 319.6959228515625,
+      "width": 568.3116455078125,
+      "height": 252.62387084960938
+    },
+    "modalClose": {
+      "left": 570.5419311523438,
+      "top": 73.94283294677734,
+      "right": 610.7850952148438,
+      "bottom": 114.18597412109375,
+      "width": 40.2431640625,
+      "height": 40.243141174316406
+    }
+  },
+  "flowChecks": {
+    "logicalInsideSafeViewport": true,
+    "pauseControlInsideSafeViewport": true,
+    "pauseDialogInsideSafeViewport": true,
+    "closeControlInsideSafeViewport": true,
+    "touchPlacementCompleted": true,
+    "pauseDialogOpened": true
+  },
+  "consoleErrors": []
+}
