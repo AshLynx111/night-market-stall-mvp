@@ -47,12 +47,15 @@
 - Produces: `.game-screen__safe-viewport` wrapping `.game-screen__logical`.
 - Produces: `--game-safe-top`, `--game-safe-right`, `--game-safe-bottom`, and `--game-safe-left`.
 
-- [ ] Add CSS contract assertions for all four `env(safe-area-inset-*, 0px)` variables, safe viewport insets, and centered logical scene transform.
+- [ ] Add CSS contract assertions for all four `env(safe-area-inset-*, 0px)` variables, safe viewport insets, and the logical scene's explicit 50%/50% center transform.
 - [ ] Add an App assertion that the live kitchen renders the safe viewport around the logical scene.
+- [ ] Add a HUD test requiring one touch-pointer action even when a compatibility click follows.
 - [ ] Run the focused layout and App tests and confirm the new assertions fail.
 - [ ] Replace `window.innerWidth` scaling in `LandscapeGame` with `useGameplayViewport()`.
 - [ ] Wrap the fixed logical scene in the safe viewport without moving any kitchen child.
 - [ ] Add safe-area custom properties, viewport positioning, clipping, centering, and rotate prompt padding.
+- [ ] Constrain menu, help, and abandonment dialogs to the safe content box and keep the short-landscape close control inside it.
+- [ ] Make the day, pause, and sound buttons act on touch pointer release and de-duplicate the following click.
 - [ ] Run the focused tests and require them to pass.
 
 ### Task 3: Notched landscape browser QA and final verification
@@ -68,7 +71,7 @@
 
 - [ ] Start Vite on a strict local port and open Day 2 at 667×375 with the guided tutorial marked complete.
 - [ ] Override the four safe variables on `.game-screen` and wait for ResizeObserver to update scale.
-- [ ] Assert logical bounds are inside safe viewport bounds with at most one pixel tolerance.
+- [ ] Assert logical, HUD control, pause panel, and close-control bounds are inside safe viewport bounds with at most one pixel tolerance.
 - [ ] Complete one tap-to-place action, open the pause dialog, and capture both states.
 - [ ] Require zero browser console errors and write the measured rectangles and scale to `qa-results.json`.
 - [ ] Run `npm test -- --run` and require every test to pass.

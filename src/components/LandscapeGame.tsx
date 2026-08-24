@@ -30,6 +30,7 @@ import { DeliveryFeedback, type DeliveryFeedbackValue } from './game/DeliveryFee
 import { GameIcon } from './game/GameIcon'
 import { AccessibleDialog } from './game/AccessibleDialog'
 import { useGameplayShortcuts } from '../landscape/useGameplayShortcuts'
+import { useGameplayViewport } from '../landscape/useGameplayViewport'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -111,17 +112,10 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   const [deliveryFeedback, setDeliveryFeedback] = useState<DeliveryFeedbackValue | null>(() => qaDeliveryFeedback
     ? { id: 1, income: 9, quality: 96 }
     : null)
-  const [sceneScale, setSceneScale] = useState(() => Math.min(window.innerWidth / 1440, window.innerHeight / 810))
-  const sceneInverseScale = sceneScale > 0 ? Math.max(1, 1 / sceneScale) : 1
+  const { viewportRef, sceneScale, sceneInverseScale } = useGameplayViewport()
   const expandedRack = availableIngredients(day.day).length > 6
   const kitchenScreen = cleanKitchenScreen
   const rackBackground = expandedRack ? 'expanded-3x5' : 'approved-2x3'
-
-  useEffect(() => {
-    const updateScale = () => setSceneScale(Math.min(window.innerWidth / 1440, window.innerHeight / 810))
-    window.addEventListener('resize', updateScale)
-    return () => window.removeEventListener('resize', updateScale)
-  }, [])
 
   useEffect(() => {
     dispatch({ type: 'SET_PAUSED', paused })
@@ -197,15 +191,16 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
       inert={backgroundInert}
       aria-hidden={backgroundInert || undefined}
     >
-      <div
-        className="game-screen__logical"
-        style={{
-          '--game-bg': `url(${kitchenScreen})`,
-          '--kitchen-live-bg': `url(${kitchenScreen})`,
-          '--scene-scale': sceneScale,
-          '--scene-inverse-scale': sceneInverseScale,
-        } as React.CSSProperties}
-      >
+      <div className="game-screen__safe-viewport" ref={viewportRef}>
+        <div
+          className="game-screen__logical"
+          style={{
+            '--game-bg': `url(${kitchenScreen})`,
+            '--kitchen-live-bg': `url(${kitchenScreen})`,
+            '--scene-scale': sceneScale,
+            '--scene-inverse-scale': sceneInverseScale,
+          } as React.CSSProperties}
+        >
         <img
           className="game-screen__background"
           src={kitchenScreen}
@@ -255,6 +250,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
             </section>
           </div>
         )}
+        </div>
       </div>
       <div className="rotate-device"><GameIcon name="roll" /><b>请横屏体验夜市经营</b></div>
     </main>

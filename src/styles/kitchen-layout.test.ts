@@ -63,6 +63,33 @@ describe('logical kitchen layout CSS', () => {
     expect(landscapeCss).toMatch(/\.game-screen\s*\{[^}]*min-height:\s*0;/)
   })
 
+  it('fits the fixed kitchen scene inside all four device safe-area insets', () => {
+    const gameScreen = landscapeCss.match(/\.game-screen\s*\{[^}]+\}/s)?.[0] ?? ''
+    const safeViewport = landscapeCss.match(/\.game-screen__safe-viewport\s*\{[^}]+\}/s)?.[0] ?? ''
+    const logicalScene = landscapeCss.match(/\.game-screen__logical\s*\{[^}]+\}/s)?.[0] ?? ''
+
+    expect(gameScreen).toContain('--game-safe-top: env(safe-area-inset-top, 0px)')
+    expect(gameScreen).toContain('--game-safe-right: env(safe-area-inset-right, 0px)')
+    expect(gameScreen).toContain('--game-safe-bottom: env(safe-area-inset-bottom, 0px)')
+    expect(gameScreen).toContain('--game-safe-left: env(safe-area-inset-left, 0px)')
+    expect(safeViewport).toContain('top: var(--game-safe-top)')
+    expect(safeViewport).toContain('right: var(--game-safe-right)')
+    expect(safeViewport).toContain('bottom: var(--game-safe-bottom)')
+    expect(safeViewport).toContain('left: var(--game-safe-left)')
+    expect(safeViewport).toContain('place-items: center')
+    expect(logicalScene).toContain('position: absolute')
+    expect(logicalScene).toContain('left: 50%')
+    expect(logicalScene).toContain('top: 50%')
+    expect(logicalScene).toContain('transform: translate(-50%, -50%) scale(var(--scene-scale))')
+    expect(landscapeCss).toMatch(/\.game-icon\s*\{[^}]*pointer-events:\s*none;/)
+    const backdrop = landscapeCss.match(/\.modal-backdrop\s*\{[^}]+\}/s)?.[0] ?? ''
+    expect(backdrop).toContain('env(safe-area-inset-top, 0px)')
+    expect(backdrop).toContain('env(safe-area-inset-right, 0px)')
+    expect(backdrop).toContain('env(safe-area-inset-bottom, 0px)')
+    expect(backdrop).toContain('env(safe-area-inset-left, 0px)')
+    expect(landscapeCss).toMatch(/\.menu-modal\s*\{[^}]*width:\s*min\(1050px, 100%\)/)
+  })
+
   it('provides a dedicated 844 by 390 campaign-shell layout with no forced body overflow', () => {
     const short = mediaBlock('@media (max-height: 690px)', '@media (orientation: portrait)')
 

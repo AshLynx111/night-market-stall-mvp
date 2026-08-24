@@ -22,7 +22,10 @@ Alternatives rejected:
 - `.game-screen__safe-viewport` is absolutely inset by those variables and centers the logical scene.
 - The safe viewport clips any transformed overflow and never intercepts pointer events beyond the scene itself.
 - The portrait rotate-device layer remains outside the safe viewport and pads its message by the same inset variables.
+- Menu, help, and abandonment backdrops use the environment insets as minimum padding. Their panels size against the remaining content box, and the short-landscape close control stays inside the panel.
 - Custom properties allow deterministic browser QA to simulate non-zero device insets.
+- Decorative `GameIcon` SVGs ignore pointer targeting so transformed mobile controls receive a stable tap target directly on the button.
+- Day, pause, and sound controls activate directly on a touch pointer release and suppress the immediately following compatibility click. Mouse and keyboard activation continue through normal click behavior.
 
 ## Scene fitting hook
 
@@ -38,7 +41,7 @@ Alternatives rejected:
 
 - `LandscapeGame` stops calculating scale from global window dimensions.
 - The new safe viewport wraps only `.game-screen__logical`.
-- The logical scene becomes a centered fixed-size child and scales around its center without translation-based positioning.
+- The logical scene is absolutely centered at 50%/50% inside the safe viewport and keeps its existing center translation plus scale transform. Explicit centering avoids CSS Grid's overflow-safe fallback aligning an oversized pre-transform child to the start edge.
 - `--scene-scale` and `--scene-inverse-scale` remain available to every existing HUD, tutorial, and kitchen rule.
 
 ## Error handling

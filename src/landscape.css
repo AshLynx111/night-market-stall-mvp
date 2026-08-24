@@ -26,6 +26,7 @@ html, body, #root { width: 100%; min-width: 320px; min-height: 100%; margin: 0; 
 body { overflow: hidden; background: #101a2c; }
 button { font: inherit; color: inherit; touch-action: manipulation; }
 button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
+.game-icon { pointer-events: none; }
 
 .ui-screen { animation: ui-screen-enter .24s cubic-bezier(.2, .7, .2, 1) both; }
 @keyframes ui-screen-enter {
@@ -225,7 +226,28 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .select-screen .upgrade-shop > button:nth-of-type(2) .upgrade-shop__copy { left: 22%; top: 13%; width: 75%; height: 74%; background: #19324a; box-shadow: 0 0 8px 7px #19324a; }
 
 /* Gameplay */
-.game-screen { min-height: 0; display: grid; place-items: center; background: #101a2c; isolation: isolate; }
+.game-screen {
+  --game-safe-top: env(safe-area-inset-top, 0px);
+  --game-safe-right: env(safe-area-inset-right, 0px);
+  --game-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --game-safe-left: env(safe-area-inset-left, 0px);
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  background: #101a2c;
+  isolation: isolate;
+}
+.game-screen__safe-viewport {
+  position: absolute;
+  z-index: 0;
+  top: var(--game-safe-top);
+  right: var(--game-safe-right);
+  bottom: var(--game-safe-bottom);
+  left: var(--game-safe-left);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
 .game-screen__logical { position: absolute; left: 50%; top: 50%; width: 1440px; height: 810px; overflow: hidden; transform: translate(-50%, -50%) scale(var(--scene-scale)); transform-origin: 50% 50%; background: #18253a; isolation: isolate; }
 .game-screen__logical::before { content: ""; position: absolute; z-index: -2; inset: 0; background-image: var(--game-bg); background-size: cover; background-position: center; }
 .game-screen__logical::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(rgba(6,15,28,.1) 0 54%, rgba(16,15,17,.08) 68%, rgba(15,16,20,.14)); pointer-events: none; }
@@ -478,17 +500,17 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .summary-actions button:last-child span { left: 18%; width: 64%; background: #ec6614; box-shadow: 0 0 7px 6px #ec6614; }
 
 /* Modals */
-.modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 18px; background: rgba(7,13,22,.78); backdrop-filter: blur(7px); animation: ui-backdrop-in .18s ease-out both; }
+.modal-backdrop { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; box-sizing: border-box; padding: max(18px, env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) max(18px, env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px)); background: rgba(7,13,22,.78); backdrop-filter: blur(7px); animation: ui-backdrop-in .18s ease-out both; }
 .menu-modal,
 .help-modal,
-.abandon-modal { position: relative; max-height: 92vh; border: 3px solid #664937; border-radius: 22px 17px 25px 15px; background: #fff0cd; box-shadow: 0 20px 60px rgba(0,0,0,.45); animation: ui-panel-in .22s cubic-bezier(.2, .8, .2, 1.1) both; }
+.abandon-modal { position: relative; box-sizing: border-box; max-width: 100%; max-height: 100%; border: 3px solid #664937; border-radius: 22px 17px 25px 15px; background: #fff0cd; box-shadow: 0 20px 60px rgba(0,0,0,.45); animation: ui-panel-in .22s cubic-bezier(.2, .8, .2, 1.1) both; }
 @keyframes ui-backdrop-in { from { opacity: 0; } }
 @keyframes ui-panel-in { from { opacity: 0; transform: translateY(12px) scale(.97); } }
-.menu-modal { width: min(1050px, 92vw); padding: 14px 14px 10px; }
+.menu-modal { width: min(1050px, 100%); padding: 14px 14px 10px; }
 .menu-modal img { display: block; width: 100%; max-height: 76vh; object-fit: contain; border-radius: 8px; }
 .menu-modal p { margin: 8px 0 0; color: #7c5d4b; text-align: center; font-size: 11px; font-weight: 800; }
 .modal-close { position: absolute; z-index: 3; right: -13px; top: -13px; width: 41px; height: 41px; border: 2px solid #65372b; border-radius: 50%; background: #c84f31; color: white; cursor: pointer; font-size: 24px; font-weight: 900; box-shadow: 0 3px 0 #71392c; }
-.help-modal { width: min(460px, 90vw); padding: 27px 30px 24px; }
+.help-modal { width: min(460px, 100%); padding: 27px 30px 24px; }
 .help-modal__icon { display: block; text-align: center; font-size: 45px; }
 .help-modal__icon .game-icon { width: 46px; height: 46px; color: #b95a31; }
 .help-modal h2 { margin: 3px 0 17px; text-align: center; font: 900 27px/1 KaiTi, STKaiti, serif; }
@@ -496,7 +518,7 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .help-modal > div b { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #d06437; color: white; }
 .help-modal > div p { margin: 0; color: #6c5748; font-size: 13px; line-height: 1.5; }
 .help-modal .primary-button { width: 100%; margin-top: 14px; }
-.abandon-modal { width: min(420px, 90vw); padding: 27px 30px 24px; text-align: center; }
+.abandon-modal { width: min(420px, 100%); padding: 27px 30px 24px; text-align: center; }
 .abandon-modal h2 { margin: 0; font: 900 27px/1.2 KaiTi, STKaiti, serif; }
 .abandon-modal p { margin: 12px 0 20px; color: #6c5748; font-size: 13px; line-height: 1.5; }
 .abandon-modal > div { display: flex; justify-content: center; gap: 10px; }
@@ -608,12 +630,13 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
     transform: scale(var(--scene-inverse-scale));
     transform-origin: bottom right;
   }
+  .modal-close { right: 4px; top: 4px; }
 }
 
 @media (orientation: portrait) and (max-width: 760px) {
   .game-screen > *:not(.rotate-device) { visibility: hidden; }
   .game-screen::before { filter: blur(5px); }
-  .rotate-device { position: absolute; z-index: 200; inset: 0; display: grid; place-content: center; gap: 14px; background: rgba(8,15,27,.76); color: #fff0ce; text-align: center; }
+  .rotate-device { position: absolute; z-index: 200; inset: 0; display: grid; place-content: center; gap: 14px; box-sizing: border-box; padding: max(24px, var(--game-safe-top)) max(24px, var(--game-safe-right)) max(24px, var(--game-safe-bottom)) max(24px, var(--game-safe-left)); background: rgba(8,15,27,.76); color: #fff0ce; text-align: center; }
   .rotate-device .game-icon { width: 62px; height: 62px; animation: active-card 1.2s infinite; }
   .rotate-device b { font-size: 18px; letter-spacing: 2px; }
   .home-card { left: 7vw; width: 86vw; }

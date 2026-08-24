@@ -209,6 +209,9 @@ describe('App landscape route', () => {
     const kitchenRoot = createRoot(kitchenContainer)
     act(() => kitchenRoot.render(<App />))
     expect(kitchenContainer.querySelector('[data-screen-art="kitchen"]')).not.toBeNull()
+    const safeViewport = kitchenContainer.querySelector('.game-screen__safe-viewport')
+    expect(safeViewport).not.toBeNull()
+    expect(safeViewport?.firstElementChild?.classList.contains('game-screen__logical')).toBe(true)
     act(() => kitchenRoot.unmount())
 
     window.history.replaceState({}, '', '/?playDay=1&qaScreen=summary')
