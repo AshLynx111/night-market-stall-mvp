@@ -31,6 +31,8 @@ import { GameIcon } from './game/GameIcon'
 import { AccessibleDialog } from './game/AccessibleDialog'
 import { useGameplayShortcuts } from '../landscape/useGameplayShortcuts'
 import { useGameplayViewport } from '../landscape/useGameplayViewport'
+import { nextRetentionCue, retentionCueForDay } from '../landscape/dayRetention'
+import { DayRetentionCue } from './game/DayRetentionCue'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -604,6 +606,10 @@ export function LandscapeGame() {
   }
 
   if (screen === 'select') {
+    const playableDay = highestPlayableDay(save)
+    const campaignComplete = DAYS.every((item) => (save.bestStars[item.day] ?? 0) > 0)
+    const currentRetentionDay = campaignComplete ? DAYS.length : playableDay
+    const currentRetentionCue = retentionCueForDay(currentRetentionDay)
     return (
       <main className="select-screen ui-screen" data-screen-art="select" data-ui-screen="select" style={{ '--home-bg': `url(${daySelectScreen})` } as React.CSSProperties}>
         <div className="select-screen__plate">
@@ -613,25 +619,32 @@ export function LandscapeGame() {
             <button className="select-hotspot select-hotspot--menu" type="button" aria-label="查看完整菜单" onClick={openMenu}><span className="sr-only">查看完整菜单</span></button>
             <section className="day-grid" aria-label="营业日">
               {DAYS.map((item) => {
-                const locked = item.day > highestPlayableDay(save)
+                const locked = item.day > playableDay
+                const currentTarget = !locked && item.day === currentRetentionDay
+                const currentHook = campaignComplete ? '全章完成 · 冲三星' : currentRetentionCue.shortHook
+                const accessibleLabel = locked
+                  ? `第 ${item.day} 天尚未解锁，完成前一天后解锁`
+                  : currentTarget
+                    ? `进入第 ${item.day} 天：${item.title}。当前目标：${item.goal}。${currentHook}`
+                    : `进入第 ${item.day} 天：${item.title}`
                 return (
                   <button
                     className={`day-card day-hotspot day-card--${item.day}${locked ? ' is-locked' : ''}`}
                     key={item.day}
                     disabled={locked}
-                    aria-label={locked ? `第 ${item.day} 天尚未解锁，完成前一天后解锁` : `进入第 ${item.day} 天：${item.title}`}
+                    aria-label={accessibleLabel}
                     onClick={() => startDay(item)}
                   >
                     <span className="day-card__stars day-hotspot__stars" data-dynamic-mask="parchment" aria-hidden="true">{starsText(save.bestStars[item.day] ?? 0)}</span>
-                    {(locked || item.day >= 3) && (
+                    {(locked || currentTarget) && (
                       <span
-                        className={`day-hotspot__status${item.day >= 3 ? ' day-hotspot__status--mask' : ''}`}
-                        data-dynamic-mask={item.day >= 3 ? 'parchment' : undefined}
-                        aria-hidden="true"
+                        className="day-hotspot__status day-hotspot__status--mask"
+                        data-dynamic-mask="parchment"
+                        data-current-day-hook={currentTarget ? true : undefined}
+                        aria-hidden={currentTarget ? undefined : true}
                       >
                         {locked && <><span className="day-card__lock" aria-hidden="true"><GameIcon name="lock" /></span>完成前一天后解锁</>}
-                        {!locked && item.day === 5 && '★ 特别人物登场'}
-                        {!locked && item.day === 6 && '明星同款热潮'}
+                        {currentTarget && currentHook}
                       </span>
                     )}
                   </button>
@@ -648,6 +661,7 @@ export function LandscapeGame() {
 
   if (screen === 'summary') {
     const stars = starsForDay(qualities, mistakes)
+    const nextCue = nextRetentionCue(day.day)
     return (
       <main className="summary-screen ui-screen" data-screen-art="summary" data-ui-screen="summary" style={{ '--home-bg': `url(${summaryScreen})` } as React.CSSProperties}>
         <div className="summary-screen__plate">
@@ -656,6 +670,7 @@ export function LandscapeGame() {
             <h1 className="summary-title" data-dynamic-mask="parchment">{day.title} · 营业完成</h1>
             <div className="summary-stars" data-dynamic-mask="parchment" aria-label={`${stars} 星`}>{starsText(stars)}</div>
             <p className="summary-message" data-dynamic-mask="parchment">{stars === 3 ? '手速和品质都无可挑剔，夜市里已经有人专程来找你了！' : stars === 2 ? '生意很稳，继续升级摊位就能应付更大的客流。' : '开店不容易，再练一轮一定会更顺手。'}</p>
+            <DayRetentionCue cue={nextCue} />
             <div className="summary-stats" aria-label="营业数据">
               <div><b className="summary-stat__value" data-dynamic-mask="parchment">{served}</b><span className="sr-only">完成订单</span></div>
               <div><b className="summary-stat__value" data-dynamic-mask="parchment">{average}%</b><span className="sr-only">平均满意度</span></div>
@@ -666,7 +681,7 @@ export function LandscapeGame() {
             <UpgradeShop save={save} onBuy={buyUpgrade} />
             <div className="summary-actions">
               <button type="button" aria-label="再玩一次" onClick={() => startDay(day)}><span>再玩一次</span></button>
-              <button type="button" aria-label={day.day < 6 ? '进入下一天' : '返回选关'} onClick={() => day.day < 6 ? startDay(DAYS[day.day]) : openScreen('select')}><span>{day.day < 6 ? '进入下一天' : '返回选关'}</span></button>
+              <button type="button" aria-label={nextCue ? `进入下一天：${nextCue.title}` : '返回选关'} onClick={() => nextCue ? startDay(DAYS[day.day]) : openScreen('select')}><span>{nextCue ? `明天 · ${nextCue.title}` : '返回选关'}</span></button>
             </div>
           </section>
         </div>

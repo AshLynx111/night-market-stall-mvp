@@ -129,6 +129,10 @@ const INGREDIENT_STEP_DETAILS: Record<IngredientId, Pick<CookingStep, 'label' | 
   enoki: { label: '金针菇', verb: '加一份金针菇', icon: '+', asset: enoki },
 }
 
+export function ingredientLabel(id: IngredientId): string {
+  return INGREDIENT_STEP_DETAILS[id].label
+}
+
 const BASE: CookingStep[] = [
   { id: 'noodle', label: '面皮', verb: '铺上面皮', icon: '▱', asset: noodleSheet },
   { id: 'egg', label: '鸡蛋', verb: '打入鸡蛋', icon: '●', asset: egg },

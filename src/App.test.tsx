@@ -317,6 +317,8 @@ describe('App landscape route', () => {
     expect(container.querySelectorAll('.day-card')).toHaveLength(6)
     expect(container.querySelectorAll<HTMLButtonElement>('.day-card:disabled')).toHaveLength(5)
     expect(container.querySelectorAll('.day-card:disabled .day-card__lock[aria-hidden="true"]')).toHaveLength(5)
+    expect(container.querySelectorAll('[data-current-day-hook]')).toHaveLength(1)
+    expect(container.querySelector('[data-current-day-hook]')?.textContent).toContain('经典款解锁')
     expect([...container.querySelectorAll('button')].some((button) => button.textContent?.includes('返回'))).toBe(true)
     act(() => root.unmount())
   })
@@ -343,14 +345,16 @@ describe('App landscape route', () => {
       '进入第 1 天：开张第一天',
       '进入第 2 天：饭量挑战',
       '进入第 3 天：香味出圈',
-      '进入第 4 天：夜市高峰',
+      '进入第 4 天：夜市高峰。当前目标：在高峰期完成奥尔良鸡排订单。奥尔良鸡排解锁',
       '第 5 天尚未解锁，完成前一天后解锁',
       '第 6 天尚未解锁，完成前一天后解锁',
     ])
     expect(days.map((button) => button.disabled)).toEqual([false, false, false, false, true, true])
     expect([...container.querySelectorAll('.day-hotspot__stars')].map((stars) => stars.textContent))
       .toEqual(['★★★', '★★☆', '★☆☆', '☆☆☆', '☆☆☆', '☆☆☆'])
-    expect(container.querySelectorAll('[data-dynamic-mask="parchment"]')).toHaveLength(10)
+    expect(container.querySelectorAll('[data-current-day-hook]')).toHaveLength(1)
+    expect(container.querySelector('[data-current-day-hook]')?.textContent).toContain('奥尔良鸡排解锁')
+    expect(container.querySelectorAll('[data-dynamic-mask="parchment"]')).toHaveLength(9)
 
     act(() => days[4].click())
     expect(container.querySelector('.select-screen')).not.toBeNull()
@@ -382,6 +386,10 @@ describe('App landscape route', () => {
     expect(replayContainer.querySelector('.summary-stars')?.textContent).toBe('★★★')
     expect([...replayContainer.querySelectorAll('.summary-stat__value')].map((value) => value.textContent))
       .toEqual(['3', '92%', '0', '¥36'])
+    expect(replayContainer.querySelector('[data-day-retention-cue="next"]')?.textContent)
+      .toContain('明日 · 饭量挑战')
+    expect(replayContainer.querySelector('[data-day-retention-cue="next"]')?.textContent)
+      .toContain('大胃王解锁')
     expect(replayContainer.querySelectorAll('[data-dynamic-mask="parchment"]')).toHaveLength(7)
     act(() => replayContainer.querySelector<HTMLButtonElement>('[aria-label="再玩一次"]')!.click())
     expect(replayContainer.querySelector('[data-screen-art="kitchen"]')).not.toBeNull()
@@ -393,25 +401,34 @@ describe('App landscape route', () => {
     const nextContainer = document.createElement('div')
     const nextRoot = createRoot(nextContainer)
     act(() => nextRoot.render(<App />))
-    act(() => nextContainer.querySelector<HTMLButtonElement>('[aria-label="进入下一天"]')!.click())
+    expect(nextContainer.querySelector<HTMLButtonElement>('[aria-label="进入下一天：饭量挑战"]')?.textContent)
+      .toContain('明天 · 饭量挑战')
+    act(() => nextContainer.querySelector<HTMLButtonElement>('[aria-label="进入下一天：饭量挑战"]')!.click())
     expect(nextContainer.querySelector('[data-screen-art="kitchen"]')).not.toBeNull()
     expect(nextContainer.textContent).toContain('第 2 天')
     act(() => nextRoot.unmount())
   })
 
   it('renders the Day 6 summary state and returns to selection from the final action', () => {
+    localStorage.setItem('night-market-campaign-v1', JSON.stringify({
+      bestStars: { 1: 3, 2: 3, 3: 2, 4: 2, 5: 1, 6: 1 },
+    }))
     window.history.replaceState({}, '', '/?playDay=6&qaScreen=summary')
     const container = document.createElement('div')
     const root = createRoot(container)
     act(() => root.render(<App />))
 
     expect(container.querySelector('.summary-title')?.textContent).toBe('明星同款 · 营业完成')
+    expect(container.querySelector('[data-day-retention-cue="complete"]')?.textContent)
+      .toContain('六日营业完成')
     expect([...container.querySelectorAll('.summary-stat__value')].map((value) => value.textContent))
       .toEqual(['8', '92%', '0', '¥36'])
     const finalAction = container.querySelector<HTMLButtonElement>('[aria-label="返回选关"]')!
     expect(finalAction.textContent).toContain('返回选关')
     act(() => finalAction.click())
     expect(container.querySelector('.select-screen__plate')).not.toBeNull()
+    expect(container.querySelectorAll('[data-current-day-hook]')).toHaveLength(1)
+    expect(container.querySelector('[data-current-day-hook]')?.textContent).toContain('全章完成 · 冲三星')
     act(() => root.unmount())
   })
 

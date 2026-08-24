@@ -482,8 +482,11 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .summary-stat__value { position: absolute; z-index: 2; margin: 0; display: grid; place-items: center; background: #f6dfb4; box-shadow: 0 0 9px 7px #f6dfb4; color: #4b2f20; text-align: center; }
 .summary-title { left: 29.6%; top: 22.6%; width: 40.6%; height: 7.1%; font: 900 clamp(17px, 2.5vw, 42px)/1.1 KaiTi, STKaiti, serif; letter-spacing: .08em; }
 .summary-stars { left: 41.2%; top: 30.5%; width: 17.7%; height: 7.3%; color: #e79a2f; font-size: clamp(22px, 3.1vw, 52px); letter-spacing: .09em; text-shadow: 0 2px 0 #a85d27; }
-.summary-message { left: 30.9%; top: 38.8%; width: 38.4%; height: 4%; color: #70513c; font-size: clamp(8px, 1.08vw, 18px); white-space: nowrap; }
-.summary-stats { position: absolute; left: 20.9%; top: 44%; width: 58.2%; height: 13.9%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.7%; pointer-events: none; }
+.summary-message { left: 30.9%; top: 38.2%; width: 38.4%; height: 3%; color: #70513c; font-size: clamp(8px, 1.08vw, 18px); white-space: nowrap; }
+.summary-retention { position: absolute; z-index: 3; left: 31%; top: 41.7%; width: 38%; height: 3.8%; display: flex; align-items: center; justify-content: center; gap: 1.2em; border: 1px solid rgb(151 83 34 / .35); border-radius: 999px; background: #f4d9a4; box-shadow: 0 2px 0 rgb(111 59 28 / .18), inset 0 1px rgb(255 250 218 / .75); color: #754126; font-size: clamp(7px, .86vw, 14px); white-space: nowrap; }
+.summary-retention b { color: #a54425; font-weight: 950; }
+.summary-retention span { font-weight: 850; }
+.summary-stats { position: absolute; left: 20.9%; top: 46%; width: 58.2%; height: 12%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.7%; pointer-events: none; }
 .summary-stats > div { position: relative; }
 .summary-stat__value { left: 13%; top: 12%; width: 74%; height: 40%; color: #9b3f1f; font-size: clamp(18px, 2.7vw, 45px); line-height: 1; }
 .summary-screen .upgrade-shop__funds { left: 28.2%; top: 63.5%; width: 9.4%; height: 9.1%; background: #5a2c0e; box-shadow: 0 0 8px 7px #5a2c0e; }
