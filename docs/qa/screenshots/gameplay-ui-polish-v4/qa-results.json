@@ -1,0 +1,36 @@
+{
+  "capturedAt": "2026-08-24T13:02:28.161Z",
+  "baseUrl": "http://127.0.0.1:4182",
+  "viewport": {
+    "width": 844,
+    "height": 390
+  },
+  "screenshots": [
+    {
+      "filename": "tap-cooking-844x390.png",
+      "state": "noodle placed with one touchscreen tap"
+    },
+    {
+      "filename": "tap-ready-to-deliver-844x390.png",
+      "state": "packed dish ready for tap delivery"
+    },
+    {
+      "filename": "tap-delivery-feedback-844x390.png",
+      "state": "dish delivered with one touchscreen tap"
+    }
+  ],
+  "touchChecks": {
+    "afterNoodleTap": {
+      "occupiedSlots": 1,
+      "label": "面皮，点击自动放置，也可拖到指定铁板"
+    },
+    "trayLabel": "经典款烤冷面，点击自动递给对应顾客，也可拖给顾客",
+    "delivery": {
+      "completedOrders": 1,
+      "tutorialCompleted": true,
+      "trayDishRemoved": true,
+      "coins": 46
+    }
+  },
+  "consoleErrors": []
+}
