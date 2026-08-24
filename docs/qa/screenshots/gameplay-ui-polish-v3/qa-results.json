@@ -1,0 +1,62 @@
+{
+  "capturedAt": "2026-08-24T12:35:24.721Z",
+  "baseUrl": "http://127.0.0.1:4181",
+  "screenshots": [
+    {
+      "filename": "desktop-1440x810-help.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "help opened with H and keyboard focus trapped"
+    },
+    {
+      "filename": "desktop-1440x810-pause-menu.png",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "state": "pause menu opened with Escape"
+    },
+    {
+      "filename": "mobile-844x390-help.png",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": "help opened with H and keyboard focus trapped"
+    },
+    {
+      "filename": "mobile-844x390-pause-menu.png",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "state": "pause menu opened with Escape"
+    }
+  ],
+  "keyboardChecks": {
+    "desktop": {
+      "firstHelpFocus": "关闭玩法说明",
+      "reverseWrappedTo": "知道了，开摊！",
+      "menuFocus": "modal-close",
+      "restoredLabel": "暂停并打开菜单",
+      "soundBefore": "关闭音乐",
+      "soundAfter": "开启音乐"
+    },
+    "progressbar": {
+      "min": "0",
+      "max": "4",
+      "now": "0"
+    },
+    "mobile": {
+      "firstHelpFocus": "关闭玩法说明",
+      "reverseWrappedTo": "知道了，开摊！",
+      "menuFocus": "modal-close",
+      "restoredLabel": "暂停并打开菜单",
+      "soundBefore": "关闭音乐",
+      "soundAfter": "开启音乐"
+    }
+  },
+  "consoleErrors": []
+}
