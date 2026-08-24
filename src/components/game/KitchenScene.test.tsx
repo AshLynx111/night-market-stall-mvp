@@ -364,6 +364,33 @@ describe('KitchenScene', () => {
     expect(dispatch).toHaveBeenCalledWith({ type: 'TAP_EGG', slotId: 'left' })
   })
 
+  it('taps any ingredient into the first currently eligible slot', () => {
+    const { container, dispatch } = renderScene(activeKitchenState(1, 1))
+    const noodle = container.querySelector('[data-ingredient-id="noodle"]')!
+
+    pointer(noodle, 'pointerdown', { x: 20, y: 20, pointerId: 71, pointerType: 'touch' })
+    pointer(noodle, 'pointerup', { x: 20, y: 20, pointerId: 71, pointerType: 'touch' })
+
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({ type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
+    expect(noodle.getAttribute('aria-label')).toContain('点击自动放置')
+    expect(noodle.getAttribute('aria-label')).toContain('拖到指定铁板')
+  })
+
+  it('treats small touch movement as one tap and ignores its follow-up pointer click', () => {
+    const { container, dispatch } = renderScene(activeKitchenState(1, 1))
+    const noodle = container.querySelector('[data-ingredient-id="noodle"]')!
+
+    pointer(noodle, 'pointerdown', { x: 20, y: 20, pointerId: 72, pointerType: 'touch' })
+    pointer(noodle, 'pointermove', { x: 26, y: 26, pointerId: 72, pointerType: 'touch' })
+    pointer(noodle, 'pointerup', { x: 26, y: 26, pointerId: 72, pointerType: 'touch' })
+    act(() => noodle.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1 })))
+
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({ type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'noodle' })
+    expect(container.querySelector('.table-ingredient__ghost')).toBeNull()
+  })
+
   it('drops a dragged ingredient onto the slot intersecting its release point', () => {
     const { container, dispatch } = renderScene(activeKitchenState(1, 1))
     const noodle = container.querySelector('[data-ingredient-id="noodle"]')!
@@ -641,6 +668,48 @@ describe('KitchenScene', () => {
     expect(dispatch).toHaveBeenCalledWith({ type: 'DELIVER', slotId: 'left', customerId: 'customer-0' })
   })
 
+  it('taps a tray dish once to deliver it to the active matching customer', () => {
+    const start = activeKitchenState(1, 1)
+    const slots = [...start.slots] as KitchenState['slots']
+    slots[0] = {
+      ...slots[0], phase: 'on-tray', orderId: start.customers[0].order.id, recipeId: 'classic',
+      completedStepIds: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cut', 'roll', 'pack'],
+      sauceCoverage: 1, cutTargetIndices: [0, 1, 2], rollProgress: 1,
+    }
+    const { container, dispatch } = renderScene({ ...start, slots })
+    const dish = container.querySelector('[data-tray-slot-id="left"]')!
+
+    pointer(dish, 'pointerdown', { x: 30, y: 30, pointerId: 73, pointerType: 'touch' })
+    pointer(dish, 'pointerup', { x: 30, y: 30, pointerId: 73, pointerType: 'touch' })
+    act(() => dish.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1 })))
+
+    expect(dispatch).toHaveBeenCalledTimes(1)
+    expect(dispatch).toHaveBeenCalledWith({ type: 'DELIVER', slotId: 'left', customerId: 'customer-0' })
+    expect(dish.getAttribute('aria-label')).toContain('点击自动递给对应顾客')
+  })
+
+  it.each(['entering', 'leaving'] as const)('does not tap-deliver to a %s customer', (presence) => {
+    const active = activeKitchenState(1, 1)
+    const slots = [...active.slots] as KitchenState['slots']
+    slots[0] = {
+      ...slots[0], phase: 'on-tray', orderId: active.customers[0].order.id, recipeId: 'classic',
+      completedStepIds: ['noodle', 'egg', 'hot-dog', 'sauce', 'scallion', 'cut', 'roll', 'pack'],
+      sauceCoverage: 1, cutTargetIndices: [0, 1, 2], rollProgress: 1,
+    }
+    const state = {
+      ...active,
+      slots,
+      customers: active.customers.map((customer, index) => index === 0 ? { ...customer, presence } : customer),
+    }
+    const { container, dispatch } = renderScene(state)
+    const dish = container.querySelector('[data-tray-slot-id="left"]')!
+
+    pointer(dish, 'pointerdown', { pointerId: 74, pointerType: 'touch' })
+    pointer(dish, 'pointerup', { pointerId: 74, pointerType: 'touch' })
+
+    expect(dispatch).not.toHaveBeenCalled()
+  })
+
   it.each([
     ['mouse', 'entering'],
     ['touch', 'entering'],
@@ -773,7 +842,7 @@ describe('KitchenScene', () => {
     state = kitchenReducer(state, { type: 'TICK', deltaMs: 60_000 })
     rerender(state)
     expect(container.querySelector('[data-tutorial-step="hot-dog"]')).not.toBeNull()
-    expect(container.textContent).toContain('煎好啦，拖入热狗')
+    expect(container.textContent).toContain('煎好啦，点击或拖入热狗')
     expect(container.querySelector('[data-ingredient-id="hot-dog"]')?.hasAttribute('disabled')).toBe(false)
 
     state = kitchenReducer(state, { type: 'DROP_INGREDIENT', slotId: 'left', ingredient: 'hot-dog' })

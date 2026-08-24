@@ -11,9 +11,9 @@ const HAND_FOR_STEP: Partial<Record<TutorialStep, TutorialHandKind>> = {
 
 export function tutorialShortInstruction(step: TutorialStep, sauceSelected = false) {
   const copy: Record<TutorialStep, string> = {
-    'customer-arrival': '看看顾客的订单', noodle: '拖面皮到铁板', egg: '点击鸡蛋', 'wait-egg': '等蛋液变金黄',
-    'hot-dog': '拖热狗到铁板', 'wait-hot-dog': '等热狗煎香', sauce: sauceSelected ? '左右刷两下' : '点击酱刷',
-    scallion: '拖葱花到铁板', cut: '沿虚线切三刀', roll: '向右滑动卷起', pack: '点击装盘', serve: '拖给顾客', done: '第一份完成',
+    'customer-arrival': '看看顾客的订单', noodle: '点面皮，或拖到铁板', egg: '点击鸡蛋', 'wait-egg': '等蛋液变金黄',
+    'hot-dog': '点热狗，或拖到铁板', 'wait-hot-dog': '等热狗煎香', sauce: sauceSelected ? '左右刷两下' : '点击酱刷',
+    scallion: '点葱花，或拖到铁板', cut: '沿虚线切三刀', roll: '向右滑动卷起', pack: '点击装盘', serve: '点餐盒，或拖给顾客', done: '第一份完成',
   }
   return copy[step]
 }

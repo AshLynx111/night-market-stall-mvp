@@ -354,6 +354,8 @@
 .serving-tray { position: absolute; z-index: 10; left: 73.5%; top: 59%; width: 14%; height: 25%; display: flex; align-items: center; justify-content: center; gap: 2%; pointer-events: none; }
 .serving-tray__dish { width: 48%; height: 70%; padding: 0; border: 0; background: transparent; cursor: grab; pointer-events: auto; touch-action: none; }
 .serving-tray__dish img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; filter: drop-shadow(0 5px 3px rgb(0 0 0 / .42)); }
+.serving-tray__dish:active img { transform: translateY(3px) scale(.94); filter: drop-shadow(0 2px 2px rgb(0 0 0 / .36)); }
+.serving-tray__dish:focus-visible { outline: 4px solid #ffd66b; outline-offset: 2px; border-radius: 12px; }
 
 .kitchen-scene__trash { position: absolute; z-index: 12; right: 1.5%; bottom: 2.5%; display: flex; gap: 5px; pointer-events: none; }
 .kitchen-scene__trash button { min-width: 58px; padding: 5px 7px; border: 2px solid #4d3b32; border-radius: 11px; background: rgb(255 237 197 / .9); color: #81412f; cursor: pointer; font-size: 9px; font-weight: 900; pointer-events: auto; touch-action: manipulation; box-shadow: 0 3px 0 rgb(44 29 23 / .45); }

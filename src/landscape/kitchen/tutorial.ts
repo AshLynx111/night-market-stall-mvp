@@ -19,17 +19,17 @@ export type TutorialStep =
 
 const INSTRUCTIONS: Record<TutorialStep, string> = {
   'customer-arrival': '第一位顾客正在从旁边走来，等她站稳后看看订单。',
-  noodle: '先从一张面皮开始。',
+  noodle: '点击面皮会自动放到左边铁板，也可以拖过去。',
   egg: '点击或拖动鸡蛋到左边铁板。',
   'wait-egg': '鸡蛋正在煎，变成金黄色再加热狗。',
-  'hot-dog': '煎好啦，拖入热狗。',
+  'hot-dog': '煎好啦，点击或拖入热狗。',
   'wait-hot-dog': '热狗正在煎，火候正好后再刷酱。',
   sauce: '拿起酱刷，在饼上水平左右刷两下即可。',
-  scallion: '撒上葱花。',
+  scallion: '点击或拖入葱花。',
   cut: '沿三条提示横线各切一刀。',
   roll: '从左向右滑动，把烤冷面卷起来。',
   pack: '点击卷好的烤冷面装盘。',
-  serve: '把托盘里的烤冷面递给左边顾客。',
+  serve: '点击餐盒自动交付，也可以拖给左边顾客。',
   done: '第一份完成！现在可以同时服务顾客了。',
 }
 

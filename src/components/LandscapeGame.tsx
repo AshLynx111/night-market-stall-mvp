@@ -766,7 +766,7 @@ function HelpModal({ onClose }: { onClose: () => void }) {
         <span className="help-modal__icon" aria-hidden="true"><GameIcon name="heat" /></span>
         <h2>三步学会摆摊</h2>
         <div><b>1</b><p>看左侧订单和铁板上方的“下一步”。</p></div>
-        <div><b>2</b><p>点击或拖动食材；刷酱时先拿起桌面酱刷，再沿提示来回滑动。切段要划过三条不同横线。</p></div>
+        <div><b>2</b><p>点一下食材会自动放到正确铁板，也可拖到指定铁板；餐盒同样支持点击交付或拖给顾客。</p></div>
         <div><b>3</b><p>在耐心耗尽前装袋，速度越快、失误越少，收入和满意度越高。</p></div>
         <button className="primary-button" onClick={onClose}>知道了，开摊！</button>
     </AccessibleDialog>

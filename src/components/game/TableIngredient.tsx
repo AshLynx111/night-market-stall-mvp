@@ -1,6 +1,7 @@
 import { useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react'
 import type { IngredientId } from '../../landscape/campaign'
 import { toLogicalScenePoint } from '../../landscape/geometry'
+import { isIntentionalPointerDrag } from '../../landscape/pointerIntent'
 import {
   KITCHEN_RACK_LAYOUTS,
   ghostInnerPolygon,
@@ -14,6 +15,7 @@ import type { SlotId } from '../../landscape/kitchen/types'
 
 interface DragState {
   pointerId: number
+  pointerType: string
   startX: number
   startY: number
   moving: boolean
@@ -49,6 +51,10 @@ export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted
     ]
   })())
   const ghostMaskPolygon = JSON.stringify(ghostInnerPolygon())
+  const applyTap = () => {
+    if (id === 'egg') onTapEgg()
+    else onKeyboardApply?.(id)
+  }
 
   const finish = (event: ReactPointerEvent<HTMLButtonElement>, cancelled = false) => {
     const active = drag.current
@@ -59,8 +65,8 @@ export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted
     } else if (!cancelled && active.moving) {
       const slotId = findSlotAtPoint(event.clientX, event.clientY)
       if (slotId) onDrop(id, slotId)
-    } else if (!cancelled && id === 'egg') {
-      onTapEgg()
+    } else if (!cancelled) {
+      applyTap()
     }
     drag.current = null
     setGhost(null)
@@ -79,19 +85,33 @@ export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted
         data-control-polygon={controlPolygon}
         data-painted={painted ? 'true' : undefined}
         style={rackStyle}
-        aria-label={id === 'egg' ? `${label}，点击或拖到铁板` : `${label}，拖到铁板`}
+        aria-label={id === 'sauce'
+          ? `${label}，点击拿起酱刷`
+          : `${label}，点击自动放置，也可拖到指定铁板`}
         aria-pressed={id === 'sauce' ? painted : undefined}
-        onClick={() => id === 'sauce' && !disabled && onKeyboardApply?.(id)}
+        onClick={(event) => {
+          if (!disabled && event.detail === 0) applyTap()
+        }}
         onPointerDown={(event) => {
           if (disabled) return
           event.currentTarget.setPointerCapture?.(event.pointerId)
-          drag.current = { pointerId: event.pointerId, startX: event.clientX, startY: event.clientY, moving: false }
+          drag.current = {
+            pointerId: event.pointerId,
+            pointerType: event.pointerType,
+            startX: event.clientX,
+            startY: event.clientY,
+            moving: false,
+          }
         }}
         onPointerMove={(event) => {
           if (disabled) return
           const active = drag.current
           if (!active || active.pointerId !== event.pointerId) return
-          if (!active.moving && Math.hypot(event.clientX - active.startX, event.clientY - active.startY) > 4) active.moving = true
+          if (!active.moving && isIntentionalPointerDrag(
+            active.pointerType,
+            event.clientX - active.startX,
+            event.clientY - active.startY,
+          )) active.moving = true
           if (active.moving) setGhost(toLogicalScenePoint(event.currentTarget, event.clientX, event.clientY))
         }}
         onPointerUp={(event) => {
