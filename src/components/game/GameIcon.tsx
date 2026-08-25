@@ -14,6 +14,8 @@ export type GameIconName =
   | 'without'
   | 'sign'
   | 'lock'
+  | 'help'
+  | 'close'
 
 const ICON_PATHS: Record<GameIconName, ReactNode> = {
   coin: <><circle cx="12" cy="12" r="8" /><path d="M9 9.3c.8-1.2 4.8-1 4.8.8 0 2.3-4.9 1-4.9 3.4 0 1.9 4.7 2.1 5.5.6M12 6.7v10.6" /></>,
@@ -29,6 +31,8 @@ const ICON_PATHS: Record<GameIconName, ReactNode> = {
   without: <><circle cx="12" cy="12" r="8" /><path d="M8.5 8.5l7 7" /></>,
   sign: <><path d="M8 5h8l1 5-2 2v7H9v-7l-2-2 1-5Z" /><path d="M10 5V3h4v2M9 12h6" /></>,
   lock: <><rect x="6" y="10" width="12" height="10" rx="2" /><path d="M9 10V7a3 3 0 0 1 6 0v3M12 14v2" /></>,
+  help: <><circle cx="12" cy="12" r="9" /><path d="M9.7 9.2a2.7 2.7 0 0 1 5.1 1.3c0 2.1-2.8 2.3-2.8 4.1M12 18h.01" /></>,
+  close: <><path d="m7 7 10 10M17 7 7 17" /></>,
 }
 
 export function GameIcon({ name, title, className }: {
@@ -39,6 +43,7 @@ export function GameIcon({ name, title, className }: {
   return (
     <svg
       className={`game-icon${className ? ` ${className}` : ''}`}
+      data-game-icon={name}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

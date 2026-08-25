@@ -27,4 +27,21 @@ describe('production gameplay icon contract', () => {
 
     expect(violations).toEqual([])
   })
+
+  it('uses inline SVG for gameplay help and modal close controls', async () => {
+    const source = await readFile(path.join(process.cwd(), 'src', 'components', 'LandscapeGame.tsx'), 'utf8')
+    expect(source).not.toMatch(/className="help-fab"[^>]*>？<\/button>/)
+    expect(source).not.toMatch(/className="modal-close"[^>]*>×<\/button>/)
+    expect(source).toContain('<GameIcon name="help" />')
+    expect(source).toContain('<GameIcon name="close" />')
+  })
+
+  it('covers baked select icons with the accepted 2.5D SVG family and distinguishes disabled upgrades', async () => {
+    const css = await readFile(path.join(process.cwd(), 'src', 'landscape.css'), 'utf8')
+    expect(css).toMatch(/\.select-screen \.upgrade-shop__icon\s*\{[^}]*display:\s*grid;/s)
+    expect(css).toMatch(/\.select-screen \.upgrade-card-icon,\s*\.summary-screen \.upgrade-card-icon\s*\{[^}]*filter:\s*drop-shadow/s)
+    expect(css).toMatch(/\.upgrade-shop > button:disabled\s*\{[^}]*background:[^}]*cursor:\s*not-allowed;/s)
+    expect(css).toMatch(/\.upgrade-shop > button:disabled \.upgrade-shop__icon\s*\{[^}]*opacity:\s*1;[^}]*filter:\s*none;/s)
+    expect(css).toMatch(/\.upgrade-shop > button:disabled \.upgrade-shop__copy > \*,\s*\.upgrade-shop > button:disabled \.upgrade-card-icon\s*\{[^}]*opacity:\s*\.62;/s)
+  })
 })

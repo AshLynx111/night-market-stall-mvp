@@ -16,4 +16,11 @@ describe('GameIcon', () => {
     expect(markup).toContain('<path')
     expect(markup).not.toContain('🔒')
   })
+
+  it.each(['help', 'close'] as const)('provides a platform-independent %s control icon', (name) => {
+    const markup = renderToStaticMarkup(<GameIcon name={name} />)
+    expect(markup).toContain(`data-game-icon="${name}"`)
+    expect(markup).toContain('<path')
+    expect(markup).not.toMatch(/[？×]/)
+  })
 })

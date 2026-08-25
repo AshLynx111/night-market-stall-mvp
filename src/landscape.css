@@ -213,8 +213,11 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .upgrade-shop__funds span { font-weight: 900; }
 .upgrade-shop__funds b { color: #ffc259; font-size: clamp(15px, 2.35vw, 39px); line-height: 1; }
 .upgrade-shop > button { color: #fff0cf; }
-.upgrade-shop > button:disabled { cursor: default; }
-.upgrade-shop > button:disabled .upgrade-shop__copy { opacity: 1; }
+.upgrade-shop > button:disabled { border-radius: 16px; background: rgb(31 18 12 / .3); box-shadow: inset 0 0 0 2px rgb(42 25 18 / .35); cursor: not-allowed; }
+.upgrade-shop > button:disabled .upgrade-shop__copy,
+.upgrade-shop > button:disabled .upgrade-shop__icon { opacity: 1; filter: none; }
+.upgrade-shop > button:disabled .upgrade-shop__copy > *,
+.upgrade-shop > button:disabled .upgrade-card-icon { opacity: .62; filter: saturate(.62) brightness(.82); }
 .upgrade-shop__icon { display: none; }
 .upgrade-shop__copy { flex-direction: column; gap: .2em; line-height: 1.15; }
 .upgrade-shop__copy b { font-size: clamp(11px, 1.35vw, 23px); }
@@ -224,6 +227,10 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .select-screen .upgrade-shop > button:nth-of-type(2) { left: 59.7%; top: 80.1%; width: 22.4%; height: 15%; }
 .select-screen .upgrade-shop > button:nth-of-type(1) .upgrade-shop__copy { left: 22%; top: 13%; width: 75%; height: 74%; background: #80321e; box-shadow: 0 0 8px 7px #80321e; }
 .select-screen .upgrade-shop > button:nth-of-type(2) .upgrade-shop__copy { left: 22%; top: 13%; width: 75%; height: 74%; background: #19324a; box-shadow: 0 0 8px 7px #19324a; }
+.select-screen .upgrade-shop__icon { position: absolute; z-index: 2; display: grid; place-items: center; background: var(--upgrade-icon-well); box-shadow: 0 0 9px 8px var(--upgrade-icon-well); pointer-events: none; }
+.select-screen .upgrade-shop__funds .upgrade-shop__icon--funds { --upgrade-icon-well: #315437; left: -38%; top: 3%; width: 36%; height: 94%; }
+.select-screen .upgrade-shop > button:nth-of-type(1) .upgrade-shop__icon { --upgrade-icon-well: #80321e; left: 4%; top: 16%; width: 22%; height: 68%; }
+.select-screen .upgrade-shop > button:nth-of-type(2) .upgrade-shop__icon { --upgrade-icon-well: #19324a; left: 4%; top: 16%; width: 22%; height: 68%; }
 
 /* Gameplay */
 .game-screen {
@@ -462,7 +469,8 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .tool-icon--roll::before { content: ""; width: 38px; height: 38px; border: 7px solid currentColor; border-left-color: transparent; border-radius: 50%; }
 .tool-icon--pack::before { content: ""; width: 34px; height: 38px; border: 6px solid currentColor; border-radius: 5px 5px 10px 10px; }
 
-.help-fab { position: absolute; z-index: 22; right: 24px; bottom: 136px; width: 42px; height: 42px; border: 2px solid #5b4334; border-radius: 50%; background: #fff0c8; color: #9d4b2e; font-weight: 900; cursor: pointer; box-shadow: 0 3px 0 #6a4937; }
+.help-fab { position: absolute; z-index: 22; right: 24px; bottom: 136px; width: 42px; height: 42px; display: grid; place-items: center; border: 2px solid #5b4334; border-radius: 50%; background: #fff0c8; color: #9d4b2e; font-weight: 900; cursor: pointer; box-shadow: 0 3px 0 #6a4937; }
+.help-fab .game-icon { width: 23px; height: 23px; filter: drop-shadow(0 1px 0 rgb(255 235 190 / .7)); }
 .game-toast { position: absolute; z-index: 50; left: 50%; top: 47%; padding: 15px 25px; transform: translate(-50%,-50%); border: 3px solid #733e2e; border-radius: 18px 13px 20px 12px; background: #fff0b7; color: #923f2d; box-shadow: 0 8px 0 rgba(38,25,23,.36); font: 900 19px/1 KaiTi, STKaiti, serif; animation: toast-pop .25s ease-out; }
 
 /* Event and summary */
@@ -497,11 +505,17 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .summary-screen .upgrade-shop__icon { --upgrade-icon-well: #55280c; position: absolute; z-index: 2; display: grid; place-items: center; color: #6b351f; background: var(--upgrade-icon-well); box-shadow: 0 0 9px 8px var(--upgrade-icon-well); pointer-events: none; }
 .summary-screen .upgrade-shop__funds .upgrade-shop__icon--funds { --upgrade-icon-well: #5a2c0e; left: -64%; top: 3%; width: 58%; height: 94%; }
 .summary-screen .upgrade-shop > button .upgrade-shop__icon { left: 2%; top: 19%; width: 25%; height: 62%; }
+.select-screen .upgrade-card-icon,
 .summary-screen .upgrade-card-icon { width: clamp(28px, 3.7vw, 53px); height: clamp(28px, 3.7vw, 53px); overflow: visible; shape-rendering: geometricPrecision; filter: drop-shadow(0 3px 1px rgb(37 18 11 / .42)); }
+.select-screen .upgrade-card-icon__body,
+.select-screen .upgrade-card-icon__accent,
 .summary-screen .upgrade-card-icon__body,
 .summary-screen .upgrade-card-icon__accent { paint-order: fill stroke; }
+.select-screen .upgrade-card-icon__shade,
 .summary-screen .upgrade-card-icon__shade { stroke: none; }
+.select-screen .upgrade-card-icon__highlight,
 .summary-screen .upgrade-card-icon__highlight { fill: none; stroke: #ffe3a6; stroke-width: 1.45px; opacity: .78; }
+.select-screen .upgrade-card-icon__detail,
 .summary-screen .upgrade-card-icon__detail { fill: none; stroke: #71361f; stroke-width: 1.7px; opacity: .9; }
 .buzz-note { position: absolute; z-index: 4; left: 34%; top: 76.2%; width: 32%; padding: .35%; border-radius: 8px; background: #f4d17e; color: #8a3d24; text-align: center; font-size: clamp(7px, .72vw, 12px); font-weight: 900; }
 .summary-actions { position: absolute; z-index: 3; inset: 0; pointer-events: none; }
@@ -521,7 +535,8 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .menu-modal { width: min(1050px, 100%); padding: 14px 14px 10px; }
 .menu-modal img { display: block; width: 100%; max-height: 76vh; object-fit: contain; border-radius: 8px; }
 .menu-modal p { margin: 8px 0 0; color: #7c5d4b; text-align: center; font-size: 11px; font-weight: 800; }
-.modal-close { position: absolute; z-index: 3; right: -13px; top: -13px; width: 41px; height: 41px; border: 2px solid #65372b; border-radius: 50%; background: #c84f31; color: white; cursor: pointer; font-size: 24px; font-weight: 900; box-shadow: 0 3px 0 #71392c; }
+.modal-close { position: absolute; z-index: 3; right: -13px; top: -13px; width: 41px; height: 41px; display: grid; place-items: center; border: 2px solid #65372b; border-radius: 50%; background: #c84f31; color: white; cursor: pointer; font-size: 24px; font-weight: 900; box-shadow: 0 3px 0 #71392c; }
+.modal-close .game-icon { width: 23px; height: 23px; filter: drop-shadow(0 1px 0 rgb(93 36 27 / .45)); }
 .help-modal { width: min(460px, 100%); padding: 27px 30px 24px; }
 .help-modal__icon { display: block; text-align: center; font-size: 45px; }
 .help-modal__icon .game-icon { width: 46px; height: 46px; color: #b95a31; }

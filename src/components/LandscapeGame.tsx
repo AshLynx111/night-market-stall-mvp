@@ -235,7 +235,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
         />
         <KitchenScene state={state} dispatch={dispatch} soundEnabled={effectsEnabled} />
         <DeliveryFeedback feedback={deliveryFeedback} held={qaDeliveryFeedback} />
-        <button className="help-fab" onClick={onHelp} aria-label="打开玩法说明" aria-keyshortcuts="H">？</button>
+        <button className="help-fab" onClick={onHelp} aria-label="打开玩法说明" aria-keyshortcuts="H"><GameIcon name="help" /></button>
         {eventOpen && (
           <div className="event-screen event-screen--overlay">
             <div className="event-screen__art" style={{ backgroundImage: `url(${celebrityArt})` }} />
@@ -767,7 +767,7 @@ function AbandonModal({ onContinue, onAbandon }: { onContinue: () => void; onAba
 function MenuModal({ onClose }: { onClose: () => void }) {
   return (
     <AccessibleDialog label="完整菜单" className="menu-modal" onClose={onClose}>
-        <button className="modal-close" onClick={onClose}>×</button>
+        <button className="modal-close" onClick={onClose} aria-label="关闭完整菜单"><GameIcon name="close" /></button>
         <img src={menuBoard} alt="烤冷面完整菜单" />
         <p>五款正式菜谱 · 关卡推进后会依次加入订单</p>
     </AccessibleDialog>
@@ -777,7 +777,7 @@ function MenuModal({ onClose }: { onClose: () => void }) {
 function HelpModal({ onClose }: { onClose: () => void }) {
   return (
     <AccessibleDialog label="玩法说明" className="help-modal" onClose={onClose}>
-        <button className="modal-close" onClick={onClose} aria-label="关闭玩法说明">×</button>
+        <button className="modal-close" onClick={onClose} aria-label="关闭玩法说明"><GameIcon name="close" /></button>
         <span className="help-modal__icon" aria-hidden="true"><GameIcon name="heat" /></span>
         <h2>三步学会摆摊</h2>
         <div><b>1</b><p>看左侧订单和铁板上方的“下一步”。</p></div>
