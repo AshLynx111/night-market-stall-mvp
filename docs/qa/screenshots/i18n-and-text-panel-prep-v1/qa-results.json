@@ -1,0 +1,674 @@
+[
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Home",
+    "filename": "zh-CN-01-home-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "home",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 0,
+      "paper": 0,
+      "wood": 0,
+      "chips": 0
+    },
+    "text": "开始游戏 继续游戏 设置 图鉴 选择关卡 静音背景音乐"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Day select",
+    "filename": "zh-CN-02-select-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "select",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 3,
+      "paper": 0,
+      "wood": 3,
+      "chips": 0
+    },
+    "text": "返回主菜单 查看完整菜单 ☆☆☆ 经典款解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 当前资金 ¥ 36 升级火力 Lv.1 顾客耐心 +3秒 · ¥40 升级招牌 Lv.1 每单额外 +2元 · ¥60"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Day 1 initial tutorial",
+    "filename": "zh-CN-03-day1-initial-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "playing",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 3,
+      "paper": 1,
+      "wood": 2,
+      "chips": 1
+    },
+    "text": "第 1 天 订单 0/3 ¥36 面皮 鸡蛋 热狗 刷酱 葱花 看看顾客的订单 第一位顾客正在从旁边走来，等她站稳后看看订单。"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Multiple customers / dual griddle",
+    "filename": "zh-CN-04-multi-customer-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "playing",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 5,
+      "paper": 3,
+      "wood": 2,
+      "chips": 0
+    },
+    "text": "第 2 天 订单 0/4 ¥36 面皮 鸡蛋 热狗 刷酱 葱花 香菜 洋葱 辣椒粉"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Day 1 summary",
+    "filename": "zh-CN-05-summary-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "summary",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 10,
+      "paper": 7,
+      "wood": 3,
+      "chips": 1
+    },
+    "text": "开张第一天 · 营业完成 ★★★ 手速和品质都无可挑剔，夜市里已经有人专程来找你了！ 明日 · 饭量挑战 大胃王解锁 3 完成订单 92% 平均满意度 0 操作失误 ¥36 当前资金 当前资金 ¥ 36 升级火力 Lv.1 顾客耐心 +3秒 · ¥40 升级招牌 Lv.1 每单额外 +2元 · ¥60 再玩一次 明天 · 饭量挑战"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Settings",
+    "filename": "zh-CN-06-settings-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "settings",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 0,
+      "paper": 0,
+      "wood": 0,
+      "chips": 0
+    },
+    "text": "总音量 背景音乐 音效 静音背景音乐 返回主菜单"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Home",
+    "filename": "zh-CN-01-home-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "home",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 0,
+      "paper": 0,
+      "wood": 0,
+      "chips": 0
+    },
+    "text": "开始游戏 继续游戏 设置 图鉴 选择关卡 静音背景音乐"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Day select",
+    "filename": "zh-CN-02-select-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "select",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 3,
+      "paper": 0,
+      "wood": 3,
+      "chips": 0
+    },
+    "text": "返回主菜单 查看完整菜单 ☆☆☆ 经典款解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 当前资金 ¥ 36 升级火力 Lv.1 顾客耐心 +3秒 · ¥40 升级招牌 Lv.1 每单额外 +2元 · ¥60"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Day 1 initial tutorial",
+    "filename": "zh-CN-03-day1-initial-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "playing",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 3,
+      "paper": 1,
+      "wood": 2,
+      "chips": 1
+    },
+    "text": "第 1 天 订单 0/3 ¥36 面皮 鸡蛋 热狗 刷酱 葱花 看看顾客的订单 第一位顾客正在从旁边走来，等她站稳后看看订单。"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Multiple customers / dual griddle",
+    "filename": "zh-CN-04-multi-customer-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "playing",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 4,
+      "paper": 2,
+      "wood": 2,
+      "chips": 0
+    },
+    "text": "第 2 天 订单 0/4 ¥36 面皮 鸡蛋 热狗 刷酱 葱花 香菜 洋葱 辣椒粉"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Day 1 summary",
+    "filename": "zh-CN-05-summary-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "summary",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 10,
+      "paper": 7,
+      "wood": 3,
+      "chips": 1
+    },
+    "text": "开张第一天 · 营业完成 ★★★ 手速和品质都无可挑剔，夜市里已经有人专程来找你了！ 明日 · 饭量挑战 大胃王解锁 3 完成订单 92% 平均满意度 0 操作失误 ¥36 当前资金 当前资金 ¥ 36 升级火力 Lv.1 顾客耐心 +3秒 · ¥40 升级招牌 Lv.1 每单额外 +2元 · ¥60 再玩一次 明天 · 饭量挑战"
+  },
+  {
+    "locale": "zh-CN",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Settings",
+    "filename": "zh-CN-06-settings-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "zh-CN",
+    "dataLocale": "zh-CN",
+    "screen": "settings",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 0,
+      "paper": 0,
+      "wood": 0,
+      "chips": 0
+    },
+    "text": "总音量 背景音乐 音效 静音背景音乐 返回主菜单"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Home",
+    "filename": "en-01-home-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "home",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 0,
+      "paper": 0,
+      "wood": 0,
+      "chips": 0
+    },
+    "text": "Start Game Start Game Continue Continue Settings Settings Menu Menu Days Day Select Mute music"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Day select",
+    "filename": "en-02-select-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "select",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 10,
+      "paper": 6,
+      "wood": 4,
+      "chips": 0
+    },
+    "text": "Day Select Complete each shift to unlock a new night market challenge. Back Back to Main Menu Full Menu View the full menu DAY 1 Opening Night The campus night market is open. Nail the classic recipe first. Goal: Finish the tutorial and serve 3 orders ☆☆☆ Classic unlocked DAY 2 Big Eater Challenge The clubs are out, and double-stack orders are pouring in. Goal: Handle double-sheet, double-egg orders ☆☆☆ Unlock by completing the previous day DAY 3 Aroma Goes Viral The smell of Orleans chicken is pulling in passersby. Goal: Reach 75% average satisfaction ☆☆☆ Unlock by completing the previous day DAY 4 Night Market Rush The queue is growing, and Orleans chicken with bacon joins the menu. Goal: Serve Orleans chicken during the rush ☆☆☆ Unlock by completing the previous day DAY 5 Surprise Guest Tenderloin and enoki are new—and a celebrity traveler stops by. Goal: Serve the celebrity and handle new add-ons ☆☆☆ Unlock by completing the previous day DAY 6 Celebrity Special One travel post has everyone asking for the celebrity’s order. Goal: Keep up with the final rush ☆☆☆ Unlock by completing the previous day Coins ¥ 36 Upgrade Heat Lv.1 Patience +3 sec · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Day 1 initial tutorial",
+    "filename": "en-03-day1-initial-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "playing",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 3,
+      "paper": 1,
+      "wood": 2,
+      "chips": 1
+    },
+    "text": "Day 1 Orders 0/3 ¥36 Noodle Sheet Egg Hot Dog Sauce Scallions Check the customer’s order Your first customer is walking over. Wait for her to stop, then check the order."
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Multiple customers / dual griddle",
+    "filename": "en-04-multi-customer-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "playing",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 5,
+      "paper": 3,
+      "wood": 2,
+      "chips": 0
+    },
+    "text": "Day 2 Orders 0/4 ¥36 Noodle Sheet Egg Hot Dog Sauce Scallions Cilantro Onion Chili Powder"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Day 1 summary",
+    "filename": "en-05-summary-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "summary",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 11,
+      "paper": 7,
+      "wood": 4,
+      "chips": 1
+    },
+    "text": "Day Complete Opening Night · Shift Complete ★★★ Flawless speed and quality—people are coming to the market just for your stall! Next · Big Eater Challenge Big Eater unlocked 3 Orders Orders 92% Satisfaction Satisfaction 0 Mistakes Mistakes ¥36 Coins Coins Coins ¥ 36 Upgrade Heat Lv.1 Patience +3 sec · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60 Play Again Next · Big Eater Challenge"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 1440,
+      "height": 810
+    },
+    "state": "Settings",
+    "filename": "en-06-settings-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "settings",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 0,
+      "paper": 0,
+      "wood": 0,
+      "chips": 0
+    },
+    "text": "Master Volume Music SFX Audio Settings Master Volume Music SFX Mute music Back to Main Menu Back to Main Menu"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Home",
+    "filename": "en-01-home-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "home",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 0,
+      "paper": 0,
+      "wood": 0,
+      "chips": 0
+    },
+    "text": "Start Game Start Game Continue Continue Settings Settings Menu Menu Days Day Select Mute music"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Day select",
+    "filename": "en-02-select-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "select",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 10,
+      "paper": 6,
+      "wood": 4,
+      "chips": 0
+    },
+    "text": "Day Select Complete each shift to unlock a new night market challenge. Back Back to Main Menu Full Menu View the full menu DAY 1 Opening Night The campus night market is open. Nail the classic recipe first. Goal: Finish the tutorial and serve 3 orders ☆☆☆ Classic unlocked DAY 2 Big Eater Challenge The clubs are out, and double-stack orders are pouring in. Goal: Handle double-sheet, double-egg orders ☆☆☆ Unlock by completing the previous day DAY 3 Aroma Goes Viral The smell of Orleans chicken is pulling in passersby. Goal: Reach 75% average satisfaction ☆☆☆ Unlock by completing the previous day DAY 4 Night Market Rush The queue is growing, and Orleans chicken with bacon joins the menu. Goal: Serve Orleans chicken during the rush ☆☆☆ Unlock by completing the previous day DAY 5 Surprise Guest Tenderloin and enoki are new—and a celebrity traveler stops by. Goal: Serve the celebrity and handle new add-ons ☆☆☆ Unlock by completing the previous day DAY 6 Celebrity Special One travel post has everyone asking for the celebrity’s order. Goal: Keep up with the final rush ☆☆☆ Unlock by completing the previous day Coins ¥ 36 Upgrade Heat Lv.1 Patience +3 sec · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Day 1 initial tutorial",
+    "filename": "en-03-day1-initial-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "playing",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 3,
+      "paper": 1,
+      "wood": 2,
+      "chips": 1
+    },
+    "text": "Day 1 Orders 0/3 ¥36 Noodle Sheet Egg Hot Dog Sauce Scallions Check the customer’s order Your first customer is walking over. Wait for her to stop, then check the order."
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Multiple customers / dual griddle",
+    "filename": "en-04-multi-customer-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "playing",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 5,
+      "paper": 3,
+      "wood": 2,
+      "chips": 0
+    },
+    "text": "Day 2 Orders 0/4 ¥36 Noodle Sheet Egg Hot Dog Sauce Scallions Cilantro Onion Chili Powder"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Day 1 summary",
+    "filename": "en-05-summary-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "summary",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 11,
+      "paper": 7,
+      "wood": 4,
+      "chips": 1
+    },
+    "text": "Day Complete Opening Night · Shift Complete ★★★ Flawless speed and quality—people are coming to the market just for your stall! Next · Big Eater Challenge Big Eater unlocked 3 Orders Orders 92% Satisfaction Satisfaction 0 Mistakes Mistakes ¥36 Coins Coins Coins ¥ 36 Upgrade Heat Lv.1 Patience +3 sec · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60 Play Again Next · Big Eater Challenge"
+  },
+  {
+    "locale": "en",
+    "viewport": {
+      "width": 844,
+      "height": 390
+    },
+    "state": "Settings",
+    "filename": "en-06-settings-844x390.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "htmlLang": "en",
+    "dataLocale": "en",
+    "screen": "settings",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "clipped": [],
+    "cjkText": [],
+    "cjkAttributes": [],
+    "semanticPanels": {
+      "surfaces": 0,
+      "paper": 0,
+      "wood": 0,
+      "chips": 0
+    },
+    "text": "Master Volume Music SFX Audio Settings Master Volume Music SFX Mute music Back to Main Menu Back to Main Menu"
+  }
+]
