@@ -52,4 +52,19 @@ describe('home-derived visual system', () => {
     expect(css).toMatch(/\.day-card\.is-locked::before\s*\{[^}]*brightness\(\.78\)[^}]*saturate\(\.62\)/s)
     expect(css).toMatch(/\.day-card:not\(\.is-locked\):hover::before,[^{]*\{[^}]*var\(--warm-highlight\)/s)
   })
+
+  it('carries the same material system through summary, settings and modal panels', async () => {
+    const css = await readFile(cssPath, 'utf8')
+    expect(css).toMatch(/\.summary-card::before\s*\{[^}]*var\(--paper-aged\)[^}]*mix-blend-mode:\s*multiply/s)
+    expect(css).toMatch(/\.summary-stats > div::before\s*\{[^}]*inset[^}]*var\(--paper-aged\)/s)
+    expect(css).toMatch(/\.settings-slider input\s*\{[^}]*var\(--wood-dark\)[^}]*var\(--gold-border\)/s)
+    expect(css).toMatch(/\.menu-modal,[^{]*\.abandon-modal\s*\{[^}]*var\(--paper-cream\)[^}]*var\(--gold-border\)/s)
+  })
+
+  it('presents the portrait rotate notice as an in-game wood plaque inside safe areas', async () => {
+    const css = await readFile(cssPath, 'utf8')
+    expect(css).toMatch(/\.rotate-device::before\s*\{[^}]*var\(--wood-dark\)[^}]*var\(--gold-border\)[^}]*var\(--panel-shadow\)/s)
+    expect(css).toMatch(/\.rotate-device::after\s*\{[^}]*var\(--paper-cream\)[^}]*var\(--paper-aged\)/s)
+    expect(css).toMatch(/\.rotate-device\s*\{[^}]*var\(--game-safe-top\)[^}]*var\(--night-bg\)/s)
+  })
 })
