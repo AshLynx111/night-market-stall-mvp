@@ -63,17 +63,17 @@ export function createDomainI18n(t: TFunction): DomainI18n {
         ? t('retention.recipeUnlocked', { recipe: recipeText(cue.newRecipes[0], 'shortName') })
         : null)
       ?? (cue.newIngredients.length
-        ? t('retention.ingredientsNew', { ingredients: cue.newIngredients.map(ingredientText).join(', ') })
+        ? t('retention.ingredientsNew', { ingredients: cue.newIngredients.map(ingredientText).join(t('retention.listSeparator')) })
         : t('retention.keepGoing'))
     const details = [
       t('retention.day', { day: cue.day, title }),
       story,
       t('retention.goal', { goal }),
       cue.newIngredients.length
-        ? t('retention.ingredients', { items: cue.newIngredients.map(ingredientText).join(', ') })
+        ? t('retention.ingredients', { items: cue.newIngredients.map(ingredientText).join(t('retention.listSeparator')) })
         : null,
       cue.newRecipes.length
-        ? t('retention.recipes', { items: cue.newRecipes.map((id) => recipeText(id, 'shortName')).join(', ') })
+        ? t('retention.recipes', { items: cue.newRecipes.map((id) => recipeText(id, 'shortName')).join(t('retention.listSeparator')) })
         : null,
       specialBeat,
     ].filter((detail): detail is string => Boolean(detail))

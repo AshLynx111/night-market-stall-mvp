@@ -4,6 +4,7 @@ import { RECIPES } from '../../landscape/campaign'
 import { isIntentionalPointerDrag } from '../../landscape/pointerIntent'
 import type { KitchenAction } from '../../landscape/kitchen/reducer'
 import type { KitchenState, SlotId } from '../../landscape/kitchen/types'
+import { useI18n } from '../../i18n/I18nProvider'
 
 interface DishDrag {
   pointerId: number
@@ -19,6 +20,7 @@ export function ServingTray({ state, dispatch, findCustomerAtPoint }: {
   dispatch: (action: KitchenAction) => void
   findCustomerAtPoint: (clientX: number, clientY: number) => string | null
 }) {
+  const { t, domain } = useI18n()
   const drag = useRef<DishDrag | null>(null)
   const [ghost, setGhost] = useState<{ x: number; y: number; src: string } | null>(null)
   const dishes = state.slots.filter((slot) => slot.phase === 'on-tray' && slot.recipeId)
@@ -48,7 +50,7 @@ export function ServingTray({ state, dispatch, findCustomerAtPoint }: {
 
   return (
     <>
-      <div className="serving-tray" aria-label="出餐托盘">
+      <div className="serving-tray" aria-label={t('game.tray')}>
         {dishes.map((slot) => {
           const src = RECIPES[slot.recipeId!].image
           return (
@@ -57,7 +59,7 @@ export function ServingTray({ state, dispatch, findCustomerAtPoint }: {
               className="serving-tray__dish"
               data-tray-slot-id={slot.id}
               key={slot.id}
-              aria-label={`${RECIPES[slot.recipeId!].name}，点击自动递给对应顾客，也可拖给顾客`}
+              aria-label={t('game.deliverDish', { recipe: domain.recipeText(slot.recipeId!, 'name') })}
               onClick={(event) => {
                 if (event.detail === 0) deliverToIntendedCustomer(slot.id)
               }}

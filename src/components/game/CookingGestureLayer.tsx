@@ -8,6 +8,7 @@ import { TUTORIAL_GESTURE_RECT } from '../../landscape/kitchen/tutorialPaths'
 import type { KitchenState, SlotId } from '../../landscape/kitchen/types'
 import { ingredientArt } from '../../landscape/kitchen/assets'
 import { GameIcon } from './GameIcon'
+import { useI18n } from '../../i18n/I18nProvider'
 
 type GestureKind = 'sauce' | 'cut' | 'roll'
 
@@ -42,6 +43,7 @@ export function CookingGestureLayer({ state, dispatch, sauceEnabled = false }: {
   dispatch: (action: KitchenAction) => void
   sauceEnabled?: boolean
 }) {
+  const { t } = useI18n()
   const active = useRef<ActiveGesture | null>(null)
   const [tool, setTool] = useState<{ x: number; y: number; kind: GestureKind } | null>(null)
 
@@ -87,8 +89,11 @@ export function CookingGestureLayer({ state, dispatch, sauceEnabled = false }: {
             role="button"
             tabIndex={0}
             aria-label={kind === 'sauce'
-              ? `${slot.id === 'left' ? '左侧' : '右侧'}铁板刷酱区，拿起酱刷后在这里来回滑动`
-              : `${slot.id === 'left' ? '左侧' : '右侧'}铁板${kind === 'cut' ? '切段' : '卷起'}手势区`}
+              ? t('gesture.sauce', { side: t(slot.id === 'left' ? 'game.left' : 'game.right') })
+              : t('gesture.action', {
+                  side: t(slot.id === 'left' ? 'game.left' : 'game.right'),
+                  action: t(kind === 'cut' ? 'gesture.cut' : 'gesture.roll'),
+                })}
             onPointerDown={(event) => {
               const boundSlot = event.currentTarget.dataset.gestureSlotId as SlotId
               const boundKind = gestureKind(state, boundSlot, sauceEnabled)

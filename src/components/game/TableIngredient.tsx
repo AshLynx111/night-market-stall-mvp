@@ -12,6 +12,7 @@ import {
   type RackLayout,
 } from '../../landscape/kitchen/sceneGeometry'
 import type { SlotId } from '../../landscape/kitchen/types'
+import { useI18n } from '../../i18n/I18nProvider'
 
 interface DragState {
   pointerId: number
@@ -34,6 +35,7 @@ export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted
   onTapEgg: () => void
   onKeyboardApply?: (id: IngredientId) => void
 }) {
+  const { t } = useI18n()
   const drag = useRef<DragState | null>(null)
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null)
   const rackColumns = KITCHEN_RACK_LAYOUTS[rackLayout].columns
@@ -85,9 +87,7 @@ export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted
         data-control-polygon={controlPolygon}
         data-painted={painted ? 'true' : undefined}
         style={rackStyle}
-        aria-label={id === 'sauce'
-          ? `${label}，点击拿起酱刷`
-          : `${label}，点击自动放置，也可拖到指定铁板`}
+        aria-label={t(id === 'sauce' ? 'game.ingredientSauceAria' : 'game.ingredientAria', { label })}
         aria-pressed={id === 'sauce' ? painted : undefined}
         onClick={(event) => {
           if (!disabled && event.detail === 0) applyTap()

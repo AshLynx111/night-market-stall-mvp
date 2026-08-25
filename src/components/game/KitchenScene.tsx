@@ -25,12 +25,7 @@ import { GriddleSlot } from './GriddleSlot'
 import { ServingTray } from './ServingTray'
 import { TableIngredient } from './TableIngredient'
 import { TutorialOverlay } from './TutorialOverlay'
-
-const INGREDIENT_LABELS: Record<IngredientId, string> = {
-  noodle: '面皮', egg: '鸡蛋', 'hot-dog': '热狗', sauce: '刷酱', scallion: '葱花', cilantro: '香菜', onion: '洋葱',
-  'chili-powder': '辣椒粉', 'turkey-noodle': '火鸡面', cheese: '芝士', corn: '玉米粒', orleans: '奥尔良鸡排', bacon: '培根',
-  tenderloin: '里脊肉', enoki: '金针菇',
-}
+import { useI18n } from '../../i18n/I18nProvider'
 
 const TUTORIAL_COMPLETION_TOAST_MS = 2_200
 
@@ -44,6 +39,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
   dispatch: (action: KitchenAction) => void
   soundEnabled?: boolean
 }) {
+  const { t, domain } = useI18n()
   const sceneRef = useRef<HTMLDivElement>(null)
   const [sauceBrushSelected, setSauceBrushSelected] = useState(false)
   const [showTutorialCompletion, setShowTutorialCompletion] = useState(false)
@@ -194,7 +190,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
       ref={sceneRef}
       style={kitchenGeometryStyle(rackLayout)}
     >
-      <section className="kitchen-scene__customers" aria-label="顾客队伍" data-live-customer-layer="dynamic-only">
+      <section className="kitchen-scene__customers" aria-label={t('game.customers')} data-live-customer-layer="dynamic-only">
         {state.customers.map((customer) => (
           <div
             className={`kitchen-scene__lane-anchor kitchen-scene__lane-anchor--${customer.lane}`}
@@ -209,7 +205,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
 
       <div className="kitchen-scene__counter-foreground" aria-hidden="true" />
 
-      <section className="kitchen-scene__griddle" aria-label="双区铁板">
+      <section className="kitchen-scene__griddle" aria-label={t('game.griddles')}>
         {state.slots.map((slot) => (
           <GriddleSlot
             key={slot.id}
@@ -222,7 +218,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
 
       <section
         className="kitchen-scene__ingredients"
-        aria-label="桌面食材"
+        aria-label={t('game.ingredients')}
         data-kitchen-bin-rack="left"
         data-rack-layout={rackLayout}
         data-rack-control-polygons={JSON.stringify(rackRectangles(rackLayout).map((control) => [
@@ -236,7 +232,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
           <TableIngredient
             key={id}
             id={id}
-            label={INGREDIENT_LABELS[id]}
+            label={domain.ingredientText(id)}
             art={ingredientFoodArt(id)}
             rackIndex={unlockedIngredients.indexOf(id)}
             rackLayout={rackLayout}
@@ -250,17 +246,17 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
         ))}
       </section>
 
-      {!guided && <section className="kitchen-scene__trash" aria-label="清理铁板">
+      {!guided && <section className="kitchen-scene__trash" aria-label={t('game.clearGriddle')}>
         {state.slots.filter((slot) => slot.phase !== 'empty').map((slot) => (
           <button
             type="button"
             data-discard-slot-id={slot.id}
             key={slot.id}
             onClick={() => dispatchScene({ type: 'DISCARD_SLOT', slotId: slot.id })}
-            aria-label={`丢弃${slot.id === 'left' ? '左侧' : '右侧'}铁板上的食物`}
+            aria-label={t('game.discard', { side: t(slot.id === 'left' ? 'game.left' : 'game.right') })}
           >
             <GameIcon name="trash" />
-            {slot.id === 'left' ? '清左板' : '清右板'}
+            {t(slot.id === 'left' ? 'game.clearLeft' : 'game.clearRight')}
           </button>
         ))}
       </section>}

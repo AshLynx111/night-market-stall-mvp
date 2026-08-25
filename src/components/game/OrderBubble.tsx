@@ -4,6 +4,7 @@ import { ingredientFoodArt } from '../../landscape/kitchen/assets'
 import type { OrderBubblePose } from '../../landscape/kitchen/orderBubbleLayout'
 import type { CustomerState } from '../../landscape/kitchen/types'
 import { GameIcon } from './GameIcon'
+import { useI18n } from '../../i18n/I18nProvider'
 
 export function recipeOrderIngredients(recipeId: RecipeId) {
   return RECIPES[recipeId].steps.flatMap((step) => {
@@ -16,44 +17,40 @@ export function orderBubbleDensity(ingredientCount: number, modifierCount: numbe
   return ingredientCount > 6 || (ingredientCount >= 6 && modifierCount > 0) ? 'compact' : 'regular'
 }
 
-function ingredientLabel(id: IngredientId) {
-  for (const recipe of Object.values(RECIPES)) {
-    const step = recipe.steps.find((candidate) => ingredientForCookingStep(candidate) === id)
-    if (step) return step.label.replace(/^第2[张颗]?/, '')
-  }
-  return id
-}
-
-function modifierDescription(modifier: OrderModifier): string {
-  const label = modifier.kind === 'heat' ? '' : ingredientLabel(modifier.ingredient)
-  if (modifier.kind === 'extra') return `加量${label}`
-  if (modifier.kind === 'without') return `不要${label}`
-  return modifier.level === 'mild' ? '少辣' : modifier.level === 'hot' ? '加辣' : '正常辣度'
-}
-
 export function OrderBubble({ customer, pose, critical = false }: {
   customer: CustomerState
   pose: OrderBubblePose
   critical?: boolean
 }) {
+  const { t, domain } = useI18n()
   const recipe = RECIPES[customer.order.recipeId]
   const ingredients = recipeOrderIngredients(recipe.id)
   const density = orderBubbleDensity(ingredients.length, customer.order.modifiers.length)
   const patienceRatio = Math.max(0, Math.min(1, customer.patienceMs / customer.maxPatienceMs))
   const patienceLevel = patienceRatio <= .2 ? 'critical' : patienceRatio <= .45 ? 'warning' : 'steady'
+  const modifierDescription = (modifier: OrderModifier) => {
+    if (modifier.kind === 'extra') return t('order.extra', { ingredient: domain.ingredientText(modifier.ingredient) })
+    if (modifier.kind === 'without') return t('order.without', { ingredient: domain.ingredientText(modifier.ingredient) })
+    return t(modifier.level === 'mild' ? 'order.mild' : modifier.level === 'hot' ? 'order.hot' : 'order.normal')
+  }
   const modifiers = customer.order.modifiers.length
-    ? customer.order.modifiers.map(modifierDescription).join('，')
-    : '无特殊要求'
+    ? customer.order.modifiers.map(modifierDescription).join(', ')
+    : t('order.none')
 
   return (
     <div
-      className={`kitchen-customer__bubble${critical ? ' is-critical' : ''}`}
+      className={`kitchen-customer__bubble order-bubble-panel ui-text-surface ui-text-surface--paper${critical ? ' is-critical' : ''}`}
       data-customer-bubble-for={customer.id}
       data-order-id={customer.order.id}
       data-patience-level={patienceLevel}
       data-order-density={density}
       data-critical-customer={critical ? 'true' : undefined}
-      aria-label={`${customer.name}的订单：${recipe.name}，${modifiers}，剩余耐心${Math.ceil(customer.patienceMs / 1_000)}秒`}
+      aria-label={t('order.aria', {
+        customer: domain.customerText(customer.name),
+        recipe: domain.recipeText(recipe.id, 'name'),
+        modifiers,
+        seconds: Math.ceil(customer.patienceMs / 1_000),
+      })}
       style={{
         '--customer-bubble-x': `${pose.x}px`,
         '--customer-bubble-y': `${pose.y}px`,
@@ -63,7 +60,7 @@ export function OrderBubble({ customer, pose, critical = false }: {
     >
       <span className="kitchen-customer__order-ingredients" aria-hidden="true">
         {ingredients.map((ingredient, index) => (
-          <i className="kitchen-customer__order-ingredient" data-order-ingredient={ingredient.id} title={ingredient.label} key={`${ingredient.id}-${index}`}>
+          <i className="kitchen-customer__order-ingredient" data-order-ingredient={ingredient.id} title={domain.ingredientText(ingredient.id)} key={`${ingredient.id}-${index}`}>
             <img src={ingredient.art} alt="" draggable={false} />
           </i>
         ))}
@@ -79,7 +76,7 @@ export function OrderBubble({ customer, pose, critical = false }: {
               key={`heat-${index}`}
             >
               <GameIcon name="heat" />
-              <b>{modifier.level === 'mild' ? '少' : modifier.level === 'hot' ? '多' : '中'}</b>
+              <b>{t(modifier.level === 'mild' ? 'order.heatShortMild' : modifier.level === 'hot' ? 'order.heatShortHot' : 'order.heatShortNormal')}</b>
             </i>
           ) : (
             <i

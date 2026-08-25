@@ -5,12 +5,14 @@ import {
 } from '../../landscape/kitchen/assets'
 import { customerJourneyPhase } from '../../landscape/kitchen/customerTimeline'
 import type { CustomerState } from '../../landscape/kitchen/types'
+import { useI18n } from '../../i18n/I18nProvider'
 
 export function CustomerActor({ customer, artId, style }: {
   customer: CustomerState
   artId: KitchenCustomerArtId
   style: CSSProperties
 }) {
+  const { t, domain } = useI18n()
   const phase = customerJourneyPhase(customer)
   const displayedMood = phase === 'settling'
     ? 'ordering'
@@ -30,7 +32,7 @@ export function CustomerActor({ customer, artId, style }: {
       <img
         className="kitchen-customer__static-art"
         src={customerEmotionArt(artId, displayedMood)}
-        alt={`${customer.name}角色立绘`}
+        alt={t('game.customerArtAlt', { customer: domain.customerText(customer.name) })}
         draggable={false}
       />
     </div>

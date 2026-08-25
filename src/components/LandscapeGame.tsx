@@ -34,6 +34,7 @@ import { useGameplayShortcuts } from '../landscape/useGameplayShortcuts'
 import { useGameplayViewport } from '../landscape/useGameplayViewport'
 import { nextRetentionCue, retentionCueForDay } from '../landscape/dayRetention'
 import { DayRetentionCue } from './game/DayRetentionCue'
+import { useI18n } from '../i18n/I18nProvider'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -96,6 +97,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   onTutorialComplete: () => void
   onComplete: (qualities: number[], mistakes: number) => void
 }) {
+  const { t } = useI18n()
   const { state, dispatch } = useKitchenGame(
     day.day,
     day.day * 100,
@@ -236,28 +238,28 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
         />
         <KitchenScene state={state} dispatch={dispatch} soundEnabled={effectsEnabled} />
         <DeliveryFeedback feedback={deliveryFeedback} held={qaDeliveryFeedback} />
-        <button className="help-fab" onClick={onHelp} aria-label="打开玩法说明" aria-keyshortcuts="H"><GameIcon name="help" /></button>
+        <button className="help-fab" onClick={onHelp} aria-label={t('game.help')} aria-keyshortcuts="H"><GameIcon name="help" /></button>
         {eventOpen && (
           <div className="event-screen event-screen--overlay">
             <div className="event-screen__art" style={{ backgroundImage: `url(${celebrityArt})` }} />
-            <section className="dialogue-box">
-              <span className="event-tag">第五天 · 惊喜来客</span>
-              <h1>旅途中顺路来尝尝</h1>
-              <p>“你好，听朋友说你家的烤冷面很好吃。麻烦来一份招牌芝士火鸡款，谢谢。”</p>
-              <div className="whisper">排队的顾客：等等……这也太帅了吧！</div>
+            <section className="dialogue-box paper-panel ui-text-surface ui-text-surface--paper">
+              <span className="event-tag">{t('event.day5Tag')}</span>
+              <h1>{t('event.day5Title')}</h1>
+              <p>{t('event.day5Quote')}</p>
+              <div className="whisper">{t('event.day5Whisper')}</div>
               <button
                 className="primary-button"
                 onClick={() => {
                   pendingCelebrityInjection.current = { patienceMs: qaCelebrityPatienceMs }
                   onResumeEvent()
                 }}
-              >好的，马上为你做！</button>
+              >{t('event.day5Action')}</button>
             </section>
           </div>
         )}
         </div>
       </div>
-      <div className="rotate-device"><GameIcon name="roll" /><b>请横屏体验夜市经营</b></div>
+      <div className="rotate-device"><GameIcon name="roll" /><b>{t('rotate.prompt')}</b></div>
     </main>
   )
 }
@@ -268,12 +270,13 @@ function FoodStage({ recipe, completedCount, currentStep, repeatProgress = 0 }: 
   currentStep?: CookingStep
   repeatProgress?: number
 }) {
+  const { t, domain } = useI18n()
   const stageNames = STAGE_NAMES[recipe.id]
   const stageIndex = clamp(completedCount, 0, stageNames.length - 1)
   const stageName = stageNames[stageIndex]
   const stagePath = `../assets/runtime/stages/${recipe.id}/${recipe.id}-${stageName}.webp`
   const completeStageArt = STAGE_ART[stagePath]
-  if (completeStageArt) return <img className="stage-complete-art" src={completeStageArt} alt={`${recipe.shortName}制作阶段 ${stageIndex + 1}`} />
+  if (completeStageArt) return <img className="stage-complete-art" src={completeStageArt} alt={t('game.stageAlt', { recipe: domain.recipeText(recipe.id, 'shortName'), stage: stageIndex + 1 })} />
   const applied = recipe.steps.slice(0, completedCount)
   const appliedIds = applied.map((step) => step.id)
   const isPacked = appliedIds.includes('pack')
@@ -282,20 +285,20 @@ function FoodStage({ recipe, completedCount, currentStep, repeatProgress = 0 }: 
   const partialSauce = currentStep?.id === 'sauce' ? repeatProgress : 0
 
   if (completedCount === 0) {
-    return <div className="drop-hint"><b>把「{currentStep?.label ?? '面皮'}」拖到铁板</b><small>也可以直接点击下方按钮</small></div>
+    return <div className="drop-hint hint-panel ui-text-surface ui-text-surface--paper"><b>{t('game.dropIngredient', { ingredient: currentStep ? domain.stepText(currentStep.id, 'label') : domain.ingredientText('noodle') })}</b><small>{t('game.clickIngredient')}</small></div>
   }
 
-  if (isPacked) return <img className="stage-packed" src={takeawayBag} alt="已经装袋的烤冷面" />
-  if (isRolled) return <img className="stage-rolled" src={recipe.image} alt="已经卷起的烤冷面" />
+  if (isPacked) return <img className="stage-packed" src={takeawayBag} alt={t('game.packedAlt')} />
+  if (isRolled) return <img className="stage-rolled" src={recipe.image} alt={t('game.rolledAlt')} />
 
   return (
-    <div className="food-stage" aria-label={`制作阶段：已完成 ${completedCount} 步`}>
+    <div className="food-stage" aria-label={t('game.stageAria', { count: completedCount })}>
       {applied.map((step, index) => {
         if (!step.asset || ['roll', 'pack', 'cut'].includes(step.id)) return null
-        return <img className={`stage-layer stage-layer--${step.id}`} src={step.asset} alt={step.label} key={`${step.id}-${index}`} />
+        return <img className={`stage-layer stage-layer--${step.id}`} src={step.asset} alt={domain.stepText(step.id, 'label')} key={`${step.id}-${index}`} />
       })}
       {partialSauce > 0 && currentStep?.asset && Array.from({ length: partialSauce }).map((_, index) => (
-        <img className={`stage-layer stage-layer--sauce stage-layer--partial-${index + 1}`} src={currentStep.asset} alt="正在刷酱" key={`partial-sauce-${index}`} />
+        <img className={`stage-layer stage-layer--sauce stage-layer--partial-${index + 1}`} src={currentStep.asset} alt={t('game.saucingAlt')} key={`partial-sauce-${index}`} />
       ))}
       {hasCut && <div className="stage-cuts">{[0, 1, 2].map((cut) => <i className={appliedIds.includes('cut') || cut < repeatProgress ? 'done' : ''} key={cut} />)}</div>}
     </div>
@@ -303,27 +306,29 @@ function FoodStage({ recipe, completedCount, currentStep, repeatProgress = 0 }: 
 }
 
 function UpgradeShop({ save, onBuy }: { save: CampaignSave; onBuy: (type: 'fire' | 'sign') => void }) {
+  const { t } = useI18n()
   const firePrice = [40, 80][save.fireLevel]
   const signPrice = [60, 110][save.signLevel]
   return (
-    <section className="upgrade-shop" aria-label="摊位升级">
-      <div className="upgrade-shop__funds" data-upgrade-funds data-dynamic-mask="wood">
+    <section className="upgrade-shop" aria-label={t('upgrade.shopLabel')}>
+      <div className="upgrade-shop__funds ui-text-surface ui-text-surface--wood" data-upgrade-funds data-dynamic-mask="wood">
         <span className="upgrade-shop__icon upgrade-shop__icon--funds" aria-hidden="true"><UpgradeCardIcon kind="funds" /></span>
-        <span>当前资金</span><b>¥ {save.coins}</b>
+        <span>{t('upgrade.funds')}</span><b>¥ {save.coins}</b>
       </div>
-      <button aria-label="升级火力" disabled={save.fireLevel >= 2 || save.coins < (firePrice ?? Infinity)} onClick={() => onBuy('fire')}>
+      <button aria-label={t('upgrade.fire')} disabled={save.fireLevel >= 2 || save.coins < (firePrice ?? Infinity)} onClick={() => onBuy('fire')}>
         <span className="upgrade-shop__icon upgrade-shop__icon--fire" aria-hidden="true"><UpgradeCardIcon kind="fire" /></span>
-        <span className="upgrade-shop__copy" data-dynamic-mask="wood"><b>升级火力 Lv.{Math.min(2, save.fireLevel + 1)}</b><small>{firePrice ? `顾客耐心 +3秒 · ¥${firePrice}` : '已经满级'}</small></span>
+        <span className="upgrade-shop__copy ui-text-surface ui-text-surface--wood" data-dynamic-mask="wood"><b>{t('upgrade.fireLevel', { level: Math.min(2, save.fireLevel + 1) })}</b><small>{firePrice ? t('upgrade.fireBenefit', { price: firePrice }) : t('common.maxLevel')}</small></span>
       </button>
-      <button aria-label="升级招牌" disabled={save.signLevel >= 2 || save.coins < (signPrice ?? Infinity)} onClick={() => onBuy('sign')}>
+      <button aria-label={t('upgrade.sign')} disabled={save.signLevel >= 2 || save.coins < (signPrice ?? Infinity)} onClick={() => onBuy('sign')}>
         <span className="upgrade-shop__icon upgrade-shop__icon--sign" aria-hidden="true"><UpgradeCardIcon kind="sign" /></span>
-        <span className="upgrade-shop__copy" data-dynamic-mask="wood"><b>升级招牌 Lv.{Math.min(2, save.signLevel + 1)}</b><small>{signPrice ? `每单额外 +2元 · ¥${signPrice}` : '已经满级'}</small></span>
+        <span className="upgrade-shop__copy ui-text-surface ui-text-surface--wood" data-dynamic-mask="wood"><b>{t('upgrade.signLevel', { level: Math.min(2, save.signLevel + 1) })}</b><small>{signPrice ? t('upgrade.signBenefit', { price: signPrice }) : t('common.maxLevel')}</small></span>
       </button>
     </section>
   )
 }
 
 export function LandscapeGame() {
+  const { locale, t, domain } = useI18n()
   const query = new URLSearchParams(window.location.search)
   const previewDayNumber = Number(query.get('playDay'))
   const qaFixturesEnabled = import.meta.env.DEV
@@ -511,21 +516,21 @@ export function LandscapeGame() {
     return (
       <main className="home-screen home-screen--illustrated ui-screen" data-screen-art="home" data-ui-screen="home" style={{ '--home-bg': `url(${homeScreen})` } as React.CSSProperties}>
         <div className="home-screen__plate">
-          <img className="home-screen__art" src={homeScreen} alt="夜市烤冷面游戏主菜单" fetchPriority="high" />
-          <nav className="home-screen__hotspots" aria-label="主菜单">
-            <button className="home-hotspot home-hotspot--start" aria-label="开始游戏" onClick={() => startDay(DAYS[0])}><span className="sr-only">开始游戏</span></button>
-            <button className="home-hotspot home-hotspot--continue" aria-label="继续游戏" onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}><span className="sr-only">继续游戏</span></button>
-            <button className="home-hotspot home-hotspot--settings" aria-label="打开设置" onClick={() => openScreen('settings')}><span className="sr-only">设置</span></button>
-            <button className="home-hotspot home-hotspot--collection" aria-label="打开图鉴" onClick={openMenu}><span className="sr-only">图鉴</span></button>
-            <button className="home-hotspot home-hotspot--achievements" aria-label="查看关卡与成就" onClick={() => openScreen('select')}><span className="sr-only">选择关卡</span></button>
+          <img className="home-screen__art" src={homeScreen} alt={t('home.imageAlt')} fetchPriority="high" />
+          <nav className="home-screen__hotspots" aria-label={t('home.menuLabel')}>
+            <button className="home-hotspot home-hotspot--start" aria-label={t('home.start')} onClick={() => startDay(DAYS[0])}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.start')}</span>}<span className="sr-only">{t('home.start')}</span></button>
+            <button className="home-hotspot home-hotspot--continue" aria-label={t('home.continue')} onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.continue')}</span>}<span className="sr-only">{t('home.continue')}</span></button>
+            <button className="home-hotspot home-hotspot--settings" aria-label={t('home.openSettings')} onClick={() => openScreen('settings')}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.settings')}</span>}<span className="sr-only">{t('home.settings')}</span></button>
+            <button className="home-hotspot home-hotspot--collection" aria-label={t('home.openCollection')} onClick={openMenu}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.collection')}</span>}<span className="sr-only">{t('home.collection')}</span></button>
+            <button className="home-hotspot home-hotspot--achievements" aria-label={t('home.openAchievements')} onClick={() => openScreen('select')}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.achievements')}</span>}<span className="sr-only">{t('home.selectDays')}</span></button>
           </nav>
           <button
             className="home-screen__music-toggle"
             type="button"
-            aria-label="背景音乐"
+            aria-label={t('audio.music')}
             aria-pressed={audioSettings.musicMuted}
             onClick={toggleMusic}
-          ><span className="sr-only">{audioSettings.musicMuted ? '恢复背景音乐' : '静音背景音乐'}</span></button>
+          ><span className="sr-only">{audioSettings.musicMuted ? t('audio.unmute') : t('audio.mute')}</span></button>
         </div>
         {showMenu && <MenuModal onClose={closeMenu} />}
       </main>
@@ -534,13 +539,13 @@ export function LandscapeGame() {
 
   if (screen === 'settings') {
     return (
-      <main className="settings-screen ui-screen" data-ui-screen="settings" aria-label="音量设置">
+      <main className="settings-screen ui-screen" data-ui-screen="settings" aria-label={t('settings.screenLabel')}>
         <div className="settings-screen__plate">
           <img
             className="settings-screen__art"
             data-screen-art="settings"
             src={settingsScreen}
-            alt="夜市烤冷面游戏音量设置"
+            alt={t('settings.imageAlt')}
             fetchPriority="high"
           />
           <img
@@ -549,9 +554,9 @@ export function LandscapeGame() {
             alt=""
             aria-hidden="true"
           />
-          <div className="settings-screen__controls">
+          <div className="settings-screen__controls settings-text-region">
             <label className="settings-slider settings-slider--master">
-              <span className="sr-only">总音量</span>
+              <span className="sr-only">{t('settings.master')}</span>
               <input
                 type="range"
                 min="0"
@@ -560,12 +565,12 @@ export function LandscapeGame() {
                 value={audioSettings.master}
                 data-level={audioSettings.master.toFixed(2)}
                 style={{ '--settings-level': `${audioSettings.master * 100}%` } as React.CSSProperties}
-                aria-label="总音量"
+                aria-label={t('settings.masterAria')}
                 onChange={(event) => setAudioLevel('master', Number(event.currentTarget.value))}
               />
             </label>
             <label className="settings-slider settings-slider--music">
-              <span className="sr-only">背景音乐音量</span>
+              <span className="sr-only">{t('settings.music')}</span>
               <input
                 type="range"
                 min="0"
@@ -574,12 +579,12 @@ export function LandscapeGame() {
                 value={audioSettings.music}
                 data-level={audioSettings.music.toFixed(2)}
                 style={{ '--settings-level': `${audioSettings.music * 100}%` } as React.CSSProperties}
-                aria-label="背景音乐音量"
+                aria-label={t('settings.musicAria')}
                 onChange={(event) => setAudioLevel('music', Number(event.currentTarget.value))}
               />
             </label>
             <label className="settings-slider settings-slider--effects">
-              <span className="sr-only">音效音量</span>
+              <span className="sr-only">{t('settings.effects')}</span>
               <input
                 type="range"
                 min="0"
@@ -588,20 +593,27 @@ export function LandscapeGame() {
                 value={audioSettings.effects}
                 data-level={audioSettings.effects.toFixed(2)}
                 style={{ '--settings-level': `${audioSettings.effects * 100}%` } as React.CSSProperties}
-                aria-label="音效音量"
+                aria-label={t('settings.effectsAria')}
                 onChange={(event) => setAudioLevel('effects', Number(event.currentTarget.value))}
               />
             </label>
           </div>
+          {locale === 'en' && <div className="settings-screen__locale-copy" data-locale-art-text aria-hidden="true">
+            <strong>{t('settings.title')}</strong>
+            <span className="settings-screen__locale-label settings-screen__locale-label--master">{t('settings.master')}</span>
+            <span className="settings-screen__locale-label settings-screen__locale-label--music">{t('settings.music')}</span>
+            <span className="settings-screen__locale-label settings-screen__locale-label--effects">{t('settings.effects')}</span>
+          </div>}
           <button
             className="settings-screen__music-toggle"
             type="button"
-            aria-label="背景音乐"
+            aria-label={t('audio.music')}
             aria-pressed={audioSettings.musicMuted}
             onClick={toggleMusic}
-          ><span className="sr-only">{audioSettings.musicMuted ? '恢复背景音乐' : '静音背景音乐'}</span></button>
-          <button className="settings-screen__return" type="button" aria-label="返回主菜单" onClick={() => openScreen('home')}>
-            <span className="sr-only">返回主菜单</span>
+          ><span className="sr-only">{audioSettings.musicMuted ? t('audio.unmute') : t('audio.mute')}</span></button>
+          <button className="settings-screen__return" type="button" aria-label={t('common.backHome')} onClick={() => openScreen('home')}>
+            {locale === 'en' && <span className="settings-screen__return-label" data-locale-art-text aria-hidden="true">{t('common.backHome')}</span>}
+            <span className="sr-only">{t('common.backHome')}</span>
           </button>
         </div>
       </main>
@@ -612,32 +624,44 @@ export function LandscapeGame() {
     const playableDay = highestPlayableDay(save)
     const campaignComplete = DAYS.every((item) => (save.bestStars[item.day] ?? 0) > 0)
     const currentRetentionDay = campaignComplete ? DAYS.length : playableDay
-    const currentRetentionCue = retentionCueForDay(currentRetentionDay)
+    const currentRetentionCue = domain.retentionText(retentionCueForDay(currentRetentionDay))
     return (
       <main className="select-screen ui-screen" data-screen-art="select" data-ui-screen="select" style={{ '--home-bg': `url(${daySelectScreen})` } as React.CSSProperties}>
         <div className="select-screen__plate">
-          <img className="select-screen__art" src={daySelectScreen} alt="夜市营业日选择" fetchPriority="high" />
+          <img className="select-screen__art" src={daySelectScreen} alt={t('select.imageAlt')} fetchPriority="high" />
           <div className="select-screen__controls">
-            <button className="select-hotspot select-hotspot--back" type="button" aria-label="返回主菜单" onClick={() => openScreen('home')}><span className="sr-only">返回主菜单</span></button>
-            <button className="select-hotspot select-hotspot--menu" type="button" aria-label="查看完整菜单" onClick={openMenu}><span className="sr-only">查看完整菜单</span></button>
-            <section className="day-grid" aria-label="营业日">
+            {locale === 'en' && <div className="select-screen__locale-title ui-text-surface ui-text-surface--wood" data-locale-art-text aria-hidden="true"><strong>{t('select.title')}</strong><span>{t('select.subtitle')}</span></div>}
+            <button className="select-hotspot select-hotspot--back" type="button" aria-label={t('common.backHome')} onClick={() => openScreen('home')}>{locale === 'en' && <span className="select-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('common.back')}</span>}<span className="sr-only">{t('common.backHome')}</span></button>
+            <button className="select-hotspot select-hotspot--menu" type="button" aria-label={t('select.openMenu')} onClick={openMenu}>{locale === 'en' && <span className="select-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('select.menu')}</span>}<span className="sr-only">{t('select.openMenu')}</span></button>
+            <section className="day-grid" aria-label={t('select.daysLabel')}>
               {DAYS.map((item) => {
                 const locked = item.day > playableDay
                 const currentTarget = !locked && item.day === currentRetentionDay
-                const currentHook = campaignComplete ? '全章完成 · 冲三星' : currentRetentionCue.shortHook
+                const localizedDay = {
+                  title: domain.dayText(item.day, 'title'),
+                  story: domain.dayText(item.day, 'story'),
+                  goal: domain.dayText(item.day, 'goal'),
+                }
+                const currentHook = campaignComplete ? t('select.allComplete') : currentRetentionCue.shortHook
                 const accessibleLabel = locked
-                  ? `第 ${item.day} 天尚未解锁，完成前一天后解锁`
+                  ? t('select.lockedAria', { day: item.day })
                   : currentTarget
-                    ? `进入第 ${item.day} 天：${item.title}。当前目标：${item.goal}。${currentHook}`
-                    : `进入第 ${item.day} 天：${item.title}`
+                    ? t('select.enterCurrentDay', { day: item.day, title: localizedDay.title, goal: localizedDay.goal, hook: currentHook })
+                    : t('select.enterDay', { day: item.day, title: localizedDay.title })
                 return (
                   <button
-                    className={`day-card day-hotspot day-card--${item.day}${locked ? ' is-locked' : ''}`}
+                    className={`day-card day-hotspot text-panel-role--day-card day-card--${item.day}${locked ? ' is-locked' : ''}`}
                     key={item.day}
                     disabled={locked}
                     aria-label={accessibleLabel}
                     onClick={() => startDay(item)}
                   >
+                    {locale === 'en' && <span className="day-card__locale-copy ui-text-surface ui-text-surface--paper" data-locale-art-text aria-hidden="true">
+                      <small>{t('select.dayLabel', { day: item.day })}</small>
+                      <b>{localizedDay.title}</b>
+                      <span>{localizedDay.story}</span>
+                      <em>{t('select.goal', { goal: localizedDay.goal })}</em>
+                    </span>}
                     <span className="day-card__stars day-hotspot__stars" data-dynamic-mask="parchment" aria-hidden="true">{starsText(save.bestStars[item.day] ?? 0)}</span>
                     {(locked || currentTarget) && (
                       <span
@@ -646,7 +670,7 @@ export function LandscapeGame() {
                         data-current-day-hook={currentTarget ? true : undefined}
                         aria-hidden={currentTarget ? undefined : true}
                       >
-                        {locked && <><span className="day-card__lock" aria-hidden="true"><GameIcon name="lock" /></span>完成前一天后解锁</>}
+                        {locked && <><span className="day-card__lock" aria-hidden="true"><GameIcon name="lock" /></span>{t('select.locked')}</>}
                         {currentTarget && currentHook}
                       </span>
                     )}
@@ -664,27 +688,34 @@ export function LandscapeGame() {
 
   if (screen === 'summary') {
     const stars = starsForDay(qualities, mistakes)
-    const nextCue = nextRetentionCue(day.day)
+    const nextCueModel = nextRetentionCue(day.day)
+    const nextCue = nextCueModel ? domain.retentionText(nextCueModel) : null
+    const localizedDay = {
+      title: domain.dayText(day.day, 'title'),
+      story: domain.dayText(day.day, 'story'),
+      goal: domain.dayText(day.day, 'goal'),
+    }
     return (
       <main className="summary-screen ui-screen" data-screen-art="summary" data-ui-screen="summary" style={{ '--home-bg': `url(${summaryScreen})` } as React.CSSProperties}>
         <div className="summary-screen__plate">
-          <img className="summary-screen__art" src={summaryScreen} alt="今日打烊营业总结" fetchPriority="high" />
+          <img className="summary-screen__art" src={summaryScreen} alt={t('summary.imageAlt')} fetchPriority="high" />
+          {locale === 'en' && <div className="summary-screen__locale-heading ui-text-surface ui-text-surface--wood" data-locale-art-text aria-hidden="true">{t('summary.heading')}</div>}
           <section className="summary-card">
-            <h1 className="summary-title" data-dynamic-mask="parchment">{day.title} · 营业完成</h1>
-            <div className="summary-stars" data-dynamic-mask="parchment" aria-label={`${stars} 星`}>{starsText(stars)}</div>
-            <p className="summary-message" data-dynamic-mask="parchment">{stars === 3 ? '手速和品质都无可挑剔，夜市里已经有人专程来找你了！' : stars === 2 ? '生意很稳，继续升级摊位就能应付更大的客流。' : '开店不容易，再练一轮一定会更顺手。'}</p>
-            <DayRetentionCue cue={nextCue} />
-            <div className="summary-stats" aria-label="营业数据">
-              <div><b className="summary-stat__value" data-dynamic-mask="parchment">{served}</b><span className="sr-only">完成订单</span></div>
-              <div><b className="summary-stat__value" data-dynamic-mask="parchment">{average}%</b><span className="sr-only">平均满意度</span></div>
-              <div><b className="summary-stat__value" data-dynamic-mask="parchment">{mistakes}</b><span className="sr-only">操作失误</span></div>
-              <div><b className="summary-stat__value" data-dynamic-mask="parchment">¥{save.coins}</b><span className="sr-only">当前资金</span></div>
+            <h1 className="summary-title ui-text-surface ui-text-surface--paper" data-dynamic-mask="parchment">{t('summary.shiftComplete', { title: localizedDay.title })}</h1>
+            <div className="summary-stars ui-text-surface ui-text-surface--paper" data-dynamic-mask="parchment" aria-label={t('summary.starsAria', { stars })}>{starsText(stars)}</div>
+            <p className="summary-message ui-text-surface ui-text-surface--paper" data-dynamic-mask="parchment">{t(stars === 3 ? 'summary.message3' : stars === 2 ? 'summary.message2' : 'summary.message1')}</p>
+            <DayRetentionCue cue={nextCueModel} />
+            <div className="summary-stats" aria-label={t('summary.statsLabel')}>
+              <div className="stat-card ui-text-surface ui-text-surface--paper"><b className="summary-stat__value" data-dynamic-mask="parchment">{served}</b>{locale === 'en' && <span className="summary-stat__label" data-locale-art-text aria-hidden="true">{t('summary.orders')}</span>}<span className="sr-only">{t('summary.orders')}</span></div>
+              <div className="stat-card ui-text-surface ui-text-surface--paper"><b className="summary-stat__value" data-dynamic-mask="parchment">{average}%</b>{locale === 'en' && <span className="summary-stat__label" data-locale-art-text aria-hidden="true">{t('summary.satisfaction')}</span>}<span className="sr-only">{t('summary.satisfaction')}</span></div>
+              <div className="stat-card ui-text-surface ui-text-surface--paper"><b className="summary-stat__value" data-dynamic-mask="parchment">{mistakes}</b>{locale === 'en' && <span className="summary-stat__label" data-locale-art-text aria-hidden="true">{t('summary.mistakes')}</span>}<span className="sr-only">{t('summary.mistakes')}</span></div>
+              <div className="stat-card ui-text-surface ui-text-surface--paper"><b className="summary-stat__value" data-dynamic-mask="parchment">¥{save.coins}</b>{locale === 'en' && <span className="summary-stat__label" data-locale-art-text aria-hidden="true">{t('summary.coins')}</span>}<span className="sr-only">{t('summary.coins')}</span></div>
             </div>
-            {day.day === 5 && celebrityDone && <div className="buzz-note">明星礼貌地拍下了招牌烤冷面，第 6 天将出现“明星同款”热潮！</div>}
+            {day.day === 5 && celebrityDone && <div className="buzz-note ui-text-chip">{t('summary.celebrityBuzz')}</div>}
             <UpgradeShop save={save} onBuy={buyUpgrade} />
             <div className="summary-actions">
-              <button type="button" aria-label="再玩一次" onClick={() => startDay(day)}><span>再玩一次</span></button>
-              <button type="button" aria-label={nextCue ? `进入下一天：${nextCue.title}` : '返回选关'} onClick={() => nextCue ? startDay(DAYS[day.day]) : openScreen('select')}><span>{nextCue ? `明天 · ${nextCue.title}` : '返回选关'}</span></button>
+              <button type="button" aria-label={t('summary.playAgain')} onClick={() => startDay(day)}><span>{t('summary.playAgain')}</span></button>
+              <button type="button" aria-label={nextCue ? t('summary.nextDayAria', { title: nextCue.title }) : t('summary.backSelect')} onClick={() => nextCue ? startDay(DAYS[day.day]) : openScreen('select')}><span>{nextCue ? t('summary.nextDay', { title: nextCue.title }) : t('summary.backSelect')}</span></button>
             </div>
           </section>
         </div>
@@ -753,38 +784,51 @@ export function LandscapeGame() {
 }
 
 function AbandonModal({ onContinue, onAbandon }: { onContinue: () => void; onAbandon: () => void }) {
+  const { t } = useI18n()
   return (
-    <AccessibleDialog label="放弃本次营业确认" className="abandon-modal" onClose={onContinue}>
-        <h2>要结束这次营业吗？</h2>
-        <p>本次未结算的订单不会计入关卡进度。</p>
+    <AccessibleDialog label={t('modal.abandonLabel')} className="abandon-modal paper-panel ui-text-surface ui-text-surface--paper" onClose={onContinue}>
+        <h2>{t('modal.abandonTitle')}</h2>
+        <p>{t('modal.abandonBody')}</p>
         <div>
-          <button className="secondary-button" onClick={onContinue}>继续营业</button>
-          <button className="primary-button" onClick={onAbandon}>放弃本次营业</button>
+          <button className="secondary-button" onClick={onContinue}>{t('modal.continue')}</button>
+          <button className="primary-button" onClick={onAbandon}>{t('modal.abandon')}</button>
         </div>
     </AccessibleDialog>
   )
 }
 
 function MenuModal({ onClose }: { onClose: () => void }) {
+  const { locale, t, domain } = useI18n()
   return (
-    <AccessibleDialog label="完整菜单" className="menu-modal" onClose={onClose}>
-        <button className="modal-close" onClick={onClose} aria-label="关闭完整菜单"><GameIcon name="close" /></button>
-        <img src={menuBoard} alt="烤冷面完整菜单" />
-        <p>五款正式菜谱 · 关卡推进后会依次加入订单</p>
+    <AccessibleDialog label={t('modal.menuLabel')} className="menu-modal paper-panel ui-text-surface ui-text-surface--paper" onClose={onClose}>
+        <button className="modal-close" onClick={onClose} aria-label={t('modal.closeMenu')}><GameIcon name="close" /></button>
+        {locale === 'zh-CN' ? <img src={menuBoard} alt={t('modal.menuAlt')} /> : (
+          <section className="menu-modal__localized ui-text-surface ui-text-surface--paper" aria-label={t('modal.menuAlt')}>
+            <header><small>{t('modal.menuUnlock')}</small><h2>{t('modal.menuTitle')}</h2></header>
+            <div>{Object.values(RECIPES).map((recipe) => (
+              <article key={recipe.id}>
+                <img src={recipe.image} alt="" aria-hidden="true" />
+                <span><b>{domain.recipeText(recipe.id, 'name')}</b><small>¥{recipe.price}</small></span>
+              </article>
+            ))}</div>
+          </section>
+        )}
+        <p>{t('modal.menuCaption')}</p>
     </AccessibleDialog>
   )
 }
 
 function HelpModal({ onClose }: { onClose: () => void }) {
+  const { t } = useI18n()
   return (
-    <AccessibleDialog label="玩法说明" className="help-modal" onClose={onClose}>
-        <button className="modal-close" onClick={onClose} aria-label="关闭玩法说明"><GameIcon name="close" /></button>
+    <AccessibleDialog label={t('modal.helpLabel')} className="help-modal paper-panel ui-text-surface ui-text-surface--paper" onClose={onClose}>
+        <button className="modal-close" onClick={onClose} aria-label={t('modal.closeHelp')}><GameIcon name="close" /></button>
         <span className="help-modal__icon" aria-hidden="true"><GameIcon name="heat" /></span>
-        <h2>三步学会摆摊</h2>
-        <div><b>1</b><p>看左侧订单和铁板上方的“下一步”。</p></div>
-        <div><b>2</b><p>点一下食材会自动放到正确铁板，也可拖到指定铁板；餐盒同样支持点击交付或拖给顾客。</p></div>
-        <div><b>3</b><p>在耐心耗尽前装袋，速度越快、失误越少，收入和满意度越高。</p></div>
-        <button className="primary-button" onClick={onClose}>知道了，开摊！</button>
+        <h2>{t('modal.helpTitle')}</h2>
+        <div><b>1</b><p>{t('modal.help1')}</p></div>
+        <div><b>2</b><p>{t('modal.help2')}</p></div>
+        <div><b>3</b><p>{t('modal.help3')}</p></div>
+        <button className="primary-button" onClick={onClose}>{t('modal.helpDone')}</button>
     </AccessibleDialog>
   )
 }

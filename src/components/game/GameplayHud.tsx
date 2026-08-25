@@ -1,5 +1,6 @@
 import { useRef, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactPointerEvent } from 'react'
 import { GameIcon } from './GameIcon'
+import { useI18n } from '../../i18n/I18nProvider'
 
 export interface GameplayHudProps {
   day: number
@@ -13,6 +14,7 @@ export interface GameplayHudProps {
 }
 
 export function GameplayHud({ day, coins, served, target, sound, onHome, onPause, onSound }: GameplayHudProps) {
+  const { t } = useI18n()
   const progress = target > 0 ? Math.min(100, Math.max(0, served / target * 100)) : 0
   const suppressClickFor = useRef<HTMLButtonElement | null>(null)
   const touchSafeAction = (action: () => void) => ({
@@ -35,29 +37,29 @@ export function GameplayHud({ day, coins, served, target, sound, onHome, onPause
     },
   })
   return (
-    <header className="gameplay-hud" aria-label="营业信息">
-      <button className="gameplay-hud__day" type="button" {...touchSafeAction(onHome)} aria-label="返回主页">
-        <span>第 {day} 天</span>
+    <header className="gameplay-hud" aria-label={t('hud.label')}>
+      <button className="gameplay-hud__day hud-label ui-text-surface ui-text-surface--wood" type="button" {...touchSafeAction(onHome)} aria-label={t('hud.home')}>
+        <span>{t('hud.day', { day })}</span>
       </button>
       <div
-        className="gameplay-hud__orders"
+        className="gameplay-hud__orders hud-label ui-text-surface ui-text-surface--paper"
         role="progressbar"
-        aria-label={`已完成订单 ${served}，目标 ${target}`}
+        aria-label={t('hud.ordersAria', { served, target })}
         aria-valuemin={0}
         aria-valuemax={target}
         aria-valuenow={served}
       >
-        <b>订单 {served}/{target}</b>
+        <b>{t('hud.orders', { served, target })}</b>
         <i aria-hidden="true"><span style={{ width: `${progress}%` }} /></i>
       </div>
-      <div className="gameplay-hud__coins" aria-label={`当前资金 ${coins} 元`}>
+      <div className="gameplay-hud__coins hud-label ui-text-surface ui-text-surface--wood" aria-label={t('hud.coinsAria', { coins })}>
         <GameIcon name="coin" />
         <b>¥{coins}</b>
       </div>
-      <button className="gameplay-hud__control gameplay-hud__control--pause" type="button" {...touchSafeAction(onPause)} aria-label="暂停并打开菜单" aria-keyshortcuts="Escape">
+      <button className="gameplay-hud__control gameplay-hud__control--pause" type="button" {...touchSafeAction(onPause)} aria-label={t('hud.pause')} aria-keyshortcuts="Escape">
         <GameIcon name="pause" />
       </button>
-      <button className="gameplay-hud__control gameplay-hud__control--sound" type="button" {...touchSafeAction(onSound)} aria-label={sound ? '关闭音乐' : '开启音乐'} aria-pressed={!sound} aria-keyshortcuts="M">
+      <button className="gameplay-hud__control gameplay-hud__control--sound" type="button" {...touchSafeAction(onSound)} aria-label={sound ? t('hud.soundOff') : t('hud.soundOn')} aria-pressed={!sound} aria-keyshortcuts="M">
         <GameIcon name={sound ? 'sound-on' : 'sound-off'} />
       </button>
     </header>

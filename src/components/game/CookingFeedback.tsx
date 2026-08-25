@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { GriddleSlotState, KitchenState, SlotId } from '../../landscape/kitchen/types'
 import { GameIcon } from './GameIcon'
+import { useI18n } from '../../i18n/I18nProvider'
 
 export type CookingFeedbackKind = 'place' | 'egg' | 'ready' | 'sauce' | 'cut' | 'roll' | 'pack'
 
@@ -37,11 +38,8 @@ export function detectCookingFeedback(previous: SlotSnapshot, current: SlotSnaps
 
 interface Cue { id: number; slotId: SlotId; kind: CookingFeedbackKind }
 
-const FEEDBACK_LABELS: Record<CookingFeedbackKind, string> = {
-  place: '放稳了', egg: '蛋液铺开', ready: '火候正好', sauce: '酱香入味', cut: '切开', roll: '卷起来', pack: '装盘完成',
-}
-
 export function CookingFeedback({ slots }: { slots: KitchenState['slots'] }) {
+  const { t } = useI18n()
   const previous = useRef(new Map(slots.map((slot) => [slot.id, snapshot(slot)])))
   const nextId = useRef(0)
   const timers = useRef<number[]>([])
@@ -70,7 +68,7 @@ export function CookingFeedback({ slots }: { slots: KitchenState['slots'] }) {
       {cues.map((cue) => (
         <span className={`cooking-feedback__cue cooking-feedback__cue--${cue.slotId} is-${cue.kind}`} data-cooking-feedback={cue.kind} key={cue.id}>
           {(cue.kind === 'ready' || cue.kind === 'cut' || cue.kind === 'roll') && <GameIcon name={cue.kind === 'ready' ? 'heat' : cue.kind} />}
-          <b>{FEEDBACK_LABELS[cue.kind]}</b>
+          <b>{t(`cooking.${cue.kind}`)}</b>
         </span>
       ))}
     </div>
