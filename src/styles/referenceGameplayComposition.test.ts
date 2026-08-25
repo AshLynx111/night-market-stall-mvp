@@ -88,10 +88,15 @@ describe('reference-master gameplay composition', () => {
     expect(landscapeCss).not.toMatch(/\.summary-card\s*\{[^}]*max-height:/s)
   })
 
-  it('uses one summary-only flat SVG well for all three upgrade icons', () => {
+  it('uses one summary-only 2.5D ornament well for all three upgrade icons', () => {
     expect(landscapeCss).toMatch(/\.upgrade-shop__icon\s*\{\s*display:\s*none;/)
     expect(landscapeCss).toMatch(/\.summary-screen \.upgrade-shop__icon\s*\{[^}]*display:\s*grid;/s)
-    expect(landscapeCss).toMatch(/\.summary-screen \.upgrade-card-icon\s*\{[^}]*filter:\s*drop-shadow/s)
+    expect(landscapeCss).toMatch(/\.summary-screen \.upgrade-card-icon\s*\{[^}]*drop-shadow\(0 3px 1px rgb\(37 18 11 \/ \.42\)\)/s)
+    expect(landscapeCss).toContain('.summary-screen .upgrade-card-icon__body')
+    expect(landscapeCss).toContain('.summary-screen .upgrade-card-icon__shade')
+    expect(landscapeCss).toContain('.summary-screen .upgrade-card-icon__highlight')
+    expect(landscapeCss).toMatch(/\.summary-screen \.upgrade-card-icon__highlight\s*\{[^}]*stroke:\s*#ffe3a6/s)
+    expect(landscapeCss).toMatch(/\.summary-screen \.upgrade-card-icon__detail\s*\{[^}]*stroke:\s*#71361f/s)
     expect(landscapeSource).toContain('<UpgradeCardIcon kind="funds" />')
     expect(landscapeSource).toContain('<UpgradeCardIcon kind="fire" />')
     expect(landscapeSource).toContain('<UpgradeCardIcon kind="sign" />')
