@@ -85,6 +85,7 @@ export const zhCN = {
   'retention.recipeUnlocked': '{recipe}解锁',
   'retention.ingredientsNew': '{ingredients}上新',
   'retention.keepGoing': '继续挑战',
+  'retention.separator': '。',
   'retention.special5': '特别人物登场',
   'retention.special6': '明星同款热潮',
   'rotate.prompt': '请横屏体验夜市经营',

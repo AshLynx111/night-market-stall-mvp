@@ -87,6 +87,7 @@ export const en = {
   'retention.recipeUnlocked': '{recipe} unlocked',
   'retention.ingredientsNew': 'New: {ingredients}',
   'retention.keepGoing': 'Keep the streak going',
+  'retention.separator': '. ',
   'retention.special5': 'Special guest arrives',
   'retention.special6': 'Celebrity special rush',
   'rotate.prompt': 'Rotate to landscape to open your stall',

@@ -7,15 +7,19 @@ import {
   type Locale,
   type TFunction,
 } from './core'
+import { createDomainI18n, type DomainI18n } from './domain'
 
 export interface I18nContextValue {
   locale: Locale
   t: TFunction
+  domain: DomainI18n
 }
 
+const defaultT: TFunction = (key, values) => translate('zh-CN', key, values)
 const defaultValue: I18nContextValue = {
   locale: 'zh-CN',
-  t: (key, values) => translate('zh-CN', key, values),
+  t: defaultT,
+  domain: createDomainI18n(defaultT),
 }
 
 const I18nContext = createContext<I18nContextValue>(defaultValue)
@@ -46,10 +50,10 @@ export function I18nProvider({ children, locale: fixedLocale }: { children: Reac
     }
   }, [fixedLocale, locale])
 
-  const value = useMemo<I18nContextValue>(() => ({
-    locale,
-    t: (key, values) => translate(locale, key, values),
-  }), [locale])
+  const value = useMemo<I18nContextValue>(() => {
+    const t: TFunction = (key, values) => translate(locale, key, values)
+    return { locale, t, domain: createDomainI18n(t) }
+  }, [locale])
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>
 }
