@@ -3,7 +3,7 @@ import { tutorialStep, type TutorialStep } from '../../landscape/kitchen/tutoria
 import type { KitchenState } from '../../landscape/kitchen/types'
 import { GameIcon } from './GameIcon'
 import { useI18n } from '../../i18n/I18nProvider'
-import type { TFunction, TranslationKey } from '../../i18n/core'
+import { translate, type TFunction, type TranslationKey } from '../../i18n/core'
 
 type TutorialHandKind = 'drag' | 'egg' | 'hot-dog' | 'scallion' | 'pack' | 'serve'
 
@@ -12,12 +12,10 @@ const HAND_FOR_STEP: Partial<Record<TutorialStep, TutorialHandKind>> = {
 }
 
 export function tutorialShortInstruction(step: TutorialStep, sauceSelected = false) {
-  const copy: Record<TutorialStep, string> = {
-    'customer-arrival': '看看顾客的订单', noodle: '点面皮，或拖到铁板', egg: '点击鸡蛋', 'wait-egg': '等蛋液变金黄',
-    'hot-dog': '点热狗，或拖到铁板', 'wait-hot-dog': '等热狗煎香', sauce: sauceSelected ? '左右刷两下' : '点击酱刷',
-    scallion: '点葱花，或拖到铁板', cut: '沿虚线切三刀', roll: '向右滑动卷起', pack: '点击装盘', serve: '点餐盒，或拖给顾客', done: '第一份完成',
-  }
-  return copy[step]
+  const key = step === 'sauce'
+    ? sauceSelected ? 'tutorial.short.sauce.brush' : 'tutorial.short.sauce.pick'
+    : `tutorial.short.${step}` as TranslationKey
+  return translate('zh-CN', key)
 }
 
 function TutorialGestureCue({ kind, state, sauceSelected }: { kind: TutorialPathKind; state: KitchenState; sauceSelected: boolean }) {

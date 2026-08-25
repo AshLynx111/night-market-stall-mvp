@@ -1,10 +1,9 @@
 export interface DeliveryFeedbackValue { id: number; income: number; quality: number }
 import { useI18n } from '../../i18n/I18nProvider'
+import { translate } from '../../i18n/core'
 
-export function qualityLabel(quality: number): '完美' | '很好' | '可以' {
-  if (quality >= 90) return '完美'
-  if (quality >= 75) return '很好'
-  return '可以'
+export function qualityLabel(quality: number): string {
+  return translate('zh-CN', quality >= 90 ? 'feedback.perfect' : quality >= 75 ? 'feedback.great' : 'feedback.okay')
 }
 
 export function DeliveryFeedback({ feedback, held = false }: { feedback: DeliveryFeedbackValue | null; held?: boolean }) {
