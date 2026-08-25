@@ -186,6 +186,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   return (
     <main
       className="game-screen ui-screen"
+      style={{ '--game-ambient-bg': `url(${kitchenScreen})` } as React.CSSProperties}
       data-ui-screen={eventOpen ? 'event' : 'playing'}
       data-screen-art="kitchen"
       data-day={day.day}
