@@ -1,0 +1,94 @@
+{
+  "capturedAt": "2026-08-25T12:06:21.706Z",
+  "browser": {
+    "name": "Microsoft Edge",
+    "version": "151.0.4129.107"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 810,
+    "deviceScaleFactor": 1
+  },
+  "baseline": "docs/qa/screenshots/day-retention-loop-v1/summary-next-day-1440x810.png",
+  "screenshot": "docs/qa/screenshots/summary-upgrade-icons-v1/summary-upgrade-icons-1440x810.png",
+  "summaryReachedByThreeRealOrders": true,
+  "icons": [
+    {
+      "kind": "funds",
+      "tagName": "svg",
+      "viewBox": "0 0 48 48",
+      "strokeWidth": "2px",
+      "strokeColor": "rgb(107, 53, 31)",
+      "lineCap": "round",
+      "lineJoin": "round",
+      "filter": "drop-shadow(rgba(37, 18, 11, 0.36) 0px 2px 0px)",
+      "width": 53,
+      "height": 53,
+      "wrapperShadow": "rgb(90, 44, 14) 0px 0px 9px 8px",
+      "wrapperBackground": "rgb(90, 44, 14)",
+      "rasterDescendants": 0
+    },
+    {
+      "kind": "fire",
+      "tagName": "svg",
+      "viewBox": "0 0 48 48",
+      "strokeWidth": "2px",
+      "strokeColor": "rgb(107, 53, 31)",
+      "lineCap": "round",
+      "lineJoin": "round",
+      "filter": "drop-shadow(rgba(37, 18, 11, 0.36) 0px 2px 0px)",
+      "width": 53,
+      "height": 53,
+      "wrapperShadow": "rgb(85, 40, 12) 0px 0px 9px 8px",
+      "wrapperBackground": "rgb(85, 40, 12)",
+      "rasterDescendants": 0
+    },
+    {
+      "kind": "sign",
+      "tagName": "svg",
+      "viewBox": "0 0 48 48",
+      "strokeWidth": "2px",
+      "strokeColor": "rgb(107, 53, 31)",
+      "lineCap": "round",
+      "lineJoin": "round",
+      "filter": "drop-shadow(rgba(37, 18, 11, 0.36) 0px 2px 0px)",
+      "width": 53,
+      "height": 53,
+      "wrapperShadow": "rgb(85, 40, 12) 0px 0px 9px 8px",
+      "wrapperBackground": "rgb(85, 40, 12)",
+      "rasterDescendants": 0
+    }
+  ],
+  "layout": {
+    "funds": {
+      "x": 406.3,
+      "y": 514.3,
+      "width": 135.3,
+      "height": 73.7
+    },
+    "fire": {
+      "x": 557.4,
+      "y": 488.4,
+      "width": 280.6,
+      "height": 124.7
+    },
+    "sign": {
+      "x": 851,
+      "y": 488.4,
+      "width": 293.6,
+      "height": 124.7
+    }
+  },
+  "comparison": {
+    "threshold": 24,
+    "changedPixelsByIconRegion": {
+      "funds": 4130,
+      "fire": 3082,
+      "sign": 2887
+    },
+    "changedPixelsOutsideIconRegions": 1967
+  },
+  "allImagesDecoded": true,
+  "consoleErrors": [],
+  "pageErrors": []
+}
