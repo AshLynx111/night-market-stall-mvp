@@ -7,7 +7,13 @@ import { chromium } from 'playwright'
 const root = process.cwd()
 const port = 4191
 const baseUrl = `http://127.0.0.1:${port}`
-const outputDir = path.join(root, 'docs', 'qa', 'screenshots', 'full-visual-consistency-v1')
+const outputDir = path.join(
+  root,
+  'docs',
+  'qa',
+  'screenshots',
+  process.env.VISUAL_QA_OUTPUT ?? 'full-visual-consistency-v1',
+)
 const edgePath = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
 const viewports = [
   { id: '1440x810', width: 1440, height: 810 },
@@ -380,13 +386,16 @@ try {
 
   const expectedNames = viewports.flatMap((viewport) => states.map(([stateId]) => `${stateId}-${viewport.id}.png`))
     .concat('09-rotate-prompt-390x844.png')
+  await writeFile(path.join(outputDir, 'qa-results.json'), JSON.stringify(results, null, 2))
   assert(results.screenshots.length === expectedNames.length, `Expected ${expectedNames.length} screenshots, got ${results.screenshots.length}`)
   assert(expectedNames.every((name) => results.screenshots.some(({ filename }) => filename === name)), 'Screenshot manifest is incomplete')
-  assert(results.screenshots.every(({ images }) => images.every(({ decoded }) => decoded)), 'One or more visible images failed to decode')
+  const failedImages = results.screenshots.flatMap(({ filename, images }) => images
+    .filter(({ decoded }) => !decoded)
+    .map(({ src }) => `${filename}: ${src}`))
+  assert(failedImages.length === 0, `One or more visible images failed to decode:\n${failedImages.join('\n')}`)
   assert(results.consoleErrors.length === 0, `Console errors: ${JSON.stringify(results.consoleErrors)}`)
   assert(results.pageErrors.length === 0, `Page errors: ${JSON.stringify(results.pageErrors)}`)
 
-  await writeFile(path.join(outputDir, 'qa-results.json'), JSON.stringify(results, null, 2))
   process.stdout.write(`${JSON.stringify({
     screenshots: results.screenshots.map(({ filename, state, clipped, bodyOverflow, symbolicGlyphs }) => ({ filename, state, clipped: clipped.length, bodyOverflow, symbolicGlyphs })),
     interactionStates: results.interactionStates,

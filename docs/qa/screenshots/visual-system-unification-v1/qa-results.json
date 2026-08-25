@@ -1,0 +1,5295 @@
+{
+  "capturedAt": "2026-08-25T14:00:46.333Z",
+  "browser": {
+    "name": "Microsoft Edge",
+    "version": "151.0.4129.107"
+  },
+  "baseUrl": "http://127.0.0.1:4191",
+  "screenshots": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "screen": "home",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 810
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "home-screen__art",
+          "src": "home-screen-user-final-C8Xn3OJv.webp",
+          "alt": "夜市烤冷面游戏主菜单",
+          "decoded": true,
+          "box": {
+            "x": 0.4,
+            "y": 0,
+            "width": 1439.2,
+            "height": 810,
+            "right": 1439.6,
+            "bottom": 810
+          }
+        }
+      ],
+      "svgIcons": [],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "开始游戏",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 495.5,
+            "y": 298.1,
+            "width": 451.9,
+            "height": 82.6,
+            "right": 947.4,
+            "bottom": 380.7
+          }
+        },
+        {
+          "label": "继续游戏",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 492.6,
+            "y": 396.1,
+            "width": 459.1,
+            "height": 85,
+            "right": 951.7,
+            "bottom": 481.1
+          }
+        },
+        {
+          "label": "打开设置",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 498.4,
+            "y": 494.1,
+            "width": 450.5,
+            "height": 82.6,
+            "right": 948.8,
+            "bottom": 576.7
+          }
+        },
+        {
+          "label": "打开图鉴",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 512.8,
+            "y": 583.2,
+            "width": 211.6,
+            "height": 68,
+            "right": 724.3,
+            "bottom": 651.2
+          }
+        },
+        {
+          "label": "查看关卡与成就",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 748.8,
+            "y": 583.2,
+            "width": 211.6,
+            "height": 68,
+            "right": 960.3,
+            "bottom": 651.2
+          }
+        },
+        {
+          "label": "背景音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1323,
+            "y": 17.8,
+            "width": 77.7,
+            "height": 72.9,
+            "right": 1400.7,
+            "bottom": 90.7
+          }
+        }
+      ],
+      "text": "开始游戏 继续游戏 设置 图鉴 选择关卡 静音背景音乐",
+      "filename": "01-home-1440x810.png",
+      "state": "首页"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "screen": "select",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 810
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "select-screen__art",
+          "src": "day-select-user-final-BP5n1raz.webp",
+          "alt": "夜市营业日选择",
+          "decoded": true,
+          "box": {
+            "x": 0.4,
+            "y": 0,
+            "width": 1439.2,
+            "height": 810,
+            "right": 1439.6,
+            "bottom": 810
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 692,
+            "y": 360.5,
+            "width": 11.8,
+            "height": 11.8,
+            "right": 703.8,
+            "bottom": 372.3
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1063.3,
+            "y": 360.5,
+            "width": 11.8,
+            "height": 11.8,
+            "right": 1075.1,
+            "bottom": 372.3
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 326.4,
+            "y": 586.7,
+            "width": 11.8,
+            "height": 11.8,
+            "right": 338.2,
+            "bottom": 598.5
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 692,
+            "y": 586.7,
+            "width": 11.8,
+            "height": 11.8,
+            "right": 703.8,
+            "bottom": 598.5
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1063.3,
+            "y": 586.7,
+            "width": 11.8,
+            "height": 11.8,
+            "right": 1075.1,
+            "bottom": 598.5
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--funds",
+          "dataIcon": "funds",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 245.6,
+            "y": 683.8,
+            "width": 53,
+            "height": 53,
+            "right": 298.6,
+            "bottom": 736.8
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--fire",
+          "dataIcon": "fire",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 543.2,
+            "y": 683,
+            "width": 53,
+            "height": 53,
+            "right": 596.2,
+            "bottom": 736
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--sign",
+          "dataIcon": "sign",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 881.4,
+            "y": 683,
+            "width": 53,
+            "height": 53,
+            "right": 934.4,
+            "bottom": 736
+          }
+        }
+      ],
+      "symbolicGlyphs": [
+        "☆"
+      ],
+      "buttons": [
+        {
+          "label": "返回主菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 56.5,
+            "y": 24.3,
+            "width": 165.5,
+            "height": 93.1,
+            "right": 222,
+            "bottom": 117.4
+          }
+        },
+        {
+          "label": "查看完整菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1039.5,
+            "y": 20.3,
+            "width": 372.8,
+            "height": 156.3,
+            "right": 1412.3,
+            "bottom": 176.6
+          }
+        },
+        {
+          "label": "进入第 1 天：开张第一天。当前目标：完成教学并出餐 3 份。经典款解锁",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 181.7,
+            "y": 186.3,
+            "width": 358.4,
+            "height": 218.7,
+            "right": 540.1,
+            "bottom": 405
+          }
+        },
+        {
+          "label": "第 2 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 547.3,
+            "y": 186.3,
+            "width": 358.4,
+            "height": 218.7,
+            "right": 905.6,
+            "bottom": 405
+          }
+        },
+        {
+          "label": "第 3 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 918.6,
+            "y": 186.3,
+            "width": 358.4,
+            "height": 218.7,
+            "right": 1277,
+            "bottom": 405
+          }
+        },
+        {
+          "label": "第 4 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 181.7,
+            "y": 417.1,
+            "width": 358.4,
+            "height": 213,
+            "right": 540.1,
+            "bottom": 630.2
+          }
+        },
+        {
+          "label": "第 5 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 547.3,
+            "y": 417.1,
+            "width": 358.4,
+            "height": 213,
+            "right": 905.6,
+            "bottom": 630.2
+          }
+        },
+        {
+          "label": "第 6 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 918.6,
+            "y": 417.1,
+            "width": 358.4,
+            "height": 213,
+            "right": 1277,
+            "bottom": 630.2
+          }
+        },
+        {
+          "label": "升级火力",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(31, 18, 12, 0.3)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 521.4,
+            "y": 648.8,
+            "width": 322.4,
+            "height": 121.5,
+            "right": 843.8,
+            "bottom": 770.3
+          }
+        },
+        {
+          "label": "升级招牌",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(31, 18, 12, 0.3)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 859.6,
+            "y": 648.8,
+            "width": 322.4,
+            "height": 121.5,
+            "right": 1182,
+            "bottom": 770.3
+          }
+        }
+      ],
+      "text": "返回主菜单 查看完整菜单 ☆☆☆ 经典款解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 当前资金 ¥ 36 升级火力 Lv.1 顾客耐心 +3秒 · ¥40 升级招牌 Lv.1 每单额外 +2元 · ¥60",
+      "filename": "02-select-1440x810.png",
+      "state": "选关"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "screen": "playing",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 810
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "game-screen__background",
+          "src": "night-market-clean-background-DRPGRpdO.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 810,
+            "right": 1440,
+            "bottom": 810
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 511,
+            "y": 157.5,
+            "width": 30,
+            "height": 22,
+            "right": 541,
+            "bottom": 179.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 545,
+            "y": 157.5,
+            "width": 30,
+            "height": 22,
+            "right": 575,
+            "bottom": 179.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 579,
+            "y": 157.5,
+            "width": 30,
+            "height": 22,
+            "right": 609,
+            "bottom": 179.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 511,
+            "y": 183.5,
+            "width": 30,
+            "height": 22,
+            "right": 541,
+            "bottom": 205.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 545,
+            "y": 183.5,
+            "width": 30,
+            "height": 22,
+            "right": 575,
+            "bottom": 205.5
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-Bl1ofHc3.webp",
+          "alt": "小林同学角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 255,
+            "y": 155,
+            "width": 270,
+            "height": 360,
+            "right": 525,
+            "bottom": 515
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 98.2,
+            "y": 441.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 211.8,
+            "bottom": 554.7
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 253.2,
+            "y": 441.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 366.8,
+            "bottom": 554.7
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 98.2,
+            "y": 516.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 211.8,
+            "bottom": 629.7
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 253.2,
+            "y": 516.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 366.8,
+            "bottom": 629.7
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 98.2,
+            "y": 591.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 211.8,
+            "bottom": 704.7
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "game-icon",
+          "dataIcon": "coin",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1195.3,
+            "y": 26,
+            "width": 24,
+            "height": 24,
+            "right": 1219.3,
+            "bottom": 50
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "pause",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1320,
+            "y": 26,
+            "width": 24,
+            "height": 24,
+            "right": 1344,
+            "bottom": 50
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "sound-on",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1384,
+            "y": 26,
+            "width": 24,
+            "height": 24,
+            "right": 1408,
+            "bottom": 50
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "hand",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1085,
+            "y": 567.4,
+            "width": 30.5,
+            "height": 30.5,
+            "right": 1115.5,
+            "bottom": 597.9
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "help",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1389.5,
+            "y": 693.5,
+            "width": 23,
+            "height": 23,
+            "right": 1412.5,
+            "bottom": 716.5
+          }
+        }
+      ],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "返回主页",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 18,
+            "y": 12,
+            "width": 150,
+            "height": 52,
+            "right": 168,
+            "bottom": 64
+          }
+        },
+        {
+          "label": "暂停并打开菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1306,
+            "y": 12,
+            "width": 52,
+            "height": 52,
+            "right": 1358,
+            "bottom": 64
+          }
+        },
+        {
+          "label": "关闭音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1370,
+            "y": 12,
+            "width": 52,
+            "height": 52,
+            "right": 1422,
+            "bottom": 64
+          }
+        },
+        {
+          "label": "面皮，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 80,
+            "y": 466,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 536
+          }
+        },
+        {
+          "label": "鸡蛋，点击自动放置，也可拖到指定铁板",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "0.82",
+          "cursor": "default",
+          "box": {
+            "x": 235,
+            "y": 466,
+            "width": 150,
+            "height": 70,
+            "right": 385,
+            "bottom": 536
+          }
+        },
+        {
+          "label": "热狗，点击自动放置，也可拖到指定铁板",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "0.82",
+          "cursor": "default",
+          "box": {
+            "x": 80,
+            "y": 541,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 611
+          }
+        },
+        {
+          "label": "刷酱，点击拿起酱刷",
+          "disabled": true,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "0.82",
+          "cursor": "default",
+          "box": {
+            "x": 235,
+            "y": 541,
+            "width": 150,
+            "height": 70,
+            "right": 385,
+            "bottom": 611
+          }
+        },
+        {
+          "label": "葱花，点击自动放置，也可拖到指定铁板",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "0.82",
+          "cursor": "default",
+          "box": {
+            "x": 80,
+            "y": 616,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 686
+          }
+        },
+        {
+          "label": "打开玩法说明",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgb(255, 240, 200)",
+          "color": "rgb(157, 75, 46)",
+          "border": "2px solid rgb(91, 67, 52)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1380,
+            "y": 684,
+            "width": 42,
+            "height": 42,
+            "right": 1422,
+            "bottom": 726
+          }
+        }
+      ],
+      "text": "第 1 天 订单 0/3 ¥36 面皮 鸡蛋 热狗 刷酱 葱花 点面皮，或拖到铁板 点击面皮会自动放到左边铁板，也可以拖过去。",
+      "filename": "03-day-1-tutorial-1440x810.png",
+      "state": "Day 1 教程"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "screen": "playing",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 810
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "game-screen__background",
+          "src": "night-market-clean-background-DRPGRpdO.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 810,
+            "right": 1440,
+            "bottom": 810
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 516.9,
+            "y": 161.6,
+            "width": 26.4,
+            "height": 19.4,
+            "right": 543.3,
+            "bottom": 181
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 546.8,
+            "y": 161.6,
+            "width": 26.4,
+            "height": 19.4,
+            "right": 573.2,
+            "bottom": 181
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 576.7,
+            "y": 161.6,
+            "width": 26.4,
+            "height": 19.4,
+            "right": 603.1,
+            "bottom": 181
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 516.9,
+            "y": 184.5,
+            "width": 26.4,
+            "height": 19.4,
+            "right": 543.3,
+            "bottom": 203.9
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 546.8,
+            "y": 184.5,
+            "width": 26.4,
+            "height": 19.4,
+            "right": 573.2,
+            "bottom": 203.9
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-DLcZRouC.webp",
+          "alt": "社团学长角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 255,
+            "y": 155,
+            "width": 270,
+            "height": 360,
+            "right": 525,
+            "bottom": 515
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 671,
+            "y": 145.5,
+            "width": 30,
+            "height": 22,
+            "right": 701,
+            "bottom": 167.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 705,
+            "y": 145.5,
+            "width": 30,
+            "height": 22,
+            "right": 735,
+            "bottom": 167.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 739,
+            "y": 145.5,
+            "width": 30,
+            "height": 22,
+            "right": 769,
+            "bottom": 167.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 671,
+            "y": 171.5,
+            "width": 30,
+            "height": 22,
+            "right": 701,
+            "bottom": 193.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 705,
+            "y": 171.5,
+            "width": 30,
+            "height": 22,
+            "right": 735,
+            "bottom": 193.5
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-BqF4RJIG.webp",
+          "alt": "阿杰角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 585,
+            "y": 165,
+            "width": 270,
+            "height": 360,
+            "right": 855,
+            "bottom": 525
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 1001,
+            "y": 145.5,
+            "width": 30,
+            "height": 22,
+            "right": 1031,
+            "bottom": 167.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 1035,
+            "y": 145.5,
+            "width": 30,
+            "height": 22,
+            "right": 1065,
+            "bottom": 167.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 1069,
+            "y": 145.5,
+            "width": 30,
+            "height": 22,
+            "right": 1099,
+            "bottom": 167.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 1001,
+            "y": 171.5,
+            "width": 30,
+            "height": 22,
+            "right": 1031,
+            "bottom": 193.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 1035,
+            "y": 171.5,
+            "width": 30,
+            "height": 22,
+            "right": 1065,
+            "bottom": 193.5
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-B-hb3jfs.webp",
+          "alt": "晓雨角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 915,
+            "y": 155,
+            "width": 270,
+            "height": 360,
+            "right": 1185,
+            "bottom": 515
+          }
+        },
+        {
+          "className": "griddle-slot__stage-art",
+          "src": "classic-01-noodle-HVexiEkq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 501.7,
+            "y": 568.7,
+            "width": 247.7,
+            "height": 198.6,
+            "right": 749.3,
+            "bottom": 767.3
+          }
+        },
+        {
+          "className": "griddle-slot__stage-art",
+          "src": "classic-01-noodle-HVexiEkq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 770.7,
+            "y": 568.7,
+            "width": 247.7,
+            "height": 198.6,
+            "right": 1018.3,
+            "bottom": 767.3
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 98.2,
+            "y": 441.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 211.8,
+            "bottom": 554.7
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 253.2,
+            "y": 441.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 366.8,
+            "bottom": 554.7
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 98.2,
+            "y": 516.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 211.8,
+            "bottom": 629.7
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 253.2,
+            "y": 516.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 366.8,
+            "bottom": 629.7
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 98.2,
+            "y": 591.1,
+            "width": 113.6,
+            "height": 113.6,
+            "right": 211.8,
+            "bottom": 704.7
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "game-icon",
+          "dataIcon": "coin",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1195.3,
+            "y": 26,
+            "width": 24,
+            "height": 24,
+            "right": 1219.3,
+            "bottom": 50
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "pause",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1320,
+            "y": 26,
+            "width": 24,
+            "height": 24,
+            "right": 1344,
+            "bottom": 50
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "sound-on",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1384,
+            "y": 26,
+            "width": 24,
+            "height": 24,
+            "right": 1408,
+            "bottom": 50
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "trash",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1317.4,
+            "y": 750.8,
+            "width": 18,
+            "height": 18,
+            "right": 1335.4,
+            "bottom": 768.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "trash",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1380.4,
+            "y": 750.8,
+            "width": 18,
+            "height": 18,
+            "right": 1398.4,
+            "bottom": 768.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "help",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1389.5,
+            "y": 693.5,
+            "width": 23,
+            "height": 23,
+            "right": 1412.5,
+            "bottom": 716.5
+          }
+        }
+      ],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "返回主页",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 18,
+            "y": 12,
+            "width": 150,
+            "height": 52,
+            "right": 168,
+            "bottom": 64
+          }
+        },
+        {
+          "label": "暂停并打开菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1306,
+            "y": 12,
+            "width": 52,
+            "height": 52,
+            "right": 1358,
+            "bottom": 64
+          }
+        },
+        {
+          "label": "关闭音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1370,
+            "y": 12,
+            "width": 52,
+            "height": 52,
+            "right": 1422,
+            "bottom": 64
+          }
+        },
+        {
+          "label": "铁板上的烤冷面",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "default",
+          "box": {
+            "x": 507,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 744,
+            "bottom": 763
+          }
+        },
+        {
+          "label": "铁板上的烤冷面",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "default",
+          "box": {
+            "x": 776,
+            "y": 573,
+            "width": 237,
+            "height": 190,
+            "right": 1013,
+            "bottom": 763
+          }
+        },
+        {
+          "label": "面皮，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 80,
+            "y": 466,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 536
+          }
+        },
+        {
+          "label": "鸡蛋，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 235,
+            "y": 466,
+            "width": 150,
+            "height": 70,
+            "right": 385,
+            "bottom": 536
+          }
+        },
+        {
+          "label": "热狗，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 80,
+            "y": 541,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 611
+          }
+        },
+        {
+          "label": "刷酱，点击拿起酱刷",
+          "disabled": false,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 235,
+            "y": 541,
+            "width": 150,
+            "height": 70,
+            "right": 385,
+            "bottom": 611
+          }
+        },
+        {
+          "label": "葱花，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 80,
+            "y": 616,
+            "width": 150,
+            "height": 70,
+            "right": 230,
+            "bottom": 686
+          }
+        },
+        {
+          "label": "丢弃左侧铁板上的食物",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(255, 237, 197, 0.9)",
+          "color": "rgb(129, 65, 47)",
+          "border": "2px solid rgb(77, 59, 50)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1297.4,
+            "y": 743.8,
+            "width": 58,
+            "height": 46,
+            "right": 1355.4,
+            "bottom": 789.8
+          }
+        },
+        {
+          "label": "丢弃右侧铁板上的食物",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(255, 237, 197, 0.9)",
+          "color": "rgb(129, 65, 47)",
+          "border": "2px solid rgb(77, 59, 50)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1360.4,
+            "y": 743.8,
+            "width": 58,
+            "height": 46,
+            "right": 1418.4,
+            "bottom": 789.8
+          }
+        },
+        {
+          "label": "打开玩法说明",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgb(255, 240, 200)",
+          "color": "rgb(157, 75, 46)",
+          "border": "2px solid rgb(91, 67, 52)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1380,
+            "y": 684,
+            "width": 42,
+            "height": 42,
+            "right": 1422,
+            "bottom": 726
+          }
+        }
+      ],
+      "text": "第 1 天 订单 1/3 ¥46 打入鸡蛋 打入鸡蛋 面皮 鸡蛋 热狗 刷酱 葱花 清左板 清右板 放稳了",
+      "filename": "04-day-1-dual-griddle-1440x810.png",
+      "state": "Day 1 多顾客 / 双铁板"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "screen": "summary",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 810
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "summary-screen__art",
+          "src": "summary-screen-user-final-Dj2uHf7I.webp",
+          "alt": "今日打烊营业总结",
+          "decoded": true,
+          "box": {
+            "x": 0.4,
+            "y": 0,
+            "width": 1439.2,
+            "height": 810,
+            "right": 1439.6,
+            "bottom": 810
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--funds",
+          "dataIcon": "funds",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 332.4,
+            "y": 524.7,
+            "width": 53,
+            "height": 53,
+            "right": 385.4,
+            "bottom": 577.7
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--fire",
+          "dataIcon": "fire",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 571.5,
+            "y": 524.3,
+            "width": 53,
+            "height": 53,
+            "right": 624.5,
+            "bottom": 577.3
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--sign",
+          "dataIcon": "sign",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 867,
+            "y": 524.3,
+            "width": 53,
+            "height": 53,
+            "right": 920,
+            "bottom": 577.3
+          }
+        }
+      ],
+      "symbolicGlyphs": [
+        "★"
+      ],
+      "buttons": [
+        {
+          "label": "升级火力",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 557.4,
+            "y": 488.4,
+            "width": 280.6,
+            "height": 124.7,
+            "right": 838,
+            "bottom": 613.2
+          }
+        },
+        {
+          "label": "升级招牌",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 851,
+            "y": 488.4,
+            "width": 293.6,
+            "height": 124.7,
+            "right": 1144.6,
+            "bottom": 613.2
+          }
+        },
+        {
+          "label": "再玩一次",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(77, 47, 28)",
+          "border": "0px none rgb(77, 47, 28)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 429.3,
+            "y": 626.9,
+            "width": 276.3,
+            "height": 71.3,
+            "right": 705.6,
+            "bottom": 698.2
+          }
+        },
+        {
+          "label": "进入下一天：饭量挑战",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "0px none rgb(255, 255, 255)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 731.5,
+            "y": 626.9,
+            "width": 276.3,
+            "height": 71.3,
+            "right": 1007.8,
+            "bottom": 698.2
+          }
+        }
+      ],
+      "text": "开张第一天 · 营业完成 ★★★ 手速和品质都无可挑剔，夜市里已经有人专程来找你了！ 明日 · 饭量挑战 大胃王解锁 3 完成订单 93% 平均满意度 0 操作失误 ¥66 当前资金 当前资金 ¥ 66 升级火力 Lv.1 顾客耐心 +3秒 · ¥40 升级招牌 Lv.1 每单额外 +2元 · ¥60 再玩一次 明天 · 饭量挑战",
+      "filename": "05-summary-1440x810.png",
+      "state": "Day 1 结算"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "screen": "summary",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 810
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "summary-screen__art",
+          "src": "summary-screen-user-final-Dj2uHf7I.webp",
+          "alt": "今日打烊营业总结",
+          "decoded": true,
+          "box": {
+            "x": 0.4,
+            "y": 0,
+            "width": 1439.2,
+            "height": 810,
+            "right": 1439.6,
+            "bottom": 810
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--funds",
+          "dataIcon": "funds",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 332.4,
+            "y": 524.7,
+            "width": 53,
+            "height": 53,
+            "right": 385.4,
+            "bottom": 577.7
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--fire",
+          "dataIcon": "fire",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 571.5,
+            "y": 524.3,
+            "width": 53,
+            "height": 53,
+            "right": 624.5,
+            "bottom": 577.3
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--sign",
+          "dataIcon": "sign",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 867,
+            "y": 524.3,
+            "width": 53,
+            "height": 53,
+            "right": 920,
+            "bottom": 577.3
+          }
+        }
+      ],
+      "symbolicGlyphs": [
+        "★"
+      ],
+      "buttons": [
+        {
+          "label": "升级火力",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(31, 18, 12, 0.3)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 557.4,
+            "y": 488.4,
+            "width": 280.6,
+            "height": 124.7,
+            "right": 838,
+            "bottom": 613.2
+          }
+        },
+        {
+          "label": "升级招牌",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(31, 18, 12, 0.3)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 851,
+            "y": 488.4,
+            "width": 293.6,
+            "height": 124.7,
+            "right": 1144.6,
+            "bottom": 613.2
+          }
+        },
+        {
+          "label": "再玩一次",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(77, 47, 28)",
+          "border": "0px none rgb(77, 47, 28)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 429.3,
+            "y": 626.9,
+            "width": 276.3,
+            "height": 71.3,
+            "right": 705.6,
+            "bottom": 698.2
+          }
+        },
+        {
+          "label": "进入下一天：饭量挑战",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "0px none rgb(255, 255, 255)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 731.5,
+            "y": 626.9,
+            "width": 276.3,
+            "height": 71.3,
+            "right": 1007.8,
+            "bottom": 698.2
+          }
+        }
+      ],
+      "text": "开张第一天 · 营业完成 ★★★ 手速和品质都无可挑剔，夜市里已经有人专程来找你了！ 明日 · 饭量挑战 大胃王解锁 3 完成订单 93% 平均满意度 0 操作失误 ¥26 当前资金 当前资金 ¥ 26 升级火力 Lv.2 顾客耐心 +3秒 · ¥80 升级招牌 Lv.1 每单额外 +2元 · ¥60 再玩一次 明天 · 饭量挑战",
+      "filename": "06-summary-upgraded-1440x810.png",
+      "state": "升级后的结算状态"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "screen": "playing",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 810
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "game-screen__background",
+          "src": "night-market-clean-background-DRPGRpdO.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 810,
+            "right": 1440,
+            "bottom": 810
+          }
+        },
+        {
+          "className": "game-screen__background game-screen__background--expanded-rack",
+          "src": "kitchen-screen-live-expanded-clean-D993X-rQ.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 810,
+            "right": 1440,
+            "bottom": 810
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 511,
+            "y": 157.5,
+            "width": 30,
+            "height": 22,
+            "right": 541,
+            "bottom": 179.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 545,
+            "y": 157.5,
+            "width": 30,
+            "height": 22,
+            "right": 575,
+            "bottom": 179.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 579,
+            "y": 157.5,
+            "width": 30,
+            "height": 22,
+            "right": 609,
+            "bottom": 179.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 511,
+            "y": 183.5,
+            "width": 30,
+            "height": 22,
+            "right": 541,
+            "bottom": 205.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 545,
+            "y": 183.5,
+            "width": 30,
+            "height": 22,
+            "right": 575,
+            "bottom": 205.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-cilantro-mTnRXM7u.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 559,
+            "y": 208,
+            "width": 15,
+            "height": 16,
+            "right": 574,
+            "bottom": 224
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-Bl1ofHc3.webp",
+          "alt": "小林同学角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 255,
+            "y": 155,
+            "width": 270,
+            "height": 360,
+            "right": 525,
+            "bottom": 515
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "ordering-DM1-vGOO.webp",
+          "alt": "阿杰角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 585,
+            "y": 165,
+            "width": 270,
+            "height": 360,
+            "right": 855,
+            "bottom": 525
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "arriving-BBjmCuQ-.webp",
+          "alt": "晓雨角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 960.5,
+            "y": 155,
+            "width": 270,
+            "height": 360,
+            "right": 1230.5,
+            "bottom": 515
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 150.3,
+            "y": 455.8,
+            "width": 70.5,
+            "height": 70.5,
+            "right": 220.8,
+            "bottom": 526.3
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 239,
+            "y": 455.8,
+            "width": 70.5,
+            "height": 70.5,
+            "right": 309.5,
+            "bottom": 526.3
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 327.7,
+            "y": 457.1,
+            "width": 69.7,
+            "height": 69.7,
+            "right": 397.4,
+            "bottom": 526.8
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 124.8,
+            "y": 501.8,
+            "width": 75,
+            "height": 75,
+            "right": 199.8,
+            "bottom": 576.8
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 217.8,
+            "y": 502.2,
+            "width": 75,
+            "height": 75,
+            "right": 292.8,
+            "bottom": 577.2
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-cilantro-mTnRXM7u.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 310.9,
+            "y": 502.6,
+            "width": 75,
+            "height": 75,
+            "right": 385.9,
+            "bottom": 577.6
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-onion-BWe7JPxS.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 101.7,
+            "y": 552.7,
+            "width": 77.3,
+            "height": 77.3,
+            "right": 179,
+            "bottom": 630
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-chili-powder-CNVUFwMC.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 198.3,
+            "y": 551.9,
+            "width": 78.8,
+            "height": 78.8,
+            "right": 277.1,
+            "bottom": 630.8
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "game-icon",
+          "dataIcon": "coin",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1195.3,
+            "y": 26,
+            "width": 24,
+            "height": 24,
+            "right": 1219.3,
+            "bottom": 50
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "pause",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1320,
+            "y": 26,
+            "width": 24,
+            "height": 24,
+            "right": 1344,
+            "bottom": 50
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "sound-on",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1384,
+            "y": 26,
+            "width": 24,
+            "height": 24,
+            "right": 1408,
+            "bottom": 50
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "extra",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 545.5,
+            "y": 209.5,
+            "width": 13,
+            "height": 13,
+            "right": 558.5,
+            "bottom": 222.5
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "help",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 1389.5,
+            "y": 693.5,
+            "width": 23,
+            "height": 23,
+            "right": 1412.5,
+            "bottom": 716.5
+          }
+        }
+      ],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "返回主页",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 18,
+            "y": 12,
+            "width": 150,
+            "height": 52,
+            "right": 168,
+            "bottom": 64
+          }
+        },
+        {
+          "label": "暂停并打开菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1306,
+            "y": 12,
+            "width": 52,
+            "height": 52,
+            "right": 1358,
+            "bottom": 64
+          }
+        },
+        {
+          "label": "关闭音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1370,
+            "y": 12,
+            "width": 52,
+            "height": 52,
+            "right": 1422,
+            "bottom": 64
+          }
+        },
+        {
+          "label": "面皮，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 113.7,
+            "y": 469.1,
+            "width": 116.3,
+            "height": 53.4,
+            "right": 229.9,
+            "bottom": 522.5
+          }
+        },
+        {
+          "label": "鸡蛋，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 229.9,
+            "y": 469.1,
+            "width": 88.7,
+            "height": 53.4,
+            "right": 318.6,
+            "bottom": 522.5
+          }
+        },
+        {
+          "label": "热狗，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 318.7,
+            "y": 469.1,
+            "width": 94.7,
+            "height": 53.4,
+            "right": 413.4,
+            "bottom": 522.5
+          }
+        },
+        {
+          "label": "刷酱，点击拿起酱刷",
+          "disabled": false,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 87,
+            "y": 522.5,
+            "width": 122.3,
+            "height": 49,
+            "right": 209.3,
+            "bottom": 571.5
+          }
+        },
+        {
+          "label": "葱花，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 209.3,
+            "y": 522.5,
+            "width": 93,
+            "height": 49,
+            "right": 302.3,
+            "bottom": 571.5
+          }
+        },
+        {
+          "label": "香菜，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 302.3,
+            "y": 522.5,
+            "width": 99,
+            "height": 49,
+            "right": 401.3,
+            "bottom": 571.5
+          }
+        },
+        {
+          "label": "洋葱，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 62,
+            "y": 571.5,
+            "width": 126.6,
+            "height": 55.9,
+            "right": 188.6,
+            "bottom": 627.5
+          }
+        },
+        {
+          "label": "辣椒粉，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 188.6,
+            "y": 571.5,
+            "width": 98.2,
+            "height": 55.9,
+            "right": 286.8,
+            "bottom": 627.5
+          }
+        },
+        {
+          "label": "打开玩法说明",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgb(255, 240, 200)",
+          "color": "rgb(157, 75, 46)",
+          "border": "2px solid rgb(91, 67, 52)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1380,
+            "y": 684,
+            "width": 42,
+            "height": 42,
+            "right": 1422,
+            "bottom": 726
+          }
+        }
+      ],
+      "text": "第 2 天 订单 0/4 ¥26 面皮 鸡蛋 热狗 刷酱 葱花 香菜 洋葱 辣椒粉",
+      "filename": "07-day-2-1440x810.png",
+      "state": "Day 2 游戏状态"
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "screen": "settings",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 1440,
+        "scrollHeight": 810
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "settings-screen__art",
+          "src": "settings-screen-user-final-CbSiQ8af.webp",
+          "alt": "夜市烤冷面游戏音量设置",
+          "decoded": true,
+          "box": {
+            "x": 0.4,
+            "y": 0,
+            "width": 1439.2,
+            "height": 810,
+            "right": 1439.6,
+            "bottom": 810
+          }
+        },
+        {
+          "className": "settings-screen__rail-clean-patch",
+          "src": "settings-slider-clean-patch-DevvtYq4.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 0.4,
+            "y": 0,
+            "width": 1439.2,
+            "height": 810,
+            "right": 1439.6,
+            "bottom": 810
+          }
+        }
+      ],
+      "svgIcons": [],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "背景音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 1323,
+            "y": 17.8,
+            "width": 77.7,
+            "height": 72.9,
+            "right": 1400.7,
+            "bottom": 90.7
+          }
+        },
+        {
+          "label": "返回主菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 639.4,
+            "y": 603.8,
+            "width": 161.2,
+            "height": 51.8,
+            "right": 800.6,
+            "bottom": 655.7
+          }
+        }
+      ],
+      "text": "总音量 背景音乐音量 音效音量 静音背景音乐 返回主菜单",
+      "filename": "08-settings-1440x810.png",
+      "state": "设置页"
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "screen": "home",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 844,
+        "scrollHeight": 390
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "home-screen__art",
+          "src": "home-screen-user-final-C8Xn3OJv.webp",
+          "alt": "夜市烤冷面游戏主菜单",
+          "decoded": true,
+          "box": {
+            "x": 75.5,
+            "y": 0,
+            "width": 693,
+            "height": 390,
+            "right": 768.5,
+            "bottom": 390
+          }
+        }
+      ],
+      "svgIcons": [],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "开始游戏",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 313.9,
+            "y": 143.5,
+            "width": 217.6,
+            "height": 39.8,
+            "right": 531.5,
+            "bottom": 183.3
+          }
+        },
+        {
+          "label": "继续游戏",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 312.5,
+            "y": 190.7,
+            "width": 221,
+            "height": 40.9,
+            "right": 533.5,
+            "bottom": 231.6
+          }
+        },
+        {
+          "label": "打开设置",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 315.3,
+            "y": 237.9,
+            "width": 216.9,
+            "height": 39.8,
+            "right": 532.2,
+            "bottom": 277.7
+          }
+        },
+        {
+          "label": "打开图鉴",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 322.2,
+            "y": 280.8,
+            "width": 101.9,
+            "height": 32.8,
+            "right": 424.1,
+            "bottom": 313.5
+          }
+        },
+        {
+          "label": "查看关卡与成就",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "border": "0px none rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 435.8,
+            "y": 280.8,
+            "width": 101.9,
+            "height": 32.8,
+            "right": 537.7,
+            "bottom": 313.5
+          }
+        },
+        {
+          "label": "背景音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 712.3,
+            "y": 8.6,
+            "width": 37.4,
+            "height": 35.1,
+            "right": 749.7,
+            "bottom": 43.7
+          }
+        }
+      ],
+      "text": "开始游戏 继续游戏 设置 图鉴 选择关卡 静音背景音乐",
+      "filename": "01-home-844x390.png",
+      "state": "首页"
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "screen": "select",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 844,
+        "scrollHeight": 390
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "select-screen__art",
+          "src": "day-select-user-final-BP5n1raz.webp",
+          "alt": "夜市营业日选择",
+          "decoded": true,
+          "box": {
+            "x": 75.5,
+            "y": 0,
+            "width": 693,
+            "height": 390,
+            "right": 768.5,
+            "bottom": 390
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 407.4,
+            "y": 172.9,
+            "width": 7.3,
+            "height": 7.3,
+            "right": 414.8,
+            "bottom": 180.2
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 586.2,
+            "y": 172.9,
+            "width": 7.3,
+            "height": 7.3,
+            "right": 593.5,
+            "bottom": 180.2
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 231.4,
+            "y": 281.9,
+            "width": 7.3,
+            "height": 7.3,
+            "right": 238.8,
+            "bottom": 289.2
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 407.4,
+            "y": 281.9,
+            "width": 7.3,
+            "height": 7.3,
+            "right": 414.8,
+            "bottom": 289.2
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "lock",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 586.2,
+            "y": 281.9,
+            "width": 7.3,
+            "height": 7.3,
+            "right": 593.5,
+            "bottom": 289.2
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--funds",
+          "dataIcon": "funds",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 190.7,
+            "y": 326.4,
+            "width": 31.2,
+            "height": 31.2,
+            "right": 222,
+            "bottom": 357.6
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--fire",
+          "dataIcon": "fire",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 334,
+            "y": 326,
+            "width": 31.2,
+            "height": 31.2,
+            "right": 365.2,
+            "bottom": 357.2
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--sign",
+          "dataIcon": "sign",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 496.9,
+            "y": 326,
+            "width": 31.2,
+            "height": 31.2,
+            "right": 528.1,
+            "bottom": 357.2
+          }
+        }
+      ],
+      "symbolicGlyphs": [
+        "☆"
+      ],
+      "buttons": [
+        {
+          "label": "返回主菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 102.5,
+            "y": 11.7,
+            "width": 79.7,
+            "height": 44.8,
+            "right": 182.2,
+            "bottom": 56.5
+          }
+        },
+        {
+          "label": "查看完整菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 575.8,
+            "y": 9.8,
+            "width": 179.5,
+            "height": 75.3,
+            "right": 755.3,
+            "bottom": 85
+          }
+        },
+        {
+          "label": "进入第 1 天：开张第一天。当前目标：完成教学并出餐 3 份。经典款解锁",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 162.8,
+            "y": 89.7,
+            "width": 172.5,
+            "height": 105.3,
+            "right": 335.3,
+            "bottom": 195
+          }
+        },
+        {
+          "label": "第 2 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 338.8,
+            "y": 89.7,
+            "width": 172.5,
+            "height": 105.3,
+            "right": 511.4,
+            "bottom": 195
+          }
+        },
+        {
+          "label": "第 3 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 517.6,
+            "y": 89.7,
+            "width": 172.5,
+            "height": 105.3,
+            "right": 690.1,
+            "bottom": 195
+          }
+        },
+        {
+          "label": "第 4 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 162.8,
+            "y": 200.8,
+            "width": 172.5,
+            "height": 102.6,
+            "right": 335.3,
+            "bottom": 303.4
+          }
+        },
+        {
+          "label": "第 5 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 338.8,
+            "y": 200.8,
+            "width": 172.5,
+            "height": 102.6,
+            "right": 511.4,
+            "bottom": 303.4
+          }
+        },
+        {
+          "label": "第 6 天尚未解锁，完成前一天后解锁",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(76, 52, 38)",
+          "border": "0px none rgb(76, 52, 38)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 517.6,
+            "y": 200.8,
+            "width": 172.5,
+            "height": 102.6,
+            "right": 690.1,
+            "bottom": 303.4
+          }
+        },
+        {
+          "label": "升级火力",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(31, 18, 12, 0.3)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 326.4,
+            "y": 312.4,
+            "width": 155.2,
+            "height": 58.5,
+            "right": 481.6,
+            "bottom": 370.9
+          }
+        },
+        {
+          "label": "升级招牌",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(31, 18, 12, 0.3)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 489.2,
+            "y": 312.4,
+            "width": 155.2,
+            "height": 58.5,
+            "right": 644.4,
+            "bottom": 370.9
+          }
+        }
+      ],
+      "text": "返回主菜单 查看完整菜单 ☆☆☆ 经典款解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 ☆☆☆ 完成前一天后解锁 当前资金 ¥ 36 升级火力 Lv.1 顾客耐心 +3秒 · ¥40 升级招牌 Lv.1 每单额外 +2元 · ¥60",
+      "filename": "02-select-844x390.png",
+      "state": "选关"
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "screen": "playing",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 844,
+        "scrollHeight": 390
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "game-screen__background",
+          "src": "night-market-clean-background-DRPGRpdO.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 75.3,
+            "y": 0,
+            "width": 693.3,
+            "height": 390,
+            "right": 768.7,
+            "bottom": 390
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 313.1,
+            "y": 77.9,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 332.6,
+            "bottom": 92.2
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 335.2,
+            "y": 77.9,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 354.7,
+            "bottom": 92.2
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 357.3,
+            "y": 77.9,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 376.8,
+            "bottom": 92.2
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 313.1,
+            "y": 94.8,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 332.6,
+            "bottom": 109.1
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 335.2,
+            "y": 94.8,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 354.7,
+            "bottom": 109.1
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-Bl1ofHc3.webp",
+          "alt": "小林同学角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 198.1,
+            "y": 74.6,
+            "width": 130,
+            "height": 173.3,
+            "right": 328.1,
+            "bottom": 248
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 122.6,
+            "y": 212.4,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 177.3,
+            "bottom": 267.1
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 197.2,
+            "y": 212.4,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 251.9,
+            "bottom": 267.1
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 122.6,
+            "y": 248.5,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 177.3,
+            "bottom": 303.2
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 197.2,
+            "y": 248.5,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 251.9,
+            "bottom": 303.2
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 122.6,
+            "y": 284.6,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 177.3,
+            "bottom": 339.3
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "game-icon",
+          "dataIcon": "coin",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 533.3,
+            "y": 19.8,
+            "width": 24,
+            "height": 24,
+            "right": 557.3,
+            "bottom": 43.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "pause",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 658,
+            "y": 19.8,
+            "width": 24,
+            "height": 24,
+            "right": 682,
+            "bottom": 43.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "sound-on",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 722,
+            "y": 19.8,
+            "width": 24,
+            "height": 24,
+            "right": 746,
+            "bottom": 43.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "hand",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 554.9,
+            "y": 271.6,
+            "width": 15.2,
+            "height": 15.2,
+            "right": 570.1,
+            "bottom": 286.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "help",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 718.2,
+            "y": 273.5,
+            "width": 23,
+            "height": 23,
+            "right": 741.2,
+            "bottom": 296.5
+          }
+        }
+      ],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "返回主页",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 84,
+            "y": 5.8,
+            "width": 150,
+            "height": 52,
+            "right": 234,
+            "bottom": 57.8
+          }
+        },
+        {
+          "label": "暂停并打开菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 644,
+            "y": 5.8,
+            "width": 52,
+            "height": 52,
+            "right": 696,
+            "bottom": 57.8
+          }
+        },
+        {
+          "label": "关闭音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 708,
+            "y": 5.8,
+            "width": 52,
+            "height": 52,
+            "right": 760,
+            "bottom": 57.8
+          }
+        },
+        {
+          "label": "面皮，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 113.9,
+            "y": 224.4,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 186.1,
+            "bottom": 258.1
+          }
+        },
+        {
+          "label": "鸡蛋，点击自动放置，也可拖到指定铁板",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "0.82",
+          "cursor": "default",
+          "box": {
+            "x": 188.5,
+            "y": 224.4,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 260.7,
+            "bottom": 258.1
+          }
+        },
+        {
+          "label": "热狗，点击自动放置，也可拖到指定铁板",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "0.82",
+          "cursor": "default",
+          "box": {
+            "x": 113.9,
+            "y": 260.5,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 186.1,
+            "bottom": 294.2
+          }
+        },
+        {
+          "label": "刷酱，点击拿起酱刷",
+          "disabled": true,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "0.82",
+          "cursor": "default",
+          "box": {
+            "x": 188.5,
+            "y": 260.5,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 260.7,
+            "bottom": 294.2
+          }
+        },
+        {
+          "label": "葱花，点击自动放置，也可拖到指定铁板",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "0.82",
+          "cursor": "default",
+          "box": {
+            "x": 113.9,
+            "y": 296.6,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 186.1,
+            "bottom": 330.3
+          }
+        },
+        {
+          "label": "打开玩法说明",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgb(255, 240, 200)",
+          "color": "rgb(157, 75, 46)",
+          "border": "2px solid rgb(91, 67, 52)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 708.7,
+            "y": 264,
+            "width": 42,
+            "height": 42,
+            "right": 750.7,
+            "bottom": 306
+          }
+        }
+      ],
+      "text": "第 1 天 订单 0/3 ¥36 面皮 鸡蛋 热狗 刷酱 葱花 点面皮，或拖到铁板 点击面皮会自动放到左边铁板，也可以拖过去。",
+      "filename": "03-day-1-tutorial-844x390.png",
+      "state": "Day 1 教程"
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "screen": "playing",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 844,
+        "scrollHeight": 390
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "game-screen__background",
+          "src": "night-market-clean-background-DRPGRpdO.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 75.3,
+            "y": 0,
+            "width": 693.3,
+            "height": 390,
+            "right": 768.7,
+            "bottom": 390
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 313.1,
+            "y": 77.9,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 332.6,
+            "bottom": 92.2
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 335.2,
+            "y": 77.9,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 354.7,
+            "bottom": 92.2
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 357.3,
+            "y": 77.9,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 376.8,
+            "bottom": 92.2
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 313.1,
+            "y": 94.8,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 332.6,
+            "bottom": 109.1
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 335.2,
+            "y": 94.8,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 354.7,
+            "bottom": 109.1
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-DLcZRouC.webp",
+          "alt": "社团学长角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 198.1,
+            "y": 74.6,
+            "width": 130,
+            "height": 173.3,
+            "right": 328.1,
+            "bottom": 248
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 390.1,
+            "y": 72.2,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 409.6,
+            "bottom": 86.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 412.3,
+            "y": 72.2,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 431.8,
+            "bottom": 86.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 434.4,
+            "y": 72.2,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 453.9,
+            "bottom": 86.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 390.1,
+            "y": 89.1,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 409.6,
+            "bottom": 103.4
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 412.3,
+            "y": 89.1,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 431.8,
+            "bottom": 103.4
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-BqF4RJIG.webp",
+          "alt": "阿杰角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 357,
+            "y": 79.4,
+            "width": 130,
+            "height": 173.3,
+            "right": 487,
+            "bottom": 252.8
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 549,
+            "y": 72.2,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 568.5,
+            "bottom": 86.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 571.1,
+            "y": 72.2,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 590.6,
+            "bottom": 86.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 593.2,
+            "y": 72.2,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 612.7,
+            "bottom": 86.5
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 549,
+            "y": 89.1,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 568.5,
+            "bottom": 103.4
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 571.1,
+            "y": 89.1,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 590.6,
+            "bottom": 103.4
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-B-hb3jfs.webp",
+          "alt": "晓雨角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 515.9,
+            "y": 74.6,
+            "width": 130,
+            "height": 173.3,
+            "right": 645.9,
+            "bottom": 248
+          }
+        },
+        {
+          "className": "griddle-slot__stage-art",
+          "src": "classic-01-noodle-HVexiEkq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 316.9,
+            "y": 273.8,
+            "width": 119.2,
+            "height": 95.6,
+            "right": 436.1,
+            "bottom": 369.4
+          }
+        },
+        {
+          "className": "griddle-slot__stage-art",
+          "src": "classic-01-noodle-HVexiEkq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 446.4,
+            "y": 273.8,
+            "width": 119.2,
+            "height": 95.6,
+            "right": 565.6,
+            "bottom": 369.4
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 122.6,
+            "y": 212.4,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 177.3,
+            "bottom": 267.1
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 197.2,
+            "y": 212.4,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 251.9,
+            "bottom": 267.1
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 122.6,
+            "y": 248.5,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 177.3,
+            "bottom": 303.2
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 197.2,
+            "y": 248.5,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 251.9,
+            "bottom": 303.2
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 122.6,
+            "y": 284.6,
+            "width": 54.7,
+            "height": 54.7,
+            "right": 177.3,
+            "bottom": 339.3
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "game-icon",
+          "dataIcon": "coin",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 533.3,
+            "y": 19.8,
+            "width": 24,
+            "height": 24,
+            "right": 557.3,
+            "bottom": 43.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "pause",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 658,
+            "y": 19.8,
+            "width": 24,
+            "height": 24,
+            "right": 682,
+            "bottom": 43.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "sound-on",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 722,
+            "y": 19.8,
+            "width": 24,
+            "height": 24,
+            "right": 746,
+            "bottom": 43.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "trash",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 709.6,
+            "y": 361.5,
+            "width": 8.7,
+            "height": 8.7,
+            "right": 718.3,
+            "bottom": 370.1
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "trash",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 740,
+            "y": 361.5,
+            "width": 8.7,
+            "height": 8.7,
+            "right": 748.6,
+            "bottom": 370.1
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "help",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 718.2,
+            "y": 273.5,
+            "width": 23,
+            "height": 23,
+            "right": 741.2,
+            "bottom": 296.5
+          }
+        }
+      ],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "返回主页",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 84,
+            "y": 5.8,
+            "width": 150,
+            "height": 52,
+            "right": 234,
+            "bottom": 57.8
+          }
+        },
+        {
+          "label": "暂停并打开菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 644,
+            "y": 5.8,
+            "width": 52,
+            "height": 52,
+            "right": 696,
+            "bottom": 57.8
+          }
+        },
+        {
+          "label": "关闭音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 708,
+            "y": 5.8,
+            "width": 52,
+            "height": 52,
+            "right": 760,
+            "bottom": 57.8
+          }
+        },
+        {
+          "label": "铁板上的烤冷面",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "default",
+          "box": {
+            "x": 319.4,
+            "y": 275.9,
+            "width": 114.1,
+            "height": 91.5,
+            "right": 433.6,
+            "bottom": 367.4
+          }
+        },
+        {
+          "label": "铁板上的烤冷面",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "default",
+          "box": {
+            "x": 449,
+            "y": 275.9,
+            "width": 114.1,
+            "height": 91.5,
+            "right": 563.1,
+            "bottom": 367.4
+          }
+        },
+        {
+          "label": "面皮，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 113.9,
+            "y": 224.4,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 186.1,
+            "bottom": 258.1
+          }
+        },
+        {
+          "label": "鸡蛋，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 188.5,
+            "y": 224.4,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 260.7,
+            "bottom": 258.1
+          }
+        },
+        {
+          "label": "热狗，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 113.9,
+            "y": 260.5,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 186.1,
+            "bottom": 294.2
+          }
+        },
+        {
+          "label": "刷酱，点击拿起酱刷",
+          "disabled": false,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 188.5,
+            "y": 260.5,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 260.7,
+            "bottom": 294.2
+          }
+        },
+        {
+          "label": "葱花，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 113.9,
+            "y": 296.6,
+            "width": 72.2,
+            "height": 33.7,
+            "right": 186.1,
+            "bottom": 330.3
+          }
+        },
+        {
+          "label": "丢弃左侧铁板上的食物",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(255, 237, 197, 0.9)",
+          "color": "rgb(129, 65, 47)",
+          "border": "2px solid rgb(77, 59, 50)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 700,
+            "y": 358.1,
+            "width": 27.9,
+            "height": 22.1,
+            "right": 727.9,
+            "bottom": 380.3
+          }
+        },
+        {
+          "label": "丢弃右侧铁板上的食物",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(255, 237, 197, 0.9)",
+          "color": "rgb(129, 65, 47)",
+          "border": "2px solid rgb(77, 59, 50)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 730.3,
+            "y": 358.1,
+            "width": 27.9,
+            "height": 22.1,
+            "right": 758.3,
+            "bottom": 380.3
+          }
+        },
+        {
+          "label": "打开玩法说明",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgb(255, 240, 200)",
+          "color": "rgb(157, 75, 46)",
+          "border": "2px solid rgb(91, 67, 52)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 708.7,
+            "y": 264,
+            "width": 42,
+            "height": 42,
+            "right": 750.7,
+            "bottom": 306
+          }
+        }
+      ],
+      "text": "第 1 天 订单 1/3 ¥46 打入鸡蛋 打入鸡蛋 面皮 鸡蛋 热狗 刷酱 葱花 清左板 清右板 放稳了",
+      "filename": "04-day-1-dual-griddle-844x390.png",
+      "state": "Day 1 多顾客 / 双铁板"
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "screen": "summary",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 844,
+        "scrollHeight": 390
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "summary-screen__art",
+          "src": "summary-screen-user-final-Dj2uHf7I.webp",
+          "alt": "今日打烊营业总结",
+          "decoded": true,
+          "box": {
+            "x": 75.5,
+            "y": 0,
+            "width": 693,
+            "height": 390,
+            "right": 768.5,
+            "bottom": 390
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--funds",
+          "dataIcon": "funds",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 232.5,
+            "y": 249.8,
+            "width": 31.2,
+            "height": 31.2,
+            "right": 263.7,
+            "bottom": 281
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--fire",
+          "dataIcon": "fire",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 347.7,
+            "y": 249.6,
+            "width": 31.2,
+            "height": 31.2,
+            "right": 378.9,
+            "bottom": 280.8
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--sign",
+          "dataIcon": "sign",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 489.9,
+            "y": 249.6,
+            "width": 31.2,
+            "height": 31.2,
+            "right": 521.1,
+            "bottom": 280.8
+          }
+        }
+      ],
+      "symbolicGlyphs": [
+        "★"
+      ],
+      "buttons": [
+        {
+          "label": "升级火力",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 343.7,
+            "y": 235.2,
+            "width": 135.1,
+            "height": 60,
+            "right": 478.8,
+            "bottom": 295.2
+          }
+        },
+        {
+          "label": "升级招牌",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 485,
+            "y": 235.2,
+            "width": 141.4,
+            "height": 60,
+            "right": 626.4,
+            "bottom": 295.2
+          }
+        },
+        {
+          "label": "再玩一次",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(77, 47, 28)",
+          "border": "0px none rgb(77, 47, 28)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 282,
+            "y": 301.9,
+            "width": 133,
+            "height": 34.3,
+            "right": 415.1,
+            "bottom": 336.2
+          }
+        },
+        {
+          "label": "进入下一天：饭量挑战",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "0px none rgb(255, 255, 255)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 427.5,
+            "y": 301.9,
+            "width": 133,
+            "height": 34.3,
+            "right": 560.6,
+            "bottom": 336.2
+          }
+        }
+      ],
+      "text": "开张第一天 · 营业完成 ★★★ 手速和品质都无可挑剔，夜市里已经有人专程来找你了！ 明日 · 饭量挑战 大胃王解锁 3 完成订单 93% 平均满意度 0 操作失误 ¥66 当前资金 当前资金 ¥ 66 升级火力 Lv.1 顾客耐心 +3秒 · ¥40 升级招牌 Lv.1 每单额外 +2元 · ¥60 再玩一次 明天 · 饭量挑战",
+      "filename": "05-summary-844x390.png",
+      "state": "Day 1 结算"
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "screen": "summary",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 844,
+        "scrollHeight": 390
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "summary-screen__art",
+          "src": "summary-screen-user-final-Dj2uHf7I.webp",
+          "alt": "今日打烊营业总结",
+          "decoded": true,
+          "box": {
+            "x": 75.5,
+            "y": 0,
+            "width": 693,
+            "height": 390,
+            "right": 768.5,
+            "bottom": 390
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--funds",
+          "dataIcon": "funds",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 232.5,
+            "y": 249.8,
+            "width": 31.2,
+            "height": 31.2,
+            "right": 263.7,
+            "bottom": 281
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--fire",
+          "dataIcon": "fire",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 347.7,
+            "y": 249.6,
+            "width": 31.2,
+            "height": 31.2,
+            "right": 378.9,
+            "bottom": 280.8
+          }
+        },
+        {
+          "className": "upgrade-card-icon upgrade-card-icon--sign",
+          "dataIcon": "sign",
+          "viewBox": "0 0 48 48",
+          "box": {
+            "x": 489.9,
+            "y": 249.6,
+            "width": 31.2,
+            "height": 31.2,
+            "right": 521.1,
+            "bottom": 280.8
+          }
+        }
+      ],
+      "symbolicGlyphs": [
+        "★"
+      ],
+      "buttons": [
+        {
+          "label": "升级火力",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(31, 18, 12, 0.3)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 343.7,
+            "y": 235.2,
+            "width": 135.1,
+            "height": 60,
+            "right": 478.8,
+            "bottom": 295.2
+          }
+        },
+        {
+          "label": "升级招牌",
+          "disabled": true,
+          "pressed": null,
+          "background": "rgba(31, 18, 12, 0.3)",
+          "color": "rgb(255, 240, 207)",
+          "border": "0px none rgb(255, 240, 207)",
+          "opacity": "1",
+          "cursor": "not-allowed",
+          "box": {
+            "x": 485,
+            "y": 235.2,
+            "width": 141.4,
+            "height": 60,
+            "right": 626.4,
+            "bottom": 295.2
+          }
+        },
+        {
+          "label": "再玩一次",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(77, 47, 28)",
+          "border": "0px none rgb(77, 47, 28)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 282,
+            "y": 301.9,
+            "width": 133,
+            "height": 34.3,
+            "right": 415.1,
+            "bottom": 336.2
+          }
+        },
+        {
+          "label": "进入下一天：饭量挑战",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "border": "0px none rgb(255, 255, 255)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 427.5,
+            "y": 301.9,
+            "width": 133,
+            "height": 34.3,
+            "right": 560.6,
+            "bottom": 336.2
+          }
+        }
+      ],
+      "text": "开张第一天 · 营业完成 ★★★ 手速和品质都无可挑剔，夜市里已经有人专程来找你了！ 明日 · 饭量挑战 大胃王解锁 3 完成订单 93% 平均满意度 0 操作失误 ¥26 当前资金 当前资金 ¥ 26 升级火力 Lv.2 顾客耐心 +3秒 · ¥80 升级招牌 Lv.1 每单额外 +2元 · ¥60 再玩一次 明天 · 饭量挑战",
+      "filename": "06-summary-upgraded-844x390.png",
+      "state": "升级后的结算状态"
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "screen": "playing",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 844,
+        "scrollHeight": 390
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "game-screen__background",
+          "src": "night-market-clean-background-DRPGRpdO.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 75.3,
+            "y": 0,
+            "width": 693.3,
+            "height": 390,
+            "right": 768.7,
+            "bottom": 390
+          }
+        },
+        {
+          "className": "game-screen__background game-screen__background--expanded-rack",
+          "src": "kitchen-screen-live-expanded-clean-D993X-rQ.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 75.3,
+            "y": 0,
+            "width": 693.3,
+            "height": 390,
+            "right": 768.7,
+            "bottom": 390
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 313.1,
+            "y": 77.9,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 332.6,
+            "bottom": 92.2
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 335.2,
+            "y": 77.9,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 354.7,
+            "bottom": 92.2
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 357.3,
+            "y": 77.9,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 376.8,
+            "bottom": 92.2
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 313.1,
+            "y": 94.8,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 332.6,
+            "bottom": 109.1
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 335.2,
+            "y": 94.8,
+            "width": 19.5,
+            "height": 14.3,
+            "right": 354.7,
+            "bottom": 109.1
+          }
+        },
+        {
+          "className": "",
+          "src": "ingredient-cilantro-mTnRXM7u.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 344.3,
+            "y": 110.8,
+            "width": 9.8,
+            "height": 10.4,
+            "right": 354.1,
+            "bottom": 121.2
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "waiting-Bl1ofHc3.webp",
+          "alt": "小林同学角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 198.1,
+            "y": 74.6,
+            "width": 130,
+            "height": 173.3,
+            "right": 328.1,
+            "bottom": 248
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "ordering-DM1-vGOO.webp",
+          "alt": "阿杰角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 357,
+            "y": 79.4,
+            "width": 130,
+            "height": 173.3,
+            "right": 487,
+            "bottom": 252.8
+          }
+        },
+        {
+          "className": "kitchen-customer__static-art",
+          "src": "arriving-BBjmCuQ-.webp",
+          "alt": "晓雨角色立绘",
+          "decoded": true,
+          "box": {
+            "x": 566.9,
+            "y": 74.6,
+            "width": 130,
+            "height": 173.3,
+            "right": 696.9,
+            "bottom": 248
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-noodle-sheet-BZxyb-py.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 147.7,
+            "y": 219.5,
+            "width": 33.9,
+            "height": 33.9,
+            "right": 181.7,
+            "bottom": 253.4
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-egg-BoDG0Gmq.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 190.4,
+            "y": 219.5,
+            "width": 33.9,
+            "height": 33.9,
+            "right": 224.4,
+            "bottom": 253.4
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-hot-dog-Dpx8_C6I.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 233.1,
+            "y": 220.1,
+            "width": 33.6,
+            "height": 33.6,
+            "right": 266.7,
+            "bottom": 253.6
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-sauce-BSdOzBjl.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 135.4,
+            "y": 241.6,
+            "width": 36.1,
+            "height": 36.1,
+            "right": 171.6,
+            "bottom": 277.7
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-scallion-DvRe8lSY.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 180.2,
+            "y": 241.8,
+            "width": 36.1,
+            "height": 36.1,
+            "right": 216.3,
+            "bottom": 277.9
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-cilantro-mTnRXM7u.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 225,
+            "y": 242,
+            "width": 36.1,
+            "height": 36.1,
+            "right": 261.1,
+            "bottom": 278.1
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-onion-BWe7JPxS.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 124.3,
+            "y": 266.1,
+            "width": 37.2,
+            "height": 37.2,
+            "right": 161.5,
+            "bottom": 303.3
+          }
+        },
+        {
+          "className": "table-ingredient__food-art",
+          "src": "ingredient-chili-powder-CNVUFwMC.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 170.8,
+            "y": 265.7,
+            "width": 37.9,
+            "height": 37.9,
+            "right": 208.7,
+            "bottom": 303.7
+          }
+        }
+      ],
+      "svgIcons": [
+        {
+          "className": "game-icon",
+          "dataIcon": "coin",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 533.3,
+            "y": 19.8,
+            "width": 24,
+            "height": 24,
+            "right": 557.3,
+            "bottom": 43.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "pause",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 658,
+            "y": 19.8,
+            "width": 24,
+            "height": 24,
+            "right": 682,
+            "bottom": 43.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "sound-on",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 722,
+            "y": 19.8,
+            "width": 24,
+            "height": 24,
+            "right": 746,
+            "bottom": 43.8
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "extra",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 335.5,
+            "y": 111.7,
+            "width": 8.5,
+            "height": 8.4,
+            "right": 344,
+            "bottom": 120.2
+          }
+        },
+        {
+          "className": "game-icon",
+          "dataIcon": "help",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 718.2,
+            "y": 273.5,
+            "width": 23,
+            "height": 23,
+            "right": 741.2,
+            "bottom": 296.5
+          }
+        }
+      ],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "返回主页",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 84,
+            "y": 5.8,
+            "width": 150,
+            "height": 52,
+            "right": 234,
+            "bottom": 57.8
+          }
+        },
+        {
+          "label": "暂停并打开菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 644,
+            "y": 5.8,
+            "width": 52,
+            "height": 52,
+            "right": 696,
+            "bottom": 57.8
+          }
+        },
+        {
+          "label": "关闭音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "linear-gradient(rgb(170, 108, 57), rgb(65, 37, 23))",
+          "color": "rgb(247, 230, 189)",
+          "border": "2px solid rgb(217, 154, 61)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 708,
+            "y": 5.8,
+            "width": 52,
+            "height": 52,
+            "right": 760,
+            "bottom": 57.8
+          }
+        },
+        {
+          "label": "面皮，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 130.1,
+            "y": 225.9,
+            "width": 56,
+            "height": 25.7,
+            "right": 186,
+            "bottom": 251.6
+          }
+        },
+        {
+          "label": "鸡蛋，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 186,
+            "y": 225.9,
+            "width": 42.7,
+            "height": 25.7,
+            "right": 228.8,
+            "bottom": 251.6
+          }
+        },
+        {
+          "label": "热狗，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 228.8,
+            "y": 225.9,
+            "width": 45.6,
+            "height": 25.7,
+            "right": 274.4,
+            "bottom": 251.6
+          }
+        },
+        {
+          "label": "刷酱，点击拿起酱刷",
+          "disabled": false,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 117.2,
+            "y": 251.6,
+            "width": 58.9,
+            "height": 23.6,
+            "right": 176.1,
+            "bottom": 275.2
+          }
+        },
+        {
+          "label": "葱花，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 176.1,
+            "y": 251.6,
+            "width": 44.8,
+            "height": 23.6,
+            "right": 220.9,
+            "bottom": 275.2
+          }
+        },
+        {
+          "label": "香菜，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 220.9,
+            "y": 251.6,
+            "width": 47.7,
+            "height": 23.6,
+            "right": 268.6,
+            "bottom": 275.2
+          }
+        },
+        {
+          "label": "洋葱，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 105.2,
+            "y": 275.2,
+            "width": 61,
+            "height": 26.9,
+            "right": 166.1,
+            "bottom": 302.1
+          }
+        },
+        {
+          "label": "辣椒粉，点击自动放置，也可拖到指定铁板",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "grab",
+          "box": {
+            "x": 166.1,
+            "y": 275.2,
+            "width": 47.3,
+            "height": 26.9,
+            "right": 213.4,
+            "bottom": 302.1
+          }
+        },
+        {
+          "label": "打开玩法说明",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgb(255, 240, 200)",
+          "color": "rgb(157, 75, 46)",
+          "border": "2px solid rgb(91, 67, 52)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 708.7,
+            "y": 264,
+            "width": 42,
+            "height": 42,
+            "right": 750.7,
+            "bottom": 306
+          }
+        }
+      ],
+      "text": "第 2 天 订单 0/4 ¥26 面皮 鸡蛋 热狗 刷酱 葱花 香菜 洋葱 辣椒粉",
+      "filename": "07-day-2-844x390.png",
+      "state": "Day 2 游戏状态"
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "screen": "settings",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 844,
+        "scrollHeight": 390
+      },
+      "clipped": [],
+      "images": [
+        {
+          "className": "settings-screen__art",
+          "src": "settings-screen-user-final-CbSiQ8af.webp",
+          "alt": "夜市烤冷面游戏音量设置",
+          "decoded": true,
+          "box": {
+            "x": 75.5,
+            "y": 0,
+            "width": 693,
+            "height": 390,
+            "right": 768.5,
+            "bottom": 390
+          }
+        },
+        {
+          "className": "settings-screen__rail-clean-patch",
+          "src": "settings-slider-clean-patch-DevvtYq4.webp",
+          "alt": "",
+          "decoded": true,
+          "box": {
+            "x": 75.5,
+            "y": 0,
+            "width": 693,
+            "height": 390,
+            "right": 768.5,
+            "bottom": 390
+          }
+        }
+      ],
+      "svgIcons": [],
+      "symbolicGlyphs": [],
+      "buttons": [
+        {
+          "label": "背景音乐",
+          "disabled": false,
+          "pressed": "false",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 712.3,
+            "y": 8.6,
+            "width": 37.4,
+            "height": 35.1,
+            "right": 749.7,
+            "bottom": 43.7
+          }
+        },
+        {
+          "label": "返回主菜单",
+          "disabled": false,
+          "pressed": null,
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "border": "0px none rgb(53, 42, 37)",
+          "opacity": "1",
+          "cursor": "pointer",
+          "box": {
+            "x": 383.2,
+            "y": 290.7,
+            "width": 77.6,
+            "height": 25,
+            "right": 460.8,
+            "bottom": 315.7
+          }
+        }
+      ],
+      "text": "总音量 背景音乐音量 音效音量 静音背景音乐 返回主菜单",
+      "filename": "08-settings-844x390.png",
+      "state": "设置页"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "playing",
+      "bodyOverflow": {
+        "horizontal": false,
+        "vertical": false,
+        "scrollWidth": 390,
+        "scrollHeight": 844
+      },
+      "clipped": [],
+      "images": [],
+      "svgIcons": [
+        {
+          "className": "game-icon",
+          "dataIcon": "roll",
+          "viewBox": "0 0 24 24",
+          "box": {
+            "x": 164,
+            "y": 372,
+            "width": 62,
+            "height": 62,
+            "right": 226,
+            "bottom": 434
+          }
+        }
+      ],
+      "symbolicGlyphs": [],
+      "buttons": [],
+      "text": "请横屏体验夜市经营",
+      "filename": "09-rotate-prompt-390x844.png",
+      "state": "手机竖屏横屏提示"
+    }
+  ],
+  "interactionStates": {
+    "1440x810": {
+      "home": {
+        "label": "开始游戏",
+        "base": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "width": 451.9,
+          "height": 82.6
+        },
+        "hover": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(255, 226, 132, 0.1)",
+          "color": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "width": 451.9,
+          "height": 82.6
+        },
+        "active": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(255, 226, 132, 0.1)",
+          "color": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "width": 451.9,
+          "height": 82.6
+        }
+      },
+      "selectDisabled": {
+        "opacity": "1",
+        "filter": "none",
+        "cursor": "not-allowed",
+        "color": "rgb(76, 52, 38)"
+      },
+      "summaryDisabled": {
+        "disabled": true,
+        "opacity": "1",
+        "filter": "none",
+        "cursor": "not-allowed",
+        "color": "rgb(255, 240, 207)"
+      },
+      "settings": {
+        "label": "背景音乐",
+        "base": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "opacity": "1",
+          "width": 77.7,
+          "height": 72.9
+        },
+        "hover": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(255, 226, 132, 0.12)",
+          "color": "rgb(53, 42, 37)",
+          "opacity": "1",
+          "width": 77.7,
+          "height": 72.9
+        },
+        "active": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(255, 226, 132, 0.12)",
+          "color": "rgb(53, 42, 37)",
+          "opacity": "1",
+          "width": 77.7,
+          "height": 72.9
+        }
+      }
+    },
+    "844x390": {
+      "home": {
+        "label": "开始游戏",
+        "base": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "width": 217.6,
+          "height": 39.8
+        },
+        "hover": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(255, 226, 132, 0.1)",
+          "color": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "width": 217.6,
+          "height": 39.8
+        },
+        "active": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(255, 226, 132, 0.1)",
+          "color": "rgba(0, 0, 0, 0)",
+          "opacity": "1",
+          "width": 217.6,
+          "height": 39.8
+        }
+      },
+      "selectDisabled": {
+        "opacity": "1",
+        "filter": "none",
+        "cursor": "not-allowed",
+        "color": "rgb(76, 52, 38)"
+      },
+      "summaryDisabled": {
+        "disabled": true,
+        "opacity": "1",
+        "filter": "none",
+        "cursor": "not-allowed",
+        "color": "rgb(255, 240, 207)"
+      },
+      "settings": {
+        "label": "背景音乐",
+        "base": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(53, 42, 37)",
+          "opacity": "1",
+          "width": 37.4,
+          "height": 35.1
+        },
+        "hover": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(255, 226, 132, 0.12)",
+          "color": "rgb(53, 42, 37)",
+          "opacity": "1",
+          "width": 37.4,
+          "height": 35.1
+        },
+        "active": {
+          "transform": "none",
+          "filter": "none",
+          "background": "rgba(255, 226, 132, 0.12)",
+          "color": "rgb(53, 42, 37)",
+          "opacity": "1",
+          "width": 37.4,
+          "height": 35.1
+        }
+      }
+    }
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}
