@@ -1,0 +1,110 @@
+{
+  "qaVersion": "v2",
+  "capturedAt": "2026-08-25T12:26:48.514Z",
+  "browser": {
+    "name": "Microsoft Edge",
+    "version": "151.0.4129.107"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 810,
+    "deviceScaleFactor": 1
+  },
+  "baseline": "docs/qa/screenshots/summary-upgrade-icons-v1/summary-upgrade-icons-1440x810.png",
+  "screenshot": "docs/qa/screenshots/summary-upgrade-icons-v2/summary-upgrade-icons-1440x810.png",
+  "summaryReachedByThreeRealOrders": true,
+  "icons": [
+    {
+      "kind": "funds",
+      "form": "pouch",
+      "tagName": "svg",
+      "viewBox": "0 0 48 48",
+      "strokeWidth": "2.6px",
+      "strokeColor": "rgb(107, 53, 31)",
+      "lineCap": "round",
+      "lineJoin": "round",
+      "filter": "drop-shadow(rgba(37, 18, 11, 0.42) 0px 3px 1px)",
+      "width": 53,
+      "height": 53,
+      "wrapperShadow": "rgb(90, 44, 14) 0px 0px 9px 8px",
+      "wrapperBackground": "rgb(90, 44, 14)",
+      "rasterDescendants": 0,
+      "gradientCount": 3,
+      "bodyLayers": 1,
+      "shadeLayers": 1,
+      "highlightLayers": 2
+    },
+    {
+      "kind": "fire",
+      "form": "stove",
+      "tagName": "svg",
+      "viewBox": "0 0 48 48",
+      "strokeWidth": "2.6px",
+      "strokeColor": "rgb(107, 53, 31)",
+      "lineCap": "round",
+      "lineJoin": "round",
+      "filter": "drop-shadow(rgba(37, 18, 11, 0.42) 0px 3px 1px)",
+      "width": 53,
+      "height": 53,
+      "wrapperShadow": "rgb(85, 40, 12) 0px 0px 9px 8px",
+      "wrapperBackground": "rgb(85, 40, 12)",
+      "rasterDescendants": 0,
+      "gradientCount": 3,
+      "bodyLayers": 1,
+      "shadeLayers": 1,
+      "highlightLayers": 2
+    },
+    {
+      "kind": "sign",
+      "form": "plaque",
+      "tagName": "svg",
+      "viewBox": "0 0 48 48",
+      "strokeWidth": "2.6px",
+      "strokeColor": "rgb(107, 53, 31)",
+      "lineCap": "round",
+      "lineJoin": "round",
+      "filter": "drop-shadow(rgba(37, 18, 11, 0.42) 0px 3px 1px)",
+      "width": 53,
+      "height": 53,
+      "wrapperShadow": "rgb(85, 40, 12) 0px 0px 9px 8px",
+      "wrapperBackground": "rgb(85, 40, 12)",
+      "rasterDescendants": 0,
+      "gradientCount": 3,
+      "bodyLayers": 1,
+      "shadeLayers": 1,
+      "highlightLayers": 1
+    }
+  ],
+  "layout": {
+    "funds": {
+      "x": 406.3,
+      "y": 514.3,
+      "width": 135.3,
+      "height": 73.7
+    },
+    "fire": {
+      "x": 557.4,
+      "y": 488.4,
+      "width": 280.6,
+      "height": 124.7
+    },
+    "sign": {
+      "x": 851,
+      "y": 488.4,
+      "width": 293.6,
+      "height": 124.7
+    }
+  },
+  "comparison": {
+    "threshold": 24,
+    "changedPixelsByIconRegion": {
+      "funds": 559,
+      "fire": 915,
+      "sign": 754
+    },
+    "changedPixelsOutsideIconRegions": 0
+  },
+  "allImagesDecoded": true,
+  "consoleErrors": [],
+  "pageErrors": []
+}

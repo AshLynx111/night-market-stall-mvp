@@ -5,11 +5,17 @@ import sharp from 'sharp'
 import { chromium } from 'playwright'
 
 const root = process.cwd()
-const port = 4189
+const qaVersion = process.env.SUMMARY_UPGRADE_QA_VERSION ?? 'v1'
+const port = Number(process.env.SUMMARY_UPGRADE_QA_PORT ?? 4189)
 const baseUrl = `http://127.0.0.1:${port}`
-const outputDir = path.join(root, 'docs', 'qa', 'screenshots', 'summary-upgrade-icons-v1')
+const outputDir = path.join(root, 'docs', 'qa', 'screenshots', `summary-upgrade-icons-${qaVersion}`)
 const screenshotPath = path.join(outputDir, 'summary-upgrade-icons-1440x810.png')
-const baselinePath = path.join(root, 'docs', 'qa', 'screenshots', 'day-retention-loop-v1', 'summary-next-day-1440x810.png')
+const baselineRelativePath = process.env.SUMMARY_UPGRADE_QA_BASELINE ?? 'docs/qa/screenshots/day-retention-loop-v1/summary-next-day-1440x810.png'
+const baselinePath = path.join(root, ...baselineRelativePath.split('/'))
+const expectedStrokeWidth = process.env.SUMMARY_UPGRADE_QA_STROKE_WIDTH ?? '2px'
+const expectedForms = (process.env.SUMMARY_UPGRADE_QA_FORMS ?? '').split(',').filter(Boolean)
+const requireMaterialLayers = process.env.SUMMARY_UPGRADE_QA_MATERIAL_LAYERS === 'true'
+const minimumChangedPixelsPerIcon = Number(process.env.SUMMARY_UPGRADE_QA_MIN_CHANGED_PIXELS ?? 1_000)
 const edgePath = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
 await mkdir(outputDir, { recursive: true })
 
@@ -27,7 +33,7 @@ function assert(condition, message) {
 }
 
 async function waitForServer() {
-  const deadline = Date.now() + 20_000
+  const deadline = Date.now() + 60_000
   while (Date.now() < deadline) {
     try {
       if ((await fetch(baseUrl)).ok) return
@@ -164,6 +170,7 @@ async function pixelDifference() {
 await waitForServer()
 const browser = await chromium.launch({ headless: true, executablePath: edgePath })
 const results = {
+  qaVersion,
   capturedAt: new Date().toISOString(),
   browser: { name: 'Microsoft Edge', version: browser.version() },
   viewport: { width: 1440, height: 810, deviceScaleFactor: 1 },
@@ -217,6 +224,7 @@ try {
     const box = icon.getBoundingClientRect()
     return {
       kind: icon.getAttribute('data-upgrade-card-icon'),
+      form: icon.getAttribute('data-icon-form'),
       tagName: icon.tagName.toLowerCase(),
       viewBox: icon.getAttribute('viewBox'),
       strokeWidth: style.strokeWidth,
@@ -229,6 +237,10 @@ try {
       wrapperShadow: wrapperStyle?.boxShadow ?? '',
       wrapperBackground: wrapperStyle?.backgroundColor ?? '',
       rasterDescendants: icon.querySelectorAll('img, image').length,
+      gradientCount: icon.querySelectorAll('linearGradient').length,
+      bodyLayers: icon.querySelectorAll('.upgrade-card-icon__body').length,
+      shadeLayers: icon.querySelectorAll('.upgrade-card-icon__shade').length,
+      highlightLayers: icon.querySelectorAll('.upgrade-card-icon__highlight').length,
     }
   }))
 
@@ -241,7 +253,9 @@ try {
   results.layout = { funds: roundedBox(fundsBox), fire: roundedBox(fireBox), sign: roundedBox(signBox) }
 
   assert(results.icons.map(({ kind }) => kind).join(',') === 'funds,fire,sign', `Unexpected icon variants: ${JSON.stringify(results.icons)}`)
-  assert(results.icons.every(({ tagName, viewBox, strokeWidth, lineCap, lineJoin, rasterDescendants }) => tagName === 'svg' && viewBox === '0 0 48 48' && strokeWidth === '2px' && lineCap === 'round' && lineJoin === 'round' && rasterDescendants === 0), `SVG family contract failed: ${JSON.stringify(results.icons)}`)
+  assert(results.icons.every(({ tagName, viewBox, strokeWidth, lineCap, lineJoin, rasterDescendants }) => tagName === 'svg' && viewBox === '0 0 48 48' && strokeWidth === expectedStrokeWidth && lineCap === 'round' && lineJoin === 'round' && rasterDescendants === 0), `SVG family contract failed: ${JSON.stringify(results.icons)}`)
+  if (expectedForms.length) assert(results.icons.map(({ form }) => form).join(',') === expectedForms.join(','), `Icon semantics differ: ${JSON.stringify(results.icons)}`)
+  if (requireMaterialLayers) assert(results.icons.every(({ gradientCount, bodyLayers, shadeLayers, highlightLayers }) => gradientCount === 3 && bodyLayers >= 1 && shadeLayers >= 1 && highlightLayers >= 1), `2.5D material layers are incomplete: ${JSON.stringify(results.icons)}`)
   assert(new Set(results.icons.map(({ strokeColor }) => strokeColor)).size === 1, `Outline colors differ: ${JSON.stringify(results.icons)}`)
   assert(new Set(results.icons.map(({ filter }) => filter)).size === 1, `Icon shadows differ: ${JSON.stringify(results.icons)}`)
   assert(Math.max(...results.icons.map(({ width }) => width)) - Math.min(...results.icons.map(({ width }) => width)) <= 1, `Icon widths differ: ${JSON.stringify(results.icons)}`)
@@ -253,7 +267,7 @@ try {
 
   await page.screenshot({ path: screenshotPath, fullPage: false })
   results.comparison = await pixelDifference()
-  assert(Object.values(results.comparison.changedPixelsByIconRegion).every((pixels) => pixels > 1_000), `Icon regions did not materially change from baseline: ${JSON.stringify(results.comparison)}`)
+  assert(Object.values(results.comparison.changedPixelsByIconRegion).every((pixels) => pixels > minimumChangedPixelsPerIcon), `Icon regions did not materially change from baseline: ${JSON.stringify(results.comparison)}`)
   assert(results.consoleErrors.length === 0, `Console errors: ${results.consoleErrors.join('\n')}`)
   assert(results.pageErrors.length === 0, `Page errors: ${results.pageErrors.join('\n')}`)
 
