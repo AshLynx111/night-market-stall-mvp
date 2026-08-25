@@ -1,0 +1,59 @@
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
+import {
+  LOCALE_STORAGE_KEY,
+  localeFromSearch,
+  resolveInitialLocale,
+  translate,
+  type Locale,
+  type TFunction,
+} from './core'
+
+export interface I18nContextValue {
+  locale: Locale
+  t: TFunction
+}
+
+const defaultValue: I18nContextValue = {
+  locale: 'zh-CN',
+  t: (key, values) => translate('zh-CN', key, values),
+}
+
+const I18nContext = createContext<I18nContextValue>(defaultValue)
+
+function readStoredLocale(): string | null {
+  try {
+    return window.localStorage.getItem(LOCALE_STORAGE_KEY)
+  } catch {
+    return null
+  }
+}
+
+export function I18nProvider({ children, locale: fixedLocale }: { children: ReactNode; locale?: Locale }) {
+  const [resolvedLocale] = useState<Locale>(() => fixedLocale ?? resolveInitialLocale(
+    typeof window === 'undefined' ? '' : window.location.search,
+    typeof window === 'undefined' ? null : readStoredLocale(),
+  ))
+  const locale = fixedLocale ?? resolvedLocale
+
+  useEffect(() => {
+    document.documentElement.lang = locale
+    document.documentElement.dataset.locale = locale
+    if (fixedLocale || localeFromSearch(window.location.search) === null) return
+    try {
+      window.localStorage.setItem(LOCALE_STORAGE_KEY, locale)
+    } catch {
+      // Locale preview still works when storage is unavailable.
+    }
+  }, [fixedLocale, locale])
+
+  const value = useMemo<I18nContextValue>(() => ({
+    locale,
+    t: (key, values) => translate(locale, key, values),
+  }), [locale])
+
+  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>
+}
+
+export function useI18n() {
+  return useContext(I18nContext)
+}
