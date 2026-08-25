@@ -45,4 +45,11 @@ describe('home-derived visual system', () => {
     expect(css).toMatch(/\.gameplay-hud button:hover\s*\{[^}]*brightness/s)
     expect(css).toMatch(/\.gameplay-hud button:active\s*\{[^}]*translateY\(3px\)/s)
   })
+
+  it('unifies day cards without changing the six-card progression structure', async () => {
+    const css = await readFile(cssPath, 'utf8')
+    expect(css).toMatch(/\.day-card::before\s*\{[^}]*var\(--paper-aged\)[^}]*inset/s)
+    expect(css).toMatch(/\.day-card\.is-locked::before\s*\{[^}]*brightness\(\.78\)[^}]*saturate\(\.62\)/s)
+    expect(css).toMatch(/\.day-card:not\(\.is-locked\):hover::before,[^{]*\{[^}]*var\(--warm-highlight\)/s)
+  })
 })

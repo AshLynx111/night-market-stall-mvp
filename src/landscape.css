@@ -200,13 +200,37 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .select-hotspot--back { left: 3.9%; top: 3%; width: 11.5%; height: 11.5%; }
 .select-hotspot--menu { left: 72.2%; top: 2.5%; width: 25.9%; height: 19.3%; }
 .day-grid { position: absolute; inset: 0; display: block; margin: 0; pointer-events: none; }
-.day-card { width: 24.9%; height: 27%; overflow: visible; color: #4c3426; text-align: left; }
+.day-card { width: 24.9%; height: 27%; overflow: visible; color: #4c3426; text-align: left; isolation: isolate; }
+.day-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 1.5% 1%;
+  border: 2px solid color-mix(in srgb, var(--gold-border) 64%, var(--wood-dark));
+  border-radius: 17px 13px 18px 12px;
+  background: color-mix(in srgb, var(--paper-aged) 12%, transparent);
+  box-shadow: inset 0 1px rgb(255 240 190 / .38), inset 0 -8px 18px rgb(92 48 24 / .12), 0 5px 10px rgb(32 15 9 / .2);
+  pointer-events: none;
+  transition: background .16s ease, box-shadow .16s ease, filter .16s ease;
+}
 .day-card--1, .day-card--4 { left: 12.6%; }
 .day-card--2, .day-card--5 { left: 38%; }
 .day-card--3, .day-card--6 { left: 63.8%; }
 .day-card--1, .day-card--2, .day-card--3 { top: 23%; }
 .day-card--4, .day-card--5, .day-card--6 { top: 51.5%; height: 26.3%; }
 .day-card.is-locked { cursor: not-allowed; }
+.day-card.is-locked::before {
+  background: rgb(39 31 27 / .28);
+  backdrop-filter: brightness(.78) saturate(.62);
+  border-color: rgb(88 70 57 / .62);
+  box-shadow: inset 0 0 0 2px rgb(33 25 21 / .24), inset 0 -10px 20px rgb(21 15 13 / .18);
+}
+.day-card:not(.is-locked):hover::before,
+.day-card:not(.is-locked):focus-visible::before {
+  border-color: var(--warm-highlight);
+  background: color-mix(in srgb, var(--warm-highlight) 10%, transparent);
+  box-shadow: inset 0 1px rgb(255 245 209 / .46), 0 0 18px rgb(255 180 60 / .28);
+}
 .day-card:not(.is-locked):nth-child(n+3) { backdrop-filter: saturate(1.25) brightness(1.08); }
 .day-card__stars,
 .day-hotspot__status { position: absolute; display: grid; place-items: center; font-weight: 900; }
