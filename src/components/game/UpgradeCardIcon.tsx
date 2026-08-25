@@ -41,7 +41,7 @@ function MaterialDefs({ kind }: { kind: UpgradeCardIconKind }) {
 
 function FundsDrawing({ kind }: { kind: UpgradeCardIconKind }) {
   return (
-    <g data-icon-form="pouch">
+    <g data-icon-form="pouch" transform="translate(-2.4 -2.4) scale(1.1)">
       <path className="upgrade-card-icon__accent" fill={`url(#${kind}-accent)`} d="M17.5 9.5c3.3 1.8 9.7 1.8 13 0l-2.8 7h-7.4l-2.8-7Z" />
       <path className="upgrade-card-icon__detail" d="m16.5 14.5 4.3 2.8m10.7-2.8-4.3 2.8" />
       <path className="upgrade-card-icon__body" fill={`url(#${kind}-body)`} d="M20.3 16.5C14.1 20 9.7 26.2 9.7 33.2c0 5.8 5.1 8.4 14.3 8.4s14.3-2.6 14.3-8.4c0-7-4.4-13.2-10.6-16.7h-7.4Z" />
