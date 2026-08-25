@@ -494,6 +494,16 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .summary-screen .upgrade-shop > button:nth-of-type(2) { left: 59.1%; top: 60.3%; width: 20.4%; height: 15.4%; }
 .summary-screen .upgrade-shop > button:nth-of-type(1) .upgrade-shop__copy,
 .summary-screen .upgrade-shop > button:nth-of-type(2) .upgrade-shop__copy { left: 27%; top: 12%; width: 70%; height: 76%; background: #55280c; box-shadow: 0 0 8px 7px #55280c; }
+.summary-screen .upgrade-shop__icon { --upgrade-icon-well: #55280c; position: absolute; z-index: 2; display: grid; place-items: center; color: #6b351f; background: var(--upgrade-icon-well); box-shadow: 0 0 9px 8px var(--upgrade-icon-well); pointer-events: none; }
+.summary-screen .upgrade-shop__funds .upgrade-shop__icon--funds { --upgrade-icon-well: #5a2c0e; left: -64%; top: 3%; width: 58%; height: 94%; }
+.summary-screen .upgrade-shop > button .upgrade-shop__icon { left: 2%; top: 19%; width: 25%; height: 62%; }
+.summary-screen .upgrade-card-icon { width: clamp(28px, 3.7vw, 53px); height: clamp(28px, 3.7vw, 53px); overflow: visible; filter: drop-shadow(0 2px 0 rgb(37 18 11 / .36)); }
+.summary-screen .upgrade-card-icon__main { fill: var(--upgrade-icon-main); }
+.summary-screen .upgrade-card-icon__accent { fill: var(--upgrade-icon-accent); }
+.summary-screen .upgrade-card-icon__detail { fill: none; }
+.summary-screen .upgrade-card-icon--funds { --upgrade-icon-main: #ce8b3c; --upgrade-icon-accent: #f0bd55; }
+.summary-screen .upgrade-card-icon--fire { --upgrade-icon-main: #db6330; --upgrade-icon-accent: #f0b545; }
+.summary-screen .upgrade-card-icon--sign { --upgrade-icon-main: #c95d3c; --upgrade-icon-accent: #e6a340; }
 .buzz-note { position: absolute; z-index: 4; left: 34%; top: 76.2%; width: 32%; padding: .35%; border-radius: 8px; background: #f4d17e; color: #8a3d24; text-align: center; font-size: clamp(7px, .72vw, 12px); font-weight: 900; }
 .summary-actions { position: absolute; z-index: 3; inset: 0; pointer-events: none; }
 .summary-actions button { top: 77.4%; width: 19.2%; height: 8.8%; color: #4d2f1c; font: 900 clamp(14px, 1.8vw, 30px)/1 KaiTi, STKaiti, serif; }

@@ -28,6 +28,7 @@ import { KitchenScene } from './game/KitchenScene'
 import { GameplayHud } from './game/GameplayHud'
 import { DeliveryFeedback, type DeliveryFeedbackValue } from './game/DeliveryFeedback'
 import { GameIcon } from './game/GameIcon'
+import { UpgradeCardIcon } from './game/UpgradeCardIcon'
 import { AccessibleDialog } from './game/AccessibleDialog'
 import { useGameplayShortcuts } from '../landscape/useGameplayShortcuts'
 import { useGameplayViewport } from '../landscape/useGameplayViewport'
@@ -306,14 +307,15 @@ function UpgradeShop({ save, onBuy }: { save: CampaignSave; onBuy: (type: 'fire'
   return (
     <section className="upgrade-shop" aria-label="摊位升级">
       <div className="upgrade-shop__funds" data-upgrade-funds data-dynamic-mask="wood">
+        <span className="upgrade-shop__icon upgrade-shop__icon--funds" aria-hidden="true"><UpgradeCardIcon kind="funds" /></span>
         <span>当前资金</span><b>¥ {save.coins}</b>
       </div>
       <button aria-label="升级火力" disabled={save.fireLevel >= 2 || save.coins < (firePrice ?? Infinity)} onClick={() => onBuy('fire')}>
-        <span className="upgrade-shop__icon" aria-hidden="true"><GameIcon name="heat" /></span>
+        <span className="upgrade-shop__icon upgrade-shop__icon--fire" aria-hidden="true"><UpgradeCardIcon kind="fire" /></span>
         <span className="upgrade-shop__copy" data-dynamic-mask="wood"><b>升级火力 Lv.{Math.min(2, save.fireLevel + 1)}</b><small>{firePrice ? `顾客耐心 +3秒 · ¥${firePrice}` : '已经满级'}</small></span>
       </button>
       <button aria-label="升级招牌" disabled={save.signLevel >= 2 || save.coins < (signPrice ?? Infinity)} onClick={() => onBuy('sign')}>
-        <span className="upgrade-shop__icon" aria-hidden="true"><GameIcon name="sign" /></span>
+        <span className="upgrade-shop__icon upgrade-shop__icon--sign" aria-hidden="true"><UpgradeCardIcon kind="sign" /></span>
         <span className="upgrade-shop__copy" data-dynamic-mask="wood"><b>升级招牌 Lv.{Math.min(2, save.signLevel + 1)}</b><small>{signPrice ? `每单额外 +2元 · ¥${signPrice}` : '已经满级'}</small></span>
       </button>
     </section>

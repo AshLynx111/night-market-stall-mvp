@@ -391,6 +391,12 @@ describe('App landscape route', () => {
     expect(replayContainer.querySelector('[data-day-retention-cue="next"]')?.textContent)
       .toContain('大胃王解锁')
     expect(replayContainer.querySelectorAll('[data-dynamic-mask="parchment"]')).toHaveLength(7)
+    expect([...replayContainer.querySelectorAll('[data-upgrade-card-icon]')]
+      .map((icon) => icon.getAttribute('data-upgrade-card-icon')))
+      .toEqual(['funds', 'fire', 'sign'])
+    expect(replayContainer.querySelectorAll('.upgrade-shop__icon img, .upgrade-shop__icon image')).toHaveLength(0)
+    expect(replayContainer.querySelector<HTMLButtonElement>('[aria-label="升级火力"]')).not.toBeNull()
+    expect(replayContainer.querySelector<HTMLButtonElement>('[aria-label="升级招牌"]')).not.toBeNull()
     act(() => replayContainer.querySelector<HTMLButtonElement>('[aria-label="再玩一次"]')!.click())
     expect(replayContainer.querySelector('[data-screen-art="kitchen"]')).not.toBeNull()
     expect(replayContainer.textContent).toContain('第 1 天')

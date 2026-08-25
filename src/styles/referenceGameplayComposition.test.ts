@@ -88,6 +88,15 @@ describe('reference-master gameplay composition', () => {
     expect(landscapeCss).not.toMatch(/\.summary-card\s*\{[^}]*max-height:/s)
   })
 
+  it('uses one summary-only flat SVG well for all three upgrade icons', () => {
+    expect(landscapeCss).toMatch(/\.upgrade-shop__icon\s*\{\s*display:\s*none;/)
+    expect(landscapeCss).toMatch(/\.summary-screen \.upgrade-shop__icon\s*\{[^}]*display:\s*grid;/s)
+    expect(landscapeCss).toMatch(/\.summary-screen \.upgrade-card-icon\s*\{[^}]*filter:\s*drop-shadow/s)
+    expect(landscapeSource).toContain('<UpgradeCardIcon kind="funds" />')
+    expect(landscapeSource).toContain('<UpgradeCardIcon kind="fire" />')
+    expect(landscapeSource).toContain('<UpgradeCardIcon kind="sign" />')
+  })
+
   it('removes the remaining platform lock emoji from illustrated screens', () => {
     expect(landscapeSource).not.toContain('🔒')
     expect(landscapeSource).toContain('<GameIcon name="lock" />')
