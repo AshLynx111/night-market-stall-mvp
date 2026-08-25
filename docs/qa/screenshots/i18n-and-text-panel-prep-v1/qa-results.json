@@ -361,7 +361,7 @@
       "wood": 0,
       "chips": 0
     },
-    "text": "Start Game Start Game Continue Continue Settings Settings Menu Menu Days Day Select Mute music"
+    "text": "Start Game Start Game Continue Continue Settings Settings Menu Menu Progress Select a Day Mute music"
   },
   {
     "locale": "en",
@@ -389,7 +389,7 @@
       "wood": 4,
       "chips": 0
     },
-    "text": "Day Select Complete each shift to unlock a new night market challenge. Back Back to Main Menu Full Menu View the full menu DAY 1 Opening Night The campus night market is open. Nail the classic recipe first. Goal: Finish the tutorial and serve 3 orders ☆☆☆ Classic unlocked DAY 2 Big Eater Challenge The clubs are out, and double-stack orders are pouring in. Goal: Handle double-sheet, double-egg orders ☆☆☆ Unlock by completing the previous day DAY 3 Aroma Goes Viral The smell of Orleans chicken is pulling in passersby. Goal: Reach 75% average satisfaction ☆☆☆ Unlock by completing the previous day DAY 4 Night Market Rush The queue is growing, and Orleans chicken with bacon joins the menu. Goal: Serve Orleans chicken during the rush ☆☆☆ Unlock by completing the previous day DAY 5 Surprise Guest Tenderloin and enoki are new—and a celebrity traveler stops by. Goal: Serve the celebrity and handle new add-ons ☆☆☆ Unlock by completing the previous day DAY 6 Celebrity Special One travel post has everyone asking for the celebrity’s order. Goal: Keep up with the final rush ☆☆☆ Unlock by completing the previous day Coins ¥ 36 Upgrade Heat Lv.1 Patience +3 sec · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60"
+    "text": "Select a Day Clear each shift to unlock the next night market challenge. Back Back to Main Menu Full Menu View the full menu DAY 1 Opening Night The campus night market is open. Nail the classic recipe first. Goal: Finish the tutorial and serve 3 orders ☆☆☆ Classic unlocked DAY 2 Big Eater Challenge The clubs are out, and double-stack orders are pouring in. Goal: Handle double-wrap, double-egg orders ☆☆☆ Unlock by completing the previous day DAY 3 Aroma Goes Viral The smell of Cajun chicken is drawing a crowd. Goal: Reach 75% average satisfaction ☆☆☆ Unlock by completing the previous day DAY 4 Night Market Rush The line is growing, and Cajun chicken with bacon joins the menu. Goal: Serve Cajun chicken during the rush ☆☆☆ Unlock by completing the previous day DAY 5 Surprise Guest Tenderloin and enoki are new—and a celebrity traveler stops by. Goal: Serve the celebrity and handle new add-ons ☆☆☆ Unlock by completing the previous day DAY 6 Celebrity Special One travel post has everyone asking for the celebrity’s order. Goal: Keep up with the final rush ☆☆☆ Unlock by completing the previous day Cash ¥ 36 Upgrade Heat Lv.1 Patience +3s · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60"
   },
   {
     "locale": "en",
@@ -417,7 +417,7 @@
       "wood": 2,
       "chips": 1
     },
-    "text": "Day 1 Orders 0/3 ¥36 Noodle Sheet Egg Hot Dog Sauce Scallions Check the customer’s order Your first customer is walking over. Wait for her to stop, then check the order."
+    "text": "Day 1 Orders 0/3 ¥36 Noodle Wrap Egg Hot Dog Sauce Scallions Check the customer’s order Your first customer is walking over. Wait for her to stop, then check the order."
   },
   {
     "locale": "en",
@@ -445,7 +445,7 @@
       "wood": 2,
       "chips": 0
     },
-    "text": "Day 2 Orders 0/4 ¥36 Noodle Sheet Egg Hot Dog Sauce Scallions Cilantro Onion Chili Powder"
+    "text": "Day 2 Orders 0/4 ¥36 Noodle Wrap Egg Hot Dog Sauce Scallions Cilantro Onion Chili Powder"
   },
   {
     "locale": "en",
@@ -473,7 +473,7 @@
       "wood": 4,
       "chips": 1
     },
-    "text": "Day Complete Opening Night · Shift Complete ★★★ Flawless speed and quality—people are coming to the market just for your stall! Next · Big Eater Challenge Big Eater unlocked 3 Orders Orders 92% Satisfaction Satisfaction 0 Mistakes Mistakes ¥36 Coins Coins Coins ¥ 36 Upgrade Heat Lv.1 Patience +3 sec · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60 Play Again Next · Big Eater Challenge"
+    "text": "Day Complete Opening Night · Shift Complete ★★★ Flawless speed and quality—people are coming to the market just for your stall! Next · Big Eater Challenge Double Stack unlocked 3 Orders Orders 92% Satisfaction Satisfaction 0 Mistakes Mistakes ¥36 Cash Cash Cash ¥ 36 Upgrade Heat Lv.1 Patience +3s · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60 Play Again Next · Big Eater Challenge"
   },
   {
     "locale": "en",
@@ -501,7 +501,7 @@
       "wood": 0,
       "chips": 0
     },
-    "text": "Master Volume Music SFX Audio Settings Master Volume Music SFX Mute music Back to Main Menu Back to Main Menu"
+    "text": "Master Volume Music SFX Sound Settings Master Volume Music SFX Mute music Back to Main Menu Back to Main Menu"
   },
   {
     "locale": "en",
@@ -529,7 +529,7 @@
       "wood": 0,
       "chips": 0
     },
-    "text": "Start Game Start Game Continue Continue Settings Settings Menu Menu Days Day Select Mute music"
+    "text": "Start Game Start Game Continue Continue Settings Settings Menu Menu Progress Select a Day Mute music"
   },
   {
     "locale": "en",
@@ -557,7 +557,7 @@
       "wood": 4,
       "chips": 0
     },
-    "text": "Day Select Complete each shift to unlock a new night market challenge. Back Back to Main Menu Full Menu View the full menu DAY 1 Opening Night The campus night market is open. Nail the classic recipe first. Goal: Finish the tutorial and serve 3 orders ☆☆☆ Classic unlocked DAY 2 Big Eater Challenge The clubs are out, and double-stack orders are pouring in. Goal: Handle double-sheet, double-egg orders ☆☆☆ Unlock by completing the previous day DAY 3 Aroma Goes Viral The smell of Orleans chicken is pulling in passersby. Goal: Reach 75% average satisfaction ☆☆☆ Unlock by completing the previous day DAY 4 Night Market Rush The queue is growing, and Orleans chicken with bacon joins the menu. Goal: Serve Orleans chicken during the rush ☆☆☆ Unlock by completing the previous day DAY 5 Surprise Guest Tenderloin and enoki are new—and a celebrity traveler stops by. Goal: Serve the celebrity and handle new add-ons ☆☆☆ Unlock by completing the previous day DAY 6 Celebrity Special One travel post has everyone asking for the celebrity’s order. Goal: Keep up with the final rush ☆☆☆ Unlock by completing the previous day Coins ¥ 36 Upgrade Heat Lv.1 Patience +3 sec · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60"
+    "text": "Select a Day Clear each shift to unlock the next night market challenge. Back Back to Main Menu Full Menu View the full menu DAY 1 Opening Night The campus night market is open. Nail the classic recipe first. Goal: Finish the tutorial and serve 3 orders ☆☆☆ Classic unlocked DAY 2 Big Eater Challenge The clubs are out, and double-stack orders are pouring in. Goal: Handle double-wrap, double-egg orders ☆☆☆ Unlock by completing the previous day DAY 3 Aroma Goes Viral The smell of Cajun chicken is drawing a crowd. Goal: Reach 75% average satisfaction ☆☆☆ Unlock by completing the previous day DAY 4 Night Market Rush The line is growing, and Cajun chicken with bacon joins the menu. Goal: Serve Cajun chicken during the rush ☆☆☆ Unlock by completing the previous day DAY 5 Surprise Guest Tenderloin and enoki are new—and a celebrity traveler stops by. Goal: Serve the celebrity and handle new add-ons ☆☆☆ Unlock by completing the previous day DAY 6 Celebrity Special One travel post has everyone asking for the celebrity’s order. Goal: Keep up with the final rush ☆☆☆ Unlock by completing the previous day Cash ¥ 36 Upgrade Heat Lv.1 Patience +3s · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60"
   },
   {
     "locale": "en",
@@ -585,7 +585,7 @@
       "wood": 2,
       "chips": 1
     },
-    "text": "Day 1 Orders 0/3 ¥36 Noodle Sheet Egg Hot Dog Sauce Scallions Check the customer’s order Your first customer is walking over. Wait for her to stop, then check the order."
+    "text": "Day 1 Orders 0/3 ¥36 Noodle Wrap Egg Hot Dog Sauce Scallions Check the customer’s order Your first customer is walking over. Wait for her to stop, then check the order."
   },
   {
     "locale": "en",
@@ -613,7 +613,7 @@
       "wood": 2,
       "chips": 0
     },
-    "text": "Day 2 Orders 0/4 ¥36 Noodle Sheet Egg Hot Dog Sauce Scallions Cilantro Onion Chili Powder"
+    "text": "Day 2 Orders 0/4 ¥36 Noodle Wrap Egg Hot Dog Sauce Scallions Cilantro Onion Chili Powder"
   },
   {
     "locale": "en",
@@ -641,7 +641,7 @@
       "wood": 4,
       "chips": 1
     },
-    "text": "Day Complete Opening Night · Shift Complete ★★★ Flawless speed and quality—people are coming to the market just for your stall! Next · Big Eater Challenge Big Eater unlocked 3 Orders Orders 92% Satisfaction Satisfaction 0 Mistakes Mistakes ¥36 Coins Coins Coins ¥ 36 Upgrade Heat Lv.1 Patience +3 sec · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60 Play Again Next · Big Eater Challenge"
+    "text": "Day Complete Opening Night · Shift Complete ★★★ Flawless speed and quality—people are coming to the market just for your stall! Next · Big Eater Challenge Double Stack unlocked 3 Orders Orders 92% Satisfaction Satisfaction 0 Mistakes Mistakes ¥36 Cash Cash Cash ¥ 36 Upgrade Heat Lv.1 Patience +3s · ¥40 Upgrade Sign Lv.1 +¥2 per order · ¥60 Play Again Next · Big Eater Challenge"
   },
   {
     "locale": "en",
@@ -669,6 +669,6 @@
       "wood": 0,
       "chips": 0
     },
-    "text": "Master Volume Music SFX Audio Settings Master Volume Music SFX Mute music Back to Main Menu Back to Main Menu"
+    "text": "Master Volume Music SFX Sound Settings Master Volume Music SFX Mute music Back to Main Menu Back to Main Menu"
   }
 ]

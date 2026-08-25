@@ -42,6 +42,9 @@ export function I18nProvider({ children, locale: fixedLocale }: { children: Reac
   useEffect(() => {
     document.documentElement.lang = locale
     document.documentElement.dataset.locale = locale
+    document.title = translate(locale, 'metadata.title')
+    document.querySelector<HTMLMetaElement>('meta[name="description"]')
+      ?.setAttribute('content', translate(locale, 'metadata.description'))
     if (fixedLocale || localeFromSearch(window.location.search) === null) return
     try {
       window.localStorage.setItem(LOCALE_STORAGE_KEY, locale)

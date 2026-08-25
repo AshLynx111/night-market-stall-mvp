@@ -29,7 +29,7 @@ describe('campaign presentation translations', () => {
   it('localizes known customer names and safely preserves unknown names', () => {
     const domain = domainFor('en')
     expect(domain.customerText('王奶奶')).toBe('Grandma Wang')
-    expect(domain.customerText('林奕辰先生')).toBe('Mr. Lin Yichen')
+    expect(domain.customerText('林奕辰先生')).toBe('Mr. Lin')
     expect(domain.customerText('Guest 12')).toBe('Guest 12')
   })
 
@@ -37,7 +37,7 @@ describe('campaign presentation translations', () => {
     const domain = domainFor('en')
     const dayTwo = domain.retentionText(retentionCueForDay(2))
     expect(dayTwo.title).toBe('Big Eater Challenge')
-    expect(dayTwo.shortHook).toBe('Big Eater unlocked')
+    expect(dayTwo.shortHook).toBe('Double Stack unlocked')
     expect(dayTwo.accessibleDescription).not.toMatch(cjk)
   })
 })

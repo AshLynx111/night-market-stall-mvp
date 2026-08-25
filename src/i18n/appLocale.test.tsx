@@ -17,12 +17,21 @@ function renderEnglish(path: string) {
   return { container, root }
 }
 
+function ensureDescriptionMeta() {
+  const meta = document.createElement('meta')
+  meta.name = 'description'
+  document.head.append(meta)
+  return meta
+}
+
 afterEach(() => {
   vi.restoreAllMocks()
   window.history.replaceState({}, '', '/')
   localStorage.clear()
   document.documentElement.removeAttribute('data-locale')
   document.documentElement.lang = ''
+  document.title = ''
+  document.querySelector('meta[name="description"]')?.remove()
   document.body.replaceChildren()
 })
 
@@ -42,10 +51,33 @@ describe('English campaign presentation', () => {
   it('renders day selection copy from stable day ids', () => {
     const { container, root } = renderEnglish('/?lang=en&qaScreen=select')
     const screen = container.querySelector('.select-screen')!
-    expect(screen.textContent).toContain('Day Select')
+    expect(screen.textContent).toContain('Select a Day')
     expect(screen.textContent).toContain('Opening Night')
     expect(screen.textContent).toContain('Finish the tutorial and serve 3 orders')
     expect(screen.textContent).not.toMatch(/[\u3400-\u9fff]/)
+    act(() => root.unmount())
+  })
+
+  it('syncs English document metadata and language', () => {
+    const meta = ensureDescriptionMeta()
+    const { root } = renderEnglish('/?lang=en')
+
+    expect(document.documentElement.lang).toBe('en')
+    expect(document.title).toBe('Night Market: Street Food Stall')
+    expect(meta.content).toBe('Run a sizzling street food stall, serve hungry customers, and grow your night market business.')
+    act(() => root.unmount())
+  })
+
+  it('keeps the existing Chinese document metadata', () => {
+    const meta = ensureDescriptionMeta()
+    const container = document.createElement('div')
+    document.body.append(container)
+    const root = createRoot(container)
+    act(() => root.render(<I18nProvider locale="zh-CN"><App /></I18nProvider>))
+
+    expect(document.documentElement.lang).toBe('zh-CN')
+    expect(document.title).toBe('夜市大排档')
+    expect(meta.content).toBe('夜市大排档——一款温暖有烟火气的烤冷面点击经营小游戏。')
     act(() => root.unmount())
   })
 

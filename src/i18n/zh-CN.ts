@@ -1,4 +1,6 @@
 export const zhCN = {
+  'metadata.title': '夜市大排档',
+  'metadata.description': '夜市大排档——一款温暖有烟火气的烤冷面点击经营小游戏。',
   'app.name': '夜市烤冷面',
   'home.imageAlt': '夜市烤冷面游戏主菜单',
   'home.menuLabel': '主菜单',
