@@ -3,6 +3,7 @@ import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 const cssPath = path.join(process.cwd(), 'src', 'landscape.css')
+const kitchenCssPath = path.join(process.cwd(), 'src', 'styles', 'kitchen.css')
 const screenPath = path.join(process.cwd(), 'src', 'components', 'LandscapeGame.tsx')
 
 describe('English visual polish contract', () => {
@@ -41,5 +42,21 @@ describe('English visual polish contract', () => {
     expect(css).toMatch(/\.day-card__locale-copy b\s*\{[^}]*clamp\(12px[^}]*var\(--font-display-en\)/s)
     expect(css).toMatch(/\.day-card__locale-copy span\s*\{[^}]*clamp\(10px[^}]*var\(--font-ui-en\)/s)
     expect(css).toMatch(/\.day-card__locale-copy em\s*\{[^}]*clamp\(10px[^}]*var\(--font-ui-en\)/s)
+  })
+
+  it('uses warm paper for gameplay notes and customer order slips', async () => {
+    const css = await readFile(kitchenCssPath, 'utf8')
+    expect(css).toMatch(/html\[data-locale="en"\] \.guided-tutorial[^}]*var\(--paper-grain-en\)/s)
+    expect(css).toMatch(/html\[data-locale="en"\] \.kitchen-customer__bubble[^}]*var\(--paper-grain-en\)/s)
+    expect(css).not.toMatch(/html\[data-locale="en"\] [^{]+\{[^}]*background:\s*#fff(?:fff)?\b/s)
+  })
+
+  it('integrates English summary copy into complete wood and paper faces', async () => {
+    const css = await readFile(cssPath, 'utf8')
+    expect(css).toMatch(/html\[data-locale="en"\] \.summary-screen__locale-heading\s*\{[^}]*var\(--wood-grain-en\)/s)
+    expect(css).toMatch(/html\[data-locale="en"\] \.summary-stats > \.stat-card::before\s*\{[^}]*var\(--paper-grain-en\)/s)
+    expect(css).not.toMatch(/summary-stat__label[^}]*background:\s*#f0d5a1/s)
+    expect(css).toMatch(/html\[data-locale="en"\] \.summary-actions button span\s*\{[^}]*var\(--paper-grain-en\)/s)
+    expect(css).toMatch(/html\[data-locale="en"\] \.dialogue-box\s*\{[^}]*var\(--paper-grain-en\)/s)
   })
 })

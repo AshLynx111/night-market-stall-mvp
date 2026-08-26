@@ -466,3 +466,21 @@
   text-align: left;
 }
 .guided-tutorial span { font-size: 11px; line-height: 1.4; }
+
+html[data-locale="en"] .guided-tutorial,
+html[data-locale="en"] .tutorial-completion-toast {
+  border-color: #7b4a2b;
+  background: var(--paper-grain-en);
+  box-shadow: inset 0 1px rgb(255 247 213 / .72), inset 0 -4px rgb(111 61 29 / .08), 0 3px 0 rgb(55 30 18 / .34), 0 7px 13px rgb(20 11 8 / .18);
+  color: #684029;
+  font-family: var(--font-ui-en);
+}
+
+html[data-locale="en"] .kitchen-customer__bubble.order-bubble-panel {
+  border: 2px solid #795033;
+  background: var(--paper-grain-en);
+  box-shadow: inset 0 1px rgb(255 248 218 / .7), 0 3px 0 rgb(54 31 20 / .24), 0 7px 12px rgb(10 16 25 / .14);
+  color: #65402d;
+  font-family: var(--font-ui-en);
+}
+html[data-locale="en"] .kitchen-customer__bubble.order-bubble-panel::after { border-color: #e5c890 transparent transparent; }
