@@ -942,17 +942,17 @@ html[data-locale="en"] [data-locale-art-text] { display: grid; }
 html[data-locale="en"] .home-screen__locale-title {
   position: absolute;
   z-index: 2;
-  left: 31.1%;
-  top: 5.8%;
-  width: 37.8%;
-  height: 16.7%;
+  left: 25.8%;
+  top: 11.7%;
+  width: 48.4%;
+  height: 21.8%;
   display: grid;
   place-content: center;
   gap: 5%;
   padding: 1.2% 4%;
   overflow: hidden;
   border: 2px solid #6e3219;
-  border-radius: 28% 23% 24% 25% / 24% 27% 23% 25%;
+  border-radius: 24px 19px 27px 17px;
   background: var(--wood-grain-en);
   box-shadow: inset 0 3px #d78a45, inset 0 -8px rgb(48 20 10 / .38), 0 4px 8px rgb(31 13 8 / .3);
   color: #ffe4a3;
@@ -1033,6 +1033,21 @@ html[data-locale="en"] .day-card__locale-copy span { font: 700 clamp(10px, .62vw
 html[data-locale="en"] .day-card__locale-copy em { color: #7b3c25; font: 800 clamp(10px, .59vw, 10px)/1.12 var(--font-ui-en); font-style: normal; }
 html[data-locale="en"] .day-card__stars,
 html[data-locale="en"] .day-hotspot__status { z-index: 2; }
+html[data-locale="en"] .day-card__stars {
+  background: radial-gradient(ellipse at center, #e8cc94 0 58%, transparent 78%);
+  box-shadow: none;
+}
+html[data-locale="en"] .day-hotspot__status--mask {
+  border: 1px solid rgb(155 111 66 / .28);
+  border-radius: 10px 8px 11px 7px;
+  background: var(--paper-grain-en);
+  box-shadow: inset 0 1px rgb(255 247 213 / .55), 0 2px 3px rgb(61 29 15 / .12);
+  font-family: var(--font-ui-en);
+}
+html[data-locale="en"] .day-card.is-locked .day-hotspot__status--mask {
+  background: radial-gradient(circle at 22% 24%, rgb(100 74 52 / .05) 0 1px, transparent 1.5px), linear-gradient(145deg, #dcc8a2, #c9ad80);
+  box-shadow: inset 0 1px rgb(244 226 187 / .45), 0 2px 3px rgb(48 31 21 / .14);
+}
 html[data-locale="en"] .select-screen .upgrade-shop__funds {
   background: repeating-linear-gradient(7deg, transparent 0 8px, rgb(255 231 165 / .035) 9px, transparent 11px), linear-gradient(155deg, #416c48, #27452d);
   box-shadow: inset 0 2px rgb(213 236 179 / .24), inset 0 -5px rgb(18 42 23 / .28), 0 3px 5px rgb(24 15 9 / .25);
@@ -1072,7 +1087,7 @@ html[data-locale="en"] .summary-message {
   box-shadow: inset 0 1px rgb(255 247 213 / .62), 0 2px 3px rgb(61 29 15 / .12);
   font-family: var(--font-ui-en);
 }
-html[data-locale="en"] .summary-message { font-size: clamp(10px, 1.08vw, 18px); }
+html[data-locale="en"] .summary-message { left: 30%; top: 37.2%; width: 40%; height: 4.3%; font-size: clamp(10px, 1.08vw, 18px); }
 html[data-locale="en"] .summary-retention { background: var(--paper-grain-en); font: 800 clamp(10px, .86vw, 14px)/1 var(--font-ui-en); }
 html[data-locale="en"] .summary-stats > .stat-card::before {
   inset: 2% 1%;
