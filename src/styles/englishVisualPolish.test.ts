@@ -38,6 +38,27 @@ describe('English visual polish contract', () => {
     expect(css).not.toMatch(/settings-screen__locale-label[^}]*background:\s*#efc579/s)
   })
 
+  it('keeps the four English titles inside the original ornamental plaques', async () => {
+    const css = await readFile(cssPath, 'utf8')
+    const sharedRule = css.match(/html\[data-locale="en"\] \.home-screen__locale-title,\s*html\[data-locale="en"\] \.settings-screen__game-title\s*\{([^}]*)\}/s)?.[1] ?? ''
+    const selectRule = css.match(/html\[data-locale="en"\] \.select-screen__locale-title\s*\{([^}]*)\}/s)?.[1] ?? ''
+    const summaryRule = css.match(/html\[data-locale="en"\] \.summary-screen__locale-heading\s*\{([^}]*)\}/s)?.[1] ?? ''
+
+    for (const rule of [sharedRule, selectRule, summaryRule]) {
+      expect(rule).toContain('background: transparent')
+      expect(rule).toContain('border: 0')
+      expect(rule).toContain('box-shadow: none')
+      expect(rule).not.toContain('var(--wood-grain-en)')
+    }
+
+    expect(css).toMatch(/\.settings-screen__game-title::before\s*\{[^}]*(?:-webkit-)?mask-image:/s)
+    expect(css).toMatch(/\.select-screen__locale-title::before\s*\{[^}]*(?:-webkit-)?mask-image:/s)
+    expect(css).toMatch(/\.summary-screen__locale-heading::before\s*\{[^}]*(?:-webkit-)?mask-image:/s)
+    expect(css).toContain("url('./assets/runtime/locale/en/home-title-neutral.webp')")
+    expect(css).toContain("url('./assets/runtime/locale/en/day-select-title-neutral.webp')")
+    expect(css).toContain("url('./assets/runtime/locale/en/summary-title-neutral.webp')")
+  })
+
   it('uses readable English hierarchy on textured day cards', async () => {
     const css = await readFile(cssPath, 'utf8')
     expect(css).toMatch(/html\[data-locale="en"\] \.day-card__locale-copy\s*\{[^}]*var\(--paper-grain-en\)/s)
@@ -55,7 +76,7 @@ describe('English visual polish contract', () => {
 
   it('integrates English summary copy into complete wood and paper faces', async () => {
     const css = await readFile(cssPath, 'utf8')
-    expect(css).toMatch(/html\[data-locale="en"\] \.summary-screen__locale-heading\s*\{[^}]*var\(--wood-grain-en\)/s)
+    expect(css).toMatch(/html\[data-locale="en"\] \.summary-screen__locale-heading::before\s*\{[^}]*(?:-webkit-)?mask-image:/s)
     expect(css).toMatch(/html\[data-locale="en"\] \.summary-stats > \.stat-card::before\s*\{[^}]*var\(--paper-grain-en\)/s)
     expect(css).not.toMatch(/summary-stat__label[^}]*background:\s*#f0d5a1/s)
     expect(css).toMatch(/html\[data-locale="en"\] \.summary-actions button span\s*\{[^}]*var\(--paper-grain-en\)/s)
