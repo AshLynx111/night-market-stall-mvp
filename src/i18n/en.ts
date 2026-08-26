@@ -4,6 +4,8 @@ export const en = {
   'metadata.title': 'Night Market: Street Food Stall',
   'metadata.description': 'Run a sizzling street food stall, serve hungry customers, and grow your night market business.',
   'app.name': 'Night Market: Street Food Stall',
+  'home.titlePrimary': 'Night Market',
+  'home.titleSecondary': 'Street Food Stall',
   'home.imageAlt': 'Night Market: Street Food Stall main menu',
   'home.menuLabel': 'Main menu',
   'home.start': 'Start Game',

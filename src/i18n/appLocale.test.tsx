@@ -39,6 +39,9 @@ describe('English campaign presentation', () => {
   it('renders the home and settings controls in English', () => {
     const { container, root } = renderEnglish('/?lang=en')
     expect(container.querySelector('.home-screen')?.textContent).toContain('Start')
+    expect(container.querySelector('.home-screen__locale-title')?.textContent)
+      .toBe('Night MarketStreet Food Stall')
+    expect(container.querySelector('.home-screen__locale-title')?.getAttribute('aria-hidden')).toBe('true')
     expect(container.querySelector<HTMLButtonElement>('.home-hotspot--settings')?.ariaLabel).toBe('Open settings')
 
     act(() => container.querySelector<HTMLButtonElement>('.home-hotspot--settings')!.click())

@@ -517,6 +517,12 @@ export function LandscapeGame() {
       <main className="home-screen home-screen--illustrated ui-screen" data-screen-art="home" data-ui-screen="home" style={{ '--home-bg': `url(${homeScreen})` } as React.CSSProperties}>
         <div className="home-screen__plate">
           <img className="home-screen__art" src={homeScreen} alt={t('home.imageAlt')} fetchPriority="high" />
+          {locale === 'en' && (
+            <div className="home-screen__locale-title ui-text-surface ui-text-surface--wood" data-locale-art-text aria-hidden="true">
+              <strong>{t('home.titlePrimary')}</strong>
+              <span>{t('home.titleSecondary')}</span>
+            </div>
+          )}
           <nav className="home-screen__hotspots" aria-label={t('home.menuLabel')}>
             <button className="home-hotspot home-hotspot--start" aria-label={t('home.start')} onClick={() => startDay(DAYS[0])}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.start')}</span>}<span className="sr-only">{t('home.start')}</span></button>
             <button className="home-hotspot home-hotspot--continue" aria-label={t('home.continue')} onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.continue')}</span>}<span className="sr-only">{t('home.continue')}</span></button>
