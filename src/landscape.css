@@ -18,6 +18,16 @@
   --panel-radius: 18px;
   --panel-border: 2px solid var(--gold-border);
   --panel-shadow: 0 8px 18px var(--shadow-warm), inset 0 1px rgb(255 222 151 / .32);
+  --font-display-en: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --font-ui-en: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  --paper-grain-en:
+    radial-gradient(circle at 18% 24%, rgb(116 68 34 / .08) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 73% 62%, rgb(255 247 213 / .24) 0 1px, transparent 1.7px),
+    linear-gradient(145deg, #f6e3ba, #dfbd83);
+  --wood-grain-en:
+    repeating-linear-gradient(7deg, transparent 0 7px, rgb(255 203 116 / .045) 8px, transparent 10px),
+    radial-gradient(ellipse at 24% 12%, #b86432, transparent 48%),
+    linear-gradient(160deg, #9c4d27, #663018 72%, #4d2413);
   --ui-wood: var(--wood-mid);
   --ui-cream: var(--paper-cream);
   --ui-green: #3f6544;
@@ -929,41 +939,72 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 [data-locale-art-text] { display: none; }
 html[data-locale="en"] [data-locale-art-text] { display: grid; }
 
+html[data-locale="en"] .home-screen__locale-title {
+  position: absolute;
+  z-index: 2;
+  left: 31.1%;
+  top: 5.8%;
+  width: 37.8%;
+  height: 16.7%;
+  display: grid;
+  place-content: center;
+  gap: 5%;
+  padding: 1.2% 4%;
+  overflow: hidden;
+  border: 2px solid #6e3219;
+  border-radius: 28% 23% 24% 25% / 24% 27% 23% 25%;
+  background: var(--wood-grain-en);
+  box-shadow: inset 0 3px #d78a45, inset 0 -8px rgb(48 20 10 / .38), 0 4px 8px rgb(31 13 8 / .3);
+  color: #ffe4a3;
+  text-align: center;
+  text-shadow: 0 2px #3d1b10;
+  pointer-events: none;
+}
+html[data-locale="en"] .home-screen__locale-title strong { font: 900 clamp(21px, 3vw, 50px)/.92 var(--font-display-en); }
+html[data-locale="en"] .home-screen__locale-title span { font: 800 clamp(10px, 1.15vw, 19px)/1 var(--font-ui-en); letter-spacing: .12em; text-transform: uppercase; }
+
 html[data-locale="en"] .home-hotspot__locale-label {
   position: absolute;
   z-index: 1;
-  inset: 4%;
+  inset: 2%;
   place-items: center;
-  border: 2px solid #7a3c21;
+  border: 2px solid #77391e;
   border-radius: 13px 10px 14px 9px;
-  background: linear-gradient(180deg, #d77736, #a64324);
-  box-shadow: inset 0 2px rgb(255 207 117 / .55), inset 0 -5px rgb(79 28 17 / .3), 0 3px 5px rgb(28 12 8 / .35);
+  background: var(--wood-grain-en);
+  box-shadow: inset 0 2px rgb(255 211 130 / .58), inset 0 -6px rgb(66 26 14 / .35), 0 4px 5px rgb(28 12 8 / .4);
   color: #fff0c5;
-  font: 900 clamp(12px, 1.7vw, 28px)/1.05 Georgia, serif;
+  font: 900 clamp(12px, 1.7vw, 28px)/1.05 var(--font-display-en);
   letter-spacing: .02em;
   text-shadow: 0 2px #6b2d1d;
+  transition: filter .14s ease, transform .14s ease, box-shadow .14s ease;
 }
 html[data-locale="en"] .home-hotspot--collection .home-hotspot__locale-label,
 html[data-locale="en"] .home-hotspot--achievements .home-hotspot__locale-label { font-size: clamp(10px, 1.15vw, 19px); }
+html[data-locale="en"] .home-hotspot:hover .home-hotspot__locale-label,
+html[data-locale="en"] .home-hotspot:focus-visible .home-hotspot__locale-label { filter: brightness(1.08) saturate(1.04); }
+html[data-locale="en"] .home-hotspot:active .home-hotspot__locale-label { transform: translateY(2px); box-shadow: inset 0 2px rgb(255 211 130 / .5), inset 0 -3px rgb(66 26 14 / .3), 0 2px 3px rgb(28 12 8 / .35); }
 
 html[data-locale="en"] .settings-screen__locale-copy { position: absolute; z-index: 3; inset: 0; pointer-events: none; }
 html[data-locale="en"] .settings-screen__locale-copy strong {
-  position: absolute; left: 41.5%; top: 40.7%; width: 17%; height: 5.5%; place-items: center;
-  background: #e6bd7d; box-shadow: 0 0 7px 6px #e6bd7d; color: #5b2e16;
-  font: 900 clamp(13px, 1.8vw, 30px)/1 Georgia, serif;
+  position: absolute; left: 40.8%; top: 39.8%; width: 18.4%; height: 7%; place-items: center;
+  border: 1px solid #8a572d; border-radius: 14px 11px 15px 10px;
+  background: var(--paper-grain-en); box-shadow: inset 0 2px rgb(255 245 205 / .68), inset 0 -5px rgb(111 61 29 / .1), 0 3px 5px rgb(61 29 15 / .24); color: #5b2e16;
+  font: 900 clamp(14px, 1.8vw, 30px)/1 var(--font-display-en);
 }
 html[data-locale="en"] .settings-screen__locale-label {
-  position: absolute; left: 37.2%; width: 7.2%; height: 4%; place-items: center;
-  background: #efc579; box-shadow: 0 0 6px 5px #efc579; color: #5d331f;
-  font: 900 clamp(8px, .86vw, 14px)/1.05 system-ui, sans-serif; text-align: center;
+  position: absolute; left: 36.2%; width: 8.4%; height: 4.4%; place-items: center;
+  border: 1px solid #946238; border-radius: 8px 6px 9px 6px;
+  background: var(--paper-grain-en); box-shadow: inset 0 1px rgb(255 245 205 / .64), 0 2px 4px rgb(61 29 15 / .22); color: #5d331f;
+  font: 850 clamp(10px, .86vw, 14px)/1.05 var(--font-ui-en); text-align: center;
 }
-html[data-locale="en"] .settings-screen__locale-label--master { top: 50.7%; }
-html[data-locale="en"] .settings-screen__locale-label--music { top: 58.8%; }
-html[data-locale="en"] .settings-screen__locale-label--effects { top: 66.9%; }
+html[data-locale="en"] .settings-screen__locale-label--master { top: 50.5%; }
+html[data-locale="en"] .settings-screen__locale-label--music { top: 58.6%; }
+html[data-locale="en"] .settings-screen__locale-label--effects { top: 66.7%; }
 html[data-locale="en"] .settings-screen__return-label {
-  position: absolute; inset: 9%; place-items: center; border-radius: 999px;
-  background: #f0bd62; box-shadow: inset 0 2px #ffe5a0, inset 0 -4px #a9572e, 0 2px 3px rgb(38 18 10 / .4);
-  color: #63341f; font: 900 clamp(8px, .78vw, 13px)/1 system-ui, sans-serif;
+  position: absolute; inset: 4%; place-items: center; padding: 0 7%; border: 1px solid #7f441f; border-radius: 999px;
+  background: radial-gradient(ellipse at 28% 16%, rgb(255 224 151 / .38), transparent 48%), linear-gradient(180deg, #e9b85c, #ba6d32);
+  box-shadow: inset 0 2px #ffe5a0, inset 0 -4px #8e4825, 0 3px 4px rgb(38 18 10 / .35);
+  color: #63341f; font: 900 clamp(10px, .78vw, 13px)/1.05 var(--font-ui-en); text-align: center;
 }
 
 html[data-locale="en"] .select-screen__locale-title {
