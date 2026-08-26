@@ -30,6 +30,7 @@ describe('i18n core', () => {
     expect(en['select.daysLabel']).not.toBe('Business days')
     expect(en['upgrade.funds']).toBe('Cash')
     expect(en['summary.coins']).toBe('Cash')
+    expect(en['ingredient.noodle']).toBe('Noodle Sheet')
 
     const englishCopy = Object.values(en).join('\n').replace(/\{[^}]+\}/g, '')
     expect(englishCopy).not.toMatch(/\bcoins?\b/i)

@@ -237,7 +237,7 @@ export const en = {
   'recipe.tenderloin.shortName': 'Spicy Tenderloin',
   'recipe.signature.name': 'Signature Cheesy Fire Noodle Wrap',
   'recipe.signature.shortName': 'Cheesy Fire Noodles',
-  'ingredient.noodle': 'Noodle Wrap',
+  'ingredient.noodle': 'Noodle Sheet',
   'ingredient.egg': 'Egg',
   'ingredient.hot-dog': 'Hot Dog',
   'ingredient.sauce': 'Sauce',
