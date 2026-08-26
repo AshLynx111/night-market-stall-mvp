@@ -54,9 +54,9 @@ describe('English visual polish contract', () => {
     expect(css).toMatch(/\.settings-screen__game-title::before\s*\{[^}]*(?:-webkit-)?mask-image:/s)
     expect(css).toMatch(/\.select-screen__locale-title::before\s*\{[^}]*(?:-webkit-)?mask-image:/s)
     expect(css).toMatch(/\.summary-screen__locale-heading::before\s*\{[^}]*(?:-webkit-)?mask-image:/s)
-    expect(css).toContain("url('./assets/runtime/locale/en/home-title-neutral.webp')")
-    expect(css).toContain("url('./assets/runtime/locale/en/day-select-title-neutral.webp')")
-    expect(css).toContain("url('./assets/runtime/locale/en/summary-title-neutral.webp')")
+    expect(css).toContain("url('./assets/locale/en/home-title-neutral.webp')")
+    expect(css).toContain("url('./assets/locale/en/day-select-title-neutral.webp')")
+    expect(css).toContain("url('./assets/locale/en/summary-title-neutral.webp')")
   })
 
   it('uses readable English hierarchy on textured day cards', async () => {

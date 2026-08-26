@@ -967,7 +967,7 @@ html[data-locale="en"] .settings-screen__game-title::before {
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: url('./assets/runtime/locale/en/home-title-neutral.webp') center / 100% 100% no-repeat;
+  background: url('./assets/locale/en/home-title-neutral.webp') center / 100% 100% no-repeat;
   -webkit-mask-image: radial-gradient(ellipse 83% 82% at 50% 49%, #000 0 66%, rgb(0 0 0 / .9) 78%, rgb(0 0 0 / .35) 91%, transparent 100%);
   mask-image: radial-gradient(ellipse 83% 82% at 50% 49%, #000 0 66%, rgb(0 0 0 / .9) 78%, rgb(0 0 0 / .35) 91%, transparent 100%);
   pointer-events: none;
@@ -1047,7 +1047,7 @@ html[data-locale="en"] .select-screen__locale-title {
 }
 html[data-locale="en"] .select-screen__locale-title::before {
   content: ""; position: absolute; z-index: -1; inset: 0;
-  background: url('./assets/runtime/locale/en/day-select-title-neutral.webp') center / 100% 100% no-repeat;
+  background: url('./assets/locale/en/day-select-title-neutral.webp') center / 100% 100% no-repeat;
   -webkit-mask-image: radial-gradient(ellipse 85% 84% at 50% 50%, #000 0 68%, rgb(0 0 0 / .9) 80%, rgb(0 0 0 / .32) 92%, transparent 100%);
   mask-image: radial-gradient(ellipse 85% 84% at 50% 50%, #000 0 68%, rgb(0 0 0 / .9) 80%, rgb(0 0 0 / .32) 92%, transparent 100%);
   pointer-events: none;
@@ -1110,7 +1110,7 @@ html[data-locale="en"] .summary-screen__locale-heading {
 }
 html[data-locale="en"] .summary-screen__locale-heading::before {
   content: ""; position: absolute; z-index: -1; inset: 0;
-  background: url('./assets/runtime/locale/en/summary-title-neutral.webp') center / 100% 100% no-repeat;
+  background: url('./assets/locale/en/summary-title-neutral.webp') center / 100% 100% no-repeat;
   -webkit-mask-image: radial-gradient(ellipse 82% 79% at 50% 50%, #000 0 67%, rgb(0 0 0 / .88) 79%, rgb(0 0 0 / .3) 92%, transparent 100%);
   mask-image: radial-gradient(ellipse 82% 79% at 50% 50%, #000 0 67%, rgb(0 0 0 / .88) 79%, rgb(0 0 0 / .3) 92%, transparent 100%);
   pointer-events: none;
