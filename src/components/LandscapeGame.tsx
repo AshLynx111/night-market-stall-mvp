@@ -517,6 +517,7 @@ export function LandscapeGame() {
       <main className="home-screen home-screen--illustrated ui-screen" data-screen-art="home" data-ui-screen="home" style={{ '--home-bg': `url(${homeScreen})` } as React.CSSProperties}>
         <div className="home-screen__plate">
           <img className="home-screen__art" src={homeScreen} alt={t('home.imageAlt')} fetchPriority="high" />
+          {locale === 'en' && <span className="profile-card__locale-label ui-text-surface ui-text-surface--paper" data-locale-art-text aria-hidden="true">{t('home.profileLabel')}</span>}
           {locale === 'en' && (
             <div className="home-screen__locale-title ui-text-surface ui-text-surface--wood" data-locale-art-text aria-hidden="true">
               <strong>{t('home.titlePrimary')}</strong>
@@ -560,6 +561,7 @@ export function LandscapeGame() {
             alt=""
             aria-hidden="true"
           />
+          {locale === 'en' && <span className="profile-card__locale-label ui-text-surface ui-text-surface--paper" data-locale-art-text aria-hidden="true">{t('home.profileLabel')}</span>}
           {locale === 'en' && (
             <div className="settings-screen__game-title ui-text-surface ui-text-surface--wood" data-locale-art-text aria-hidden="true">
               <strong>{t('home.titlePrimary')}</strong>

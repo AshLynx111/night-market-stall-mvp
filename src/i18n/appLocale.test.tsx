@@ -42,6 +42,7 @@ describe('English campaign presentation', () => {
     expect(container.querySelector('.home-screen__locale-title')?.textContent)
       .toBe('Night MarketStreet Food Stall')
     expect(container.querySelector('.home-screen__locale-title')?.getAttribute('aria-hidden')).toBe('true')
+    expect(container.querySelector('.profile-card__locale-label')?.textContent).toBe('Stall Owner')
     expect(container.querySelector<HTMLButtonElement>('.home-hotspot--settings')?.ariaLabel).toBe('Open settings')
 
     act(() => container.querySelector<HTMLButtonElement>('.home-hotspot--settings')!.click())
@@ -49,6 +50,7 @@ describe('English campaign presentation', () => {
     expect(container.querySelector('.settings-screen__game-title')?.textContent)
       .toBe('Night MarketStreet Food Stall')
     expect(container.querySelector('.settings-screen__game-title')?.getAttribute('aria-hidden')).toBe('true')
+    expect(container.querySelector('.profile-card__locale-label')?.textContent).toBe('Stall Owner')
     expect([...container.querySelectorAll<HTMLInputElement>('input[type="range"]')].map((input) => input.ariaLabel))
       .toEqual(['Master volume', 'Music volume', 'Sound effects volume'])
     act(() => root.unmount())

@@ -4,6 +4,7 @@ export const zhCN = {
   'app.name': '夜市烤冷面',
   'home.titlePrimary': '夜市烤冷面',
   'home.titleSecondary': '',
+  'home.profileLabel': '夜市小摊主',
   'home.imageAlt': '夜市烤冷面游戏主菜单',
   'home.menuLabel': '主菜单',
   'home.start': '开始游戏',

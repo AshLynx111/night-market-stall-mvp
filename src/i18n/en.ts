@@ -6,6 +6,7 @@ export const en = {
   'app.name': 'Night Market: Street Food Stall',
   'home.titlePrimary': 'Night Market',
   'home.titleSecondary': 'Street Food Stall',
+  'home.profileLabel': 'Stall Owner',
   'home.imageAlt': 'Night Market: Street Food Stall main menu',
   'home.menuLabel': 'Main menu',
   'home.start': 'Start Game',
