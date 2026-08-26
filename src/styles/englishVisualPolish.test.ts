@@ -34,4 +34,12 @@ describe('English visual polish contract', () => {
     expect(css).not.toMatch(/settings-screen__locale-copy strong[^}]*background:\s*#e6bd7d/s)
     expect(css).not.toMatch(/settings-screen__locale-label[^}]*background:\s*#efc579/s)
   })
+
+  it('uses readable English hierarchy on textured day cards', async () => {
+    const css = await readFile(cssPath, 'utf8')
+    expect(css).toMatch(/html\[data-locale="en"\] \.day-card__locale-copy\s*\{[^}]*var\(--paper-grain-en\)/s)
+    expect(css).toMatch(/\.day-card__locale-copy b\s*\{[^}]*clamp\(12px[^}]*var\(--font-display-en\)/s)
+    expect(css).toMatch(/\.day-card__locale-copy span\s*\{[^}]*clamp\(10px[^}]*var\(--font-ui-en\)/s)
+    expect(css).toMatch(/\.day-card__locale-copy em\s*\{[^}]*clamp\(10px[^}]*var\(--font-ui-en\)/s)
+  })
 })
