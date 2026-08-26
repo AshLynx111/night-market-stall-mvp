@@ -19,6 +19,7 @@ describe('English visual polish contract', () => {
   it('renders a decorative English title without replacing home controls', async () => {
     const source = await readFile(screenPath, 'utf8')
     expect(source).toContain('home-screen__locale-title')
+    expect(source).toContain('settings-screen__game-title')
     expect(source).toContain("t('home.titlePrimary')")
     expect(source).toContain("t('home.titleSecondary')")
     expect(source.match(/className="home-hotspot home-hotspot--/g)).toHaveLength(5)

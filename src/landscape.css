@@ -939,7 +939,8 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 [data-locale-art-text] { display: none; }
 html[data-locale="en"] [data-locale-art-text] { display: grid; }
 
-html[data-locale="en"] .home-screen__locale-title {
+html[data-locale="en"] .home-screen__locale-title,
+html[data-locale="en"] .settings-screen__game-title {
   position: absolute;
   z-index: 2;
   left: 25.8%;
@@ -960,8 +961,10 @@ html[data-locale="en"] .home-screen__locale-title {
   text-shadow: 0 2px #3d1b10;
   pointer-events: none;
 }
-html[data-locale="en"] .home-screen__locale-title strong { font: 900 clamp(21px, 3vw, 50px)/.92 var(--font-display-en); }
-html[data-locale="en"] .home-screen__locale-title span { font: 800 clamp(10px, 1.15vw, 19px)/1 var(--font-ui-en); letter-spacing: .12em; text-transform: uppercase; }
+html[data-locale="en"] .home-screen__locale-title strong,
+html[data-locale="en"] .settings-screen__game-title strong { font: 900 clamp(21px, 3vw, 50px)/.92 var(--font-display-en); }
+html[data-locale="en"] .home-screen__locale-title span,
+html[data-locale="en"] .settings-screen__game-title span { font: 800 clamp(10px, 1.15vw, 19px)/1 var(--font-ui-en); letter-spacing: .12em; text-transform: uppercase; }
 
 html[data-locale="en"] .home-hotspot__locale-label {
   position: absolute;

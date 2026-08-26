@@ -560,6 +560,12 @@ export function LandscapeGame() {
             alt=""
             aria-hidden="true"
           />
+          {locale === 'en' && (
+            <div className="settings-screen__game-title ui-text-surface ui-text-surface--wood" data-locale-art-text aria-hidden="true">
+              <strong>{t('home.titlePrimary')}</strong>
+              <span>{t('home.titleSecondary')}</span>
+            </div>
+          )}
           <div className="settings-screen__controls settings-text-region">
             <label className="settings-slider settings-slider--master">
               <span className="sr-only">{t('settings.master')}</span>

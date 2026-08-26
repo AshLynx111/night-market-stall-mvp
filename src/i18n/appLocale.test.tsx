@@ -46,6 +46,9 @@ describe('English campaign presentation', () => {
 
     act(() => container.querySelector<HTMLButtonElement>('.home-hotspot--settings')!.click())
     expect(container.querySelector('.settings-screen')?.textContent).toContain('Master Volume')
+    expect(container.querySelector('.settings-screen__game-title')?.textContent)
+      .toBe('Night MarketStreet Food Stall')
+    expect(container.querySelector('.settings-screen__game-title')?.getAttribute('aria-hidden')).toBe('true')
     expect([...container.querySelectorAll<HTMLInputElement>('input[type="range"]')].map((input) => input.ariaLabel))
       .toEqual(['Master volume', 'Music volume', 'Sound effects volume'])
     act(() => root.unmount())
