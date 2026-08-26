@@ -1,0 +1,23 @@
+{
+  "scale": ["NONE", "LOW", "MEDIUM", "HIGH"],
+  "reviewedAt": "2026-08-26",
+  "viewports": ["1440x810", "844x390"],
+  "ratings": {
+    "Home": {
+      "rating": "LOW",
+      "evidence": "The title, profile label, and five button faces use matched wood or paper surfaces with no visible functional Chinese glyph edges. Environmental Chinese signage remains intentionally part of the night-market scene."
+    },
+    "Settings": {
+      "rating": "LOW",
+      "evidence": "The game-title plaque, profile label, settings heading, slider labels, and return control are integrated material surfaces; no flat text-local masks remain."
+    },
+    "Day Select": {
+      "rating": "LOW",
+      "evidence": "Header, day-card interiors, status strips, navigation controls, and upgrade copy wells follow their existing frames and share warm wood/paper lighting."
+    },
+    "Summary": {
+      "rating": "LOW",
+      "evidence": "Heading, message, stats, actions, and upgrade copy regions use a consistent wood/paper system with no visible baked Chinese functional text."
+    }
+  }
+}
