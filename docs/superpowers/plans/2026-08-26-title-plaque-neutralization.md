@@ -162,4 +162,3 @@ Confirm the source diff contains only `src/landscape.css`, `src/styles/englishVi
 git add -f scripts/capture-title-plaque-neutralization.mjs docs/qa/title-plaque-neutralization.md docs/qa/screenshots/title-plaque-neutralization
 git commit -m "test: add title plaque neutralization qa"
 ```
-

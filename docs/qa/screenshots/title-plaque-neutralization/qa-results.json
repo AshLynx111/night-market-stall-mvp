@@ -1,0 +1,102 @@
+[
+  {
+    "state": "Home",
+    "filename": "after-home-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "text": "Night MarketStreet Food Stall",
+    "box": {
+      "x": 409.109375,
+      "y": 98.8125,
+      "width": 620.296875,
+      "height": 167.65625
+    },
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "backgroundImage": "none",
+    "borderWidth": "0px",
+    "boxShadow": "none",
+    "pseudoBackground": "url(\"http://127.0.0.1:4194/src/assets/locale/en/home-title-neutral.webp\")",
+    "pseudoMask": "radial-gradient(83% 82% at 50% 49%, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 66%, rgba(0, 0, 0, 0.9) 78%, rgba(0, 0, 0, 0.35) 91%, rgba(0, 0, 0, 0) 100%)",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "htmlLang": "en",
+    "dataLocale": "en"
+  },
+  {
+    "state": "Settings",
+    "filename": "after-settings-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "text": "Night MarketStreet Food Stall",
+    "box": {
+      "x": 409.109375,
+      "y": 98.8125,
+      "width": 620.296875,
+      "height": 167.65625
+    },
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "backgroundImage": "none",
+    "borderWidth": "0px",
+    "boxShadow": "none",
+    "pseudoBackground": "url(\"http://127.0.0.1:4194/src/assets/locale/en/home-title-neutral.webp\")",
+    "pseudoMask": "radial-gradient(83% 82% at 50% 49%, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 66%, rgba(0, 0, 0, 0.9) 78%, rgba(0, 0, 0, 0.35) 91%, rgba(0, 0, 0, 0) 100%)",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "htmlLang": "en",
+    "dataLocale": "en"
+  },
+  {
+    "state": "Day Select",
+    "filename": "after-day-select-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "text": "Select a DayClear each day to unlock the next challenge.",
+    "box": {
+      "x": 249.9375,
+      "y": 25.828125,
+      "width": 395.921875,
+      "height": 159.234375
+    },
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "backgroundImage": "none",
+    "borderWidth": "0px",
+    "boxShadow": "none",
+    "pseudoBackground": "url(\"http://127.0.0.1:4194/src/assets/locale/en/day-select-title-neutral.webp\")",
+    "pseudoMask": "radial-gradient(85% 84%, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 68%, rgba(0, 0, 0, 0.9) 80%, rgba(0, 0, 0, 0.32) 92%, rgba(0, 0, 0, 0) 100%)",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "htmlLang": "en",
+    "dataLocale": "en"
+  },
+  {
+    "state": "Summary",
+    "filename": "after-summary-1440x810.png",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "text": "Day Complete",
+    "box": {
+      "x": 555.625,
+      "y": 62.84375,
+      "width": 331.453125,
+      "height": 98.96875
+    },
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "backgroundImage": "none",
+    "borderWidth": "0px",
+    "boxShadow": "none",
+    "pseudoBackground": "url(\"http://127.0.0.1:4194/src/assets/locale/en/summary-title-neutral.webp\")",
+    "pseudoMask": "radial-gradient(82% 79%, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 67%, rgba(0, 0, 0, 0.88) 79%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0) 100%)",
+    "overflow": {
+      "horizontal": false,
+      "vertical": false
+    },
+    "htmlLang": "en",
+    "dataLocale": "en"
+  }
+]
