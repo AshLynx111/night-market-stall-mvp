@@ -103,7 +103,7 @@ gameplayStart
 
 ## 21. Tests
 
-覆盖 standalone no-op、Poki init success/reject/timeout、break reject、loading once、start/stop dedupe、商业广告序列、音频恢复、input lock、storage denial、现有 App/Kitchen/analytics/i18n 回归，以及生产浏览器完整流程。最终命令：`npm test -- --run`、`npm run validate:art`、`node scripts/qa-poki-platform-build-v1.mjs`。
+覆盖 standalone no-op、Poki init success/reject/timeout、break reject、loading once、start/stop dedupe、商业广告序列、音频恢复、input lock、storage denial、现有 App/Kitchen/analytics/i18n 回归，以及生产浏览器完整流程。最终结果：74 test files / 388 tests 全通过；428 个 art assets 验证通过。最终命令：`npm test -- --run`、`npm run validate:art`、`node scripts/qa-poki-platform-build-v1.mjs`。
 
 ## 22. build
 
@@ -126,7 +126,7 @@ Poki main 移除了 2,288 B debug chunk并增加 920 B adapter chunk。Poki 首�
 
 ## 25. ZIP size
 
-25,649,778 B。SHA-256：`026B4151D4D804F2A484EFC71B77ED75F442FCE5368EBE8210B048E7603D531F`。
+25,649,778 B。SHA-256：`9D2454AA334BE5DF66A666D54FE99FA77BD9CE995860C1D75A6A65E413AEB0DF`。
 
 ## 26. Poki Inspector status
 
