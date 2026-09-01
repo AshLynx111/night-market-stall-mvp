@@ -6,8 +6,11 @@ import { initializeAnalytics } from './analytics/tracker'
 import './landscape.css'
 import './styles/kitchen.css'
 import './styles/playtest.css'
+import { platformLifecycle } from './platform/lifecycle'
+import { schedulePlatformLoadingFinished } from './platform/loading'
 
 initializeAnalytics()
+void platformLifecycle.initialize()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -16,3 +19,5 @@ createRoot(document.getElementById('root')!).render(
     </I18nProvider>
   </StrictMode>,
 )
+
+schedulePlatformLoadingFinished(() => platformLifecycle.markLoadingFinished())
