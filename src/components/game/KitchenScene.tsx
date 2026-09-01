@@ -26,6 +26,7 @@ import { ServingTray } from './ServingTray'
 import { TableIngredient } from './TableIngredient'
 import { TutorialOverlay } from './TutorialOverlay'
 import { useI18n } from '../../i18n/I18nProvider'
+import type { KitchenInteractionIntent } from '../../analytics/gameplayObserver'
 
 const TUTORIAL_COMPLETION_TOAST_MS = 2_200
 
@@ -34,10 +35,11 @@ function pointInside(element: Element, clientX: number, clientY: number) {
   return rect.width > 0 && rect.height > 0 && clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom
 }
 
-export function KitchenScene({ state, dispatch, soundEnabled = true }: {
+export function KitchenScene({ state, dispatch, soundEnabled = true, onTelemetryIntent }: {
   state: KitchenState
   dispatch: (action: KitchenAction) => void
   soundEnabled?: boolean
+  onTelemetryIntent?: (intent: KitchenInteractionIntent) => void
 }) {
   const { t, domain } = useI18n()
   const sceneRef = useRef<HTMLDivElement>(null)
@@ -89,11 +91,28 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
   }, [state.tutorialMode])
 
   const dispatchScene = (action: KitchenAction) => {
+    const deliveryResult = action.type === 'DELIVER' ? deliverDish(state, action.slotId, action.customerId) : null
+    if (action.type === 'DELIVER') {
+      const slot = state.slots.find((candidate) => candidate.id === action.slotId)
+      if (slot?.recipeId) {
+        const reason: 'wrong_customer' | 'not_ready' | 'unknown' = deliveryResult?.reason === 'wrong-customer'
+          ? 'wrong_customer'
+          : deliveryResult?.reason === 'not-ready' ? 'not_ready' : 'unknown'
+        onTelemetryIntent?.({
+          kind: 'serve_attempted',
+          recipeId: slot.recipeId,
+          slotId: action.slotId,
+          customerId: action.customerId,
+          accepted: deliveryResult?.accepted === true,
+          ...(deliveryResult?.accepted ? {} : { reason }),
+        })
+      }
+    }
     if (state.tutorialMode === 'guided-first-order') {
       if (action.type === 'DROP_INGREDIENT' && !placeIngredient(state, action.slotId, action.ingredient).accepted) return
       if (action.type === 'TAP_EGG' && !placeIngredient(state, action.slotId, 'egg').accepted) return
       if (action.type === 'COMPLETE_GESTURE' && action.slotId !== 'left') return
-      if (action.type === 'DELIVER' && !deliverDish(state, action.slotId, action.customerId).accepted) return
+      if (action.type === 'DELIVER' && !deliveryResult?.accepted) return
       if (action.type === 'DISCARD_SLOT') return
     }
     if (action.type === 'COMPLETE_GESTURE') {
@@ -103,9 +122,15 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
           const slot = state.slots.find((candidate) => candidate.id === action.slotId)
           if ((slot?.sauceStrokeCount ?? 0) >= 1) setSauceBrushSelected(false)
         }
+      } else {
+        onTelemetryIntent?.({ kind: 'gesture_rejected', gestureId: action.gesture.kind, slotId: action.slotId })
       }
     }
-    if (action.type === 'DISCARD_SLOT') stopAllKitchenAudio()
+    if (action.type === 'DISCARD_SLOT') {
+      const slot = state.slots.find((candidate) => candidate.id === action.slotId)
+      onTelemetryIntent?.({ kind: 'griddle_discarded', recipeId: slot?.recipeId ?? undefined, slotId: action.slotId })
+      stopAllKitchenAudio()
+    }
     dispatch(action)
   }
 
@@ -140,15 +165,34 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
       const expected = slotExpectedAction(state, slot.id)?.id
       return expected === 'egg' || expected === 'second-egg'
     }) ?? state.slots[0]
-    if (target) dispatchScene({ type: 'TAP_EGG', slotId: target.id })
+    if (target) {
+      const result = placeIngredient(state, target.id, 'egg')
+      onTelemetryIntent?.({
+        kind: 'ingredient_selected',
+        ingredientId: 'egg',
+        slotId: target.id,
+        accepted: result.accepted,
+        stepId: slotExpectedAction(state, target.id)?.id,
+      })
+      dispatchScene({ type: 'TAP_EGG', slotId: target.id })
+    }
   }
 
   const dropIngredient = (ingredient: IngredientId, slotId: SlotId) => {
     // Sauce is a tool selection, never a generic ingredient placement.
     if (ingredient === 'sauce') {
+      onTelemetryIntent?.({ kind: 'ingredient_selected', ingredientId: 'sauce', slotId, accepted: sauceEnabled, stepId: 'sauce' })
       if (sauceEnabled) setSauceBrushSelected(true)
       return
     }
+    const result = placeIngredient(state, slotId, ingredient)
+    onTelemetryIntent?.({
+      kind: 'ingredient_selected',
+      ingredientId: ingredient,
+      slotId,
+      accepted: result.accepted,
+      stepId: slotExpectedAction(state, slotId)?.id,
+    })
     if (!tutorialAllowsIngredient(state, ingredient, slotId)) return
     if (ingredient === 'egg') dispatchScene({ type: 'TAP_EGG', slotId })
     else dispatchScene({ type: 'DROP_INGREDIENT', slotId, ingredient })
@@ -168,6 +212,7 @@ export function KitchenScene({ state, dispatch, soundEnabled = true }: {
     .sort((a, b) => a.patienceMs / a.maxPatienceMs - b.patienceMs / b.maxPatienceMs)[0]?.id
   const keyboardApply = (ingredient: IngredientId) => {
     if (ingredient === 'sauce') {
+      onTelemetryIntent?.({ kind: 'ingredient_selected', ingredientId: 'sauce', accepted: sauceEnabled, stepId: 'sauce' })
       if (sauceEnabled) setSauceBrushSelected(true)
       return
     }

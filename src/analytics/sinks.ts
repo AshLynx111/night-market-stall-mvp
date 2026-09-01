@@ -11,7 +11,7 @@ declare global {
 
 export function createDefaultAnalyticsSinks(context: AnalyticsContext): AnalyticsSink[] {
   const sinks: AnalyticsSink[] = []
-  if (import.meta.env.DEV || context.playtestMode) {
+  if ((import.meta.env.DEV && import.meta.env.MODE !== 'test') || context.playtestMode) {
     sinks.push((event) => console.info('[playtest]', event.name, event))
   }
 

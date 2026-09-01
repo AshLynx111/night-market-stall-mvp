@@ -13,7 +13,8 @@ export type KitchenObservation =
   | { kind: 'mistake_recorded'; mistakeType: MistakeType; stepId?: string; slotId?: SlotId }
 
 export type KitchenInteractionIntent =
-  | { kind: 'ingredient_selected'; ingredientId: IngredientId; slotId?: SlotId }
+  | { kind: 'ingredient_selected'; ingredientId: IngredientId; slotId?: SlotId; accepted: boolean; stepId?: string }
+  | { kind: 'gesture_rejected'; gestureId: 'sauce' | 'cut' | 'roll'; slotId: SlotId }
   | { kind: 'serve_attempted'; recipeId: RecipeId; slotId: SlotId; customerId: string; accepted: boolean; reason?: 'wrong_customer' | 'not_ready' | 'unknown' }
   | { kind: 'griddle_discarded'; recipeId?: RecipeId; slotId: SlotId }
 
@@ -33,12 +34,6 @@ function mistakeType(previous: KitchenState, current: KitchenState): { mistakeTy
 export function observeKitchenTransition(previous: KitchenState, current: KitchenState): KitchenObservation[] {
   if (previous === current) return []
   const observations: KitchenObservation[] = []
-
-  const previousTutorialStep = tutorialStep(previous)
-  const currentTutorialStep = tutorialStep(current)
-  if (previousTutorialStep !== currentTutorialStep) {
-    observations.push({ kind: 'tutorial_step_changed', previousStep: previousTutorialStep, currentStep: currentTutorialStep })
-  }
 
   for (const currentSlot of current.slots) {
     const previousSlot = previous.slots.find((slot) => slot.id === currentSlot.id)
@@ -104,6 +99,12 @@ export function observeKitchenTransition(previous: KitchenState, current: Kitche
     for (let count = previous.mistakes; count < current.mistakes; count += 1) {
       observations.push({ kind: 'mistake_recorded', ...inferred })
     }
+  }
+
+  const previousTutorialStep = tutorialStep(previous)
+  const currentTutorialStep = tutorialStep(current)
+  if (previousTutorialStep !== currentTutorialStep) {
+    observations.push({ kind: 'tutorial_step_changed', previousStep: previousTutorialStep, currentStep: currentTutorialStep })
   }
 
   return observations

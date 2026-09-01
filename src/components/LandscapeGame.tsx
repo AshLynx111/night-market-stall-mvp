@@ -35,6 +35,16 @@ import { useGameplayViewport } from '../landscape/useGameplayViewport'
 import { nextRetentionCue, retentionCueForDay } from '../landscape/dayRetention'
 import { DayRetentionCue } from './game/DayRetentionCue'
 import { useI18n } from '../i18n/I18nProvider'
+import { observeKitchenTransition, type KitchenInteractionIntent } from '../analytics/gameplayObserver'
+import {
+  analyticsSessionElapsedMs,
+  beginAnalyticsDayRun,
+  setAnalyticsCheckpoint,
+  setAnalyticsLocale,
+  trackGameEvent,
+} from '../analytics/tracker'
+import { tutorialStep } from '../landscape/kitchen/tutorial'
+import type { MistakeType } from '../analytics/events'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -74,8 +84,9 @@ function starsText(count: number) {
   return `${'★'.repeat(safeCount)}${'☆'.repeat(3 - safeCount)}`
 }
 
-function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musicEnabled, effectsEnabled, guidedTutorial, qaCelebrityPatienceMs, qaServedOrders, qaPatienceRatio, qaDeliveryFeedback, onHome, onMenu, onSound, onHelp, onOrderServed, onEvent, onResumeEvent, onTutorialComplete, onComplete }: {
+function KitchenDaySession({ day, dayRunId, save, paused, backgroundInert, eventOpen, musicEnabled, effectsEnabled, guidedTutorial, qaCelebrityPatienceMs, qaServedOrders, qaPatienceRatio, qaDeliveryFeedback, onHome, onMenu, onSound, onHelp, onOrderServed, onEvent, onResumeEvent, onTutorialComplete, onComplete }: {
   day: DayConfig
+  dayRunId: string | null
   save: CampaignSave
   paused: boolean
   backgroundInert: boolean
@@ -95,7 +106,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   onEvent: () => void
   onResumeEvent: () => void
   onTutorialComplete: () => void
-  onComplete: (qualities: number[], mistakes: number) => void
+  onComplete: (qualities: number[], mistakes: number, dayElapsedMs: number, cash: number) => void
 }) {
   const { t } = useI18n()
   const { state, dispatch } = useKitchenGame(
@@ -111,6 +122,12 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   const completionReported = useRef(false)
   const tutorialCompletionReported = useRef(false)
   const previousTutorialMode = useRef(state.tutorialMode)
+  const previousAnalyticsState = useRef(state)
+  const dayStartedAt = useRef(performance.now())
+  const tutorialStartedAt = useRef<number | null>(guidedTutorial ? performance.now() : null)
+  const firstOrderStartedAt = useRef<number | null>(null)
+  const mistakeCounts = useRef(new Map<MistakeType, number>())
+  const startingCash = useRef(save.coins)
   const pendingCelebrityInjection = useRef<{ patienceMs?: number } | null>(null)
   const nextDeliveryFeedbackId = useRef(0)
   const deliveryFeedbackTimer = useRef<number | null>(null)
@@ -121,6 +138,84 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   const expandedRack = availableIngredients(day.day).length > 6
   const kitchenScreen = cleanKitchenScreen
   const rackBackground = expandedRack ? 'expanded-3x5' : 'approved-2x3'
+
+  const elapsedSinceTutorialStart = () => Math.max(0, performance.now() - (tutorialStartedAt.current ?? performance.now()))
+
+  const recordMistake = (mistakeType: MistakeType, stepId?: string, slotId?: 'left' | 'right') => {
+    trackGameEvent('mistake_recorded', {
+      day: day.day,
+      mistake_type: mistakeType,
+      ...(stepId ? { step_id: stepId } : {}),
+      ...(slotId ? { slot_id: slotId } : {}),
+    })
+    const count = (mistakeCounts.current.get(mistakeType) ?? 0) + 1
+    mistakeCounts.current.set(mistakeType, count)
+    if (count === 3 && dayRunId) {
+      trackGameEvent('repeated_mistake', { day: day.day, mistake_type: mistakeType, count: 3 }, {
+        onceKey: `repeated-mistake:${dayRunId}:${mistakeType}`,
+      })
+    }
+  }
+
+  const reportTelemetryIntent = (intent: KitchenInteractionIntent) => {
+    if (intent.kind === 'ingredient_selected') {
+      trackGameEvent('ingredient_selected', {
+        ingredient_id: intent.ingredientId,
+        ...(intent.slotId ? { slot_id: intent.slotId } : {}),
+      })
+      if (!intent.accepted) recordMistake('ingredient', intent.stepId, intent.slotId)
+      return
+    }
+    if (intent.kind === 'gesture_rejected') {
+      recordMistake('gesture', intent.gestureId, intent.slotId)
+      return
+    }
+    if (intent.kind === 'griddle_discarded') {
+      trackGameEvent('griddle_discarded', {
+        ...(intent.recipeId ? { recipe_id: intent.recipeId } : {}),
+        slot_id: intent.slotId,
+      })
+      return
+    }
+    trackGameEvent('serve_attempted', {
+      recipe_id: intent.recipeId,
+      slot_id: intent.slotId,
+      customer_id: intent.customerId,
+    })
+    if (!intent.accepted) {
+      trackGameEvent('serve_failed', {
+        recipe_id: intent.recipeId,
+        slot_id: intent.slotId,
+        customer_id: intent.customerId,
+        reason: intent.reason ?? 'unknown',
+      })
+      if (intent.reason !== 'wrong_customer') recordMistake('serve', 'serve', intent.slotId)
+    }
+  }
+
+  useEffect(() => {
+    if (!dayRunId) return
+    trackGameEvent('day_started', { day: day.day, guided_tutorial: guidedTutorial }, {
+      onceKey: `day-started:${dayRunId}`,
+    })
+    setAnalyticsCheckpoint({
+      screen: 'playing',
+      day: day.day,
+      tutorialStep: guidedTutorial ? tutorialStep(state) : undefined,
+      ordersServed: state.servedQualities.length,
+    })
+    if (guidedTutorial) {
+      tutorialStartedAt.current ??= performance.now()
+      trackGameEvent('tutorial_started', { day: 1 }, { onceKey: `tutorial-started:${dayRunId}` })
+      const step = tutorialStep(state)
+      if (step !== 'done') {
+        trackGameEvent('tutorial_step_viewed', {
+          step,
+          elapsed_since_tutorial_start_ms: elapsedSinceTutorialStart(),
+        }, { onceKey: `tutorial-step-viewed:${dayRunId}:${step}` })
+      }
+    }
+  }, [day.day, dayRunId, guidedTutorial])
 
   useEffect(() => {
     dispatch({ type: 'SET_PAUSED', paused })
@@ -145,6 +240,86 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
   }, [onTutorialComplete, state.tutorialMode])
 
   useEffect(() => {
+    if (!dayRunId || firstOrderStartedAt.current !== null) return
+    const firstCustomer = state.customers.find((customer) => customer.presence === 'active')
+    if (!firstCustomer) return
+    firstOrderStartedAt.current = performance.now()
+    trackGameEvent('first_order_started', {
+      day: day.day,
+      recipe_id: firstCustomer.order.recipeId,
+    }, { onceKey: `first-order-started:${dayRunId}` })
+  }, [day.day, dayRunId, state.customers])
+
+  useEffect(() => {
+    const previous = previousAnalyticsState.current
+    previousAnalyticsState.current = state
+    if (!dayRunId || previous === state) return
+    const observations = observeKitchenTransition(previous, state)
+    for (const observation of observations) {
+      if (observation.kind === 'ingredient_placed') {
+        trackGameEvent('ingredient_placed', {
+          ingredient_id: observation.ingredientId,
+          recipe_id: observation.recipeId,
+          step_id: observation.stepId,
+          slot_id: observation.slotId,
+        })
+      } else if (observation.kind === 'gesture_completed') {
+        trackGameEvent('gesture_completed', {
+          gesture_id: observation.gestureId,
+          recipe_id: observation.recipeId,
+          step_id: observation.stepId,
+          slot_id: observation.slotId,
+        })
+      } else if (observation.kind === 'dish_packed') {
+        trackGameEvent('dish_packed', { recipe_id: observation.recipeId, slot_id: observation.slotId })
+      } else if (observation.kind === 'delivery_completed') {
+        trackGameEvent('serve_succeeded', {
+          recipe_id: observation.recipeId,
+          slot_id: observation.slotId,
+          customer_id: observation.customerId,
+          quality: observation.quality,
+        })
+        trackGameEvent('first_order_completed', {
+          day: day.day,
+          recipe_id: observation.recipeId,
+          duration_ms: Math.max(0, performance.now() - (firstOrderStartedAt.current ?? performance.now())),
+          mistakes: state.mistakes,
+          quality: observation.quality,
+        }, { onceKey: `first-order-completed:${dayRunId}` })
+      } else if (observation.kind === 'order_timeout') {
+        trackGameEvent('order_timeout', {
+          day: day.day,
+          recipe_id: observation.recipeId,
+          customer_id: observation.customerId,
+        })
+      } else if (observation.kind === 'mistake_recorded') {
+        recordMistake(observation.mistakeType, observation.stepId, observation.slotId)
+      } else {
+        trackGameEvent('tutorial_step_completed', {
+          step: observation.previousStep,
+          elapsed_since_tutorial_start_ms: elapsedSinceTutorialStart(),
+        }, { onceKey: `tutorial-step-completed:${dayRunId}:${observation.previousStep}` })
+        if (observation.currentStep === 'done') {
+          trackGameEvent('tutorial_completed', {
+            elapsed_since_tutorial_start_ms: elapsedSinceTutorialStart(),
+          }, { onceKey: `tutorial-completed:${dayRunId}` })
+        } else {
+          trackGameEvent('tutorial_step_viewed', {
+            step: observation.currentStep,
+            elapsed_since_tutorial_start_ms: elapsedSinceTutorialStart(),
+          }, { onceKey: `tutorial-step-viewed:${dayRunId}:${observation.currentStep}` })
+        }
+      }
+    }
+    setAnalyticsCheckpoint({
+      screen: eventOpen ? 'event' : 'playing',
+      day: day.day,
+      tutorialStep: state.tutorialMode === 'guided-first-order' ? tutorialStep(state) : undefined,
+      ordersServed: state.servedQualities.length,
+    })
+  }, [day.day, dayRunId, eventOpen, state])
+
+  useEffect(() => {
     while (creditedCount.current < state.deliveries.length) {
       const delivery = state.deliveries[creditedCount.current]
       onOrderServed(delivery)
@@ -166,7 +341,15 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
 
     if (isKitchenDayComplete(day, state) && !completionReported.current) {
       completionReported.current = true
-      onComplete([...state.servedQualities], state.mistakes)
+      const finalCash = startingCash.current + state.deliveries.reduce((total, delivery) => (
+        total + incomeForDelivery(delivery.recipeId, delivery.quality, save.signLevel)
+      ), 0)
+      onComplete(
+        [...state.servedQualities],
+        state.mistakes,
+        Math.max(0, performance.now() - dayStartedAt.current),
+        finalCash,
+      )
     }
   }, [
     day.day,
@@ -236,7 +419,7 @@ function KitchenDaySession({ day, save, paused, backgroundInert, eventOpen, musi
           onPause={onMenu}
           onSound={onSound}
         />
-        <KitchenScene state={state} dispatch={dispatch} soundEnabled={effectsEnabled} />
+        <KitchenScene state={state} dispatch={dispatch} soundEnabled={effectsEnabled} onTelemetryIntent={reportTelemetryIntent} />
         <DeliveryFeedback feedback={deliveryFeedback} held={qaDeliveryFeedback} />
         <button className="help-fab" onClick={onHelp} aria-label={t('game.help')} aria-keyshortcuts="H"><GameIcon name="help" /></button>
         {eventOpen && (
@@ -372,7 +555,9 @@ export function LandscapeGame() {
   const [audioSettings, setAudioSettings] = useState<AudioSettings>(loadAudioSettings)
   const audioSettingsRef = useRef(audioSettings)
   const [sessionId, setSessionId] = useState(1)
+  const [dayRunId, setDayRunId] = useState<string | null>(null)
   const [guidedTutorialComplete, setGuidedTutorialComplete] = useState(readGuidedTutorialComplete)
+  const previousTrackedScreen = useRef<Screen | null>(null)
   const served = qualities.length
   const average = served ? Math.round(qualities.reduce((sum, value) => sum + value, 0) / served) : 100
   const uiFeedback = createUiFeedback(audioSettings.master * audioSettings.effects > 0)
@@ -383,10 +568,12 @@ export function LandscapeGame() {
     dialogOpen,
     onPause: () => {
       uiFeedback.tap()
+      trackGameEvent('pause_opened', { day: day.day })
       setShowMenu(true)
     },
     onHelp: () => {
       uiFeedback.tap()
+      trackGameEvent('help_opened', { screen: 'playing', day: day.day })
       setShowHelp(true)
     },
     onMusic: () => {
@@ -425,6 +612,32 @@ export function LandscapeGame() {
   }, [audioSettings])
 
   useEffect(() => {
+    setAnalyticsLocale(locale)
+  }, [locale])
+
+  useEffect(() => {
+    setAnalyticsCheckpoint({
+      screen,
+      day: screen === 'playing' || screen === 'event' || screen === 'summary' ? day.day : undefined,
+      ...(screen === 'summary' ? { ordersServed: served } : {}),
+    })
+    if (previousTrackedScreen.current === screen) return
+    previousTrackedScreen.current = screen
+    if (screen === 'home') trackGameEvent('home_viewed', {})
+    if (screen === 'summary') {
+      const summaryStars = starsForDay(qualities, mistakes)
+      trackGameEvent('summary_viewed', {
+        day: day.day,
+        orders_served: served,
+        average_quality: average,
+        mistakes,
+        stars: summaryStars,
+        cash: save.coins,
+      }, { onceKey: `summary-viewed:${dayRunId ?? `preview-${day.day}`}` })
+    }
+  }, [average, day.day, dayRunId, mistakes, qualities, save.coins, screen, served])
+
+  useEffect(() => {
     const unlock = (event: PointerEvent | KeyboardEvent) => {
       if (!event.isTrusted) return
       void unlockAndPlayBgm(audioSettingsRef.current)
@@ -452,7 +665,9 @@ export function LandscapeGame() {
       return
     }
     uiFeedback.success()
+    const nextDayRunId = beginAnalyticsDayRun(nextDay.day)
     setSessionId((value) => value + 1)
+    setDayRunId(nextDayRunId)
     setDay(nextDay)
     setQualities([])
     setMistakes(0)
@@ -460,8 +675,21 @@ export function LandscapeGame() {
     setScreen('playing')
   }
 
-  const finishDay = (nextQualities: number[], nextMistakes: number) => {
+  const finishDay = (nextQualities: number[], nextMistakes: number, dayElapsedMs: number, cash: number) => {
     const stars = starsForDay(nextQualities, nextMistakes)
+    const nextAverage = nextQualities.length
+      ? Math.round(nextQualities.reduce((sum, value) => sum + value, 0) / nextQualities.length)
+      : 100
+    trackGameEvent('day_completed', {
+      day: day.day,
+      session_elapsed_ms: analyticsSessionElapsedMs(),
+      day_elapsed_ms: dayElapsedMs,
+      orders_served: nextQualities.length,
+      average_quality: nextAverage,
+      mistakes: nextMistakes,
+      stars,
+      cash,
+    }, { onceKey: `day-completed:${dayRunId ?? `preview-${day.day}`}` })
     setQualities(nextQualities)
     setMistakes(nextMistakes)
     setSave((current) => completeCampaignDay(current, day.day, stars))
@@ -504,6 +732,7 @@ export function LandscapeGame() {
 
   const openMenu = () => {
     uiFeedback.tap()
+    if (screen === 'playing') trackGameEvent('pause_opened', { day: day.day })
     setShowMenu(true)
   }
 
@@ -525,11 +754,11 @@ export function LandscapeGame() {
             </div>
           )}
           <nav className="home-screen__hotspots" aria-label={t('home.menuLabel')}>
-            <button className="home-hotspot home-hotspot--start" aria-label={t('home.start')} onClick={() => startDay(DAYS[0])}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.start')}</span>}<span className="sr-only">{t('home.start')}</span></button>
-            <button className="home-hotspot home-hotspot--continue" aria-label={t('home.continue')} onClick={() => startDay(DAYS[highestPlayableDay(save) - 1])}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.continue')}</span>}<span className="sr-only">{t('home.continue')}</span></button>
-            <button className="home-hotspot home-hotspot--settings" aria-label={t('home.openSettings')} onClick={() => openScreen('settings')}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.settings')}</span>}<span className="sr-only">{t('home.settings')}</span></button>
+            <button className="home-hotspot home-hotspot--start" aria-label={t('home.start')} onClick={() => { trackGameEvent('start_game_clicked', { day: 1 }); startDay(DAYS[0]) }}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.start')}</span>}<span className="sr-only">{t('home.start')}</span></button>
+            <button className="home-hotspot home-hotspot--continue" aria-label={t('home.continue')} onClick={() => { const nextDay = DAYS[highestPlayableDay(save) - 1]; trackGameEvent('continue_clicked', { day: nextDay.day }); startDay(nextDay) }}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.continue')}</span>}<span className="sr-only">{t('home.continue')}</span></button>
+            <button className="home-hotspot home-hotspot--settings" aria-label={t('home.openSettings')} onClick={() => { trackGameEvent('settings_opened', { source: 'home' }); openScreen('settings') }}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.settings')}</span>}<span className="sr-only">{t('home.settings')}</span></button>
             <button className="home-hotspot home-hotspot--collection" aria-label={t('home.openCollection')} onClick={openMenu}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.collection')}</span>}<span className="sr-only">{t('home.collection')}</span></button>
-            <button className="home-hotspot home-hotspot--achievements" aria-label={t('home.openAchievements')} onClick={() => openScreen('select')}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.achievements')}</span>}<span className="sr-only">{t('home.selectDays')}</span></button>
+            <button className="home-hotspot home-hotspot--achievements" aria-label={t('home.openAchievements')} onClick={() => { trackGameEvent('day_select_opened', { source: 'home' }); openScreen('select') }}>{locale === 'en' && <span className="home-hotspot__locale-label" data-locale-art-text aria-hidden="true">{t('home.achievements')}</span>}<span className="sr-only">{t('home.selectDays')}</span></button>
           </nav>
           <button
             className="home-screen__music-toggle"
@@ -728,8 +957,17 @@ export function LandscapeGame() {
             {day.day === 5 && celebrityDone && <div className="buzz-note ui-text-chip">{t('summary.celebrityBuzz')}</div>}
             <UpgradeShop save={save} onBuy={buyUpgrade} />
             <div className="summary-actions">
-              <button type="button" aria-label={t('summary.playAgain')} onClick={() => startDay(day)}><span>{t('summary.playAgain')}</span></button>
-              <button type="button" aria-label={nextCue ? t('summary.nextDayAria', { title: nextCue.title }) : t('summary.backSelect')} onClick={() => nextCue ? startDay(DAYS[day.day]) : openScreen('select')}><span>{nextCue ? t('summary.nextDay', { title: nextCue.title }) : t('summary.backSelect')}</span></button>
+              <button type="button" aria-label={t('summary.playAgain')} onClick={() => { trackGameEvent('play_again_clicked', { day: day.day }); startDay(day) }}><span>{t('summary.playAgain')}</span></button>
+              <button type="button" aria-label={nextCue ? t('summary.nextDayAria', { title: nextCue.title }) : t('summary.backSelect')} onClick={() => {
+                if (nextCue) {
+                  trackGameEvent('next_day_clicked', { from_day: day.day, next_day: day.day + 1 })
+                  startDay(DAYS[day.day])
+                } else {
+                  trackGameEvent('back_to_day_select_clicked', { from_day: day.day })
+                  trackGameEvent('day_select_opened', { source: 'summary' })
+                  openScreen('select')
+                }
+              }}><span>{nextCue ? t('summary.nextDay', { title: nextCue.title }) : t('summary.backSelect')}</span></button>
             </div>
           </section>
         </div>
@@ -742,6 +980,7 @@ export function LandscapeGame() {
       <KitchenDaySession
         key={`${day.day}-${sessionId}`}
         day={day}
+        dayRunId={dayRunId}
         save={save}
         paused={screen === 'event' || showMenu || showHelp || showAbandonConfirm}
         backgroundInert={dialogOpen}
@@ -758,6 +997,7 @@ export function LandscapeGame() {
         onSound={toggleMusic}
         onHelp={() => {
           uiFeedback.tap()
+          trackGameEvent('help_opened', { screen: 'playing', day: day.day })
           setShowHelp(true)
         }}
         onOrderServed={(delivery) => {

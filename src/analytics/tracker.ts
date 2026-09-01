@@ -166,8 +166,17 @@ export function beginAnalyticsDayRun(day: number) {
 }
 
 export function setAnalyticsCheckpoint(next: Partial<AnalyticsCheckpoint>) {
-  checkpoint = { ...checkpoint, ...next }
+  const updated = { ...checkpoint, ...next }
+  if (updated.screen === checkpoint.screen
+    && updated.day === checkpoint.day
+    && updated.tutorialStep === checkpoint.tutorialStep
+    && updated.ordersServed === checkpoint.ordersServed) return
+  checkpoint = updated
   notify()
+}
+
+export function analyticsSessionElapsedMs() {
+  return Math.max(0, Date.now() - requireContext().startedAt)
 }
 
 export function trackGameEvent<Name extends GameEventName>(name: Name, properties: GameEventProperties[Name], options: TrackOptions = {}): TrackedGameEvent<Name> | null {
