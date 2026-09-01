@@ -22,6 +22,7 @@ export interface AnalyticsCheckpoint {
 
 export interface AnalyticsSnapshot extends AnalyticsCheckpoint {
   sessionId: string
+  participantId?: string
   locale: Locale
   eventCount: number
   buildVersion: string
@@ -224,6 +225,7 @@ export function getAnalyticsSnapshot(): AnalyticsSnapshot {
   return {
     ...checkpoint,
     sessionId: active.sessionId,
+    participantId: active.participantId,
     locale: active.locale,
     eventCount: events.length,
     buildVersion: active.buildVersion,
@@ -234,7 +236,9 @@ export function getAnalyticsSnapshot(): AnalyticsSnapshot {
 
 export function subscribeAnalytics(subscriber: () => void) {
   subscribers.add(subscriber)
-  return () => subscribers.delete(subscriber)
+  return () => {
+    subscribers.delete(subscriber)
+  }
 }
 
 export function exportAnalyticsSession() {

@@ -5,6 +5,7 @@ import { I18nProvider } from './i18n/I18nProvider'
 import { initializeAnalytics } from './analytics/tracker'
 import './landscape.css'
 import './styles/kitchen.css'
+import './styles/playtest.css'
 
 initializeAnalytics()
 
