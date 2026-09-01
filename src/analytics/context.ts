@@ -1,5 +1,6 @@
 import { LOCALE_STORAGE_KEY, resolveInitialLocale, type Locale } from '../i18n/core'
 import type { CoarsePlatform } from './events'
+import { IS_POKI_BUILD } from '../platform/build'
 
 export const ANALYTICS_SESSION_KEY = 'night-market-playtest-session-v1'
 export const ANALYTICS_BUFFER_KEY = 'night-market-playtest-events-v1'
@@ -95,7 +96,7 @@ export function persistAnalyticsContext(context: AnalyticsContext) {
 
 export function createAnalyticsContext(search = window.location.search): AnalyticsContext {
   const query = new URLSearchParams(search)
-  const playtestMode = query.get('playtest') === '1'
+  const playtestMode = !IS_POKI_BUILD && query.get('playtest') === '1'
   const stored = loadStoredSession()
   let storedLocale: string | null = null
   try {

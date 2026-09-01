@@ -46,6 +46,7 @@ import {
 import { tutorialStep } from '../landscape/kitchen/tutorial'
 import type { MistakeType } from '../analytics/events'
 import { PlaytestFeedbackLink } from './playtest/PlaytestFeedbackLink'
+import { runPlatformCommercialBreak, setPlatformGameplayDesired, type PlatformLifecyclePhase } from '../platform/lifecycle'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -511,7 +512,7 @@ function UpgradeShop({ save, onBuy }: { save: CampaignSave; onBuy: (type: 'fire'
   )
 }
 
-export function LandscapeGame() {
+export function LandscapeGame({ platformBreakActive = false }: { platformBreakActive?: boolean }) {
   const { locale, t, domain } = useI18n()
   const query = new URLSearchParams(window.location.search)
   const previewDayNumber = Number(query.get('playDay'))
@@ -563,9 +564,16 @@ export function LandscapeGame() {
   const average = served ? Math.round(qualities.reduce((sum, value) => sum + value, 0) / served) : 100
   const uiFeedback = createUiFeedback(audioSettings.master * audioSettings.effects > 0)
   const dialogOpen = showMenu || showHelp || showAbandonConfirm
+  const gameplayInterrupted = dialogOpen || screen === 'event' || platformBreakActive
+  const gameplayActive = screen === 'playing' && !gameplayInterrupted
+  const platformPhase: PlatformLifecyclePhase = platformBreakActive ? 'ad'
+    : screen === 'summary' ? 'summary'
+      : screen === 'event' ? 'event'
+        : screen === 'playing' ? gameplayInterrupted ? 'paused' : 'playing'
+          : 'menu'
 
   useGameplayShortcuts({
-    enabled: screen === 'playing',
+    enabled: screen === 'playing' && !platformBreakActive,
     dialogOpen,
     onPause: () => {
       uiFeedback.tap()
@@ -596,6 +604,10 @@ export function LandscapeGame() {
       </main>
     )
   }
+
+  useEffect(() => {
+    setPlatformGameplayDesired(gameplayActive, platformPhase)
+  }, [gameplayActive, platformPhase])
 
   useEffect(() => {
     try {
@@ -739,6 +751,10 @@ export function LandscapeGame() {
 
   const closeMenu = () => {
     uiFeedback.tap()
+    if (screen === 'playing') {
+      void runPlatformCommercialBreak(() => setShowMenu(false))
+      return
+    }
     setShowMenu(false)
   }
 
@@ -958,11 +974,11 @@ export function LandscapeGame() {
             {day.day === 5 && celebrityDone && <div className="buzz-note ui-text-chip">{t('summary.celebrityBuzz')}</div>}
             <UpgradeShop save={save} onBuy={buyUpgrade} />
             <div className="summary-actions">
-              <button type="button" aria-label={t('summary.playAgain')} onClick={() => { trackGameEvent('play_again_clicked', { day: day.day }); startDay(day) }}><span>{t('summary.playAgain')}</span></button>
+              <button type="button" aria-label={t('summary.playAgain')} onClick={() => { trackGameEvent('play_again_clicked', { day: day.day }); void runPlatformCommercialBreak(() => startDay(day)) }}><span>{t('summary.playAgain')}</span></button>
               <button type="button" aria-label={nextCue ? t('summary.nextDayAria', { title: nextCue.title }) : t('summary.backSelect')} onClick={() => {
                 if (nextCue) {
                   trackGameEvent('next_day_clicked', { from_day: day.day, next_day: day.day + 1 })
-                  startDay(DAYS[day.day])
+                  void runPlatformCommercialBreak(() => startDay(DAYS[day.day]))
                 } else {
                   trackGameEvent('back_to_day_select_clicked', { from_day: day.day })
                   trackGameEvent('day_select_opened', { source: 'summary' })
@@ -984,8 +1000,8 @@ export function LandscapeGame() {
         day={day}
         dayRunId={dayRunId}
         save={save}
-        paused={screen === 'event' || showMenu || showHelp || showAbandonConfirm}
-        backgroundInert={dialogOpen}
+        paused={screen === 'event' || showMenu || showHelp || showAbandonConfirm || platformBreakActive}
+        backgroundInert={dialogOpen || platformBreakActive}
         eventOpen={screen === 'event'}
         musicEnabled={!audioSettings.musicMuted}
         effectsEnabled={audioSettings.master * audioSettings.effects > 0}

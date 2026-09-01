@@ -1190,3 +1190,11 @@ html[data-locale="en"] .dialogue-box h1 { font-family: var(--font-display-en); }
   .menu-modal__localized article b { font-size: 8px; }
   .menu-modal__localized article small { font-size: 10px; }
 }
+.platform-input-lock {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  background: transparent;
+  pointer-events: all;
+  touch-action: none;
+}

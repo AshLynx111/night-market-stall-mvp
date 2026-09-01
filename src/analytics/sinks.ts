@@ -1,5 +1,6 @@
 import { safeHttpUrl, type AnalyticsContext } from './context'
 import type { TrackedGameEvent } from './events'
+import { IS_POKI_BUILD } from '../platform/build'
 
 export type AnalyticsSink = (event: TrackedGameEvent, lifecycle: boolean) => void | Promise<void>
 
@@ -10,6 +11,7 @@ declare global {
 }
 
 export function createDefaultAnalyticsSinks(context: AnalyticsContext): AnalyticsSink[] {
+  if (IS_POKI_BUILD) return []
   const sinks: AnalyticsSink[] = []
   if ((import.meta.env.DEV && import.meta.env.MODE !== 'test') || context.playtestMode) {
     sinks.push((event) => console.info('[playtest]', event.name, event))
