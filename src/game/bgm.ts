@@ -2,19 +2,27 @@ import soundtrackUrl from '../assets/audio/night-market-bgm.mp3'
 import type { AudioSettings } from './audioSettings'
 
 let bgm: HTMLAudioElement | null = null
+let platformAudioSuspended = false
+let latestSettings: AudioSettings | null = null
 
 function musicVolume(settings: AudioSettings) {
-  return settings.musicMuted ? 0 : settings.master * settings.music
+  return settings.musicMuted || platformAudioSuspended ? 0 : settings.master * settings.music
 }
 
 function syncElement(settings: AudioSettings) {
   if (!bgm) return
   bgm.volume = musicVolume(settings)
-  bgm.muted = settings.musicMuted
+  bgm.muted = settings.musicMuted || platformAudioSuspended
 }
 
 export function applyAudioSettings(settings: AudioSettings) {
+  latestSettings = settings
   syncElement(settings)
+}
+
+export function setBgmPlatformAudioSuspended(suspended: boolean) {
+  platformAudioSuspended = suspended
+  if (latestSettings) syncElement(latestSettings)
 }
 
 export async function unlockAndPlayBgm(settings: AudioSettings) {

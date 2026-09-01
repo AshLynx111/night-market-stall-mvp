@@ -14,11 +14,13 @@ interface ActiveTone {
 
 let audioContext: AudioContext | null = null
 let kitchenAudioEnabled = true
+let platformAudioSuspended = false
 let effectLevel = 1
 const sizzleLoops = new Map<KitchenAudioSlotId, SizzleLoop>()
 const activeTones = new Set<ActiveTone>()
 
 function getAudioContext() {
+  if (platformAudioSuspended) return null
   const AudioContextClass = window.AudioContext
   if (!AudioContextClass) return null
   audioContext ??= new AudioContextClass()
@@ -54,6 +56,11 @@ export function setKitchenAudioEnabled(enabled: boolean) {
   if (!enabled) stopAllKitchenAudio()
 }
 
+export function setKitchenPlatformAudioSuspended(suspended: boolean) {
+  platformAudioSuspended = suspended
+  if (suspended) stopAllKitchenAudio()
+}
+
 export function setAudioEffectLevel(level: number) {
   effectLevel = Math.min(1, Math.max(0, Number.isFinite(level) ? level : 1))
   const now = audioContext?.currentTime ?? 0
@@ -64,7 +71,7 @@ export function setAudioEffectLevel(level: number) {
 }
 
 export function startSizzle(slotId: KitchenAudioSlotId) {
-  if (!kitchenAudioEnabled || sizzleLoops.has(slotId)) return
+  if (!kitchenAudioEnabled || platformAudioSuspended || sizzleLoops.has(slotId)) return
   try {
     const context = getAudioContext()
     if (!context) return
@@ -114,7 +121,7 @@ export function stopAllKitchenAudio() {
 }
 
 function playSlotTone(slotId: KitchenAudioSlotId, frequencies: number[], duration: number, volume: number) {
-  if (!kitchenAudioEnabled) return
+  if (!kitchenAudioEnabled || platformAudioSuspended) return
   try {
     const context = getAudioContext()
     if (!context) return
@@ -135,7 +142,7 @@ export function playBurnWarning(slotId: KitchenAudioSlotId) {
 }
 
 export function playCustomerReaction(kind: CustomerReactionKind) {
-  if (!kitchenAudioEnabled) return
+  if (!kitchenAudioEnabled || platformAudioSuspended) return
   try {
     const context = getAudioContext()
     if (!context) return
@@ -157,7 +164,7 @@ export function playCustomerReaction(kind: CustomerReactionKind) {
 }
 
 export function playSound(kind: SoundKind, enabled: boolean) {
-  if (!enabled) return
+  if (!enabled || platformAudioSuspended) return
   try {
     const context = getAudioContext()
     if (!context) return
