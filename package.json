@@ -9,8 +9,10 @@
   "scripts": {
     "dev": "vite",
     "test": "vitest run --config vitest.config.ts",
+    "test:poki": "npm run build:poki && node scripts/qa-poki-platform-build-v1.mjs",
     "validate:art": "node scripts/validate-full-art-assets.mjs",
     "build": "tsc -b && vite build",
+    "build:poki": "tsc -b && vite build --mode poki",
     "preview": "vite preview"
   },
   "dependencies": {
