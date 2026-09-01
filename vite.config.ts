@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
     base: './',
     define: {
       'import.meta.env.VITE_PLATFORM': JSON.stringify(platformId),
+      __POKI_BUILD__: JSON.stringify(pokiBuild),
     },
     build: {
       outDir: pokiBuild ? 'dist-poki' : 'dist',
