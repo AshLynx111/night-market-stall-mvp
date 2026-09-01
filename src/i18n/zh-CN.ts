@@ -290,6 +290,7 @@ export const zhCN = {
   'step.roll.verb': '把烤冷面卷起来',
   'step.pack.label': '装袋',
   'step.pack.verb': '装好递给顾客',
+  'playtest.feedback': '提供试玩反馈',
   'customer.小林同学': '小林同学',
   'customer.阿杰': '阿杰',
   'customer.晓雨': '晓雨',

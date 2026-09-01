@@ -292,6 +292,7 @@ export const en = {
   'step.roll.verb': 'roll the wrap',
   'step.pack.label': 'Pack',
   'step.pack.verb': 'pack and serve',
+  'playtest.feedback': 'Give Feedback',
   'customer.小林同学': 'Xiaolin',
   'customer.阿杰': 'Ajie',
   'customer.晓雨': 'Xiaoyu',

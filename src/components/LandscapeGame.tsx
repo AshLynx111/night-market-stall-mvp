@@ -45,6 +45,7 @@ import {
 } from '../analytics/tracker'
 import { tutorialStep } from '../landscape/kitchen/tutorial'
 import type { MistakeType } from '../analytics/events'
+import { PlaytestFeedbackLink } from './playtest/PlaytestFeedbackLink'
 
 type Screen = 'home' | 'settings' | 'select' | 'playing' | 'event' | 'summary'
 
@@ -969,6 +970,7 @@ export function LandscapeGame() {
                 }
               }}><span>{nextCue ? t('summary.nextDay', { title: nextCue.title }) : t('summary.backSelect')}</span></button>
             </div>
+            <PlaytestFeedbackLink day={day.day} />
           </section>
         </div>
       </main>
