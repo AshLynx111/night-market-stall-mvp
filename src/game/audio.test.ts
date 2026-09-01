@@ -5,6 +5,7 @@ import {
   playReadyCue,
   setAudioEffectLevel,
   setKitchenAudioEnabled,
+  setKitchenPlatformAudioSuspended,
   startSizzle,
   stopAllKitchenAudio,
   stopSizzle,
@@ -59,6 +60,7 @@ describe('kitchen audio loops', () => {
     }
     Object.defineProperty(window, 'AudioContext', { configurable: true, value: MockAudioContext })
     setKitchenAudioEnabled(true)
+    setKitchenPlatformAudioSuspended(false)
     setAudioEffectLevel(1)
   })
 
@@ -117,5 +119,15 @@ describe('kitchen audio loops', () => {
     setAudioEffectLevel(0.35)
 
     expect(liveMixValues).toEqual([0.008 * 0.35, 0.008 * 0.35])
+  })
+
+  it('stops active audio and blocks new kitchen audio during a platform break', () => {
+    startSizzle('left'); playReadyCue('left')
+    setKitchenPlatformAudioSuspended(true)
+    const count = started.length
+    startSizzle('right'); playBurnWarning('right'); playCustomerReaction('happy')
+    expect(started).toHaveLength(count)
+    setKitchenPlatformAudioSuspended(false); startSizzle('right')
+    expect(started).toHaveLength(count + 1)
   })
 })

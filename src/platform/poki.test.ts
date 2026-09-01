@@ -32,6 +32,13 @@ describe('Poki platform adapter', () => {
     await expect(platform.commercialBreak()).resolves.toBeUndefined()
   })
 
+  it('fails open when a commercial break rejects', async () => {
+    const sdk = mockSdk({ commercialBreak: vi.fn(async () => { throw new Error('no ad') }) })
+    const platform = createPokiPlatform({ resolveSdk: () => sdk, warn: vi.fn() })
+    await platform.initialize()
+    await expect(platform.commercialBreak()).resolves.toBeUndefined()
+  })
+
   it('fails open at the deadline when the SDK is missing', async () => {
     vi.useFakeTimers()
     const platform = createPokiPlatform({ resolveSdk: () => undefined, timeoutMs: 3_000, pollMs: 25 })

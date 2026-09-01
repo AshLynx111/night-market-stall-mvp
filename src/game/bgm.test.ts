@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { applyAudioSettings, stopBgm, unlockAndPlayBgm } from './bgm'
+import { applyAudioSettings, setBgmPlatformAudioSuspended, stopBgm, unlockAndPlayBgm } from './bgm'
 import type { AudioSettings } from './audioSettings'
 
 describe('persistent background music', () => {
@@ -37,6 +37,7 @@ describe('persistent background music', () => {
 
   beforeEach(() => {
     stopBgm()
+    setBgmPlatformAudioSuspended(false)
     instances.length = 0
     rejectNextPlay = false
     vi.stubGlobal('Audio', MockAudio)
@@ -90,5 +91,18 @@ describe('persistent background music', () => {
     expect(instances).toHaveLength(1)
     expect(instances[0].play).toHaveBeenCalledTimes(2)
     expect(instances[0].currentTime).toBe(18.25)
+  })
+
+  it('temporarily mutes for a platform break and restores the exact user mix', async () => {
+    await unlockAndPlayBgm(settings({ master: .7, music: .6 }))
+    setBgmPlatformAudioSuspended(true)
+    expect(instances[0].muted).toBe(true)
+    expect(instances[0].volume).toBe(0)
+    setBgmPlatformAudioSuspended(false)
+    expect(instances[0].muted).toBe(false)
+    expect(instances[0].volume).toBeCloseTo(.42)
+    applyAudioSettings(settings({ musicMuted: true }))
+    setBgmPlatformAudioSuspended(true); setBgmPlatformAudioSuspended(false)
+    expect(instances[0].muted).toBe(true)
   })
 })
