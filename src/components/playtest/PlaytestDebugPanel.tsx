@@ -44,7 +44,7 @@ export default function PlaytestDebugPanel() {
           <div><dt>Day</dt><dd>{snapshot.day ?? '—'}</dd></div>
           <div><dt>Tutorial</dt><dd>{snapshot.tutorialStep ?? '—'}</dd></div>
           <div><dt>Events</dt><dd>{snapshot.eventCount}</dd></div>
-          <div><dt>Build</dt><dd>{snapshot.buildVersion}</dd></div>
+          <div><dt>Build</dt><dd className="playtest-debug__build" title={snapshot.buildVersion}>{snapshot.buildVersion}</dd></div>
         </dl>
         <button type="button" className="playtest-debug__export" onClick={downloadEvents}>Export Events</button>
       </>}
