@@ -16,6 +16,31 @@ function harness() {
 }
 
 describe('platform lifecycle controller', () => {
+  it('defers gameplayStart until loadingFinished even when gameplay is already desired', async () => {
+    const { controller, log } = harness()
+    controller.setGameplayDesired(true, 'playing')
+    controller.setGameplayDesired(true, 'playing')
+    await controller.whenIdle()
+    expect(log).toEqual(['init'])
+
+    controller.markLoadingFinished()
+    controller.markLoadingFinished()
+    await controller.whenIdle()
+    expect(log).toEqual(['init', 'loadingFinished', 'gameplayStart'])
+  })
+
+  it('does not replay a stale gameplayStart when gameplay is left before loading finishes', async () => {
+    const { controller, log } = harness()
+    controller.setGameplayDesired(true, 'playing')
+    controller.setGameplayDesired(false, 'menu')
+    await controller.whenIdle()
+    expect(log).toEqual(['init'])
+
+    controller.markLoadingFinished()
+    await controller.whenIdle()
+    expect(log).toEqual(['init', 'loadingFinished'])
+  })
+
   it('orders and deduplicates loading and gameplay edges', async () => {
     const { controller, log } = harness()
     controller.markLoadingFinished(); controller.markLoadingFinished()

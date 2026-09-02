@@ -42,6 +42,7 @@ export function createPlatformLifecycleController(options: ControllerOptions = {
       platform.loadingFinished()
       loadingSent = true
     }
+    if (!loadingSent) return
     if (snapshot.breakActive) return
     if (gameplayDesired === gameplaySent) return
     gameplayDesired ? platform.gameplayStart() : platform.gameplayStop()
