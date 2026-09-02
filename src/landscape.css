@@ -357,7 +357,7 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
   text-shadow: 0 2px 0 rgb(48 23 13 / .72);
   pointer-events: auto;
 }
-.gameplay-hud button { appearance: none; font: inherit; cursor: pointer; }
+.gameplay-hud button { appearance: none; transform: none; font: inherit; cursor: pointer; }
 .gameplay-hud__day {
   position: absolute;
   left: 0;
@@ -409,8 +409,10 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 .gameplay-hud__control--pause { right: 64px; }
 .gameplay-hud__control--sound { right: 0; }
 .gameplay-hud .game-icon { width: 24px; height: 24px; }
-.gameplay-hud button:hover { filter: brightness(1.06) saturate(1.05); transform: translateY(-1px); }
-.gameplay-hud button:active { transform: translateY(3px); box-shadow: inset 0 2px 5px rgb(91 52 27 / .24), 0 1px 0 rgb(39 24 17 / .62); }
+@media (hover: hover) and (pointer: fine) {
+  .gameplay-hud button:hover { filter: brightness(1.06) saturate(1.05); }
+}
+.gameplay-hud button:active { filter: brightness(.94); box-shadow: inset 0 2px 5px rgb(91 52 27 / .24), 0 1px 0 rgb(39 24 17 / .62); }
 .gameplay-hud button:focus-visible { outline: 4px solid #ffd66b; outline-offset: 3px; }
 .gameplay-hud button:disabled { cursor: default; filter: grayscale(.7); opacity: .5; }
 .hud { position: absolute; z-index: 20; left: 16px; right: 16px; top: 14px; height: 72px; display: flex; gap: 12px; align-items: stretch; }
@@ -740,10 +742,6 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
     transform-origin: top right;
   }
   .gameplay-hud__control--pause { right: calc(64px * var(--scene-inverse-scale)); }
-  .gameplay-hud__day:hover,
-  .gameplay-hud__control:hover { transform: scale(var(--scene-inverse-scale)) translateY(-1px); }
-  .gameplay-hud__day:active,
-  .gameplay-hud__control:active { transform: scale(var(--scene-inverse-scale)) translateY(3px); }
   .help-fab {
     right: calc(18px * var(--scene-inverse-scale));
     bottom: calc(84px * var(--scene-inverse-scale));

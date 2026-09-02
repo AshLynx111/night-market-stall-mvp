@@ -42,8 +42,17 @@ describe('home-derived visual system', () => {
     const css = await readFile(cssPath, 'utf8')
     expect(css).toMatch(/\.gameplay-hud button,[^{]*\.gameplay-hud__coins\s*\{[^}]*var\(--wood-dark\)[^}]*var\(--gold-border\)/s)
     expect(css).toMatch(/\.gameplay-hud__orders\s*\{[^}]*var\(--paper-aged\)[^}]*inset/s)
-    expect(css).toMatch(/\.gameplay-hud button:hover\s*\{[^}]*brightness/s)
-    expect(css).toMatch(/\.gameplay-hud button:active\s*\{[^}]*translateY\(3px\)/s)
+    expect(css).toMatch(/\.gameplay-hud button\s*\{[^}]*transform:\s*none/s)
+    expect(css).toMatch(/@media \(hover: hover\) and \(pointer: fine\)\s*\{\s*\.gameplay-hud button:hover\s*\{[^}]*brightness/s)
+    expect(css).toMatch(/\.gameplay-hud button:active\s*\{[^}]*brightness[^}]*inset/s)
+    const hudInteractionRules = [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+      .filter(([, selector]) => /\.gameplay-hud(?: button|__day|__control)/.test(selector)
+        && /:(?:hover|active|focus|focus-visible)/.test(selector))
+    expect(hudInteractionRules.length).toBeGreaterThan(0)
+    for (const [, selector, declarations] of hudInteractionRules) {
+      expect(declarations, selector.trim()).not.toMatch(/\b(?:transform|translate|scale|top|margin(?:-[a-z]+)?):/)
+    }
+    expect(css).toMatch(/\.gameplay-hud__orders\s*\{[^}]*transform:\s*translateX\(-50%\)/s)
   })
 
   it('unifies day cards without changing the six-card progression structure', async () => {

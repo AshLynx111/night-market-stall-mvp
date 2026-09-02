@@ -62,6 +62,62 @@
         "restoredScale": 0.4444444444444444
       },
       "hud": {
+        "geometry": [
+          {
+            "name": "day-home",
+            "normal": {
+              "top": 5.333333492279053,
+              "left": 8,
+              "transform": "none"
+            },
+            "pressed": {
+              "top": 5.333333492279053,
+              "left": 8,
+              "transform": "none"
+            },
+            "released": {
+              "top": 5.333333492279053,
+              "left": 8,
+              "transform": "none"
+            }
+          },
+          {
+            "name": "pause",
+            "normal": {
+              "top": 5.333333492279053,
+              "left": 544.888916015625,
+              "transform": "none"
+            },
+            "pressed": {
+              "top": 5.333333492279053,
+              "left": 544.888916015625,
+              "transform": "none"
+            },
+            "released": {
+              "top": 5.333333492279053,
+              "left": 544.888916015625,
+              "transform": "none"
+            }
+          },
+          {
+            "name": "sound",
+            "normal": {
+              "top": 5.333333492279053,
+              "left": 608.888916015625,
+              "transform": "none"
+            },
+            "pressed": {
+              "top": 5.333333492279053,
+              "left": 608.888916015625,
+              "transform": "none"
+            },
+            "released": {
+              "top": 5.333333492279053,
+              "left": 608.888916015625,
+              "transform": "none"
+            }
+          }
+        ],
         "soundStates": [
           "false",
           "true",
@@ -179,6 +235,62 @@
         "restoredScale": 0.5802469135802469
       },
       "hud": {
+        "geometry": [
+          {
+            "name": "day-home",
+            "normal": {
+              "top": 6.962963104248047,
+              "left": 10.66667366027832,
+              "transform": "none"
+            },
+            "pressed": {
+              "top": 6.962963104248047,
+              "left": 10.66667366027832,
+              "transform": "none"
+            },
+            "released": {
+              "top": 6.962963104248047,
+              "left": 10.66667366027832,
+              "transform": "none"
+            }
+          },
+          {
+            "name": "pause",
+            "normal": {
+              "top": 6.962963104248047,
+              "left": 731.1610717773438,
+              "transform": "none"
+            },
+            "pressed": {
+              "top": 6.962963104248047,
+              "left": 731.1610717773438,
+              "transform": "none"
+            },
+            "released": {
+              "top": 6.962963104248047,
+              "left": 731.1610717773438,
+              "transform": "none"
+            }
+          },
+          {
+            "name": "sound",
+            "normal": {
+              "top": 6.962963104248047,
+              "left": 795.1605224609375,
+              "transform": "none"
+            },
+            "pressed": {
+              "top": 6.962963104248047,
+              "left": 795.1605224609375,
+              "transform": "none"
+            },
+            "released": {
+              "top": 6.962963104248047,
+              "left": 795.1605224609375,
+              "transform": "none"
+            }
+          }
+        ],
         "soundStates": [
           "false",
           "true",

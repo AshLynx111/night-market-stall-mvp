@@ -171,7 +171,49 @@ async function readSceneScale(page) {
   ))
 }
 
+async function exerciseHudGeometry(page) {
+  let client = cdpSessions.get(page)
+  if (!client) { client = await page.context().newCDPSession(page); cdpSessions.set(page, client) }
+  const controls = [
+    { name: 'day-home', selector: '.gameplay-hud__day' },
+    { name: 'pause', selector: '.gameplay-hud__control--pause' },
+    { name: 'sound', selector: '.gameplay-hud__control--sound' },
+  ]
+  const readGeometry = (locator) => locator.evaluate((element) => {
+    const rect = element.getBoundingClientRect()
+    return {
+      top: rect.top,
+      left: rect.left,
+      transform: getComputedStyle(element).transform,
+    }
+  })
+  const records = []
+  for (const control of controls) {
+    const locator = page.locator(control.selector)
+    const box = await locator.boundingBox()
+    assert(box, `${control.name} HUD control has no bounds.`)
+    const normal = await readGeometry(locator)
+    const id = pointerId++
+    const point = { x: box.x + box.width / 2, y: box.y + box.height / 2, id, radiusX: 1, radiusY: 1, force: 1 }
+    await client.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [point] })
+    await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(resolve)))
+    const pressed = await readGeometry(locator)
+    await client.send('Input.dispatchTouchEvent', { type: 'touchCancel', touchPoints: [] })
+    await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))))
+    const released = await readGeometry(locator)
+    for (const axis of ['top', 'left']) {
+      assert(pressed[axis] === normal[axis] && released[axis] === normal[axis],
+        `${control.name} HUD ${axis} moved during touch: ${normal[axis]} -> ${pressed[axis]} -> ${released[axis]}.`)
+    }
+    assert(pressed.transform === normal.transform && released.transform === normal.transform,
+      `${control.name} HUD transform changed during touch: ${normal.transform} -> ${pressed.transform} -> ${released.transform}.`)
+    records.push({ name: control.name, normal, pressed, released })
+  }
+  return records
+}
+
 async function exerciseHud(page) {
+  const geometry = await exerciseHudGeometry(page)
   const sound = page.locator('.gameplay-hud__control--sound')
   const pause = page.locator('.gameplay-hud__control--pause')
   const home = page.locator('.gameplay-hud__day')
@@ -227,7 +269,7 @@ async function exerciseHud(page) {
     homeCycles.push(added)
   }
 
-  return { soundStates, pauseCycles, homeCycles }
+  return { geometry, soundStates, pauseCycles, homeCycles }
 }
 
 async function exerciseViewportStability(page, width, height) {
