@@ -8,10 +8,13 @@ const port = 4197
 const baseUrl = `http://127.0.0.1:${port}`
 const sdkUrl = 'https://game-cdn.poki.com/scripts/v2/poki-sdk.js'
 const outputDir = path.join(root, 'docs', 'qa', 'screenshots', 'poki-platform-build-v1')
+const mobileFinalOutputDir = path.join(root, 'docs', 'qa', 'screenshots', 'poki-mobile-final-fix')
 const edgePath = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
-const results = { viewports: [], lifecycle: null, storageFailure: null, requests: [], errors: [], bytes: {} }
+const mobileFinalOnly = process.env.POKI_MOBILE_FINAL_ONLY === '1'
+const results = { viewports: [], lifecycle: null, storageFailure: null, mobileFinal: [], localeResolution: null, requests: [], errors: [], bytes: {} }
 
 await mkdir(outputDir, { recursive: true })
+await mkdir(mobileFinalOutputDir, { recursive: true })
 const server = spawn(process.execPath, [
   path.join(root, 'node_modules', 'vite', 'bin', 'vite.js'), 'preview', '--mode', 'poki',
   '--host', '127.0.0.1', '--port', String(port), '--strictPort',
@@ -52,10 +55,10 @@ async function createPage(browser, options = {}) {
   return { context, page, requests, errors }
 }
 
-async function openHome(page, initScript) {
-  if (initScript) await page.addInitScript(initScript)
+async function openHome(page, initScript, search = '?lang=en&playtest=1&debug=1', initScriptArg) {
+  if (initScript) await page.addInitScript(initScript, initScriptArg)
   else await page.addInitScript(() => { localStorage.clear(); sessionStorage.clear() })
-  await page.goto(`${baseUrl}/?lang=en&playtest=1&debug=1`, { waitUntil: 'domcontentloaded', timeout: 120_000 })
+  await page.goto(`${baseUrl}/${search}`, { waitUntil: 'domcontentloaded', timeout: 120_000 })
   await page.locator('[data-ui-screen="home"]').waitFor({ timeout: 120_000 })
   await page.waitForFunction(() => window.__pokiMockEvents?.includes('gameLoadingFinished'), null, { timeout: 120_000 })
   assert(await page.locator('[data-playtest-debug]').count() === 0, 'Poki build displayed the debug panel.')
@@ -130,6 +133,201 @@ async function viewportDiagnostics(page) {
       leftGriddle: visible('[data-slot-id="left"]'), rightGriddle: visible('[data-slot-id="right"]'), tray: visible('.serving-tray'),
     }
   })
+}
+
+async function localeMetadata(page) {
+  return page.evaluate(() => ({
+    lang: document.documentElement.lang,
+    locale: document.documentElement.dataset.locale,
+  }))
+}
+
+async function runLocaleResolution(browser) {
+  const cases = []
+  for (const testCase of [
+    { search: '', stored: 'zh-CN', expected: 'en', name: 'poki default ignores stored Chinese' },
+    { search: '?lang=zh-CN', stored: 'en', expected: 'zh-CN', name: 'explicit Chinese override' },
+    { search: '?lang=en', stored: 'zh-CN', expected: 'en', name: 'explicit English override' },
+  ]) {
+    const { context, page, errors } = await createPage(browser, { viewport: { width: 836, height: 470 } })
+    await openHome(page, ({ stored }) => {
+      localStorage.clear()
+      sessionStorage.clear()
+      localStorage.setItem('night-market-locale-v1', stored)
+    }, testCase.search, { stored: testCase.stored })
+    const metadata = await localeMetadata(page)
+    assert(metadata.lang === testCase.expected && metadata.locale === testCase.expected,
+      `${testCase.name} resolved ${JSON.stringify(metadata)}.`)
+    assert(errors.length === 0, `${testCase.name} browser errors: ${errors.join('; ')}`)
+    cases.push({ ...testCase, ...metadata })
+    await context.close()
+  }
+  results.localeResolution = cases
+}
+
+async function readSceneScale(page) {
+  return page.locator('.game-screen__logical').evaluate((element) => Number(
+    element.style.getPropertyValue('--scene-scale'),
+  ))
+}
+
+async function exerciseHud(page) {
+  const sound = page.locator('.gameplay-hud__control--sound')
+  const pause = page.locator('.gameplay-hud__control--pause')
+  const home = page.locator('.gameplay-hud__day')
+  const soundStates = [await sound.getAttribute('aria-pressed')]
+  for (let index = 0; index < 5; index += 1) {
+    const before = await sound.getAttribute('aria-pressed')
+    await sound.tap()
+    await page.waitForTimeout(100)
+    const after = await sound.getAttribute('aria-pressed')
+    assert(after !== before, `Sound tap ${index + 1} did not toggle exactly once: ${before} -> ${after}.`)
+    soundStates.push(after)
+  }
+
+  const pauseCycles = []
+  for (let index = 0; index < 3; index += 1) {
+    const before = await page.evaluate(() => [...window.__pokiMockEvents])
+    await pause.tap()
+    await page.locator('.menu-modal').waitFor({ state: 'visible' })
+    assert(await page.locator('.menu-modal').count() === 1, `Pause tap ${index + 1} opened duplicate menus.`)
+    await page.locator('.menu-modal .modal-close').tap()
+    await page.locator('[data-platform-input-lock]').waitFor()
+    await page.waitForFunction(() => window.__pokiMockEvents?.at(-1) === 'commercialBreak:start')
+    await page.evaluate(() => window.__resolveCommercialBreak())
+    await page.locator('[data-platform-input-lock]').waitFor({ state: 'detached' })
+    await page.locator('.menu-modal').waitFor({ state: 'detached' })
+    await page.waitForFunction(() => window.__pokiMockEvents?.at(-1) === 'gameplayStart')
+    const after = await page.evaluate(() => [...window.__pokiMockEvents])
+    const added = after.slice(before.length)
+    assert(added.filter((event) => event === 'gameplayStop').length === 1,
+      `Pause tap ${index + 1} emitted duplicate gameplayStop: ${added.join(', ')}`)
+    assert(added.filter((event) => event === 'gameplayStart').length === 1,
+      `Resume tap ${index + 1} emitted duplicate gameplayStart: ${added.join(', ')}`)
+    assert(added.filter((event) => event === 'commercialBreak:start').length === 1,
+      `Resume tap ${index + 1} emitted duplicate commercial break: ${added.join(', ')}`)
+    pauseCycles.push(added)
+  }
+
+  const homeCycles = []
+  for (let index = 0; index < 2; index += 1) {
+    const before = await page.evaluate(() => [...window.__pokiMockEvents])
+    await home.tap()
+    await page.locator('.abandon-modal').waitFor({ state: 'visible' })
+    assert(await page.locator('.abandon-modal').count() === 1, `Home tap ${index + 1} opened duplicate dialogs.`)
+    await page.getByRole('button', { name: 'Keep Cooking' }).tap()
+    await page.locator('.abandon-modal').waitFor({ state: 'detached' })
+    await page.waitForFunction(() => window.__pokiMockEvents?.at(-1) === 'gameplayStart')
+    const after = await page.evaluate(() => [...window.__pokiMockEvents])
+    const added = after.slice(before.length)
+    assert(added.filter((event) => event === 'gameplayStop').length === 1,
+      `Home tap ${index + 1} emitted duplicate gameplayStop: ${added.join(', ')}`)
+    assert(added.filter((event) => event === 'gameplayStart').length === 1,
+      `Home cancel ${index + 1} emitted duplicate gameplayStart: ${added.join(', ')}`)
+    homeCycles.push(added)
+  }
+
+  return { soundStates, pauseCycles, homeCycles }
+}
+
+async function exerciseViewportStability(page, width, height) {
+  const initialScale = await readSceneScale(page)
+  const toolbarBurstScales = await page.evaluate(async () => {
+    const read = () => Number(document.querySelector('.game-screen__logical')?.style.getPropertyValue('--scene-scale'))
+    const scales = [read()]
+    for (let index = 0; index < 5; index += 1) {
+      window.visualViewport?.dispatchEvent(new Event('resize'))
+      await new Promise((resolve) => requestAnimationFrame(resolve))
+      scales.push(read())
+    }
+    return scales
+  })
+  assert(new Set(toolbarBurstScales.map((value) => value.toFixed(6))).size === 1,
+    `Toolbar-like resize burst changed scene scale: ${toolbarBurstScales.join(', ')}`)
+
+  const resized = { width: 720, height: 405 }
+  await page.setViewportSize(resized)
+  await page.waitForFunction((previous) => {
+    const value = Number(document.querySelector('.game-screen__logical')?.style.getPropertyValue('--scene-scale'))
+    return Math.abs(value - previous) > .0001
+  }, initialScale)
+  const resizedScale = await readSceneScale(page)
+  await page.setViewportSize({ width, height })
+  await page.waitForFunction((expected) => {
+    const value = Number(document.querySelector('.game-screen__logical')?.style.getPropertyValue('--scene-scale'))
+    return Math.abs(value - expected) < .0001
+  }, initialScale)
+  return { initialScale, toolbarBurstScales, resized, resizedScale, restoredScale: await readSceneScale(page) }
+}
+
+async function summaryContainment(page) {
+  return page.evaluate(() => {
+    const within = (child, parent, tolerance = 1) => {
+      const c = child.getBoundingClientRect()
+      const p = parent.getBoundingClientRect()
+      return c.left >= p.left - tolerance && c.top >= p.top - tolerance
+        && c.right <= p.right + tolerance && c.bottom <= p.bottom + tolerance
+    }
+    const funds = document.querySelector('.summary-screen .upgrade-shop__funds')
+    const copies = [...document.querySelectorAll('.summary-screen .upgrade-shop__copy')]
+    const entries = [
+      ...[...funds.querySelectorAll(':scope > span, :scope > b')]
+        .filter((child) => child.textContent.trim().length > 0)
+        .map((child) => ({ group: 'funds', text: child.textContent.trim(), contained: within(child, funds) })),
+      ...copies.flatMap((copy, index) => [...copy.children].map((child) => ({ group: `upgrade-${index + 1}`, text: child.textContent.trim(), contained: within(child, copy) }))),
+    ]
+    return {
+      fundsText: funds.innerText.replace(/\s+/g, ''),
+      upgradeText: copies.map((copy) => copy.innerText.replace(/\s+/g, ' ').trim()),
+      entries,
+      horizontalOverflow: document.documentElement.scrollWidth > innerWidth + 1,
+      clipped: entries.filter((entry) => !entry.contained),
+    }
+  })
+}
+
+async function runMobileFinal(browser, width, height) {
+  const { context, page, requests, errors } = await createPage(browser, {
+    viewport: { width, height }, hasTouch: true, isMobile: true, deviceScaleFactor: 1,
+  })
+  await openHome(page, () => {
+    localStorage.clear()
+    sessionStorage.clear()
+    localStorage.setItem('night-market-locale-v1', 'zh-CN')
+    localStorage.setItem('night-market-guided-tutorial-v2', 'true')
+    localStorage.setItem('night-market-campaign-v1', JSON.stringify({
+      coins: 30, fireLevel: 0, signLevel: 0, bestStars: {}, maxUnlockedDay: 1,
+    }))
+  }, '')
+  const locale = await localeMetadata(page)
+  assert(locale.lang === 'en' && locale.locale === 'en', `${width}x${height} parameterless Poki launch was not English.`)
+  await startDayOne(page, true)
+  await page.waitForFunction(() => document.querySelectorAll('.kitchen-customer__actor.presence-active').length > 0, null, { timeout: 30_000 })
+  const gameplayDiagnostic = await viewportDiagnostics(page)
+  assert(!gameplayDiagnostic.horizontalOverflow && !gameplayDiagnostic.verticalOverflow,
+    `${width}x${height} gameplay overflow: ${JSON.stringify(gameplayDiagnostic)}`)
+  await page.screenshot({ path: path.join(mobileFinalOutputDir, `gameplay-${width}x${height}.png`) })
+  const hud = await exerciseHud(page)
+  const viewportStability = await exerciseViewportStability(page, width, height)
+
+  await completeOrder(page, true)
+  await completeOrder(page, true)
+  await completeOrder(page, true)
+  await page.locator('[data-ui-screen="summary"]').waitFor({ timeout: 30_000 })
+  const containment = await summaryContainment(page)
+  assert(containment.fundsText === 'Cash¥60', `${width}x${height} funds copy was ${containment.fundsText}.`)
+  assert(containment.upgradeText[0].includes('Upgrade Heat Lv.1'), `${width}x${height} heat title missing.`)
+  assert(containment.upgradeText[1].includes('Upgrade Sign Lv.1'), `${width}x${height} sign title missing.`)
+  assert(containment.clipped.length === 0, `${width}x${height} Summary copy escaped its card: ${JSON.stringify(containment.clipped)}`)
+  assert(!containment.horizontalOverflow, `${width}x${height} Summary has horizontal overflow.`)
+  await page.screenshot({ path: path.join(mobileFinalOutputDir, `summary-${width}x${height}.png`) })
+
+  assert(errors.length === 0, `${width}x${height} mobile final browser errors: ${errors.join('; ')}`)
+  const result = { width, height, locale, gameplayDiagnostic, viewportStability, hud, containment }
+  results.mobileFinal.push(result)
+  results.requests.push(...requests)
+  results.errors.push(...errors)
+  await context.close()
 }
 
 async function runLifecycle(browser) {
@@ -211,14 +409,23 @@ async function runStorageFailure(browser) {
 await waitForServer()
 const browser = await chromium.launch({ headless: true, executablePath: edgePath })
 try {
-  await runLifecycle(browser)
-  for (const [width, height] of [[640, 360], [836, 470], [1031, 580], [1440, 810]]) await runViewport(browser, width, height, false)
-  for (const [width, height] of [[640, 360], [836, 470]]) await runViewport(browser, width, height, true)
-  await runPortrait(browser); await runStorageFailure(browser)
+  await runLocaleResolution(browser)
+  if (!mobileFinalOnly) {
+    await runLifecycle(browser)
+    for (const [width, height] of [[640, 360], [836, 470], [1031, 580], [1440, 810]]) await runViewport(browser, width, height, false)
+    for (const [width, height] of [[640, 360], [836, 470]]) await runViewport(browser, width, height, true)
+  }
+  for (const [width, height] of [[640, 360], [836, 470]]) await runMobileFinal(browser, width, height)
+  if (!mobileFinalOnly) { await runPortrait(browser); await runStorageFailure(browser) }
   const unexpected = [...new Set(results.requests)].filter((url) => !url.startsWith(baseUrl) && url !== sdkUrl)
   assert(unexpected.length === 0, `Unexpected external requests: ${unexpected.join(', ')}`)
   results.requests = [...new Set(results.requests)]
   await writeFile(path.join(outputDir, 'qa-results.json'), JSON.stringify(results, null, 2))
+  await writeFile(path.join(mobileFinalOutputDir, 'qa-results.json'), JSON.stringify({
+    localeResolution: results.localeResolution,
+    mobileFinal: results.mobileFinal,
+    errors: results.errors,
+  }, null, 2))
   console.log(JSON.stringify(results, null, 2))
 } finally {
   await browser.close(); server.kill()

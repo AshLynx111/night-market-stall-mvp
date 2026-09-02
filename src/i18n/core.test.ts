@@ -11,11 +11,12 @@ describe('i18n core', () => {
     expect(normalizeLocale(null)).toBeNull()
   })
 
-  it('uses query, then storage, then the Chinese default', () => {
-    expect(resolveInitialLocale('?lang=en', 'zh-CN')).toBe('en')
-    expect(resolveInitialLocale('?lang=zh-CN', 'en')).toBe('zh-CN')
-    expect(resolveInitialLocale('?lang=fr', 'en')).toBe('en')
-    expect(resolveInitialLocale('', null)).toBe('zh-CN')
+  it('uses platform-aware defaults while keeping query overrides', () => {
+    expect(resolveInitialLocale('', null, 'standalone')).toBe('zh-CN')
+    expect(resolveInitialLocale('', 'zh-CN', 'poki')).toBe('en')
+    expect(resolveInitialLocale('?lang=zh-CN', 'en', 'poki')).toBe('zh-CN')
+    expect(resolveInitialLocale('?lang=en', 'zh-CN', 'poki')).toBe('en')
+    expect(resolveInitialLocale('?lang=fr', 'en', 'standalone')).toBe('en')
   })
 
   it('keeps both dictionaries key-complete and interpolates values', () => {

@@ -2,6 +2,8 @@ import { useRef, type MouseEvent as ReactMouseEvent, type PointerEvent as ReactP
 import { GameIcon } from './GameIcon'
 import { useI18n } from '../../i18n/I18nProvider'
 
+const TOUCH_COMPATIBILITY_CLICK_WINDOW_MS = 800
+
 export interface GameplayHudProps {
   day: number
   coins: number
@@ -16,23 +18,21 @@ export interface GameplayHudProps {
 export function GameplayHud({ day, coins, served, target, sound, onHome, onPause, onSound }: GameplayHudProps) {
   const { t } = useI18n()
   const progress = target > 0 ? Math.min(100, Math.max(0, served / target * 100)) : 0
-  const suppressClickFor = useRef<HTMLButtonElement | null>(null)
+  const lastTouchActivation = useRef<{ target: HTMLButtonElement; timeStamp: number } | null>(null)
   const touchSafeAction = (action: () => void) => ({
-    onPointerDown: () => { suppressClickFor.current = null },
     onPointerUp: (event: ReactPointerEvent<HTMLButtonElement>) => {
-      if (event.pointerType !== 'touch') return
-      const target = event.currentTarget
-      suppressClickFor.current = target
+      if (event.pointerType !== 'touch' || event.button !== 0 || event.isPrimary === false) return
+      lastTouchActivation.current = { target: event.currentTarget, timeStamp: event.timeStamp }
       action()
-      window.setTimeout(() => {
-        if (suppressClickFor.current === target) suppressClickFor.current = null
-      }, 0)
     },
     onClick: (event: ReactMouseEvent<HTMLButtonElement>) => {
-      if (suppressClickFor.current === event.currentTarget) {
-        suppressClickFor.current = null
-        return
-      }
+      const lastTouch = lastTouchActivation.current
+      const elapsed = lastTouch ? event.timeStamp - lastTouch.timeStamp : Infinity
+      const compatibilityClick = event.detail > 0
+        && lastTouch?.target === event.currentTarget
+        && elapsed >= 0
+        && elapsed <= TOUCH_COMPATIBILITY_CLICK_WINDOW_MS
+      if (compatibilityClick) return
       action()
     },
   })

@@ -8,6 +8,7 @@ import {
   type TFunction,
 } from './core'
 import { createDomainI18n, type DomainI18n } from './domain'
+import { IS_POKI_BUILD } from '../platform/build'
 
 export interface I18nContextValue {
   locale: Locale
@@ -36,6 +37,7 @@ export function I18nProvider({ children, locale: fixedLocale }: { children: Reac
   const [resolvedLocale] = useState<Locale>(() => fixedLocale ?? resolveInitialLocale(
     typeof window === 'undefined' ? '' : window.location.search,
     typeof window === 'undefined' ? null : readStoredLocale(),
+    IS_POKI_BUILD ? 'poki' : 'standalone',
   ))
   const locale = fixedLocale ?? resolvedLocale
 

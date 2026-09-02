@@ -1,0 +1,265 @@
+{
+  "localeResolution": [
+    {
+      "search": "",
+      "stored": "zh-CN",
+      "expected": "en",
+      "name": "poki default ignores stored Chinese",
+      "lang": "en",
+      "locale": "en"
+    },
+    {
+      "search": "?lang=zh-CN",
+      "stored": "en",
+      "expected": "zh-CN",
+      "name": "explicit Chinese override",
+      "lang": "zh-CN",
+      "locale": "zh-CN"
+    },
+    {
+      "search": "?lang=en",
+      "stored": "zh-CN",
+      "expected": "en",
+      "name": "explicit English override",
+      "lang": "en",
+      "locale": "en"
+    }
+  ],
+  "mobileFinal": [
+    {
+      "width": 640,
+      "height": 360,
+      "locale": {
+        "lang": "en",
+        "locale": "en"
+      },
+      "gameplayDiagnostic": {
+        "screen": "playing",
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "hud": true,
+        "customer": true,
+        "rack": true,
+        "leftGriddle": true,
+        "rightGriddle": true,
+        "tray": true
+      },
+      "viewportStability": {
+        "initialScale": 0.4444444444444444,
+        "toolbarBurstScales": [
+          0.4444444444444444,
+          0.4444444444444444,
+          0.4444444444444444,
+          0.4444444444444444,
+          0.4444444444444444,
+          0.4444444444444444
+        ],
+        "resized": {
+          "width": 720,
+          "height": 405
+        },
+        "resizedScale": 0.5,
+        "restoredScale": 0.4444444444444444
+      },
+      "hud": {
+        "soundStates": [
+          "false",
+          "true",
+          "false",
+          "true",
+          "false",
+          "true"
+        ],
+        "pauseCycles": [
+          [
+            "gameplayStop",
+            "commercialBreak:start",
+            "commercialBreak:end",
+            "gameplayStart"
+          ],
+          [
+            "gameplayStop",
+            "commercialBreak:start",
+            "commercialBreak:end",
+            "gameplayStart"
+          ],
+          [
+            "gameplayStop",
+            "commercialBreak:start",
+            "commercialBreak:end",
+            "gameplayStart"
+          ]
+        ],
+        "homeCycles": [
+          [
+            "gameplayStop",
+            "gameplayStart"
+          ],
+          [
+            "gameplayStop",
+            "gameplayStart"
+          ]
+        ]
+      },
+      "containment": {
+        "fundsText": "Cash¥60",
+        "upgradeText": [
+          "Upgrade Heat Lv.1 Patience +3s · ¥40",
+          "Upgrade Sign Lv.1 +¥2 per order · ¥60"
+        ],
+        "entries": [
+          {
+            "group": "funds",
+            "text": "Cash",
+            "contained": true
+          },
+          {
+            "group": "funds",
+            "text": "¥ 60",
+            "contained": true
+          },
+          {
+            "group": "upgrade-1",
+            "text": "Upgrade Heat Lv.1",
+            "contained": true
+          },
+          {
+            "group": "upgrade-1",
+            "text": "Patience +3s · ¥40",
+            "contained": true
+          },
+          {
+            "group": "upgrade-2",
+            "text": "Upgrade Sign Lv.1",
+            "contained": true
+          },
+          {
+            "group": "upgrade-2",
+            "text": "+¥2 per order · ¥60",
+            "contained": true
+          }
+        ],
+        "horizontalOverflow": false,
+        "clipped": []
+      }
+    },
+    {
+      "width": 836,
+      "height": 470,
+      "locale": {
+        "lang": "en",
+        "locale": "en"
+      },
+      "gameplayDiagnostic": {
+        "screen": "playing",
+        "horizontalOverflow": false,
+        "verticalOverflow": false,
+        "hud": true,
+        "customer": true,
+        "rack": true,
+        "leftGriddle": true,
+        "rightGriddle": true,
+        "tray": true
+      },
+      "viewportStability": {
+        "initialScale": 0.5802469135802469,
+        "toolbarBurstScales": [
+          0.5802469135802469,
+          0.5802469135802469,
+          0.5802469135802469,
+          0.5802469135802469,
+          0.5802469135802469,
+          0.5802469135802469
+        ],
+        "resized": {
+          "width": 720,
+          "height": 405
+        },
+        "resizedScale": 0.5,
+        "restoredScale": 0.5802469135802469
+      },
+      "hud": {
+        "soundStates": [
+          "false",
+          "true",
+          "false",
+          "true",
+          "false",
+          "true"
+        ],
+        "pauseCycles": [
+          [
+            "gameplayStop",
+            "commercialBreak:start",
+            "commercialBreak:end",
+            "gameplayStart"
+          ],
+          [
+            "gameplayStop",
+            "commercialBreak:start",
+            "commercialBreak:end",
+            "gameplayStart"
+          ],
+          [
+            "gameplayStop",
+            "commercialBreak:start",
+            "commercialBreak:end",
+            "gameplayStart"
+          ]
+        ],
+        "homeCycles": [
+          [
+            "gameplayStop",
+            "gameplayStart"
+          ],
+          [
+            "gameplayStop",
+            "gameplayStart"
+          ]
+        ]
+      },
+      "containment": {
+        "fundsText": "Cash¥60",
+        "upgradeText": [
+          "Upgrade Heat Lv.1 Patience +3s · ¥40",
+          "Upgrade Sign Lv.1 +¥2 per order · ¥60"
+        ],
+        "entries": [
+          {
+            "group": "funds",
+            "text": "Cash",
+            "contained": true
+          },
+          {
+            "group": "funds",
+            "text": "¥ 60",
+            "contained": true
+          },
+          {
+            "group": "upgrade-1",
+            "text": "Upgrade Heat Lv.1",
+            "contained": true
+          },
+          {
+            "group": "upgrade-1",
+            "text": "Patience +3s · ¥40",
+            "contained": true
+          },
+          {
+            "group": "upgrade-2",
+            "text": "Upgrade Sign Lv.1",
+            "contained": true
+          },
+          {
+            "group": "upgrade-2",
+            "text": "+¥2 per order · ¥60",
+            "contained": true
+          }
+        ],
+        "horizontalOverflow": false,
+        "clipped": []
+      }
+    }
+  ],
+  "errors": []
+}

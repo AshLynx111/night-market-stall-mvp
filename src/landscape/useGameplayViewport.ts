@@ -1,6 +1,8 @@
 import { useCallback, useLayoutEffect, useRef, useState, type RefObject } from 'react'
 import { LOGICAL_SCENE_HEIGHT, LOGICAL_SCENE_WIDTH } from './geometry'
 
+export const GAMEPLAY_VIEWPORT_SETTLE_MS = 180
+
 export function fitGameplayScene(width: number, height: number) {
   if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0) return 1
   return Math.min(width / LOGICAL_SCENE_WIDTH, height / LOGICAL_SCENE_HEIGHT)
@@ -26,16 +28,26 @@ export function useGameplayViewport(): {
     const viewport = viewportRef.current
     if (!viewport) return
 
+    let settleTimer: number | null = null
+    const scheduleSettledScaleUpdate = () => {
+      if (settleTimer !== null) window.clearTimeout(settleTimer)
+      settleTimer = window.setTimeout(() => {
+        settleTimer = null
+        updateScale()
+      }, GAMEPLAY_VIEWPORT_SETTLE_MS)
+    }
+
     updateScale()
     const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(updateScale)
     observer?.observe(viewport)
-    window.addEventListener('resize', updateScale)
-    window.visualViewport?.addEventListener('resize', updateScale)
+    window.addEventListener('resize', scheduleSettledScaleUpdate)
+    window.addEventListener('orientationchange', scheduleSettledScaleUpdate)
 
     return () => {
       observer?.disconnect()
-      window.removeEventListener('resize', updateScale)
-      window.visualViewport?.removeEventListener('resize', updateScale)
+      if (settleTimer !== null) window.clearTimeout(settleTimer)
+      window.removeEventListener('resize', scheduleSettledScaleUpdate)
+      window.removeEventListener('orientationchange', scheduleSettledScaleUpdate)
     }
   }, [updateScale])
 

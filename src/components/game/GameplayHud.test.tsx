@@ -21,25 +21,57 @@ describe('GameplayHud', () => {
     expect(markup).not.toMatch(/😊|💵|☾|♪|Ⅱ/)
   })
 
-  it('activates a touch HUD control once even when a compatibility click follows', () => {
-    const onPause = vi.fn()
+  function renderPauseControl(onPause = vi.fn()) {
     const container = document.createElement('div')
     const root = createRoot(container)
     act(() => root.render(
       <GameplayHud day={1} coins={36} served={0} target={3} sound onHome={vi.fn()} onPause={onPause} onSound={vi.fn()} />,
     ))
-    const pause = container.querySelector('[aria-label="暂停并打开菜单"]')!
-    const pointer = (type: string) => {
-      const event = new MouseEvent(type, { bubbles: true })
-      Object.defineProperty(event, 'pointerType', { value: 'touch' })
-      act(() => pause.dispatchEvent(event))
-    }
+    const pause = container.querySelector<HTMLButtonElement>('[aria-label="暂停并打开菜单"]')!
+    return { onPause, pause, unmount: () => act(() => root.unmount()) }
+  }
 
-    pointer('pointerdown')
-    pointer('pointerup')
+  it('fires a touch-derived activation exactly once', () => {
+    const onPause = vi.fn()
+    const { pause, unmount } = renderPauseControl(onPause)
+
+    const pointerUp = new MouseEvent('pointerup', { bubbles: true, button: 0 })
+    Object.defineProperties(pointerUp, {
+      pointerType: { value: 'touch' },
+      isPrimary: { value: true },
+    })
+    act(() => {
+      pause.dispatchEvent(pointerUp)
+      pause.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1 }))
+    })
+
+    expect(onPause).toHaveBeenCalledOnce()
+    unmount()
+  })
+
+  it('fires a mouse activation exactly once', () => {
+    const onPause = vi.fn()
+    const { pause, unmount } = renderPauseControl(onPause)
+
     act(() => pause.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 1 })))
 
     expect(onPause).toHaveBeenCalledOnce()
-    act(() => root.unmount())
+    unmount()
+  })
+
+  it.each(['Enter', ' '])('keeps native keyboard activation available for %j', (key) => {
+    const onPause = vi.fn()
+    const { pause, unmount } = renderPauseControl(onPause)
+
+    expect(pause.tagName).toBe('BUTTON')
+    expect(pause.type).toBe('button')
+    act(() => {
+      pause.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, key }))
+      pause.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true, key }))
+      pause.dispatchEvent(new MouseEvent('click', { bubbles: true, detail: 0 }))
+    })
+
+    expect(onPause).toHaveBeenCalledOnce()
+    unmount()
   })
 })

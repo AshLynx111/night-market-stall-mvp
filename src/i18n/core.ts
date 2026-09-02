@@ -5,6 +5,7 @@ export const LOCALES = ['zh-CN', 'en'] as const
 export const LOCALE_STORAGE_KEY = 'night-market-locale-v1'
 
 export type Locale = typeof LOCALES[number]
+export type LocalePlatform = 'standalone' | 'poki'
 export type TranslationKey = keyof typeof zhCN
 export type TranslationValues = Record<string, string | number>
 export type TFunction = (key: TranslationKey, values?: TranslationValues) => string
@@ -22,8 +23,15 @@ export function localeFromSearch(search: string): Locale | null {
   return normalizeLocale(new URLSearchParams(search).get('lang'))
 }
 
-export function resolveInitialLocale(search: string, stored: string | null): Locale {
-  return localeFromSearch(search) ?? normalizeLocale(stored) ?? 'zh-CN'
+export function resolveInitialLocale(
+  search: string,
+  stored: string | null,
+  platform: LocalePlatform = 'standalone',
+): Locale {
+  const queryLocale = localeFromSearch(search)
+  if (queryLocale) return queryLocale
+  if (platform === 'poki') return 'en'
+  return normalizeLocale(stored) ?? 'zh-CN'
 }
 
 export function translate(
