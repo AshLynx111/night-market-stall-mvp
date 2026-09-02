@@ -2,6 +2,8 @@
 
 一款适配横屏浏览器的烤冷面经营小游戏，使用 React、TypeScript 和 Vite 构建。游戏包含多日关卡、顾客队列、双区铁板、食材手势、火候、订单修饰条件、角色动画、合成音效和浏览器本地存档。
 
+项目网址：[https://ashlynx111.github.io/night-market-stall-mvp/](https://ashlynx111.github.io/night-market-stall-mvp/)
+
 ## 本地开发
 
 需要 Node.js 20.19+ 或 22.12+。
