@@ -44,6 +44,81 @@
         "rightGriddle": true,
         "tray": true
       },
+      "hudLayout": {
+        "elements": {
+          "day": {
+            "top": 5.333333492279053,
+            "right": 74.66666412353516,
+            "bottom": 28.444444179534912,
+            "left": 8,
+            "width": 66.66666412353516,
+            "height": 23.11111068725586
+          },
+          "orders": {
+            "top": 5.333333492279053,
+            "right": 366.6666564941406,
+            "bottom": 28.444444179534912,
+            "left": 273.3333435058594,
+            "width": 93.33331298828125,
+            "height": 23.11111068725586
+          },
+          "coins": {
+            "top": 5.333333492279053,
+            "right": 575.1111450195312,
+            "bottom": 28.444444179534912,
+            "left": 516.4444580078125,
+            "width": 58.66668701171875,
+            "height": 23.11111068725586
+          },
+          "pause": {
+            "top": 5.333333492279053,
+            "right": 603.5555419921875,
+            "bottom": 28.444444179534912,
+            "left": 580.4444580078125,
+            "width": 23.111083984375,
+            "height": 23.11111068725586
+          },
+          "sound": {
+            "top": 5.333333492279053,
+            "right": 632,
+            "bottom": 28.444444179534912,
+            "left": 608.888916015625,
+            "width": 23.111083984375,
+            "height": 23.11111068725586
+          }
+        },
+        "pairs": [
+          {
+            "first": "day",
+            "second": "orders",
+            "intersectionArea": 0
+          },
+          {
+            "first": "orders",
+            "second": "coins",
+            "intersectionArea": 0
+          },
+          {
+            "first": "coins",
+            "second": "pause",
+            "intersectionArea": 0
+          },
+          {
+            "first": "pause",
+            "second": "sound",
+            "intersectionArea": 0
+          }
+        ],
+        "orderBubble": {
+          "top": 64.44444274902344,
+          "right": 288.4888916015625,
+          "bottom": 120.84444427490234,
+          "left": 209.2888946533203,
+          "width": 79.19999694824219,
+          "height": 56.400001525878906
+        },
+        "ordersBubbleIntersectionArea": 0
+      },
       "viewportStability": {
         "initialScale": 0.4444444444444444,
         "toolbarBurstScales": [
@@ -85,17 +160,17 @@
             "name": "pause",
             "normal": {
               "top": 5.333333492279053,
-              "left": 544.888916015625,
+              "left": 580.4444580078125,
               "transform": "none"
             },
             "pressed": {
               "top": 5.333333492279053,
-              "left": 544.888916015625,
+              "left": 580.4444580078125,
               "transform": "none"
             },
             "released": {
               "top": 5.333333492279053,
-              "left": 544.888916015625,
+              "left": 580.4444580078125,
               "transform": "none"
             }
           },
@@ -217,6 +292,81 @@
         "rightGriddle": true,
         "tray": true
       },
+      "hudLayout": {
+        "elements": {
+          "day": {
+            "top": 6.962963104248047,
+            "right": 97.70371437072754,
+            "bottom": 37.13580322265625,
+            "left": 10.66667366027832,
+            "width": 87.03704071044922,
+            "height": 30.172840118408203
+          },
+          "orders": {
+            "top": 6.962963104248047,
+            "right": 478.9259338378906,
+            "bottom": 37.13580322265625,
+            "left": 357.0740966796875,
+            "width": 121.85183715820312,
+            "height": 30.172840118408203
+          },
+          "coins": {
+            "top": 6.962963104248047,
+            "right": 751.061767578125,
+            "bottom": 37.13580322265625,
+            "left": 674.4691772460938,
+            "width": 76.59259033203125,
+            "height": 30.172840118408203
+          },
+          "pause": {
+            "top": 6.962963104248047,
+            "right": 788.1975708007812,
+            "bottom": 37.13580322265625,
+            "left": 758.0247192382812,
+            "width": 30.1728515625,
+            "height": 30.172840118408203
+          },
+          "sound": {
+            "top": 6.962963104248047,
+            "right": 825.3333740234375,
+            "bottom": 37.13580322265625,
+            "left": 795.1605224609375,
+            "width": 30.1728515625,
+            "height": 30.172840118408203
+          }
+        },
+        "pairs": [
+          {
+            "first": "day",
+            "second": "orders",
+            "intersectionArea": 0
+          },
+          {
+            "first": "orders",
+            "second": "coins",
+            "intersectionArea": 0
+          },
+          {
+            "first": "coins",
+            "second": "pause",
+            "intersectionArea": 0
+          },
+          {
+            "first": "pause",
+            "second": "sound",
+            "intersectionArea": 0
+          }
+        ],
+        "orderBubble": {
+          "top": 84.13580322265625,
+          "right": 376.8605041503906,
+          "bottom": 157.76913452148438,
+          "left": 273.46051025390625,
+          "width": 103.39999389648438,
+          "height": 73.63333129882812
+        },
+        "ordersBubbleIntersectionArea": 0
+      },
       "viewportStability": {
         "initialScale": 0.5802469135802469,
         "toolbarBurstScales": [
@@ -258,17 +408,17 @@
             "name": "pause",
             "normal": {
               "top": 6.962963104248047,
-              "left": 731.1610717773438,
+              "left": 758.0247192382812,
               "transform": "none"
             },
             "pressed": {
               "top": 6.962963104248047,
-              "left": 731.1610717773438,
+              "left": 758.0247192382812,
               "transform": "none"
             },
             "released": {
               "top": 6.962963104248047,
-              "left": 731.1610717773438,
+              "left": 758.0247192382812,
               "transform": "none"
             }
           },
@@ -373,5 +523,263 @@
       }
     }
   ],
+  "mobileHudLayout": [
+    {
+      "width": 640,
+      "height": 360,
+      "screenshot": "gameplay-640x360.png",
+      "elements": {
+        "day": {
+          "top": 5.333333492279053,
+          "right": 74.66666412353516,
+          "bottom": 28.444444179534912,
+          "left": 8,
+          "width": 66.66666412353516,
+          "height": 23.11111068725586
+        },
+        "orders": {
+          "top": 5.333333492279053,
+          "right": 366.6666564941406,
+          "bottom": 28.444444179534912,
+          "left": 273.3333435058594,
+          "width": 93.33331298828125,
+          "height": 23.11111068725586
+        },
+        "coins": {
+          "top": 5.333333492279053,
+          "right": 575.1111450195312,
+          "bottom": 28.444444179534912,
+          "left": 516.4444580078125,
+          "width": 58.66668701171875,
+          "height": 23.11111068725586
+        },
+        "pause": {
+          "top": 5.333333492279053,
+          "right": 603.5555419921875,
+          "bottom": 28.444444179534912,
+          "left": 580.4444580078125,
+          "width": 23.111083984375,
+          "height": 23.11111068725586
+        },
+        "sound": {
+          "top": 5.333333492279053,
+          "right": 632,
+          "bottom": 28.444444179534912,
+          "left": 608.888916015625,
+          "width": 23.111083984375,
+          "height": 23.11111068725586
+        }
+      },
+      "pairs": [
+        {
+          "first": "day",
+          "second": "orders",
+          "intersectionArea": 0
+        },
+        {
+          "first": "orders",
+          "second": "coins",
+          "intersectionArea": 0
+        },
+        {
+          "first": "coins",
+          "second": "pause",
+          "intersectionArea": 0
+        },
+        {
+          "first": "pause",
+          "second": "sound",
+          "intersectionArea": 0
+        }
+      ],
+      "orderBubble": {
+        "top": 64.44444274902344,
+        "right": 288.4888916015625,
+        "bottom": 120.84444427490234,
+        "left": 209.2888946533203,
+        "width": 79.19999694824219,
+        "height": 56.400001525878906
+      },
+      "ordersBubbleIntersectionArea": 0
+    },
+    {
+      "width": 836,
+      "height": 470,
+      "screenshot": "gameplay-836x470.png",
+      "elements": {
+        "day": {
+          "top": 6.962963104248047,
+          "right": 97.70371437072754,
+          "bottom": 37.13580322265625,
+          "left": 10.66667366027832,
+          "width": 87.03704071044922,
+          "height": 30.172840118408203
+        },
+        "orders": {
+          "top": 6.962963104248047,
+          "right": 478.9259338378906,
+          "bottom": 37.13580322265625,
+          "left": 357.0740966796875,
+          "width": 121.85183715820312,
+          "height": 30.172840118408203
+        },
+        "coins": {
+          "top": 6.962963104248047,
+          "right": 751.061767578125,
+          "bottom": 37.13580322265625,
+          "left": 674.4691772460938,
+          "width": 76.59259033203125,
+          "height": 30.172840118408203
+        },
+        "pause": {
+          "top": 6.962963104248047,
+          "right": 788.1975708007812,
+          "bottom": 37.13580322265625,
+          "left": 758.0247192382812,
+          "width": 30.1728515625,
+          "height": 30.172840118408203
+        },
+        "sound": {
+          "top": 6.962963104248047,
+          "right": 825.3333740234375,
+          "bottom": 37.13580322265625,
+          "left": 795.1605224609375,
+          "width": 30.1728515625,
+          "height": 30.172840118408203
+        }
+      },
+      "pairs": [
+        {
+          "first": "day",
+          "second": "orders",
+          "intersectionArea": 0
+        },
+        {
+          "first": "orders",
+          "second": "coins",
+          "intersectionArea": 0
+        },
+        {
+          "first": "coins",
+          "second": "pause",
+          "intersectionArea": 0
+        },
+        {
+          "first": "pause",
+          "second": "sound",
+          "intersectionArea": 0
+        }
+      ],
+      "orderBubble": {
+        "top": 84.13580322265625,
+        "right": 376.8605041503906,
+        "bottom": 157.76913452148438,
+        "left": 273.46051025390625,
+        "width": 103.39999389648438,
+        "height": 73.63333129882812
+      },
+      "ordersBubbleIntersectionArea": 0
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "screenshot": "gameplay-844x390.png",
+      "elements": {
+        "day": {
+          "top": 5.777777671813965,
+          "right": 156.22219848632812,
+          "bottom": 30.814814567565918,
+          "left": 83.9999771118164,
+          "width": 72.22222137451172,
+          "height": 25.037036895751953
+        },
+        "orders": {
+          "top": 5.777777671813965,
+          "right": 472.5555419921875,
+          "bottom": 30.814814567565918,
+          "left": 371.4444274902344,
+          "width": 101.11111450195312,
+          "height": 25.037036895751953
+        },
+        "coins": {
+          "top": 5.777777671813965,
+          "right": 698.370361328125,
+          "bottom": 30.814814567565918,
+          "left": 634.8148193359375,
+          "width": 63.5555419921875,
+          "height": 25.037036895751953
+        },
+        "pause": {
+          "top": 5.777777671813965,
+          "right": 729.1851806640625,
+          "bottom": 30.814814567565918,
+          "left": 704.1481323242188,
+          "width": 25.03704833984375,
+          "height": 25.037036895751953
+        },
+        "sound": {
+          "top": 5.777777671813965,
+          "right": 760,
+          "bottom": 30.814814567565918,
+          "left": 734.9629516601562,
+          "width": 25.03704833984375,
+          "height": 25.037036895751953
+        }
+      },
+      "pairs": [
+        {
+          "first": "day",
+          "second": "orders",
+          "intersectionArea": 0
+        },
+        {
+          "first": "orders",
+          "second": "coins",
+          "intersectionArea": 0
+        },
+        {
+          "first": "coins",
+          "second": "pause",
+          "intersectionArea": 0
+        },
+        {
+          "first": "pause",
+          "second": "sound",
+          "intersectionArea": 0
+        }
+      ],
+      "orderBubble": {
+        "top": 69.8148193359375,
+        "right": 387.8629455566406,
+        "bottom": 130.91481018066406,
+        "left": 302.06292724609375,
+        "width": 85.80001831054688,
+        "height": 61.09999084472656
+      },
+      "ordersBubbleIntersectionArea": 0
+    }
+  ],
+  "mobileHudContactSheet": {
+    "file": "mobile-hud-contact-sheet.png",
+    "width": 2564,
+    "height": 518,
+    "frames": [
+      {
+        "width": 640,
+        "height": 360,
+        "file": "gameplay-640x360.png"
+      },
+      {
+        "width": 836,
+        "height": 470,
+        "file": "gameplay-836x470.png"
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "file": "gameplay-844x390.png"
+      }
+    ]
+  },
   "errors": []
 }

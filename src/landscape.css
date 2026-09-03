@@ -724,24 +724,6 @@ button:focus-visible { outline: 3px solid #ffd166; outline-offset: 3px; }
 
 @media (max-height: 480px) and (orientation: landscape) {
   .game-screen__logical { --short-overlay-scale: min(var(--scene-inverse-scale), 1.35); }
-  .gameplay-hud__day {
-    transform: scale(var(--scene-inverse-scale));
-    transform-origin: top left;
-  }
-  .gameplay-hud__orders {
-    transform: translateX(-50%) scale(var(--scene-inverse-scale));
-    transform-origin: top center;
-  }
-  .gameplay-hud__coins {
-    right: calc(128px * var(--scene-inverse-scale));
-    transform: scale(var(--scene-inverse-scale));
-    transform-origin: top right;
-  }
-  .gameplay-hud__control {
-    transform: scale(var(--scene-inverse-scale));
-    transform-origin: top right;
-  }
-  .gameplay-hud__control--pause { right: calc(64px * var(--scene-inverse-scale)); }
   .help-fab {
     right: calc(18px * var(--scene-inverse-scale));
     bottom: calc(84px * var(--scene-inverse-scale));

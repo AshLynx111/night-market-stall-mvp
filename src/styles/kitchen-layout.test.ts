@@ -42,7 +42,7 @@ describe('logical kitchen layout CSS', () => {
     expect(stageArt).toContain('object-position: 50% 50%')
   })
 
-  it('keeps logical gameplay geometry fixed while counter-scaling critical short-screen controls', () => {
+  it('keeps the gameplay HUD on the logical scene scale while counter-scaling non-HUD overlays', () => {
     const narrow = mediaBlock('@media (max-width: 1050px)', '@media (max-height: 690px)')
     const short = mediaBlock('@media (max-height: 690px)', '@media (orientation: portrait)')
 
@@ -50,7 +50,7 @@ describe('logical kitchen layout CSS', () => {
     expect(narrow).not.toContain('.help-fab')
     expect(narrow).not.toContain('.game-screen__logical')
     expect(short).toContain('.game-screen__logical { --short-overlay-scale:')
-    expect(short).toMatch(/\.gameplay-hud__day\s*\{[^}]*scale\(var\(--scene-inverse-scale\)\)/)
+    expect(short).not.toMatch(/\.gameplay-hud__(?:day|orders|coins|control(?:--pause)?)\s*\{[^}]*var\(--scene-inverse-scale\)/s)
     expect(short).toMatch(/\.help-fab\s*\{[^}]*scale\(var\(--scene-inverse-scale\)\)/)
     expect(short).not.toMatch(/\.game-screen__logical\s*\{[^}]*(?:width|height):/)
   })

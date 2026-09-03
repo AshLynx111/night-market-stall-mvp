@@ -78,10 +78,10 @@ describe('reference-master gameplay composition', () => {
     expect(gameplaySource).not.toMatch(/😊|💵|🔥|🎵|☾|♪|Ⅱ|🗑|☝|🌶|🍳|🔪|↻|🏮|📱|🛍/)
   })
 
-  it('keeps critical UI readable in short landscape viewports', () => {
+  it('keeps non-HUD overlays readable without counter-scaling the short-landscape HUD', () => {
     expect(landscapeCss).toMatch(/@media \(max-height: 480px\) and \(orientation: landscape\)/)
     expect(landscapeCss).toContain('scale(var(--scene-inverse-scale))')
-    expect(landscapeCss).toContain('calc(128px * var(--scene-inverse-scale))')
+    expect(landscapeCss).not.toMatch(/\.gameplay-hud__(?:day|orders|coins|control(?:--pause)?)\s*\{[^}]*var\(--scene-inverse-scale\)/s)
     expect(landscapeCss).toContain('--short-overlay-scale: min(var(--scene-inverse-scale), 1.35)')
     expect(kitchenCss).toContain('scale(var(--short-overlay-scale))')
     expect(kitchenCss).toContain('transform-origin: top center')

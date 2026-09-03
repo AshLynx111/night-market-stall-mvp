@@ -2,6 +2,7 @@ import { spawn } from 'node:child_process'
 import { mkdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { chromium } from 'playwright'
+import sharp from 'sharp'
 
 const root = process.cwd()
 const port = 4197
@@ -11,7 +12,7 @@ const outputDir = path.join(root, 'docs', 'qa', 'screenshots', 'poki-platform-bu
 const mobileFinalOutputDir = path.join(root, 'docs', 'qa', 'screenshots', 'poki-mobile-final-fix')
 const edgePath = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
 const mobileFinalOnly = process.env.POKI_MOBILE_FINAL_ONLY === '1'
-const results = { viewports: [], lifecycle: null, storageFailure: null, mobileFinal: [], localeResolution: null, requests: [], errors: [], bytes: {} }
+const results = { viewports: [], lifecycle: null, storageFailure: null, mobileFinal: [], mobileHudLayout: [], mobileHudContactSheet: null, localeResolution: null, requests: [], errors: [], bytes: {} }
 
 await mkdir(outputDir, { recursive: true })
 await mkdir(mobileFinalOutputDir, { recursive: true })
@@ -133,6 +134,43 @@ async function viewportDiagnostics(page) {
       leftGriddle: visible('[data-slot-id="left"]'), rightGriddle: visible('[data-slot-id="right"]'), tray: visible('.serving-tray'),
     }
   })
+}
+
+async function inspectHudLayout(page, width, height) {
+  const layout = await page.evaluate(() => {
+    const selectors = {
+      day: '.gameplay-hud__day',
+      orders: '.gameplay-hud__orders',
+      coins: '.gameplay-hud__coins',
+      pause: '.gameplay-hud__control--pause',
+      sound: '.gameplay-hud__control--sound',
+    }
+    const readRect = (selector) => {
+      const element = document.querySelector(selector)
+      if (!element) throw new Error(`Missing HUD element: ${selector}`)
+      const rect = element.getBoundingClientRect()
+      return { top: rect.top, right: rect.right, bottom: rect.bottom, left: rect.left, width: rect.width, height: rect.height }
+    }
+    const intersectionArea = (first, second) => Math.max(0, Math.min(first.right, second.right) - Math.max(first.left, second.left))
+      * Math.max(0, Math.min(first.bottom, second.bottom) - Math.max(first.top, second.top))
+    const elements = Object.fromEntries(Object.entries(selectors).map(([name, selector]) => [name, readRect(selector)]))
+    const pairs = [['day', 'orders'], ['orders', 'coins'], ['coins', 'pause'], ['pause', 'sound']]
+      .map(([first, second]) => ({ first, second, intersectionArea: intersectionArea(elements[first], elements[second]) }))
+    const bubble = readRect('.kitchen-customer__bubble')
+    return {
+      elements,
+      pairs,
+      orderBubble: bubble,
+      ordersBubbleIntersectionArea: intersectionArea(elements.orders, bubble),
+    }
+  })
+  for (const pair of layout.pairs) {
+    assert(pair.intersectionArea === 0,
+      `${width}x${height} HUD overlap ${pair.first}/${pair.second}: ${pair.intersectionArea}.`)
+  }
+  assert(layout.ordersBubbleIntersectionArea === 0,
+    `${width}x${height} Orders overlaps the order bubble: ${layout.ordersBubbleIntersectionArea}.`)
+  return layout
 }
 
 async function localeMetadata(page) {
@@ -345,10 +383,14 @@ async function runMobileFinal(browser, width, height) {
   assert(locale.lang === 'en' && locale.locale === 'en', `${width}x${height} parameterless Poki launch was not English.`)
   await startDayOne(page, true)
   await page.waitForFunction(() => document.querySelectorAll('.kitchen-customer__actor.presence-active').length > 0, null, { timeout: 30_000 })
+  await page.locator('.kitchen-customer__bubble').first().waitFor({ state: 'visible', timeout: 30_000 })
   const gameplayDiagnostic = await viewportDiagnostics(page)
   assert(!gameplayDiagnostic.horizontalOverflow && !gameplayDiagnostic.verticalOverflow,
     `${width}x${height} gameplay overflow: ${JSON.stringify(gameplayDiagnostic)}`)
-  await page.screenshot({ path: path.join(mobileFinalOutputDir, `gameplay-${width}x${height}.png`) })
+  const hudLayout = await inspectHudLayout(page, width, height)
+  const gameplayScreenshot = `gameplay-${width}x${height}.png`
+  await page.screenshot({ path: path.join(mobileFinalOutputDir, gameplayScreenshot) })
+  results.mobileHudLayout.push({ width, height, screenshot: gameplayScreenshot, ...hudLayout })
   const hud = await exerciseHud(page)
   const viewportStability = await exerciseViewportStability(page, width, height)
 
@@ -365,11 +407,77 @@ async function runMobileFinal(browser, width, height) {
   await page.screenshot({ path: path.join(mobileFinalOutputDir, `summary-${width}x${height}.png`) })
 
   assert(errors.length === 0, `${width}x${height} mobile final browser errors: ${errors.join('; ')}`)
-  const result = { width, height, locale, gameplayDiagnostic, viewportStability, hud, containment }
+  const result = { width, height, locale, gameplayDiagnostic, hudLayout, viewportStability, hud, containment }
   results.mobileFinal.push(result)
   results.requests.push(...requests)
   results.errors.push(...errors)
   await context.close()
+}
+
+async function runMobileHudLayout(browser, width, height) {
+  const { context, page, requests, errors } = await createPage(browser, {
+    viewport: { width, height }, hasTouch: true, isMobile: true, deviceScaleFactor: 1,
+  })
+  await openHome(page, () => {
+    localStorage.clear()
+    sessionStorage.clear()
+    localStorage.setItem('night-market-locale-v1', 'zh-CN')
+    localStorage.setItem('night-market-guided-tutorial-v2', 'true')
+    localStorage.setItem('night-market-campaign-v1', JSON.stringify({
+      coins: 30, fireLevel: 0, signLevel: 0, bestStars: {}, maxUnlockedDay: 1,
+    }))
+  }, '')
+  const locale = await localeMetadata(page)
+  assert(locale.lang === 'en' && locale.locale === 'en', `${width}x${height} HUD QA was not English.`)
+  await startDayOne(page, true)
+  await page.waitForFunction(() => document.querySelectorAll('.kitchen-customer__actor.presence-active').length > 0, null, { timeout: 30_000 })
+  await page.locator('.kitchen-customer__bubble').first().waitFor({ state: 'visible', timeout: 30_000 })
+  const gameplayDiagnostic = await viewportDiagnostics(page)
+  assert(!gameplayDiagnostic.horizontalOverflow && !gameplayDiagnostic.verticalOverflow,
+    `${width}x${height} HUD QA overflow: ${JSON.stringify(gameplayDiagnostic)}`)
+  const hudLayout = await inspectHudLayout(page, width, height)
+  const gameplayScreenshot = `gameplay-${width}x${height}.png`
+  await page.screenshot({ path: path.join(mobileFinalOutputDir, gameplayScreenshot) })
+  results.mobileHudLayout.push({ width, height, screenshot: gameplayScreenshot, ...hudLayout })
+  results.requests.push(...requests)
+  results.errors.push(...errors)
+  assert(errors.length === 0, `${width}x${height} HUD QA browser errors: ${errors.join('; ')}`)
+  await context.close()
+}
+
+async function createMobileHudContactSheet() {
+  const frames = [[640, 360], [836, 470], [844, 390]].map(([width, height]) => ({
+    width,
+    height,
+    file: `gameplay-${width}x${height}.png`,
+  }))
+  const cellWidth = 844
+  const cellHeight = 470
+  const labelHeight = 48
+  const gap = 16
+  const background = { r: 11, g: 20, b: 36, alpha: 1 }
+  const composites = []
+  for (const [index, frame] of frames.entries()) {
+    const source = path.join(mobileFinalOutputDir, frame.file)
+    const metadata = await sharp(source).metadata()
+    assert(metadata.width === frame.width && metadata.height === frame.height,
+      `${frame.file} dimensions were ${metadata.width}x${metadata.height}.`)
+    const image = await sharp(source)
+      .resize({ width: cellWidth, height: cellHeight, fit: 'contain', background })
+      .png()
+      .toBuffer()
+    const label = Buffer.from(`<svg width="${cellWidth}" height="${labelHeight}" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#0b1424"/><text x="50%" y="31" text-anchor="middle" fill="#f7e6bd" font-family="Arial, sans-serif" font-size="22" font-weight="700">Poki production · English · ${frame.width}×${frame.height}</text></svg>`)
+    const left = index * (cellWidth + gap)
+    composites.push({ input: label, left, top: 0 }, { input: image, left, top: labelHeight })
+  }
+  const contactSheet = 'mobile-hud-contact-sheet.png'
+  const sheetWidth = cellWidth * frames.length + gap * (frames.length - 1)
+  const sheetHeight = labelHeight + cellHeight
+  await sharp({ create: { width: sheetWidth, height: sheetHeight, channels: 4, background } })
+    .composite(composites)
+    .png()
+    .toFile(path.join(mobileFinalOutputDir, contactSheet))
+  results.mobileHudContactSheet = { file: contactSheet, width: sheetWidth, height: sheetHeight, frames }
 }
 
 async function runLifecycle(browser) {
@@ -458,6 +566,8 @@ try {
     for (const [width, height] of [[640, 360], [836, 470]]) await runViewport(browser, width, height, true)
   }
   for (const [width, height] of [[640, 360], [836, 470]]) await runMobileFinal(browser, width, height)
+  await runMobileHudLayout(browser, 844, 390)
+  await createMobileHudContactSheet()
   if (!mobileFinalOnly) { await runPortrait(browser); await runStorageFailure(browser) }
   const unexpected = [...new Set(results.requests)].filter((url) => !url.startsWith(baseUrl) && url !== sdkUrl)
   assert(unexpected.length === 0, `Unexpected external requests: ${unexpected.join(', ')}`)
@@ -466,6 +576,8 @@ try {
   await writeFile(path.join(mobileFinalOutputDir, 'qa-results.json'), JSON.stringify({
     localeResolution: results.localeResolution,
     mobileFinal: results.mobileFinal,
+    mobileHudLayout: results.mobileHudLayout,
+    mobileHudContactSheet: results.mobileHudContactSheet,
     errors: results.errors,
   }, null, 2))
   console.log(JSON.stringify(results, null, 2))

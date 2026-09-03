@@ -55,6 +55,17 @@ describe('home-derived visual system', () => {
     expect(css).toMatch(/\.gameplay-hud__orders\s*\{[^}]*transform:\s*translateX\(-50%\)/s)
   })
 
+  it('keeps the mobile HUD on the logical scene scale without counter-scaling', async () => {
+    const css = await readFile(cssPath, 'utf8')
+    const hudCounterScaleRules = [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)]
+      .filter(([, selector, declarations]) => /\.gameplay-hud__(?:day|orders|coins|control)/.test(selector)
+        && declarations.includes('var(--scene-inverse-scale)'))
+
+    expect(hudCounterScaleRules.map(([, selector]) => selector.trim())).toEqual([])
+    expect(css).toMatch(/\.gameplay-hud__orders\s*\{[^}]*transform:\s*translateX\(-50%\)/s)
+    expect(css).toMatch(/\.help-fab\s*\{[^}]*var\(--scene-inverse-scale\)/s)
+  })
+
   it('unifies day cards without changing the six-card progression structure', async () => {
     const css = await readFile(cssPath, 'utf8')
     expect(css).toMatch(/\.day-card::before\s*\{[^}]*var\(--paper-aged\)[^}]*inset/s)
