@@ -79,11 +79,11 @@ describe('KitchenScene', () => {
       height: ingredient.style.getPropertyValue('--ingredient-rack-control-height'),
     }))
     expect(controls).toEqual([
-      { left: '80px', top: '466px', width: '150px', height: '70px' },
-      { left: '235px', top: '466px', width: '150px', height: '70px' },
-      { left: '80px', top: '541px', width: '150px', height: '70px' },
-      { left: '235px', top: '541px', width: '150px', height: '70px' },
-      { left: '80px', top: '616px', width: '150px', height: '70px' },
+      { left: '98px', top: '466px', width: '151px', height: '76px' },
+      { left: '249px', top: '466px', width: '164px', height: '76px' },
+      { left: '50px', top: '542px', width: '179px', height: '86px' },
+      { left: '229px', top: '542px', width: '168px', height: '86px' },
+      { left: '15px', top: '628px', width: '185px', height: '100px' },
     ])
     expect(container.querySelectorAll('.griddle-slot[data-griddle-hitbox]')).toHaveLength(2)
     expect(container.querySelector('.griddle-slot--left')?.getAttribute('data-griddle-hitbox')).toBe('left')

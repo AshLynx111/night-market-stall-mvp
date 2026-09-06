@@ -24,6 +24,8 @@ import { CustomerLane } from './CustomerLane'
 import { GriddleSlot } from './GriddleSlot'
 import { ServingTray } from './ServingTray'
 import { TableIngredient } from './TableIngredient'
+import sixWellPlate from '../../assets/runtime/main-ui/kitchen-screen-live-clean.webp'
+import expandedWellPlate from '../../assets/runtime/main-ui/kitchen-screen-live-expanded-clean.webp'
 import { TutorialOverlay } from './TutorialOverlay'
 import { useI18n } from '../../i18n/I18nProvider'
 import type { KitchenInteractionIntent } from '../../analytics/gameplayObserver'
@@ -273,6 +275,13 @@ export function KitchenScene({ state, dispatch, soundEnabled = true, onTelemetry
           { x: control.left, y: control.bottom },
         ]))}
       >
+        <img
+          className="kitchen-scene__ingredient-rack-plate"
+          src={rackLayout === 'expanded-3x5' ? expandedWellPlate : sixWellPlate}
+          alt=""
+          aria-hidden="true"
+          draggable={false}
+        />
         {unlockedIngredients.map((id) => (
           <TableIngredient
             key={id}

@@ -59,22 +59,20 @@ describe('logical kitchen layout CSS', () => {
     expect(insetEdge).toContain('z-index: 2')
     expect(insetEdge).toContain('inset: 0')
     expect(art).toContain('width: var(--ingredient-art-width)')
-    expect(art).toContain('left: var(--ingredient-art-center-x)')
-    expect(art).toContain('top: var(--ingredient-art-center-y)')
-    expect(art).toContain('scaleY(var(--ingredient-art-perspective-y))')
+    expect(art).toContain('left: var(--ingredient-art-left)')
+    expect(art).toContain('top: var(--ingredient-art-top)')
+    expect(art).toContain('height: var(--ingredient-art-height)')
     expect(label).toContain('left: var(--ingredient-rack-label-left)')
     expect(label).toContain('top: var(--ingredient-rack-label-top)')
     expect(label).not.toContain('bottom:')
   })
 
-  it('preserves ingredient hover and active motion with the perspective transform', () => {
+  it('keeps food stationary during hover and selection', () => {
     const hover = kitchenCss.match(/\.table-ingredient:not\(:disabled\):hover \.table-ingredient__food-art\s*\{[^}]+\}/s)?.[0] ?? ''
-    const activeSelected = kitchenCss.match(/\.table-ingredient:not\(:disabled\):active \.table-ingredient__food-art\s*,\s*\.table-ingredient\.is-selected \.table-ingredient__food-art\s*\{[^}]+\}/s)?.[0] ?? ''
-
-    expect(hover).toContain('transform: translate(-50%, -53%) scale(1.05) scaleY(var(--ingredient-art-perspective-y))')
-    expect(hover).toContain('filter: saturate(1.18) brightness(1.1) drop-shadow(0 4px 2px rgb(45 23 12 / .34))')
-    expect(activeSelected).toContain('transform: translate(-50%, -48%) scale(.96) scaleY(var(--ingredient-art-perspective-y))')
-    expect(activeSelected).not.toContain('filter:')
+    expect(hover).toContain('filter:')
+    expect(hover).not.toContain('transform:')
+    expect(kitchenCss).not.toContain('translate(-50%, -53%)')
+    expect(kitchenCss).not.toContain('scaleY(var(--ingredient-art-perspective-y))')
   })
 
   it('keeps the gameplay HUD on the logical scene scale while counter-scaling non-HUD overlays', () => {

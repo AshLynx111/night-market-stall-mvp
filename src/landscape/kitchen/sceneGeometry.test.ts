@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
+import { availableIngredients } from '../campaign'
+import { INGREDIENT_VISUAL_SLOTS, ingredientTrayPlacement } from './ingredientTrayLayout'
+import { INGREDIENT_VISUAL_BOUNDS } from './ingredientVisualBounds'
 import {
-  INGREDIENT_ART_PLACEMENTS,
   KITCHEN_GHOST_GEOMETRY,
   KITCHEN_GRIDDLE_RECTS,
   KITCHEN_GRIDDLE_USABLE_RECTS,
@@ -41,66 +43,42 @@ describe('canonical kitchen scene geometry', () => {
       height: 70,
     })
     expect(rackRectangles('approved-2x3')).toEqual([
-      { left: 80, top: 466, width: 150, height: 70, right: 230, bottom: 536 },
-      { left: 235, top: 466, width: 150, height: 70, right: 385, bottom: 536 },
-      { left: 80, top: 541, width: 150, height: 70, right: 230, bottom: 611 },
-      { left: 235, top: 541, width: 150, height: 70, right: 385, bottom: 611 },
-      { left: 80, top: 616, width: 150, height: 70, right: 230, bottom: 686 },
-      { left: 235, top: 616, width: 150, height: 70, right: 385, bottom: 686 },
+      { left: 98, top: 466, width: 151, height: 76, right: 249, bottom: 542 },
+      { left: 249, top: 466, width: 164, height: 76, right: 413, bottom: 542 },
+      { left: 50, top: 542, width: 179, height: 86, right: 229, bottom: 628 },
+      { left: 229, top: 542, width: 168, height: 86, right: 397, bottom: 628 },
+      { left: 15, top: 628, width: 185, height: 100, right: 200, bottom: 728 },
+      { left: 200, top: 628, width: 177, height: 100, right: 377, bottom: 728 },
     ])
   })
 
-  it('maps the Day 1 rack to six measured floor polygons that widen toward the foreground', () => {
-    const polygons = rackInnerPolygons('approved-2x3')
-
-    expect(polygons).toEqual([
-      [{ x: 112, y: 488 }, { x: 232, y: 488 }, { x: 216, y: 531 }, { x: 100, y: 531 }],
-      [{ x: 266, y: 488 }, { x: 387, y: 488 }, { x: 372, y: 532 }, { x: 252, y: 532 }],
-      [{ x: 88, y: 562 }, { x: 220, y: 562 }, { x: 193, y: 607 }, { x: 67, y: 607 }],
-      [{ x: 248, y: 562 }, { x: 381, y: 562 }, { x: 359, y: 608 }, { x: 234, y: 608 }],
-      [{ x: 48, y: 637 }, { x: 200, y: 637 }, { x: 174, y: 687 }, { x: 25, y: 687 }],
-      [{ x: 228, y: 637 }, { x: 369, y: 637 }, { x: 344, y: 690 }, { x: 214, y: 690 }],
-    ])
-    const widths = polygons.map((polygon) => Math.max(...polygon.map(({ x }) => x)) - Math.min(...polygon.map(({ x }) => x)) )
-    expect(widths[4]).toBeGreaterThan(widths[2])
-    expect(widths[2]).toBeGreaterThan(widths[0])
+  it('seats alpha bounds inside the visible well and separates labels on every campaign day', () => {
+    expect(Object.keys(INGREDIENT_VISUAL_BOUNDS)).toHaveLength(15)
+    for (let day = 1; day <= 6; day++) {
+      const ingredients = availableIngredients(day)
+      const layout = ingredients.length > 6 ? 'expanded-3x5' : 'approved-2x3'
+      ingredients.forEach((id, index) => {
+        const { slot, food, image, asset, center } = ingredientTrayPlacement(layout, index, id)
+        const mask = rackInnerPolygons(layout)[index]
+        const context = day + ':' + id
+        expect(food.left, context).toBeGreaterThanOrEqual(mask[0].x)
+        expect(food.top, context).toBeGreaterThanOrEqual(mask[0].y)
+        expect(food.left + food.width, context).toBeLessThanOrEqual(mask[2].x)
+        expect(food.top + food.height, context).toBeLessThanOrEqual(mask[2].y)
+        expect(slot.labelAnchor.y - slot.labelFontSize * 1.05 / 2, context).toBeGreaterThanOrEqual(food.top + food.height)
+        expect(image.left + asset.center.x / asset.sourceWidth * image.width).toBeCloseTo(center.x, 6)
+        expect(image.top + asset.center.y / asset.sourceHeight * image.height).toBeCloseTo(center.y, 6)
+        const style = ingredientRackCellStyle(layout, index, id) as Record<string, string>
+        expect(parseFloat(style['--ingredient-art-width'])).toBeCloseTo(image.width)
+      })
+    }
   })
 
-  it('provides a visual placement profile for every gameplay ingredient', () => {
-    expect(Object.keys(INGREDIENT_ART_PLACEMENTS)).toHaveLength(15)
-    expect(INGREDIENT_ART_PLACEMENTS).toMatchObject({
-      noodle: { width: 90, perspectiveY: .62, centerX: 50, centerY: 51 },
-      egg: { width: 96, perspectiveY: .68 },
-      'hot-dog': { width: 96, perspectiveY: .64, centerX: 48 },
-      sauce: { width: 96, perspectiveY: .62 },
-      scallion: { width: 100, perspectiveY: .68 },
-    })
-
-    const style = ingredientRackCellStyle('approved-2x3', 0, 'noodle') as Record<string, string>
-    expect(style).toMatchObject({
-      '--ingredient-art-width': '90%',
-      '--ingredient-art-perspective-y': '0.62',
-      '--ingredient-art-center-x': '50%',
-      '--ingredient-art-center-y': '51%',
-      '--ingredient-contact-width': '76%',
-      '--ingredient-contact-height': '24%',
-    })
-    expect(style['--ingredient-rack-label-left']).toBe('85px')
-    expect(style['--ingredient-rack-label-top']).toBe('55px')
-
-    const foregroundStyle = ingredientRackCellStyle('approved-2x3', 4, 'scallion') as Record<string, string>
-    expect(foregroundStyle).toMatchObject({
-      '--ingredient-rack-control-left': '80px',
-      '--ingredient-rack-control-top': '616px',
-      '--ingredient-rack-control-width': '150px',
-      '--ingredient-rack-control-height': '70px',
-      '--ingredient-rack-inner-left': '-55px',
-      '--ingredient-rack-inner-top': '21px',
-      '--ingredient-rack-inner-width': '175px',
-      '--ingredient-rack-inner-height': '50px',
-      '--ingredient-rack-label-left': '31.75px',
-      '--ingredient-rack-label-top': '61px',
-    })
+  it('uses independent per-slot footprints and makes the front row larger than the back', () => {
+    const slots = INGREDIENT_VISUAL_SLOTS['expanded-3x5']
+    expect(new Set(slots.map(s => s.foodScale.width + ':' + s.foodScale.height)).size).toBeGreaterThan(10)
+    expect(slots[12].foodScale.width).toBeGreaterThan(slots[0].foodScale.width)
+    expect(slots[12].foodScale.height).toBeGreaterThan(slots[0].foodScale.height)
   })
 
   it('keeps every expanded rack control disjoint, left of the left griddle, and within the scene', () => {
@@ -122,21 +100,21 @@ describe('canonical kitchen scene geometry', () => {
     const innerPolygons = rackInnerPolygons('expanded-3x5')
 
     expect(rectangles).toEqual([
-      { left: 113.68, top: 469.13, width: 116.27, height: 53.37, right: 229.95, bottom: 522.5 },
-      { left: 229.95, top: 469.13, width: 88.71, height: 53.37, right: 318.66, bottom: 522.5 },
-      { left: 318.66, top: 469.13, width: 94.74, height: 53.37, right: 413.4, bottom: 522.5 },
-      { left: 86.99, top: 522.5, width: 122.29, height: 49.06, right: 209.28, bottom: 571.56 },
-      { left: 209.28, top: 522.5, width: 93.01, height: 49.06, right: 302.29, bottom: 571.56 },
-      { left: 302.3, top: 522.5, width: 99.04, height: 49.06, right: 401.34, bottom: 571.56 },
-      { left: 62.01, top: 571.56, width: 126.6, height: 55.95, right: 188.61, bottom: 627.51 },
-      { left: 188.61, top: 571.56, width: 98.18, height: 55.95, right: 286.79, bottom: 627.51 },
-      { left: 286.79, top: 571.56, width: 105.07, height: 55.95, right: 391.86, bottom: 627.51 },
-      { left: 36.17, top: 627.51, width: 130.91, height: 61.12, right: 167.08, bottom: 688.63 },
-      { left: 167.08, top: 627.51, width: 101.62, height: 61.12, right: 268.7, bottom: 688.63 },
-      { left: 268.71, top: 627.51, width: 111.96, height: 61.12, right: 380.67, bottom: 688.63 },
-      { left: 10.33, top: 688.63, width: 135.22, height: 68, right: 145.55, bottom: 756.63 },
-      { left: 145.55, top: 688.63, width: 108.52, height: 68, right: 254.07, bottom: 756.63 },
-      { left: 254.07, top: 688.63, width: 115.41, height: 68, right: 369.48, bottom: 756.63 },
+      { left: 113.68, top: 469.13, width: 116.27, height: 54.87, right: 229.95, bottom: 524 },
+      { left: 229.95, top: 469.13, width: 88.71, height: 54.87, right: 318.66, bottom: 524 },
+      { left: 318.66, top: 469.13, width: 94.74, height: 54.87, right: 413.4, bottom: 524 },
+      { left: 86.99, top: 524, width: 122.29, height: 52, right: 209.28, bottom: 576 },
+      { left: 209.28, top: 524, width: 93.01, height: 52, right: 302.29, bottom: 576 },
+      { left: 302.3, top: 524, width: 99.04, height: 52, right: 401.34, bottom: 576 },
+      { left: 62.01, top: 576, width: 126.6, height: 56, right: 188.61, bottom: 632 },
+      { left: 188.61, top: 576, width: 98.18, height: 56, right: 286.79, bottom: 632 },
+      { left: 286.79, top: 576, width: 105.07, height: 56, right: 391.86, bottom: 632 },
+      { left: 36.17, top: 632, width: 130.91, height: 60, right: 167.08, bottom: 692 },
+      { left: 167.08, top: 632, width: 101.62, height: 60, right: 268.7, bottom: 692 },
+      { left: 268.71, top: 632, width: 111.96, height: 60, right: 380.67, bottom: 692 },
+      { left: 10.33, top: 692, width: 135.22, height: 64.63, right: 145.55, bottom: 756.63 },
+      { left: 145.55, top: 692, width: 108.52, height: 64.63, right: 254.07, bottom: 756.63 },
+      { left: 254.07, top: 692, width: 115.41, height: 64.63, right: 369.48, bottom: 756.63 },
     ])
     expect(innerPolygons).toHaveLength(15)
     expect(new Set(rectangles.map((rectangle) => `${rectangle.left}:${rectangle.top}:${rectangle.width}:${rectangle.height}`)).size)

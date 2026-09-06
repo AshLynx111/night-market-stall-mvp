@@ -1,0 +1,2568 @@
+{
+  "build": "poki-production",
+  "locale": "en",
+  "sdk": "Poki SDK mocked at network boundary",
+  "captures": [
+    {
+      "day": 1,
+      "width": 640,
+      "height": 360,
+      "dpr": 1,
+      "screenshot": "ingredient-tray-day1-640x360.png",
+      "lang": "en",
+      "layout": "approved-2x3",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 126.39062404632568,
+            "top": 486.0468635559082,
+            "width": 115.87500858306885,
+            "height": 53.96875762939453
+          },
+          "label": {
+            "left": 136.7578125,
+            "top": 531.2265586853027,
+            "width": 78.48437118530273,
+            "height": 11.546871185302734
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 98.00000381469727,
+            "top": 466.00000762939453,
+            "width": 150.99999046325684,
+            "height": 75.99998474121094
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 261.57812118530273,
+            "top": 483.9843864440918,
+            "width": 125.4843978881836,
+            "height": 56.17185974121094
+          },
+          "label": {
+            "left": 305.87499618530273,
+            "top": 531.2265586853027,
+            "width": 26.250011444091797,
+            "height": 11.546871185302734
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 248.9999942779541,
+            "top": 466.00000762939453,
+            "width": 164.00000953674316,
+            "height": 75.99998474121094
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 78.70312786102295,
+            "top": 563.2812652587891,
+            "width": 138.40625095367432,
+            "height": 58.24999237060547
+          },
+          "label": {
+            "left": 114.05468559265137,
+            "top": 614.9687805175781,
+            "width": 53.890634536743164,
+            "height": 12.062507629394531
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 50.00000238418579,
+            "top": 541.9999923706055,
+            "width": 179.00000381469727,
+            "height": 86.00001525878906
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 236.70313453674316,
+            "top": 562.359375,
+            "width": 131.51563453674316,
+            "height": 62.15625
+          },
+          "label": {
+            "left": 274.75000762939453,
+            "top": 615.9687423706055,
+            "width": 38.50000762939453,
+            "height": 12.062507629394531
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 229.00000190734863,
+            "top": 541.9999923706055,
+            "width": 167.9999942779541,
+            "height": 86.00001525878906
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 42.859374046325684,
+            "top": 631.5781173706055,
+            "width": 147.78125381469727,
+            "height": 64.20314025878906
+          },
+          "label": {
+            "left": 77.78125476837158,
+            "top": 683.7031631469727,
+            "width": 56.43749713897705,
+            "height": 12.593696594238281
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 14.999999642372131,
+            "top": 628.0000076293945,
+            "width": 185.00001525878906,
+            "height": 100.00003051757812
+          }
+        }
+      ]
+    },
+    {
+      "day": 1,
+      "width": 836,
+      "height": 470,
+      "dpr": 1,
+      "screenshot": "ingredient-tray-day1-836x470.png",
+      "lang": "en",
+      "layout": "approved-2x3",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 126.39062445442725,
+            "top": 486.04686925436573,
+            "width": 115.87500772476209,
+            "height": 53.96877749777899
+          },
+          "label": {
+            "left": 136.75782056374766,
+            "top": 531.2265899532657,
+            "width": 78.48437172884631,
+            "height": 11.546882329849605
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 98.00000029218957,
+            "top": 466.00004002997275,
+            "width": 151.000020307176,
+            "height": 75.9999830530042
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 261.57814223233714,
+            "top": 483.98439064812175,
+            "width": 125.4843750890265,
+            "height": 56.17189279388903
+          },
+          "label": {
+            "left": 305.87501795139747,
+            "top": 531.2265899532657,
+            "width": 26.249990686457053,
+            "height": 11.546882329849605
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 249.00002059936554,
+            "top": 466.00004002997275,
+            "width": 163.99999941562083,
+            "height": 75.9999830530042
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 78.70313041692093,
+            "top": 563.2812890118747,
+            "width": 138.4062519220596,
+            "height": 58.249991855215384
+          },
+          "label": {
+            "left": 114.05468561788818,
+            "top": 614.968796344007,
+            "width": 53.890635776773586,
+            "height": 12.062462535816964
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 50.000001826184885,
+            "top": 542.000023082977,
+            "width": 179.0000016070427,
+            "height": 86.00001957670203
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 236.70314604906358,
+            "top": 562.3594191913916,
+            "width": 131.515606356935,
+            "height": 62.15621010242559
+          },
+          "label": {
+            "left": 274.74999894081276,
+            "top": 615.9687684399019,
+            "width": 38.500003871511964,
+            "height": 12.06251512994182
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 229.00000014609478,
+            "top": 542.000023082977,
+            "width": 168.00001928451243,
+            "height": 86.00001957670203
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 42.859376385617786,
+            "top": 631.5781261619101,
+            "width": 147.78125986596388,
+            "height": 64.20317344183695
+          },
+          "label": {
+            "left": 77.78125402217222,
+            "top": 683.7031640187229,
+            "width": 56.43750627294509,
+            "height": 12.593715790991531
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 15.000000547855466,
+            "top": 628.000042659679,
+            "width": 185.00000511331768,
+            "height": 99.99999707810417
+          }
+        }
+      ]
+    },
+    {
+      "day": 1,
+      "width": 844,
+      "height": 390,
+      "dpr": 1,
+      "screenshot": "ingredient-tray-day1-844x390.png",
+      "lang": "en",
+      "layout": "approved-2x3",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 126.39063049371394,
+            "top": 486.0468429537939,
+            "width": 115.87500376334536,
+            "height": 53.968780871536204
+          },
+          "label": {
+            "left": 136.75781503778222,
+            "top": 531.2265407135867,
+            "width": 78.4843692201838,
+            "height": 11.54686258481172
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 97.99998485858713,
+            "top": 465.9999855628389,
+            "width": 150.9999934856712,
+            "height": 76.00002253605638
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 261.57810847484245,
+            "top": 483.9843712449076,
+            "width": 125.48438524191137,
+            "height": 56.17183531706383
+          },
+          "label": {
+            "left": 305.8749808751631,
+            "top": 531.2265407135867,
+            "width": 26.249991416931657,
+            "height": 11.54686258481172
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 248.99997834425835,
+            "top": 465.9999855628389,
+            "width": 164.00003028282575,
+            "height": 76.00002253605638
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 78.7031186204694,
+            "top": 563.2812427649136,
+            "width": 138.40625537542167,
+            "height": 58.24999423393871
+          },
+          "label": {
+            "left": 114.05468550141053,
+            "top": 614.9687232989547,
+            "width": 53.890598362227315,
+            "height": 12.062480512033286
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 49.999996478741195,
+            "top": 542.0000080988953,
+            "width": 178.99999595055237,
+            "height": 85.99999964787412
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 236.70310876094476,
+            "top": 562.3593419964517,
+            "width": 131.515625497928,
+            "height": 62.156267479748806
+          },
+          "label": {
+            "left": 274.7499756592985,
+            "top": 615.9687115027377,
+            "width": 38.50002121558432,
+            "height": 12.062543894691826
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 228.99999242929357,
+            "top": 542.0000080988953,
+            "width": 167.99995140662847,
+            "height": 85.99999964787412
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 42.8593695503018,
+            "top": 631.5780855866602,
+            "width": 147.78124778270734,
+            "height": 64.20314705463427
+          },
+          "label": {
+            "left": 77.78124954333676,
+            "top": 683.7030966126019,
+            "width": 56.43748788466892,
+            "height": 12.593753955914192
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 14.999997359055895,
+            "top": 628.0000077467694,
+            "width": 184.99998855590889,
+            "height": 99.99996126615312
+          }
+        }
+      ]
+    },
+    {
+      "day": 1,
+      "width": 1440,
+      "height": 810,
+      "dpr": 1,
+      "screenshot": "ingredient-tray-day1-1440x810.png",
+      "lang": "en",
+      "layout": "approved-2x3",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 126.390625,
+            "top": 486.046875,
+            "width": 115.875,
+            "height": 53.96875
+          },
+          "label": {
+            "left": 136.7578125,
+            "top": 531.2265625,
+            "width": 78.484375,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 98,
+            "top": 466,
+            "width": 151,
+            "height": 76
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 261.578125,
+            "top": 483.984375,
+            "width": 125.484375,
+            "height": 56.171875
+          },
+          "label": {
+            "left": 305.875,
+            "top": 531.2265625,
+            "width": 26.25,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 249,
+            "top": 466,
+            "width": 164,
+            "height": 76
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 78.703125,
+            "top": 563.28125,
+            "width": 138.40625,
+            "height": 58.25
+          },
+          "label": {
+            "left": 114.0546875,
+            "top": 614.96875,
+            "width": 53.890625,
+            "height": 12.0625
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 50,
+            "top": 542,
+            "width": 179,
+            "height": 86
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 236.703125,
+            "top": 562.359375,
+            "width": 131.515625,
+            "height": 62.15625
+          },
+          "label": {
+            "left": 274.75,
+            "top": 615.96875,
+            "width": 38.5,
+            "height": 12.0625
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 229,
+            "top": 542,
+            "width": 168,
+            "height": 86
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 42.859375,
+            "top": 631.578125,
+            "width": 147.78125,
+            "height": 64.203125
+          },
+          "label": {
+            "left": 77.78125,
+            "top": 683.703125,
+            "width": 56.4375,
+            "height": 12.59375
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 15,
+            "top": 628,
+            "width": 185,
+            "height": 100
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "width": 640,
+      "height": 360,
+      "dpr": 1,
+      "screenshot": "ingredient-tray-640x360.png",
+      "lang": "en",
+      "layout": "expanded-3x5",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 149.9531307220459,
+            "top": 482.2656440734863,
+            "width": 65.31250190734863,
+            "height": 35.46874237060547
+          },
+          "label": {
+            "left": 142.03906059265137,
+            "top": 511.734375,
+            "width": 71.89063453674316,
+            "height": 10.500011444091797
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 113.67187213897705,
+            "top": 469.125,
+            "width": 116.26562404632568,
+            "height": 54.859371185302734
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 237.26563453674316,
+            "top": 480.09375,
+            "width": 71.51562309265137,
+            "height": 38.515628814697266
+          },
+          "label": {
+            "left": 255.7734432220459,
+            "top": 512.7343711853027,
+            "width": 24.4218692779541,
+            "height": 10.500011444091797
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 229.93749618530273,
+            "top": 469.125,
+            "width": 88.70313262939453,
+            "height": 54.859371185302734
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 324.95313262939453,
+            "top": 483.0000114440918,
+            "width": 74.70311737060547,
+            "height": 35.249977111816406
+          },
+          "label": {
+            "left": 336.1640625,
+            "top": 513.7343673706055,
+            "width": 47.64063262939453,
+            "height": 10.500011444091797
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 318.65625,
+            "top": 469.125,
+            "width": 94.7343864440918,
+            "height": 54.859371185302734
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 121.73437786102295,
+            "top": 527.3593711853027,
+            "width": 79.84374904632568,
+            "height": 42.515647888183594
+          },
+          "label": {
+            "left": 136.85156536102295,
+            "top": 562.7500076293945,
+            "width": 34.26562786102295,
+            "height": 10.500011444091797
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 86.98437309265137,
+            "top": 523.9999923706055,
+            "width": 122.28124809265137,
+            "height": 52.00000762939453
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 212.2968692779541,
+            "top": 527.2187461853027,
+            "width": 87.07813453674316,
+            "height": 45.125003814697266
+          },
+          "label": {
+            "left": 224.96875762939453,
+            "top": 563.7500038146973,
+            "width": 48.03124809265137,
+            "height": 10.500011444091797
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 209.26562118530273,
+            "top": 523.9999923706055,
+            "width": 93.0000228881836,
+            "height": 52.00000762939453
+          }
+        },
+        {
+          "id": "cilantro",
+          "image": {
+            "left": 309.95312118530273,
+            "top": 531.84375,
+            "width": 77.0156364440918,
+            "height": 37.390628814697266
+          },
+          "label": {
+            "left": 320.87500762939453,
+            "top": 564.75,
+            "width": 44.21873474121094,
+            "height": 10.500011444091797
+          },
+          "labelClipped": false,
+          "labelHit": "cilantro",
+          "text": "Cilantro",
+          "control": {
+            "left": 302.2968864440918,
+            "top": 523.9999923706055,
+            "width": 99.03124237060547,
+            "height": 52.00000762939453
+          }
+        },
+        {
+          "id": "onion",
+          "image": {
+            "left": 98.68749904632568,
+            "top": 581.4687881469727,
+            "width": 80.89062595367432,
+            "height": 42.78124237060547
+          },
+          "label": {
+            "left": 110.39843559265137,
+            "top": 618.4921646118164,
+            "width": 37.1718807220459,
+            "height": 11.015647888183594
+          },
+          "labelClipped": false,
+          "labelHit": "onion",
+          "text": "Onion",
+          "control": {
+            "left": 61.99999952316284,
+            "top": 576,
+            "width": 126.59374237060547,
+            "height": 55.99999237060547
+          }
+        },
+        {
+          "id": "chili-powder",
+          "image": {
+            "left": 194.8125057220459,
+            "top": 578.4218673706055,
+            "width": 87.59375381469727,
+            "height": 51.1875
+          },
+          "label": {
+            "left": 193.6640567779541,
+            "top": 619.7500305175781,
+            "width": 66.64062881469727,
+            "height": 10.499977111816406
+          },
+          "labelClipped": false,
+          "labelHit": "chili-powder",
+          "text": "Chili Powder",
+          "control": {
+            "left": 188.60938453674316,
+            "top": 576,
+            "width": 98.17187118530273,
+            "height": 55.99999237060547
+          }
+        },
+        {
+          "id": "turkey-noodle",
+          "image": {
+            "left": 289.7812614440918,
+            "top": 577.4531478881836,
+            "width": 90.5625,
+            "height": 51.890625
+          },
+          "label": {
+            "left": 282.62500762939453,
+            "top": 621.3828048706055,
+            "width": 84.71873474121094,
+            "height": 9.234420776367188
+          },
+          "labelClipped": false,
+          "labelHit": "turkey-noodle",
+          "text": "Spicy Fire Noodles",
+          "control": {
+            "left": 286.7812557220459,
+            "top": 576,
+            "width": 105.06251335144043,
+            "height": 55.99999237060547
+          }
+        },
+        {
+          "id": "cheese",
+          "image": {
+            "left": 72.71875476837158,
+            "top": 639.984375,
+            "width": 82.85937595367432,
+            "height": 45.437530517578125
+          },
+          "label": {
+            "left": 80.07031631469727,
+            "top": 679.2265777587891,
+            "width": 43.8281192779541,
+            "height": 11.546836853027344
+          },
+          "labelClipped": false,
+          "labelHit": "cheese",
+          "text": "Cheese",
+          "control": {
+            "left": 36.15625047683716,
+            "top": 631.9999923706055,
+            "width": 130.90625381469727,
+            "height": 60.00004577636719
+          }
+        },
+        {
+          "id": "corn",
+          "image": {
+            "left": 163.37500762939453,
+            "top": 631.8437805175781,
+            "width": 108.85937118530273,
+            "height": 61.749961853027344
+          },
+          "label": {
+            "left": 189.19531631469727,
+            "top": 679.2265777587891,
+            "width": 31.578123092651367,
+            "height": 11.546836853027344
+          },
+          "labelClipped": false,
+          "labelHit": "corn",
+          "text": "Corn",
+          "control": {
+            "left": 167.07812118530273,
+            "top": 631.9999923706055,
+            "width": 101.60937309265137,
+            "height": 60.00004577636719
+          }
+        },
+        {
+          "id": "orleans",
+          "image": {
+            "left": 278.14062881469727,
+            "top": 637.3749847412109,
+            "width": 80.15625,
+            "height": 51.890625
+          },
+          "label": {
+            "left": 271.83593559265137,
+            "top": 679.7500076293945,
+            "width": 74.2968807220459,
+            "height": 10.499977111816406
+          },
+          "labelClipped": false,
+          "labelHit": "orleans",
+          "text": "Cajun Chicken",
+          "control": {
+            "left": 268.70313262939453,
+            "top": 631.9999923706055,
+            "width": 111.95312118530273,
+            "height": 60.00004577636719
+          }
+        },
+        {
+          "id": "bacon",
+          "image": {
+            "left": 50.78125047683716,
+            "top": 698.7968673706055,
+            "width": 81.49999809265137,
+            "height": 45.468772888183594
+          },
+          "label": {
+            "left": 58.5703125,
+            "top": 740.2265853881836,
+            "width": 38.82812976837158,
+            "height": 11.546836853027344
+          },
+          "labelClipped": false,
+          "labelHit": "bacon",
+          "text": "Bacon",
+          "control": {
+            "left": 10.328124761581421,
+            "top": 692.0000381469727,
+            "width": 135.21874809265137,
+            "height": 64.62494659423828
+          }
+        },
+        {
+          "id": "tenderloin",
+          "image": {
+            "left": 156.15625190734863,
+            "top": 700.1406326293945,
+            "width": 83.68749618530273,
+            "height": 48.749977111816406
+          },
+          "label": {
+            "left": 158.07812118530273,
+            "top": 741.4922103881836,
+            "width": 59.8125057220459,
+            "height": 11.015579223632812
+          },
+          "labelClipped": false,
+          "labelHit": "tenderloin",
+          "text": "Tenderloin",
+          "control": {
+            "left": 145.546875,
+            "top": 692.0000381469727,
+            "width": 108.5156192779541,
+            "height": 64.62494659423828
+          }
+        },
+        {
+          "id": "enoki",
+          "image": {
+            "left": 251.54688262939453,
+            "top": 699.7812423706055,
+            "width": 111.29685974121094,
+            "height": 51.67185974121094
+          },
+          "label": {
+            "left": 279.29687118530273,
+            "top": 742.2265777587891,
+            "width": 35.37501525878906,
+            "height": 11.546836853027344
+          },
+          "labelClipped": false,
+          "labelHit": "enoki",
+          "text": "Enoki",
+          "control": {
+            "left": 254.0624942779541,
+            "top": 692.0000381469727,
+            "width": 115.4062442779541,
+            "height": 64.62494659423828
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "width": 836,
+      "height": 470,
+      "dpr": 1,
+      "screenshot": "ingredient-tray-836x470.png",
+      "lang": "en",
+      "layout": "expanded-3x5",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 149.9531342519092,
+            "top": 482.26566724193924,
+            "width": 65.31250187183952,
+            "height": 35.46874148541294
+          },
+          "label": {
+            "left": 142.03907275973498,
+            "top": 511.73441836960836,
+            "width": 71.89061999853612,
+            "height": 10.499996274582822
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 113.67187928012083,
+            "top": 469.1250251465659,
+            "width": 116.26563743860183,
+            "height": 54.85935381397253
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 237.26564021440285,
+            "top": 480.0937928559939,
+            "width": 71.51562388830995,
+            "height": 38.51562432659432
+          },
+          "label": {
+            "left": 255.7734338601852,
+            "top": 512.7343904655032,
+            "width": 24.42189779763563,
+            "height": 10.499996274582822
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 229.93751671872266,
+            "top": 469.1250251465659,
+            "width": 88.70312092075949,
+            "height": 54.85935381397253
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 324.9531422871227,
+            "top": 483.0000390073092,
+            "width": 74.70311712229493,
+            "height": 35.25000252013515
+          },
+          "label": {
+            "left": 336.164079644452,
+            "top": 513.734415155523,
+            "width": 47.64062609799366,
+            "height": 10.499996274582822
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 318.6562580945645,
+            "top": 469.1250251465659,
+            "width": 94.7343784857304,
+            "height": 54.85935381397253
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 121.73437454117104,
+            "top": 527.3593965466989,
+            "width": 79.84375892547865,
+            "height": 42.5156178984235
+          },
+          "label": {
+            "left": 136.85156959130418,
+            "top": 562.7500357567001,
+            "width": 34.2656245822602,
+            "height": 10.499996274582822
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 86.98437779178015,
+            "top": 523.9999994156208,
+            "width": 122.28126139995918,
+            "height": 52.0000216220291
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 212.2968818550415,
+            "top": 527.2187598568329,
+            "width": 87.0781333936023,
+            "height": 45.125022809049284
+          },
+          "label": {
+            "left": 224.96876566410089,
+            "top": 563.750007852595,
+            "width": 48.031242663302194,
+            "height": 10.499996274582822
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 209.2656326174737,
+            "top": 523.9999994156208,
+            "width": 93.0000083274031,
+            "height": 52.0000216220291
+          }
+        },
+        {
+          "id": "cilantro",
+          "image": {
+            "left": 309.9531400957008,
+            "top": 531.8437820084556,
+            "width": 77.01562819810628,
+            "height": 37.39063599591577
+          },
+          "label": {
+            "left": 320.8750201428193,
+            "top": 564.7500325426147,
+            "width": 44.218747146586104,
+            "height": 10.499996274582822
+          },
+          "labelClipped": false,
+          "labelHit": "cilantro",
+          "text": "Cilantro",
+          "control": {
+            "left": 302.29688185504153,
+            "top": 523.9999994156208,
+            "width": 99.03126589237401,
+            "height": 52.0000216220291
+          }
+        },
+        {
+          "id": "onion",
+          "image": {
+            "left": 98.68750411804692,
+            "top": 581.4687581402192,
+            "width": 80.89062525794861,
+            "height": 42.781270823073214
+          },
+          "label": {
+            "left": 110.39844724612048,
+            "top": 618.4922345505123,
+            "width": 37.171870733575545,
+            "height": 11.01557648055018
+          },
+          "labelClipped": false,
+          "labelHit": "onion",
+          "text": "Onion",
+          "control": {
+            "left": 62.000005551602065,
+            "top": 576.0000210376498,
+            "width": 126.59375611315392,
+            "height": 56.00001519385829
+          }
+        },
+        {
+          "id": "chili-powder",
+          "image": {
+            "left": 194.81250413630877,
+            "top": 578.4218752990378,
+            "width": 87.5937530451633,
+            "height": 51.18754758124733
+          },
+          "label": {
+            "left": 193.66407197447546,
+            "top": 619.7500230464533,
+            "width": 66.64063500977593,
+            "height": 10.499996274582822
+          },
+          "labelClipped": false,
+          "labelHit": "chili-powder",
+          "text": "Chili Powder",
+          "control": {
+            "left": 188.60938211983833,
+            "top": 576.0000210376498,
+            "width": 98.17189104075153,
+            "height": 56.00001519385829
+          }
+        },
+        {
+          "id": "turkey-noodle",
+          "image": {
+            "left": 289.78126833946175,
+            "top": 577.4531441133075,
+            "width": 90.56250731387048,
+            "height": 51.89062584232778
+          },
+          "label": {
+            "left": 282.62502244381227,
+            "top": 621.3828602467453,
+            "width": 84.71874780401266,
+            "height": 9.234371254038242
+          },
+          "labelClipped": false,
+          "labelHit": "turkey-noodle",
+          "text": "Spicy Fire Noodles",
+          "control": {
+            "left": 286.7812731605899,
+            "top": 576.0000210376498,
+            "width": 105.06249716028249,
+            "height": 56.00001519385829
+          }
+        },
+        {
+          "id": "cheese",
+          "image": {
+            "left": 72.7187539399939,
+            "top": 639.9844029200842,
+            "width": 82.8593745594329,
+            "height": 45.4374845048212
+          },
+          "label": {
+            "left": 80.07031469256323,
+            "top": 679.2265624874449,
+            "width": 43.828124007011965,
+            "height": 11.546882329849605
+          },
+          "labelClipped": false,
+          "labelHit": "cheese",
+          "text": "Cheese",
+          "control": {
+            "left": 36.156251885535895,
+            "top": 632.0000362315081,
+            "width": 130.90625082634867,
+            "height": 60.00000876568747
+          }
+        },
+        {
+          "id": "corn",
+          "image": {
+            "left": 163.3750102814209,
+            "top": 631.8437790865598,
+            "width": 108.85938537044744,
+            "height": 61.74997308203471
+          },
+          "label": {
+            "left": 189.19532011633234,
+            "top": 679.2265624874449,
+            "width": 31.57811739622266,
+            "height": 11.546882329849605
+          },
+          "labelClipped": false,
+          "labelHit": "corn",
+          "text": "Corn",
+          "control": {
+            "left": 167.0781363154981,
+            "top": 632.0000362315081,
+            "width": 101.609364150179,
+            "height": 60.00000876568747
+          }
+        },
+        {
+          "id": "orleans",
+          "image": {
+            "left": 278.1406369820556,
+            "top": 637.3749980094584,
+            "width": 80.15626006684421,
+            "height": 51.89067843645263
+          },
+          "label": {
+            "left": 271.83594256195624,
+            "top": 679.7500318121407,
+            "width": 74.29688010190404,
+            "height": 10.499996274582822
+          },
+          "labelClipped": false,
+          "labelHit": "orleans",
+          "text": "Cajun Chicken",
+          "control": {
+            "left": 268.70314721782194,
+            "top": 632.0000362315081,
+            "width": 111.95311642834466,
+            "height": 60.00000876568747
+          }
+        },
+        {
+          "id": "bacon",
+          "image": {
+            "left": 50.781251392465975,
+            "top": 698.7968889406388,
+            "width": 81.50000708559737,
+            "height": 45.46877800911076
+          },
+          "label": {
+            "left": 58.57031637265333,
+            "top": 740.2265959431521,
+            "width": 38.82812546795988,
+            "height": 11.546882329849605
+          },
+          "labelClipped": false,
+          "labelHit": "bacon",
+          "text": "Bacon",
+          "control": {
+            "left": 10.32812524881769,
+            "top": 692.0000449971957,
+            "width": 135.21875868807462,
+            "height": 64.62497832318535
+          }
+        },
+        {
+          "id": "tenderloin",
+          "image": {
+            "left": 156.15625626837962,
+            "top": 700.1406688307201,
+            "width": 83.68749535235945,
+            "height": 48.749967676527426
+          },
+          "label": {
+            "left": 158.07812448182003,
+            "top": 741.4922209636967,
+            "width": 59.81251071057438,
+            "height": 11.015629074675036
+          },
+          "labelClipped": false,
+          "labelHit": "tenderloin",
+          "text": "Tenderloin",
+          "control": {
+            "left": 145.5468773626267,
+            "top": 692.0000449971957,
+            "width": 108.51564331891718,
+            "height": 64.62497832318535
+          }
+        },
+        {
+          "id": "enoki",
+          "image": {
+            "left": 251.54689109553706,
+            "top": 699.7812931755763,
+            "width": 111.29687323544884,
+            "height": 51.671834282925126
+          },
+          "label": {
+            "left": 279.29689251996126,
+            "top": 742.2265927290667,
+            "width": 35.3749924578564,
+            "height": 11.546882329849605
+          },
+          "labelClipped": false,
+          "labelHit": "enoki",
+          "text": "Enoki",
+          "control": {
+            "left": 254.06252068154387,
+            "top": 692.0000449971957,
+            "width": 115.40623628991692,
+            "height": 64.62497832318535
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "width": 844,
+      "height": 390,
+      "dpr": 1,
+      "screenshot": "ingredient-tray-844x390.png",
+      "lang": "en",
+      "layout": "expanded-3x5",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 149.95310211456874,
+            "top": 482.2655920019536,
+            "width": 65.31253372705702,
+            "height": 35.46877726224593
+          },
+          "label": {
+            "left": 142.03907998662626,
+            "top": 511.7343449675138,
+            "width": 71.89057617829683,
+            "height": 10.500002905038517
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 113.67185424382993,
+            "top": 469.12497246815775,
+            "width": 116.26563108792637,
+            "height": 54.85937060667944
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 237.2656298554858,
+            "top": 480.0937218244276,
+            "width": 71.51560437037516,
+            "height": 38.515645040914386
+          },
+          "label": {
+            "left": 255.77342953177646,
+            "top": 512.7343648626261,
+            "width": 24.421877087996435,
+            "height": 10.500002905038517
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 229.93748533175628,
+            "top": 469.12497246815775,
+            "width": 88.70314326928106,
+            "height": 54.85937060667944
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 324.95309771299526,
+            "top": 482.9999751751254,
+            "width": 74.70314995967279,
+            "height": 35.250012016295685
+          },
+          "label": {
+            "left": 336.1640638988751,
+            "top": 513.7343530664091,
+            "width": 47.6406245515897,
+            "height": 10.500002905038517
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 318.6562524263674,
+            "top": 469.12497246815775,
+            "width": 94.73432014263916,
+            "height": 54.85937060667944
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 121.73438194073124,
+            "top": 527.3593428767664,
+            "width": 79.84373709788765,
+            "height": 42.51566123870491
+          },
+          "label": {
+            "left": 136.85155798976265,
+            "top": 562.7499693210327,
+            "width": 34.26561594651349,
+            "height": 10.500034596367787
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 86.98436402632704,
+            "top": 523.9999669001672,
+            "width": 122.28124751861294,
+            "height": 52.00002042330109
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 212.29685549827838,
+            "top": 527.2187284487958,
+            "width": 87.07813866963673,
+            "height": 45.125030216802145
+          },
+          "label": {
+            "left": 224.9687602721722,
+            "top": 563.7499575248156,
+            "width": 48.031220184841445,
+            "height": 10.500034596367787
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 209.26561154494,
+            "top": 523.9999669001672,
+            "width": 93.00001214834289,
+            "height": 52.00002042330109
+          }
+        },
+        {
+          "id": "cilantro",
+          "image": {
+            "left": 309.953116199604,
+            "top": 531.8437610424476,
+            "width": 77.01563456516944,
+            "height": 37.39057116050303
+          },
+          "label": {
+            "left": 320.87499407988366,
+            "top": 564.7500091112572,
+            "width": 44.2187532736703,
+            "height": 10.499971213709246
+          },
+          "labelClipped": false,
+          "labelHit": "cilantro",
+          "text": "Cilantro",
+          "control": {
+            "left": 302.296871343943,
+            "top": 523.9999669001672,
+            "width": 99.03122071303027,
+            "height": 52.00002042330109
+          }
+        },
+        {
+          "id": "onion",
+          "image": {
+            "left": 98.68749655576873,
+            "top": 581.4687064849439,
+            "width": 80.89062846899013,
+            "height": 42.781266269316085
+          },
+          "label": {
+            "left": 110.39842515221082,
+            "top": 618.4921652871842,
+            "width": 37.17186929721132,
+            "height": 11.015652523589354
+          },
+          "labelClipped": false,
+          "labelHit": "onion",
+          "text": "Onion",
+          "control": {
+            "left": 61.99999753511884,
+            "top": 575.9999873234683,
+            "width": 126.59374022300484,
+            "height": 55.999973238433064
+          }
+        },
+        {
+          "id": "chili-powder",
+          "image": {
+            "left": 194.81249560943044,
+            "top": 578.4218387062755,
+            "width": 87.5937565968583,
+            "height": 51.18751812347893
+          },
+          "label": {
+            "left": 193.66406521934715,
+            "top": 619.7499941459073,
+            "width": 66.6405905714422,
+            "height": 10.499971213709246
+          },
+          "labelClipped": false,
+          "labelHit": "chili-powder",
+          "text": "Chili Powder",
+          "control": {
+            "left": 188.60936158345376,
+            "top": 575.9999873234683,
+            "width": 98.17187862854716,
+            "height": 55.999973238433064
+          }
+        },
+        {
+          "id": "turkey-noodle",
+          "image": {
+            "left": 289.78123651467916,
+            "top": 577.4530981531526,
+            "width": 90.56250524887642,
+            "height": 51.890621954661334
+          },
+          "label": {
+            "left": 282.62498576090974,
+            "top": 621.382794812552,
+            "width": 84.71875089682061,
+            "height": 9.2343462879858
+          },
+          "labelClipped": false,
+          "labelHit": "turkey-noodle",
+          "text": "Spicy Fire Noodles",
+          "control": {
+            "left": 286.7812402120009,
+            "top": 575.9999873234683,
+            "width": 105.06252435170545,
+            "height": 55.999973238433064
+          }
+        },
+        {
+          "id": "cheese",
+          "image": {
+            "left": 72.71874984044297,
+            "top": 639.9843374408231,
+            "width": 82.85937307156061,
+            "height": 45.43750672340354
+          },
+          "label": {
+            "left": 80.0702984108383,
+            "top": 679.2265695879089,
+            "width": 43.82812594908929,
+            "height": 11.54686258481172
+          },
+          "labelClipped": false,
+          "labelHit": "cheese",
+          "text": "Cheese",
+          "control": {
+            "left": 36.15625726809826,
+            "top": 631.9999605619014,
+            "width": 130.90623292739676,
+            "height": 59.99998943622358
+          }
+        },
+        {
+          "id": "corn",
+          "image": {
+            "left": 163.37501388696444,
+            "top": 631.8437223086007,
+            "width": 108.85933574621725,
+            "height": 61.74998463850846
+          },
+          "label": {
+            "left": 189.19530257032528,
+            "top": 679.2265695879089,
+            "width": 31.578127841765898,
+            "height": 11.54686258481172
+          },
+          "labelClipped": false,
+          "labelHit": "corn",
+          "text": "Corn",
+          "control": {
+            "left": 167.0781140208251,
+            "top": 631.9999605619014,
+            "width": 101.60937373179664,
+            "height": 59.99998943622358
+          }
+        },
+        {
+          "id": "orleans",
+          "image": {
+            "left": 278.14059928655774,
+            "top": 637.3750001540551,
+            "width": 80.15627698714759,
+            "height": 51.890621954661334
+          },
+          "label": {
+            "left": 271.83592624160025,
+            "top": 679.7499835821309,
+            "width": 74.29686711843244,
+            "height": 10.499971213709246
+          },
+          "labelClipped": false,
+          "labelHit": "orleans",
+          "text": "Cajun Chicken",
+          "control": {
+            "left": 268.7031115779518,
+            "top": 631.9999605619014,
+            "width": 111.9531066922052,
+            "height": 59.99998943622358
+          }
+        },
+        {
+          "id": "bacon",
+          "image": {
+            "left": 50.78125112790322,
+            "top": 698.7968527693029,
+            "width": 81.50000519385675,
+            "height": 45.46875437406368
+          },
+          "label": {
+            "left": 58.5703143445344,
+            "top": 740.2265472279155,
+            "width": 38.82812154751578,
+            "height": 11.54686258481172
+          },
+          "labelClipped": false,
+          "labelHit": "bacon",
+          "text": "Bacon",
+          "control": {
+            "left": 10.328124980743116,
+            "top": 691.999949998125,
+            "width": 135.2187414774533,
+            "height": 64.62502202987542
+          }
+        },
+        {
+          "id": "tenderloin",
+          "image": {
+            "left": 156.15623614054542,
+            "top": 700.1406285130059,
+            "width": 83.6874833510482,
+            "height": 48.749947841353915
+          },
+          "label": {
+            "left": 158.07812511279033,
+            "top": 741.4921721536389,
+            "width": 59.812503532262745,
+            "height": 11.015589140930814
+          },
+          "labelClipped": false,
+          "labelHit": "tenderloin",
+          "text": "Tenderloin",
+          "control": {
+            "left": 145.5468664581964,
+            "top": 691.999949998125,
+            "width": 108.51561158895572,
+            "height": 64.62502202987542
+          }
+        },
+        {
+          "id": "enoki",
+          "image": {
+            "left": 251.54688371236458,
+            "top": 699.781248839085,
+            "width": 111.29684264568372,
+            "height": 51.67182501738181
+          },
+          "label": {
+            "left": 279.2968574349707,
+            "top": 742.2265236354815,
+            "width": 35.37500261893624,
+            "height": 11.54686258481172
+          },
+          "labelClipped": false,
+          "labelHit": "enoki",
+          "text": "Enoki",
+          "control": {
+            "left": 254.06247804715213,
+            "top": 691.999949998125,
+            "width": 115.406257312114,
+            "height": 64.62502202987542
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "width": 1440,
+      "height": 810,
+      "dpr": 1,
+      "screenshot": "ingredient-tray-1440x810.png",
+      "lang": "en",
+      "layout": "expanded-3x5",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 149.953125,
+            "top": 482.265625,
+            "width": 65.3125,
+            "height": 35.46875
+          },
+          "label": {
+            "left": 142.0390625,
+            "top": 511.734375,
+            "width": 71.890625,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 113.671875,
+            "top": 469.125,
+            "width": 116.265625,
+            "height": 54.859375
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 237.265625,
+            "top": 480.09375,
+            "width": 71.515625,
+            "height": 38.515625
+          },
+          "label": {
+            "left": 255.7734375,
+            "top": 512.734375,
+            "width": 24.421875,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 229.9375,
+            "top": 469.125,
+            "width": 88.703125,
+            "height": 54.859375
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 324.953125,
+            "top": 483,
+            "width": 74.703125,
+            "height": 35.25
+          },
+          "label": {
+            "left": 336.1640625,
+            "top": 513.734375,
+            "width": 47.640625,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 318.65625,
+            "top": 469.125,
+            "width": 94.734375,
+            "height": 54.859375
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 121.734375,
+            "top": 527.359375,
+            "width": 79.84375,
+            "height": 42.515625
+          },
+          "label": {
+            "left": 136.8515625,
+            "top": 562.75,
+            "width": 34.265625,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 86.984375,
+            "top": 524,
+            "width": 122.28125,
+            "height": 52
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 212.296875,
+            "top": 527.21875,
+            "width": 87.078125,
+            "height": 45.125
+          },
+          "label": {
+            "left": 224.96875,
+            "top": 563.75,
+            "width": 48.03125,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 209.265625,
+            "top": 524,
+            "width": 93,
+            "height": 52
+          }
+        },
+        {
+          "id": "cilantro",
+          "image": {
+            "left": 309.953125,
+            "top": 531.84375,
+            "width": 77.015625,
+            "height": 37.390625
+          },
+          "label": {
+            "left": 320.875,
+            "top": 564.75,
+            "width": 44.21875,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "cilantro",
+          "text": "Cilantro",
+          "control": {
+            "left": 302.296875,
+            "top": 524,
+            "width": 99.03125,
+            "height": 52
+          }
+        },
+        {
+          "id": "onion",
+          "image": {
+            "left": 98.6875,
+            "top": 581.46875,
+            "width": 80.890625,
+            "height": 42.78125
+          },
+          "label": {
+            "left": 110.3984375,
+            "top": 618.4921875,
+            "width": 37.171875,
+            "height": 11.015625
+          },
+          "labelClipped": false,
+          "labelHit": "onion",
+          "text": "Onion",
+          "control": {
+            "left": 62,
+            "top": 576,
+            "width": 126.59375,
+            "height": 56
+          }
+        },
+        {
+          "id": "chili-powder",
+          "image": {
+            "left": 194.8125,
+            "top": 578.421875,
+            "width": 87.59375,
+            "height": 51.1875
+          },
+          "label": {
+            "left": 193.6640625,
+            "top": 619.75,
+            "width": 66.640625,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "chili-powder",
+          "text": "Chili Powder",
+          "control": {
+            "left": 188.609375,
+            "top": 576,
+            "width": 98.171875,
+            "height": 56
+          }
+        },
+        {
+          "id": "turkey-noodle",
+          "image": {
+            "left": 289.78125,
+            "top": 577.453125,
+            "width": 90.5625,
+            "height": 51.890625
+          },
+          "label": {
+            "left": 282.625,
+            "top": 621.3828125,
+            "width": 84.71875,
+            "height": 9.234375
+          },
+          "labelClipped": false,
+          "labelHit": "turkey-noodle",
+          "text": "Spicy Fire Noodles",
+          "control": {
+            "left": 286.78125,
+            "top": 576,
+            "width": 105.0625,
+            "height": 56
+          }
+        },
+        {
+          "id": "cheese",
+          "image": {
+            "left": 72.71875,
+            "top": 639.984375,
+            "width": 82.859375,
+            "height": 45.4375
+          },
+          "label": {
+            "left": 80.0703125,
+            "top": 679.2265625,
+            "width": 43.828125,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "cheese",
+          "text": "Cheese",
+          "control": {
+            "left": 36.15625,
+            "top": 632,
+            "width": 130.90625,
+            "height": 60
+          }
+        },
+        {
+          "id": "corn",
+          "image": {
+            "left": 163.375,
+            "top": 631.84375,
+            "width": 108.859375,
+            "height": 61.75
+          },
+          "label": {
+            "left": 189.1953125,
+            "top": 679.2265625,
+            "width": 31.578125,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "corn",
+          "text": "Corn",
+          "control": {
+            "left": 167.078125,
+            "top": 632,
+            "width": 101.609375,
+            "height": 60
+          }
+        },
+        {
+          "id": "orleans",
+          "image": {
+            "left": 278.140625,
+            "top": 637.375,
+            "width": 80.15625,
+            "height": 51.890625
+          },
+          "label": {
+            "left": 271.8359375,
+            "top": 679.75,
+            "width": 74.296875,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "orleans",
+          "text": "Cajun Chicken",
+          "control": {
+            "left": 268.703125,
+            "top": 632,
+            "width": 111.953125,
+            "height": 60
+          }
+        },
+        {
+          "id": "bacon",
+          "image": {
+            "left": 50.78125,
+            "top": 698.796875,
+            "width": 81.5,
+            "height": 45.46875
+          },
+          "label": {
+            "left": 58.5703125,
+            "top": 740.2265625,
+            "width": 38.828125,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "bacon",
+          "text": "Bacon",
+          "control": {
+            "left": 10.328125,
+            "top": 692,
+            "width": 135.21875,
+            "height": 64.625
+          }
+        },
+        {
+          "id": "tenderloin",
+          "image": {
+            "left": 156.15625,
+            "top": 700.140625,
+            "width": 83.6875,
+            "height": 48.75
+          },
+          "label": {
+            "left": 158.078125,
+            "top": 741.4921875,
+            "width": 59.8125,
+            "height": 11.015625
+          },
+          "labelClipped": false,
+          "labelHit": "tenderloin",
+          "text": "Tenderloin",
+          "control": {
+            "left": 145.546875,
+            "top": 692,
+            "width": 108.515625,
+            "height": 64.625
+          }
+        },
+        {
+          "id": "enoki",
+          "image": {
+            "left": 251.546875,
+            "top": 699.78125,
+            "width": 111.296875,
+            "height": 51.671875
+          },
+          "label": {
+            "left": 279.296875,
+            "top": 742.2265625,
+            "width": 35.375,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "enoki",
+          "text": "Enoki",
+          "control": {
+            "left": 254.0625,
+            "top": 692,
+            "width": 115.40625,
+            "height": 64.625
+          }
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "width": 1440,
+      "height": 810,
+      "dpr": 3,
+      "screenshot": "ingredient-tray-closeup.png",
+      "lang": "en",
+      "layout": "expanded-3x5",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 149.953125,
+            "top": 482.265625,
+            "width": 65.3125,
+            "height": 35.46875
+          },
+          "label": {
+            "left": 142.0390625,
+            "top": 511.734375,
+            "width": 71.890625,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 113.671875,
+            "top": 469.125,
+            "width": 116.265625,
+            "height": 54.859375
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 237.265625,
+            "top": 480.09375,
+            "width": 71.515625,
+            "height": 38.515625
+          },
+          "label": {
+            "left": 255.7734375,
+            "top": 512.734375,
+            "width": 24.421875,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 229.9375,
+            "top": 469.125,
+            "width": 88.703125,
+            "height": 54.859375
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 324.953125,
+            "top": 483,
+            "width": 74.703125,
+            "height": 35.25
+          },
+          "label": {
+            "left": 336.1640625,
+            "top": 513.734375,
+            "width": 47.640625,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 318.65625,
+            "top": 469.125,
+            "width": 94.734375,
+            "height": 54.859375
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 121.734375,
+            "top": 527.359375,
+            "width": 79.84375,
+            "height": 42.515625
+          },
+          "label": {
+            "left": 136.8515625,
+            "top": 562.75,
+            "width": 34.265625,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 86.984375,
+            "top": 524,
+            "width": 122.28125,
+            "height": 52
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 212.296875,
+            "top": 527.21875,
+            "width": 87.078125,
+            "height": 45.125
+          },
+          "label": {
+            "left": 224.96875,
+            "top": 563.75,
+            "width": 48.03125,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 209.265625,
+            "top": 524,
+            "width": 93,
+            "height": 52
+          }
+        },
+        {
+          "id": "cilantro",
+          "image": {
+            "left": 309.953125,
+            "top": 531.84375,
+            "width": 77.015625,
+            "height": 37.390625
+          },
+          "label": {
+            "left": 320.875,
+            "top": 564.75,
+            "width": 44.21875,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "cilantro",
+          "text": "Cilantro",
+          "control": {
+            "left": 302.296875,
+            "top": 524,
+            "width": 99.03125,
+            "height": 52
+          }
+        },
+        {
+          "id": "onion",
+          "image": {
+            "left": 98.6875,
+            "top": 581.46875,
+            "width": 80.890625,
+            "height": 42.78125
+          },
+          "label": {
+            "left": 110.3984375,
+            "top": 618.4921875,
+            "width": 37.171875,
+            "height": 11.015625
+          },
+          "labelClipped": false,
+          "labelHit": "onion",
+          "text": "Onion",
+          "control": {
+            "left": 62,
+            "top": 576,
+            "width": 126.59375,
+            "height": 56
+          }
+        },
+        {
+          "id": "chili-powder",
+          "image": {
+            "left": 194.8125,
+            "top": 578.421875,
+            "width": 87.59375,
+            "height": 51.1875
+          },
+          "label": {
+            "left": 193.6640625,
+            "top": 619.75,
+            "width": 66.640625,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "chili-powder",
+          "text": "Chili Powder",
+          "control": {
+            "left": 188.609375,
+            "top": 576,
+            "width": 98.171875,
+            "height": 56
+          }
+        },
+        {
+          "id": "turkey-noodle",
+          "image": {
+            "left": 289.78125,
+            "top": 577.453125,
+            "width": 90.5625,
+            "height": 51.890625
+          },
+          "label": {
+            "left": 282.625,
+            "top": 621.3828125,
+            "width": 84.71875,
+            "height": 9.234375
+          },
+          "labelClipped": false,
+          "labelHit": "turkey-noodle",
+          "text": "Spicy Fire Noodles",
+          "control": {
+            "left": 286.78125,
+            "top": 576,
+            "width": 105.0625,
+            "height": 56
+          }
+        },
+        {
+          "id": "cheese",
+          "image": {
+            "left": 72.71875,
+            "top": 639.984375,
+            "width": 82.859375,
+            "height": 45.4375
+          },
+          "label": {
+            "left": 80.0703125,
+            "top": 679.2265625,
+            "width": 43.828125,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "cheese",
+          "text": "Cheese",
+          "control": {
+            "left": 36.15625,
+            "top": 632,
+            "width": 130.90625,
+            "height": 60
+          }
+        },
+        {
+          "id": "corn",
+          "image": {
+            "left": 163.375,
+            "top": 631.84375,
+            "width": 108.859375,
+            "height": 61.75
+          },
+          "label": {
+            "left": 189.1953125,
+            "top": 679.2265625,
+            "width": 31.578125,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "corn",
+          "text": "Corn",
+          "control": {
+            "left": 167.078125,
+            "top": 632,
+            "width": 101.609375,
+            "height": 60
+          }
+        },
+        {
+          "id": "orleans",
+          "image": {
+            "left": 278.140625,
+            "top": 637.375,
+            "width": 80.15625,
+            "height": 51.890625
+          },
+          "label": {
+            "left": 271.8359375,
+            "top": 679.75,
+            "width": 74.296875,
+            "height": 10.5
+          },
+          "labelClipped": false,
+          "labelHit": "orleans",
+          "text": "Cajun Chicken",
+          "control": {
+            "left": 268.703125,
+            "top": 632,
+            "width": 111.953125,
+            "height": 60
+          }
+        },
+        {
+          "id": "bacon",
+          "image": {
+            "left": 50.78125,
+            "top": 698.796875,
+            "width": 81.5,
+            "height": 45.46875
+          },
+          "label": {
+            "left": 58.5703125,
+            "top": 740.2265625,
+            "width": 38.828125,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "bacon",
+          "text": "Bacon",
+          "control": {
+            "left": 10.328125,
+            "top": 692,
+            "width": 135.21875,
+            "height": 64.625
+          }
+        },
+        {
+          "id": "tenderloin",
+          "image": {
+            "left": 156.15625,
+            "top": 700.140625,
+            "width": 83.6875,
+            "height": 48.75
+          },
+          "label": {
+            "left": 158.078125,
+            "top": 741.4921875,
+            "width": 59.8125,
+            "height": 11.015625
+          },
+          "labelClipped": false,
+          "labelHit": "tenderloin",
+          "text": "Tenderloin",
+          "control": {
+            "left": 145.546875,
+            "top": 692,
+            "width": 108.515625,
+            "height": 64.625
+          }
+        },
+        {
+          "id": "enoki",
+          "image": {
+            "left": 251.546875,
+            "top": 699.78125,
+            "width": 111.296875,
+            "height": 51.671875
+          },
+          "label": {
+            "left": 279.296875,
+            "top": 742.2265625,
+            "width": 35.375,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "enoki",
+          "text": "Enoki",
+          "control": {
+            "left": 254.0625,
+            "top": 692,
+            "width": 115.40625,
+            "height": 64.625
+          }
+        }
+      ]
+    },
+    {
+      "day": 1,
+      "width": 1440,
+      "height": 810,
+      "dpr": 3,
+      "screenshot": "ingredient-tray-day1-closeup.png",
+      "lang": "en",
+      "layout": "approved-2x3",
+      "overflow": false,
+      "rackPlate": {
+        "loaded": true,
+        "zIndex": "5"
+      },
+      "ingredients": [
+        {
+          "id": "noodle",
+          "image": {
+            "left": 126.390625,
+            "top": 486.046875,
+            "width": 115.875,
+            "height": 53.96875
+          },
+          "label": {
+            "left": 136.7578125,
+            "top": 531.2265625,
+            "width": 78.484375,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "noodle",
+          "text": "Noodle Sheet",
+          "control": {
+            "left": 98,
+            "top": 466,
+            "width": 151,
+            "height": 76
+          }
+        },
+        {
+          "id": "egg",
+          "image": {
+            "left": 261.578125,
+            "top": 483.984375,
+            "width": 125.484375,
+            "height": 56.171875
+          },
+          "label": {
+            "left": 305.875,
+            "top": 531.2265625,
+            "width": 26.25,
+            "height": 11.546875
+          },
+          "labelClipped": false,
+          "labelHit": "egg",
+          "text": "Egg",
+          "control": {
+            "left": 249,
+            "top": 466,
+            "width": 164,
+            "height": 76
+          }
+        },
+        {
+          "id": "hot-dog",
+          "image": {
+            "left": 78.703125,
+            "top": 563.28125,
+            "width": 138.40625,
+            "height": 58.25
+          },
+          "label": {
+            "left": 114.0546875,
+            "top": 614.96875,
+            "width": 53.890625,
+            "height": 12.0625
+          },
+          "labelClipped": false,
+          "labelHit": "hot-dog",
+          "text": "Hot Dog",
+          "control": {
+            "left": 50,
+            "top": 542,
+            "width": 179,
+            "height": 86
+          }
+        },
+        {
+          "id": "sauce",
+          "image": {
+            "left": 236.703125,
+            "top": 562.359375,
+            "width": 131.515625,
+            "height": 62.15625
+          },
+          "label": {
+            "left": 274.75,
+            "top": 615.96875,
+            "width": 38.5,
+            "height": 12.0625
+          },
+          "labelClipped": false,
+          "labelHit": "sauce",
+          "text": "Sauce",
+          "control": {
+            "left": 229,
+            "top": 542,
+            "width": 168,
+            "height": 86
+          }
+        },
+        {
+          "id": "scallion",
+          "image": {
+            "left": 42.859375,
+            "top": 631.578125,
+            "width": 147.78125,
+            "height": 64.203125
+          },
+          "label": {
+            "left": 77.78125,
+            "top": 683.703125,
+            "width": 56.4375,
+            "height": 12.59375
+          },
+          "labelClipped": false,
+          "labelHit": "scallion",
+          "text": "Scallions",
+          "control": {
+            "left": 15,
+            "top": 628,
+            "width": 185,
+            "height": 100
+          }
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
