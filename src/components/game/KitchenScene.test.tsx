@@ -72,6 +72,19 @@ describe('KitchenScene', () => {
     const rack = container.querySelector<HTMLElement>('.kitchen-scene')!
     expect(rack.style.getPropertyValue('--ingredient-rack-columns')).toBe('2')
     expect(rack.style.getPropertyValue('--ingredient-rack-left')).toBe('80px')
+    const controls = [...container.querySelectorAll<HTMLElement>('[data-ingredient-id]')].map((ingredient) => ({
+      left: ingredient.style.getPropertyValue('--ingredient-rack-control-left'),
+      top: ingredient.style.getPropertyValue('--ingredient-rack-control-top'),
+      width: ingredient.style.getPropertyValue('--ingredient-rack-control-width'),
+      height: ingredient.style.getPropertyValue('--ingredient-rack-control-height'),
+    }))
+    expect(controls).toEqual([
+      { left: '80px', top: '466px', width: '150px', height: '70px' },
+      { left: '235px', top: '466px', width: '150px', height: '70px' },
+      { left: '80px', top: '541px', width: '150px', height: '70px' },
+      { left: '235px', top: '541px', width: '150px', height: '70px' },
+      { left: '80px', top: '616px', width: '150px', height: '70px' },
+    ])
     expect(container.querySelectorAll('.griddle-slot[data-griddle-hitbox]')).toHaveLength(2)
     expect(container.querySelector('.griddle-slot--left')?.getAttribute('data-griddle-hitbox')).toBe('left')
     expect(container.querySelector('.griddle-slot--right')?.getAttribute('data-griddle-hitbox')).toBe('right')

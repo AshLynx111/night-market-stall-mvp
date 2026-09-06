@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
-import { KITCHEN_GRIDDLE_RECTS, KITCHEN_RACK_LAYOUTS, rackInnerPolygons, rackRectangles } from '../landscape/kitchen/sceneGeometry'
+import { KITCHEN_GRIDDLE_RECTS, KITCHEN_GRIDDLE_USABLE_RECTS, KITCHEN_RACK_LAYOUTS, rackInnerPolygons, rackRectangles } from '../landscape/kitchen/sceneGeometry'
 
 const landscapeCss = readFileSync('src/landscape.css', 'utf8')
 const kitchenCss = readFileSync('src/styles/kitchen.css', 'utf8')
@@ -21,7 +21,7 @@ describe('logical kitchen layout CSS', () => {
     expect(rackRectangles('approved-2x3')).toHaveLength(6)
   })
 
-  it('centers food, hit targets, and tutorial paths from the same griddle custom properties', () => {
+  it('keeps interaction layers on hitboxes while centering food on each painted cooking surface', () => {
     const leftGeometry = kitchenCss.match(/\.griddle-slot--left,\s*\.cooking-gesture-target--left,\s*\.tutorial-gesture-cue--left\s*\{[^}]+\}/s)?.[0] ?? ''
     const rightGeometry = kitchenCss.match(/\.griddle-slot--right,\s*\.cooking-gesture-target--right,\s*\.tutorial-gesture-cue--right\s*\{[^}]+\}/s)?.[0] ?? ''
     const food = kitchenCss.match(/\.griddle-slot__food\s*\{[^}]+\}/s)?.[0] ?? ''
@@ -33,13 +33,48 @@ describe('logical kitchen layout CSS', () => {
       expect(geometry).toContain('width: var(--griddle-')
       expect(geometry).toContain('height: var(--griddle-')
     }
-    expect(food).toMatch(/left:\s*50%/)
-    expect(food).toMatch(/top:\s*50%/)
-    expect(food).toMatch(/width:\s*calc\(100% - \d+px\)/)
-    expect(food).toMatch(/height:\s*calc\(100% - \d+px\)/)
+    expect(food).toContain('left: var(--griddle-usable-local-center-x)')
+    expect(food).toContain('top: var(--griddle-usable-local-center-y)')
+    expect(food).toContain('width: var(--griddle-usable-width)')
+    expect(food).toContain('height: var(--griddle-usable-height)')
     expect(food).toContain('transform: translate(-50%, -50%)')
+    expect(kitchenCss).toMatch(/\.griddle-slot--left\s*\{[^}]*--griddle-usable-local-center-x:\s*var\(--griddle-left-usable-local-center-x\)/s)
+    expect(kitchenCss).toMatch(/\.griddle-slot--right\s*\{[^}]*--griddle-usable-local-center-x:\s*var\(--griddle-right-usable-local-center-x\)/s)
+    expect(KITCHEN_GRIDDLE_USABLE_RECTS.left).not.toEqual(KITCHEN_GRIDDLE_RECTS.left)
+    expect(KITCHEN_GRIDDLE_USABLE_RECTS.right).not.toEqual(KITCHEN_GRIDDLE_RECTS.right)
     expect(stageArt).toContain('object-fit: contain')
     expect(stageArt).toContain('object-position: 50% 50%')
+  })
+
+  it('layers each ingredient below the well edge with a grounded shadow and lip label', () => {
+    const viewport = kitchenCss.match(/\.table-ingredient__viewport\s*\{[^}]+\}/s)?.[0] ?? ''
+    const contact = kitchenCss.match(/\.table-ingredient__viewport::before\s*\{[^}]+\}/s)?.[0] ?? ''
+    const insetEdge = kitchenCss.match(/\.table-ingredient__viewport::after\s*\{[^}]+\}/s)?.[0] ?? ''
+    const art = kitchenCss.match(/\.table-ingredient__food-art\s*\{[^}]+\}/s)?.[0] ?? ''
+    const label = kitchenCss.match(/\.table-ingredient__label\s*\{[^}]+\}/s)?.[0] ?? ''
+
+    expect(viewport).toContain('isolation: isolate')
+    expect(contact).toContain('z-index: 0')
+    expect(contact).toContain('radial-gradient')
+    expect(insetEdge).toContain('z-index: 2')
+    expect(insetEdge).toContain('inset: 0')
+    expect(art).toContain('width: var(--ingredient-art-width)')
+    expect(art).toContain('left: var(--ingredient-art-center-x)')
+    expect(art).toContain('top: var(--ingredient-art-center-y)')
+    expect(art).toContain('scaleY(var(--ingredient-art-perspective-y))')
+    expect(label).toContain('left: var(--ingredient-rack-label-left)')
+    expect(label).toContain('top: var(--ingredient-rack-label-top)')
+    expect(label).not.toContain('bottom:')
+  })
+
+  it('preserves ingredient hover and active motion with the perspective transform', () => {
+    const hover = kitchenCss.match(/\.table-ingredient:not\(:disabled\):hover \.table-ingredient__food-art\s*\{[^}]+\}/s)?.[0] ?? ''
+    const activeSelected = kitchenCss.match(/\.table-ingredient:not\(:disabled\):active \.table-ingredient__food-art\s*,\s*\.table-ingredient\.is-selected \.table-ingredient__food-art\s*\{[^}]+\}/s)?.[0] ?? ''
+
+    expect(hover).toContain('transform: translate(-50%, -53%) scale(1.05) scaleY(var(--ingredient-art-perspective-y))')
+    expect(hover).toContain('filter: saturate(1.18) brightness(1.1) drop-shadow(0 4px 2px rgb(45 23 12 / .34))')
+    expect(activeSelected).toContain('transform: translate(-50%, -48%) scale(.96) scaleY(var(--ingredient-art-perspective-y))')
+    expect(activeSelected).not.toContain('filter:')
   })
 
   it('keeps the gameplay HUD on the logical scene scale while counter-scaling non-HUD overlays', () => {

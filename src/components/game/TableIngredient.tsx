@@ -41,7 +41,7 @@ export function TableIngredient({ id, label, art, rackIndex, rackLayout, painted
   const rackColumns = KITCHEN_RACK_LAYOUTS[rackLayout].columns
   const rackColumn = rackIndex % rackColumns
   const rackRow = Math.floor(rackIndex / rackColumns)
-  const rackStyle = ingredientRackCellStyle(rackLayout, rackIndex) as CSSProperties
+  const rackStyle = ingredientRackCellStyle(rackLayout, rackIndex, id) as CSSProperties
   const innerMaskPolygon = JSON.stringify(rackInnerPolygons(rackLayout)[rackIndex])
   const controlPolygon = JSON.stringify((() => {
     const control = rackRectangles(rackLayout)[rackIndex]

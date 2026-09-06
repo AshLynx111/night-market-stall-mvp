@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import type { IngredientId } from '../campaign'
 import type { SlotId } from './types'
 
 export interface Rect {
@@ -31,6 +32,15 @@ export interface RackCellGeometry {
   inner: readonly Point[]
 }
 
+export interface IngredientArtPlacement {
+  width: number
+  perspectiveY: number
+  centerX: number
+  centerY: number
+  contactWidth: number
+  contactHeight: number
+}
+
 export type RackLayout = 'approved-2x3' | 'expanded-3x5'
 
 export interface RackRectangle extends Rect {
@@ -43,7 +53,34 @@ export const KITCHEN_GRIDDLE_RECTS: Record<SlotId, Rect> = {
   right: { left: 760, top: 559, width: 269, height: 218 },
 }
 
-// These values preserve the approved background-aligned rack controls exactly.
+// Measured from the dark cooking planes in the approved 1440×810 kitchen plate.
+// Interaction hitboxes above intentionally stay unchanged.
+export const KITCHEN_GRIDDLE_USABLE_RECTS: Record<SlotId, Rect> = {
+  left: { left: 500, top: 510, width: 310, height: 190 },
+  right: { left: 850, top: 510, width: 310, height: 190 },
+}
+
+// Each source is a 512×512 transparent image with different painted bounds.
+// These profiles normalize the painted food footprint to the perspective floor.
+export const INGREDIENT_ART_PLACEMENTS: Record<IngredientId, IngredientArtPlacement> = {
+  noodle: { width: 90, perspectiveY: .62, centerX: 50, centerY: 51, contactWidth: 76, contactHeight: 24 },
+  egg: { width: 96, perspectiveY: .68, centerX: 49.5, centerY: 52, contactWidth: 70, contactHeight: 24 },
+  'hot-dog': { width: 96, perspectiveY: .64, centerX: 48, centerY: 51, contactWidth: 72, contactHeight: 22 },
+  sauce: { width: 96, perspectiveY: .62, centerX: 50, centerY: 51, contactWidth: 78, contactHeight: 22 },
+  scallion: { width: 100, perspectiveY: .68, centerX: 50, centerY: 52, contactWidth: 70, contactHeight: 24 },
+  cilantro: { width: 92, perspectiveY: .68, centerX: 50, centerY: 51, contactWidth: 70, contactHeight: 23 },
+  onion: { width: 94, perspectiveY: .66, centerX: 50, centerY: 51, contactWidth: 72, contactHeight: 23 },
+  'chili-powder': { width: 98, perspectiveY: .65, centerX: 49.5, centerY: 51, contactWidth: 72, contactHeight: 22 },
+  'turkey-noodle': { width: 98, perspectiveY: .64, centerX: 49, centerY: 51, contactWidth: 74, contactHeight: 22 },
+  cheese: { width: 94, perspectiveY: .65, centerX: 48.5, centerY: 51, contactWidth: 72, contactHeight: 22 },
+  corn: { width: 104, perspectiveY: .7, centerX: 50, centerY: 52, contactWidth: 68, contactHeight: 24 },
+  orleans: { width: 92, perspectiveY: .62, centerX: 50, centerY: 51, contactWidth: 76, contactHeight: 22 },
+  bacon: { width: 90, perspectiveY: .62, centerX: 49, centerY: 50, contactWidth: 76, contactHeight: 22 },
+  tenderloin: { width: 92, perspectiveY: .64, centerX: 50, centerY: 51, contactWidth: 76, contactHeight: 22 },
+  enoki: { width: 104, perspectiveY: .72, centerX: 49.5, centerY: 53, contactWidth: 68, contactHeight: 24 },
+}
+
+// Each layout follows the metal wells painted into its approved kitchen plate.
 export const KITCHEN_RACK_LAYOUTS: Record<RackLayout, RackGeometry> = {
   'approved-2x3': {
     columns: 2,
@@ -66,6 +103,14 @@ export const KITCHEN_RACK_LAYOUTS: Record<RackLayout, RackGeometry> = {
         { x: .01, y: .94 },
       ],
     },
+    cells: [
+      { control: { left: 80, top: 466, width: 150, height: 70 }, inner: [{ x: 112, y: 488 }, { x: 232, y: 488 }, { x: 216, y: 531 }, { x: 100, y: 531 }] },
+      { control: { left: 235, top: 466, width: 150, height: 70 }, inner: [{ x: 266, y: 488 }, { x: 387, y: 488 }, { x: 372, y: 532 }, { x: 252, y: 532 }] },
+      { control: { left: 80, top: 541, width: 150, height: 70 }, inner: [{ x: 88, y: 562 }, { x: 220, y: 562 }, { x: 193, y: 607 }, { x: 67, y: 607 }] },
+      { control: { left: 235, top: 541, width: 150, height: 70 }, inner: [{ x: 248, y: 562 }, { x: 381, y: 562 }, { x: 359, y: 608 }, { x: 234, y: 608 }] },
+      { control: { left: 80, top: 616, width: 150, height: 70 }, inner: [{ x: 48, y: 637 }, { x: 200, y: 637 }, { x: 174, y: 687 }, { x: 25, y: 687 }] },
+      { control: { left: 235, top: 616, width: 150, height: 70 }, inner: [{ x: 228, y: 637 }, { x: 369, y: 637 }, { x: 344, y: 690 }, { x: 214, y: 690 }] },
+    ],
   },
   'expanded-3x5': {
     columns: 3,
@@ -170,7 +215,7 @@ export function rackInnerPolygons(layout: RackLayout): Point[][] {
   return rackRectangles(layout).map((control) => translatedInnerPolygon(control, rack.inner))
 }
 
-export function ingredientRackCellStyle(layout: RackLayout, index: number): CSSProperties {
+export function ingredientRackCellStyle(layout: RackLayout, index: number, ingredientId: IngredientId): CSSProperties {
   const control = rackRectangles(layout)[index]
   const polygon = rackInnerPolygons(layout)[index]
   if (!control || !polygon) throw new Error(`Missing ${layout} rack cell ${index}`)
@@ -181,6 +226,8 @@ export function ingredientRackCellStyle(layout: RackLayout, index: number): CSSP
   const width = right - left
   const height = bottom - top
   const localClip = polygon.map((point) => ({ x: (point.x - left) / width, y: (point.y - top) / height }))
+  const visualCenterX = polygon.reduce((sum, point) => sum + point.x, 0) / polygon.length
+  const placement = INGREDIENT_ART_PLACEMENTS[ingredientId]
 
   return {
     '--ingredient-rack-control-left': `${control.left}px`,
@@ -192,6 +239,14 @@ export function ingredientRackCellStyle(layout: RackLayout, index: number): CSSP
     '--ingredient-rack-inner-width': `${width}px`,
     '--ingredient-rack-inner-height': `${height}px`,
     '--ingredient-rack-inner-clip': clipPath(localClip),
+    '--ingredient-rack-label-left': `${visualCenterX - control.left}px`,
+    '--ingredient-rack-label-top': `${bottom - control.top - 10}px`,
+    '--ingredient-art-width': `${placement.width}%`,
+    '--ingredient-art-perspective-y': String(placement.perspectiveY),
+    '--ingredient-art-center-x': `${placement.centerX}%`,
+    '--ingredient-art-center-y': `${placement.centerY}%`,
+    '--ingredient-contact-width': `${placement.contactWidth}%`,
+    '--ingredient-contact-height': `${placement.contactHeight}%`,
   } as CSSProperties
 }
 
@@ -214,9 +269,22 @@ export function kitchenGeometryStyle(layout: RackLayout): CSSProperties {
     [`--griddle-${slotId}-width`, pixel(rect.width)],
     [`--griddle-${slotId}-height`, pixel(rect.height)],
   ])
+  const usableVariables = Object.entries(KITCHEN_GRIDDLE_USABLE_RECTS).flatMap(([slotId, rect]) => {
+    const control = KITCHEN_GRIDDLE_RECTS[slotId as SlotId]
+    const center = rectCenter(rect)
+    return [
+      [`--griddle-${slotId}-usable-left`, pixel(rect.left)],
+      [`--griddle-${slotId}-usable-top`, pixel(rect.top)],
+      [`--griddle-${slotId}-usable-width`, pixel(rect.width)],
+      [`--griddle-${slotId}-usable-height`, pixel(rect.height)],
+      [`--griddle-${slotId}-usable-local-center-x`, pixel(center.x - control.left)],
+      [`--griddle-${slotId}-usable-local-center-y`, pixel(center.y - control.top)],
+    ]
+  })
 
   return {
     ...Object.fromEntries(griddleVariables),
+    ...Object.fromEntries(usableVariables),
     '--ingredient-rack-columns': String(rack.columns),
     '--ingredient-rack-rows': String(rack.rows),
     '--ingredient-rack-left': pixel(rack.left),
