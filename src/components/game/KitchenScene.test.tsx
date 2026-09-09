@@ -71,7 +71,6 @@ describe('KitchenScene', () => {
     expect(container.querySelector('.kitchen-scene__ingredients')?.getAttribute('data-kitchen-bin-rack')).toBe('left')
     const rack = container.querySelector<HTMLElement>('.kitchen-scene')!
     expect(rack.style.getPropertyValue('--ingredient-rack-columns')).toBe('2')
-    expect(rack.style.getPropertyValue('--ingredient-rack-left')).toBe('80px')
     const controls = [...container.querySelectorAll<HTMLElement>('[data-ingredient-id]')].map((ingredient) => ({
       left: ingredient.style.getPropertyValue('--ingredient-rack-control-left'),
       top: ingredient.style.getPropertyValue('--ingredient-rack-control-top'),

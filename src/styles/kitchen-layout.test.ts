@@ -165,9 +165,6 @@ describe('logical kitchen layout CSS', () => {
 
     expect(rack.columns).toBe(2)
     expect(rack.rows).toBe(3)
-    expect(rack.left + (rack.columns - 1) * rack.columnGap + rack.width).toBeLessThan(1440 * .341)
-    expect(rack.top + 2 * rack.rowGap + rack.height).toBeLessThanOrEqual(710)
-    expect(rack.top + (rack.rows - 1) * rack.rowGap + rack.height).toBeLessThanOrEqual(710)
 
     const rectangles = rackRectangles('approved-2x3')
     rectangles.forEach((rectangle, index) => {

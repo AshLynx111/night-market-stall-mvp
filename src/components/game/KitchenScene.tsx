@@ -24,8 +24,7 @@ import { CustomerLane } from './CustomerLane'
 import { GriddleSlot } from './GriddleSlot'
 import { ServingTray } from './ServingTray'
 import { TableIngredient } from './TableIngredient'
-import sixWellPlate from '../../assets/runtime/main-ui/kitchen-screen-live-clean.webp'
-import expandedWellPlate from '../../assets/runtime/main-ui/kitchen-screen-live-expanded-clean.webp'
+import { resolveIngredientRack } from '../../landscape/kitchen/ingredientRack'
 import { TutorialOverlay } from './TutorialOverlay'
 import { useI18n } from '../../i18n/I18nProvider'
 import type { KitchenInteractionIntent } from '../../analytics/gameplayObserver'
@@ -201,9 +200,8 @@ export function KitchenScene({ state, dispatch, soundEnabled = true, onTelemetry
   }
 
   const sauceExpected = state.slots.some((slot) => slotExpectedAction(state, slot.id)?.id === 'sauce')
-  const unlockedIngredients = availableIngredients(state.day)
-  const rackColumns = unlockedIngredients.length <= 6 ? 2 : 3
-  const rackLayout = rackColumns === 2 ? 'approved-2x3' : 'expanded-3x5'
+  const rack = resolveIngredientRack(availableIngredients(state.day))
+  const rackLayout = rack.layout
   const guidedStep = tutorialStep(state)
   const guided = guidedStep !== 'done'
   const sauceEnabled = sauceExpected && (!guided || guidedStep === 'sauce')
@@ -277,18 +275,18 @@ export function KitchenScene({ state, dispatch, soundEnabled = true, onTelemetry
       >
         <img
           className="kitchen-scene__ingredient-rack-plate"
-          src={rackLayout === 'expanded-3x5' ? expandedWellPlate : sixWellPlate}
+          src={rack.plate}
           alt=""
           aria-hidden="true"
           draggable={false}
         />
-        {unlockedIngredients.map((id) => (
+        {rack.slots.map(({ id, rackIndex }) => (
           <TableIngredient
             key={id}
             id={id}
             label={domain.ingredientText(id)}
             art={ingredientFoodArt(id)}
-            rackIndex={unlockedIngredients.indexOf(id)}
+            rackIndex={rackIndex}
             rackLayout={rackLayout}
             painted={id === 'sauce' && sauceBrushSelected}
             disabled={id === 'sauce' ? guided && guidedStep !== 'sauce' : guided && !tutorialAllowsIngredient(state, id, 'left')}

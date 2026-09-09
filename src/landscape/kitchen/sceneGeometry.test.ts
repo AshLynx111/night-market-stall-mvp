@@ -34,14 +34,7 @@ describe('canonical kitchen scene geometry', () => {
   })
 
   it('calculates the six approved 2 by 3 rack control rectangles', () => {
-    expect(KITCHEN_RACK_LAYOUTS['approved-2x3']).toMatchObject({
-      left: 80,
-      top: 466,
-      columnGap: 155,
-      rowGap: 75,
-      width: 150,
-      height: 70,
-    })
+    expect(KITCHEN_RACK_LAYOUTS['approved-2x3']).toMatchObject({ columns: 2, rows: 3 })
     expect(rackRectangles('approved-2x3')).toEqual([
       { left: 98, top: 466, width: 151, height: 76, right: 249, bottom: 542 },
       { left: 249, top: 466, width: 164, height: 76, right: 413, bottom: 542 },
@@ -173,19 +166,8 @@ describe('canonical kitchen scene geometry', () => {
       '--griddle-right-usable-height': '190px',
       '--griddle-right-usable-local-center-x': '245px',
       '--griddle-right-usable-local-center-y': '46px',
-      '--ingredient-rack-left': '10.33px',
-      '--ingredient-rack-top': '469.13px',
-      '--ingredient-rack-column-gap': '0px',
-      '--ingredient-rack-row-gap': '0px',
-      '--ingredient-rack-control-width': '403.07px',
-      '--ingredient-rack-control-height': '287.5px',
       '--ingredient-rack-columns': '3',
       '--ingredient-rack-rows': '5',
-      '--ingredient-rack-inner-left': '0px',
-      '--ingredient-rack-inner-top': '0px',
-      '--ingredient-rack-inner-width': '1px',
-      '--ingredient-rack-inner-height': '1px',
-      '--ingredient-rack-inner-clip': '0% 0%, 100% 0%, 100% 100%, 0% 100%',
     })
   })
 

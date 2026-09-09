@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import homeScreen from '../assets/runtime/main-ui/home-screen-user-final.webp'
 import daySelectScreen from '../assets/runtime/main-ui/day-select-user-final.webp'
 import cleanKitchenScreen from '../assets/runtime/main-ui/night-market-clean-background.webp'
-import expandedLiveKitchenScreen from '../assets/runtime/main-ui/kitchen-screen-live-expanded-clean.webp'
+import { resolveIngredientRack } from '../landscape/kitchen/ingredientRack'
 import summaryScreen from '../assets/runtime/main-ui/summary-screen-user-final.webp'
 import settingsScreen from '../assets/runtime/main-ui/settings-screen-user-final.webp'
 import settingsSliderCleanPatch from '../assets/runtime/main-ui/settings-slider-clean-patch.webp'
@@ -137,9 +137,8 @@ function KitchenDaySession({ day, dayRunId, save, paused, backgroundInert, event
     ? { id: 1, income: 9, quality: 96 }
     : null)
   const { viewportRef, sceneScale, sceneInverseScale } = useGameplayViewport()
-  const expandedRack = availableIngredients(day.day).length > 6
+  const rack = resolveIngredientRack(availableIngredients(day.day))
   const kitchenScreen = cleanKitchenScreen
-  const rackBackground = expandedRack ? 'expanded-3x5' : 'approved-2x3'
 
   const elapsedSinceTutorialStart = () => Math.max(0, performance.now() - (tutorialStartedAt.current ?? performance.now()))
 
@@ -399,13 +398,13 @@ function KitchenDaySession({ day, dayRunId, save, paused, backgroundInert, event
           fetchPriority="high"
           aria-hidden="true"
           data-kitchen-live-plate
-          data-kitchen-rack-background={rackBackground}
+          data-kitchen-rack-background={rack.layout}
           data-kitchen-source="night-market-clean-background.png"
         />
-        {expandedRack && (
+        {rack.layout === 'expanded-3x5' && (
           <img
             className="game-screen__background game-screen__background--expanded-rack"
-            src={expandedLiveKitchenScreen}
+            src={rack.plate}
             alt=""
             aria-hidden="true"
             data-kitchen-expanded-rack-overlay

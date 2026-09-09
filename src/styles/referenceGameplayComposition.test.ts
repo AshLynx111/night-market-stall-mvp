@@ -68,7 +68,7 @@ describe('reference-master gameplay composition', () => {
     expect(landscapeSource).toContain('src={homeScreen}')
     expect(landscapeSource).toContain("'--home-bg': `url(${daySelectScreen})`")
     expect(landscapeSource).toContain('src={kitchenScreen}')
-    expect(landscapeSource).toContain('expandedLiveKitchenScreen')
+    expect(landscapeSource).toContain('src={rack.plate}')
     expect(landscapeSource).toContain("'--home-bg': `url(${summaryScreen})`")
     expect(landscapeSource).toContain('className="settings-screen__art"')
     expect(landscapeSource).toContain('src={settingsScreen}')
