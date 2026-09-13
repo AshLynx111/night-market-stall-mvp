@@ -1,0 +1,151 @@
+{
+  "sourceCommit": "3d5d88ef9b2a6956048bcc463a9bd1f2f7440466",
+  "cases": [
+    {
+      "name": "fresh-root-performance-keyboard",
+      "status": "PASS"
+    },
+    {
+      "name": "production-flags-?playtest=1",
+      "status": "PASS"
+    },
+    {
+      "name": "production-flags-?debug=1",
+      "status": "PASS"
+    },
+    {
+      "name": "production-flags-?qa=1",
+      "status": "PASS"
+    },
+    {
+      "name": "production-flags-?playtest=1&debug=1&qa=1&pid=rc",
+      "status": "PASS"
+    },
+    {
+      "name": "storage-getItem",
+      "status": "PASS"
+    },
+    {
+      "name": "storage-setItem",
+      "status": "PASS"
+    },
+    {
+      "name": "storage-session-unavailable",
+      "status": "PASS"
+    },
+    {
+      "name": "storage-all",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-init-reject",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-break-reject",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-no-ad",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-missing",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-delayed",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-1440x810",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-1280x720",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-1031x580",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-836x470",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-640x360",
+      "status": "PASS"
+    },
+    {
+      "name": "touch-844x390",
+      "status": "PASS"
+    },
+    {
+      "name": "touch-836x470",
+      "status": "PASS"
+    },
+    {
+      "name": "touch-640x360",
+      "status": "PASS"
+    },
+    {
+      "name": "ad-lock-active-cooking-touch-audio",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-1",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-2",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-3",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-4",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-5",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-6",
+      "status": "PASS"
+    },
+    {
+      "name": "returning-save-settings-select-rotate",
+      "status": "PASS"
+    },
+    {
+      "name": "all-production-assets-http",
+      "status": "PASS"
+    },
+    {
+      "name": "standalone-isolation",
+      "status": "PASS"
+    },
+    {
+      "name": "ad-ready-serve-lock",
+      "status": "PASS"
+    }
+  ],
+  "finalIdentityRunComplete": true,
+  "zipSmoke": "PASS",
+  "severity": {
+    "P0": [
+      "Official SDK partner-network classification pending"
+    ],
+    "P1": [
+      "Summary message text-surface overflow"
+    ],
+    "P2": [
+      "Initial static HTML Chinese metadata"
+    ]
+  },
+  "status": "NOT READY"
+}

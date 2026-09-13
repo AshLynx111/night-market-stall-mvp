@@ -1,0 +1,440 @@
+{
+  "environment": "Windows Edge Chromium, production files, network-injected SDK mock; NOT live Inspector or physical Safari",
+  "cases": [
+    {
+      "name": "returning-save-settings-select-rotate",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "coins": 360,
+          "fireLevel": 1,
+          "signLevel": 1,
+          "bestStars": {
+            "1": 3,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3
+          },
+          "maxUnlockedDay": 6
+        },
+        "after": {
+          "coins": 360,
+          "fireLevel": 1,
+          "signLevel": 1,
+          "bestStars": {
+            "1": 3,
+            "2": 3,
+            "3": 3,
+            "4": 3,
+            "5": 3
+          },
+          "maxUnlockedDay": 6
+        },
+        "daySelectButtons": [
+          "BackBack to Main Menu",
+          "Full MenuView the full menu",
+          "DAY 1Opening NightThe campus night market is open. Nail the classic recipe first.Goal: Finish the tutorial and serve 3 orders★★★",
+          "DAY 2Big Eater ChallengeDouble-stack orders are pouring in.Goal: Handle double-wrap, double-egg orders★★★",
+          "DAY 3Aroma Goes ViralThe smell of Cajun chicken is drawing a crowd.Goal: Reach 75% average satisfaction★★★",
+          "DAY 4Night Market RushThe line is growing, and Cajun chicken with bacon joins the menu.Goal: Serve Cajun chicken during the rush★★★",
+          "DAY 5Surprise GuestNew toppings arrive—and so does a celebrity traveler.Goal: Serve the celebrity and handle new add-ons★★★",
+          "DAY 6Celebrity SpecialOne travel post has everyone ordering the celebrity special.Goal: Keep up with the final rush☆☆☆Celebrity special rush",
+          "Upgrade Heat Lv.2Patience +3s · ¥80",
+          "Upgrade Sign Lv.2+¥2 per order · ¥110"
+        ],
+        "continueDay": 6
+      },
+      "elapsedMs": 5911
+    }
+  ],
+  "requests": [
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/",
+      "domain": "127.0.0.1:4195",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4195",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4195",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4195",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/settings-screen-user-final-CbSiQ8af.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/settings-slider-clean-patch-DevvtYq4.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4195",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/",
+      "domain": "127.0.0.1:4195",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4195",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4195",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4195",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/day-select-user-final-BP5n1raz.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/day-select-title-neutral-CSTi_koI.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4195",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/",
+      "domain": "127.0.0.1:4195",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4195",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4195",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4195",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/kitchen-screen-live-expanded-clean-D993X-rQ.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-cilantro-mTnRXM7u.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-onion-BWe7JPxS.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-chili-powder-CNVUFwMC.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-turkey-noodle-D73RSOWN.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-cheese-BK8gC_A4.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-corn-OXYaPMvT.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-orleans-chicken-CO7bqeWM.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-bacon-Bq6pfeAB.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-tenderloin-DsMZUMns.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ingredient-enoki-D5vCxW6v.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4195",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "request": "http://127.0.0.1:4195/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4195",
+      "reason": "image",
+      "allowed": true
+    }
+  ],
+  "console": [],
+  "errors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "language": [
+    {
+      "case": "returning-save-settings-select-rotate",
+      "screen": "Home",
+      "chinese": []
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "screen": "Settings",
+      "chinese": []
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "screen": "Home",
+      "chinese": []
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "screen": "Day Select",
+      "chinese": []
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "screen": "Day 6 gameplay/tutorial/orders/ingredients",
+      "chinese": []
+    },
+    {
+      "case": "returning-save-settings-select-rotate",
+      "screen": "Rotate",
+      "chinese": []
+    }
+  ],
+  "unexpected": []
+}

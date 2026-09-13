@@ -1,0 +1,694 @@
+{
+  "environment": "Windows Edge Chromium, production files, network-injected SDK mock; NOT live Inspector or physical Safari",
+  "cases": [
+    {
+      "name": "desktop-640x360",
+      "status": "PASS",
+      "details": {
+        "geometry": {
+          "screen": "playing",
+          "horizontalOverflow": false,
+          "verticalOverflow": false,
+          "hud": true,
+          "customer": true,
+          "rack": true,
+          "leftGriddle": true,
+          "rightGriddle": true,
+          "tray": true
+        },
+        "hud": {
+          "elements": {
+            "day": {
+              "top": 5.333333492279053,
+              "right": 74.66666412353516,
+              "bottom": 28.444444179534912,
+              "left": 8,
+              "width": 66.66666412353516,
+              "height": 23.11111068725586
+            },
+            "orders": {
+              "top": 5.333333492279053,
+              "right": 366.6666564941406,
+              "bottom": 28.444444179534912,
+              "left": 273.3333435058594,
+              "width": 93.33331298828125,
+              "height": 23.11111068725586
+            },
+            "coins": {
+              "top": 5.333333492279053,
+              "right": 575.1111450195312,
+              "bottom": 28.444444179534912,
+              "left": 516.4444580078125,
+              "width": 58.66668701171875,
+              "height": 23.11111068725586
+            },
+            "pause": {
+              "top": 5.333333492279053,
+              "right": 603.5555419921875,
+              "bottom": 28.444444179534912,
+              "left": 580.4444580078125,
+              "width": 23.111083984375,
+              "height": 23.11111068725586
+            },
+            "sound": {
+              "top": 5.333333492279053,
+              "right": 632,
+              "bottom": 28.444444179534912,
+              "left": 608.888916015625,
+              "width": 23.111083984375,
+              "height": 23.11111068725586
+            }
+          },
+          "pairs": [
+            {
+              "first": "day",
+              "second": "orders",
+              "intersectionArea": 0
+            },
+            {
+              "first": "orders",
+              "second": "coins",
+              "intersectionArea": 0
+            },
+            {
+              "first": "coins",
+              "second": "pause",
+              "intersectionArea": 0
+            },
+            {
+              "first": "pause",
+              "second": "sound",
+              "intersectionArea": 0
+            }
+          ],
+          "orderBubble": {
+            "top": 64.44444274902344,
+            "right": 288.4888916015625,
+            "bottom": 120.84444427490234,
+            "left": 209.2888946533203,
+            "width": 79.19999694824219,
+            "height": 56.400001525878906
+          },
+          "ordersBubbleIntersectionArea": 0
+        },
+        "summary": {
+          "fundsText": "Cash¥66",
+          "upgradeText": [
+            "Upgrade Heat Lv.1 Patience +3s · ¥40",
+            "Upgrade Sign Lv.1 +¥2 per order · ¥60"
+          ],
+          "entries": [
+            {
+              "group": "funds",
+              "text": "Cash",
+              "contained": true
+            },
+            {
+              "group": "funds",
+              "text": "¥ 66",
+              "contained": true
+            },
+            {
+              "group": "upgrade-1",
+              "text": "Upgrade Heat Lv.1",
+              "contained": true
+            },
+            {
+              "group": "upgrade-1",
+              "text": "Patience +3s · ¥40",
+              "contained": true
+            },
+            {
+              "group": "upgrade-2",
+              "text": "Upgrade Sign Lv.1",
+              "contained": true
+            },
+            {
+              "group": "upgrade-2",
+              "text": "+¥2 per order · ¥60",
+              "contained": true
+            }
+          ],
+          "horizontalOverflow": false,
+          "clipped": [],
+          "messageBounds": {
+            "text": "Flawless speed and quality—people are coming to the market just for your stall!",
+            "textRight": 551.9375,
+            "panelRight": 447.921875,
+            "textLeft": 192.0625,
+            "panelLeft": 192.0625,
+            "overflowsOwnPanel": true
+          }
+        },
+        "playAgain": [
+          "commercialBreak:start",
+          "commercialBreak:end",
+          "gameplayStart"
+        ]
+      },
+      "elapsedMs": 31232
+    }
+  ],
+  "requests": [
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/",
+      "domain": "127.0.0.1:4194",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4194",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4194",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4194",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4194",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/happy-Csx4Qeto.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/arriving-CQEuN-Lo.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ordering-DM1-vGOO.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/waiting-BqF4RJIG.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ordering-RyFLFGpa.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/waiting-B-hb3jfs.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ordering-BDd9aoN7.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/waiting-DLcZRouC.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/happy-witbPK5d.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/arriving-Bf-oueV1.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ordering-DvGLf4ys.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/waiting-DauAkCVG.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/happy-CjSn8naZ.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/summary-screen-user-final-Dj2uHf7I.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/summary-title-neutral-EyqjklnP.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "desktop-640x360",
+      "request": "http://127.0.0.1:4194/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1:4194",
+      "reason": "image",
+      "allowed": true
+    }
+  ],
+  "console": [],
+  "errors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "language": [
+    {
+      "case": "desktop-640x360",
+      "screen": "Home",
+      "chinese": []
+    },
+    {
+      "case": "desktop-640x360",
+      "screen": "Day 1 gameplay/tutorial/orders/ingredients",
+      "chinese": []
+    },
+    {
+      "case": "desktop-640x360",
+      "screen": "Summary / upgrades",
+      "chinese": []
+    }
+  ],
+  "unexpected": []
+}

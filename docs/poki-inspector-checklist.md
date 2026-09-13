@@ -2,7 +2,7 @@
 
 Upload `night-market-poki-rc-v1.zip` yourself. Match its SHA-256 and full source commit against `releases/poki-rc-v1-manifest.json` first. ZIP root must contain `index.html` and `assets/`.
 
-**Live Inspector status: NOT RUN.** Every box below intentionally starts unchecked. Local SDK mocks, Edge touch emulation and automated screenshots do not count as Inspector or physical Safari validation.
+**Live Inspector status: NOT RUN. Current release verdict: NOT READY pending the external-network gate in docs/poki-rc-v1-network-audit.md.** Every box below intentionally starts unchecked. Local SDK mocks, Edge touch emulation and automated screenshots do not count as Inspector or physical Safari validation.
 
 Record: date / tester / Inspector URL or session / ZIP SHA-256 / desktop browser / phone model and OS / screenshots / issues.
 

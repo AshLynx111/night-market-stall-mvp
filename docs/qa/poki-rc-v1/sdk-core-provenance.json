@@ -1,0 +1,31 @@
+{
+  "url": "https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js",
+  "sha256": "f4d54f6561eb4ab49020327fd9ea1568208395ffcd053c31c65af71fcf32dde5",
+  "bytes": 325706,
+  "domains": [
+    {
+      "domain": "securepubads.g.doubleclick.net",
+      "offset": 123981
+    },
+    {
+      "domain": "imasdk.googleapis.com",
+      "offset": 286955
+    },
+    {
+      "domain": "c.amazon-adsystem.com",
+      "offset": 287283
+    },
+    {
+      "domain": "a.poki-cdn.com",
+      "offset": 11386
+    },
+    {
+      "domain": "geo.poki.io",
+      "offset": 169695
+    },
+    {
+      "domain": "ads.poki.com",
+      "offset": 170309
+    }
+  ]
+}

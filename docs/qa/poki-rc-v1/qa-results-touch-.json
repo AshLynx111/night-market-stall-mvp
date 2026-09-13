@@ -1,0 +1,1651 @@
+{
+  "environment": "Windows Edge Chromium, production files, network-injected SDK mock; NOT live Inspector or physical Safari",
+  "cases": [
+    {
+      "name": "touch-844x390",
+      "status": "PASS",
+      "details": {
+        "firstOrderAllTouch": true,
+        "ingredientDrag": true,
+        "sauceCutRollPackServe": true,
+        "pauseSound": {
+          "geometry": [
+            {
+              "name": "day-home",
+              "normal": {
+                "top": 5.777777671813965,
+                "left": 83.9999771118164,
+                "transform": "none"
+              },
+              "pressed": {
+                "top": 5.777777671813965,
+                "left": 83.9999771118164,
+                "transform": "none"
+              },
+              "released": {
+                "top": 5.777777671813965,
+                "left": 83.9999771118164,
+                "transform": "none"
+              }
+            },
+            {
+              "name": "pause",
+              "normal": {
+                "top": 5.777777671813965,
+                "left": 704.1481323242188,
+                "transform": "none"
+              },
+              "pressed": {
+                "top": 5.777777671813965,
+                "left": 704.1481323242188,
+                "transform": "none"
+              },
+              "released": {
+                "top": 5.777777671813965,
+                "left": 704.1481323242188,
+                "transform": "none"
+              }
+            },
+            {
+              "name": "sound",
+              "normal": {
+                "top": 5.777777671813965,
+                "left": 734.9629516601562,
+                "transform": "none"
+              },
+              "pressed": {
+                "top": 5.777777671813965,
+                "left": 734.9629516601562,
+                "transform": "none"
+              },
+              "released": {
+                "top": 5.777777671813965,
+                "left": 734.9629516601562,
+                "transform": "none"
+              }
+            }
+          ],
+          "soundStates": [
+            "false",
+            "true",
+            "false",
+            "true",
+            "false",
+            "true"
+          ],
+          "pauseCycles": [
+            [
+              "gameplayStop",
+              "commercialBreak:start",
+              "commercialBreak:end",
+              "gameplayStart"
+            ],
+            [
+              "gameplayStop",
+              "commercialBreak:start",
+              "commercialBreak:end",
+              "gameplayStart"
+            ],
+            [
+              "gameplayStop",
+              "commercialBreak:start",
+              "commercialBreak:end",
+              "gameplayStart"
+            ]
+          ],
+          "homeCycles": [
+            [
+              "gameplayStop",
+              "gameplayStart"
+            ],
+            [
+              "gameplayStop",
+              "gameplayStart"
+            ]
+          ]
+        }
+      },
+      "elapsedMs": 18218
+    },
+    {
+      "name": "touch-836x470",
+      "status": "PASS",
+      "details": {
+        "firstOrderAllTouch": true,
+        "ingredientDrag": true,
+        "sauceCutRollPackServe": true,
+        "pauseSound": {
+          "geometry": [
+            {
+              "name": "day-home",
+              "normal": {
+                "top": 6.962963104248047,
+                "left": 10.66667366027832,
+                "transform": "none"
+              },
+              "pressed": {
+                "top": 6.962963104248047,
+                "left": 10.66667366027832,
+                "transform": "none"
+              },
+              "released": {
+                "top": 6.962963104248047,
+                "left": 10.66667366027832,
+                "transform": "none"
+              }
+            },
+            {
+              "name": "pause",
+              "normal": {
+                "top": 6.962963104248047,
+                "left": 758.0247192382812,
+                "transform": "none"
+              },
+              "pressed": {
+                "top": 6.962963104248047,
+                "left": 758.0247192382812,
+                "transform": "none"
+              },
+              "released": {
+                "top": 6.962963104248047,
+                "left": 758.0247192382812,
+                "transform": "none"
+              }
+            },
+            {
+              "name": "sound",
+              "normal": {
+                "top": 6.962963104248047,
+                "left": 795.1605224609375,
+                "transform": "none"
+              },
+              "pressed": {
+                "top": 6.962963104248047,
+                "left": 795.1605224609375,
+                "transform": "none"
+              },
+              "released": {
+                "top": 6.962963104248047,
+                "left": 795.1605224609375,
+                "transform": "none"
+              }
+            }
+          ],
+          "soundStates": [
+            "false",
+            "true",
+            "false",
+            "true",
+            "false",
+            "true"
+          ],
+          "pauseCycles": [
+            [
+              "gameplayStop",
+              "commercialBreak:start",
+              "commercialBreak:end",
+              "gameplayStart"
+            ],
+            [
+              "gameplayStop",
+              "commercialBreak:start",
+              "commercialBreak:end",
+              "gameplayStart"
+            ],
+            [
+              "gameplayStop",
+              "commercialBreak:start",
+              "commercialBreak:end",
+              "gameplayStart"
+            ]
+          ],
+          "homeCycles": [
+            [
+              "gameplayStop",
+              "gameplayStart"
+            ],
+            [
+              "gameplayStop",
+              "gameplayStart"
+            ]
+          ]
+        }
+      },
+      "elapsedMs": 16511
+    },
+    {
+      "name": "touch-640x360",
+      "status": "PASS",
+      "details": {
+        "firstOrderAllTouch": true,
+        "ingredientDrag": true,
+        "sauceCutRollPackServe": true,
+        "pauseSound": {
+          "geometry": [
+            {
+              "name": "day-home",
+              "normal": {
+                "top": 5.333333492279053,
+                "left": 8,
+                "transform": "none"
+              },
+              "pressed": {
+                "top": 5.333333492279053,
+                "left": 8,
+                "transform": "none"
+              },
+              "released": {
+                "top": 5.333333492279053,
+                "left": 8,
+                "transform": "none"
+              }
+            },
+            {
+              "name": "pause",
+              "normal": {
+                "top": 5.333333492279053,
+                "left": 580.4444580078125,
+                "transform": "none"
+              },
+              "pressed": {
+                "top": 5.333333492279053,
+                "left": 580.4444580078125,
+                "transform": "none"
+              },
+              "released": {
+                "top": 5.333333492279053,
+                "left": 580.4444580078125,
+                "transform": "none"
+              }
+            },
+            {
+              "name": "sound",
+              "normal": {
+                "top": 5.333333492279053,
+                "left": 608.888916015625,
+                "transform": "none"
+              },
+              "pressed": {
+                "top": 5.333333492279053,
+                "left": 608.888916015625,
+                "transform": "none"
+              },
+              "released": {
+                "top": 5.333333492279053,
+                "left": 608.888916015625,
+                "transform": "none"
+              }
+            }
+          ],
+          "soundStates": [
+            "false",
+            "true",
+            "false",
+            "true",
+            "false",
+            "true"
+          ],
+          "pauseCycles": [
+            [
+              "gameplayStop",
+              "commercialBreak:start",
+              "commercialBreak:end",
+              "gameplayStart"
+            ],
+            [
+              "gameplayStop",
+              "commercialBreak:start",
+              "commercialBreak:end",
+              "gameplayStart"
+            ],
+            [
+              "gameplayStop",
+              "commercialBreak:start",
+              "commercialBreak:end",
+              "gameplayStart"
+            ]
+          ],
+          "homeCycles": [
+            [
+              "gameplayStop",
+              "gameplayStart"
+            ],
+            [
+              "gameplayStop",
+              "gameplayStart"
+            ]
+          ]
+        }
+      },
+      "elapsedMs": 16423
+    },
+    {
+      "name": "ad-lock-active-cooking-touch-audio",
+      "status": "PASS",
+      "details": {
+        "freezeMs": 6335,
+        "before": {
+          "patience": [
+            "width: 94.986%;",
+            "width: 95.4663%;",
+            "width: 95.9511%;"
+          ],
+          "slots": [
+            {
+              "step": "egg",
+              "next": "hot-dog",
+              "sauce": "0",
+              "cuts": "0",
+              "heat": "--heat-progress: 0.33717692307692304;"
+            },
+            {
+              "step": "empty",
+              "sauce": "0",
+              "cuts": "0"
+            }
+          ],
+          "save": "{\"coins\":360,\"fireLevel\":1,\"signLevel\":1,\"bestStars\":{},\"maxUnlockedDay\":1}",
+          "sound": "{\"master\":0.7,\"music\":0.4,\"effects\":0.6,\"musicMuted\":false}",
+          "hud": "Day 1Orders 0/3¥360"
+        },
+        "after": {
+          "patience": [
+            "width: 94.986%;",
+            "width: 95.4663%;",
+            "width: 95.9511%;"
+          ],
+          "slots": [
+            {
+              "step": "egg",
+              "next": "hot-dog",
+              "sauce": "0",
+              "cuts": "0",
+              "heat": "--heat-progress: 0.33717692307692304;"
+            },
+            {
+              "step": "empty",
+              "sauce": "0",
+              "cuts": "0"
+            }
+          ],
+          "save": "{\"coins\":360,\"fireLevel\":1,\"signLevel\":1,\"bestStars\":{},\"maxUnlockedDay\":1}",
+          "sound": "{\"master\":0.7,\"music\":0.4,\"effects\":0.6,\"musicMuted\":false}",
+          "hud": "Day 1Orders 0/3¥360"
+        },
+        "audioBefore": [
+          {
+            "volume": 0.27999999999999997,
+            "muted": false
+          }
+        ],
+        "lockedAudio": [
+          {
+            "volume": 0,
+            "muted": true
+          }
+        ],
+        "audioAfter": [
+          {
+            "volume": 0.27999999999999997,
+            "muted": false
+          }
+        ],
+        "inputAndTimerResumed": true
+      },
+      "elapsedMs": 13754
+    }
+  ],
+  "requests": [
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/",
+      "domain": "127.0.0.1:4197",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4197",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4197",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4197",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4197",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/happy-Csx4Qeto.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/arriving-CQEuN-Lo.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ordering-DM1-vGOO.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/waiting-BqF4RJIG.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ordering-RyFLFGpa.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/waiting-B-hb3jfs.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/ordering-BDd9aoN7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/waiting-DLcZRouC.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/dish-big-eater-noodle-BRDXDn3P.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/dish-orleans-chicken-noodle-mVr_grqi.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/dish-tenderloin-turkey-noodle-Guhzq8xw.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-844x390",
+      "request": "http://127.0.0.1:4197/assets/dish-signature-cheese-turkey-noodle-DFJhLo0W.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/",
+      "domain": "127.0.0.1:4197",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4197",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4197",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4197",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4197",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/happy-Csx4Qeto.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/arriving-CQEuN-Lo.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ordering-DM1-vGOO.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/waiting-BqF4RJIG.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ordering-RyFLFGpa.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/waiting-B-hb3jfs.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/ordering-BDd9aoN7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/waiting-DLcZRouC.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/dish-big-eater-noodle-BRDXDn3P.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/dish-orleans-chicken-noodle-mVr_grqi.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/dish-tenderloin-turkey-noodle-Guhzq8xw.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-836x470",
+      "request": "http://127.0.0.1:4197/assets/dish-signature-cheese-turkey-noodle-DFJhLo0W.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/",
+      "domain": "127.0.0.1:4197",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4197",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4197",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4197",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4197",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/happy-Csx4Qeto.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/arriving-CQEuN-Lo.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ordering-DM1-vGOO.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/waiting-BqF4RJIG.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ordering-RyFLFGpa.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/waiting-B-hb3jfs.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/ordering-BDd9aoN7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/waiting-DLcZRouC.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/dish-big-eater-noodle-BRDXDn3P.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/dish-orleans-chicken-noodle-mVr_grqi.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/dish-tenderloin-turkey-noodle-Guhzq8xw.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "touch-640x360",
+      "request": "http://127.0.0.1:4197/assets/dish-signature-cheese-turkey-noodle-DFJhLo0W.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/",
+      "domain": "127.0.0.1:4197",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4197",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4197",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4197",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4197",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/ordering-DM1-vGOO.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/waiting-BqF4RJIG.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/ordering-RyFLFGpa.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/waiting-B-hb3jfs.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/dish-big-eater-noodle-BRDXDn3P.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/dish-orleans-chicken-noodle-mVr_grqi.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/dish-tenderloin-turkey-noodle-Guhzq8xw.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/dish-signature-cheese-turkey-noodle-DFJhLo0W.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4197/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1:4197",
+      "reason": "image",
+      "allowed": true
+    }
+  ],
+  "console": [],
+  "errors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "language": [
+    {
+      "case": "touch-844x390",
+      "screen": "Home",
+      "chinese": []
+    },
+    {
+      "case": "touch-844x390",
+      "screen": "Day 1 gameplay/tutorial/orders/ingredients",
+      "chinese": []
+    },
+    {
+      "case": "touch-836x470",
+      "screen": "Home",
+      "chinese": []
+    },
+    {
+      "case": "touch-836x470",
+      "screen": "Day 1 gameplay/tutorial/orders/ingredients",
+      "chinese": []
+    },
+    {
+      "case": "touch-640x360",
+      "screen": "Home",
+      "chinese": []
+    },
+    {
+      "case": "touch-640x360",
+      "screen": "Day 1 gameplay/tutorial/orders/ingredients",
+      "chinese": []
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "screen": "Home",
+      "chinese": []
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "screen": "Day 1 gameplay/tutorial/orders/ingredients",
+      "chinese": []
+    }
+  ],
+  "unexpected": []
+}

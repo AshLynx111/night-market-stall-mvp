@@ -1,0 +1,10 @@
+{
+  "sourceCommit": "3d5d88ef9b2a6956048bcc463a9bd1f2f7440466",
+  "artifact": "extracted ZIP",
+  "errors": [],
+  "before": "0",
+  "during": "0",
+  "after": "1",
+  "status": "PASS",
+  "holdMs": 2200
+}

@@ -1,0 +1,310 @@
+{
+  "environment": "Real SDK, localhost production preview; no portal or Inspector session",
+  "requests": [
+    {
+      "request": "http://127.0.0.1:4199/",
+      "domain": "127.0.0.1:4199",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4199",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4199",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Official Poki SDK dependency",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4199",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Official Poki SDK dependency",
+      "allowed": true
+    },
+    {
+      "request": "https://a.poki-cdn.com/sdk/hourglass-icons-v2.svg",
+      "domain": "a.poki-cdn.com",
+      "reason": "Official Poki SDK dependency",
+      "allowed": false
+    },
+    {
+      "request": "https://a.poki-cdn.com/sdk/error-icons-v2.svg",
+      "domain": "a.poki-cdn.com",
+      "reason": "Official Poki SDK dependency",
+      "allowed": false
+    },
+    {
+      "request": "https://geo.poki.io/",
+      "domain": "geo.poki.io",
+      "reason": "Official Poki SDK dependency",
+      "allowed": false
+    },
+    {
+      "request": "https://ads.poki.com/ads/settings?loc=",
+      "domain": "ads.poki.com",
+      "reason": "Official Poki SDK dependency",
+      "allowed": false
+    },
+    {
+      "request": "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+      "domain": "securepubads.g.doubleclick.net",
+      "reason": "Official Poki SDK dependency",
+      "allowed": false
+    },
+    {
+      "request": "https://imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "domain": "imasdk.googleapis.com",
+      "reason": "Official Poki SDK dependency",
+      "allowed": false
+    },
+    {
+      "request": "https://a.poki-cdn.com/prebid/prebid_1782721530.js",
+      "domain": "a.poki-cdn.com",
+      "reason": "Official Poki SDK dependency",
+      "allowed": false
+    },
+    {
+      "request": "https://c.amazon-adsystem.com/aax2/apstag.js",
+      "domain": "c.amazon-adsystem.com",
+      "reason": "Official Poki SDK dependency",
+      "allowed": false
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4199",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-big-eater-noodle-BRDXDn3P.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-orleans-chicken-noodle-mVr_grqi.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-tenderloin-turkey-noodle-Guhzq8xw.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-signature-cheese-turkey-noodle-DFJhLo0W.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    }
+  ],
+  "console": [
+    {
+      "type": "info",
+      "message": "%cPOKI:%c PokiSDK.measure(game, loading, start) background-color: green; border-radius: 3px; color: white; padding: 1px 5px "
+    },
+    {
+      "type": "info",
+      "message": "%cPOKI:%c PokiSDK.init( background-color: green; border-radius: 3px; color: white; padding: 1px 5px  {} )"
+    },
+    {
+      "type": "error",
+      "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "type": "error",
+      "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "type": "error",
+      "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "type": "warning",
+      "message": "%cPOKI:%c failed to fetch country info font-weight: bold  TypeError: Failed to fetch\n    at https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:55510\n    at Generator.next (<anonymous>)\n    at https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:55351\n    at new Promise (<anonymous>)\n    at ze (https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:55099)\n    at Ue (https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:55384)\n    at https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:169684\n    at Generator.next (<anonymous>)\n    at https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:169568\n    at new Promise (<anonymous>)"
+    },
+    {
+      "type": "error",
+      "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "type": "warning",
+      "message": "%cPOKI:%c failed to fetch ad settings font-weight: bold  TypeError: Failed to fetch\n    at https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:55510\n    at Generator.next (<anonymous>)\n    at https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:55351\n    at new Promise (<anonymous>)\n    at ze (https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:55099)\n    at Ue (https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:55384)\n    at https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:170298\n    at Generator.next (<anonymous>)\n    at https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js:1:170214\n    at new Promise (<anonymous>)"
+    },
+    {
+      "type": "error",
+      "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "type": "error",
+      "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "type": "error",
+      "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    },
+    {
+      "type": "error",
+      "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+    }
+  ],
+  "errors": [
+    "Failed to fetch",
+    "Failed to fetch"
+  ],
+  "failures": [
+    {
+      "url": "https://a.poki-cdn.com/sdk/hourglass-icons-v2.svg",
+      "failure": {
+        "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    },
+    {
+      "url": "https://a.poki-cdn.com/sdk/error-icons-v2.svg",
+      "failure": {
+        "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    },
+    {
+      "url": "https://geo.poki.io/",
+      "failure": {
+        "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    },
+    {
+      "url": "https://ads.poki.com/ads/settings?loc=",
+      "failure": {
+        "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    },
+    {
+      "url": "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+      "failure": {
+        "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    },
+    {
+      "url": "https://imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "failure": {
+        "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    },
+    {
+      "url": "https://a.poki-cdn.com/prebid/prebid_1782721530.js",
+      "failure": {
+        "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    },
+    {
+      "url": "https://c.amazon-adsystem.com/aax2/apstag.js",
+      "failure": {
+        "errorText": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      }
+    }
+  ],
+  "httpErrors": [],
+  "homeEnglish": true,
+  "playableAfterResume": true
+}

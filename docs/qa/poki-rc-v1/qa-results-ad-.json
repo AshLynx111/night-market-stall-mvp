@@ -1,0 +1,644 @@
+{
+  "environment": "Windows Edge Chromium, production files, network-injected SDK mock; NOT live Inspector or physical Safari",
+  "cases": [
+    {
+      "name": "ad-lock-active-cooking-touch-audio",
+      "status": "PASS",
+      "details": {
+        "freezeMs": 6342,
+        "before": {
+          "patience": [
+            "width: 94.9773%;",
+            "width: 95.4663%;",
+            "width: 95.942%;"
+          ],
+          "slots": [
+            {
+              "step": "egg",
+              "next": "hot-dog",
+              "sauce": "0",
+              "cuts": "0",
+              "heat": "--heat-progress: 0.33589230769230766;"
+            },
+            {
+              "step": "empty",
+              "sauce": "0",
+              "cuts": "0"
+            }
+          ],
+          "save": "{\"coins\":360,\"fireLevel\":1,\"signLevel\":1,\"bestStars\":{},\"maxUnlockedDay\":1}",
+          "sound": "{\"master\":0.7,\"music\":0.4,\"effects\":0.6,\"musicMuted\":false}",
+          "hud": "Day 1Orders 0/3¥360"
+        },
+        "after": {
+          "patience": [
+            "width: 94.9773%;",
+            "width: 95.4663%;",
+            "width: 95.942%;"
+          ],
+          "slots": [
+            {
+              "step": "egg",
+              "next": "hot-dog",
+              "sauce": "0",
+              "cuts": "0",
+              "heat": "--heat-progress: 0.33589230769230766;"
+            },
+            {
+              "step": "empty",
+              "sauce": "0",
+              "cuts": "0"
+            }
+          ],
+          "save": "{\"coins\":360,\"fireLevel\":1,\"signLevel\":1,\"bestStars\":{},\"maxUnlockedDay\":1}",
+          "sound": "{\"master\":0.7,\"music\":0.4,\"effects\":0.6,\"musicMuted\":false}",
+          "hud": "Day 1Orders 0/3¥360"
+        },
+        "audioBefore": [
+          {
+            "volume": 0.27999999999999997,
+            "muted": false
+          }
+        ],
+        "lockedAudio": [
+          {
+            "volume": 0,
+            "muted": true
+          }
+        ],
+        "audioAfter": [
+          {
+            "volume": 0.27999999999999997,
+            "muted": false
+          }
+        ],
+        "inputAndTimerResumed": true
+      },
+      "elapsedMs": 15061
+    },
+    {
+      "name": "ad-ready-serve-lock",
+      "status": "PASS",
+      "details": {
+        "before": {
+          "save": "{\"coins\":360,\"fireLevel\":1,\"signLevel\":1,\"bestStars\":{},\"maxUnlockedDay\":1}",
+          "served": "Orders 0/3"
+        },
+        "after": {
+          "save": "{\"coins\":360,\"fireLevel\":1,\"signLevel\":1,\"bestStars\":{},\"maxUnlockedDay\":1}",
+          "served": "Orders 0/3"
+        },
+        "readyServeBlockedMs": 2200,
+        "serveResumed": true
+      },
+      "elapsedMs": 13394
+    }
+  ],
+  "requests": [
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/",
+      "domain": "127.0.0.1:4196",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4196",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4196",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4196",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4196",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/ordering-DM1-vGOO.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/waiting-BqF4RJIG.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/ordering-RyFLFGpa.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/waiting-B-hb3jfs.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/dish-big-eater-noodle-BRDXDn3P.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/dish-orleans-chicken-noodle-mVr_grqi.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/dish-tenderloin-turkey-noodle-Guhzq8xw.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/dish-signature-cheese-turkey-noodle-DFJhLo0W.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/",
+      "domain": "127.0.0.1:4196",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4196",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4196",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "Poki SDK (mock)",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4196",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4196",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/ordering-DM1-vGOO.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/waiting-BqF4RJIG.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/ordering-RyFLFGpa.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/waiting-B-hb3jfs.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/dish-big-eater-noodle-BRDXDn3P.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/dish-orleans-chicken-noodle-mVr_grqi.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/dish-tenderloin-turkey-noodle-Guhzq8xw.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/dish-signature-cheese-turkey-noodle-DFJhLo0W.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "request": "http://127.0.0.1:4196/assets/happy-Csx4Qeto.webp",
+      "domain": "127.0.0.1:4196",
+      "reason": "image",
+      "allowed": true
+    }
+  ],
+  "console": [],
+  "errors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "language": [
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "screen": "Home",
+      "chinese": []
+    },
+    {
+      "case": "ad-lock-active-cooking-touch-audio",
+      "screen": "Day 1 gameplay/tutorial/orders/ingredients",
+      "chinese": []
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "screen": "Home",
+      "chinese": []
+    },
+    {
+      "case": "ad-ready-serve-lock",
+      "screen": "Day 1 gameplay/tutorial/orders/ingredients",
+      "chinese": []
+    }
+  ],
+  "unexpected": []
+}

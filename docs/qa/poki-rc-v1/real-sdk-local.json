@@ -1,0 +1,198 @@
+{
+  "environment": "Real SDK, localhost production preview; no portal or Inspector session; third-party advertising dependencies blocked pending classification",
+  "requests": [
+    {
+      "request": "http://127.0.0.1:4199/",
+      "domain": "127.0.0.1:4199",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/index-BJbZCAa7.js",
+      "domain": "127.0.0.1:4199",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/index-DqtorRTD.css",
+      "domain": "127.0.0.1:4199",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "SDK dependency; inspect initiator evidence",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1:4199",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js",
+      "domain": "game-cdn.poki.com",
+      "reason": "SDK dependency; inspect initiator evidence",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1:4199",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-big-eater-noodle-BRDXDn3P.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-orleans-chicken-noodle-mVr_grqi.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-tenderloin-turkey-noodle-Guhzq8xw.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/dish-signature-cheese-turkey-noodle-DFJhLo0W.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4199/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1:4199",
+      "reason": "image",
+      "allowed": true
+    }
+  ],
+  "initiators": [
+    {
+      "url": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "type": "parser",
+      "source": "http://127.0.0.1:4199/"
+    },
+    {
+      "url": "https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js",
+      "type": "script",
+      "frames": [
+        {
+          "functionName": "",
+          "scriptId": "7",
+          "url": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+          "lineNumber": 0,
+          "columnNumber": 5498
+        },
+        {
+          "functionName": "",
+          "scriptId": "7",
+          "url": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+          "lineNumber": 0,
+          "columnNumber": 5515
+        }
+      ]
+    },
+    {
+      "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='810'%3E%3Cdefs%3E%3Cfilter id='edge'%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3C/filter%3E%3C/defs%3E%3Cpath fill='white' filter='url(%23edge)' d='M139 467H416L389 587 350 752H8V704L59 602 96 537 130 488Z'/%3E%3C/svg%3E",
+      "type": "parser",
+      "source": "http://127.0.0.1:4199/assets/index-DqtorRTD.css"
+    }
+  ],
+  "console": [
+    {
+      "type": "info",
+      "message": "%cPOKI:%c PokiSDK.measure(game, loading, start) background-color: green; border-radius: 3px; color: white; padding: 1px 5px "
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "httpErrors": [],
+  "homeEnglish": true,
+  "playableAfterResume": true
+}

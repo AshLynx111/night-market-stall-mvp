@@ -1,0 +1,184 @@
+RUN fresh-root-performance-keyboard
+RUN production-flags-?playtest=1
+RUN production-flags-?debug=1
+RUN production-flags-?qa=1
+RUN production-flags-?playtest=1&debug=1&qa=1&pid=rc
+RUN storage-getItem
+RUN storage-setItem
+RUN storage-session-unavailable
+RUN storage-all
+RUN sdk-init-reject
+RUN sdk-break-reject
+RUN sdk-no-ad
+RUN sdk-missing
+RUN sdk-delayed
+RUN desktop-1440x810
+RUN desktop-1280x720
+RUN desktop-1031x580
+RUN desktop-836x470
+RUN desktop-640x360
+RUN touch-844x390
+RUN touch-836x470
+RUN touch-640x360
+RUN ad-lock-active-cooking-touch-audio
+RUN campaign-day-1
+RUN campaign-day-2
+RUN campaign-day-3
+RUN campaign-day-4
+RUN campaign-day-5
+RUN campaign-day-6
+RUN ad-ready-serve-lock
+RUN returning-save-settings-select-rotate
+RUN all-production-assets-http
+RUN standalone-isolation
+{
+  "cases": [
+    {
+      "name": "fresh-root-performance-keyboard",
+      "status": "PASS"
+    },
+    {
+      "name": "production-flags-?playtest=1",
+      "status": "PASS"
+    },
+    {
+      "name": "production-flags-?debug=1",
+      "status": "PASS"
+    },
+    {
+      "name": "production-flags-?qa=1",
+      "status": "PASS"
+    },
+    {
+      "name": "production-flags-?playtest=1&debug=1&qa=1&pid=rc",
+      "status": "PASS"
+    },
+    {
+      "name": "storage-getItem",
+      "status": "PASS"
+    },
+    {
+      "name": "storage-setItem",
+      "status": "PASS"
+    },
+    {
+      "name": "storage-session-unavailable",
+      "status": "PASS"
+    },
+    {
+      "name": "storage-all",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-init-reject",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-break-reject",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-no-ad",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-missing",
+      "status": "PASS"
+    },
+    {
+      "name": "sdk-delayed",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-1440x810",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-1280x720",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-1031x580",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-836x470",
+      "status": "PASS"
+    },
+    {
+      "name": "desktop-640x360",
+      "status": "PASS"
+    },
+    {
+      "name": "touch-844x390",
+      "status": "PASS"
+    },
+    {
+      "name": "touch-836x470",
+      "status": "PASS"
+    },
+    {
+      "name": "touch-640x360",
+      "status": "PASS"
+    },
+    {
+      "name": "ad-lock-active-cooking-touch-audio",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-1",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-2",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-3",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-4",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-5",
+      "status": "PASS"
+    },
+    {
+      "name": "campaign-day-6",
+      "status": "PASS"
+    },
+    {
+      "name": "ad-ready-serve-lock",
+      "status": "PASS"
+    },
+    {
+      "name": "returning-save-settings-select-rotate",
+      "status": "PASS"
+    },
+    {
+      "name": "all-production-assets-http",
+      "status": "PASS"
+    },
+    {
+      "name": "standalone-isolation",
+      "status": "PASS"
+    }
+  ],
+  "unexpected": [],
+  "console": [
+    {
+      "case": "sdk-init-reject",
+      "type": "warning",
+      "message": "Poki SDK initialization failed; continuing without ads. Error: RC injected init reject\n    at window.PokiSDK.init (https://game-cdn.poki.com/scripts/v2/poki-sdk.js:9:242)\n    at http://127.0.0.1:4197/assets/poki-CNuId0eD.js:1:294\n    at http://127.0.0.1:4197/assets/poki-CNuId0eD.js:1:330\n    at Object.c [as initialize] (http://127.0.0.1:4197/assets/poki-CNuId0eD.js:1:444)\n    at sf (http://127.0.0.1:4197/assets/index-CQrd9IwC.js:9:213467)"
+    },
+    {
+      "case": "sdk-break-reject",
+      "type": "warning",
+      "message": "Poki SDK commercialBreak failed; continuing gameplay. Error: RC injected break reject\n    at window.PokiSDK.commercialBreak (https://game-cdn.poki.com/scripts/v2/poki-sdk.js:9:308)\n    at Object.commercialBreak (http://127.0.0.1:4197/assets/poki-CNuId0eD.js:1:766)\n    at http://127.0.0.1:4197/assets/index-CQrd9IwC.js:9:214289"
+    }
+  ],
+  "errors": [],
+  "httpErrors": []
+}
