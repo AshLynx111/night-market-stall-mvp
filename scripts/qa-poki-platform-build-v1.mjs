@@ -5,7 +5,7 @@ import { chromium } from 'playwright'
 import sharp from 'sharp'
 
 const root = process.cwd()
-const port = 4197
+const port = Number(process.env.POKI_QA_PORT || 4197)
 const baseUrl = `http://127.0.0.1:${port}`
 const sdkUrl = 'https://game-cdn.poki.com/scripts/v2/poki-sdk.js'
 const outputDir = path.join(root, 'docs', 'qa', 'screenshots', 'poki-platform-build-v1')
@@ -556,6 +556,11 @@ async function runStorageFailure(browser) {
   results.storageFailure = { home: true, day1: true, firstIngredient: true }; await context.close()
 }
 
+export { server, waitForServer, createPage, openHome, startDayOne, completeOrder, selectIngredient,
+  waitStep, pathGesture, viewportDiagnostics, inspectHudLayout, summaryContainment, exerciseHud,
+  mockSdk, baseUrl, sdkUrl, edgePath }
+
+if (process.env.POKI_RC_QA !== '1') {
 await waitForServer()
 const browser = await chromium.launch({ headless: true, executablePath: edgePath })
 try {
@@ -583,4 +588,5 @@ try {
   console.log(JSON.stringify(results, null, 2))
 } finally {
   await browser.close(); server.kill()
+}
 }

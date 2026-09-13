@@ -66,6 +66,6 @@ describe('approved expanded kitchen live derivative', () => {
   it('tracks the distinct 3 by 5 physical-rack plate at the approved canvas size', async () => {
     const metadata = await sharp('src/assets/approved/main-ui/kitchen-screen-live-expanded-clean.png').metadata()
     expect(metadata).toMatchObject({ width: 1672, height: 941 })
-    expect(readFileSync('src/components/LandscapeGame.tsx', 'utf8')).toContain('kitchen-screen-live-expanded-clean.webp')
+    expect(readFileSync('src/landscape/kitchen/ingredientRack.ts', 'utf8')).toContain('kitchen-screen-live-expanded-clean.webp')
   })
 })
