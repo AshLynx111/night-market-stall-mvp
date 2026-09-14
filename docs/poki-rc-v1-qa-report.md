@@ -1,6 +1,6 @@
 # Poki Submission Release Candidate V1 — technical QA
 
-**Conclusion: NOT READY.** Build and packaging are complete, local game regressions pass, but the real SDK's third-party advertising request boundary remains an unresolved P0 release gate. Do not submit this file to the portal as an approved release. The ZIP can be used by the owner for Inspector diagnosis. Live Inspector and physical Mobile Safari are NOT RUN.
+**RC v1: OBSOLETE; superseded by [RC v2](poki-rc-v2-qa-report.md).** The original measurements below describe v1. The former SDK P0 classification is corrected: official SDK downstream ad requests are REQUIRES LIVE INSPECTOR CLASSIFICATION, not a game-code blocker. Live Inspector and physical Mobile Safari remain NOT RUN.
 
 ## Identity and artifacts
 
@@ -65,7 +65,7 @@ Standalone isolation: no Poki SDK request/global during Start → Pause → Resu
 
 ## Network, console and performance
 
-See [network audit](poki-rc-v1-network-audit.md) for Request / Domain / Reason / Allowed–Unexpected tables and exact SDK warnings/errors. Game-owned runtime traffic is local assets plus the official SDK entry. Mock coverage cannot prove the remote SDK's downstream network behavior. Real SDK partner requests remain a P0 classification gate.
+See [network audit](poki-rc-v1-network-audit.md) for Request / Domain / Reason / Allowed–Unexpected tables and exact SDK warnings/errors. Game-owned runtime traffic is local assets plus the official SDK entry. Mock coverage cannot prove the remote SDK's downstream network behavior. Real SDK partner requests are PENDING LIVE INSPECTOR and are not a game-code blocker.
 
 Local cold-context sample, Windows Edge on loopback (not an Internet/mobile benchmark): navigation load 109.9 ms; loadingFinished 160.6 ms; Home observed by 699.8 ms after network-idle wait; initial resource transferred bytes 718,945 plus 1235 bytes for the HTML navigation. Home is the first meaningful UI; screenshot/DOM observation is an upper bound, not a measured FMP metric. No indefinite loading, asset blocking for tens of seconds or prolonged unresponsive main thread was observed in the local game runs. Real CDN latency and physical Safari performance require Inspector/device verification.
 
@@ -95,11 +95,11 @@ Local cold-context sample, Windows Edge on loopback (not an Internet/mobile benc
 
 | Severity | Finding | Disposition |
 | --- | --- | --- |
-| P0 | Official remote SDK attempted Google IMA / DoubleClick GPT / Amazon dependencies on localhost. They fall outside a literal Poki-owned-domain allowlist. | Blocker under the user's strict rule until the SDK-ad exception is clarified / verified in Inspector. Attempts are logged; no source workaround, no silent omission. |
+| Pending live classification | Official remote SDK attempted Google IMA / DoubleClick GPT / Amazon dependencies on localhost. | REQUIRES LIVE INSPECTOR CLASSIFICATION; SDK-originated, not a game integration or code blocker. Historical attempts remain logged. |
 | P1 | Day 1 Summary English praise text extends outside its own paper surface. At 640×360, text right=551.94px versus surface right=447.92px. | Pre-existing visual issue, recorded under freeze. No viewport scrollbar or blocked buttons; still strongly recommend resolving before submission in a separately authorized UI pass. |
 | P2 | Static index.html starts with Chinese lang/title/description before the locale code updates metadata. | Existing behavior; root rendered gameplay UI is English. Recorded without editing frozen copy. |
 
-No game crash, build failure, missing asset, storage deadlock, SDK-mock lifecycle error or broken core input remains observed. This statement does not waive the P0 external-network gate above.
+No game crash, build failure, missing asset, storage deadlock, SDK-mock lifecycle error or broken core input remains observed. This statement does not certify the SDK downstream advertising stack; live Inspector classification remains pending.
 
 ## Freeze verification
 
@@ -127,4 +127,4 @@ Git comparison against 5848d84 changes only release docs/tooling and two test fi
 - Evidence: docs/qa/poki-rc-v1/ including the original run, targeted corrections, final identity run, real-SDK probes and extracted ZIP smoke.
 - Live Poki Inspector: NOT RUN. Physical Mobile Safari: NOT RUN. Portal login/upload/submit: NOT PERFORMED.
 
-**Final release status: NOT READY.**
+**RC v1 status: OBSOLETE.** Use the RC v2 report and checksum for the current Inspector candidate.

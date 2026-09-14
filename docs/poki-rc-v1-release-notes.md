@@ -1,4 +1,6 @@
-# Poki RC V1 release notes
+# Poki RC V1 release notes — OBSOLETE
+
+Superseded by [RC v2](poki-rc-v2-qa-report.md). The v1 ZIP and checksum remain historical and must not be used for the new candidate.
 
 - Release: `poki-rc-v1`.
 - Branch: `codex/poki-submission-rc-v1`.
@@ -23,4 +25,4 @@ The existing initial HTML metadata is Chinese before the locale code initializes
 
 No Poki login, game creation, upload or submission is performed by these release tools.
 
-Current verdict: **NOT READY**. The network audit retains a P0 classification gate for real-SDK Google/Amazon ad dependencies, and the QA report records the existing Summary text overflow as P1.
+Historical RC v1 disposition: **OBSOLETE**. Its Summary overflow and initial HTML metadata findings are addressed in RC v2. SDK downstream ad requests are **REQUIRES LIVE INSPECTOR CLASSIFICATION**, not a confirmed P0 or a code blocker.

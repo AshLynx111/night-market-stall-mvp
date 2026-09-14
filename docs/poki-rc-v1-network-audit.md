@@ -1,16 +1,18 @@
-# Poki RC V1 network audit
+# Poki RC V1 network audit — historical evidence
+
+RC v1 is **OBSOLETE**, superseded by RC v2. The request classification below has been corrected for the final-blocker scope; historical probe records are preserved.
 
 Source commit: `3d5d88ef9b2a6956048bcc463a9bd1f2f7440466`. Static game-bundle scan passed. No Google Analytics, Google Fonts, remote media, playtest endpoint, feedback link, AdSense, CrazyGames, third-party CSS/JS or telemetry endpoint is bundled. React error-documentation URLs and W3C namespace literals are inert strings, not observed requests. Both build variants retain separate adapter paths.
 
-## Runtime scope and unresolved blocker
+## Runtime scope and pending live classification
 
 Local production SDK-mock tests: zero unexpected external requests, zero HTTP 404s, zero uncaught errors. The SDK URL is fulfilled by Playwright; this establishes what the **game bundle** requests and does not characterize the remote SDK's internal ad network.
 
 Real official SDK, local preview: the first run requested the SDK loader/core, Poki-owned infrastructure, and Google IMA, DoubleClick GPT and Amazon ad dependencies. Non-allowlisted requests were recorded then blocked before network transmission. This guard also initially blocked Poki-owned auxiliary domains, producing the error records below. It was corrected for Poki-owned infrastructure, and the second run recorded just the loader/core, no errors, and playable Start/Pause/Resume. That differing result does not erase the first run's requests or prove a stable advertising-network allowlist.
 
-**P0 release gate, unresolved:** under the user's strict non-Poki third-party rule, the Google/Amazon attempts remain blockers until classified in the real Inspector / accepted as official SDK advertising dependencies. No third-party allowlist or SDK/game modification was added to the ZIP. The user was asked to clarify this exception; no approval has been assumed.
+**Poki SDK downstream ad requests: REQUIRES LIVE INSPECTOR CLASSIFICATION.** Google IMA, DoubleClick and Amazon requests originating in the official SDK advertising stack are not game-integrated third-party services and are not a code blocker. Their status is PENDING LIVE INSPECTOR, not PASS. No SDK filtering, proxying, blocking or monkey-patching was added to the game or release. The prior restrictive diagnostic harness is historical evidence and was not rerun for RC v2.
 
-Source verification: the downloaded official core script contains all six observed host strings (Google IMA, DoubleClick, Amazon, Poki CDN, geo and ads). Core SHA-256: `f4d54f6561eb4ab49020327fd9ea1568208395ffcd053c31c65af71fcf32dde5`, 325,706 bytes. URL: `https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js`. This demonstrates origin, not an independently approved exemption. CDP initiator evidence for the second probe is in `docs/qa/poki-rc-v1/real-sdk-local.json`.
+Source verification: the downloaded official core script contains all six observed host strings (Google IMA, DoubleClick, Amazon, Poki CDN, geo and ads). Core SHA-256: `f4d54f6561eb4ab49020327fd9ea1568208395ffcd053c31c65af71fcf32dde5`, 325,706 bytes. URL: `https://game-cdn.poki.com/scripts/d3037151c879132174772b68702ed80454d65114/poki-sdk-core-d3037151c879132174772b68702ed80454d65114.js`. This supports SDK origin; it does not establish a live Inspector pass. The first probe did not capture individual downstream CDP initiator stacks. CDP initiator evidence for the second probe is in `docs/qa/poki-rc-v1/real-sdk-local.json`.
 
 Poki documents [platform-only ads](https://developers.poki.com/guide/requirements-quality), [SDK monetization through ad partners](https://developers.poki.com/guide/how-monetization-works), and [external resource approval](https://developers.poki.com/guide/external-resources-policy). These distinguish the SDK's advertising infrastructure from additional game-integrated ad systems; final environment classification is still pending.
 
@@ -24,10 +26,10 @@ Poki documents [platform-only ads](https://developers.poki.com/guide/requirement
 | `https://a.poki-cdn.com/sdk/error-icons-v2.svg` | a.poki-cdn.com | Loaded by official SDK; not embedded in game JS | Allowed Poki infrastructure |
 | `https://geo.poki.io/` | geo.poki.io | Loaded by official SDK; not embedded in game JS | Allowed Poki infrastructure |
 | `https://ads.poki.com/ads/settings?loc=` | ads.poki.com | Loaded by official SDK; not embedded in game JS | Allowed Poki infrastructure |
-| `https://securepubads.g.doubleclick.net/tag/js/gpt.js` | securepubads.g.doubleclick.net | Loaded by official SDK; not embedded in game JS | Unexpected under strict non-Poki-domain rule; BLOCKER pending Inspector classification |
-| `https://imasdk.googleapis.com/js/sdkloader/ima3.js` | imasdk.googleapis.com | Loaded by official SDK; not embedded in game JS | Unexpected under strict non-Poki-domain rule; BLOCKER pending Inspector classification |
+| `https://securepubads.g.doubleclick.net/tag/js/gpt.js` | securepubads.g.doubleclick.net | Loaded by official SDK; not embedded in game JS | PENDING LIVE INSPECTOR (SDK-originated) |
+| `https://imasdk.googleapis.com/js/sdkloader/ima3.js` | imasdk.googleapis.com | Loaded by official SDK; not embedded in game JS | PENDING LIVE INSPECTOR (SDK-originated) |
 | `https://a.poki-cdn.com/prebid/prebid_1782721530.js` | a.poki-cdn.com | Loaded by official SDK; not embedded in game JS | Allowed Poki infrastructure |
-| `https://c.amazon-adsystem.com/aax2/apstag.js` | c.amazon-adsystem.com | Loaded by official SDK; not embedded in game JS | Unexpected under strict non-Poki-domain rule; BLOCKER pending Inspector classification |
+| `https://c.amazon-adsystem.com/aax2/apstag.js` | c.amazon-adsystem.com | Loaded by official SDK; not embedded in game JS | PENDING LIVE INSPECTOR (SDK-originated) |
 
 ## Game-bundle runtime request table
 

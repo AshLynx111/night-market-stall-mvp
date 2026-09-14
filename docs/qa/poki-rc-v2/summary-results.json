@@ -1,0 +1,2142 @@
+{
+  "build": "production Poki",
+  "sdk": "SDK entry mock for deterministic game-origin isolation; no real downstream requests intercepted",
+  "screenshots": [
+    {
+      "locale": "en",
+      "width": 640,
+      "height": 360,
+      "filename": "summary-640x360-en.png",
+      "measurements": [
+        {
+          "selector": ".summary-message",
+          "copy": "Flawless speed and quality—people are coming to the market just for your stall!",
+          "container": {
+            "left": 128.09375,
+            "top": 133.90625,
+            "right": 511.875,
+            "bottom": 149.375,
+            "width": 383.78125,
+            "height": 15.46875
+          },
+          "text": {
+            "left": 140.046875,
+            "top": 136.140625,
+            "right": 499.921875,
+            "bottom": 147.140625,
+            "width": 359.875,
+            "height": 11
+          },
+          "scrollWidth": 384,
+          "clientWidth": 384,
+          "scrollHeight": 15,
+          "clientHeight": 15,
+          "fontSize": "10px",
+          "overflow": "visible",
+          "overlap": false
+        },
+        {
+          "selector": ".summary-retention",
+          "copy": "Next · Big Eater ChallengeDouble Stack unlocked",
+          "container": {
+            "left": 128.09375,
+            "top": 150.109375,
+            "right": 511.875,
+            "bottom": 163.78125,
+            "width": 383.78125,
+            "height": 13.671875
+          },
+          "text": {
+            "left": 199.78125,
+            "top": 150.9375,
+            "right": 440.171875,
+            "bottom": 161.9375,
+            "width": 240.390625,
+            "height": 11
+          },
+          "scrollWidth": 382,
+          "clientWidth": 382,
+          "scrollHeight": 12,
+          "clientHeight": 12,
+          "fontSize": "10px",
+          "overflow": "visible",
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 836,
+      "height": 470,
+      "filename": "summary-836x470-en.png",
+      "measurements": [
+        {
+          "selector": ".summary-message",
+          "copy": "Flawless speed and quality—people are coming to the market just for your stall!",
+          "container": {
+            "left": 167.453125,
+            "top": 174.828125,
+            "right": 668.515625,
+            "bottom": 195.03125,
+            "width": 501.0625,
+            "height": 20.203125
+          },
+          "text": {
+            "left": 238.046875,
+            "top": 179.421875,
+            "right": 597.921875,
+            "bottom": 190.421875,
+            "width": 359.875,
+            "height": 11
+          },
+          "scrollWidth": 501,
+          "clientWidth": 501,
+          "scrollHeight": 20,
+          "clientHeight": 20,
+          "fontSize": "10px",
+          "overflow": "visible",
+          "overlap": false
+        },
+        {
+          "selector": ".summary-retention",
+          "copy": "Next · Big Eater ChallengeDouble Stack unlocked",
+          "container": {
+            "left": 167.453125,
+            "top": 195.984375,
+            "right": 668.515625,
+            "bottom": 213.84375,
+            "width": 501.0625,
+            "height": 17.859375
+          },
+          "text": {
+            "left": 297.78125,
+            "top": 198.90625,
+            "right": 538.171875,
+            "bottom": 209.90625,
+            "width": 240.390625,
+            "height": 11
+          },
+          "scrollWidth": 499,
+          "clientWidth": 499,
+          "scrollHeight": 16,
+          "clientHeight": 16,
+          "fontSize": "10px",
+          "overflow": "visible",
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 844,
+      "height": 390,
+      "filename": "summary-844x390-en.png",
+      "measurements": [
+        {
+          "selector": ".summary-message",
+          "copy": "Flawless speed and quality—people are coming to the market just for your stall!",
+          "container": {
+            "left": 214.09375,
+            "top": 145.078125,
+            "right": 629.859375,
+            "bottom": 161.84375,
+            "width": 415.765625,
+            "height": 16.765625
+          },
+          "text": {
+            "left": 242.03125,
+            "top": 147.953125,
+            "right": 601.90625,
+            "bottom": 158.953125,
+            "width": 359.875,
+            "height": 11
+          },
+          "scrollWidth": 416,
+          "clientWidth": 416,
+          "scrollHeight": 17,
+          "clientHeight": 17,
+          "fontSize": "10px",
+          "overflow": "visible",
+          "overlap": false
+        },
+        {
+          "selector": ".summary-retention",
+          "copy": "Next · Big Eater ChallengeDouble Stack unlocked",
+          "container": {
+            "left": 214.09375,
+            "top": 162.625,
+            "right": 629.859375,
+            "bottom": 177.4375,
+            "width": 415.765625,
+            "height": 14.8125
+          },
+          "text": {
+            "left": 301.78125,
+            "top": 164.03125,
+            "right": 542.171875,
+            "bottom": 175.03125,
+            "width": 240.390625,
+            "height": 11
+          },
+          "scrollWidth": 414,
+          "clientWidth": 414,
+          "scrollHeight": 13,
+          "clientHeight": 13,
+          "fontSize": "10px",
+          "overflow": "visible",
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "height": 810,
+      "filename": "summary-1440x810-en.png",
+      "measurements": [
+        {
+          "selector": ".summary-message",
+          "copy": "Flawless speed and quality—people are coming to the market just for your stall!",
+          "container": {
+            "left": 432.15625,
+            "top": 301.3125,
+            "right": 1007.84375,
+            "bottom": 336.140625,
+            "width": 575.6875,
+            "height": 34.828125
+          },
+          "text": {
+            "left": 440.1875,
+            "top": 309.71875,
+            "right": 999.796875,
+            "bottom": 327.71875,
+            "width": 559.609375,
+            "height": 18
+          },
+          "scrollWidth": 576,
+          "clientWidth": 576,
+          "scrollHeight": 35,
+          "clientHeight": 35,
+          "fontSize": "15.552px",
+          "overflow": "visible",
+          "overlap": false
+        },
+        {
+          "selector": ".summary-retention",
+          "copy": "Next · Big Eater ChallengeDouble Stack unlocked",
+          "container": {
+            "left": 446.546875,
+            "top": 337.765625,
+            "right": 993.4375,
+            "bottom": 368.53125,
+            "width": 546.890625,
+            "height": 30.765625
+          },
+          "text": {
+            "left": 571.1875,
+            "top": 344.953125,
+            "right": 868.796875,
+            "bottom": 359.953125,
+            "width": 297.609375,
+            "height": 15
+          },
+          "scrollWidth": 545,
+          "clientWidth": 545,
+          "scrollHeight": 29,
+          "clientHeight": 29,
+          "fontSize": "12.384px",
+          "overflow": "visible",
+          "overlap": false
+        }
+      ],
+      "baselinePixelIdentical": true,
+      "screenshotSha256": "0b132888eda0af1b5ac9844e2cd5a2c86cc3e83efd62eeca10b2b4a837164bb1"
+    },
+    {
+      "locale": "zh-CN",
+      "width": 640,
+      "height": 360,
+      "filename": "summary-640x360-zh.png",
+      "measurements": [
+        {
+          "selector": ".summary-message",
+          "copy": "手速和品质都无可挑剔，夜市里已经有人专程来找你了！",
+          "container": {
+            "left": 197.8125,
+            "top": 137.515625,
+            "right": 443.4375,
+            "bottom": 148.3125,
+            "width": 245.625,
+            "height": 10.796875
+          },
+          "text": {
+            "left": 220.625,
+            "top": 137.90625,
+            "right": 420.625,
+            "bottom": 147.90625,
+            "width": 200,
+            "height": 10
+          },
+          "scrollWidth": 246,
+          "clientWidth": 246,
+          "scrollHeight": 11,
+          "clientHeight": 11,
+          "fontSize": "8px",
+          "overflow": "visible",
+          "overlap": false
+        },
+        {
+          "selector": ".summary-retention",
+          "copy": "明日 · 饭量挑战大胃王解锁",
+          "container": {
+            "left": 198.453125,
+            "top": 150.109375,
+            "right": 441.515625,
+            "bottom": 163.78125,
+            "width": 243.0625,
+            "height": 13.671875
+          },
+          "text": {
+            "left": 273.65625,
+            "top": 152.4375,
+            "right": 366.296875,
+            "bottom": 161.4375,
+            "width": 92.640625,
+            "height": 9
+          },
+          "scrollWidth": 241,
+          "clientWidth": 241,
+          "scrollHeight": 12,
+          "clientHeight": 12,
+          "fontSize": "7px",
+          "overflow": "visible",
+          "overlap": false
+        }
+      ],
+      "baselinePixelIdentical": true,
+      "screenshotSha256": "337340539348d1418af9feb9a6209de8545620c394a5eec84c1964b5b3f497fa"
+    },
+    {
+      "locale": "zh-CN",
+      "width": 836,
+      "height": 470,
+      "filename": "summary-836x470-zh.png",
+      "measurements": [
+        {
+          "selector": ".summary-message",
+          "copy": "手速和品质都无可挑剔，夜市里已经有人专程来找你了！",
+          "container": {
+            "left": 258.484375,
+            "top": 179.53125,
+            "right": 579.15625,
+            "bottom": 193.625,
+            "width": 320.671875,
+            "height": 14.09375
+          },
+          "text": {
+            "left": 306.0625,
+            "top": 180.578125,
+            "right": 531.5625,
+            "bottom": 192.578125,
+            "width": 225.5,
+            "height": 12
+          },
+          "scrollWidth": 321,
+          "clientWidth": 321,
+          "scrollHeight": 14,
+          "clientHeight": 14,
+          "fontSize": "9.0288px",
+          "overflow": "visible",
+          "overlap": false
+        },
+        {
+          "selector": ".summary-retention",
+          "copy": "明日 · 饭量挑战大胃王解锁",
+          "container": {
+            "left": 259.3125,
+            "top": 195.984375,
+            "right": 576.640625,
+            "bottom": 213.84375,
+            "width": 317.328125,
+            "height": 17.859375
+          },
+          "text": {
+            "left": 370.453125,
+            "top": 199.90625,
+            "right": 465.5,
+            "bottom": 209.90625,
+            "width": 95.046875,
+            "height": 10
+          },
+          "scrollWidth": 315,
+          "clientWidth": 315,
+          "scrollHeight": 16,
+          "clientHeight": 16,
+          "fontSize": "7.1896px",
+          "overflow": "visible",
+          "overlap": false
+        }
+      ],
+      "baselinePixelIdentical": true,
+      "screenshotSha256": "19e441367e963769aaa64d24b2118beb2b37e907ca0bd1985f1762b88f9a9e0d"
+    },
+    {
+      "locale": "zh-CN",
+      "width": 844,
+      "height": 390,
+      "filename": "summary-844x390-zh.png",
+      "measurements": [
+        {
+          "selector": ".summary-message",
+          "copy": "手速和品质都无可挑剔，夜市里已经有人专程来找你了！",
+          "container": {
+            "left": 289.625,
+            "top": 148.96875,
+            "right": 555.71875,
+            "bottom": 160.65625,
+            "width": 266.09375,
+            "height": 11.6875
+          },
+          "text": {
+            "left": 308.796875,
+            "top": 148.96875,
+            "right": 536.546875,
+            "bottom": 160.96875,
+            "width": 227.75,
+            "height": 12
+          },
+          "scrollWidth": 266,
+          "clientWidth": 266,
+          "scrollHeight": 12,
+          "clientHeight": 12,
+          "fontSize": "9.1152px",
+          "overflow": "visible",
+          "overlap": false
+        },
+        {
+          "selector": ".summary-retention",
+          "copy": "明日 · 饭量挑战大胃王解锁",
+          "container": {
+            "left": 290.328125,
+            "top": 162.625,
+            "right": 553.640625,
+            "bottom": 177.4375,
+            "width": 263.3125,
+            "height": 14.8125
+          },
+          "text": {
+            "left": 374,
+            "top": 165.03125,
+            "right": 469.96875,
+            "bottom": 175.03125,
+            "width": 95.96875,
+            "height": 10
+          },
+          "scrollWidth": 261,
+          "clientWidth": 261,
+          "scrollHeight": 13,
+          "clientHeight": 13,
+          "fontSize": "7.2584px",
+          "overflow": "visible",
+          "overlap": false
+        }
+      ],
+      "baselinePixelIdentical": true,
+      "screenshotSha256": "c2de2a442953619092251117f1db0c80ff3581cf2ab0b9987d4ff7fd26d8013d"
+    },
+    {
+      "locale": "zh-CN",
+      "width": 1440,
+      "height": 810,
+      "filename": "summary-1440x810-zh.png",
+      "measurements": [
+        {
+          "selector": ".summary-message",
+          "copy": "手速和品质都无可挑剔，夜市里已经有人专程来找你了！",
+          "container": {
+            "left": 445.09375,
+            "top": 309.40625,
+            "right": 997.75,
+            "bottom": 333.703125,
+            "width": 552.65625,
+            "height": 24.296875
+          },
+          "text": {
+            "left": 527.046875,
+            "top": 311.546875,
+            "right": 915.796875,
+            "bottom": 331.546875,
+            "width": 388.75,
+            "height": 20
+          },
+          "scrollWidth": 553,
+          "clientWidth": 553,
+          "scrollHeight": 24,
+          "clientHeight": 24,
+          "fontSize": "15.552px",
+          "overflow": "visible",
+          "overlap": false
+        },
+        {
+          "selector": ".summary-retention",
+          "copy": "明日 · 饭量挑战大胃王解锁",
+          "container": {
+            "left": 446.546875,
+            "top": 337.765625,
+            "right": 993.4375,
+            "bottom": 368.53125,
+            "width": 546.890625,
+            "height": 30.765625
+          },
+          "text": {
+            "left": 638.046875,
+            "top": 345.140625,
+            "right": 801.921875,
+            "bottom": 361.140625,
+            "width": 163.875,
+            "height": 16
+          },
+          "scrollWidth": 545,
+          "clientWidth": 545,
+          "scrollHeight": 29,
+          "clientHeight": 29,
+          "fontSize": "12.384px",
+          "overflow": "visible",
+          "overlap": false
+        }
+      ],
+      "baselinePixelIdentical": true,
+      "screenshotSha256": "f151c5b9bd2bae8ffba2121c0e901be60f4da4a81f537251355f5dcf73da8b77"
+    }
+  ],
+  "requests": [
+    {
+      "request": "http://127.0.0.1:4196/",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/index-DkHXmILs.js",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/index-BjkbSYiU.css",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "origin": "Poki SDK bootstrap (mocked)",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/home-title-neutral-B-N6nKdN.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-Csx4Qeto.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-CQEuN-Lo.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-DM1-vGOO.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-BqF4RJIG.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-RyFLFGpa.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-B-hb3jfs.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-BDd9aoN7.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-DLcZRouC.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-witbPK5d.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-Bf-oueV1.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-DvGLf4ys.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-DauAkCVG.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-CjSn8naZ.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/summary-screen-user-final-Dj2uHf7I.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/summary-title-neutral-EyqjklnP.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/?lang=zh-CN",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "document",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/index-DkHXmILs.js",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/index-BjkbSYiU.css",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "stylesheet",
+      "allowed": true
+    },
+    {
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "domain": "game-cdn.poki.com",
+      "origin": "Poki SDK bootstrap (mocked)",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/poki-CNuId0eD.js",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "script",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/night-market-clean-background-DRPGRpdO.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-DHz3mSVl.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-egg-BoDG0Gmq.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-sauce-BSdOzBjl.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-scallion-DvRe8lSY.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "media",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-8D5bdyzm.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-Bl1ofHc3.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-Csx4Qeto.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-BqMWkawi.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-BBjmCuQ-.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-CQEuN-Lo.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-DM1-vGOO.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-BqF4RJIG.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-RyFLFGpa.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-B-hb3jfs.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-BDd9aoN7.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-DLcZRouC.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-witbPK5d.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-Bf-oueV1.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-DvGLf4ys.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-DauAkCVG.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-CjSn8naZ.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/summary-screen-user-final-Dj2uHf7I.webp",
+      "domain": "127.0.0.1",
+      "origin": "Game",
+      "reason": "image",
+      "allowed": true
+    }
+  ],
+  "initiators": [
+    {
+      "request": "http://127.0.0.1:4196/",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/index-DkHXmILs.js",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/index-BjkbSYiU.css",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/"
+    },
+    {
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/poki-CNuId0eD.js",
+      "type": "script",
+      "frames": [
+        {
+          "functionName": "",
+          "scriptId": "5",
+          "url": "http://127.0.0.1:4196/assets/index-DkHXmILs.js",
+          "lineNumber": 8,
+          "columnNumber": 213290
+        },
+        {
+          "functionName": "",
+          "scriptId": "5",
+          "url": "http://127.0.0.1:4196/assets/index-DkHXmILs.js",
+          "lineNumber": 8,
+          "columnNumber": 213201
+        }
+      ]
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/home-title-neutral-B-N6nKdN.webp",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/assets/index-BjkbSYiU.css"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/night-market-clean-background-DRPGRpdO.webp",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/assets/index-BjkbSYiU.css"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-DHz3mSVl.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-egg-BoDG0Gmq.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-sauce-BSdOzBjl.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-scallion-DvRe8lSY.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-8D5bdyzm.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-Bl1ofHc3.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-Csx4Qeto.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-BqMWkawi.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-BBjmCuQ-.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-CQEuN-Lo.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-DM1-vGOO.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-BqF4RJIG.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-RyFLFGpa.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-B-hb3jfs.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-BDd9aoN7.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-DLcZRouC.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-witbPK5d.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-Bf-oueV1.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-DvGLf4ys.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-DauAkCVG.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-CjSn8naZ.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/summary-screen-user-final-Dj2uHf7I.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/summary-title-neutral-EyqjklnP.webp",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/assets/index-BjkbSYiU.css"
+    },
+    {
+      "request": "http://127.0.0.1:4196/?lang=zh-CN",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/index-DkHXmILs.js",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/?lang=zh-CN"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/index-BjkbSYiU.css",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/?lang=zh-CN"
+    },
+    {
+      "request": "https://game-cdn.poki.com/scripts/v2/poki-sdk.js",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/?lang=zh-CN"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/poki-CNuId0eD.js",
+      "type": "script",
+      "frames": [
+        {
+          "functionName": "",
+          "scriptId": "5",
+          "url": "http://127.0.0.1:4196/assets/index-DkHXmILs.js",
+          "lineNumber": 8,
+          "columnNumber": 213290
+        },
+        {
+          "functionName": "",
+          "scriptId": "5",
+          "url": "http://127.0.0.1:4196/assets/index-DkHXmILs.js",
+          "lineNumber": 8,
+          "columnNumber": 213201
+        }
+      ]
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/home-screen-user-final-C8Xn3OJv.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/night-market-clean-background-DRPGRpdO.webp",
+      "type": "parser",
+      "parserUrl": "http://127.0.0.1:4196/assets/index-BjkbSYiU.css"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-DHz3mSVl.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-egg-BoDG0Gmq.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-sauce-BSdOzBjl.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-scallion-DvRe8lSY.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/night-market-bgm-Dsrq8fsL.mp3",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-8D5bdyzm.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-Bl1ofHc3.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-Csx4Qeto.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-BqMWkawi.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-BBjmCuQ-.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-CQEuN-Lo.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-DM1-vGOO.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-BqF4RJIG.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-RyFLFGpa.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-B-hb3jfs.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-BDd9aoN7.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-DLcZRouC.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-witbPK5d.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-01-noodle-HVexiEkq.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-raw-CDfSx52u.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/arriving-Bf-oueV1.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ordering-DvGLf4ys.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/waiting-DauAkCVG.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/02-egg-ready-BraLD1aS.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-raw-DWrjIvep.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-03-hot-dog-BNieS80Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-04-sauce-CxeiBv_Y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-06-cut-ByiJub1y.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/classic-07-roll-DWMwIc2-.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/dish-classic-noodle-I9rRxPK7.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/happy-CjSn8naZ.webp",
+      "type": "other"
+    },
+    {
+      "request": "http://127.0.0.1:4196/assets/summary-screen-user-final-Dj2uHf7I.webp",
+      "type": "other"
+    }
+  ],
+  "errors": [],
+  "productionIndexSha256": "ecc654de75668460257cc71e132fde1014e9acf8e48685ac183403da6b9cfc85",
+  "lastMeasurement": {
+    "locale": "zh-CN",
+    "width": 1440,
+    "height": 810,
+    "measurements": [
+      {
+        "selector": ".summary-message",
+        "copy": "手速和品质都无可挑剔，夜市里已经有人专程来找你了！",
+        "container": {
+          "left": 445.09375,
+          "top": 309.40625,
+          "right": 997.75,
+          "bottom": 333.703125,
+          "width": 552.65625,
+          "height": 24.296875
+        },
+        "text": {
+          "left": 527.046875,
+          "top": 311.546875,
+          "right": 915.796875,
+          "bottom": 331.546875,
+          "width": 388.75,
+          "height": 20
+        },
+        "scrollWidth": 553,
+        "clientWidth": 553,
+        "scrollHeight": 24,
+        "clientHeight": 24,
+        "fontSize": "15.552px",
+        "overflow": "visible",
+        "overlap": false
+      },
+      {
+        "selector": ".summary-retention",
+        "copy": "明日 · 饭量挑战大胃王解锁",
+        "container": {
+          "left": 446.546875,
+          "top": 337.765625,
+          "right": 993.4375,
+          "bottom": 368.53125,
+          "width": 546.890625,
+          "height": 30.765625
+        },
+        "text": {
+          "left": 638.046875,
+          "top": 345.140625,
+          "right": 801.921875,
+          "bottom": 361.140625,
+          "width": 163.875,
+          "height": 16
+        },
+        "scrollWidth": 545,
+        "clientWidth": 545,
+        "scrollHeight": 29,
+        "clientHeight": 29,
+        "fontSize": "12.384px",
+        "overflow": "visible",
+        "overlap": false
+      }
+    ]
+  },
+  "gameOriginatedUnexpected": [],
+  "pokiDownstreamStatus": "PENDING LIVE INSPECTOR",
+  "status": "PASS"
+}

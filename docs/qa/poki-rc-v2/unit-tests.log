@@ -1,0 +1,116 @@
+
+> night-market-stall-mvp@0.1.0 test
+> vitest run --config vitest.config.ts
+
+
+ RUN  v3.2.7 D:/game_demo
+
+ ✓ src/styles/forbiddenGameplayEmoji.test.ts (3 tests) 355ms
+   ✓ production gameplay icon contract > keeps the original system emoji out of production source  340ms
+ ✓ src/landscape/kitchen/celebrityArtContract.test.ts (1 test) 751ms
+   ✓ reference-remake Day 5 celebrity art contract > exports the approved handsome celebrity across event, emotion and motion art  748ms
+ ✓ src/landscape/kitchen/foodArtContract.test.ts (1 test) 786ms
+   ✓ reference-remake food art contract > validates the complete finished-dish, ingredient and packaging set  784ms
+ ✓ src/styles/kitchenCompositionAsset.test.ts (3 tests) 696ms
+   ✓ approved kitchen live derivative > is pixel aligned to the approved plate and changes only localized customer/bubble masks  658ms
+ ✓ src/landscape/kitchen/stageArtContract.test.ts (1 test) 1162ms
+   ✓ reference-remake cooking stage art contract > exports every cumulative, heat, modifier and atlas asset  1160ms
+ ✓ src/landscape/kitchen/ingredientBinArtContract.test.ts (1 test) 1623ms
+   ✓ ingredient bin art contract > ships fifteen distinct, dimension-matched transparent RGBA bin assets  1621ms
+ ✓ src/landscape/kitchen/customerArtContract.test.ts (1 test) 2356ms
+   ✓ reference-remake regular customer art contract > exports ten distinct customers with seven emotions and motion atlases  2354ms
+ ✓ scripts/art-remake/export-tools.test.ts (3 tests) 127ms
+ ✓ src/components/game/AccessibleDialog.test.tsx (2 tests) 74ms
+ ✓ src/components/game/GameplayHud.test.tsx (5 tests) 128ms
+ ✓ src/components/playtest/PlaytestFeedbackLink.test.tsx (2 tests) 58ms
+ ✓ src/landscape/useGameplayViewport.test.tsx (4 tests) 71ms
+ ✓ src/landscape/kitchen/fullArtManifest.test.ts (2 tests) 5192ms
+   ✓ full reference-remake art contract > tracks every approved asset and all required visual families  4593ms
+   ✓ full reference-remake art contract > records dimensions and derivation for every raster contract  596ms
+ ✓ src/landscape/kitchen/runtimeAssetContract.test.ts (2 tests) 5722ms
+   ✓ runtime WebP asset contract > keeps every derivative fresh and reduces aggregate bytes by at least 75 percent  4603ms
+   ✓ runtime WebP asset contract > keeps critical plates dimension-identical and visually near-lossless  1116ms
+ ✓ src/landscape/kitchen/reducer.test.ts (16 tests) 39ms
+ ✓ src/landscape/kitchen/customerArrivalEvidence.test.ts (2 tests) 251ms
+ ✓ src/landscape/useGameplayShortcuts.test.tsx (1 test) 51ms
+ ✓ src/components/game/TableIngredient.test.tsx (1 test) 42ms
+ ✓ src/components/platform/PlatformInputLock.test.tsx (1 test) 36ms
+ ✓ src/analytics/tracker.test.ts (5 tests) 31ms
+ ✓ src/landscape/kitchen/sceneGeometry.test.ts (11 tests) 25ms
+ ✓ src/analytics/cookingIntegration.test.tsx (3 tests) 183ms
+stderr | src/platform/poki.test.ts > Poki platform adapter > fails open when initialization or lifecycle calls fail
+Poki SDK initialization failed; continuing without ads. Error: offline
+    at Object.<anonymous> (D:\game_demo\src\platform\poki.test.ts:28:59)
+    at Object.mockCall (file:///D:/game_demo/node_modules/@vitest/spy/dist/index.js:96:15)
+    at Object.spy [as init] (file:///D:/game_demo/node_modules/tinyspy/dist/index.js:47:80)
+    at D:\game_demo\src\platform\poki.ts:32:29
+    at D:\game_demo\src\platform\poki.ts:38:7
+    at Object.initialize (D:\game_demo\src\platform\poki.ts:45:5)
+    at D:\game_demo\src\platform\poki.test.ts:30:27
+    at file:///D:/game_demo/node_modules/@vitest/runner/dist/chunk-hooks.js:155:11
+    at file:///D:/game_demo/node_modules/@vitest/runner/dist/chunk-hooks.js:752:26
+    at file:///D:/game_demo/node_modules/@vitest/runner/dist/chunk-hooks.js:1897:20
+
+ ✓ src/platform/poki.test.ts (4 tests) 21ms
+ ✓ src/components/game/UpgradeCardIcon.test.tsx (3 tests) 16ms
+ ✓ src/platform/storageFailure.test.tsx (1 test) 159ms
+ ✓ src/i18n/appLocale.test.tsx (5 tests) 183ms
+ ✓ src/components/playtest/PlaytestDebugPanel.test.tsx (2 tests) 193ms
+ ✓ src/analytics/funnelIntegration.test.tsx (3 tests) 466ms
+ ✓ scripts/spatial-alignment-qa-contract.test.mjs (11 tests) 41ms
+ ✓ src/components/game/OrderBubble.test.tsx (3 tests) 16ms
+ ✓ src/game/audio.test.ts (6 tests) 17ms
+ ✓ scripts/art-remake/build-live-kitchen-plate.test.mjs (4 tests) 10275ms
+   ✓ rebuilds the kitchen plate byte-for-byte from tracked art inputs  2439ms
+   ✓ changes the customer-clean live plate only inside the six localized empty-bin masks  3406ms
+   ✓ rebuilds the expanded physical rack from the tracked accepted source  2183ms
+   ✓ changes the Day 1 live plate only inside the localized expanded-rack polygon  2246ms
+ ✓ src/landscape/kitchen/assets.test.ts (13 tests) 15ms
+ ✓ src/styles/visualSystemUnification.test.ts (7 tests) 44ms
+ ✓ src/App.test.tsx (22 tests) 1679ms
+ ✓ src/components/game/KitchenScene.test.tsx (54 tests) 2162ms
+ ✓ src/styles/englishVisualPolish.test.ts (8 tests) 18ms
+ ✓ src/components/game/GameIcon.test.tsx (4 tests) 13ms
+ ✓ src/styles/kitchen-layout.test.ts (13 tests) 11ms
+ ✓ src/landscape/kitchen/service.test.ts (11 tests) 13ms
+ ✓ src/components/game/TutorialOverlay.test.tsx (2 tests) 12ms
+ ✓ src/components/game/DayRetentionCue.test.tsx (2 tests) 12ms
+ ✓ src/components/game/DeliveryFeedback.test.tsx (1 test) 12ms
+ ✓ src/landscape/kitchen/queue.test.ts (13 tests) 11ms
+ ✓ src/landscape/kitchen/ingredientRack.test.ts (9 tests) 13ms
+ ✓ src/landscape/campaign.test.ts (11 tests) 11ms
+ ✓ src/landscape/kitchen/griddle.test.ts (9 tests) 11ms
+ ✓ src/landscape/kitchen/state.test.ts (7 tests) 8ms
+ ✓ src/landscape/kitchen/tutorial.test.ts (3 tests) 9ms
+ ✓ src/landscape/kitchen/customerMotionAssetValidator.test.ts (4 tests) 10ms
+ ✓ src/styles/referenceVisualTokens.test.ts (3 tests) 12ms
+ ✓ src/game/bgm.test.ts (6 tests) 8ms
+ ✓ src/landscape/kitchen/gestures.test.ts (7 tests) 8ms
+ ✓ src/i18n/domain.test.ts (3 tests) 8ms
+ ✓ src/platform/lifecycle.test.ts (4 tests) 7ms
+ ✓ src/styles/referenceGameplayComposition.test.ts (11 tests) 8ms
+ ✓ src/analytics/gameplayObserver.test.ts (4 tests) 6ms
+ ✓ src/landscape/kitchen/orderBubbleLayout.test.ts (2 tests) 6ms
+ ✓ src/landscape/dayRetention.test.ts (4 tests) 6ms
+ ✓ src/landscape/kitchen/tutorialPaths.test.ts (3 tests) 7ms
+ ✓ src/i18n/core.test.ts (4 tests) 7ms
+ ✓ src/platform/standalone.test.ts (2 tests) 6ms
+ ✓ src/landscape/progression.test.ts (10 tests) 5ms
+ ✓ src/landscape/kitchen/customerTimeline.test.ts (4 tests) 6ms
+ ✓ src/game/audioSettings.test.ts (3 tests) 5ms
+ ✓ src/game/uiFeedback.test.ts (2 tests) 4ms
+ ✓ src/landscape/reducer.test.ts (7 tests) 4ms
+ ✓ src/landscape/geometry.test.ts (4 tests) 4ms
+ ✓ src/game/reducer.test.ts (6 tests) 4ms
+ ✓ src/landscape/kitchen/customerMotion.test.ts (2 tests) 3ms
+ ✓ src/analytics/events.test.ts (2 tests) 3ms
+ ✓ src/game/storage.test.ts (3 tests) 2ms
+ ✓ src/platform/loading.test.ts (1 test) 3ms
+ ✓ src/components/game/CookingFeedback.test.tsx (1 test) 3ms
+ ✓ src/game/platformAudio.test.ts (1 test) 5ms
+ ✓ src/landscape/pointerIntent.test.ts (5 tests) 3ms
+
+ Test Files  76 passed (76)
+      Tests  410 passed (410)
+   Start at  23:30:10
+   Duration  38.07s (transform 4.29s, setup 1.56s, collect 67.46s, tests 35.35s, environment 387.69s, prepare 23.04s)

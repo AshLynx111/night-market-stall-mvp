@@ -1,8 +1,8 @@
-# Poki RC V1 — manual Inspector checklist
+# Poki RC V2 — manual Inspector checklist
 
-Upload `night-market-poki-rc-v1.zip` yourself. Match its SHA-256 and full source commit against `releases/poki-rc-v1-manifest.json` first. ZIP root must contain `index.html` and `assets/`.
+Upload `night-market-poki-rc-v2.zip` yourself. Match its SHA-256 and full source commit against `releases/poki-rc-v2-manifest.json` first. ZIP root must contain `index.html` and `assets/`.
 
-**Live Inspector status: NOT RUN. Current release verdict: NOT READY pending the external-network gate in docs/poki-rc-v1-network-audit.md.** Every box below intentionally starts unchecked. Local SDK mocks, Edge touch emulation and automated screenshots do not count as Inspector or physical Safari validation.
+**Live Inspector status: NOT RUN. Candidate verdict: READY FOR POKI INSPECTOR.** See docs/poki-rc-v2-qa-report.md. SDK downstream ad requests remain PENDING LIVE INSPECTOR. Every box below intentionally starts unchecked. Local SDK mocks, Edge touch emulation and automated screenshots do not count as Inspector or physical Safari validation.
 
 Record: date / tester / Inspector URL or session / ZIP SHA-256 / desktop browser / phone model and OS / screenshots / issues.
 
@@ -35,7 +35,7 @@ Record: date / tester / Inspector URL or session / ZIP SHA-256 / desktop browser
 - [ ] Home, Settings, Day Select, Gameplay, Tutorial, order bubbles, labels, Pause, Summary, Upgrade and Rotate remain English. Decorative scene signs may be Chinese.
 - [ ] `?playtest=1`, `?debug=1`, `?qa=1` and combined flags cannot expose test/export/feedback UI.
 - [ ] Keyboard Start / Pause / Resume work with Enter, Space and Escape; focus is visible and dialogs retain focus.
-- [ ] No unexpected external requests. Save Network log; explain each Poki SDK/ad environment request. Any non-Poki third-party request is a blocker pending investigation.
+- [ ] Game-originated unexpected external requests = 0. Save Network logs and initiators separately for game requests and SDK downstream ad dependencies. Google IMA / DoubleClick / Amazon from the official SDK are PENDING LIVE INSPECTOR; classify them in the live environment without modifying or blocking SDK requests.
 - [ ] No console errors, unhandled rejections, missing asset 404s, blocked runtime dependencies or infinite retries. Attach exact warnings and reasons if any.
 - [ ] Cold load reaches an interactive UI without an indefinitely blocked resource or long main-thread freeze.
 - [ ] Capture Inspector event log and representative desktop/mobile screenshots.

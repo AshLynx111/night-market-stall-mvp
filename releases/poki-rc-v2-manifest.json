@@ -1,0 +1,1638 @@
+{
+  "version": "poki-rc-v2+fb8df4fe9d7c",
+  "sourceCommit": "fb8df4fe9d7c16bf5986c80d4c829e66a69009a1",
+  "branch": "codex/poki-submission-rc-v1",
+  "builtAt": "2026-09-14T12:34:55.508Z",
+  "supersedes": {
+    "filename": "night-market-poki-rc-v1.zip",
+    "sha256": "988c2fb001094a826fd4d86ca90e356a1743d98efbd2f622d2904651662c4e77",
+    "status": "OBSOLETE"
+  },
+  "runtimeBaselineCommit": "5848d84013af3c81fbe502d3d0c8500fb795e0bf",
+  "zip": {
+    "filename": "night-market-poki-rc-v2.zip",
+    "bytes": 26000446,
+    "sha256": "8eb6d8cbd7b510b25281c093093344e72e00ea415b86c1fbdf482fe0443b0b1d",
+    "entriesVerifiedAgainstDist": 309
+  },
+  "distBytes": 26388706,
+  "fileCount": 309,
+  "initialJs": {
+    "path": "assets/index-DkHXmILs.js",
+    "bytes": 409563,
+    "sha256": "17e468e606d52988b4f5f086981ec60765bbd0313693b6d9ebca26183c792f79",
+    "gzipBytes": 115618
+  },
+  "initialCss": {
+    "path": "assets/index-BjkbSYiU.css",
+    "bytes": 92725,
+    "sha256": "a6d629e79add10b81fbefe594a6e38ed29a8f3b66351f1c9f7d49204df15338e",
+    "gzipBytes": 20923
+  },
+  "largest10": [
+    {
+      "path": "assets/night-market-bgm-Dsrq8fsL.mp3",
+      "bytes": 2401307,
+      "sha256": "fb960a2257eab4f0f30c6cab2a3ab9dd167ce5c8619731fe2a60994a12d4264c"
+    },
+    {
+      "path": "assets/customer-01-xiaolin-motion-DfLDdTo-.webp",
+      "bytes": 673990,
+      "sha256": "1630be629e0feddf6cc0afe5e5600d8db90fef465e998d8b4ba0f99f260c97f6"
+    },
+    {
+      "path": "assets/customer-05-suqing-motion-DLl68b3W.webp",
+      "bytes": 647094,
+      "sha256": "82f9f68a976473a8c8ad1e2a3e3474c9c9d6cd8bcd9f690d1abdda420dd3d1cf"
+    },
+    {
+      "path": "assets/customer-08-azhe-motion-CrsrzKem.webp",
+      "bytes": 635478,
+      "sha256": "6111dc073c5690f348b05fe0f0ab2ec26c50b70620ac13084ccce0677af9fe63"
+    },
+    {
+      "path": "assets/customer-09-teacher-chen-motion-oVa779GF.webp",
+      "bytes": 581436,
+      "sha256": "9c6480ace609a1a934d96b421fd863bb69f8f31e7ad125d4f9c960941d81520f"
+    },
+    {
+      "path": "assets/customer-03-xiaoyu-motion-ixuTHFJ5.webp",
+      "bytes": 571592,
+      "sha256": "89d947170ce92cae6040fcb4ee4063b23b87abb6298cae3c0bb20cdd33f8d317"
+    },
+    {
+      "path": "assets/customer-10-grandma-wang-motion-CctIvIrs.webp",
+      "bytes": 548412,
+      "sha256": "31247b915de25eb181d632c4a6f95e47688854308137b941b38d1047a786b4a9"
+    },
+    {
+      "path": "assets/home-screen-user-final-C8Xn3OJv.webp",
+      "bytes": 547320,
+      "sha256": "6578ed21a4e8e00b1e4f3a7e68dfa575a0eabfc179a5943ed4a62133ebf7dcdc"
+    },
+    {
+      "path": "assets/settings-screen-user-final-CbSiQ8af.webp",
+      "bytes": 526604,
+      "sha256": "46f8af4be19e4a5aa04f5321ac2dbabde547b101178e068c4d9f5f49c1da3f26"
+    },
+    {
+      "path": "assets/customer-07-xuyan-motion-DtG34uis.webp",
+      "bytes": 514626,
+      "sha256": "94456af783f8cdf09832f7a6c70e1e40200f73dffc2c3e9b089ee1585ab435d1"
+    }
+  ],
+  "imageBytes": 23483256,
+  "imageCount": 304,
+  "audioBytes": 2401307,
+  "duplicateGroups": [],
+  "files": [
+    {
+      "path": "assets/02-egg-burnt-BsWfKzWi.webp",
+      "bytes": 27504,
+      "sha256": "e8f7e4262160f107c2b02ddbbb4e7a6a97b04634c1246d5b7350488811d3b8d8"
+    },
+    {
+      "path": "assets/02-egg-burnt-Rvic7lkZ.webp",
+      "bytes": 35318,
+      "sha256": "d598cfc624b03445fc92315df2e39215fb3d64a10addd4fcf3c0829662d18f7f"
+    },
+    {
+      "path": "assets/02-egg-raw-BOu8Xxb8.webp",
+      "bytes": 30302,
+      "sha256": "f0a05538f0d06c294c5bae04035acd4c5433988ac5ed9b1addab54d172109842"
+    },
+    {
+      "path": "assets/02-egg-raw-CDfSx52u.webp",
+      "bytes": 40612,
+      "sha256": "c141cd85f9bb8e28cc83b1903b844dfbc72139c3bbfeb362d4baf5e0e2e59cd7"
+    },
+    {
+      "path": "assets/02-egg-ready-BraLD1aS.webp",
+      "bytes": 44284,
+      "sha256": "0c56bede3f62fb24a75195b3210119fad2a075e2247084440f117503dea95ab8"
+    },
+    {
+      "path": "assets/02-egg-ready-DsikBR-3.webp",
+      "bytes": 33170,
+      "sha256": "8c4924bf275814889468089a7d234f750c07c442a4c42e8bb9491b35efc2cf51"
+    },
+    {
+      "path": "assets/02-egg-scorched-C6twET9H.webp",
+      "bytes": 15332,
+      "sha256": "7fef8481836b0bdb2e0a9c74ececd141e2c2b6ddab152e1a761e1c0d54b2a6a0"
+    },
+    {
+      "path": "assets/02-egg-scorched-CY30Ooza.webp",
+      "bytes": 22656,
+      "sha256": "ea5685dbc899b76dbcdfdc0d2efa1732e370e717a50fa65fb235a80858d7cdda"
+    },
+    {
+      "path": "assets/03-hot-dog-burnt-IjcV7EIp.webp",
+      "bytes": 37796,
+      "sha256": "24bba3f8a2cf8dcb7eadc03ec480935b08325379a46860f44a6aac613d64d171"
+    },
+    {
+      "path": "assets/03-hot-dog-raw-DWrjIvep.webp",
+      "bytes": 42382,
+      "sha256": "f1c3acd771ed72fa35518e36c95578a0aa751c8dd78848f7ae8bbfa222ed6e25"
+    },
+    {
+      "path": "assets/03-hot-dog-ready-DaSH3Pnu.webp",
+      "bytes": 45800,
+      "sha256": "4f61dbdd8cae82a3861193485e679114a9f81ebf64afcfb33a74b15fd8d062d0"
+    },
+    {
+      "path": "assets/03-hot-dog-scorched-3N51PFhl.webp",
+      "bytes": 25850,
+      "sha256": "35f6562f14b0ad7f1ee37d43b1095c9a54876a73b2b595100d9672aafd35cd21"
+    },
+    {
+      "path": "assets/03-orleans-burnt-Bln63pGa.webp",
+      "bytes": 29878,
+      "sha256": "e12983d9a7100502077e580b76c474b5b8b4f8b027e0302ae44c541623bc4175"
+    },
+    {
+      "path": "assets/03-orleans-raw-CvzxM1vy.webp",
+      "bytes": 33054,
+      "sha256": "f1c64f8168b6ac76008a0d5446298461bb14b0f7e4e4bfb771b687cc2e05e7fb"
+    },
+    {
+      "path": "assets/03-orleans-ready-BmXYuyhN.webp",
+      "bytes": 36666,
+      "sha256": "be1b8056b8990cc7264e57fccc9f563253eef6ec482df65fd7db81fb73560cf9"
+    },
+    {
+      "path": "assets/03-orleans-scorched-DoVYZUlL.webp",
+      "bytes": 17072,
+      "sha256": "73e672fe708acdfde4ceda8722f56fffd92c2336e13b6332a7641e5211838dab"
+    },
+    {
+      "path": "assets/03-turkey-noodle-burnt-BlwT5EuD.webp",
+      "bytes": 30936,
+      "sha256": "ac9e072e74441f71a1020eddbc63d433a8dcdd9fa883be371e054e8e2f422724"
+    },
+    {
+      "path": "assets/03-turkey-noodle-raw-Bek2gA98.webp",
+      "bytes": 33584,
+      "sha256": "eba31618a2376eba82ce876fb4ae08a653317db3da04b7c57d4652e106450b10"
+    },
+    {
+      "path": "assets/03-turkey-noodle-ready-BTfhWzdp.webp",
+      "bytes": 36992,
+      "sha256": "ff3304d37ef2068612c91b3c562e747a9d2a0f677aecaf5b873bc0b1c1fe911f"
+    },
+    {
+      "path": "assets/03-turkey-noodle-scorched-DCiMR5OL.webp",
+      "bytes": 17292,
+      "sha256": "06cfcb343845760ed25c8e5d7c3dd97bc1f85d6cee5e5b660c0cc2e9c62bdfdb"
+    },
+    {
+      "path": "assets/04-second-egg-burnt-CuvcUAZ4.webp",
+      "bytes": 27316,
+      "sha256": "682b3fb2c4f8a846f515314ede981f61c5765fa7dd7d0dc044337262dd9bbf6a"
+    },
+    {
+      "path": "assets/04-second-egg-raw-rAp6Fky_.webp",
+      "bytes": 30456,
+      "sha256": "da75786eb962f7f9d2570122d9265e1e99be9d42331ae4dfbd03ff3279778ae0"
+    },
+    {
+      "path": "assets/04-second-egg-ready-7JwzIDKl.webp",
+      "bytes": 33488,
+      "sha256": "0d6bfde6db3fe45ff6df1195abcf65283a43f979361d4a4031b23a5ffd70be35"
+    },
+    {
+      "path": "assets/04-second-egg-scorched-B6Dh394B.webp",
+      "bytes": 15598,
+      "sha256": "526f080e8b48f50410f4c129f04c6c1efb2333739ec016d3a7ff4c5696e9c023"
+    },
+    {
+      "path": "assets/04-tenderloin-burnt-BQvAs0-9.webp",
+      "bytes": 31090,
+      "sha256": "a8e7e780c1723636989b7027767c40720e0abcb9ade34c1a454ef71f56d21317"
+    },
+    {
+      "path": "assets/04-tenderloin-raw-DeZV-9y2.webp",
+      "bytes": 33736,
+      "sha256": "07f1c4f71d3b045bf3941609d930d38aa5e62af3b8d2f2828e1a1aa25328c97f"
+    },
+    {
+      "path": "assets/04-tenderloin-ready-Cg4uNNUC.webp",
+      "bytes": 37442,
+      "sha256": "a8a1c58f7d3827c9be645658bfb0254e78be9ef1caa89b0444abc8817853b0f8"
+    },
+    {
+      "path": "assets/04-tenderloin-scorched-NAw3nCfR.webp",
+      "bytes": 18156,
+      "sha256": "04bbd7a63b5859fc276b2b0dffc714199ff337673ee577c95f76f9989e4a8a24"
+    },
+    {
+      "path": "assets/arriving-BBjmCuQ-.webp",
+      "bytes": 36512,
+      "sha256": "9bf1bc16f276818ce59f5d93aeeebc7e12feae681526fd5086708fb8d83c2075"
+    },
+    {
+      "path": "assets/arriving-Bf-oueV1.webp",
+      "bytes": 39270,
+      "sha256": "e14c3f0b4ce485c32fdc083baddf57371ee9bb2d12820b2ba073de3f04a87512"
+    },
+    {
+      "path": "assets/arriving-BqMWkawi.webp",
+      "bytes": 29862,
+      "sha256": "cc716146faff04f2632eaa758c619d155aa262037e06163019a817d9c2a980ef"
+    },
+    {
+      "path": "assets/arriving-Bu3NwTzS.webp",
+      "bytes": 27276,
+      "sha256": "f1789c6384fae44eb89cff2e65f518aa5c67747d128872e05901336012cb9c5d"
+    },
+    {
+      "path": "assets/arriving-CQEuN-Lo.webp",
+      "bytes": 32206,
+      "sha256": "aac75ae99d74c4e5a4833eed0082d64c9ddbd67f7693f5cb661f723047d279ba"
+    },
+    {
+      "path": "assets/arriving-CSdiH32M.webp",
+      "bytes": 23924,
+      "sha256": "28eb248c08a1c6d8a015d335f4c37d297f3dc0039ae1560045266abb517960ae"
+    },
+    {
+      "path": "assets/arriving-DHz3mSVl.webp",
+      "bytes": 34594,
+      "sha256": "43a3af09f857ce01d775a9d58745cb2cbf5dd810696bbdf61d5c21b605e939be"
+    },
+    {
+      "path": "assets/arriving-DMOVHVBl.webp",
+      "bytes": 40006,
+      "sha256": "1f1bb55fdc16a53360c05938cd7d5e94a4c761ba7f072b2cef22007c5bfa6b99"
+    },
+    {
+      "path": "assets/arriving-D_wAiwVR.webp",
+      "bytes": 48182,
+      "sha256": "7355571cfed364190f327a52fdee79b451cd6587a1222454e8c5abac1f90da07"
+    },
+    {
+      "path": "assets/arriving-GKcrztsA.webp",
+      "bytes": 33166,
+      "sha256": "0846957b257422cf44b98fafe928d2e5226332f68e26a5da0ce4feaf45f0cc30"
+    },
+    {
+      "path": "assets/arriving-Pr1zWBAj.webp",
+      "bytes": 31740,
+      "sha256": "e08558f30c73c661c35d2568ff340d082d252f0038dfbfa7b8aba5e88b07d704"
+    },
+    {
+      "path": "assets/big-eater-03-second-noodle-QkRmGghR.webp",
+      "bytes": 34524,
+      "sha256": "45ea5229a087cd9c9a755a73d0c967837f7ce6e2385095156880139249f26da0"
+    },
+    {
+      "path": "assets/big-eater-04-second-egg--bacon-DxbAkmXa.webp",
+      "bytes": 48622,
+      "sha256": "34fc8c8b638697ac725d363bf822da6d9b7f55ce054d6b77ea2635355e87ee02"
+    },
+    {
+      "path": "assets/big-eater-04-second-egg--chili-powder-f1DSY3zj.webp",
+      "bytes": 56422,
+      "sha256": "2d0f9449797287e715716f6acc717ac3bd2002f39febdb612b09d8812c6cf11d"
+    },
+    {
+      "path": "assets/big-eater-04-second-egg--enoki-D44vYLoT.webp",
+      "bytes": 47716,
+      "sha256": "fb0cdc2c88b3e8f9fadaa205d31a2473c4740bcbd8d362a77dc4bf69cfba8a37"
+    },
+    {
+      "path": "assets/big-eater-04-second-egg--onion-MIuWeoGb.webp",
+      "bytes": 48188,
+      "sha256": "f4c6a7bf5ee1a134a5b5604a80362ceaa8cd071441823b481d8c6746c6d0ea7e"
+    },
+    {
+      "path": "assets/big-eater-04-second-egg-Dhcy3k0K.webp",
+      "bytes": 32498,
+      "sha256": "ed13522b310aeb0c3ffc2c0cebb44feeb3b561ce1ce190e4e8b0750b4840fa00"
+    },
+    {
+      "path": "assets/big-eater-05-sauce--bacon-C2ABR6V4.webp",
+      "bytes": 48572,
+      "sha256": "9380a0177bd493767fd9e1fe5c44746acc383fc12f4ad33dcee74b0344b77e71"
+    },
+    {
+      "path": "assets/big-eater-05-sauce--chili-powder-CD1EdYkd.webp",
+      "bytes": 56420,
+      "sha256": "816cc516c61f1a383ad0687158fa4b3724d4b4ea68ef435077d540218303a33f"
+    },
+    {
+      "path": "assets/big-eater-05-sauce--cilantro-BT2V0yND.webp",
+      "bytes": 53120,
+      "sha256": "aff0936939f5bc1059c491697355fa506dbf0f9cebdb2dcb22b2341fd7361bd6"
+    },
+    {
+      "path": "assets/big-eater-05-sauce--enoki-BAvazal4.webp",
+      "bytes": 47986,
+      "sha256": "86347b47eca09cd10329ffbc7873af4f35742360c25aab8711b95ff9f9ec66dc"
+    },
+    {
+      "path": "assets/big-eater-05-sauce--onion-DBSCX6HW.webp",
+      "bytes": 49110,
+      "sha256": "086a906f72753d5bf4cf274e4db1e22dfdff3edd5ba319b6ada1480e6d28a6a2"
+    },
+    {
+      "path": "assets/big-eater-05-sauce-o0DyMsn0.webp",
+      "bytes": 35128,
+      "sha256": "c1301d11a07c65c681e89a79e1dae20b00dd314489d54bc7239e563886da62e4"
+    },
+    {
+      "path": "assets/big-eater-06-scallion--bacon-CLzgSO7z.webp",
+      "bytes": 48566,
+      "sha256": "48dae7ec53c6a583b777f1eb47e33c6ef8f24a48e55f7547b483b594deab89fa"
+    },
+    {
+      "path": "assets/big-eater-06-scallion--onion-CkYG3yEy.webp",
+      "bytes": 48366,
+      "sha256": "8e7d9fddfd0bfedc95c619a4cffca17a5d5d35551a86feeb9a6f23271d99758f"
+    },
+    {
+      "path": "assets/big-eater-06-scallion-CY_v3Kx8.webp",
+      "bytes": 35794,
+      "sha256": "ac3582f348e39a0f96c21afd2b0a7f53cb26ce56a19e618517bd5a95cf4fd678"
+    },
+    {
+      "path": "assets/big-eater-07-cut--bacon-BfYx_zqI.webp",
+      "bytes": 50392,
+      "sha256": "8bf6c997b1e4fb54eb6265655b219d1742084c4ce04b21f7d806dce4db36f307"
+    },
+    {
+      "path": "assets/big-eater-07-cut--onion-uN13yTJF.webp",
+      "bytes": 51806,
+      "sha256": "0043134c1b92ad016f3ae152ffe14155dbf1e3e8e8a01416afe553d60ebbc1fe"
+    },
+    {
+      "path": "assets/big-eater-07-cut-CX9GehZY.webp",
+      "bytes": 38394,
+      "sha256": "e64b3df2e23fafb0908e6fbe9f20c3ca9e699114106524c558c7c211f28da768"
+    },
+    {
+      "path": "assets/big-eater-08-roll--bacon-CME0ZR0c.webp",
+      "bytes": 38240,
+      "sha256": "0be4201e94a4b086a6e7251958da2cdabf3e64b1a679a6d40237a0ad50dd9020"
+    },
+    {
+      "path": "assets/big-eater-08-roll--onion-COPmsqOV.webp",
+      "bytes": 43498,
+      "sha256": "7684f5322e5681234bdb66f21e7d7e6be9de0149df8ff91a66431d81aed945ee"
+    },
+    {
+      "path": "assets/big-eater-08-roll-C70ff6RP.webp",
+      "bytes": 26668,
+      "sha256": "047c309ddbb6e4ae0d849a2c1e0b1b055f5f696bf79b590ad05275f70c9cbb88"
+    },
+    {
+      "path": "assets/big-eater-cut-BTc0jt5C.webp",
+      "bytes": 38114,
+      "sha256": "b9cc588fbf60fec7b9d69b9927c512dc46f0ff34bdf1cc7eb7bf425167d60e15"
+    },
+    {
+      "path": "assets/big-eater-roll-D3em3N0X.webp",
+      "bytes": 26612,
+      "sha256": "cb4a4250fad5ba7365cc9192ef81378466aeaa22a21f599644883db1ac70349d"
+    },
+    {
+      "path": "assets/celebrity-motion-CdnzkqN-.webp",
+      "bytes": 410050,
+      "sha256": "6ddfd1109fed4b4a43fc3885d4802814a5e21fed5f7a6081b1e19595ac215f59"
+    },
+    {
+      "path": "assets/classic-01-noodle-HVexiEkq.webp",
+      "bytes": 45652,
+      "sha256": "c0d8530484d284e079339341b81c34b7862a15eb0aa4ad9c47d9dba591336b1d"
+    },
+    {
+      "path": "assets/classic-02-egg-Dj676dbZ.webp",
+      "bytes": 43362,
+      "sha256": "c53c8f7ea0f3af3d465450ed64807419800729c00bc7150141a42878e54ea7ca"
+    },
+    {
+      "path": "assets/classic-03-hot-dog--bacon-BkejrFsp.webp",
+      "bytes": 62530,
+      "sha256": "cf24820bf8368b95567b8c9214f5734b552e5cc7741712ebfd224fc969a6051a"
+    },
+    {
+      "path": "assets/classic-03-hot-dog--chili-powder-DQAWMEnO.webp",
+      "bytes": 71006,
+      "sha256": "fddb6badbfb145d6d06925dc95eef96de8a4c665a6231b69405b4b5a9cdb79ed"
+    },
+    {
+      "path": "assets/classic-03-hot-dog--cilantro-BYsjltYt.webp",
+      "bytes": 66352,
+      "sha256": "0e7ca5bec1b091e64f897fef396e1429a017ad0eae4f0e12f48e3a64e611aab3"
+    },
+    {
+      "path": "assets/classic-03-hot-dog--enoki-DDtw3PP-.webp",
+      "bytes": 63002,
+      "sha256": "2b90492bccef90c8cbd65a803a4a1781b8509be6c70ca94712e6c0a5b2e99136"
+    },
+    {
+      "path": "assets/classic-03-hot-dog--onion-EiDuKl7j.webp",
+      "bytes": 64196,
+      "sha256": "72f6765f19c261eb76d92767303443c802dfd02f468345e964e25f5617ef6aa8"
+    },
+    {
+      "path": "assets/classic-03-hot-dog-BNieS80Y.webp",
+      "bytes": 44720,
+      "sha256": "652b9d6cf7f37738e3f3c002caba10b8637967db8a47fb99170506022243370a"
+    },
+    {
+      "path": "assets/classic-04-sauce--bacon-BZ1AE_kv.webp",
+      "bytes": 69428,
+      "sha256": "c4aa9b0d121563f9cfe54f6a82674a9d5432b3ced8909c66eba4a0bcb7d5fb32"
+    },
+    {
+      "path": "assets/classic-04-sauce--chili-powder-DyUBqH9v.webp",
+      "bytes": 77038,
+      "sha256": "a8eff9620137f306fd74baa08a1ee93223f7922b1c85e0f28384c0b199774847"
+    },
+    {
+      "path": "assets/classic-04-sauce--cilantro-DaYWmb88.webp",
+      "bytes": 72900,
+      "sha256": "5b718e29e568e7bb147d6236b10b465e02f81c53ff3c576c66c41768df311d43"
+    },
+    {
+      "path": "assets/classic-04-sauce--enoki-SVwH832B.webp",
+      "bytes": 71580,
+      "sha256": "b2180267c6b5b7ae8ae8f7d48d71f83f02cc4573b2453b561d24a26afcee6b09"
+    },
+    {
+      "path": "assets/classic-04-sauce--onion-D-dJnkMr.webp",
+      "bytes": 70532,
+      "sha256": "682f536ea7ea7828a84cafe77953eb6f17816a36019148454e2ec0d7ec2195d9"
+    },
+    {
+      "path": "assets/classic-04-sauce-CxeiBv_Y.webp",
+      "bytes": 52184,
+      "sha256": "a0cac6e047bc723ff75861ab975b7d6a2e3097ff8fb411258b9d1a079c2935ec"
+    },
+    {
+      "path": "assets/classic-05-scallion--bacon-BViaPmS-.webp",
+      "bytes": 78690,
+      "sha256": "df54e826106ce2f057232978c2bbf71afe6b97541489404a40a0740ef74289fa"
+    },
+    {
+      "path": "assets/classic-05-scallion--chili-powder-C_u13pUd.webp",
+      "bytes": 87914,
+      "sha256": "d06343d10a55a6a8d38cd671c4826a57eeb5716fa9e222e1699b71c14885a609"
+    },
+    {
+      "path": "assets/classic-05-scallion--cilantro-zDyjo3T5.webp",
+      "bytes": 82576,
+      "sha256": "e3970ed85c52c491adb88f9fe614d220553178d11475bb07a3f72723c7bbe249"
+    },
+    {
+      "path": "assets/classic-05-scallion--enoki-NmgGOZe4.webp",
+      "bytes": 81176,
+      "sha256": "d8104fede05ae85710c62851e3d0cf7e868a9a3a9b6b78570c671024d52f0c92"
+    },
+    {
+      "path": "assets/classic-05-scallion--onion-3RYE6J9_.webp",
+      "bytes": 80632,
+      "sha256": "183be52c5c6183155ab5ec8c977bd5ff0c3fca11b8e73ff3434c1ee76b5a385e"
+    },
+    {
+      "path": "assets/classic-05-scallion-CfMZ0Mgb.webp",
+      "bytes": 64658,
+      "sha256": "4a50c9eee326e4b0a2615cac8e536ddf8c1e8300adcac91268ecb40d165ddda2"
+    },
+    {
+      "path": "assets/classic-06-cut--bacon-D7E1yUYs.webp",
+      "bytes": 84212,
+      "sha256": "a364b739080823739614d37945eff9a11f61336258ba210aa48938a6d9fd2dc9"
+    },
+    {
+      "path": "assets/classic-06-cut--chili-powder-Gd_bpHtc.webp",
+      "bytes": 93576,
+      "sha256": "4ef31d15b24aa2a25872b0d384e9f06e965440904d0ab720bc1e56a86e4ab5fe"
+    },
+    {
+      "path": "assets/classic-06-cut--cilantro-D0piW1_e.webp",
+      "bytes": 87796,
+      "sha256": "a375a7a54b0b81c50cbd87068759f493c34d7bb50bdfd2ee9c91bc068a0430c3"
+    },
+    {
+      "path": "assets/classic-06-cut--enoki-D-kF8oaX.webp",
+      "bytes": 87266,
+      "sha256": "777ae7ff815eef8f16e62fa953c95d41844c77d0acd542e04a386914da5e196c"
+    },
+    {
+      "path": "assets/classic-06-cut--onion-DqcDQwCN.webp",
+      "bytes": 86182,
+      "sha256": "511c79e2a22bc27b429ed3f8bcba08b1306c92c545de6ba4d0b40ee93be4c49e"
+    },
+    {
+      "path": "assets/classic-06-cut-ByiJub1y.webp",
+      "bytes": 65716,
+      "sha256": "5ffbc8e2547fbb4c68fa01ed74f343481972d6250e44aee21d1ae5f45246b398"
+    },
+    {
+      "path": "assets/classic-07-roll--bacon-DOoLBBfr.webp",
+      "bytes": 44516,
+      "sha256": "1a321032e36351841b36a4ba3b485780f434d33d734128218d3a798291e08bac"
+    },
+    {
+      "path": "assets/classic-07-roll--chili-powder-B4H5O2oN.webp",
+      "bytes": 51684,
+      "sha256": "fe8c86517df28ad8027aef64bfdc2ddd823c5605fe41a83b90a2b791ae39b13f"
+    },
+    {
+      "path": "assets/classic-07-roll--cilantro-C-D2D7Sa.webp",
+      "bytes": 49610,
+      "sha256": "f0d57d0e89eed4dce0ba6175aca7ca3f98007065144567c836d757c326f33d92"
+    },
+    {
+      "path": "assets/classic-07-roll--enoki-pvHPrqaw.webp",
+      "bytes": 43878,
+      "sha256": "fffe7bcc14f2525e8d65d85df036ea29cf7aea4fe6743ab26a888d2274c2ce89"
+    },
+    {
+      "path": "assets/classic-07-roll--onion-D3gMTkHD.webp",
+      "bytes": 46326,
+      "sha256": "df0c1262563f266d410edb319e65c90ea4ba131ddfb257c5b97f4cdb95a4597b"
+    },
+    {
+      "path": "assets/classic-07-roll-DWMwIc2-.webp",
+      "bytes": 33762,
+      "sha256": "7d878c2c32403e2b950b476cf4e0b3c0bcb475461fcde14b29fe35153451065f"
+    },
+    {
+      "path": "assets/classic-08-pack-5W3QG8nv.webp",
+      "bytes": 16784,
+      "sha256": "5c34fc0e03710f0b3835b44a58d00bf3a10574cb100b9651247fba19156382ca"
+    },
+    {
+      "path": "assets/classic-cut-B5zHTDc8.webp",
+      "bytes": 38180,
+      "sha256": "07079235f2d4ba6318d9c0ecbf91463cc7baea30b1f72ff4f6fd3f03e291c154"
+    },
+    {
+      "path": "assets/classic-roll-DVx6ndsk.webp",
+      "bytes": 26106,
+      "sha256": "304e78eac58c21c15dec661a52221fa857c91f25f8d0fbf55e25eb189e39bb5f"
+    },
+    {
+      "path": "assets/customer-01-xiaolin-motion-DfLDdTo-.webp",
+      "bytes": 673990,
+      "sha256": "1630be629e0feddf6cc0afe5e5600d8db90fef465e998d8b4ba0f99f260c97f6"
+    },
+    {
+      "path": "assets/customer-02-ajie-motion-BWCl4CQ-.webp",
+      "bytes": 459112,
+      "sha256": "973783e9bcdacff9ad4338087c4dc5b64a81ad78556845b9f97880b16aa44476"
+    },
+    {
+      "path": "assets/customer-03-xiaoyu-motion-ixuTHFJ5.webp",
+      "bytes": 571592,
+      "sha256": "89d947170ce92cae6040fcb4ee4063b23b87abb6298cae3c0bb20cdd33f8d317"
+    },
+    {
+      "path": "assets/customer-04-senior-motion-b9LKkFgS.webp",
+      "bytes": 399612,
+      "sha256": "ab7d92d00704c62365753eeb4a53f6398b6720e57b3c936b8652b67d0dbb276f"
+    },
+    {
+      "path": "assets/customer-05-suqing-motion-DLl68b3W.webp",
+      "bytes": 647094,
+      "sha256": "82f9f68a976473a8c8ad1e2a3e3474c9c9d6cd8bcd9f690d1abdda420dd3d1cf"
+    },
+    {
+      "path": "assets/customer-06-dazhuang-motion-CIunr6IK.webp",
+      "bytes": 383474,
+      "sha256": "4fb7ba45b63d72f76d8346228a0e743feade0104ee88a513216cad94295587da"
+    },
+    {
+      "path": "assets/customer-07-xuyan-motion-DtG34uis.webp",
+      "bytes": 514626,
+      "sha256": "94456af783f8cdf09832f7a6c70e1e40200f73dffc2c3e9b089ee1585ab435d1"
+    },
+    {
+      "path": "assets/customer-08-azhe-motion-CrsrzKem.webp",
+      "bytes": 635478,
+      "sha256": "6111dc073c5690f348b05fe0f0ab2ec26c50b70620ac13084ccce0677af9fe63"
+    },
+    {
+      "path": "assets/customer-09-teacher-chen-motion-oVa779GF.webp",
+      "bytes": 581436,
+      "sha256": "9c6480ace609a1a934d96b421fd863bb69f8f31e7ad125d4f9c960941d81520f"
+    },
+    {
+      "path": "assets/customer-10-grandma-wang-motion-CctIvIrs.webp",
+      "bytes": 548412,
+      "sha256": "31247b915de25eb181d632c4a6f95e47688854308137b941b38d1047a786b4a9"
+    },
+    {
+      "path": "assets/day-select-title-neutral-CSTi_koI.webp",
+      "bytes": 19448,
+      "sha256": "30fa6652f88c6cc5aba04a1ebeaadd39ca44e069e445a7b1a7b40ab64a1da257"
+    },
+    {
+      "path": "assets/day-select-user-final-BP5n1raz.webp",
+      "bytes": 374260,
+      "sha256": "a22085a4b6a98ec03445e0c56f5cb02b49eb7673032ee8e81d57336436eddc03"
+    },
+    {
+      "path": "assets/day5-celebrity-event-key-art-J6vjZalJ.webp",
+      "bytes": 322570,
+      "sha256": "0772952bd97b6719abefa8c9b28e9e875f61256dcf23f023be1193a9a11de9af"
+    },
+    {
+      "path": "assets/disappointed-3Eb2PMcf.webp",
+      "bytes": 29368,
+      "sha256": "7d19a5541cbf7ea9226241fa54306e21fe5807740b8d8a663710587e6f64b942"
+    },
+    {
+      "path": "assets/disappointed-B3RrSlVT.webp",
+      "bytes": 32360,
+      "sha256": "6b8d5e63949a1da29b2ee7d97b66cb4d5a4f689d87e919d558007d5c5e752cca"
+    },
+    {
+      "path": "assets/disappointed-C0sVey4m.webp",
+      "bytes": 30476,
+      "sha256": "d3ec1f39242906700cdcd1721381dbbcf1696bc75fed1005f453aed13cdedb4f"
+    },
+    {
+      "path": "assets/disappointed-CjuKH-kY.webp",
+      "bytes": 37124,
+      "sha256": "e03def5ea9a6648a68fffbd04a39a6d34d8ee3ecbc838bfcfebf62eda4b5cbbd"
+    },
+    {
+      "path": "assets/disappointed-D9UvuuqV.webp",
+      "bytes": 27234,
+      "sha256": "6ec8c39f2b4d634558407001ee5bc593273e4bad5c7a86fbb5e8c3446bfbf2f6"
+    },
+    {
+      "path": "assets/disappointed-DD0y-JlW.webp",
+      "bytes": 23212,
+      "sha256": "81da29bceb9e7737260d94b4339959e88578da9fb3c6262b0d05f4c253148e15"
+    },
+    {
+      "path": "assets/disappointed-DfrbwbPR.webp",
+      "bytes": 35640,
+      "sha256": "8875c2125a371d5f10122b9df4dfa29f02c2c58ba9634daa1cfa5022d1912844"
+    },
+    {
+      "path": "assets/disappointed-DI39AZnN.webp",
+      "bytes": 28080,
+      "sha256": "7434077f22fbdc6ef0d0dcfbb2c3ac5f2e5911dba853d7395e18b3134e8a0977"
+    },
+    {
+      "path": "assets/disappointed-DnteJiI_.webp",
+      "bytes": 32022,
+      "sha256": "e85e0e9468e1a1edc145f7bc19007f22992a11f9b7c6f27de949832531a1384e"
+    },
+    {
+      "path": "assets/disappointed-DUQY0wVw.webp",
+      "bytes": 44746,
+      "sha256": "953a3e27b4e58ce6db9473faee876686d0d47b734976da5004b6a51ef2a4e1f9"
+    },
+    {
+      "path": "assets/disappointed-DZ5xbXPJ.webp",
+      "bytes": 37198,
+      "sha256": "d46fbf698dcab01809d4784fc1cc4baf2efad43aeda07894c7e399b988624d9f"
+    },
+    {
+      "path": "assets/dish-big-eater-noodle-BRDXDn3P.webp",
+      "bytes": 275016,
+      "sha256": "2bdef78e8823de39fcce3f54e4d9fb060f4756d579dc788b360cc97a1a17b71d"
+    },
+    {
+      "path": "assets/dish-classic-noodle-I9rRxPK7.webp",
+      "bytes": 250632,
+      "sha256": "00679882d3c35fdd285777a980876f512d11ce46c0f0a4784d834525826b6ecd"
+    },
+    {
+      "path": "assets/dish-orleans-chicken-noodle-mVr_grqi.webp",
+      "bytes": 251076,
+      "sha256": "78e75533b441bcf1b7d786cc208f04bdf0c43ef70cf346d107d1951f52df535c"
+    },
+    {
+      "path": "assets/dish-signature-cheese-turkey-noodle-DFJhLo0W.webp",
+      "bytes": 252256,
+      "sha256": "ba29104be0b7fe2bd7541a142d8257e1b82b4071be66a821ce6eb736898cc3b0"
+    },
+    {
+      "path": "assets/dish-tenderloin-turkey-noodle-Guhzq8xw.webp",
+      "bytes": 232986,
+      "sha256": "956aa17ed96308f3c8ab27253c0868696037bf8618e239b107ffb0d3d37622fa"
+    },
+    {
+      "path": "assets/happy-BVpGF-Qs.webp",
+      "bytes": 37262,
+      "sha256": "813df7946b7e0a287f11f50e624b4f7676c3105e2fc61ddd593f55242de5dc0f"
+    },
+    {
+      "path": "assets/happy-C0yaP8zq.webp",
+      "bytes": 45838,
+      "sha256": "3ce994aa998642c00d37875bc4ecbb389a7685e9cbaaf086277ffbb7b986cff5"
+    },
+    {
+      "path": "assets/happy-CdAyqufF.webp",
+      "bytes": 31138,
+      "sha256": "d837dfb9fddddb5f47b9097b5b0ec9ddf3c4e18fe4c2f8ab846896a7916c766d"
+    },
+    {
+      "path": "assets/happy-CjSn8naZ.webp",
+      "bytes": 31280,
+      "sha256": "3518c104c7ef35a1ebed8bb9a8494139d1c7e2ee6af175a8e04007c5586a533a"
+    },
+    {
+      "path": "assets/happy-Csx4Qeto.webp",
+      "bytes": 33710,
+      "sha256": "f5366f75eee1bb3364ebafbc93c22d82e47a313ad4bb4fee08fbc50753bb5711"
+    },
+    {
+      "path": "assets/happy-D2WIZAeL.webp",
+      "bytes": 34192,
+      "sha256": "3da06a601e38384bdee3cc8e831bd12ac268e5641e088d6bf4387e98c136353b"
+    },
+    {
+      "path": "assets/happy-DCdAGUDE.webp",
+      "bytes": 26240,
+      "sha256": "b4acdf84c916135d529b734398c1d60a0e60cc38b946891bb6bf778e2b367b9f"
+    },
+    {
+      "path": "assets/happy-DOr4GDrn.webp",
+      "bytes": 37550,
+      "sha256": "052deddd65cef8d948016c8d3c87ea44511be7d7c7340419efb8419c87a339e9"
+    },
+    {
+      "path": "assets/happy-PPV7aQSt.webp",
+      "bytes": 26924,
+      "sha256": "94a5a23964ceefea5015fdec0577028d6db40e001b5804bb8a205f11d130a110"
+    },
+    {
+      "path": "assets/happy-QDhK8G2q.webp",
+      "bytes": 37246,
+      "sha256": "6a2794b4ff290b65aa68a06bb29d175f43b4378120add697b181c3aa2a3d46f8"
+    },
+    {
+      "path": "assets/happy-witbPK5d.webp",
+      "bytes": 30158,
+      "sha256": "f085f3714401e15a33873ee3ad694093769785ce0d5ba88823467efb021ec494"
+    },
+    {
+      "path": "assets/home-screen-user-final-C8Xn3OJv.webp",
+      "bytes": 547320,
+      "sha256": "6578ed21a4e8e00b1e4f3a7e68dfa575a0eabfc179a5943ed4a62133ebf7dcdc"
+    },
+    {
+      "path": "assets/home-title-neutral-B-N6nKdN.webp",
+      "bytes": 32692,
+      "sha256": "233e61ad2e44fe41b99bb6146daf25a5648b55d122beb60234aac1312f71cff8"
+    },
+    {
+      "path": "assets/impatient-B9qLhpya.webp",
+      "bytes": 27210,
+      "sha256": "4119ac39f6242a7886ffade970526bcf79530aabf29c509f499be18d37cc2cde"
+    },
+    {
+      "path": "assets/impatient-bDrDYCP3.webp",
+      "bytes": 33264,
+      "sha256": "520e748afc61845f0082f11c302818639a88f4a013a0634ad08e405a0f37c3cb"
+    },
+    {
+      "path": "assets/impatient-BXRRkPBL.webp",
+      "bytes": 33016,
+      "sha256": "dad178ec13732f5f9110ec9bca8149abc93c5dc987ba570a9f04505f09831333"
+    },
+    {
+      "path": "assets/impatient-Bzc2N4bS.webp",
+      "bytes": 32772,
+      "sha256": "b1d5e7170b410b7166dd86929af14c6f3e2a55b534837ea314726264ca53f763"
+    },
+    {
+      "path": "assets/impatient-CdkZZZ3y.webp",
+      "bytes": 45258,
+      "sha256": "29d0e0952f5a329415b337d5c811b5e2c43bfce6ffff1c75a2f483d355de52f7"
+    },
+    {
+      "path": "assets/impatient-CZa6BuBu.webp",
+      "bytes": 30790,
+      "sha256": "81ca7c450ca54d2e94797be3cd19d4b796efe001e08a7e929da27563446209ba"
+    },
+    {
+      "path": "assets/impatient-D8JJIOHW.webp",
+      "bytes": 24066,
+      "sha256": "6fa260dbc0226fee7eaefbefee3d8599cd3ecde1d5097003700f752240bcecf0"
+    },
+    {
+      "path": "assets/impatient-DLrNJtn-.webp",
+      "bytes": 37286,
+      "sha256": "0e46adde77af6db7b473ce3c84f63d2de156814dc9c0d65a6653b486ad488dae"
+    },
+    {
+      "path": "assets/impatient-ioHtOIA1.webp",
+      "bytes": 36910,
+      "sha256": "2dedf5b5a2a5caf8eca6a488d89b4bbe004e2ca4e6e5eba4247f39412f19410c"
+    },
+    {
+      "path": "assets/impatient-Me0tSgIZ.webp",
+      "bytes": 28708,
+      "sha256": "245fd4d063d59b432100871fadf2846421363abc1d7955a406412190bb6fd0cf"
+    },
+    {
+      "path": "assets/impatient-waJUtS4c.webp",
+      "bytes": 39626,
+      "sha256": "0d85ba12a1e785431498df1a295102aaaf5b94699959407ba4e7a8ecd7584d94"
+    },
+    {
+      "path": "assets/index-BjkbSYiU.css",
+      "bytes": 92725,
+      "sha256": "a6d629e79add10b81fbefe594a6e38ed29a8f3b66351f1c9f7d49204df15338e",
+      "gzipBytes": 20923
+    },
+    {
+      "path": "assets/index-DkHXmILs.js",
+      "bytes": 409563,
+      "sha256": "17e468e606d52988b4f5f086981ec60765bbd0313693b6d9ebca26183c792f79",
+      "gzipBytes": 115618
+    },
+    {
+      "path": "assets/ingredient-bacon-Bq6pfeAB.webp",
+      "bytes": 61548,
+      "sha256": "2bc474d4e5a999d6d3f058680bf109215fde2cc7b71ff721b35e3b25303bbc54"
+    },
+    {
+      "path": "assets/ingredient-bin-bacon-DAgDOteC.webp",
+      "bytes": 104044,
+      "sha256": "4c0ca278da81365a9cf951865546bebe69ff44219a076d656ba7bd4e9405e3d8"
+    },
+    {
+      "path": "assets/ingredient-bin-cheese-Cv77NU8M.webp",
+      "bytes": 56796,
+      "sha256": "625ea7a0bc5cd88594a6ca6137b50f33f21699f337fbec193d38a0e14e5a15bb"
+    },
+    {
+      "path": "assets/ingredient-bin-chili-powder-fpb19nyT.webp",
+      "bytes": 122978,
+      "sha256": "ed244c0052689385ce51f684fd063c24ec68c60c9afaf04d81b74b20c129eee2"
+    },
+    {
+      "path": "assets/ingredient-bin-cilantro-CNnX1i3i.webp",
+      "bytes": 119550,
+      "sha256": "89d8c7e1e9313d6552eb28cbcd72c9656971928477be00a55192f6de92adaae1"
+    },
+    {
+      "path": "assets/ingredient-bin-corn-DyzAApyv.webp",
+      "bytes": 74888,
+      "sha256": "ab6e060262010b9ab45936ba9eb6e071a8feccca8f4eaa7846bbe57b856e8077"
+    },
+    {
+      "path": "assets/ingredient-bin-egg-CEF-M0KY.webp",
+      "bytes": 82372,
+      "sha256": "5fd45b524b9e114350628b56f4fe5d8edb75635c7cd1be2a13bf2ad5fb0a2b64"
+    },
+    {
+      "path": "assets/ingredient-bin-enoki-BfCUDbUn.webp",
+      "bytes": 83256,
+      "sha256": "c21f35c02bdfc0181887b0559f3f3d299155017ddbd62e6dd80a8c06c9a3599b"
+    },
+    {
+      "path": "assets/ingredient-bin-hot-dog-DloaisP8.webp",
+      "bytes": 97254,
+      "sha256": "41e9e4d8fc2817596ba954c236a7277853690e7b9d2b9de53bc69cfd2b102ce1"
+    },
+    {
+      "path": "assets/ingredient-bin-noodle-CLnJU9WF.webp",
+      "bytes": 106256,
+      "sha256": "52e7c0c4842b452aa0739c8a86646daf06d47d04e1168c0bda66ca8266a69977"
+    },
+    {
+      "path": "assets/ingredient-bin-onion-D7veDHIK.webp",
+      "bytes": 60880,
+      "sha256": "f0377ff04f0f2908a140223f012d1c518ca428bd4b0f97209927da91f80dc1cd"
+    },
+    {
+      "path": "assets/ingredient-bin-orleans-BFhLtPcF.webp",
+      "bytes": 134946,
+      "sha256": "860848d0185d4a2ed35003f4ea7cc395f1beb07209c55dc459766859c0384076"
+    },
+    {
+      "path": "assets/ingredient-bin-sauce-BpqCx5eD.webp",
+      "bytes": 98256,
+      "sha256": "9dfb7fed6e91aa12503505d18acc4f3eb284f5284ad90ed66fc7037491c8ca1f"
+    },
+    {
+      "path": "assets/ingredient-bin-scallion-BEvaRx9c.webp",
+      "bytes": 100684,
+      "sha256": "88368f9d4283c7bd751570c69d879cf2377a34d72bf225fa9b4605feb20a487a"
+    },
+    {
+      "path": "assets/ingredient-bin-tenderloin-B-1aTb0J.webp",
+      "bytes": 122756,
+      "sha256": "2b5e8c827343298f7a177f71aa933e9622d5bc379423bce2089705c5b121d2d0"
+    },
+    {
+      "path": "assets/ingredient-bin-turkey-noodle-C-LBM0qE.webp",
+      "bytes": 112406,
+      "sha256": "0c124dc553e18e5dadf8f3acf787b8bfb6aedb767ecaaea665f28aef148dc458"
+    },
+    {
+      "path": "assets/ingredient-cheese-BK8gC_A4.webp",
+      "bytes": 25558,
+      "sha256": "15a7fd0d31668cf3491a7f8f20c7763f3ca54a7341b48efc8499762cf3859fcd"
+    },
+    {
+      "path": "assets/ingredient-chili-powder-CNVUFwMC.webp",
+      "bytes": 73374,
+      "sha256": "f8d33186e4c94653020fbaacaa0df98d6a0103bb72017fe332329d80f4221193"
+    },
+    {
+      "path": "assets/ingredient-cilantro-mTnRXM7u.webp",
+      "bytes": 75588,
+      "sha256": "79a36cc6cd45deeb5e232eb8d9bb482dde5992b116447a4f4bc9c7a658f7f666"
+    },
+    {
+      "path": "assets/ingredient-corn-OXYaPMvT.webp",
+      "bytes": 31792,
+      "sha256": "c37d9cc4baf89df1dd863fd1f1c1071569a48a4e618a179a8e1aff2c73ecf7b9"
+    },
+    {
+      "path": "assets/ingredient-egg-BoDG0Gmq.webp",
+      "bytes": 29990,
+      "sha256": "6a82891c8c330d0f774322e40f8dd662a9eb7ceb134c705b8797ce149def84b5"
+    },
+    {
+      "path": "assets/ingredient-enoki-D5vCxW6v.webp",
+      "bytes": 39472,
+      "sha256": "cb6f9cb9b5beacd25b5453086815c50545a99fab198349bbc0a4e2da640da677"
+    },
+    {
+      "path": "assets/ingredient-ham-sausage-Dy3qKpBm.webp",
+      "bytes": 38490,
+      "sha256": "36b3af255e1d550efe8726cac3325b5e1e17b6741ba407150c213e1b789ba391"
+    },
+    {
+      "path": "assets/ingredient-hot-dog-Dpx8_C6I.webp",
+      "bytes": 38158,
+      "sha256": "0f98fa54b6fadcdd59418dda5a68503d326b5fdc1412cde3e154b118a10ab7a2"
+    },
+    {
+      "path": "assets/ingredient-noodle-sheet-BZxyb-py.webp",
+      "bytes": 77598,
+      "sha256": "2eade3aae494431cfc7c9e0eccaf94d4995db59b306667acc22bb69593bfc7dc"
+    },
+    {
+      "path": "assets/ingredient-onion-BWe7JPxS.webp",
+      "bytes": 104200,
+      "sha256": "5fd4992a0949da251b3782d67e25a368d983b626024a9d24ed392898b3bd530e"
+    },
+    {
+      "path": "assets/ingredient-orleans-chicken-CO7bqeWM.webp",
+      "bytes": 79770,
+      "sha256": "08f597653235a101247fff657abd333e6caa13004a795f270385d167c9e85380"
+    },
+    {
+      "path": "assets/ingredient-pork-floss-BFiX0uyB.webp",
+      "bytes": 72846,
+      "sha256": "94583a0aa900f62db816184230b6196ffc08daeeb2ac6bc6508663a984129622"
+    },
+    {
+      "path": "assets/ingredient-sauce-BSdOzBjl.webp",
+      "bytes": 58488,
+      "sha256": "7ece6f014c68c849a8a214bb97a1db02f7dde29c2318207d7a235fb5f3f95dad"
+    },
+    {
+      "path": "assets/ingredient-scallion-DvRe8lSY.webp",
+      "bytes": 46942,
+      "sha256": "eb95d21637643011641e47d56a022e87be2a7f603fbc8d8e9e451e294008c385"
+    },
+    {
+      "path": "assets/ingredient-spicy-strip-C_Ih05-7.webp",
+      "bytes": 74404,
+      "sha256": "ae767a5b3ff0177e41ae2c2f816ff43e66d6e04e68aacb2ebb62bb358d2a109d"
+    },
+    {
+      "path": "assets/ingredient-tenderloin-DsMZUMns.webp",
+      "bytes": 65856,
+      "sha256": "f6c8832b184f72ea6436347c105ba28de78158ec3e24f3ca41ce0c6761b86994"
+    },
+    {
+      "path": "assets/ingredient-turkey-noodle-D73RSOWN.webp",
+      "bytes": 54434,
+      "sha256": "7249af3a5ffbd3b37f49a2255e19a73a1001687d14d83201711c40e906fc87a0"
+    },
+    {
+      "path": "assets/kitchen-screen-live-clean-CQDJLIgK.webp",
+      "bytes": 348494,
+      "sha256": "da5c8afeb27251fc6dc319fbe79453ecf6a7cda9ca8495f7380f73d31b6075b2"
+    },
+    {
+      "path": "assets/kitchen-screen-live-expanded-clean-D993X-rQ.webp",
+      "bytes": 358786,
+      "sha256": "beceee2282322daae56099cd67d3f1deb267f261d73539a7088b6eefe98fe88d"
+    },
+    {
+      "path": "assets/menu-board-Bu_ZQGkr.webp",
+      "bytes": 438024,
+      "sha256": "9e8cbbb61c82000b71e063b10a7517ef4a280226d66efb10045d87999a95f59a"
+    },
+    {
+      "path": "assets/night-market-bgm-Dsrq8fsL.mp3",
+      "bytes": 2401307,
+      "sha256": "fb960a2257eab4f0f30c6cab2a3ab9dd167ce5c8619731fe2a60994a12d4264c"
+    },
+    {
+      "path": "assets/night-market-clean-background-DRPGRpdO.webp",
+      "bytes": 296036,
+      "sha256": "e42b069b3617927f6baf452001fab22911625c9e6e4a65880bc72ea40ed9dc1f"
+    },
+    {
+      "path": "assets/ordering-2CiusH9P.webp",
+      "bytes": 37658,
+      "sha256": "e56e12be98e16d2bf77c80b088ed37d6c01d604e455fa9ba99da1639434de099"
+    },
+    {
+      "path": "assets/ordering-8D5bdyzm.webp",
+      "bytes": 37150,
+      "sha256": "43c1508e92445611847d802aee399680297bf8bb2965f72cd78212eeb6742abb"
+    },
+    {
+      "path": "assets/ordering-BDd9aoN7.webp",
+      "bytes": 32576,
+      "sha256": "603d73bf75dcd700e63ef10f458aeb30457edb6be618ec56d320b1bd8ec93cac"
+    },
+    {
+      "path": "assets/ordering-BnSfW2zy.webp",
+      "bytes": 26562,
+      "sha256": "8c26af3b210563c46926d787d448b35cccdc29a9f79634d346e6482ec9c32cb7"
+    },
+    {
+      "path": "assets/ordering-Ctp7jKzd.webp",
+      "bytes": 51718,
+      "sha256": "cdf94e9d5ae362b576be444dcdb034dee2319127a2e83913a90bebf578d090aa"
+    },
+    {
+      "path": "assets/ordering-CXy7PuHI.webp",
+      "bytes": 38910,
+      "sha256": "e0faf4d7895db73158955fec0f415742ef92088f948f04dbda04f429ee79b292"
+    },
+    {
+      "path": "assets/ordering-DAv8SzOo.webp",
+      "bytes": 35736,
+      "sha256": "9938ffcd238f2b16a9c3169e8bf371133e4fd4052ff1ca8d56e30a46f11e1f40"
+    },
+    {
+      "path": "assets/ordering-DbZ85ftL.webp",
+      "bytes": 27042,
+      "sha256": "d7afd1596141da08e0e32419c11548594224b48f203543a9fa809ae775694304"
+    },
+    {
+      "path": "assets/ordering-DM1-vGOO.webp",
+      "bytes": 32678,
+      "sha256": "427792efbf70c51025b7d70c47ee5c362b791cdd06f2137d6674282eaa13e58f"
+    },
+    {
+      "path": "assets/ordering-DvGLf4ys.webp",
+      "bytes": 42858,
+      "sha256": "54f4ea2e52bb541c566cf7c15f52357a25b4a4155a48c22caf6bbfcf24832796"
+    },
+    {
+      "path": "assets/ordering-RyFLFGpa.webp",
+      "bytes": 39924,
+      "sha256": "ff083774020a793755e45d8dddabdaec24c3a9569cbda85b7d1c140c8ac08912"
+    },
+    {
+      "path": "assets/orleans-01-noodle-D00UY_G0.webp",
+      "bytes": 35412,
+      "sha256": "c295cd6edb13d5779195d614ba5000985e06b9301f39f4e5642f7a1a77384978"
+    },
+    {
+      "path": "assets/orleans-02-egg-12l1lp-r.webp",
+      "bytes": 32360,
+      "sha256": "aa9ac2983026c94b659ad0c506a59c8ba9bf2a88c032cf3231d198694014b4cd"
+    },
+    {
+      "path": "assets/orleans-03-orleans--bacon-BE9nEvV3.webp",
+      "bytes": 49446,
+      "sha256": "a52db26af18fd752a25d59671f8d819286b900c8c9ba2a2667a5a6702f292cc6"
+    },
+    {
+      "path": "assets/orleans-03-orleans--chili-powder-UXHh9Cja.webp",
+      "bytes": 57554,
+      "sha256": "0567ab4618cba6150de671d563fc4adc9484b0a9b309f899e096817f51b6f981"
+    },
+    {
+      "path": "assets/orleans-03-orleans--enoki-sa5XkSo7.webp",
+      "bytes": 48538,
+      "sha256": "7ade8ed34db18e2857a02b6352b7adca3820feb1212ed4c79255fc869782cb36"
+    },
+    {
+      "path": "assets/orleans-03-orleans--onion-DDNsULFm.webp",
+      "bytes": 49870,
+      "sha256": "57c46398ca76c6a142fe5ab91397cf31381d87c8102e85321894cda5a361da69"
+    },
+    {
+      "path": "assets/orleans-03-orleans-CRtjlWI4.webp",
+      "bytes": 36016,
+      "sha256": "9a2285bf0892b3c440de2b7035be242ed7d783ffc242636f64d4a01f46ecb932"
+    },
+    {
+      "path": "assets/orleans-04-sauce--bacon-DfMgWAfw.webp",
+      "bytes": 49438,
+      "sha256": "3a7753517dc4064e1c4decaa076fb18386a8fdef643ac147a73aa9fb92f02646"
+    },
+    {
+      "path": "assets/orleans-04-sauce--chili-powder-TCgDSC8f.webp",
+      "bytes": 57554,
+      "sha256": "993dc45b9f0c2f99f1400b028345600664538b95bbf743bfeccb397fed02bb92"
+    },
+    {
+      "path": "assets/orleans-04-sauce--cilantro-D83Lygtm.webp",
+      "bytes": 53310,
+      "sha256": "6042b953273edc11cc92dcb7bfb578a112f13e92711f84775103cd2554b8c4ee"
+    },
+    {
+      "path": "assets/orleans-04-sauce--enoki-BBKlQTRP.webp",
+      "bytes": 48646,
+      "sha256": "b0b38476b180655e614c7ef845238c40f2775521f6f77b7700f14854e1b32cdb"
+    },
+    {
+      "path": "assets/orleans-04-sauce--onion-BP3T4vWb.webp",
+      "bytes": 48966,
+      "sha256": "7f6eef895a70b7e2710b261fa6f0a7758b35c1d62f977539d2cb3b920aaccdfb"
+    },
+    {
+      "path": "assets/orleans-04-sauce-uBrjWmrK.webp",
+      "bytes": 35682,
+      "sha256": "ce51ca1138ede993edd66c7ab37f7006078cebbec08394985d1c71bfdf7e837e"
+    },
+    {
+      "path": "assets/orleans-05-scallion--bacon-CuqpFwH1.webp",
+      "bytes": 49384,
+      "sha256": "a96b384f09852e843adc4e5593003fe02d0dd5aa69d666537a07ec5df92dcd5c"
+    },
+    {
+      "path": "assets/orleans-05-scallion--onion-DVXHD51C.webp",
+      "bytes": 49074,
+      "sha256": "3f233e3e015bb9df1e518022697a1034a9ed619815b001b1838c00a3a7374c3e"
+    },
+    {
+      "path": "assets/orleans-05-scallion-BBv4wd7S.webp",
+      "bytes": 36424,
+      "sha256": "75c3fc463500740ddf303c152501b5ce30421786410d6e11b82994eba3eaf379"
+    },
+    {
+      "path": "assets/orleans-06-cut--bacon-DH2isNMD.webp",
+      "bytes": 50408,
+      "sha256": "1b8d822de5e97340ad118adc31a8328a4dd263f50b9a9db98e5ce11544b7af59"
+    },
+    {
+      "path": "assets/orleans-06-cut--chili-powder-BfrJzAon.webp",
+      "bytes": 57902,
+      "sha256": "5ea0fead8025bc7f995312eccb2067d41c976944e3925a3416157c5762adce20"
+    },
+    {
+      "path": "assets/orleans-06-cut--cilantro-CSSwhIwL.webp",
+      "bytes": 54104,
+      "sha256": "827f8ee833342fa48f71fdcb4460b3fb31c6d2025d25bde7f4baa5e38d6203f9"
+    },
+    {
+      "path": "assets/orleans-06-cut--enoki-CPDtOay1.webp",
+      "bytes": 52196,
+      "sha256": "7c1fb575f1602fa7cdb0b3a84bba2de909cc5ce115b1e107d91267b853279909"
+    },
+    {
+      "path": "assets/orleans-06-cut--onion-B7C1Bth2.webp",
+      "bytes": 51798,
+      "sha256": "7881f01f8af57d18ac8d709046a7b8182f9bef0e7037e0f455917a67cda25fed"
+    },
+    {
+      "path": "assets/orleans-06-cut-BBZoFWup.webp",
+      "bytes": 38558,
+      "sha256": "fdc25f34e2c0256167451eea5004f1fe1a2d330bfb21c864b9851633e61ef7ef"
+    },
+    {
+      "path": "assets/orleans-07-roll--bacon-nYrubUYu.webp",
+      "bytes": 38250,
+      "sha256": "0272dd8b507dcea8a5fc09b8b7c5e6704e160c9ae17f056167e85953eadd01c1"
+    },
+    {
+      "path": "assets/orleans-07-roll--chili-powder-bSxF4coI.webp",
+      "bytes": 43480,
+      "sha256": "ed26e411118f9d4127d7e93656a2756a8f268cfea3b21cc2c2c96e059b440add"
+    },
+    {
+      "path": "assets/orleans-07-roll--cilantro-DEIj7qr0.webp",
+      "bytes": 44330,
+      "sha256": "5097047487c885150a6c36764b017044155d881528fe0315e7870e703f7520d7"
+    },
+    {
+      "path": "assets/orleans-07-roll--enoki-PDGWImVG.webp",
+      "bytes": 39042,
+      "sha256": "5a68fe37c7f585ef10e79a1b8034f7cbaf1b32c6b8740f26901514b90b7dc2f0"
+    },
+    {
+      "path": "assets/orleans-07-roll--onion-CAvJNYnv.webp",
+      "bytes": 43544,
+      "sha256": "df46ba80dfb997096242cbf62da8a1565069e5a805350e5cdac4224daf87466e"
+    },
+    {
+      "path": "assets/orleans-07-roll-CjKLSSIV.webp",
+      "bytes": 26746,
+      "sha256": "122641869832c5776d9ecc3d954f0a7a7f101d88fb21cafc65b313551d46ccc8"
+    },
+    {
+      "path": "assets/orleans-cut-CpphXp-5.webp",
+      "bytes": 38312,
+      "sha256": "a62fd31177ebc5ba973a388c1548d968dad23a3e659e81fde4a6d01a37a5287d"
+    },
+    {
+      "path": "assets/orleans-roll-IPz1OynB.webp",
+      "bytes": 26636,
+      "sha256": "d9d0756f77dfd43ced11e38d6e4aab2227b1888eff50c8b24764cded827489e8"
+    },
+    {
+      "path": "assets/poki-CNuId0eD.js",
+      "bytes": 920,
+      "sha256": "79dcc7d00e97d03e0d7f5488eb8d8f5ec17d444809e628e9c8d712eed72042f7",
+      "gzipBytes": 491
+    },
+    {
+      "path": "assets/settings-screen-user-final-CbSiQ8af.webp",
+      "bytes": 526604,
+      "sha256": "46f8af4be19e4a5aa04f5321ac2dbabde547b101178e068c4d9f5f49c1da3f26"
+    },
+    {
+      "path": "assets/settings-slider-clean-patch-DevvtYq4.webp",
+      "bytes": 6168,
+      "sha256": "b3bd970d63803e8b131154d8860d45b96b3dc565fa642ad027b274ffbb404480"
+    },
+    {
+      "path": "assets/signature-02-egg--egg-DUb4CaP_.webp",
+      "bytes": 40994,
+      "sha256": "f6828bf7cd861a6cd3f814147df8c50918dd5b12ebe398220a979a1c0bcd14be"
+    },
+    {
+      "path": "assets/signature-03-turkey-noodle--egg-DYhoAEZF.webp",
+      "bytes": 41098,
+      "sha256": "c6697ffc67ca2d09b653ef6f92135a32cd74c372a96037548cfd0737a2efe873"
+    },
+    {
+      "path": "assets/signature-03-turkey-noodle-Tg2QzLx3.webp",
+      "bytes": 36428,
+      "sha256": "0ab1561eb4d29e5560323d9a2458f42de178987d479e567466d5577ca753f868"
+    },
+    {
+      "path": "assets/signature-04-cheese-9cYzboSr.webp",
+      "bytes": 34318,
+      "sha256": "f8f352e3d8d24cde9cebf931b070eb7c26ac86b2e719bc39f490b37aabf4ef70"
+    },
+    {
+      "path": "assets/signature-05-corn--bacon-JdhSyIzg.webp",
+      "bytes": 49400,
+      "sha256": "a4071d38171051c997d838f64ee862d57b41ebacf3439fa65a1bd4bd0b60765f"
+    },
+    {
+      "path": "assets/signature-05-corn--chili-powder-BQzkWEqP.webp",
+      "bytes": 57560,
+      "sha256": "5eb69c7c0766469099fc629aabe73dab6223c6e8d201efe707e6287ea7a37bb6"
+    },
+    {
+      "path": "assets/signature-05-corn--egg-Bo4wmcIH.webp",
+      "bytes": 41090,
+      "sha256": "88d575cac654fca290a32e65e92e47753d5373664b804ef57693d27fcd3ba24f"
+    },
+    {
+      "path": "assets/signature-05-corn--enoki-D78Ya-ju.webp",
+      "bytes": 48782,
+      "sha256": "b48ca401c80f03b3267edaf2687811808ed454ce9d20959b53a49587cb9a5ff6"
+    },
+    {
+      "path": "assets/signature-05-corn--onion-BZUjiduR.webp",
+      "bytes": 49840,
+      "sha256": "17162c35eca85ceac508c16c6462c54820dc04803b46d1743c9b92babb896f8b"
+    },
+    {
+      "path": "assets/signature-05-corn-CKlqwVs_.webp",
+      "bytes": 35490,
+      "sha256": "dca24476a620014a0ab94e85fe18968aea34703c2de1e6f6528551617258c0ef"
+    },
+    {
+      "path": "assets/signature-06-sauce--bacon-BO2zh9Fi.webp",
+      "bytes": 49452,
+      "sha256": "a5603e3b687ba508881f19c5d52928ded0ad14caa8385ba5645d3c669a6df32d"
+    },
+    {
+      "path": "assets/signature-06-sauce--egg-Bo8GHpcU.webp",
+      "bytes": 41044,
+      "sha256": "ac1df8e52ab3d8eac244f385488e3d1b904964ea823d0b3f10d143ab87541f6f"
+    },
+    {
+      "path": "assets/signature-06-sauce--enoki-DRiWzSlh.webp",
+      "bytes": 48828,
+      "sha256": "3a5a5970b0c123fdb0a0893b88ec585a75b3b80d56e58fdfa9e20fce7d9e48bb"
+    },
+    {
+      "path": "assets/signature-06-sauce--onion-CHGNWumE.webp",
+      "bytes": 49746,
+      "sha256": "7a1c228e7bacf5359176a2eed22e949d0f8c7c06cac07a42468651528246421e"
+    },
+    {
+      "path": "assets/signature-06-sauce-D33Ls7eu.webp",
+      "bytes": 35808,
+      "sha256": "cf9f2a917edd303072888c1f0c3f675d0cc20a10344e697739350cc6e4aef1a3"
+    },
+    {
+      "path": "assets/signature-07-scallion--bacon-uSZH83sz.webp",
+      "bytes": 49410,
+      "sha256": "7446141aa59e9c18622df14a1c886dd91e21f6943b64d4b3c93555698a0b170e"
+    },
+    {
+      "path": "assets/signature-07-scallion--onion-DwNrhow9.webp",
+      "bytes": 50038,
+      "sha256": "55ab74bde0689d9d01f098fb1a37407ef845363bd910a8ec6b8f4988d6597a53"
+    },
+    {
+      "path": "assets/signature-07-scallion-BrBDgE4-.webp",
+      "bytes": 36596,
+      "sha256": "454905229c0e8407df082388cadb1a92c5c9a2f1c2f9d9e89465887fcec47379"
+    },
+    {
+      "path": "assets/signature-08-cut--bacon-Ci8Dko9F.webp",
+      "bytes": 50410,
+      "sha256": "b8d37b3af5ffe0614087c5c7dc6e7e87b19d98ef5a917648f29b62064c754cd3"
+    },
+    {
+      "path": "assets/signature-08-cut--egg-CBgwi_Vq.webp",
+      "bytes": 44206,
+      "sha256": "77083a9b38a474148491fdae3d29e051fdfc55acfa9c74cc3a73855ad4c2ca00"
+    },
+    {
+      "path": "assets/signature-08-cut--onion-7N3gfMk1.webp",
+      "bytes": 51844,
+      "sha256": "8e58cdc1b5ea37cbba30edb1340a7054e2cb3c6036d69669862c56dfb40a3b34"
+    },
+    {
+      "path": "assets/signature-08-cut-BR4HkJJI.webp",
+      "bytes": 38516,
+      "sha256": "170073ea67e65302aaff65f38bc4a7238522f695677a7394741fcf1cb0b1e463"
+    },
+    {
+      "path": "assets/signature-09-roll--bacon-aCS_GqBs.webp",
+      "bytes": 38258,
+      "sha256": "7efb527bf9024ba0b5f3952b30aefd5ef3a612476b04a7d2dddfea9ddf46cc03"
+    },
+    {
+      "path": "assets/signature-09-roll--egg-Dzyk5GYp.webp",
+      "bytes": 28638,
+      "sha256": "d8fc13dd05ee27657d7e4969124d2458f9f7af144ccfdf00d2d263329a821f5a"
+    },
+    {
+      "path": "assets/signature-09-roll--onion-dlPF4_LS.webp",
+      "bytes": 43474,
+      "sha256": "436e5d986912e27b65002281924cf78db2e5f3c9ada3793ed3ecd5bbd0c7e140"
+    },
+    {
+      "path": "assets/signature-09-roll-CotuRrA5.webp",
+      "bytes": 26726,
+      "sha256": "84edb1c29bdaad0588224af612c2d7fccd0f2f65a8f97cf0765ebb55bec4e4de"
+    },
+    {
+      "path": "assets/signature-cut-BoQJyffI.webp",
+      "bytes": 38290,
+      "sha256": "51e86d5dd24b5cb72982d404d63ad8a4ddb690e6883130b4d60373f0b3a88498"
+    },
+    {
+      "path": "assets/signature-roll-0TwXPq8D.webp",
+      "bytes": 26646,
+      "sha256": "29cb48fbeda1e92650c75a62ed2f4370b78e0a863bcd08ee483f0d8b0b1f730c"
+    },
+    {
+      "path": "assets/summary-screen-user-final-Dj2uHf7I.webp",
+      "bytes": 295944,
+      "sha256": "92ed35099f9b872abc1c2aeb15f4f176c55e1e551ec526975dadc03168e8d390"
+    },
+    {
+      "path": "assets/summary-title-neutral-EyqjklnP.webp",
+      "bytes": 15182,
+      "sha256": "5b77007ced9514a344410f241ba4ca09c345173eeddbd434ebc3334177867234"
+    },
+    {
+      "path": "assets/takeaway-bag-1IpeauHz.webp",
+      "bytes": 173614,
+      "sha256": "ab2482219977081d21de5961f30c26099054ef48216bf59b91c2af47fcf5b65b"
+    },
+    {
+      "path": "assets/tenderloin-04-tenderloin--bacon-DyDjBzzK.webp",
+      "bytes": 49372,
+      "sha256": "c61527aeb50d8fb26489a15a5f5a171b9941144c44636c845cd2b3f5cdbb78a7"
+    },
+    {
+      "path": "assets/tenderloin-04-tenderloin--chili-powder-Ce1YXm4c.webp",
+      "bytes": 57570,
+      "sha256": "a65694985d46b9d3d569c4507376bbd5b452570a155ef6d5dd3d3ae2fcdea3ee"
+    },
+    {
+      "path": "assets/tenderloin-04-tenderloin--enoki-Csj19DEM.webp",
+      "bytes": 48984,
+      "sha256": "520668c59629a442618b764a9018cca8666f905f6ea4fdcf88ba0a193fd0c2c7"
+    },
+    {
+      "path": "assets/tenderloin-04-tenderloin--onion-RBuojEGP.webp",
+      "bytes": 49734,
+      "sha256": "f9c3a32dd73a187158b7bfb0c6652d470b451fc448ba06c52e25476c4104ad49"
+    },
+    {
+      "path": "assets/tenderloin-04-tenderloin-B_UbkX_g.webp",
+      "bytes": 36580,
+      "sha256": "c02cdedd70e32daf7cdef4e7eef959f86ae6a6c20613adb0652f7d9531f53bb8"
+    },
+    {
+      "path": "assets/tenderloin-05-sauce--bacon-DVly77PG.webp",
+      "bytes": 49442,
+      "sha256": "823141fd47eb038b00a9ffe88372957486a29a7bdc13b91b62477cdc97cde6fb"
+    },
+    {
+      "path": "assets/tenderloin-05-sauce--enoki-T53DaIzz.webp",
+      "bytes": 48812,
+      "sha256": "ece9475b3ad3e16dccc3b978cc9f4345e672951a1f79ff511d4435f52013552a"
+    },
+    {
+      "path": "assets/tenderloin-05-sauce--onion-BbQyqPBu.webp",
+      "bytes": 49022,
+      "sha256": "a9e0a9ee444d5714dcb23475babe4e2ebcfe859ff131446335da9553a7608c7c"
+    },
+    {
+      "path": "assets/tenderloin-05-sauce-CRP_arp5.webp",
+      "bytes": 36146,
+      "sha256": "2afbb2466caa98b36b18157f8ad4e7ecca29187366e2bbf65b8d8dbc310ab4b6"
+    },
+    {
+      "path": "assets/tenderloin-06-scallion--bacon-CXxWAa0v.webp",
+      "bytes": 49442,
+      "sha256": "4bef8e9dcb603b6ff5adf4625e89121ab89805b239fb24df4e265735f79c8428"
+    },
+    {
+      "path": "assets/tenderloin-06-scallion--onion-CoFvZg3y.webp",
+      "bytes": 50042,
+      "sha256": "39945fbe52269e18bb2be1e2b66d0af5bd5d13177f6de5fd20a29757af5f3faf"
+    },
+    {
+      "path": "assets/tenderloin-06-scallion-ChZ_23nr.webp",
+      "bytes": 36764,
+      "sha256": "18b60436f291ce223f9795560ac15b02bb137f33d907c820f3b338b65b7aa639"
+    },
+    {
+      "path": "assets/tenderloin-07-cut--bacon-C7f52wi_.webp",
+      "bytes": 50370,
+      "sha256": "d381f9608fc55036d64e82407e1cc728a455239b62bbefa267e06857e3755589"
+    },
+    {
+      "path": "assets/tenderloin-07-cut--onion-aXyiNdh5.webp",
+      "bytes": 51826,
+      "sha256": "d933b9b03871609356db6caf150e009341be7d201baabb80abeec1301b317bc7"
+    },
+    {
+      "path": "assets/tenderloin-07-cut-DVjeDx58.webp",
+      "bytes": 38544,
+      "sha256": "63f4d966097a0b2a96c459b9901d40126b3e4f92abc9f258b94194ae7208b791"
+    },
+    {
+      "path": "assets/tenderloin-08-roll--bacon-DOfQ41lv.webp",
+      "bytes": 38248,
+      "sha256": "433254f43aca3247a567fb11391e4da2b1bd50844125d98dfc9a8b5bab8147dd"
+    },
+    {
+      "path": "assets/tenderloin-08-roll--onion-BVuOaOv6.webp",
+      "bytes": 43514,
+      "sha256": "a67460c9bc059430032c7bc7e6acdf1698ee9a4d2b246159bdef96ba63a92cf9"
+    },
+    {
+      "path": "assets/tenderloin-08-roll-DzgCemDG.webp",
+      "bytes": 26694,
+      "sha256": "7e88f1c5d0f8baa2c87c47ba5fc0826e36884fab38df73aaa627ff98c5284937"
+    },
+    {
+      "path": "assets/tenderloin-cut-Cod3LCfy.webp",
+      "bytes": 38300,
+      "sha256": "cff4a2e3bf64d484acf3ae9f1e03411d31df88df274aa8fcf24c8bacb1d66d6a"
+    },
+    {
+      "path": "assets/tenderloin-roll-Dh_EnA-G.webp",
+      "bytes": 26886,
+      "sha256": "e31d9dc8c9167cff421995bca88fd545ee154ef86732b4dfc022f66900f3eccd"
+    },
+    {
+      "path": "assets/urgent-8KcBkRmx.webp",
+      "bytes": 53066,
+      "sha256": "2ac06b3efd87cc4992ff6c4534f0833bd9ff7e481343fe9308064ac917372f44"
+    },
+    {
+      "path": "assets/urgent-BJIqnVZM.webp",
+      "bytes": 29832,
+      "sha256": "53fad76211801cac357fdc72bac5080f95088048cfae964d86db79cedc55d52c"
+    },
+    {
+      "path": "assets/urgent-Bkd9ae1O.webp",
+      "bytes": 33524,
+      "sha256": "b89122d0bfb6cc4fc26ca143f84382a1bb1270a1bcd4c2108c1b0c4ee7d245d3"
+    },
+    {
+      "path": "assets/urgent-BV6FhlMH.webp",
+      "bytes": 36596,
+      "sha256": "1adccbc40e2a2f90bed75b6060b336104d073adf27af2184ec4bc164a16d7101"
+    },
+    {
+      "path": "assets/urgent-C-U4UyuB.webp",
+      "bytes": 30656,
+      "sha256": "1b3cec3c988af05804a3a657693427a2512373cca104db885368f80329e283d4"
+    },
+    {
+      "path": "assets/urgent-D4bMySPl.webp",
+      "bytes": 27558,
+      "sha256": "f39f7ef2c01ae5352df82135ebc8e000e4591ef8739f4046cd774008af8f2f6d"
+    },
+    {
+      "path": "assets/urgent-Ddq4QAo_.webp",
+      "bytes": 29512,
+      "sha256": "c7ca9eb4d5a4ade964ba0c66b42f8177bde57fda35efebafcbcdf0ad26510979"
+    },
+    {
+      "path": "assets/urgent-Dfp-R3Yk.webp",
+      "bytes": 32084,
+      "sha256": "7e9a032674e0b557b88611414f551d301613187900eb6572d592ed41d42b9a2a"
+    },
+    {
+      "path": "assets/urgent-OiM-iarC.webp",
+      "bytes": 41860,
+      "sha256": "3265fe2353c318ed90c1bcf4c998911b825faa39c440a96ff01bb4e01cad76d2"
+    },
+    {
+      "path": "assets/urgent-U87ppEWW.webp",
+      "bytes": 35538,
+      "sha256": "d053577899ac55bf13bf1910f38512500b5503b984ca0dd42f02ca03172392b0"
+    },
+    {
+      "path": "assets/urgent-yoB28p0C.webp",
+      "bytes": 40458,
+      "sha256": "6d1d651631ea55d7b1e0df210c510b9d2d6d6f934b8e46473b7b5906b2566bf8"
+    },
+    {
+      "path": "assets/waiting-7JwoTtRp.webp",
+      "bytes": 30960,
+      "sha256": "49e1e9b4f9491137c4293b21081402c0eeccf93ea0309aced2e3d0a5327feb98"
+    },
+    {
+      "path": "assets/waiting-B-hb3jfs.webp",
+      "bytes": 36796,
+      "sha256": "e6141959d4c7b57a55d4c2716065d50a4096a16bbdb3a84057cccea514e7335b"
+    },
+    {
+      "path": "assets/waiting-Bl1ofHc3.webp",
+      "bytes": 33004,
+      "sha256": "62b0a73f5a764d45f96b0b273f9b84f15ebec65dd50c4b053089b12d5713ac42"
+    },
+    {
+      "path": "assets/waiting-BqF4RJIG.webp",
+      "bytes": 29420,
+      "sha256": "eefdeb3c570a123ce058699c9cc0854ebdbc28988f5fe0c54da7eb18f4bdf59c"
+    },
+    {
+      "path": "assets/waiting-C49t2uDC.webp",
+      "bytes": 38484,
+      "sha256": "828047692a61a50a62a5b9dfae16d712831ff1bcbe931743ab66a87e54cf19b4"
+    },
+    {
+      "path": "assets/waiting-CmxHgmqm.webp",
+      "bytes": 23404,
+      "sha256": "52e72ac872590455c4976810501fd8e36d46095ac8fdf8cb051cf774dcd77232"
+    },
+    {
+      "path": "assets/waiting-DauAkCVG.webp",
+      "bytes": 39716,
+      "sha256": "fb89ba8bda9399d53532d059d0e512e6a6bccf0b2ee8172beb5ab8318912dce7"
+    },
+    {
+      "path": "assets/waiting-DLcZRouC.webp",
+      "bytes": 32954,
+      "sha256": "fce9afeda01ed714b8102cb771a5de290d39d0e10aa038865dbe473efcbc3851"
+    },
+    {
+      "path": "assets/waiting-DnMWA8Or.webp",
+      "bytes": 26512,
+      "sha256": "aec9750433c5524985608aebf78d0fa281d4a42bbd01299e2973d039b35bb3a6"
+    },
+    {
+      "path": "assets/waiting-DnxtOzmf.webp",
+      "bytes": 48554,
+      "sha256": "5ade9411c585275bfaf5fca8848cef36b0371890473c637866b2d39a80cbbc5a"
+    },
+    {
+      "path": "assets/waiting-DWAzENJi.webp",
+      "bytes": 31058,
+      "sha256": "9936044629407b749c52b78a2aea5ce178c5ee4c3e95c79cd95a5592538a4b93"
+    },
+    {
+      "path": "index.html",
+      "bytes": 935,
+      "sha256": "ecc654de75668460257cc71e132fde1014e9acf8e48685ac183403da6b9cfc85"
+    }
+  ]
+}
