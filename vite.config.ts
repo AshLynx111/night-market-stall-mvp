@@ -19,12 +19,17 @@ export default defineConfig(({ mode }) => {
       react(),
       ...(pokiBuild ? [{
         name: 'poki-sdk-html',
-        transformIndexHtml() {
-          return [{
+        transformIndexHtml(html: string) {
+          return { html: html
+            .replace('<html lang="zh-CN">', '<html lang="en">')
+            .replace(/<title>[^<]*<\/title>/, '<title>Night Market: Street Food Stall</title>')
+            .replace(/(<meta name="description" content=")[^"]*("\s*\/>)/,
+              '$1Cook street food, serve customers, and grow your night market stall.$2'),
+          tags: [{
             tag: 'script',
             attrs: { id: 'poki-sdk', src: POKI_SDK_URL, async: true },
             injectTo: 'head' as const,
-          }]
+          }] }
         },
       }] : []),
     ],

@@ -1,11 +1,11 @@
-param([Parameter(Mandatory)][string]$SourceDirectory, [Parameter(Mandatory)][string]$ZipPath)
+param([Parameter(Mandatory)][string]$SourceDirectory, [Parameter(Mandatory)][string]$ZipPath, [ValidateSet('v1','v2')][string]$Version = 'v1')
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.IO.Compression
 $releaseRoot = [IO.Path]::GetFullPath((Get-Location).Path)
 $releaseSource = [IO.Path]::GetFullPath($SourceDirectory)
 $releaseZip = [IO.Path]::GetFullPath($ZipPath)
 if ($releaseSource -ne (Join-Path $releaseRoot 'dist-poki')) { throw 'Expected workspace dist-poki source' }
-if ($releaseZip -ne (Join-Path $releaseRoot 'night-market-poki-rc-v1.zip')) { throw 'Expected workspace RC ZIP path' }
+if ($releaseZip -ne (Join-Path $releaseRoot "night-market-poki-rc-$Version.zip")) { throw 'Expected workspace RC ZIP path' }
 if (!(Test-Path -LiteralPath (Join-Path $releaseSource 'index.html'))) { throw 'Missing root index.html' }
 if (Test-Path -LiteralPath $releaseZip) { Remove-Item -LiteralPath $releaseZip }
 $releaseStream = [IO.File]::Open($releaseZip, [IO.FileMode]::CreateNew)

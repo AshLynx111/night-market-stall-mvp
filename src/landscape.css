@@ -1119,6 +1119,15 @@ html[data-locale="en"] .summary-message {
 }
 html[data-locale="en"] .summary-message { left: 30%; top: 37.2%; width: 40%; height: 4.3%; font-size: clamp(10px, 1.08vw, 18px); }
 html[data-locale="en"] .summary-retention { background: var(--paper-grain-en); font: 800 clamp(10px, .86vw, 14px)/1 var(--font-ui-en); }
+@media (max-width: 900px) {
+  /* Keep complete English copy inside the existing Summary paper panel. */
+  html[data-locale="en"] .summary-message,
+  html[data-locale="en"] .summary-retention {
+    left: 20%;
+    width: 60%;
+    max-width: 60%;
+  }
+}
 html[data-locale="en"] .summary-stats > .stat-card::before {
   inset: 2% 1%;
   border: 1px solid #ad7844;
